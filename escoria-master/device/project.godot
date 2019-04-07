@@ -1,0 +1,151 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="Escoria Prototype"
+run/main_scene="res://globals/scene_main.tscn"
+
+[autoload]
+
+main="*res://globals/main.tscn"
+vm="*res://globals/global_vm.gd"
+esc_type="*res://globals/escoria_types.gd"
+
+[debug]
+
+gdscript/warnings/treat_warnings_as_errors=true
+gdscript/warnings/unsafe_cast=true
+gdscript/warnings/unsafe_call_argument=true
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/resizable=false
+window/size/test_width=1920
+window/size/test_height=1080
+window/dpi/allow_hidpi=true
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+window/stretch/shrink="1"
+
+[escoria]
+
+application/max_voice_volume=2
+application/save_data="res://globals/save_data.gd"
+application/speech_suffix=".spx"
+application/text_lang="en"
+application/voice_lang="en"
+application/binaural_speech=false
+application/speech_path="res://demo/audio/speech/"
+application/speech_enabled=true
+application/speech_locales_path="res://demo/speech_locales.gd"
+application/text_timeout_seconds=3
+application/dialog_minimum_visible_seconds=1
+application/dialog_damp_music_by_db=3
+platform/skip_cache=false
+platform/terminate_on_errors=true
+platform/action_menu_scale=2
+platform/dialog_option_height=1
+platform/dialog_type_suffix=""
+platform/dialog_force_centered=false
+platform/development_lang="en"
+platform/game_start_script="res://demo/game.esc"
+platform/force_text_ids=false
+platform/force_disable_typewriter_text=false
+platform/force_quit=true
+platform/force_tooltip_global_id=false
+platform/tag_untranslated_strings=true
+platform/default_object_action=""
+platform/object_action_requires_doubleclick=false
+platform/exit_button=true
+platform/screen_resizable=true
+platform/telon="res://globals/telon.tscn"
+platform/window_title_height=32
+ui/hud="res://ui/hud.tscn"
+ui/instructions=""
+ui/credits=""
+ui/end_credits=""
+ui/in_game_menu="res://demo/ui/in_game_menu.tscn"
+ui/main_menu="res://demo/ui/main_menu.tscn"
+ui/confirm_popup="res://demo/ui/confirm_popup.tscn"
+ui/savegames=""
+ui/tooltip_follows_mouse=false
+ui/right_mouse_button_action_menu=false
+ui/action_menu=""
+ui/inventory=""
+
+[gdnative]
+
+singletons=[  ]
+
+[input]
+
+inventory_toggle={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":5,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":7,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":9,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777218,"unicode":0,"echo":false,"script":null)
+ ]
+}
+look={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":3,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+menu_request={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":11,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+punch_out_dodge={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":2,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+punch_out_punch={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":88,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+quick_save={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777247,"unicode":0,"echo":false,"script":null)
+ ]
+}
+start={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":11,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+talk={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":1,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+use={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":2,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+
+[locale]
+
+translations=PoolStringArray( "res://demo/translations/general.en.translation", "res://demo/translations/general.es.translation", "res://demo/translations/general.fr.translation" )
