@@ -1,7 +1,0 @@
-.import/
-logs/
-*.translation
-
-# Platform specific metadata files
-.DS_Store
-thumbs.db

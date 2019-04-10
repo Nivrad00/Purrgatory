@@ -1,5 +1,0 @@
-:look
-say player "Some jars."
-
-:use
-say player "Hey! There's a key in there!"
