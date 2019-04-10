@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/96b5aa716ceb7f38bba82edae412d9f7.jpg-fe77361020f69e9e243c9da85f5fdb64.stex"
+path="res://.import/qibli.png-c73711de43e5d7078e183b7f2fa30da8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/96b5aa716ceb7f38bba82edae412d9f7.jpg"
-dest_files=[ "res://.import/96b5aa716ceb7f38bba82edae412d9f7.jpg-fe77361020f69e9e243c9da85f5fdb64.stex" ]
+source_file="res://sprites/qibli.png"
+dest_files=[ "res://.import/qibli.png-c73711de43e5d7078e183b7f2fa30da8.stex" ]
 
 [params]
 

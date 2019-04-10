@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CharacterPageAvatar_MLP_twilightsparkle.png-6ce11a4b672343748c52afab1bdd3c88.stex"
+path="res://.import/twilight.png-2d394da8aee696bc8fb02ce8b2db63c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CharacterPageAvatar_MLP_twilightsparkle.png"
-dest_files=[ "res://.import/CharacterPageAvatar_MLP_twilightsparkle.png-6ce11a4b672343748c52afab1bdd3c88.stex" ]
+source_file="res://sprites/twilight.png"
+dest_files=[ "res://.import/twilight.png-2d394da8aee696bc8fb02ce8b2db63c0.stex" ]
 
 [params]
 

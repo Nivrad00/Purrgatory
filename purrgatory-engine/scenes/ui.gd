@@ -1,6 +1,18 @@
 extends Node2D
 
 var sprite_y = 280
+var sprite_x = {
+	1: [640],
+	2: [426.67, 853.33],
+	3: [320, 640, 960],
+	4: [256, 512, 1024, 2048]
+}
+var choice_y = {
+	1: [150],
+	2: [100, 200],
+	3: [75, 150, 225],
+	4: [60, 120, 180, 240]
+}
 
 func _ready():
 	hide()
@@ -8,7 +20,6 @@ func _ready():
 	$text_box/speaker.text = ''
 
 func update_ui(speaker, sprites, text, choices):
-	print("hewwo???????????")
 	set_speaker(speaker)
 	set_sprites(sprites)
 	set_text(text)
@@ -18,29 +29,32 @@ func set_speaker(speaker):
 	$text_box/speaker.text = speaker
 	
 func set_sprites(sprites):
-	var num = sprites.size()
-	var pos
-	
-	if num == 1:
-		pos = [640] 
-	elif num == 2:
-		pos = [426.67, 853.33]
-	elif num == 3:
-		pos = [320, 640, 960]
-	elif num == 4:
-		pos = [256, 512, 1024, 2048]
-	
 	for child in $sprites.get_children():
 		child.queue_free()
-	
-	for path in sprites:
-		var sprite = load('res://scenes/' + path + '.tscn').instance()
-		sprite.set_name(path)
-		sprite.position = Vector2(pos.pop_front(), sprite_y)
+		
+	var num = sprites.size()
+	for i in range(num):
+		var sprite = load('res://scenes/char_sprite.tscn').instance()
 		$sprites.add_child(sprite)
+		sprite.set_name(sprites[i])
+		sprite.set_sprite(sprites[i])
+		sprite.position = Vector2(sprite_x[num][i], sprite_y)
 	
 func set_text(text):
 	$text_box/text.text = text
 	
 func set_choices(choices):
-	pass	
+	var num = choices.size()
+	if num == 0:
+		$text_box.disabled = false
+		for child in $choices.get_children():
+			child.queue_free()
+		return
+	$text_box.disabled = true
+	for i in range(num):
+		var choice = load('res://scenes/choice.tscn').instance()
+		$choices.add_child(choice)
+		choice.get_node('text').text = choices[i]
+		choice.connect("pressed", get_node("/root/game"), "update_dialog", [i])
+		choice.set_position(Vector2(0, choice_y[num][i]))
+		print(choice.get_rect().position)

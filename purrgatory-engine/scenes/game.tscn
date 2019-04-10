@@ -24,22 +24,36 @@ script = ExtResource( 3 )
 
 [node name="sprites" type="Node2D" parent="ui"]
 
-[node name="text_box" type="Node2D" parent="ui"]
-position = Vector2( 4.76007, 9.52003 )
+[node name="choices" type="Control" parent="ui"]
+margin_left = 426.703
+margin_top = 70.9189
+margin_right = 881.703
+margin_bottom = 462.919
+
+[node name="text_box" type="Button" parent="ui"]
+margin_left = 271.215
+margin_top = 522.1
+margin_right = 1013.22
+margin_bottom = 656.1
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="box" type="Sprite" parent="ui/text_box"]
-position = Vector2( 647.344, 572.614 )
-scale = Vector2( 0.754661, 0.281892 )
+position = Vector2( -0.877563, 2.01062 )
+scale = Vector2( 0.716655, 0.232295 )
 texture = ExtResource( 4 )
+centered = false
 
 [node name="speaker" type="RichTextLabel" parent="ui/text_box"]
-margin_left = 291.0
-margin_top = 499.0
-margin_right = 557.0
-margin_bottom = 521.0
+margin_left = 18.3687
+margin_top = 11.632
+margin_right = 284.369
+margin_bottom = 33.632
+mouse_filter = 1
 custom_fonts/mono_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
@@ -47,24 +61,16 @@ bbcode_text = "fdfgjlsdfsdf323"
 text = "fdfgjlsdfsdf323"
 
 [node name="text" type="RichTextLabel" parent="ui/text_box"]
-margin_left = 288.64
-margin_top = 519.045
-margin_right = 554.64
-margin_bottom = 586.045
+margin_left = 18.0
+margin_top = 35.0
+margin_right = 732.0
+margin_bottom = 122.0
+mouse_filter = 1
 custom_fonts/mono_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "fdfgjlsdfsdf323"
 text = "fdfgjlsdfsdf323"
-
-[node name="area" type="Button" parent="ui/text_box"]
-margin_left = 257.0
-margin_top = 493.0
-margin_right = 1038.0
-margin_bottom = 652.0
-focus_mode = 0
-enabled_focus_mode = 0
-flat = true
 
 [node name="room" type="Node2D" parent="."]
 script = ExtResource( 6 )
@@ -80,6 +86,6 @@ icon = ExtResource( 7 )
 flat = true
 script = ExtResource( 8 )
 
-[connection signal="pressed" from="ui/text_box/area" to="." method="update_dialog" binds= [ -1 ]]
+[connection signal="pressed" from="ui/text_box" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="room/Button" to="room/Button" method="_on_Button_pressed"]
 [connection signal="start_dialog" from="room/Button" to="." method="start_dialog"]
