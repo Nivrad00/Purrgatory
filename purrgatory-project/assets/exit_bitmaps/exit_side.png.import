@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/exit_side.png-dd1fd3ea65c1d87d997bddf0894e10c7.res"
+
+[deps]
+
+source_file="res://assets/exit_bitmaps/exit_side.png"
+dest_files=[ "res://.import/exit_side.png-dd1fd3ea65c1d87d997bddf0894e10c7.res" ]
+
+[params]
+
+create_from=1
+threshold=0.01

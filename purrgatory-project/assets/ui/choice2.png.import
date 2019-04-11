@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/choice2.png-de995ba96a09df0d91c8ee5adcd7d818.image"
+
+[deps]
+
+source_file="res://assets/ui/choice2.png"
+dest_files=[ "res://.import/choice2.png-de995ba96a09df0d91c8ee5adcd7d818.image" ]
+
+[params]
+

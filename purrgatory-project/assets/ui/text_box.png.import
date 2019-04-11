@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/text_box.png-83c55761378f08336c0f72a8434ef431.image"
+
+[deps]
+
+source_file="res://assets/ui/text_box.png"
+dest_files=[ "res://.import/text_box.png-83c55761378f08336c0f72a8434ef431.image" ]
+
+[params]
+

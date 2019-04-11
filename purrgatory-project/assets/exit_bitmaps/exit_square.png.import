@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/exit_square.png-a785d0a32d2a11aa56486e7362d66c84.res"
+
+[deps]
+
+source_file="res://assets/exit_bitmaps/exit_square.png"
+dest_files=[ "res://.import/exit_square.png-a785d0a32d2a11aa56486e7362d66c84.res" ]
+
+[params]
+
+create_from=1
+threshold=0.01

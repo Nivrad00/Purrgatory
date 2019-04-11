@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=1]
+
+[node name="char_obj_button" type="Button"]
+margin_right = 140.0
+margin_bottom = 134.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="." to="." method="_on_char_obj_button_pressed"]

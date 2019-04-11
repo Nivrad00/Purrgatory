@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/menu_button.png-52f6d44214399ad22f5069c113bc42b3.image"
+
+[deps]
+
+source_file="res://assets/ui/menu_button.png"
+dest_files=[ "res://.import/menu_button.png-52f6d44214399ad22f5069c113bc42b3.image" ]
+
+[params]
+
