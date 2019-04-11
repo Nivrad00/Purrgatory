@@ -3,7 +3,7 @@ extends Node
 var blocks = {
 	'cool_text': {
 		'speaker': '',
-		'sprites': [],
+		'sprites': ['twilight', 'qibli'],
 		'text': 'You decide to approach the pony and the dragon.',
 		'branches': [],
 		'states': [],
@@ -39,20 +39,12 @@ var blocks = {
 		'text': 'Come back my love!!!',
 		'branches': [],
 		'states': [],
-		'next': '2'
-	},
-	'2': {
-		'speaker': '',
-		'sprites': [],
-		'text': 'The pony runs after the drgaon, leaving you alone.',
-		'branches': [],
-		'states': [],
 		'next': 'end'
 	},
 	'end': null,
 	'whoops': {
 		'speaker': '',
-		'sprites': [],
+		'sprites': ['twilight'],
 		'text': 'You see Twilight looking sad.',
 		'branches': [],
 		'states': [],
@@ -70,14 +62,38 @@ var blocks = {
 		'speaker': 'Twilight',
 		'sprites': ['twilight'],
 		'text': 'Player... do you think Qibli will ever love me?',
-		'branches': [['Yes', '5'], ['No', '8'], ['Holy shit a talking pony', '10']],
+		'branches': [['Yes he does love you', '5'], ['No', '8'], ['Holy shit a talking pony', '10']],
 		'states': [],
 		'next': null
+	},
+	'4b': {
+		'speaker': 'Twilight',
+		'sprites': ['twilight'],
+		'text': 'Player... do you think Qibli will ever love me?',
+		'branches': [['idk', 'idk'], ['Holy shit a talking pony', '10']],
+		'states': [],
+		'next': null
+	},
+	'idk': {
+		'speaker': 'You',
+		'sprites': ['twilight'],
+		'text': 'idk',
+		'branches': [],
+		'states': [],
+		'next': 'idk2'
+	},
+	'idk2': {
+		'speaker': 'Twilight',
+		'sprites': ['twilight'],
+		'text': 'Well thanks for nothing, dickhead',
+		'branches': [],
+		'states': [],
+		'next': 'end'
 	},
 	'5': {
 		'speaker': 'You',
 		'sprites': ['twilight'],
-		'text': 'Yes... It\'s just that Qibli thinks he\'s not good enough for you... Be gentle with him.',
+		'text': 'Yes... It\'s just that Qibli thinks he\'s not good enough for you...',
 		'branches': [],
 		'states': [],
 		'next': '6'
@@ -125,7 +141,7 @@ var blocks = {
 	'hot_sexy_makeout_session': {
 		'speaker': '',
 		'sprites': [],
-		'text': 'You see Twilight and Qibli making out passionately in the distance.',
+		'text': 'You see Twilight and Qibli making out passionately.',
 		'branches': [],
 		'states': [],
 		'next': '11'
@@ -137,24 +153,83 @@ var blocks = {
 		'branches': [],
 		'states': [],
 		'next': 'end'
-	}		
+	},
+	'talk_to_qibli': {
+		'speaker': 'You',
+		'sprites': ['qibli'],
+		'text': 'Qibli... don\'t you love her?',
+		'branches': [],
+		'states': [],
+		'next': '12'
+	},
+	'12': {
+		'speaker': 'Qibli',
+		'sprites': ['qibli'],
+		'text': 'I do... Twilight Sparkle is the love of my life... but she can do so much better than me...',
+		'branches': [],
+		'states': [],
+		'next': '13'
+	},
+	'13': {
+		'speaker': 'Qibli',
+		'sprites': ['qibli'],
+		'text': 'It\'s better to let her think I love another...',
+		'branches': [],
+		'states': [],
+		'next': '12b'
+	},
+	'12b': {
+		'speaker': 'You',
+		'sprites': ['qibli'],
+		'text': 'I see',
+		'branches': [],
+		'states': [],
+		'next': 'end'
+	},
+	'sigh': {
+		'speaker': '',
+		'sprites': ['qibli'],
+		'text': 'Qibli sighs sexily and sadly',
+		'branches': [],
+		'states': [],
+		'next': 'end'
+	}
+		
 }
 
 func get_state(key, dict):
 	if key in dict:
 		return dict[key]
 	else:
-		dict[key] = false
 		return false
 		
 func get_block(label, state):
-	if label == '2':
+	if label == 'cool_text':
+		state['talking_to_twi'] = true
+	if (label == 'talk_to_qibli' and not get_state('advised_twi', state)) or label == 'cool_text':
+		state['talking_to_qibli'] = true
+	if label == 'end':
+		state['talking_to_twi'] = false
+		state['talking_to_qibli'] = false
+		
+	if label == '1':
 		state['met_twi_and_qibli'] = true
-	if label == '4':
-		state['advised_twi'] = true
-	if get_state('advised_twi', state) == true and label == 'cool_text':
-		return blocks['hot_sexy_makeout_session']
-	if get_state('met_twi_and_qibli', state) == true and label == 'cool_text':
+	if label == '13':
+		state['talked_to_qibli'] = true
+		
+	if get_state('met_twi_and_qibli', state) and label == 'cool_text':
 		return blocks['whoops']
+	if get_state('advised_twi', state) and label == 'talk_to_qibli':
+		return blocks['hot_sexy_makeout_session']
+	if get_state('talked_to_qibli', state) and label == 'talk_to_qibli':
+		return blocks['sigh']
+		
+	if label == '4':
+		if get_state('talked_to_qibli', state):
+			state['advised_twi'] = true
+			return blocks['4']
+		else:
+			return blocks['4b']
+			
 	else:
 		return blocks[label]

@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 var sprite_y = 280
 var sprite_x = {
@@ -16,8 +16,7 @@ var choice_y = {
 
 func _ready():
 	hide()
-	$text_box/text.text = ''
-	$text_box/speaker.text = ''
+	update_ui('', [], '', [])
 
 func update_ui(speaker, sprites, text, choices):
 	set_speaker(speaker)
@@ -27,6 +26,7 @@ func update_ui(speaker, sprites, text, choices):
 
 func set_speaker(speaker):
 	$text_box/speaker.text = speaker
+	$text_box/speaker.bbcode_text = speaker
 	
 func set_sprites(sprites):
 	for child in $sprites.get_children():
@@ -35,13 +35,14 @@ func set_sprites(sprites):
 	var num = sprites.size()
 	for i in range(num):
 		var sprite = load('res://scenes/char_sprite.tscn').instance()
-		$sprites.add_child(sprite)
 		sprite.set_name(sprites[i])
 		sprite.set_sprite(sprites[i])
 		sprite.position = Vector2(sprite_x[num][i], sprite_y)
+		$sprites.add_child(sprite)
 	
 func set_text(text):
 	$text_box/text.text = text
+	$text_box/text.bbcode_text = text
 	
 func set_choices(choices):
 	var num = choices.size()
@@ -50,11 +51,11 @@ func set_choices(choices):
 		for child in $choices.get_children():
 			child.queue_free()
 		return
+		
 	$text_box.disabled = true
 	for i in range(num):
 		var choice = load('res://scenes/choice.tscn').instance()
-		$choices.add_child(choice)
 		choice.get_node('text').text = choices[i]
 		choice.connect("pressed", get_node("/root/game"), "update_dialog", [i])
 		choice.set_position(Vector2(0, choice_y[num][i]))
-		print(choice.get_rect().position)
+		$choices.add_child(choice)

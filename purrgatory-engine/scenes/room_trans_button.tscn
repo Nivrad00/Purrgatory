@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/oh no.jpg" type="Texture" id=1]
+[ext_resource path="res://scripts/room_trans_button.gd" type="Script" id=2]
+
+[node name="room_trans_button" type="Button"]
+margin_right = 512.0
+margin_bottom = 506.0
+rect_scale = Vector2( 0.311984, 0.311984 )
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 1 )
+flat = true
+script = ExtResource( 2 )
+

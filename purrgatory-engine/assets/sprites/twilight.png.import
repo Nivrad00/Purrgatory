@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/twilight.png-2d394da8aee696bc8fb02ce8b2db63c0.stex"
+path="res://.import/twilight.png-83c4825e010386728ff38e63c952853f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/twilight.png"
-dest_files=[ "res://.import/twilight.png-2d394da8aee696bc8fb02ce8b2db63c0.stex" ]
+source_file="res://assets/sprites/twilight.png"
+dest_files=[ "res://.import/twilight.png-83c4825e010386728ff38e63c952853f.stex" ]
 
 [params]
 

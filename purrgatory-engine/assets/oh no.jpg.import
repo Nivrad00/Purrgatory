@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/qibli.png-c73711de43e5d7078e183b7f2fa30da8.stex"
+path="res://.import/oh no.jpg-9df15c054d056a16b4b49264ce883dcd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/qibli.png"
-dest_files=[ "res://.import/qibli.png-c73711de43e5d7078e183b7f2fa30da8.stex" ]
+source_file="res://assets/oh no.jpg"
+dest_files=[ "res://.import/oh no.jpg-9df15c054d056a16b4b49264ce883dcd.stex" ]
 
 [params]
 

@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="purrgatory-test"
+config/name="Twibli: A Love Story"
 run/main_scene="res://scenes/game.tscn"
 config/icon="res://icon.png"
 
@@ -23,7 +23,8 @@ config/icon="res://icon.png"
 
 window/size/width=1280
 window/size/height=720
-window/size/resizable=false
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [rendering]
 
