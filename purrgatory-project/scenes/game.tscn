@@ -2,6 +2,7 @@
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scripts/dialog_handler.gd" type="Script" id=2]
+<<<<<<< HEAD
 [ext_resource path="res://writing/reception_dialog.gd" type="Script" id=3]
 [ext_resource path="res://writing/oliver_kyungsoon_intro.gd" type="Script" id=4]
 [ext_resource path="res://scripts/room_handler.gd" type="Script" id=5]
@@ -23,6 +24,31 @@ size = 22
 font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=3]
+=======
+[ext_resource path="res://writing/main_dialog.gd" type="Script" id=3]
+[ext_resource path="res://scripts/room_handler.gd" type="Script" id=4]
+[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=5]
+[ext_resource path="res://scripts/ui_handler.gd" type="Script" id=6]
+[ext_resource path="res://assets/ui/text_box.png" type="Texture" id=7]
+[ext_resource path="res://assets/fonts/Krub-MediumItalic.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://assets/fonts/Krub-ExtraLightItalic.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 22
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 22
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=4]
+>>>>>>> 78ff8571ac10c30c03aec01782f36a81d538d9f5
 size = 22
 font_data = ExtResource( 11 )
 
