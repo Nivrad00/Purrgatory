@@ -1,7 +1,6 @@
 extends Control
 
 signal start_dialog(label)
-signal change_room(label)
 
 # each room should have a separate state-handling script
 # (unless that room has no state, in which case you can use state_handler_template.gd)
@@ -15,7 +14,8 @@ func get_value(key, dict):
 
 # modify these functions
 func init_state(state):
-	pass
+	if get_value('drama_ongoing', state):
+		emit_signal('start_dialog', 'drama_start', $kyungsoon_idle)
 	
 func update_state(state):
 	pass

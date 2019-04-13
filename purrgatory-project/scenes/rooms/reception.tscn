@@ -1,0 +1,110 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/reception.gd" type="Script" id=2]
+[ext_resource path="res://assets/rooms/reception.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/portal.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/portal2.png" type="Texture" id=5]
+[ext_resource path="res://scenes/char_obj_button.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/exits/circle.png" type="Texture" id=7]
+[ext_resource path="res://assets/exit_masks/circle.png" type="BitMap" id=8]
+[ext_resource path="res://scenes/characters/receptionist_idle.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/sprites/desk.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/white.png" type="Texture" id=11]
+
+[sub_resource type="Animation" id=1]
+resource_name = "rotate_portal"
+length = 15.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "rotate_portal"
+length = 15.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -360.0 ]
+}
+
+[node name="reception" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 1 )
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+
+[node name="bg" type="Sprite" parent="state_handler"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="portal_sprite" type="Sprite" parent="state_handler"]
+position = Vector2( 1049.18, 373.42 )
+rotation = 4.84092
+texture = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/portal_sprite"]
+autoplay = "rotate_portal"
+anims/rotate_portal = SubResource( 1 )
+
+[node name="portal_sprite2" type="Sprite" parent="state_handler"]
+position = Vector2( 1049.18, 373.42 )
+rotation = -1.87057
+texture = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/portal_sprite2"]
+autoplay = "rotate_portal"
+anims/rotate_portal = SubResource( 2 )
+
+[node name="portal" parent="state_handler" instance=ExtResource( 6 )]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 863.317
+margin_top = 185.317
+margin_right = 1243.32
+margin_bottom = 565.317
+texture_normal = ExtResource( 7 )
+texture_click_mask = ExtResource( 8 )
+expand = true
+dialog_label = "click_portal"
+
+[node name="receptionist_idle" parent="state_handler" instance=ExtResource( 9 )]
+margin_left = 557.755
+margin_top = 316.968
+margin_right = 2057.75
+margin_bottom = 1816.97
+
+[node name="bg2" type="Sprite" parent="state_handler"]
+position = Vector2( 443.815, 292.597 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="fadeout" type="Sprite" parent="state_handler"]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="white_timer" type="Timer" parent="state_handler"]
+one_shot = true
+

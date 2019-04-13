@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/circle.png-630d2d87de3e37dbfd51e84f199cf2b4.res"
+
+[deps]
+
+source_file="res://assets/exit_masks/circle.png"
+dest_files=[ "res://.import/circle.png-630d2d87de3e37dbfd51e84f199cf2b4.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

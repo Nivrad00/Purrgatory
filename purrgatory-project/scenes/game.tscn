@@ -1,45 +1,51 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scripts/dialog_handler.gd" type="Script" id=2]
-[ext_resource path="res://writing/main_dialog.gd" type="Script" id=3]
-[ext_resource path="res://scripts/room_handler.gd" type="Script" id=4]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=5]
-[ext_resource path="res://scripts/ui_handler.gd" type="Script" id=6]
-[ext_resource path="res://assets/ui/text_box.png" type="Texture" id=7]
-[ext_resource path="res://assets/fonts/Krub-MediumItalic.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://assets/fonts/Krub-ExtraLightItalic.ttf" type="DynamicFontData" id=9]
-[ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=10]
-[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://writing/reception_dialog.gd" type="Script" id=3]
+[ext_resource path="res://writing/oliver_kyungsoon_intro.gd" type="Script" id=4]
+[ext_resource path="res://scripts/room_handler.gd" type="Script" id=5]
+[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=6]
+[ext_resource path="res://scripts/ui_handler.gd" type="Script" id=7]
+[ext_resource path="res://assets/ui/text_box.png" type="Texture" id=8]
+[ext_resource path="res://assets/fonts/Krub-MediumItalic.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://assets/fonts/Krub-ExtraLightItalic.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=12]
 
-[sub_resource type="DynamicFont" id=3]
-size = 22
-font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=1]
 size = 22
 font_data = ExtResource( 9 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=2]
 size = 22
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=3]
 size = 22
 font_data = ExtResource( 11 )
 
+[sub_resource type="DynamicFont" id=4]
+size = 22
+font_data = ExtResource( 12 )
+
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
-default_room = "antechamber1"
+default_room = "reception"
 
 [node name="dialog_handler" type="Node" parent="."]
 script = ExtResource( 2 )
 
-[node name="main_dialog" type="Node" parent="dialog_handler"]
+[node name="reception" type="Node" parent="dialog_handler"]
 script = ExtResource( 3 )
 
-[node name="room" type="Control" parent="."]
+[node name="oliver_kyungsoon_intro" type="Node" parent="dialog_handler"]
 script = ExtResource( 4 )
+
+[node name="room" type="Control" parent="."]
+editor/display_folded = true
+script = ExtResource( 5 )
 
 [node name="room_container" type="Control" parent="room"]
 anchor_right = 1.0
@@ -49,12 +55,12 @@ anchor_bottom = 1.0
 margin_right = 1280.0
 margin_bottom = 720.0
 mouse_filter = 2
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 
 [node name="ui" type="Control" parent="."]
 margin_right = 1280.0
 margin_bottom = 720.0
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [node name="sprites" type="Control" parent="ui"]
 
@@ -77,7 +83,7 @@ flat = true
 
 [node name="box" type="Sprite" parent="ui/text_box"]
 position = Vector2( 20, 10 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -87,10 +93,10 @@ margin_top = 23.9275
 margin_right = 316.556
 margin_bottom = 54.9275
 mouse_filter = 1
-custom_fonts/bold_italics_font = SubResource( 3 )
-custom_fonts/italics_font = SubResource( 4 )
-custom_fonts/bold_font = SubResource( 5 )
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "oliver"
@@ -103,10 +109,10 @@ margin_top = 74.8088
 margin_right = 1049.4
 margin_bottom = 198.809
 mouse_filter = 1
-custom_fonts/bold_italics_font = SubResource( 3 )
-custom_fonts/italics_font = SubResource( 4 )
-custom_fonts/bold_font = SubResource( 5 )
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "to be, or not to be: that is the question: whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune, or to take arms against a sea of troubles, and by opposing end them?"

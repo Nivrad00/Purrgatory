@@ -6,6 +6,8 @@ signal change_room(label)
 var hidden_sprite = null
 
 func _ready():
+	$state_handler.connect("start_dialog", self, "start_dialog")
+	$state_handler.connect("change_room", self, "change_room")
 	for child in $state_handler.get_children():
 		var signal_list = child.get_signal_list()
 		for sig in signal_list:

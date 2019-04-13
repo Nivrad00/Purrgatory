@@ -24,7 +24,7 @@ func update_state(state):
 			if 'dialog_label' in child and child.dialog_label == 'read_book':
 				child.hide()
 	
-	if get_value('oliver_why', state):
+	if get_value('oliver_why', state) or get_value('drama_ongoing', state):
 		$oliver_idle.hide()
 	else:
 		$oliver_idle.show()

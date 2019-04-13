@@ -27,6 +27,15 @@ func start_dialog(label):
 		
 	block = $dialog_handler.get_block(label, state)
 	
+	# block = {
+	#   'speaker': string,
+	#   'sprites': [string],
+	#   'text': string,
+	#   'choices': [['nice to meet you', 'kyungsoon_meet'], ['are you ok?', 'kyungsoon_ok']],
+	#   'states': [['met_kyungsoon', true], ['sdfkjsfd', false]],
+	#   'next': null
+	#   }
+	
 	var choices_text = []
 	for choice in block['choices']:
 		choices_text.append(choice[0])

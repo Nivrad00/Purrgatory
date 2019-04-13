@@ -6,7 +6,8 @@
 [ext_resource path="res://scenes/char_obj_button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/exit_masks/exit_square.png" type="BitMap" id=5]
 [ext_resource path="res://scenes/exit_front_back_button.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/oliver_idle.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/characters/oliver_idle.tscn" type="PackedScene" id=7]
+
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0

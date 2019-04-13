@@ -53,6 +53,8 @@ func _ready():
 				
 			if typeof(data[5]) == TYPE_STRING and data[5] == '':
 				block['states'] = []
+			elif typeof(data[5]) == TYPE_STRING:
+				block['states'] = [[data[5], true]]
 			else:
 				block['states'] = data[5]
 				
@@ -83,6 +85,7 @@ func get_state(key, dict):
 func get_block(label, state):
 	if label == null:
 		return null
+	print(label)
 	var block = blocks[label]
 	
 	# deal with empty blocks (choice blocks)
@@ -94,6 +97,7 @@ func get_block(label, state):
 				i = 1
 		if block['next'][i] == null:
 			return null
+		print(block['next'][i])
 		block = blocks[block['next'][i]]
 		
 	var proc_block = {}
