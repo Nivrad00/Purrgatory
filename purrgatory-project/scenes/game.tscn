@@ -12,19 +12,19 @@
 [ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=11]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 22
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=2]
 size = 22
 font_data = ExtResource( 9 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=3]
 size = 22
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=4]
 size = 22
 font_data = ExtResource( 11 )
 
@@ -87,10 +87,10 @@ margin_top = 23.9275
 margin_right = 316.556
 margin_bottom = 54.9275
 mouse_filter = 1
-custom_fonts/bold_italics_font = SubResource( 3 )
-custom_fonts/italics_font = SubResource( 4 )
-custom_fonts/bold_font = SubResource( 5 )
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "oliver"
@@ -103,10 +103,10 @@ margin_top = 74.8088
 margin_right = 1049.4
 margin_bottom = 198.809
 mouse_filter = 1
-custom_fonts/bold_italics_font = SubResource( 3 )
-custom_fonts/italics_font = SubResource( 4 )
-custom_fonts/bold_font = SubResource( 5 )
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "to be, or not to be: that is the question: whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune, or to take arms against a sea of troubles, and by opposing end them?"
