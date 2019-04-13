@@ -34,9 +34,12 @@ func set_sprites(sprites):
 		
 	var num = sprites.size()
 	for i in range(num):
-		var sprite = load('res://scenes/char_sprite.tscn').instance()
+		var sprite = load('res://scenes/characters/' + sprites[i] + '.tscn')
+		if sprite:
+			sprite = sprite.instance()
+		else:
+			continue
 		sprite.set_name(sprites[i])
-		sprite.set_sprite(sprites[i])
 		sprite.position = Vector2(sprite_x[num][i], sprite_y)
 		$sprites.add_child(sprite)
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scripts/dialog_handler.gd" type="Script" id=2]
@@ -10,22 +10,27 @@
 [ext_resource path="res://assets/ui/text_box.png" type="Texture" id=8]
 [ext_resource path="res://assets/fonts/Krub-MediumItalic.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://assets/fonts/Krub-ExtraLightItalic.ttf" type="DynamicFontData" id=10]
-[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
+font_data = ExtResource( 9 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 22
-font_data = ExtResource( 9 )
+font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 22
-font_data = ExtResource( 10 )
+font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 22
-font_data = ExtResource( 11 )
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 10 )
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
@@ -107,7 +112,7 @@ margin_right = 1049.4
 margin_bottom = 198.809
 mouse_filter = 1
 custom_fonts/bold_italics_font = SubResource( 1 )
-custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/italics_font = SubResource( 5 )
 custom_fonts/bold_font = SubResource( 3 )
 custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )

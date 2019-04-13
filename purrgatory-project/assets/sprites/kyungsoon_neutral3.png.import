@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/kyungsoon_neutral.png-55227019907a49ede8b3490164b5b62a.stex"
+path="res://.import/kyungsoon_neutral3.png-f46a4003c17199d558475388c880b144.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/kyungsoon_neutral.png"
-dest_files=[ "res://.import/kyungsoon_neutral.png-55227019907a49ede8b3490164b5b62a.stex" ]
+source_file="res://assets/sprites/kyungsoon_neutral3.png"
+dest_files=[ "res://.import/kyungsoon_neutral3.png-f46a4003c17199d558475388c880b144.stex" ]
 
 [params]
 

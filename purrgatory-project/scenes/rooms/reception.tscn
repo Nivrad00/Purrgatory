@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/reception.gd" type="Script" id=2]
@@ -10,7 +10,8 @@
 [ext_resource path="res://assets/exit_masks/circle.png" type="BitMap" id=8]
 [ext_resource path="res://scenes/characters/receptionist_idle.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/sprites/desk.png" type="Texture" id=10]
-[ext_resource path="res://assets/sprites/white.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/receptionist.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/white.png" type="Texture" id=12]
 
 [sub_resource type="Animation" id=1]
 resource_name = "rotate_portal"
@@ -100,9 +101,15 @@ position = Vector2( 443.815, 292.597 )
 texture = ExtResource( 10 )
 centered = false
 
+[node name="receptionist_idle2" type="Sprite" parent="state_handler"]
+visible = false
+position = Vector2( 503.34, 489.736 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 11 )
+
 [node name="fadeout" type="Sprite" parent="state_handler"]
 modulate = Color( 1, 1, 1, 0 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 centered = false
 
 [node name="white_timer" type="Timer" parent="state_handler"]
