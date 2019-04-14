@@ -3,11 +3,11 @@ extends Node
 
 const seeds = ["Me", "me"]
 
-func _ready():
-	var f = File.new()
-	f.open("res://scripts/procgen/meowkov.json", File.READ)
-	var json = JSON.parse(f.get_as_text())
-	print(generate_text(json.result, 100))
+# func _ready():
+	# var f = File.new()
+	# f.open("res://scripts/procgen/meowkov.json", File.READ)
+	# var json = JSON.parse(f.get_as_text())
+	# print(generate_text(json.result, 100))
 
 func generate_text(jdic, threshold_length):
 	var output = seeds[randi() % seeds.size()]

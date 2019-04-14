@@ -10,8 +10,11 @@
 [ext_resource path="res://assets/exit_masks/exit_side.png" type="BitMap" id=8]
 [ext_resource path="res://assets/exits/commons1_exit1.png" type="Texture" id=9]
 [ext_resource path="res://assets/exit_masks/antechamber3_exit1.png" type="BitMap" id=10]
-[ext_resource path="res://scenes/characters/kyungsoon_idle.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/sprites/kyungsoon_idle.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/cat1_idle.tscn" type="PackedScene" id=12]
+
+
+
 
 [node name="room_template" type="Control"]
 anchor_right = 1.0

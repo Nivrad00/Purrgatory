@@ -8,7 +8,7 @@
 [ext_resource path="res://scenes/char_obj_button.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/exits/circle.png" type="Texture" id=7]
 [ext_resource path="res://assets/exit_masks/circle.png" type="BitMap" id=8]
-[ext_resource path="res://scenes/characters/receptionist_idle.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/sprites/receptionist_idle.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/sprites/desk.png" type="Texture" id=10]
 [ext_resource path="res://assets/sprites/receptionist.png" type="Texture" id=11]
 [ext_resource path="res://assets/sprites/white.png" type="Texture" id=12]
@@ -80,7 +80,6 @@ autoplay = "rotate_portal"
 anims/rotate_portal = SubResource( 2 )
 
 [node name="portal" parent="state_handler" instance=ExtResource( 6 )]
-modulate = Color( 1, 1, 1, 0 )
 margin_left = 863.317
 margin_top = 185.317
 margin_right = 1243.32

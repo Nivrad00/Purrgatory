@@ -4,9 +4,14 @@ export var default_room = ''
 
 var state = {}
 var block = null
+var meowkov_json = null
 
 func _ready():
+	randomize()
 	change_room(default_room)
+	var f = File.new()
+	f.open("res://scripts/procgen/meowkov.json", File.READ)
+	meowkov_json = JSON.parse(f.get_as_text())
 	
 func change_room(label):
 	$room.change_room(label, state)
@@ -46,7 +51,7 @@ func start_dialog(label):
 	$room.update_state(state)
 	
 func end_dialog():
-	$ui.hide()
+	$ui.hide_ui()
 	$room.end_dialog()
 
 func update_dialog(b: int):

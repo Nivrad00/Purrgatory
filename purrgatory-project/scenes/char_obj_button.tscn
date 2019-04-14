@@ -3,6 +3,7 @@
 [ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=1]
 
 [node name="char_obj_button" type="TextureButton"]
+modulate = Color( 1, 1, 1, 0 )
 margin_right = 140.0
 margin_bottom = 134.0
 focus_mode = 0
