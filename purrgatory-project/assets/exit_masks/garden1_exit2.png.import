@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/garden1_exit2.png-749e94d20a38bfcba096bf938a796cbb.res"
+
+[deps]
+
+source_file="res://assets/exit_masks/garden1_exit2.png"
+dest_files=[ "res://.import/garden1_exit2.png-749e94d20a38bfcba096bf938a796cbb.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

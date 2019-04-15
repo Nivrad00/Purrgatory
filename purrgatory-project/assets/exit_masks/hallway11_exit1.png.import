@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/hallway11_exit1.png-a0c7e7d92c01f982d0d7a89f1c54d4c9.res"
+
+[deps]
+
+source_file="res://assets/exit_masks/hallway11_exit1.png"
+dest_files=[ "res://.import/hallway11_exit1.png-a0c7e7d92c01f982d0d7a89f1c54d4c9.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

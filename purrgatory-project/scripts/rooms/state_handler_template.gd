@@ -18,4 +18,7 @@ func init_state(state):
 	pass
 	
 func update_state(state):
-	pass
+	for child in get_children():
+		var key = '_inv_' + child.name
+		if get_value(key, state):
+			child.hide()

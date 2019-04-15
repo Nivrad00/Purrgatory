@@ -2,7 +2,8 @@ extends Node2D
 
 export var default_room = ''
 
-var state = {}
+var state = {
+}
 var block = null
 var meowkov_json = null
 
@@ -27,10 +28,9 @@ func get_state(key):
 		return false
 
 func start_dialog(label):
+	block = $dialog_handler.get_block(label, state)
 	$ui.show()
 	$room.start_dialog()
-		
-	block = $dialog_handler.get_block(label, state)
 	
 	# block = {
 	#   'speaker': string,

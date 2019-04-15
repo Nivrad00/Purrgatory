@@ -13,31 +13,28 @@ var choice_y = {
 	3: [75, 150, 225],
 	4: [60, 120, 180, 240]
 }
-var prev_sprites = null
 
 func _ready():
 	hide_ui()
 	update_ui('', [], '', [])
 
 func hide_ui():
-	prev_sprites = null
 	hide()
 	
 func update_ui(speaker, sprites, text, choices):
-	set_speaker(speaker)
-	set_sprites(sprites)
-	set_text(text)
+	if speaker != null:
+		set_speaker(speaker)
+	if sprites != null:
+		set_sprites(sprites)
+	if text != null:
+		set_text(text)
 	set_choices(choices)
 
 func set_speaker(speaker):
 	$text_box/speaker.text = speaker
 	$text_box/speaker.bbcode_text = speaker
 	
-func set_sprites(sprites):
-	if prev_sprites != null and prev_sprites == sprites:
-		return
-	prev_sprites = sprites
-	
+func set_sprites(sprites):	
 	for child in $sprites.get_children():
 		child.queue_free()
 		

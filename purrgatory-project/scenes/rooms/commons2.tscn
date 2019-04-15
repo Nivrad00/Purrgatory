@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/commons2.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/commons2.png" type="Texture" id=3]
 [ext_resource path="res://scenes/room_trans_button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/exits/exit_side.png" type="Texture" id=5]
@@ -29,7 +29,16 @@ texture_normal = ExtResource( 5 )
 texture_click_mask = ExtResource( 6 )
 room_label = "commons1"
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 7 )]
+[node name="commons_door_exit" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 189.0
+margin_top = 72.0
+margin_right = 340.0
+margin_bottom = 333.0
+texture_normal = ExtResource( 5 )
+texture_click_mask = ExtResource( 6 )
+room_label = "hallway1"
+
+[node name="commons_door_dialog" parent="state_handler" instance=ExtResource( 7 )]
 margin_left = 190.0
 margin_top = 75.0
 margin_right = 339.0
