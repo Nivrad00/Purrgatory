@@ -8,9 +8,32 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Reference",
+"class": "EvalEvaluate",
+"language": "GDScript",
+"path": "res://scripts/evaluator/EvalEvaluate.gd"
+}, {
+"base": "Reference",
+"class": "EvalNode",
+"language": "GDScript",
+"path": "res://scripts/evaluator/EvalNode.gd"
+}, {
+"base": "Reference",
+"class": "EvalTokenizer",
+"language": "GDScript",
+"path": "res://scripts/evaluator/EvalTokenize.gd"
+}, {
+"base": "Reference",
+"class": "EvalTree",
+"language": "GDScript",
+"path": "res://scripts/evaluator/EvalTree.gd"
+} ]
 _global_script_class_icons={
-
+"EvalEvaluate": "",
+"EvalNode": "",
+"EvalTokenizer": "",
+"EvalTree": ""
 }
 
 [application]
