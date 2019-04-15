@@ -5,7 +5,7 @@ var blocks = {}
 var placeholder_block = {
 	'speaker': '',
 	'sprites': [],
-	'text': '(placeholder) text block not found',
+	'text': '(text block not found)',
 	'states': [],
 	'next': null,
 	'choices': []
@@ -14,6 +14,11 @@ var placeholder_block = {
 func _ready():
 	var i = 0
 	var last_block = null
+	
+	var tokenizer = EvalTokenizer.new()
+	var true_tokens = tokenizer.tokenize('true')
+	var true_tree = EvalTree.new(true_tokens)
+	var true_evaluator = EvalEvaluate.new(true_tree.get_tree())
 	
 	for child in get_children():
 		for data in child.raw_blocks:
@@ -59,13 +64,14 @@ func _ready():
 				block['states'] = [[data[4], true]]
 			else:
 				block['states'] = data[4]
-				
-			if typeof(data[5]) == TYPE_STRING and data[5] == '':
-				block['conditions'] = []
-			elif typeof(data[5]) == TYPE_STRING:
-				block['conditions'] = [data[5]]
+			
+			if data[5] == '':
+				block['conditions'] = true_evaluator
 			else:
-				block['conditions'] = data[5]
+				var tokens = tokenizer.tokenize(data[5])
+				var tree = EvalTree.new(tokens)
+				var evaluator = EvalEvaluate.new(tree.get_tree())
+				block['conditions'] = evaluator
 				
 			if typeof(data[6]) == TYPE_STRING and data[6] == '':
 				block['next'] = '_next'
@@ -81,12 +87,18 @@ func _ready():
 			else:
 				block['choices'] = data[8]
 			
+			print(data[7])
+			var new_array = []
 			if typeof(data[7]) == TYPE_STRING and data[7] == '':
-				var new_array = []
-				new_array.resize(block['choices'].size())
-				block['choice_conditions'] = new_array
+				for i in range(block['choices'].size()):
+					new_array.append(true_evaluator)
 			else:
-				block['choice_conditions'] = data[7]
+				for i in range(block['choices'].size()):
+					var tokens = tokenizer.tokenize(data[7][i])
+					var tree = EvalTree.new(tokens)
+					var evaluator = EvalEvaluate.new(tree.get_tree())
+					new_array.append(evaluator)
+			block['choice_conditions'] = new_array
 				
 			last_block = block
 
@@ -108,14 +120,15 @@ func get_block(label, state):
 	# deal with empty blocks (choice blocks)
 	# note: you can't modify the state with an empty block
 	while block['text'] == '_pass':
-		var i = 0
-		for key in block['conditions']:
-			if not get_state(key, state):
-				i = 1
-		if block['next'][i] == null:
+		var next_label
+		if block['conditions'].evaluate(state):
+			next_label = block['next'][0]
+		else:
+			next_label = block['next'][1]
+		if next_label == null:
 			return null
-		print(block['next'][i])
-		block = blocks[block['next'][i]]
+		print(next_label)
+		block = blocks[next_label]
 		
 	var proc_block = {}
 	proc_block['speaker'] = block['speaker']
@@ -125,15 +138,15 @@ func get_block(label, state):
 	
 	var proc_choices = []
 	for i in range(block['choices'].size()):
-		var cond = block['choice_conditions'][i]
-		if cond == null or get_state(cond, state):
+		if block['choice_conditions'][i].evaluate(state):
 			proc_choices.append(block['choices'][i])
 	proc_block['choices'] = proc_choices
 	
-	var i = 0
-	for key in block['conditions']:
-		if not get_state(key, state):
-			i = 1
-	proc_block['next'] = block['next'][i]
+	var next_label
+	if block['conditions'].evaluate(state):
+		next_label = block['next'][0]
+	else:
+		next_label = block['next'][1]
+	proc_block['next'] = next_label
 	
 	return proc_block

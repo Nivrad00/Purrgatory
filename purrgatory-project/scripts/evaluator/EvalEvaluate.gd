@@ -2,6 +2,12 @@ class_name EvalEvaluate
 
 var tree
 
+func get_value(key, dict):
+	if key in dict:
+		return dict[key]
+	else:
+		return false
+		
 func _init(_tree):
 	tree = _tree
 	
@@ -27,7 +33,7 @@ func eval_expr(node, env):
 		Op.NEQ: return lhs != rhs
 		Op.AND: return lhs and rhs
 		Op.OR: return lhs or rhs
-		Op.SYMBOL: return env[node.value]
+		Op.SYMBOL: return get_value(node.value, env)
 		Op.NUM: return node.value
 		Op.NOT: return not rhs
 	

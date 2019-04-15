@@ -3,7 +3,9 @@ extends Node2D
 export var default_room = ''
 
 var state = {
+	'true': true
 }
+
 var block = null
 var meowkov_json = null
 

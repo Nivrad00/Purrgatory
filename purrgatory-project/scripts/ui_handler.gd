@@ -16,9 +16,9 @@ var choice_y = {
 
 func _ready():
 	hide_ui()
-	update_ui('', [], '', [])
 
 func hide_ui():
+	update_ui('', [], '', [])
 	hide()
 	
 func update_ui(speaker, sprites, text, choices):
