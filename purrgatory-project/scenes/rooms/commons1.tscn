@@ -1,20 +1,16 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/commons1.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/commons1.png" type="Texture" id=3]
-[ext_resource path="res://scenes/room_trans_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/exits/exit_square.png" type="Texture" id=5]
-[ext_resource path="res://assets/exit_masks/exit_square.png" type="BitMap" id=6]
+[ext_resource path="res://scenes/sprites/kyungsoon_idle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/sprites/oliver_neutral.png" type="Texture" id=5]
+[ext_resource path="res://scenes/room_trans_button.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/exits/exit_side.png" type="Texture" id=7]
 [ext_resource path="res://assets/exit_masks/exit_side.png" type="BitMap" id=8]
 [ext_resource path="res://assets/exits/commons1_exit1.png" type="Texture" id=9]
 [ext_resource path="res://assets/exit_masks/antechamber3_exit1.png" type="BitMap" id=10]
-[ext_resource path="res://scenes/sprites/kyungsoon_idle.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scenes/cat1_idle.tscn" type="PackedScene" id=12]
-
-
-
+[ext_resource path="res://scenes/cat1_idle.tscn" type="PackedScene" id=11]
 
 [node name="room_template" type="Control"]
 anchor_right = 1.0
@@ -30,16 +26,39 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="room_trans_button" parent="state_handler" instance=ExtResource( 4 )]
+[node name="kyungsoon_idle" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 259.084
+margin_top = 347.237
+margin_right = 519.084
+margin_bottom = 647.237
+
+[node name="oliver_huh" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 589.074
+margin_top = 162.712
+margin_right = 775.074
+margin_bottom = 376.712
+texture_normal = ExtResource( 5 )
+expand = true
+dialog_label = "talk_to_oliver_about_numa"
+
+[node name="flowers_etc" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 699.206
+margin_top = 583.235
+margin_right = 838.206
+margin_bottom = 685.235
+rect_rotation = -43.9
+texture_normal = ExtResource( 5 )
+expand = true
+dialog_label = "flowers_etc"
+
+[node name="room_trans_button" parent="state_handler" instance=ExtResource( 6 )]
 margin_left = 754.0
 margin_top = 92.0
 margin_right = 1042.0
 margin_bottom = 333.0
-texture_normal = ExtResource( 5 )
-texture_click_mask = ExtResource( 6 )
 room_label = "library"
 
-[node name="room_trans_button2" parent="state_handler" instance=ExtResource( 4 )]
+[node name="room_trans_button2" parent="state_handler" instance=ExtResource( 6 )]
 margin_left = 1190.0
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -47,7 +66,7 @@ texture_normal = ExtResource( 7 )
 texture_click_mask = ExtResource( 8 )
 room_label = "commons2"
 
-[node name="room_trans_button4" parent="state_handler" instance=ExtResource( 4 )]
+[node name="room_trans_button4" parent="state_handler" instance=ExtResource( 6 )]
 margin_right = 192.0
 margin_bottom = 741.0
 texture_normal = ExtResource( 9 )
@@ -55,13 +74,7 @@ texture_click_mask = ExtResource( 10 )
 stretch_mode = 2
 room_label = "antechamber5"
 
-[node name="kyungsoon_idle" parent="state_handler" instance=ExtResource( 11 )]
-margin_left = 259.084
-margin_top = 347.237
-margin_right = 519.084
-margin_bottom = 647.237
-
-[node name="cat1_idle" parent="state_handler" instance=ExtResource( 12 )]
+[node name="cat1_idle" parent="state_handler" instance=ExtResource( 11 )]
 margin_left = 901.591
 margin_top = 430.384
 margin_right = 1041.59

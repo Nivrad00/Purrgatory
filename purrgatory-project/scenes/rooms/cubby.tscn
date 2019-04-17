@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/cubby.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/cubby.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_back_button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/char_obj_button.tscn" type="PackedScene" id=5]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -21,4 +22,20 @@ centered = false
 
 [node name="exit_front_back_button" parent="state_handler" instance=ExtResource( 4 )]
 room_label = "vent3"
+
+[node name="char_obj_button" parent="state_handler" instance=ExtResource( 5 )]
+margin_left = 397.162
+margin_top = 584.081
+margin_right = 537.162
+margin_bottom = 651.081
+expand = true
+dialog_label = "numas_notebook"
+
+[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 5 )]
+margin_left = 332.0
+margin_top = 382.0
+margin_right = 395.0
+margin_bottom = 437.0
+expand = true
+dialog_label = "numas_drawing"
 

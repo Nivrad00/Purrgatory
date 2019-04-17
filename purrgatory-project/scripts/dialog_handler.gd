@@ -87,7 +87,6 @@ func _ready():
 			else:
 				block['choices'] = data[8]
 			
-			print(data[7])
 			var new_array = []
 			if typeof(data[7]) == TYPE_STRING and data[7] == '':
 				for i in range(block['choices'].size()):

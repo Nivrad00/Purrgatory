@@ -1,5 +1,8 @@
 extends Control
 
+signal start_dialog(label, sprite)
+signal change_room(label)
+
 # each room should have a separate state-handling script
 # (unless that room has no state, in which case you can use state_handler_template.gd)
 # it updates the room state based on the game state (for example, making doors accessible once they've been unlocked)

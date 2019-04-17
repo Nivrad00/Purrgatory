@@ -1,6 +1,6 @@
 extends Control
 
-signal start_dialog(label)
+signal start_dialog(label, sprite)
 signal change_room(label)
 
 # each room should have a separate state-handling script

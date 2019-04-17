@@ -15,7 +15,9 @@ func _ready():
 				child.connect("start_dialog", self, "start_dialog")
 			if sig['name'] == "change_room":
 				child.connect("change_room", self, "change_room")
-			
+			if sig['name'] == "boop":
+				child.connect("boop", self, "print_meow")
+	
 func update_state(state):
 	$state_handler.update_state(state)
 	if hidden_sprite:
@@ -25,7 +27,8 @@ func init_state(state):
 	$state_handler.init_state(state)
 	
 func start_dialog(label, sprite):
-	sprite.hide()
+	if sprite != null:
+		sprite.hide()
 	hidden_sprite = sprite
 	emit_signal('start_dialog', label)
 

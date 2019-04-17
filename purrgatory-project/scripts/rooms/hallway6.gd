@@ -1,6 +1,6 @@
 extends Control
 
-signal start_dialog(label)
+signal start_dialog(label, sprite)
 signal change_room(label)
 
 # each room should have a separate state-handling script
@@ -22,7 +22,7 @@ func update_state(state):
 		var key = '_inv_' + child.name
 		if get_value(key, state):
 			child.hide()
-	if get_value('opened_vent', state):
+	if get_value('opened_vent', state) and !get_value('numa_snooped', state):
 		$vent_open.show()
 		$vent_closed.hide()
 	else:

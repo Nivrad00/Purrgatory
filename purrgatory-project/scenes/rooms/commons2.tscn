@@ -41,7 +41,8 @@ room_label = "hallway1"
 [node name="commons_door_dialog" parent="state_handler" instance=ExtResource( 7 )]
 margin_left = 190.0
 margin_top = 75.0
-margin_right = 339.0
-margin_bottom = 334.0
+margin_right = 341.0
+margin_bottom = 338.0
+expand = true
 dialog_label = "try_door"
 
