@@ -46,7 +46,6 @@ script = ExtResource( 1 )
 default_room = "reception"
 
 [node name="dialog_handler" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="reception_dialog" type="Node" parent="dialog_handler"]
