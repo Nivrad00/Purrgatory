@@ -2,6 +2,8 @@ extends Control
 
 signal start_dialog(label, sprite)
 signal change_room(label)
+signal set_hidden_sprite(sprite)
+signal start_action_timer(actions, callback)
 
 # each room should have a separate state-handling script
 # (unless that room has no state, in which case you can use state_handler_template.gd)
@@ -15,14 +17,21 @@ func get_value(key, dict):
 
 # modify these functions
 func init_state(state):
-	pass
+	# if you just went from flowerbed to garden6
+	if get_value('flowers_goto_garden', state):
+		emit_signal('set_hidden_sprite', [$numa])
+		state['flowers_goto_garden'] = false
 	
 func update_state(state):
 	for child in get_children():
 		var key = '_inv_' + child.name
 		if get_value(key, state):
 			child.hide()
-			
+	
+	$numa.show()
+	
+	# numa's intro
+	
 	if get_value('trample_flag', state):
 		$numa2.show()
 	else:
@@ -33,11 +42,34 @@ func update_state(state):
 	else:
 		$exit_dialog.hide()
 		
+	# numa's quest
+	
+	if get_value('numa_goto_flowerbed', state):
+		emit_signal('change_room', 'flowerbed')
+		state['numa_goto_flowerbed'] = false
+		
+	if get_value('elijah_show_numa', state):
+		emit_signal('set_hidden_sprite', [$numa])
+		state['elijah_show_numa'] = false
+		
+	if get_value('elijah_working_with_numa_timer', state):
+		state['elijah_working_with_numa_timer'] = false
+		state['poetry_session'] = true
+		emit_signal('start_action_timer', 10, ['poetry_session', false])
+	
+	if get_value('poetry_session', state):
+		$numa.hide()
+		$numa_with_elijah.show()
+	else:
+		$numa_with_elijah.hide()
+	
 	if get_value('numa_goto_commons', state):
 		emit_signal('change_room', 'hallway1')
 		state['numa_goto_commons'] = false
-	
-	if get_value('numa_crying', state):
+		
+	if get_value('numa_crying', state) or get_value('numa_quest_complete', state):
 		$numa.hide()
-	else:
-		$numa.show()
+	
+func end_poetry_session(state):
+	state['poetry_session'] = false
+	

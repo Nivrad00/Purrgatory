@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scripts/dialog_handler.gd" type="Script" id=2]
@@ -8,44 +8,49 @@
 [ext_resource path="res://scripts/dialog/oliver.gd" type="Script" id=6]
 [ext_resource path="res://scripts/dialog/kyungsoon.gd" type="Script" id=7]
 [ext_resource path="res://scripts/dialog/numa.gd" type="Script" id=8]
-[ext_resource path="res://scripts/room_handler.gd" type="Script" id=9]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=10]
-[ext_resource path="res://scripts/ui_handler.gd" type="Script" id=11]
-[ext_resource path="res://assets/ui/text_box.png" type="Texture" id=12]
-[ext_resource path="res://assets/fonts/Krub-MediumItalic.ttf" type="DynamicFontData" id=13]
-[ext_resource path="res://assets/fonts/Krub-ExtraLightItalic.ttf" type="DynamicFontData" id=14]
-[ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=15]
-[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://scripts/dialog/elijah.gd" type="Script" id=9]
+[ext_resource path="res://scripts/dialog/sean.gd" type="Script" id=10]
+[ext_resource path="res://scripts/dialog/flowers.gd" type="Script" id=11]
+[ext_resource path="res://scripts/room_handler.gd" type="Script" id=12]
+[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=13]
+[ext_resource path="res://scripts/ui_handler.gd" type="Script" id=14]
+[ext_resource path="res://assets/ui/text_box.png" type="Texture" id=15]
+[ext_resource path="res://assets/fonts/Krub-MediumItalic.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://assets/fonts/Krub-ExtraLightItalic.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=18]
+[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=19]
+[ext_resource path="res://assets/audio/Purrgatory_Instrumentation.ogg" type="AudioStream" id=20]
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
 use_filter = true
-font_data = ExtResource( 13 )
+font_data = ExtResource( 16 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 22
 use_filter = true
-font_data = ExtResource( 14 )
+font_data = ExtResource( 17 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 22
 use_filter = true
-font_data = ExtResource( 15 )
+font_data = ExtResource( 18 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 22
 use_filter = true
-font_data = ExtResource( 16 )
+font_data = ExtResource( 19 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 22
-font_data = ExtResource( 14 )
+font_data = ExtResource( 17 )
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
 default_room = "reception"
 
 [node name="dialog_handler" type="Node" parent="."]
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="reception_dialog" type="Node" parent="dialog_handler"]
@@ -66,8 +71,18 @@ script = ExtResource( 7 )
 [node name="numa" type="Node" parent="dialog_handler"]
 script = ExtResource( 8 )
 
-[node name="room" type="Control" parent="."]
+[node name="elijah" type="Node" parent="dialog_handler"]
 script = ExtResource( 9 )
+
+[node name="sean" type="Node" parent="dialog_handler"]
+script = ExtResource( 10 )
+
+[node name="flowers" type="Node" parent="dialog_handler"]
+script = ExtResource( 11 )
+
+[node name="room" type="Control" parent="."]
+editor/display_folded = true
+script = ExtResource( 12 )
 
 [node name="room_container" type="Control" parent="room"]
 anchor_right = 1.0
@@ -77,12 +92,13 @@ anchor_bottom = 1.0
 margin_right = 1280.0
 margin_bottom = 720.0
 mouse_filter = 2
-script = ExtResource( 10 )
+script = ExtResource( 13 )
 
 [node name="ui" type="Control" parent="."]
+editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
-script = ExtResource( 11 )
+script = ExtResource( 14 )
 
 [node name="sprites" type="Control" parent="ui"]
 
@@ -105,7 +121,7 @@ flat = true
 
 [node name="box" type="Sprite" parent="ui/text_box"]
 position = Vector2( 20, 10 )
-texture = ExtResource( 12 )
+texture = ExtResource( 15 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -140,5 +156,9 @@ bbcode_enabled = true
 bbcode_text = "to be, or not to be: that is the question: whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune, or to take arms against a sea of troubles, and by opposing end them?"
 text = "to be, or not to be: that is the question: whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune, or to take arms against a sea of troubles, and by opposing end them?"
 scroll_active = false
+
+[node name="main_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+volume_db = -11.495
 
 [connection signal="pressed" from="ui/text_box" to="." method="update_dialog" binds= [ -1 ]]

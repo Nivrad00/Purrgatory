@@ -3,11 +3,32 @@ extends Node2D
 export var default_room = ''
 
 var state = {
-	'true': true
+	'true': true,
+}
+var numa_test_state = {
+	'fed_kyungsoon_book': true,
+	'met_kyungsoon': true,
+	'met_oliver': true,
+	'asked_ks_about_door': true,
+	'checked_out_book': true,
+	'tried_door': true,
+	'_inv_commons_key': true,
+	'met_numa': true,
+	'numa_helping': true,
+	'numa_snooped': true,
+	'numa_started_poem': true,
+	'numa_finished_poem': true,
+	'numa_started_flowers': true,
+	'numa_finished_flowers': true,
+	'numa_started_food': true,
+	'numa_progressed_food': true,
+	'numa_finished_food': true,
+	'met_elijah': true
 }
 
 var block = null
 var meowkov_json = null
+var action_timers = []
 
 func _ready():
 	randomize()
@@ -15,8 +36,22 @@ func _ready():
 	var f = File.new()
 	f.open("res://scripts/procgen/meowkov.json", File.READ)
 	meowkov_json = JSON.parse(f.get_as_text())
+
+func start_action_timer(actions, callback):
+	action_timers.append([actions, callback])
+
+func increment_action_timers():
+	var new_list = []
+	for action_timer in action_timers:
+		action_timer[0] = action_timer[0] - 1
+		if action_timer[0] <= 0:
+			state[action_timer[1][0]] = action_timer[1][1]
+		else:
+			new_list.append(action_timer)
+	action_timers = new_list
 	
 func change_room(label):
+	increment_action_timers()
 	$room.change_room(label, state)
 
 func set_state(key, value):
@@ -29,19 +64,10 @@ func get_state(key):
 		state[key] = false
 		return false
 
-func start_dialog(label):
+func start_dialog(label):	
 	block = $dialog_handler.get_block(label, state)
 	$ui.show()
 	$room.start_dialog()
-	
-	# block = {
-	#   'speaker': string,
-	#   'sprites': [string],
-	#   'text': string,
-	#   'choices': [['nice to meet you', 'kyungsoon_meet'], ['are you ok?', 'kyungsoon_ok']],
-	#   'states': [['met_kyungsoon', true], ['sdfkjsfd', false]],
-	#   'next': null
-	#   }
 	
 	var choices_text = []
 	for choice in block['choices']:
@@ -56,7 +82,7 @@ func end_dialog():
 	$ui.hide_ui()
 	$room.end_dialog()
 
-func update_dialog(b: int):
+func update_dialog(b: int):	
 	if b == -1:
 		block = $dialog_handler.get_block(block['next'], state)
 	else:

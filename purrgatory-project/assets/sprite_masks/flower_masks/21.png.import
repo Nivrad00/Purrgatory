@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/21.png-219cd4efe8043aec912aef2fcb961447.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/flower_masks/21.png"
+dest_files=[ "res://.import/21.png-219cd4efe8043aec912aef2fcb961447.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

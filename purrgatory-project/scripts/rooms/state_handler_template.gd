@@ -2,6 +2,8 @@ extends Control
 
 signal start_dialog(label, sprite)
 signal change_room(label)
+signal set_hidden_sprite(sprite)
+signal start_action_timer(actions, callback)
 
 # each room should have a separate state-handling script
 # (unless that room has no state, in which case you can use state_handler_template.gd)

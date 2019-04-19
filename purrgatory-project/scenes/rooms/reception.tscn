@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/reception.gd" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://assets/sprites/charon_walking1.png" type="Texture" id=13]
 [ext_resource path="res://assets/sprites/charon_walking2.png" type="Texture" id=14]
 [ext_resource path="res://assets/sprites/white.png" type="Texture" id=15]
+[ext_resource path="res://assets/audio/portal.ogg" type="AudioStream" id=16]
 
 [sub_resource type="Animation" id=1]
 resource_name = "rotate_portal"
@@ -74,7 +75,6 @@ margin_bottom = -720.0
 script = ExtResource( 1 )
 
 [node name="state_handler" type="Control" parent="."]
-editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="bg" type="Sprite" parent="state_handler"]
@@ -141,5 +141,10 @@ texture = ExtResource( 15 )
 centered = false
 
 [node name="white_timer" type="Timer" parent="state_handler"]
+wait_time = 2.5
 one_shot = true
+
+[node name="audio" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 16 )
+volume_db = -2.189
 

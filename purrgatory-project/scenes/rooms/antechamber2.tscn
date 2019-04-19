@@ -6,6 +6,8 @@
 [ext_resource path="res://scenes/exit_left_button.tscn" type="PackedScene" id=4]
 
 
+
+
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0

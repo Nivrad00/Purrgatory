@@ -18,6 +18,7 @@ func change_room(label, state):
 	
 	new_room.connect('start_dialog', get_node("/root/game"), 'start_dialog')
 	new_room.connect('change_room', get_node("/root/game"), 'change_room')
+	new_room.connect('start_action_timer', get_node("/root/game"), 'start_action_timer')
 	
 	for child in $room_container.get_children():
 		child.queue_free()

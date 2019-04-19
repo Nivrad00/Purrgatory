@@ -1,13 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/antechamber1.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/antechamber1.png" type="Texture" id=3]
 [ext_resource path="res://scenes/room_trans_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/exits/exit_square.png" type="Texture" id=5]
-[ext_resource path="res://assets/exit_masks/exit_square.png" type="BitMap" id=6]
-
-
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -28,7 +24,5 @@ margin_left = 865.0
 margin_top = 2.0
 margin_right = 1185.0
 margin_bottom = 481.0
-texture_normal = ExtResource( 5 )
-texture_click_mask = ExtResource( 6 )
 room_label = "antechamber2"
 

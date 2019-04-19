@@ -9,6 +9,8 @@
 [ext_resource path="res://scenes/exit_left_button.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/exit_back_button.tscn" type="PackedScene" id=8]
 
+
+
 [sub_resource type="Animation" id=1]
 resource_name = "New Anim"
 length = 12.0

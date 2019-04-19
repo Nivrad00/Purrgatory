@@ -1,14 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/garden6.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/garden6.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_right_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/sprites/numa_idle.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/char_obj_button.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scripts/rooms/garden6_exit_dialog.gd" type="Script" id=7]
-[ext_resource path="res://assets/exits/exit_square_empty.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprites/screwdriver.png" type="Texture" id=9]
+[ext_resource path="res://scenes/sprites/numa_with_elijah.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/sprites/numa_idle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/char_obj_button.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scripts/rooms/garden6_exit_dialog.gd" type="Script" id=8]
+[ext_resource path="res://assets/exits/exit_square_empty.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/screwdriver.png" type="Texture" id=10]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -27,42 +28,51 @@ centered = false
 [node name="exit" parent="state_handler" instance=ExtResource( 4 )]
 room_label = "garden2"
 
-[node name="numa" parent="state_handler" instance=ExtResource( 5 )]
+[node name="numa_with_elijah" parent="state_handler" instance=ExtResource( 5 )]
+visible = false
+margin_left = 755.06
+margin_top = 347.45
+margin_right = 2255.06
+margin_bottom = 1847.45
+
+[node name="numa" parent="state_handler" instance=ExtResource( 6 )]
 margin_left = 841.021
 margin_top = 371.615
 margin_right = 1031.02
 margin_bottom = 524.615
 
-[node name="numa2" parent="state_handler" instance=ExtResource( 5 )]
+[node name="numa2" parent="state_handler" instance=ExtResource( 6 )]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 841.021
 margin_top = 371.615
 margin_right = 1031.02
 margin_bottom = 524.615
 
-[node name="exit_dialog" parent="state_handler" instance=ExtResource( 6 )]
+[node name="exit_dialog" parent="state_handler" instance=ExtResource( 7 )]
+visible = false
 margin_left = 1190.0
 margin_right = 1280.0
 margin_bottom = 720.0
 mouse_filter = 1
 expand = true
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 dialog_label = "numa_leave"
 sprite_path = "../numa"
 
-[node name="screwdriver" parent="state_handler" instance=ExtResource( 6 )]
+[node name="screwdriver" parent="state_handler" instance=ExtResource( 7 )]
 modulate = Color( 1, 1, 1, 1 )
 margin_left = 369.0
 margin_top = 330.0
 margin_right = 407.0
 margin_bottom = 345.0
-texture_normal = ExtResource( 8 )
+texture_normal = ExtResource( 9 )
 expand = true
 dialog_label = "screwdriver"
 
 [node name="sprite" type="Sprite" parent="state_handler/screwdriver"]
 position = Vector2( 18.8414, 6.39828 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [connection signal="mouse_entered" from="state_handler/exit_dialog" to="state_handler/exit_dialog" method="_on_exit_dialog_mouse_entered"]
 [connection signal="mouse_exited" from="state_handler/exit_dialog" to="state_handler/exit_dialog" method="_on_exit_dialog_mouse_exited"]

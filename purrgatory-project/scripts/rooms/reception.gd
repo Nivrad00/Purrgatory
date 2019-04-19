@@ -28,6 +28,7 @@ func update_state(state):
 		$receptionist_idle2.show()		
 	if fade_out_delay == true:
 		fade_out_trigger = true
+		$audio.play()
 	if get_value('recep_entered_portal', state):
 		fade_out_delay = true
 
@@ -43,5 +44,5 @@ func _process(delta):
 			yield($white_timer, 'timeout')
 			emit_signal('change_room', 'antechamber1')
 		else:
-			a = min(a + 0.5 * delta, 1)
+			a = min(a + 0.2 * delta, 1)
 			$fadeout.set_modulate(Color(1, 1, 1, a))

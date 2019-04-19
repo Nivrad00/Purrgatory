@@ -6,7 +6,7 @@ var raw_blocks = [
 ["","you","","i don’t remember how i got here…","","","","",""],
 ["","receptionist","","that's too bad. i need you to sign on this dotted line here.","","","","",""],
 ["","_none","","the receptionist hands you a pen and a clipboard.","","","","",""],
-["","","","registration: \n[  ] heaven\n[x] purrgatory\n[  ] hell","","","","",""],
+["","clipboard","","registration: \n[  ] heaven\n[x] purrgatory\n[  ] hell","","","","",""],
 ["recep_main","","","","","","",['recep_main0', 'recep_main1', 'true'],[["purgatory is spelled wrong", "recep_spelling"], ["what if i don't sign?", "recep_dont"], ["ok", "recep_ok"]]],
 ["recep_spelling","you","","purgatory is spelled wrong here.",[['recep_main0', false]],"","","",""],
 ["","receptionist","","no it's not.","","","","",""],

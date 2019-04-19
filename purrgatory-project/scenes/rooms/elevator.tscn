@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/elevator.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/elevator.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_back_button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/audio/fly_me_to_the_meow.ogg" type="AudioStream" id=5]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -26,4 +27,9 @@ margin_top = 176.0
 margin_right = 780.0
 margin_bottom = 565.0
 room_label = "hallway7"
+
+[node name="audio" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 5 )
+volume_db = -6.0
+autoplay = true
 
