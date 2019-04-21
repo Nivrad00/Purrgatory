@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/exits/antechamber3_exit2.png" type="Texture" id=7]
 [ext_resource path="res://assets/exit_masks/antechamber3_exit2.png" type="BitMap" id=8]
 [ext_resource path="res://scenes/exit_front_button.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/meowrkov-test/char_obj_button.tscn" type="PackedScene" id=10]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -44,4 +45,18 @@ room_label = "antechamber4"
 margin_top = 631.502
 margin_bottom = 721.502
 room_label = "antechamber2"
+
+[node name="char_obj_button" parent="state_handler" instance=ExtResource( 10 )]
+margin_left = 459.0
+margin_top = 108.0
+margin_right = 629.0
+margin_bottom = 190.0
+dialog_label = "library_sign"
+
+[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 10 )]
+margin_left = 652.0
+margin_top = 293.0
+margin_right = 735.0
+margin_bottom = 423.0
+dialog_label = "bell_sign"
 

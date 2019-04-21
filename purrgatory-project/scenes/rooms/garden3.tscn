@@ -1,14 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/garden3.png" type="Texture" id=3]
-[ext_resource path="res://scenes/exit_back_button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/meowrkov-test/char_obj_button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/room_trans_button.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/exits/garden3_exit1.png" type="Texture" id=6]
 [ext_resource path="res://assets/exit_masks/garden3_exit1.png" type="BitMap" id=7]
-
-
+[ext_resource path="res://scenes/exit_back_button.tscn" type="PackedScene" id=8]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -24,8 +23,40 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="exit_front_back_button2" parent="state_handler" instance=ExtResource( 4 )]
-room_label = "garden1"
+[node name="char_obj_button" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 730.0
+margin_top = 236.0
+margin_right = 830.0
+margin_bottom = 350.0
+dialog_label = "weather_drawings"
+
+[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 1105.0
+margin_top = 351.0
+margin_right = 1206.0
+margin_bottom = 534.0
+dialog_label = "weather_drawings"
+
+[node name="char_obj_button3" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 354.0
+margin_top = 425.0
+margin_right = 995.0
+margin_bottom = 557.0
+dialog_label = "catnip"
+
+[node name="char_obj_button4" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 630.0
+margin_top = 538.0
+margin_right = 1103.0
+margin_bottom = 666.0
+dialog_label = "catnip"
+
+[node name="char_obj_button5" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 145.67
+margin_top = 605.0
+margin_right = 403.67
+margin_bottom = 698.0
+dialog_label = "catnip"
 
 [node name="room_trans_button2" parent="state_handler" instance=ExtResource( 5 )]
 margin_left = 148.509
@@ -36,4 +67,7 @@ texture_normal = ExtResource( 6 )
 texture_click_mask = ExtResource( 7 )
 expand = false
 room_label = "garden4"
+
+[node name="exit_front_back_button2" parent="state_handler" instance=ExtResource( 8 )]
+room_label = "garden1"
 

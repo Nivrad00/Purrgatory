@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/hallway7.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/exit_masks/hallway7_exit1.png" type="BitMap" id=7]
 [ext_resource path="res://assets/exits/hallway7_exit2.png" type="Texture" id=8]
 [ext_resource path="res://assets/exit_masks/hallway7_exit2.png" type="BitMap" id=9]
+[ext_resource path="res://scenes/meowrkov-test/char_obj_button.tscn" type="PackedScene" id=10]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -53,4 +54,18 @@ room_label = "elevator"
 
 [node name="exit_front_back_button2" parent="state_handler" instance=ExtResource( 4 )]
 room_label = "hallway8"
+
+[node name="char_obj_button" parent="state_handler" instance=ExtResource( 10 )]
+margin_left = 906.0
+margin_top = 382.0
+margin_right = 931.0
+margin_bottom = 424.0
+dialog_label = "down_button"
+
+[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 10 )]
+margin_left = 1069.0
+margin_top = 314.544
+margin_right = 1174.0
+margin_bottom = 465.544
+dialog_label = "chair_picture"
 

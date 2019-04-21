@@ -1,14 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/garden4.png" type="Texture" id=3]
-[ext_resource path="res://scenes/exit_back_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/room_trans_button.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/exits/garden4_exit1.png" type="Texture" id=6]
-[ext_resource path="res://assets/exit_masks/garden4_exit1.png" type="BitMap" id=7]
-
-
+[ext_resource path="res://scenes/room_trans_button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/exits/garden4_exit1.png" type="Texture" id=5]
+[ext_resource path="res://assets/exit_masks/garden4_exit1.png" type="BitMap" id=6]
+[ext_resource path="res://scenes/meowrkov-test/char_obj_button.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/exit_back_button.tscn" type="PackedScene" id=8]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -24,23 +23,79 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="exit_front_back_button2" parent="state_handler" instance=ExtResource( 4 )]
-room_label = "garden2"
-
-[node name="room_trans_button" parent="state_handler" instance=ExtResource( 5 )]
+[node name="room_trans_button" parent="state_handler" instance=ExtResource( 4 )]
 margin_left = 505.0
 margin_top = 200.0
 margin_right = 714.0
 margin_bottom = 356.0
 room_label = "garden5"
 
-[node name="room_trans_button2" parent="state_handler" instance=ExtResource( 5 )]
+[node name="room_trans_button2" parent="state_handler" instance=ExtResource( 4 )]
 margin_left = 1141.16
 margin_top = 375.0
 margin_right = 1237.16
 margin_bottom = 671.0
-texture_normal = ExtResource( 6 )
-texture_click_mask = ExtResource( 7 )
+texture_normal = ExtResource( 5 )
+texture_click_mask = ExtResource( 6 )
 expand = false
 room_label = "garden3"
+
+[node name="char_obj_button" parent="state_handler" instance=ExtResource( 7 )]
+margin_left = 735.827
+margin_top = 77.3202
+margin_right = 851.827
+margin_bottom = 446.32
+dialog_label = "tree2"
+
+[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 7 )]
+margin_left = 244.0
+margin_top = 90.0
+margin_right = 463.0
+margin_bottom = 326.0
+dialog_label = "tree1"
+
+[node name="char_obj_button3" parent="state_handler" instance=ExtResource( 7 )]
+margin_left = 341.0
+margin_top = 201.0
+margin_right = 379.0
+margin_bottom = 437.0
+dialog_label = "tree1"
+
+[node name="char_obj_button4" parent="state_handler" instance=ExtResource( 7 )]
+margin_left = 97.0
+margin_top = 423.0
+margin_right = 143.0
+margin_bottom = 659.0
+dialog_label = "tree1"
+
+[node name="char_obj_button5" parent="state_handler" instance=ExtResource( 7 )]
+margin_left = 11.5867
+margin_top = 212.453
+margin_right = 268.587
+margin_bottom = 448.453
+dialog_label = "tree1"
+
+[node name="char_obj_button6" parent="state_handler" instance=ExtResource( 7 )]
+margin_left = 338.0
+margin_top = 516.0
+margin_right = 538.0
+margin_bottom = 631.0
+dialog_label = "bush"
+
+[node name="char_obj_button7" parent="state_handler" instance=ExtResource( 7 )]
+margin_left = 687.24
+margin_top = 519.52
+margin_right = 860.24
+margin_bottom = 623.52
+dialog_label = "bush"
+
+[node name="char_obj_button8" parent="state_handler" instance=ExtResource( 7 )]
+margin_left = 977.827
+margin_top = 205.173
+margin_right = 1072.83
+margin_bottom = 396.173
+dialog_label = "vent"
+
+[node name="exit_front_back_button2" parent="state_handler" instance=ExtResource( 8 )]
+room_label = "garden2"
 

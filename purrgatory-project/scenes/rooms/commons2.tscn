@@ -6,9 +6,7 @@
 [ext_resource path="res://scenes/room_trans_button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/exits/exit_side.png" type="Texture" id=5]
 [ext_resource path="res://assets/exit_masks/exit_side.png" type="BitMap" id=6]
-[ext_resource path="res://scenes/char_obj_button.tscn" type="PackedScene" id=7]
-
-
+[ext_resource path="res://scenes/meowrkov-test/char_obj_button.tscn" type="PackedScene" id=7]
 
 [node name="room_template" type="Control"]
 anchor_right = 1.0
@@ -45,6 +43,40 @@ margin_left = 190.0
 margin_top = 75.0
 margin_right = 341.0
 margin_bottom = 338.0
-expand = true
 dialog_label = "try_door"
+
+[node name="char_obj_button" parent="state_handler" instance=ExtResource( 7 )]
+margin_left = 450.0
+margin_top = 215.0
+margin_right = 559.0
+margin_bottom = 382.0
+dialog_label = "commons_chair1"
+
+[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 7 )]
+margin_left = 727.448
+margin_top = 491.0
+margin_right = 912.448
+margin_bottom = 630.0
+dialog_label = "commons_chair2"
+
+[node name="char_obj_button3" parent="state_handler" instance=ExtResource( 7 )]
+margin_left = 968.0
+margin_top = 163.0
+margin_right = 1039.0
+margin_bottom = 363.0
+dialog_label = "poetry_slam_sign"
+
+[node name="char_obj_button4" parent="state_handler" instance=ExtResource( 7 )]
+margin_left = 1005.0
+margin_top = 235.0
+margin_right = 1071.0
+margin_bottom = 444.0
+dialog_label = "poetry_slam_sign"
+
+[node name="char_obj_button5" parent="state_handler" instance=ExtResource( 7 )]
+margin_left = 1043.0
+margin_top = 441.0
+margin_right = 1085.0
+margin_bottom = 515.0
+dialog_label = "poetry_slam_sign"
 

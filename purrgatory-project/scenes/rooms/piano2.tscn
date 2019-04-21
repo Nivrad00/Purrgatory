@@ -1,12 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/piano2.png" type="Texture" id=3]
 [ext_resource path="res://scenes/room_trans_button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/exit_left_button.tscn" type="PackedScene" id=5]
-
-
+[ext_resource path="res://scenes/meowrkov-test/char_obj_button.tscn" type="PackedScene" id=6]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -32,4 +31,32 @@ room_label = "piano4"
 [node name="exit_side_button" parent="state_handler" instance=ExtResource( 5 )]
 margin_right = 95.0
 room_label = "piano1"
+
+[node name="char_obj_button" parent="state_handler" instance=ExtResource( 6 )]
+margin_left = 526.0
+margin_top = 386.0
+margin_right = 796.0
+margin_bottom = 434.0
+dialog_label = "piano"
+
+[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 6 )]
+margin_left = 606.0
+margin_top = 434.0
+margin_right = 716.0
+margin_bottom = 527.0
+dialog_label = "piano"
+
+[node name="char_obj_button3" parent="state_handler" instance=ExtResource( 6 )]
+margin_left = 930.0
+margin_top = 259.0
+margin_right = 1014.0
+margin_bottom = 385.0
+dialog_label = "piano_chair"
+
+[node name="char_obj_button4" parent="state_handler" instance=ExtResource( 6 )]
+margin_left = 1164.0
+margin_top = 621.0
+margin_right = 1248.0
+margin_bottom = 691.0
+dialog_label = "bowling_pin"
 

@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/rooms/reception.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/portal.png" type="Texture" id=4]
 [ext_resource path="res://assets/sprites/portal2.png" type="Texture" id=5]
-[ext_resource path="res://scenes/char_obj_button.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/meowrkov-test/char_obj_button.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/exits/circle.png" type="Texture" id=7]
 [ext_resource path="res://assets/exit_masks/circle.png" type="BitMap" id=8]
 [ext_resource path="res://assets/sprites/chairon.png" type="Texture" id=9]
@@ -82,6 +82,7 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="portal_sprite" type="Sprite" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( 1049.18, 373.42 )
 rotation = 4.84092
 texture = ExtResource( 4 )
@@ -91,6 +92,7 @@ autoplay = "rotate_portal"
 anims/rotate_portal = SubResource( 1 )
 
 [node name="portal_sprite2" type="Sprite" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( 1049.18, 373.42 )
 rotation = -1.87057
 texture = ExtResource( 5 )
@@ -106,7 +108,6 @@ margin_right = 1243.32
 margin_bottom = 565.317
 texture_normal = ExtResource( 7 )
 texture_click_mask = ExtResource( 8 )
-expand = true
 dialog_label = "click_portal"
 
 [node name="chair" type="Sprite" parent="state_handler"]
@@ -144,7 +145,84 @@ centered = false
 wait_time = 2.5
 one_shot = true
 
-[node name="audio" type="AudioStreamPlayer" parent="state_handler"]
+[node name="portal_audio" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 16 )
 volume_db = -2.189
+
+[node name="char_obj_button" parent="state_handler" instance=ExtResource( 6 )]
+margin_left = 84.0
+margin_top = 246.0
+margin_right = 224.0
+margin_bottom = 528.0
+dialog_label = "reception_plant"
+
+[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 6 )]
+margin_left = 240.0
+margin_top = 223.0
+margin_right = 409.0
+margin_bottom = 542.0
+dialog_label = "filing_cabinet"
+
+[node name="char_obj_button7" parent="state_handler" instance=ExtResource( 6 )]
+margin_left = 322.0
+margin_top = 184.0
+margin_right = 407.0
+margin_bottom = 228.0
+dialog_label = "reception_books"
+
+[node name="char_obj_button3" parent="state_handler" instance=ExtResource( 6 )]
+margin_left = 458.0
+margin_top = 87.0
+margin_right = 766.0
+margin_bottom = 179.0
+dialog_label = "reception_sign"
+
+[node name="char_obj_button4" parent="state_handler" instance=ExtResource( 6 )]
+margin_left = 459.0
+margin_top = 409.0
+margin_right = 577.0
+margin_bottom = 569.0
+dialog_label = "reception_desk"
+
+[node name="char_obj_button5" parent="state_handler" instance=ExtResource( 6 )]
+margin_left = 459.0
+margin_top = 409.0
+margin_right = 822.0
+margin_bottom = 476.0
+dialog_label = "reception_desk"
+
+[node name="char_obj_button11" parent="state_handler" instance=ExtResource( 6 )]
+margin_left = 795.0
+margin_top = 409.0
+margin_right = 822.0
+margin_bottom = 561.0
+dialog_label = "reception_desk"
+
+[node name="char_obj_button8" parent="state_handler" instance=ExtResource( 6 )]
+margin_left = 462.0
+margin_top = 357.0
+margin_right = 482.0
+margin_bottom = 401.0
+dialog_label = "reception_water"
+
+[node name="char_obj_button9" parent="state_handler" instance=ExtResource( 6 )]
+margin_left = 493.0
+margin_top = 368.0
+margin_right = 531.0
+margin_bottom = 405.0
+dialog_label = "reception_picture"
+
+[node name="char_obj_button10" parent="state_handler" instance=ExtResource( 6 )]
+margin_left = 698.0
+margin_top = 311.0
+margin_right = 809.0
+margin_bottom = 408.0
+dialog_label = "reception_computer"
+
+[node name="char_obj_button6" parent="state_handler" instance=ExtResource( 6 )]
+margin_left = 792.0
+margin_top = 409.0
+margin_right = 822.0
+margin_bottom = 564.0
+dialog_label = "reception_desk"
 

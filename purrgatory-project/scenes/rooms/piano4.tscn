@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
@@ -7,8 +7,7 @@
 [ext_resource path="res://assets/exits/piano4_exit1.png" type="Texture" id=5]
 [ext_resource path="res://assets/exit_masks/piano4_exit1.png" type="BitMap" id=6]
 [ext_resource path="res://scenes/exit_left_button.tscn" type="PackedScene" id=7]
-
-
+[ext_resource path="res://scenes/meowrkov-test/char_obj_button.tscn" type="PackedScene" id=8]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -44,4 +43,18 @@ room_label = "hallway11"
 margin_top = 630.0
 margin_right = 1280.0
 room_label = "piano2"
+
+[node name="char_obj_button" parent="state_handler" instance=ExtResource( 8 )]
+margin_left = 800.0
+margin_top = 198.0
+margin_right = 881.0
+margin_bottom = 399.0
+dialog_label = "water_tap"
+
+[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 8 )]
+margin_left = 801.0
+margin_top = 403.0
+margin_right = 882.0
+margin_bottom = 501.0
+dialog_label = "trash_can"
 

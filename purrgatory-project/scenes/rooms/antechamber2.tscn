@@ -1,12 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/antechamber2.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_left_button.tscn" type="PackedScene" id=4]
-
-
-
+[ext_resource path="res://scenes/meowrkov-test/char_obj_button.tscn" type="PackedScene" id=5]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -29,4 +27,11 @@ room_label = "antechamber1"
 margin_left = 1190.33
 margin_right = 1280.33
 room_label = "antechamber3"
+
+[node name="char_obj_button" parent="state_handler" instance=ExtResource( 5 )]
+margin_left = 888.0
+margin_top = 264.0
+margin_right = 1069.0
+margin_bottom = 482.0
+dialog_label = "lucifur_wuz_here"
 

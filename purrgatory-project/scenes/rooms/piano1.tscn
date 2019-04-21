@@ -1,12 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/piano1.png" type="Texture" id=3]
-[ext_resource path="res://scenes/room_trans_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/exit_left_button.tscn" type="PackedScene" id=5]
-
-
+[ext_resource path="res://scenes/meowrkov-test/char_obj_button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/room_trans_button.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/exit_left_button.tscn" type="PackedScene" id=6]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -22,16 +21,50 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="room_trans_button" parent="state_handler" instance=ExtResource( 4 )]
+[node name="char_obj_button" parent="state_handler" instance=ExtResource( 4 )]
+margin_top = 133.0
+margin_right = 196.0
+margin_bottom = 168.0
+dialog_label = "pipe"
+
+[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 165.0
+margin_top = 133.0
+margin_right = 217.0
+margin_bottom = 541.0
+dialog_label = "pipe"
+
+[node name="char_obj_button3" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 633.0
+margin_top = 379.0
+margin_right = 939.0
+margin_bottom = 455.0
+dialog_label = "hallway_tally1"
+
+[node name="char_obj_button4" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 964.0
+margin_top = 505.0
+margin_right = 1018.0
+margin_bottom = 534.0
+dialog_label = "pencil"
+
+[node name="char_obj_button5" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 732.0
+margin_top = 133.0
+margin_right = 876.0
+margin_bottom = 236.0
+dialog_label = "cat_drawing"
+
+[node name="room_trans_button" parent="state_handler" instance=ExtResource( 5 )]
 margin_left = 235.0
 margin_right = 523.0
 margin_bottom = 483.0
 room_label = "piano3"
 
-[node name="exit_side_button" parent="state_handler" instance=ExtResource( 5 )]
+[node name="exit_side_button" parent="state_handler" instance=ExtResource( 6 )]
 room_label = "hallway1"
 
-[node name="exit_side_button2" parent="state_handler" instance=ExtResource( 5 )]
+[node name="exit_side_button2" parent="state_handler" instance=ExtResource( 6 )]
 margin_left = 1190.0
 margin_right = 1280.0
 room_label = "piano2"

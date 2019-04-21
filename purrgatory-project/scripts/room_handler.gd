@@ -13,6 +13,7 @@ func end_dialog():
 func change_room(label, state):
 	var new_room = load(room_path + label + '.tscn')
 	if new_room == null:
+		get_node("/root/game").start_dialog("room_placeholder")
 		return
 	new_room = new_room.instance()
 	

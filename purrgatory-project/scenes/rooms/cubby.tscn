@@ -3,10 +3,8 @@
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/cubby.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/cubby.png" type="Texture" id=3]
-[ext_resource path="res://scenes/exit_back_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/char_obj_button.tscn" type="PackedScene" id=5]
-
-
+[ext_resource path="res://scenes/meowrkov-test/char_obj_button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/exit_back_button.tscn" type="PackedScene" id=5]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -22,22 +20,76 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="exit_front_back_button" parent="state_handler" instance=ExtResource( 4 )]
+[node name="char_obj_button3" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = -1.0
+margin_top = 57.0
+margin_right = 402.0
+margin_bottom = 543.0
+dialog_label = "cubby_tally"
+
+[node name="char_obj_button4" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = -1.0
+margin_top = 541.0
+margin_right = 344.0
+margin_bottom = 630.0
+dialog_label = "cubby_tally"
+
+[node name="char_obj_button5" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 403.0
+margin_top = 279.0
+margin_right = 945.0
+margin_bottom = 550.0
+dialog_label = "cubby_tally"
+
+[node name="char_obj_button6" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 402.0
+margin_top = 158.0
+margin_right = 879.0
+margin_bottom = 273.0
+dialog_label = "cubby_tally"
+
+[node name="char_obj_button7" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 949.0
+margin_top = 278.0
+margin_right = 1280.0
+margin_bottom = 621.0
+dialog_label = "cubby_tally"
+
+[node name="char_obj_button8" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 1042.0
+margin_top = 126.0
+margin_right = 1280.0
+margin_bottom = 273.0
+dialog_label = "cubby_tally"
+
+[node name="char_obj_button9" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 505.442
+margin_top = 463.081
+margin_right = 794.442
+margin_bottom = 583.081
+dialog_label = "pillow"
+
+[node name="char_obj_button10" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 384.0
+margin_top = 561.0
+margin_right = 981.0
+margin_bottom = 715.0
+dialog_label = "blanket"
+
+[node name="exit_front_back_button" parent="state_handler" instance=ExtResource( 5 )]
 room_label = "vent3"
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 5 )]
+[node name="char_obj_button" parent="state_handler" instance=ExtResource( 4 )]
 margin_left = 397.162
 margin_top = 584.081
 margin_right = 537.162
 margin_bottom = 651.081
-expand = true
 dialog_label = "numas_notebook"
 
-[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 5 )]
+[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 4 )]
 margin_left = 332.0
 margin_top = 382.0
 margin_right = 395.0
 margin_bottom = 437.0
-expand = true
 dialog_label = "numas_drawing"
 

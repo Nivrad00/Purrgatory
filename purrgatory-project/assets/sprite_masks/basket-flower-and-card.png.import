@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/basket-flower-and-card.png-b2b56c252e6594e501c5889652597b8e.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/basket-flower-and-card.png"
+dest_files=[ "res://.import/basket-flower-and-card.png-b2b56c252e6594e501c5889652597b8e.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

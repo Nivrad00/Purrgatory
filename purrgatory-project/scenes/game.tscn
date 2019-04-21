@@ -19,7 +19,7 @@
 [ext_resource path="res://assets/fonts/Krub-ExtraLightItalic.ttf" type="DynamicFontData" id=17]
 [ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=18]
 [ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=19]
-[ext_resource path="res://assets/audio/Purrgatory_Instrumentation.ogg" type="AudioStream" id=20]
+[ext_resource path="res://assets/audio/Main_theme_320.ogg" type="AudioStream" id=20]
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
@@ -50,7 +50,6 @@ script = ExtResource( 1 )
 default_room = "reception"
 
 [node name="dialog_handler" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="reception_dialog" type="Node" parent="dialog_handler"]
@@ -159,6 +158,5 @@ scroll_active = false
 
 [node name="main_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 20 )
-volume_db = -11.495
 
 [connection signal="pressed" from="ui/text_box" to="." method="update_dialog" binds= [ -1 ]]

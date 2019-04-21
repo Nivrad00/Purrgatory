@@ -5,9 +5,9 @@
 [ext_resource path="res://assets/rooms/commons1.png" type="Texture" id=3]
 [ext_resource path="res://scenes/sprites/numa_at_commons.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/sprites/kyungsoon_idle.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/char_obj_button.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/sprites/catalog.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprite_masks/catalog1.png" type="BitMap" id=8]
+[ext_resource path="res://scenes/meowrkov-test/char_obj_button.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/sprites/basket-flower-and-card.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite_masks/basket-flower-and-card.png" type="BitMap" id=8]
 [ext_resource path="res://scenes/sprites/oliver_huh.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/room_trans_button.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/exits/exit_side.png" type="Texture" id=11]
@@ -31,36 +31,35 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="numa_at_commons" parent="state_handler" instance=ExtResource( 4 )]
-visible = false
-margin_left = 391.91
-margin_top = 316.542
-margin_right = 1891.91
-margin_bottom = 1816.54
+margin_left = 338.464
+margin_top = 278.128
+margin_right = 1838.46
+margin_bottom = 1778.13
+rect_scale = Vector2( 0.6, 0.6 )
 
 [node name="kyungsoon_idle" parent="state_handler" instance=ExtResource( 5 )]
-margin_left = 259.084
-margin_top = 347.237
-margin_right = 519.084
-margin_bottom = 647.237
+margin_left = 235.701
+margin_top = 357.258
+margin_right = 495.701
+margin_bottom = 657.258
 
 [node name="flowers_etc" parent="state_handler" instance=ExtResource( 6 )]
 visible = false
 modulate = Color( 1, 1, 1, 1 )
-margin_left = 700.915
-margin_top = 482.35
-margin_right = 2200.92
-margin_bottom = 1982.35
-rect_scale = Vector2( 0.1, 0.1 )
+margin_left = 658.709
+margin_top = 529.078
+margin_right = 2158.71
+margin_bottom = 2029.08
 texture_normal = ExtResource( 7 )
 texture_click_mask = ExtResource( 8 )
 dialog_label = "flowers_etc"
 
 [node name="oliver_huh" parent="state_handler" instance=ExtResource( 9 )]
-visible = false
-margin_left = 572.791
-margin_top = 200.477
-margin_right = 2072.79
-margin_bottom = 1700.48
+margin_left = 557.114
+margin_top = 122.547
+margin_right = 2057.11
+margin_bottom = 1622.55
+rect_scale = Vector2( 0.6, 0.6 )
 dialog_label = "talk_to_oliver_about_numa"
 
 [node name="room_trans_button" parent="state_handler" instance=ExtResource( 10 )]
@@ -91,4 +90,11 @@ margin_left = 901.591
 margin_top = 430.384
 margin_right = 1041.59
 margin_bottom = 564.384
+
+[node name="char_obj_button" parent="state_handler" instance=ExtResource( 6 )]
+margin_left = 1093.0
+margin_top = 176.0
+margin_right = 1163.0
+margin_bottom = 370.0
+dialog_label = "commons_lamp"
 

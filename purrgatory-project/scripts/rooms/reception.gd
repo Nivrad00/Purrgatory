@@ -10,7 +10,7 @@ signal change_room(label)
 var fade_out_delay = false
 var fade_out_trigger = false
 var charon_moving = false
-
+	
 func get_value(key, dict):
 	if key in dict:
 		return dict[key]
@@ -28,7 +28,8 @@ func update_state(state):
 		$receptionist_idle2.show()		
 	if fade_out_delay == true:
 		fade_out_trigger = true
-		$audio.play()
+		$portal_audio.play()
+		$portal.hide()
 	if get_value('recep_entered_portal', state):
 		fade_out_delay = true
 

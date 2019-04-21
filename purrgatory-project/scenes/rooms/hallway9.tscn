@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
@@ -7,8 +7,7 @@
 [ext_resource path="res://assets/exits/hallway9_exit1.png" type="Texture" id=5]
 [ext_resource path="res://assets/exit_masks/hallway9_exit1.png" type="BitMap" id=6]
 [ext_resource path="res://scenes/exit_right_button.tscn" type="PackedScene" id=7]
-
-
+[ext_resource path="res://scenes/meowrkov-test/char_obj_button.tscn" type="PackedScene" id=8]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -43,4 +42,32 @@ room_label = "hallway8"
 
 [node name="exit_side_button2" parent="state_handler" instance=ExtResource( 7 )]
 room_label = "hallway10"
+
+[node name="char_obj_button" parent="state_handler" instance=ExtResource( 8 )]
+margin_left = 274.0
+margin_top = 141.0
+margin_right = 340.0
+margin_bottom = 205.0
+dialog_label = "spiderweb2"
+
+[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 8 )]
+margin_left = 747.0
+margin_top = 280.0
+margin_right = 802.0
+margin_bottom = 324.0
+dialog_label = "meowseum_lamp"
+
+[node name="char_obj_button3" parent="state_handler" instance=ExtResource( 8 )]
+margin_left = 817.0
+margin_top = 610.0
+margin_right = 940.0
+margin_bottom = 643.0
+dialog_label = "tile"
+
+[node name="char_obj_button4" parent="state_handler" instance=ExtResource( 8 )]
+margin_left = 520.0
+margin_top = 318.0
+margin_right = 598.0
+margin_bottom = 351.0
+dialog_label = "exit_sign"
 

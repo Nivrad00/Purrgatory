@@ -18,15 +18,6 @@ func init_state(state):
 		state['oliver_why'] = false
 	
 func update_state(state):
-	if get_value('met_oliver', state):
-		for child in get_children():
-			if 'dialog_label' in child and child.dialog_label == 'read_book':
-				child.show()
-	else:
-		for child in get_children():
-			if 'dialog_label' in child and child.dialog_label == 'read_book':
-				child.hide()
-	
 	if get_value('oliver_why', state) or get_value('drama_ongoing', state):
 		$oliver_idle.hide()
 	else:

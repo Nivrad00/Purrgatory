@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/office ambience SoundEffectsFactory.ogg-8d8d5028adc66f57d36509a664180eb7.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/office ambience SoundEffectsFactory.ogg"
+dest_files=[ "res://.import/office ambience SoundEffectsFactory.ogg-8d8d5028adc66f57d36509a664180eb7.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

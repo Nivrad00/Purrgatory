@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
@@ -8,8 +8,7 @@
 [ext_resource path="res://assets/exit_masks/garden1_exit1.png" type="BitMap" id=6]
 [ext_resource path="res://assets/exits/garden1_exit2.png" type="Texture" id=7]
 [ext_resource path="res://assets/exit_masks/garden1_exit2.png" type="BitMap" id=8]
-
-
+[ext_resource path="res://scenes/meowrkov-test/char_obj_button.tscn" type="PackedScene" id=9]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -51,4 +50,53 @@ margin_top = 240.0
 margin_right = 741.0
 margin_bottom = 469.0
 room_label = "garden3"
+
+[node name="char_obj_button" parent="state_handler" instance=ExtResource( 9 )]
+margin_left = 290.0
+margin_top = 274.0
+margin_right = 471.0
+margin_bottom = 313.0
+dialog_label = "supplies"
+
+[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 9 )]
+margin_left = 275.0
+margin_top = 344.0
+margin_right = 334.0
+margin_bottom = 383.0
+dialog_label = "bricks"
+
+[node name="char_obj_button3" parent="state_handler" instance=ExtResource( 9 )]
+margin_left = 365.0
+margin_top = 354.0
+margin_right = 403.0
+margin_bottom = 379.0
+dialog_label = "dried_flower"
+
+[node name="char_obj_button4" parent="state_handler" instance=ExtResource( 9 )]
+margin_left = 301.0
+margin_top = 428.0
+margin_right = 391.0
+margin_bottom = 491.0
+dialog_label = "boots"
+
+[node name="char_obj_button5" parent="state_handler" instance=ExtResource( 9 )]
+margin_left = 534.0
+margin_top = 593.0
+margin_right = 607.0
+margin_bottom = 708.0
+dialog_label = "potted_plant"
+
+[node name="char_obj_button6" parent="state_handler" instance=ExtResource( 9 )]
+margin_left = 912.0
+margin_top = 460.0
+margin_right = 1010.0
+margin_bottom = 668.0
+dialog_label = "potted_plant"
+
+[node name="char_obj_button7" parent="state_handler" instance=ExtResource( 9 )]
+margin_left = 739.0
+margin_top = 602.0
+margin_right = 849.0
+margin_bottom = 656.0
+dialog_label = "pot"
 
