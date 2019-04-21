@@ -74,9 +74,8 @@ action = "ui_enter"
 shortcut = SubResource( 11 )
 
 [node name="game" type="Node2D"]
-editor/display_folded = true
 script = ExtResource( 1 )
-default_room = "reception"
+default_room = "garden6"
 
 [node name="dialog_handler" type="Node" parent="."]
 script = ExtResource( 2 )
@@ -109,6 +108,7 @@ script = ExtResource( 10 )
 script = ExtResource( 11 )
 
 [node name="room" type="Control" parent="."]
+editor/display_folded = true
 script = ExtResource( 12 )
 
 [node name="room_container" type="Control" parent="room"]
@@ -238,6 +238,6 @@ flat = true
 stream = ExtResource( 22 )
 
 [connection signal="pressed" from="ui/text_box" to="." method="update_dialog" binds= [ -1 ]]
-[connection signal="pressed" from="ui/name_input/ok_button" to="." method="update_dialog" binds= [ -1 ]]
-[connection signal="pressed" from="ui/name_input/ok_button" to="." method="set_player_name"]
 [connection signal="pressed" from="ui/name_input/ok_button" to="ui/name_input" method="hide"]
+[connection signal="pressed" from="ui/name_input/ok_button" to="." method="set_player_name"]
+[connection signal="pressed" from="ui/name_input/ok_button" to="." method="update_dialog" binds= [ -1 ]]

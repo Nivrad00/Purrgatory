@@ -77,10 +77,10 @@ centered = false
 offset = Vector2( -7.68423, 41.1628 )
 
 [node name="flower_area" type="Control" parent="state_handler"]
-margin_left = 1.22772
-margin_top = 272.344
-margin_right = 1281.23
-margin_bottom = 556.344
+margin_left = 1.0
+margin_top = 300.822
+margin_right = 1281.0
+margin_bottom = 546.822
 
 [node name="flower_timer" type="Sprite" parent="state_handler"]
 position = Vector2( 95.9423, 77.3262 )

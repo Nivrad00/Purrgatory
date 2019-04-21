@@ -5,10 +5,10 @@ signal change_room(label)
 
 var flower_button = load('res://scenes/sprites/flower_button.tscn')
 var max_id = 46
-var num_flowers = 80
+var num_flowers = 70
 var num_targets = 8
 var flower_min_dist = 50
-var game_duration = 75
+var game_duration = 85
 var flowers = []
 
 var target_ids = []

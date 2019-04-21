@@ -28,6 +28,6 @@ func _process(delta):
 			$game.show()
 			$main_menu/audio.stop()
 		else:
-			a = max(a - 0.6 * delta, 0)
-			$main_menu/audio.volume_db = $main_menu/audio.volume_db - 15 * delta
+			a = max(a - 2 * delta, 0)
+			$main_menu/audio.volume_db = $main_menu/audio.volume_db - 40 * delta
 			$main_menu.set_modulate(Color(1, 1, 1, a))
