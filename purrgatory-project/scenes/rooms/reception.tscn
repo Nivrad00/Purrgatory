@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/rooms/reception.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/portal.png" type="Texture" id=4]
 [ext_resource path="res://assets/sprites/portal2.png" type="Texture" id=5]
-[ext_resource path="res://scenes/meowrkov-test/char_obj_button.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/char_obj_button.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/exits/circle.png" type="Texture" id=7]
 [ext_resource path="res://assets/exit_masks/circle.png" type="BitMap" id=8]
 [ext_resource path="res://assets/sprites/chairon.png" type="Texture" id=9]
@@ -75,6 +75,7 @@ margin_bottom = -720.0
 script = ExtResource( 1 )
 
 [node name="state_handler" type="Control" parent="."]
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="bg" type="Sprite" parent="state_handler"]

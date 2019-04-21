@@ -5,7 +5,7 @@ export var default_room = ''
 var state = {
 	'true': true,
 }
-var numa_test_state = {
+var test_state = {
 	'fed_kyungsoon_book': true,
 	'met_kyungsoon': true,
 	'met_oliver': true,
@@ -24,6 +24,11 @@ var numa_test_state = {
 	'numa_progressed_food': true,
 	'numa_finished_food': true,
 	'met_elijah': true
+}
+
+var format_dict = {
+	'player': '',
+	'player_upper': ''
 }
 
 var block = null
@@ -95,8 +100,14 @@ func update_dialog(b: int):
 		var choices_text = []
 		for choice in block['choices']:
 			choices_text.append(choice[0])
-		$ui.update_ui(block['speaker'], block['sprites'], block['text'], choices_text)
+		var text = block['text']
+		if text != null:
+			text = text.format(format_dict)
+		$ui.update_ui(block['speaker'], block['sprites'], text, choices_text)
 		
 		for pair in block['states']:
 			set_state(pair[0], pair[1])	
 		$room.update_state(state)
+
+func set_player_name():
+	format_dict['player'] = $ui/name_input/text.get_text().to_lower()

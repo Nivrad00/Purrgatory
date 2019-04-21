@@ -6,7 +6,8 @@
 [ext_resource path="res://scenes/room_trans_button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/exits/exit_side.png" type="Texture" id=5]
 [ext_resource path="res://assets/exit_masks/exit_side.png" type="BitMap" id=6]
-[ext_resource path="res://scenes/meowrkov-test/char_obj_button.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/char_obj_button.tscn" type="PackedScene" id=7]
+
 
 [node name="room_template" type="Control"]
 anchor_right = 1.0

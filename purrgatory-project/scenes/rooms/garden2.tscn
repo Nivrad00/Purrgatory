@@ -7,7 +7,8 @@
 [ext_resource path="res://assets/exits/garden2_exit1.png" type="Texture" id=5]
 [ext_resource path="res://assets/exit_masks/garden2_exit1.png" type="BitMap" id=6]
 [ext_resource path="res://scenes/exit_left_button.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/meowrkov-test/char_obj_button.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/char_obj_button.tscn" type="PackedScene" id=8]
+
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0

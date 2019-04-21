@@ -8,7 +8,7 @@ var raw_blocks = [
 ["","???","","oh, hello","","","","",""],
 ["","you","","gardening, huh?","","","","",""],
 ["","_none","","she nods","","","","",""],
-["","you","","i'm $player. what's your name?","","","","",""],
+["","you","","i'm {player}. what's your name?","","","","",""],
 ["","???","","numa.","","","","",""],
 ["","","","","","","","",[['it\'s cool that purrgatory has a garden', 'numa_garden'], ['i can\'t believe plants can grow here', 'numa_grow'], ['your flowers smell kind of bad', 'numa_smell']]],
 ["numa_garden","you","","it's cool that purrgatory has a garden","","","numa_blank1","",""],

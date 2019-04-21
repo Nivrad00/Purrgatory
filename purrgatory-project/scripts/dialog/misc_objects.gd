@@ -104,5 +104,8 @@ var raw_blocks = [
 ["leaf","_none","_none","a leaf.","","","","",""],
 ["","_none","_none","why would anyone leaf this lying around?","","","null","",""],
 ["stick","_none","_none","a stick.","","","null","",""],
-["leaves","_none","_none","more leaves.","","","null","",""]
+["leaves","_none","_none","more leaves.","","","null","",""],
+["ending_sign","_none","_none","(this is the end of the current build.)","","","","",""],
+["","","","(there are no more objectives to complete.)","","","","",""],
+["","","","(thank you for playing!)","","","null","",""]
 ]

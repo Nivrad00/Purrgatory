@@ -39,8 +39,12 @@ func update_state(state):
 		
 	if get_value('numa_at_commons', state):
 		$numa_at_commons.show()
+		$ending_sign.show()
+		$cat1_idle.hide()
 	else:
 		$numa_at_commons.hide()
+		$ending_sign.hide()
+		$cat1_idle.show()
 		
 	if get_value('ks_at_vent', state):
 		$kyungsoon_idle.hide()

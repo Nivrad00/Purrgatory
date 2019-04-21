@@ -2,10 +2,11 @@
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
-[ext_resource path="res://scenes/meowrkov-test/char_obj_button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/char_obj_button.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/room_trans_button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/exit_front_button.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/exit_left_button.tscn" type="PackedScene" id=6]
+
 
 
 

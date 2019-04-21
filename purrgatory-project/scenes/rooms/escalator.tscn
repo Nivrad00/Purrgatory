@@ -8,7 +8,8 @@
 [ext_resource path="res://assets/rooms/escalator1.png" type="Texture" id=6]
 [ext_resource path="res://scenes/exit_left_button.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/exit_back_button.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/meowrkov-test/char_obj_button.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/char_obj_button.tscn" type="PackedScene" id=9]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "New Anim"

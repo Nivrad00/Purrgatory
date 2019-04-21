@@ -228,7 +228,7 @@ var raw_blocks = [
 ["","","","seems like your work here is done.","","","null","",""],
 ["ks_and_numa_commons_c1","_none","_none","_pass","","not ks_and_numa_commons1_done",['ks_and_numa_commons1', 'ks_and_numa_commons_c2'],"",""],
 ["ks_and_numa_commons_c2","","","_pass","","not ks_and_numa_commons2_done",['ks_and_numa_commons2', 'ks_and_numa_commons3'],"",""],
-["ks_and_numa_commons1","numa",['kyungsoon_neutral', 'numa_neutral'],"oh, hi, $player!","display_kyungsoon_and_numa","","","",""],
+["ks_and_numa_commons1","numa",['kyungsoon_neutral', 'numa_neutral'],"oh, hi, {player}!","display_kyungsoon_and_numa","","","",""],
 ["","you","","heyo!","ks_and_numa_commons1_done","","","",""],
 ["","numa","","kyungsoon and i are talking about our favorite foods.","","","","",""],
 ["","kyungsoon","","mine is steak","","","","",""],

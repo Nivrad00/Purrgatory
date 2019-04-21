@@ -9,7 +9,8 @@
 [ext_resource path="res://assets/exit_masks/hallway7_exit1.png" type="BitMap" id=7]
 [ext_resource path="res://assets/exits/hallway7_exit2.png" type="Texture" id=8]
 [ext_resource path="res://assets/exit_masks/hallway7_exit2.png" type="BitMap" id=9]
-[ext_resource path="res://scenes/meowrkov-test/char_obj_button.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/char_obj_button.tscn" type="PackedScene" id=10]
+
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0

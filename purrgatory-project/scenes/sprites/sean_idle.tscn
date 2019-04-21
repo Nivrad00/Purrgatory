@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/sprites/sean-idle_3.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/sean-idle_2.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprite_masks/sean-idle_1.png" type="BitMap" id=2]
 [ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=3]
 [ext_resource path="res://assets/sprites/sean-idle_1.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/sean-idle_2.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/sean-idle_3.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "oliver_idle"
@@ -15,12 +15,12 @@ tracks/0/path = NodePath(".:texture_normal")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 1 ) ]
+"values": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 5 ) ]
 }
 
 [node name="sean_idle" type="TextureButton"]

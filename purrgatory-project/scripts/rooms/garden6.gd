@@ -60,8 +60,10 @@ func update_state(state):
 	if get_value('poetry_session', state):
 		$numa.hide()
 		$numa_with_elijah.show()
+		$elijah_with_numa.show()
 	else:
 		$numa_with_elijah.hide()
+		$elijah_with_numa.hide()
 	
 	if get_value('numa_goto_commons', state):
 		emit_signal('change_room', 'hallway1')
