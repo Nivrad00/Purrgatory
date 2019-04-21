@@ -1,16 +1,17 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/hallway8.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/hallway8.png" type="Texture" id=3]
 [ext_resource path="res://scenes/char_obj_button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/exit_left_button.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/exits/hallway8_exit1.png" type="Texture" id=6]
-[ext_resource path="res://assets/exit_masks/hallway8_exit1.png" type="BitMap" id=7]
-[ext_resource path="res://assets/sprites/chair.png" type="Texture" id=8]
-[ext_resource path="res://scenes/sprites/elijah_idle.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/sprites/sean_idle.tscn" type="PackedScene" id=10]
-
+[ext_resource path="res://assets/exits/hallway8_exit2.png" type="Texture" id=6]
+[ext_resource path="res://assets/exit_masks/hallway8_exit2.png" type="BitMap" id=7]
+[ext_resource path="res://assets/exits/hallway8_exit1.png" type="Texture" id=8]
+[ext_resource path="res://assets/exit_masks/hallway8_exit1.png" type="BitMap" id=9]
+[ext_resource path="res://assets/sprites/chair.png" type="Texture" id=10]
+[ext_resource path="res://scenes/sprites/elijah_idle.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/sprites/sean_idle.tscn" type="PackedScene" id=12]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -34,10 +35,14 @@ margin_bottom = 448.0
 dialog_label = "club_chair"
 
 [node name="exit_side_button" parent="state_handler" instance=ExtResource( 5 )]
-margin_left = 406.0
-margin_top = 212.0
-margin_right = 625.0
-margin_bottom = 386.0
+margin_left = 402.0
+margin_top = 209.0
+margin_right = 624.0
+margin_bottom = 387.0
+rect_pivot_offset = Vector2( -128.256, 4.74733 )
+texture_normal = ExtResource( 6 )
+texture_click_mask = ExtResource( 7 )
+expand = false
 room_label = "hallway7"
 
 [node name="exit_side_button3" parent="state_handler" instance=ExtResource( 5 )]
@@ -45,22 +50,22 @@ margin_left = 1008.81
 margin_top = 238.039
 margin_right = 1182.81
 margin_bottom = 703.039
-texture_normal = ExtResource( 6 )
-texture_click_mask = ExtResource( 7 )
+texture_normal = ExtResource( 8 )
+texture_click_mask = ExtResource( 9 )
 expand = false
 room_label = "hallway9"
 
 [node name="chair" type="Sprite" parent="state_handler"]
 position = Vector2( 92.4039, 562.921 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 
-[node name="elijah_idle" parent="state_handler" instance=ExtResource( 9 )]
+[node name="elijah_idle" parent="state_handler" instance=ExtResource( 11 )]
 margin_left = 50.4116
 margin_top = 423.784
 margin_right = 208.412
 margin_bottom = 662.784
 
-[node name="sean_idle" parent="state_handler" instance=ExtResource( 10 )]
+[node name="sean_idle" parent="state_handler" instance=ExtResource( 12 )]
 margin_left = 326.409
 margin_top = 353.125
 margin_right = 1826.41

@@ -7,7 +7,6 @@
 [ext_resource path="res://scenes/room_trans_button.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/exit_left_button.tscn" type="PackedScene" id=6]
 
-
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -54,7 +53,7 @@ margin_left = 732.0
 margin_top = 133.0
 margin_right = 876.0
 margin_bottom = 236.0
-dialog_label = "cat_drawing"
+dialog_label = "cat_picture"
 
 [node name="room_trans_button" parent="state_handler" instance=ExtResource( 5 )]
 margin_left = 235.0

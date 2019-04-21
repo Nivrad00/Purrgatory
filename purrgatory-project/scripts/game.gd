@@ -77,7 +77,10 @@ func start_dialog(label):
 	var choices_text = []
 	for choice in block['choices']:
 		choices_text.append(choice[0])
-	$ui.update_ui(block['speaker'], block['sprites'], block['text'], choices_text)
+	var text = block['text']
+	if text != null:
+		text = text.format(format_dict)
+	$ui.update_ui(block['speaker'], block['sprites'], text, choices_text)
 	
 	for pair in block['states']:
 		set_state(pair[0], pair[1])	

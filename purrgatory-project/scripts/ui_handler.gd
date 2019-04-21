@@ -65,6 +65,6 @@ func set_choices(choices):
 	for i in range(num):
 		var choice = load('res://scenes/choice' + String(i) + '.tscn').instance()
 		choice.get_node('text').text = choices[i]
-		choice.connect("pressed", get_node("/root/game"), "update_dialog", [i])
+		choice.connect("pressed", get_parent(), "update_dialog", [i])
 		choice.set_position(Vector2(0, choice_y[num][i]))
 		$choices.add_child(choice)

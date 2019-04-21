@@ -24,8 +24,8 @@ func init_state(state):
 func update_state(state):
 	if get_value('enable_name_input', state):
 		state['enable_name_input'] = false
-		get_node('/root/game/ui/name_input').show()
-		get_node('/root/game/ui/name_input/text').grab_focus()
+		get_node('../../../../ui/name_input').show()
+		get_node('../../../../ui/name_input/text').grab_focus()
 		
 	if get_value('enable_name_input_flag', state):
 		state['enable_name_input'] = true

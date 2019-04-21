@@ -8,7 +8,7 @@ var max_id = 46
 var num_flowers = 80
 var num_targets = 8
 var flower_min_dist = 50
-var game_duration = 90
+var game_duration = 75
 var flowers = []
 
 var target_ids = []

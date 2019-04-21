@@ -9,7 +9,6 @@
 [ext_resource path="res://scenes/char_obj_button.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/exit_back_button.tscn" type="PackedScene" id=8]
 
-
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -95,7 +94,7 @@ margin_left = 977.827
 margin_top = 205.173
 margin_right = 1072.83
 margin_bottom = 396.173
-dialog_label = "vent"
+dialog_label = "vine"
 
 [node name="exit_front_back_button2" parent="state_handler" instance=ExtResource( 8 )]
 room_label = "garden2"

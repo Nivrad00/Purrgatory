@@ -75,7 +75,6 @@ margin_bottom = -720.0
 script = ExtResource( 1 )
 
 [node name="state_handler" type="Control" parent="."]
-editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="bg" type="Sprite" parent="state_handler"]
@@ -148,7 +147,7 @@ one_shot = true
 
 [node name="portal_audio" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 16 )
-volume_db = -2.189
+volume_db = -6.0
 
 [node name="char_obj_button" parent="state_handler" instance=ExtResource( 6 )]
 margin_left = 84.0

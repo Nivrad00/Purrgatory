@@ -55,7 +55,7 @@ var raw_blocks = [
 ["read_book","_none","_none","_pass","","book_state_2",['book3', 'book_choice'],"",""],
 ["book_choice","","","_pass","","book_state",['book2', 'book_choice2'],"",""],
 ["book_choice2","","","_pass","","met_oliver",['book1', 'book0'],"",""],
-["book0","_none","_none","there seem to be thousands and thousands of books.","","","null","",""],
+["book0","_none","_none","lots and lots of books.","","","null","",""],
 ["book1","_none","","you grab a book from the shelves.","","","","",""],
 ["","_none","book","it's just the word \"meow\" over and over.",[['book_state', true]],"","","",""],
 ["","oliver","","oh, i forgot to mention, our collection is a bit… limited.","","","","",""],

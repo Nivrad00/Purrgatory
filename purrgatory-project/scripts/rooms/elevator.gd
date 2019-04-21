@@ -17,7 +17,7 @@ func get_value(key, dict):
 
 # modify these functions
 func init_state(state):
-	get_node('/root/game/main_audio').stop()
+	get_node("../../../../main_audio").stop()
 	
 func update_state(state):
 	for child in get_children():

@@ -13,13 +13,13 @@ func end_dialog():
 func change_room(label, state):
 	var new_room = load(room_path + label + '.tscn')
 	if new_room == null:
-		get_node("/root/game").start_dialog("room_placeholder")
+		get_parent().start_dialog("room_placeholder")
 		return
 	new_room = new_room.instance()
 	
-	new_room.connect('start_dialog', get_node("/root/game"), 'start_dialog')
-	new_room.connect('change_room', get_node("/root/game"), 'change_room')
-	new_room.connect('start_action_timer', get_node("/root/game"), 'start_action_timer')
+	new_room.connect('start_dialog', get_parent(), 'start_dialog')
+	new_room.connect('change_room', get_parent(), 'change_room')
+	new_room.connect('start_action_timer', get_parent(), 'start_action_timer')
 	
 	for child in $room_container.get_children():
 		child.queue_free()

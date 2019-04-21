@@ -23,39 +23,39 @@
 [ext_resource path="res://assets/ui/ok_button.png" type="Texture" id=21]
 [ext_resource path="res://assets/audio/Main_theme_320.ogg" type="AudioStream" id=22]
 
-[sub_resource type="InputEventAction" id=9]
-action = "ui_accept"
+[sub_resource type="InputEventAction" id=1]
+action = "ui_select"
 
-[sub_resource type="ShortCut" id=10]
-shortcut = SubResource( 9 )
-
-[sub_resource type="DynamicFont" id=1]
-size = 22
-use_filter = true
-font_data = ExtResource( 16 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 22
-use_filter = true
-font_data = ExtResource( 17 )
+[sub_resource type="ShortCut" id=2]
+shortcut = SubResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 22
 use_filter = true
-font_data = ExtResource( 18 )
+font_data = ExtResource( 16 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 22
 use_filter = true
-font_data = ExtResource( 19 )
+font_data = ExtResource( 17 )
 
 [sub_resource type="DynamicFont" id=5]
+size = 22
+use_filter = true
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 22
+use_filter = true
+font_data = ExtResource( 19 )
+
+[sub_resource type="DynamicFont" id=7]
 size = 22
 font_data = ExtResource( 17 )
 
 [sub_resource type="StyleBoxEmpty" id=8]
 
-[sub_resource type="StyleBoxTexture" id=6]
+[sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 20 )
 region_rect = Rect2( 0, 0, 552, 83 )
 margin_left = 40.0
@@ -63,7 +63,7 @@ margin_right = 40.0
 margin_top = 11.0
 margin_bottom = 12.0
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=10]
 size = 28
 font_data = ExtResource( 19 )
 
@@ -74,6 +74,7 @@ action = "ui_enter"
 shortcut = SubResource( 11 )
 
 [node name="game" type="Node2D"]
+editor/display_folded = true
 script = ExtResource( 1 )
 default_room = "reception"
 
@@ -144,7 +145,7 @@ margin_bottom = -20.0
 focus_mode = 0
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
-shortcut = SubResource( 10 )
+shortcut = SubResource( 2 )
 flat = true
 
 [node name="box" type="Sprite" parent="ui/text_box"]
@@ -159,10 +160,10 @@ margin_top = 23.9275
 margin_right = 316.556
 margin_bottom = 54.9275
 mouse_filter = 1
-custom_fonts/bold_italics_font = SubResource( 1 )
-custom_fonts/italics_font = SubResource( 2 )
-custom_fonts/bold_font = SubResource( 3 )
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/bold_italics_font = SubResource( 3 )
+custom_fonts/italics_font = SubResource( 4 )
+custom_fonts/bold_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 6 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "oliver"
@@ -175,10 +176,10 @@ margin_top = 74.8088
 margin_right = 1049.4
 margin_bottom = 198.809
 mouse_filter = 1
-custom_fonts/bold_italics_font = SubResource( 1 )
-custom_fonts/italics_font = SubResource( 5 )
-custom_fonts/bold_font = SubResource( 3 )
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/bold_italics_font = SubResource( 3 )
+custom_fonts/italics_font = SubResource( 7 )
+custom_fonts/bold_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 6 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "to be, or not to be: that is the question: whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune, or to take arms against a sea of troubles, and by opposing end them?"
@@ -210,8 +211,8 @@ margin_top = 2.0
 margin_right = -91.0
 margin_bottom = 2.0
 custom_styles/focus = SubResource( 8 )
-custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 7 )
+custom_styles/normal = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/selection_color = Color( 0, 0, 0, 0.129412 )
 custom_colors/cursor_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -237,6 +238,6 @@ flat = true
 stream = ExtResource( 22 )
 
 [connection signal="pressed" from="ui/text_box" to="." method="update_dialog" binds= [ -1 ]]
-[connection signal="pressed" from="ui/name_input/ok_button" to="." method="set_player_name"]
 [connection signal="pressed" from="ui/name_input/ok_button" to="." method="update_dialog" binds= [ -1 ]]
+[connection signal="pressed" from="ui/name_input/ok_button" to="." method="set_player_name"]
 [connection signal="pressed" from="ui/name_input/ok_button" to="ui/name_input" method="hide"]

@@ -62,7 +62,6 @@ margin_right = 495.701
 margin_bottom = 657.258
 
 [node name="flowers_etc" parent="state_handler" instance=ExtResource( 4 )]
-visible = false
 modulate = Color( 1, 1, 1, 1 )
 margin_left = 658.709
 margin_top = 529.078
@@ -70,6 +69,7 @@ margin_right = 2158.71
 margin_bottom = 2029.08
 texture_normal = ExtResource( 9 )
 texture_click_mask = ExtResource( 10 )
+expand = false
 dialog_label = "flowers_etc"
 
 [node name="oliver_huh" parent="state_handler" instance=ExtResource( 11 )]

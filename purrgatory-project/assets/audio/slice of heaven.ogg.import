@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/slice of heaven.ogg-ccc5ff4ac57441fcee95fe4572699fcc.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/slice of heaven.ogg"
+dest_files=[ "res://.import/slice of heaven.ogg-ccc5ff4ac57441fcee95fe4572699fcc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

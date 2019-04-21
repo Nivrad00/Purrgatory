@@ -58,7 +58,7 @@ var raw_blocks = [
 ["","","","too much sex.","","","","",""],
 ["","elijah","","sean.","","","","",""],
 ["","sean","","i was a freaking stud magnet, dude","","","","",""],
-["","","","nothing but booty all day every day","","","","",""],
+["","","","getting that booty all day every day","","","","",""],
 ["","elijah","","...[i]sean.[/i] ","","","","",""],
 ["","sean","","so god decided to send me down here to repent","","","","",""],
 ["","","","among a bunch of prudes","","","","",""],

@@ -51,11 +51,6 @@ func update_state(state):
 	if get_value('elijah_show_numa', state):
 		emit_signal('set_hidden_sprite', [$numa])
 		state['elijah_show_numa'] = false
-		
-	if get_value('elijah_working_with_numa_timer', state):
-		state['elijah_working_with_numa_timer'] = false
-		state['poetry_session'] = true
-		emit_signal('start_action_timer', 10, ['poetry_session', false])
 	
 	if get_value('poetry_session', state):
 		$numa.hide()
@@ -65,6 +60,11 @@ func update_state(state):
 		$numa_with_elijah.hide()
 		$elijah_with_numa.hide()
 	
+	if get_value('elijah_working_with_numa_timer', state):
+		state['elijah_working_with_numa_timer'] = false
+		state['poetry_session'] = true
+		emit_signal('start_action_timer', 10, ['poetry_session', false])
+		
 	if get_value('numa_goto_commons', state):
 		emit_signal('change_room', 'hallway1')
 		state['numa_goto_commons'] = false

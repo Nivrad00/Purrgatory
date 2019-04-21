@@ -17,7 +17,7 @@ func get_value(key, dict):
 
 # modify these functions
 func init_state(state):
-	var audio = get_node("/root/game/main_audio")
+	var audio = get_node("../../../../main_audio")
 	if not audio.is_playing():
 		audio.play()
 	
