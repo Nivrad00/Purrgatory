@@ -135,7 +135,6 @@ margin_right = 882.606
 margin_bottom = 463.822
 
 [node name="text_box" type="Button" parent="ui"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 90.0
@@ -238,6 +237,6 @@ flat = true
 stream = ExtResource( 22 )
 
 [connection signal="pressed" from="ui/text_box" to="." method="update_dialog" binds= [ -1 ]]
-[connection signal="pressed" from="ui/name_input/ok_button" to="ui/name_input" method="hide"]
-[connection signal="pressed" from="ui/name_input/ok_button" to="." method="set_player_name"]
 [connection signal="pressed" from="ui/name_input/ok_button" to="." method="update_dialog" binds= [ -1 ]]
+[connection signal="pressed" from="ui/name_input/ok_button" to="." method="set_player_name"]
+[connection signal="pressed" from="ui/name_input/ok_button" to="ui/name_input" method="hide"]

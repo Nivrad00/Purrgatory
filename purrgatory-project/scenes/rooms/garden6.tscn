@@ -51,7 +51,6 @@ margin_bottom = 720.0
 mouse_filter = 1
 script = ExtResource( 7 )
 dialog_label = "numa_leave"
-sprite_path = "../numa"
 
 [node name="screwdriver" parent="state_handler" instance=ExtResource( 6 )]
 modulate = Color( 1, 1, 1, 1 )
@@ -179,20 +178,20 @@ margin_bottom = 611.0
 dialog_label = "well"
 
 [node name="numa_with_elijah" parent="state_handler" instance=ExtResource( 10 )]
-visible = false
-margin_left = 716.98
-margin_top = 326.823
-margin_right = 2216.98
-margin_bottom = 1826.82
+margin_left = 915.315
+margin_top = 325.236
+margin_right = 2415.31
+margin_bottom = 1825.23
 rect_scale = Vector2( 0.5, 0.5 )
+sprite_path = [ ".", "../elijah_with_numa" ]
 
 [node name="elijah_with_numa" parent="state_handler" instance=ExtResource( 11 )]
-visible = false
-margin_left = 915.513
-margin_top = 325.269
-margin_right = 1265.51
-margin_bottom = 775.269
+margin_left = 712.418
+margin_top = 326.856
+margin_right = 1062.42
+margin_bottom = 776.856
 rect_scale = Vector2( 0.5, 0.5 )
+sprite_path = [ ".", "../numa_with_elijah" ]
 
 [connection signal="mouse_entered" from="state_handler/exit_dialog" to="state_handler/exit_dialog" method="_on_exit_dialog_mouse_entered"]
 [connection signal="mouse_exited" from="state_handler/exit_dialog" to="state_handler/exit_dialog" method="_on_exit_dialog_mouse_exited"]

@@ -5,7 +5,8 @@ export var default_room = ''
 var state = {
 	'true': true,
 }
-var test_state = {
+var numa_test_state = {
+	'true': true,
 	'fed_kyungsoon_book': true,
 	'met_kyungsoon': true,
 	'met_oliver': true,
@@ -90,9 +91,18 @@ func end_dialog():
 	$ui.hide_ui()
 	$room.end_dialog()
 
+# block = {
+#    'text': 'hello i'm oliver',
+#    'choices': [['what\'s up', 'oliver_whats_up'], ['..', 'oliver_sdflkjslf']]
+#     ...
+#    'next': 150
+# }
+
 func update_dialog(b: int):	
+	# if there's no choice, get the next block directly
 	if b == -1:
 		block = $dialog_handler.get_block(block['next'], state)
+	# else if there's a choice, use the parameter to decide
 	else:
 		block = $dialog_handler.get_block(block['choices'][b][1], state)
 		
