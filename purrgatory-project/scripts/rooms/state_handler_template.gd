@@ -11,17 +11,11 @@ signal change_audio(song)
 # it updates the room state based on the game state 
 #   (for example, making doors accessible once they've been unlocked)
 
-func get_value(key, dict):
-	if key in dict:
-		return dict[key]
-	else:
-		return false
-
 func init_state(state):
 	pass
 	
 func update_state(state):
 	for child in get_children():
 		var key = '_inv_' + child.name
-		if get_value(key, state):
+		if state.get(key):
 			child.hide()

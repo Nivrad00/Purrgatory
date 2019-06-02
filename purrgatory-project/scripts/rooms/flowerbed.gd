@@ -12,12 +12,6 @@ var target_ids = []
 
 var start_flag = false
 
-func get_value(key, dict):
-	if key in dict:
-		return dict[key]
-	else:
-		return false
-
 func _ready():
 	$flower_box.hide()
 	$flower_timer.hide()
@@ -124,8 +118,8 @@ func update_state(state):
 	if start_flag == true:
 		start_game()
 		start_flag = false
-	if get_value('flowers_goto_garden', state):
+	if state.get('flowers_goto_garden'):
 		emit_signal('change_room', 'garden6')
-	if get_value('flower_start_flag', state):
+	if state.get('flower_start_flag'):
 		start_flag = true
 		state['flower_start_flag'] = false

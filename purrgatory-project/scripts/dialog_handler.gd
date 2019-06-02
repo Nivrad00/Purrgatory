@@ -100,12 +100,6 @@ func _ready():
 			block['choice_conditions'] = new_array
 				
 			last_block = block
-
-func get_state(key, dict):
-	if key in dict:
-		return dict[key]
-	else:
-		return false
 		
 func get_block(label, state):
 	if label == null:

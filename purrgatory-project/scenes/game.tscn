@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scripts/dialog_handler.gd" type="Script" id=2]
@@ -12,15 +12,14 @@
 [ext_resource path="res://scripts/dialog/sean.gd" type="Script" id=10]
 [ext_resource path="res://scripts/dialog/flowers.gd" type="Script" id=11]
 [ext_resource path="res://scripts/room_handler.gd" type="Script" id=12]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=13]
-[ext_resource path="res://scripts/ui_handler.gd" type="Script" id=14]
-[ext_resource path="res://assets/ui/text_box.png" type="Texture" id=15]
-[ext_resource path="res://assets/fonts/Krub-MediumItalic.ttf" type="DynamicFontData" id=16]
-[ext_resource path="res://assets/fonts/Krub-ExtraLightItalic.ttf" type="DynamicFontData" id=17]
-[ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=18]
-[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=19]
-[ext_resource path="res://assets/ui/choice2.png" type="Texture" id=20]
-[ext_resource path="res://assets/ui/ok_button.png" type="Texture" id=21]
+[ext_resource path="res://scripts/ui_handler.gd" type="Script" id=13]
+[ext_resource path="res://assets/ui/text_box.png" type="Texture" id=14]
+[ext_resource path="res://assets/fonts/Krub-MediumItalic.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://assets/fonts/Krub-ExtraLightItalic.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=18]
+[ext_resource path="res://assets/ui/choice2.png" type="Texture" id=19]
+[ext_resource path="res://assets/ui/ok_button.png" type="Texture" id=20]
 
 [sub_resource type="InputEventAction" id=1]
 action = "ui_select"
@@ -31,31 +30,31 @@ shortcut = SubResource( 1 )
 [sub_resource type="DynamicFont" id=3]
 size = 22
 use_filter = true
-font_data = ExtResource( 16 )
+font_data = ExtResource( 15 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 22
 use_filter = true
-font_data = ExtResource( 17 )
+font_data = ExtResource( 16 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 22
 use_filter = true
-font_data = ExtResource( 18 )
+font_data = ExtResource( 17 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 22
 use_filter = true
-font_data = ExtResource( 19 )
+font_data = ExtResource( 18 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 22
-font_data = ExtResource( 17 )
+font_data = ExtResource( 16 )
 
 [sub_resource type="StyleBoxEmpty" id=8]
 
 [sub_resource type="StyleBoxTexture" id=9]
-texture = ExtResource( 20 )
+texture = ExtResource( 19 )
 region_rect = Rect2( 0, 0, 552, 83 )
 margin_left = 40.0
 margin_right = 40.0
@@ -64,7 +63,7 @@ margin_bottom = 12.0
 
 [sub_resource type="DynamicFont" id=10]
 size = 28
-font_data = ExtResource( 19 )
+font_data = ExtResource( 18 )
 
 [sub_resource type="InputEventAction" id=11]
 action = "ui_enter"
@@ -118,13 +117,12 @@ anchor_bottom = 1.0
 margin_right = 1280.0
 margin_bottom = 720.0
 mouse_filter = 2
-script = ExtResource( 13 )
 
 [node name="ui" type="Control" parent="."]
 editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
-script = ExtResource( 14 )
+script = ExtResource( 13 )
 
 [node name="sprites" type="Control" parent="ui"]
 
@@ -149,7 +147,7 @@ flat = true
 
 [node name="box" type="Sprite" parent="ui/text_box"]
 position = Vector2( 20, 10 )
-texture = ExtResource( 15 )
+texture = ExtResource( 14 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -230,7 +228,7 @@ focus_mode = 0
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
 shortcut = SubResource( 12 )
-icon = ExtResource( 21 )
+icon = ExtResource( 20 )
 flat = true
 
 [node name="main_audio" type="AudioStreamPlayer" parent="."]

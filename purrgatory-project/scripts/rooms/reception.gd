@@ -7,16 +7,16 @@ var charon_moving = false
 func update_state(state):
 	.update_state(state)
 	
-	if get_value('enable_name_input', state):
+	if state.get('enable_name_input'):
 		state['enable_name_input'] = false
 		get_node('../../../../ui/name_input').show()
 		get_node('../../../../ui/name_input/text').grab_focus()
 		
-	if get_value('enable_name_input_flag', state):
+	if state.get('enable_name_input_flag'):
 		state['enable_name_input'] = true
 		state['enable_name_input_flag'] = false
 		
-	if get_value('met_receptionist', state):
+	if state.get('met_receptionist'):
 		charon_moving = true
 		$receptionist_idle.hide()
 		$receptionist_idle2.show()		
@@ -24,7 +24,7 @@ func update_state(state):
 		fade_out_trigger = true
 		$portal_audio.play()
 		$portal.hide()
-	if get_value('recep_entered_portal', state):
+	if state.get('recep_entered_portal'):
 		fade_out_delay = true
 
 func _process(delta):

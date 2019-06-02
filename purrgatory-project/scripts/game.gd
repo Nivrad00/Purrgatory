@@ -63,13 +63,6 @@ func change_room(label):
 func set_state(key, value):
 	state[key] = value
 
-func get_state(key):
-	if key in state:
-		return state[key]
-	else:
-		state[key] = false
-		return false
-
 func start_dialog(label):	
 	block = $dialog_handler.get_block(label, state)
 	$ui.show()

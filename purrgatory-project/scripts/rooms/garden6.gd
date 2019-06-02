@@ -2,7 +2,7 @@ extends 'state_handler_template.gd'
 
 func init_state(state):
 	.init_state(state)
-	if get_value('flowers_goto_garden', state):
+	if state.get('flowers_goto_garden'):
 		emit_signal('set_hidden_sprite', [$numa])
 		state['flowers_goto_garden'] = false
 	
@@ -15,27 +15,27 @@ func update_state(state):
 	
 	# numa's intro
 	
-	if get_value('trample_flag', state):
+	if state.get('trample_flag'):
 		$numa2.show()
 	else:
 		$numa2.hide()
 		
-	if get_value('trample_flag', state) and not get_value('nearly_trampled_flower', state):
+	if state.get('trample_flag') and not state.get('nearly_trampled_flower'):
 		$exit_dialog.show()
 	else:
 		$exit_dialog.hide()
 		
 	# numa's quest
 	
-	if get_value('numa_goto_flowerbed', state):
+	if state.get('numa_goto_flowerbed'):
 		emit_signal('change_room', 'flowerbed')
 		state['numa_goto_flowerbed'] = false
 		
-	if get_value('elijah_show_numa', state):
+	if state.get('elijah_show_numa'):
 		emit_signal('set_hidden_sprite', [$numa])
 		state['elijah_show_numa'] = false
 	
-	if get_value('poetry_session', state):
+	if state.get('poetry_session'):
 		$numa.hide()
 		$numa_with_elijah.show()
 		$elijah_with_numa.show()
@@ -43,16 +43,16 @@ func update_state(state):
 		$numa_with_elijah.hide()
 		$elijah_with_numa.hide()
 	
-	if get_value('elijah_working_with_numa_timer', state):
+	if state.get('elijah_working_with_numa_timer'):
 		state['elijah_working_with_numa_timer'] = false
 		state['poetry_session'] = true
 		emit_signal('start_action_timer', 20, ['poetry_session', false])
 		
-	if get_value('numa_goto_commons', state):
+	if state.get('numa_goto_commons'):
 		emit_signal('change_room', 'hallway1')
 		state['numa_goto_commons'] = false
 		
-	if get_value('numa_crying', state) or get_value('numa_quest_complete', state):
+	if state.get('numa_crying') or state.get('numa_quest_complete'):
 		$numa.hide()
 	
 func end_poetry_session(state):

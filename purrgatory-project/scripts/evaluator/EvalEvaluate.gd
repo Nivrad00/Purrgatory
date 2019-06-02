@@ -33,7 +33,7 @@ func eval_expr(node, env):
 		Op.NEQ: return lhs != rhs
 		Op.AND: return lhs and rhs
 		Op.OR: return lhs or rhs
-		Op.SYMBOL: return get_value(node.value, env)
+		Op.SYMBOL: return env.get(node.value)
 		Op.NUM: return node.value
 		Op.NOT: return not rhs
 	
