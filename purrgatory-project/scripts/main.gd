@@ -3,6 +3,7 @@ extends Node
 var fade_out = false
 var fade_out_loading = false
 var game_path = 'res://scenes/game.tscn'
+var loaded_flag = false
 
 func _ready():
 	$loader.start()
@@ -11,11 +12,18 @@ func _ready():
 	
 func finish_loading(node):
 	add_child(node.instance())
+	$game.connect('return_to_main', self, 'return_to_main')
 	$game.hide()
-	$loading/ding.play()
 	$loading/loading_text.set_text('ready!\r\nclick to continue')
+	loaded_flag = true
 
+func return_to_main():
+	$game.hide()
+	$main_menu.show()
+	$main_menu/audio.play()
+	
 func _on_click_to_continue_pressed():
+	print('sdfkj')
 	fade_out_loading = true
 	
 func _on_start_pressed():
@@ -33,6 +41,10 @@ func _on_back_pressed():
 	$main_menu.show()
 
 func _process(delta):
+	if loaded_flag:
+		$loading/click_to_continue.show()
+		loaded_flag = false
+		
 	if has_node('loader'):
 		if $loader.is_ready(game_path):
 			var scene = $loader.get_resource(game_path)
@@ -43,11 +55,14 @@ func _process(delta):
 		var a = $main_menu.get_modulate().a
 		if a == 0:
 			$delay_timer.start()
-			$main_menu.hide()
 			fade_out = false
-			yield($delay_timer, 'timeout')
-			$game.show()
 			$main_menu/audio.stop()
+			$main_menu/audio.volume_db = -3
+			yield($delay_timer, 'timeout')
+			
+			$main_menu.hide()
+			$main_menu.set_modulate(Color(1, 1, 1, 1))
+			$game.show()
 		else:
 			a = max(a - 2 * delta, 0)
 			$main_menu/audio.volume_db = $main_menu/audio.volume_db - 40 * delta

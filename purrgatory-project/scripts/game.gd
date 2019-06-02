@@ -1,10 +1,13 @@
 extends Node2D
 
+signal return_to_main()
+
 export var default_room = ''
 
 var state = {
 	'true': true,
 }
+
 var numa_test_state = {
 	'true': true,
 	'fed_kyungsoon_book': true,
@@ -35,6 +38,7 @@ var format_dict = {
 var block = null
 var meowkov_json = null
 var action_timers = []
+var fade_out = false
 
 func _ready():
 	randomize()
@@ -124,3 +128,45 @@ func change_audio(song):
 		if stream != $main_audio.get_stream():
 			$main_audio.set_stream(stream)
 			$main_audio.play()
+
+func return_to_main():
+	$white_cover.show()
+	set_process(true)
+	fade_out = true
+			
+func reset_state():
+	end_dialog()
+	$ui/name_input.hide()
+	$ui/name_input/text.set_text('')
+	state = {
+		'true': true
+	}
+	format_dict = {
+		'player': '',
+		'player_upper': ''
+	}
+	block = null
+	action_timers = []
+	$room.change_room('reception', state)
+	
+func _process(delta):
+	if fade_out:
+		var a = $white_cover.color.a
+		if a == 1:
+			fade_out = false
+			$delay_timer.start()
+			change_audio(null)
+			$main_audio.volume_db = 0
+			yield($delay_timer, 'timeout')
+			
+			emit_signal('return_to_main')
+			$white_cover.color = Color(1, 1, 1, 0)
+			reset_state()
+			$meta_ui/pause_menu.hide()
+			$meta_ui/exit_confirm.hide()
+			$white_cover.hide()
+			set_process(false)
+		else:
+			a = min(a + 2 * delta, 1)
+			$main_audio.volume_db = $main_audio.volume_db - 40 * delta
+			$white_cover.color = Color(1, 1, 1, a)

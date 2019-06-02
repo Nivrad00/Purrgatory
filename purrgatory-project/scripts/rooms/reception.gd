@@ -6,6 +6,7 @@ var charon_moving = false
 	
 func update_state(state):
 	.update_state(state)
+	$fadeout.hide()
 	
 	if state.get('enable_name_input'):
 		state['enable_name_input'] = false
@@ -26,6 +27,7 @@ func update_state(state):
 		$portal.hide()
 	if state.get('recep_entered_portal'):
 		fade_out_delay = true
+		$fadeout.show()
 
 func _process(delta):
 	if charon_moving:

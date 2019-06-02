@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/reception.gd" type="Script" id=2]
@@ -14,8 +14,7 @@
 [ext_resource path="res://assets/sprites/desk.png" type="Texture" id=12]
 [ext_resource path="res://assets/sprites/charon_walking1.png" type="Texture" id=13]
 [ext_resource path="res://assets/sprites/charon_walking2.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprites/white.png" type="Texture" id=15]
-[ext_resource path="res://assets/audio/portal.ogg" type="AudioStream" id=16]
+[ext_resource path="res://assets/audio/portal.ogg" type="AudioStream" id=15]
 
 [sub_resource type="Animation" id=1]
 resource_name = "rotate_portal"
@@ -136,17 +135,12 @@ texture = ExtResource( 13 )
 autoplay = "New Anim"
 "anims/New Anim" = SubResource( 3 )
 
-[node name="fadeout" type="Sprite" parent="state_handler"]
-modulate = Color( 1, 1, 1, 0 )
-texture = ExtResource( 15 )
-centered = false
-
 [node name="white_timer" type="Timer" parent="state_handler"]
 wait_time = 2.5
 one_shot = true
 
 [node name="portal_audio" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 16 )
+stream = ExtResource( 15 )
 volume_db = -6.0
 
 [node name="char_obj_button" parent="state_handler" instance=ExtResource( 6 )]
@@ -225,4 +219,9 @@ margin_top = 409.0
 margin_right = 822.0
 margin_bottom = 564.0
 dialog_label = "reception_desk"
+
+[node name="fadeout" type="ColorRect" parent="state_handler"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 1280.0
+margin_bottom = 720.0
 

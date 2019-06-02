@@ -40,8 +40,6 @@ _global_script_class_icons={
 
 config/name="purrgatory"
 run/main_scene="res://scenes/main_menu.tscn"
-run/disable_stdout=true
-run/disable_stderr=true
 config/icon="res://assets/icon.png"
 
 [display]

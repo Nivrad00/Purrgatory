@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scripts/dialog_handler.gd" type="Script" id=2]
@@ -20,6 +20,10 @@
 [ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=18]
 [ext_resource path="res://assets/ui/choice2.png" type="Texture" id=19]
 [ext_resource path="res://assets/ui/ok_button.png" type="Texture" id=20]
+[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=21]
+[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=22]
+[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=23]
+[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=24]
 
 [sub_resource type="InputEventAction" id=1]
 action = "ui_select"
@@ -71,9 +75,19 @@ action = "ui_enter"
 [sub_resource type="ShortCut" id=12]
 shortcut = SubResource( 11 )
 
+[sub_resource type="DynamicFont" id=13]
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 25
+font_data = ExtResource( 18 )
+
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
 default_room = "reception"
+
+[node name="delay_timer" type="Timer" parent="."]
+wait_time = 0.5
 
 [node name="dialog_handler" type="Node" parent="."]
 editor/display_folded = true
@@ -107,6 +121,7 @@ script = ExtResource( 10 )
 script = ExtResource( 11 )
 
 [node name="room" type="Control" parent="."]
+editor/display_folded = true
 script = ExtResource( 12 )
 
 [node name="room_container" type="Control" parent="room"]
@@ -119,7 +134,6 @@ margin_bottom = 720.0
 mouse_filter = 2
 
 [node name="ui" type="Control" parent="."]
-editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 script = ExtResource( 13 )
@@ -133,6 +147,7 @@ margin_right = 882.606
 margin_bottom = 463.822
 
 [node name="text_box" type="Button" parent="ui"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 90.0
@@ -184,7 +199,6 @@ text = "to be, or not to be: that is the question: whether 'tis nobler in the mi
 scroll_active = false
 
 [node name="name_input" type="Control" parent="ui"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -231,9 +245,282 @@ shortcut = SubResource( 12 )
 icon = ExtResource( 20 )
 flat = true
 
+[node name="meta_ui" type="Control" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+mouse_filter = 2
+
+[node name="menu_button" type="Button" parent="meta_ui"]
+editor/display_folded = true
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 86.0
+margin_bottom = 36.0
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="box2" type="Sprite" parent="meta_ui/menu_button"]
+position = Vector2( 2.2108, 1.67036 )
+texture = ExtResource( 21 )
+centered = false
+offset = Vector2( -8.3689, -6.12292 )
+
+[node name="Label" type="Label" parent="meta_ui/menu_button"]
+margin_right = 77.0
+margin_bottom = 26.0
+custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "menu"
+align = 1
+valign = 1
+
+[node name="pause_menu" type="Control" parent="meta_ui"]
+editor/display_folded = true
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_pivot_offset = Vector2( -460, 150 )
+
+[node name="white" type="ColorRect" parent="meta_ui/pause_menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="save" type="Button" parent="meta_ui/pause_menu"]
+editor/display_folded = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 515.0
+margin_top = 204.007
+margin_right = -515.0
+margin_bottom = -456.993
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="box2" type="Sprite" parent="meta_ui/pause_menu/save"]
+position = Vector2( 0.366638, 1.67036 )
+texture = ExtResource( 22 )
+centered = false
+offset = Vector2( -8.3689, -6.12292 )
+
+[node name="Label" type="Label" parent="meta_ui/pause_menu/save"]
+margin_left = 1.0
+margin_top = 2.0
+margin_right = 249.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "save"
+align = 1
+valign = 1
+
+[node name="load" type="Button" parent="meta_ui/pause_menu"]
+editor/display_folded = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 515.0
+margin_top = 280.328
+margin_right = -515.0
+margin_bottom = -380.672
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="box2" type="Sprite" parent="meta_ui/pause_menu/load"]
+position = Vector2( 0.366638, 1.67036 )
+texture = ExtResource( 23 )
+centered = false
+offset = Vector2( -8.3689, -6.12292 )
+
+[node name="Label" type="Label" parent="meta_ui/pause_menu/load"]
+margin_left = 1.0
+margin_top = 2.0
+margin_right = 249.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "load"
+align = 1
+valign = 1
+
+[node name="exit" type="Button" parent="meta_ui/pause_menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 515.0
+margin_top = 353.367
+margin_right = -515.0
+margin_bottom = -308.633
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="box2" type="Sprite" parent="meta_ui/pause_menu/exit"]
+position = Vector2( 0.366638, 1.67036 )
+texture = ExtResource( 24 )
+centered = false
+offset = Vector2( -8.3689, -6.12292 )
+
+[node name="Label" type="Label" parent="meta_ui/pause_menu/exit"]
+margin_left = 1.0
+margin_top = 2.0
+margin_right = 249.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "exit to main menu"
+align = 1
+valign = 1
+
+[node name="back" type="Button" parent="meta_ui/pause_menu"]
+editor/display_folded = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 515.0
+margin_top = 428.008
+margin_right = -515.0
+margin_bottom = -232.992
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="box2" type="Sprite" parent="meta_ui/pause_menu/back"]
+position = Vector2( 0.366638, 1.67036 )
+texture = ExtResource( 22 )
+centered = false
+offset = Vector2( -8.3689, -6.12292 )
+flip_h = true
+flip_v = true
+
+[node name="Label" type="Label" parent="meta_ui/pause_menu/back"]
+margin_left = 1.0
+margin_top = 2.0
+margin_right = 249.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "back"
+align = 1
+valign = 1
+
+[node name="exit_confirm" type="Control" parent="meta_ui"]
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[node name="white2" type="ColorRect" parent="meta_ui/exit_confirm"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+
+[node name="text2" type="RichTextLabel" parent="meta_ui/exit_confirm"]
+margin_top = 275.993
+margin_right = 1280.0
+margin_bottom = 399.993
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 3 )
+custom_fonts/italics_font = SubResource( 7 )
+custom_fonts/bold_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 6 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]are you sure? unsaved progress will be lost.[/center]"
+text = "are you sure? unsaved progress will be lost."
+scroll_active = false
+
+[node name="yes" type="Button" parent="meta_ui/exit_confirm"]
+editor/display_folded = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 515.0
+margin_top = 328.888
+margin_right = -515.0
+margin_bottom = -332.112
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="box2" type="Sprite" parent="meta_ui/exit_confirm/yes"]
+position = Vector2( 0.366638, 1.67036 )
+texture = ExtResource( 22 )
+centered = false
+offset = Vector2( -8.3689, -6.12292 )
+
+[node name="Label" type="Label" parent="meta_ui/exit_confirm/yes"]
+margin_left = 1.0
+margin_top = 2.0
+margin_right = 249.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "yes"
+align = 1
+valign = 1
+
+[node name="no" type="Button" parent="meta_ui/exit_confirm"]
+editor/display_folded = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 515.0
+margin_top = 404.888
+margin_right = -515.0
+margin_bottom = -257.112
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="box2" type="Sprite" parent="meta_ui/exit_confirm/no"]
+position = Vector2( 0.366638, 1.67036 )
+texture = ExtResource( 23 )
+centered = false
+offset = Vector2( -8.3689, -6.12292 )
+
+[node name="Label" type="Label" parent="meta_ui/exit_confirm/no"]
+margin_left = 1.0
+margin_top = 2.0
+margin_right = 249.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "no"
+align = 1
+valign = 1
+
+[node name="white_cover" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 1, 1, 1, 0 )
+
 [node name="main_audio" type="AudioStreamPlayer" parent="."]
 
 [connection signal="pressed" from="ui/text_box" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="ui/name_input/ok_button" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="ui/name_input/ok_button" to="." method="set_player_name"]
 [connection signal="pressed" from="ui/name_input/ok_button" to="ui/name_input" method="hide"]
+[connection signal="pressed" from="meta_ui/menu_button" to="meta_ui/pause_menu" method="show"]
+[connection signal="pressed" from="meta_ui/pause_menu/exit" to="meta_ui/exit_confirm" method="show"]
+[connection signal="pressed" from="meta_ui/pause_menu/back" to="meta_ui/pause_menu" method="hide"]
+[connection signal="pressed" from="meta_ui/exit_confirm/yes" to="." method="return_to_main"]
+[connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
