@@ -124,3 +124,13 @@ func update_dialog(b: int):
 
 func set_player_name():
 	format_dict['player'] = $ui/name_input/text.get_text().to_lower()
+
+func change_audio(song):
+	if song == null:
+		$main_audio.stop()
+		$main_audio.set_stream(null)
+	else:
+		var stream = load('res://assets/audio/' + song + '.ogg')
+		if stream != $main_audio.get_stream():
+			$main_audio.set_stream(stream)
+			$main_audio.play()

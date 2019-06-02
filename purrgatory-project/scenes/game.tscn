@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scripts/dialog_handler.gd" type="Script" id=2]
@@ -21,7 +21,6 @@
 [ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=19]
 [ext_resource path="res://assets/ui/choice2.png" type="Texture" id=20]
 [ext_resource path="res://assets/ui/ok_button.png" type="Texture" id=21]
-[ext_resource path="res://assets/audio/Main_theme_320.ogg" type="AudioStream" id=22]
 
 [sub_resource type="InputEventAction" id=1]
 action = "ui_select"
@@ -75,9 +74,10 @@ shortcut = SubResource( 11 )
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
-default_room = "garden1"
+default_room = "antechamber2"
 
 [node name="dialog_handler" type="Node" parent="."]
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="reception_dialog" type="Node" parent="dialog_handler"]
@@ -121,6 +121,7 @@ mouse_filter = 2
 script = ExtResource( 13 )
 
 [node name="ui" type="Control" parent="."]
+editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 script = ExtResource( 14 )
@@ -233,9 +234,8 @@ icon = ExtResource( 21 )
 flat = true
 
 [node name="main_audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 22 )
 
 [connection signal="pressed" from="ui/text_box" to="." method="update_dialog" binds= [ -1 ]]
-[connection signal="pressed" from="ui/name_input/ok_button" to="." method="set_player_name"]
 [connection signal="pressed" from="ui/name_input/ok_button" to="." method="update_dialog" binds= [ -1 ]]
+[connection signal="pressed" from="ui/name_input/ok_button" to="." method="set_player_name"]
 [connection signal="pressed" from="ui/name_input/ok_button" to="ui/name_input" method="hide"]

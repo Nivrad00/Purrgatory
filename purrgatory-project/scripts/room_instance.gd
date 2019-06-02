@@ -3,6 +3,7 @@ extends Control
 signal start_dialog(label)
 signal change_room(label)
 signal start_action_timer(actions, callback)
+signal change_audio(song)
 
 var hidden_sprites = null
 
@@ -20,6 +21,8 @@ func _ready():
 				child.connect("set_hidden_sprite", self, "set_hidden_sprite")
 			if sig['name'] == "start_action_timer":
 				child.connect("start_action_timer", self, "start_action_timer")
+			if sig['name'] == "change_audio":
+				child.connect("change_audio", self, "change_audio")
 	
 func set_hidden_sprite(sprites):
 	if hidden_sprites != null:
@@ -56,3 +59,6 @@ func change_room(label):
 
 func start_action_timer(actions, callback):
 	emit_signal('start_action_timer', actions, callback)
+	
+func change_audio(song):
+	emit_signal('change_audio', song)

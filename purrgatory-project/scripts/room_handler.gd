@@ -20,6 +20,7 @@ func change_room(label, state):
 	new_room.connect('start_dialog', get_parent(), 'start_dialog')
 	new_room.connect('change_room', get_parent(), 'change_room')
 	new_room.connect('start_action_timer', get_parent(), 'start_action_timer')
+	new_room.connect('change_audio', get_parent(), 'change_audio')
 	
 	for child in $room_container.get_children():
 		child.queue_free()
