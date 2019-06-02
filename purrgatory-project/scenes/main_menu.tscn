@@ -73,8 +73,14 @@ text = "loading..."
 align = 1
 valign = 1
 
+[node name="click_to_continue" type="Button" parent="loading"]
+margin_right = 1280.0
+margin_bottom = 720.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
 [node name="main_menu" type="Control" parent="."]
-editor/display_folded = true
 visible = false
 margin_top = 19.0
 margin_right = 40.0
@@ -280,6 +286,7 @@ text = "back"
 align = 1
 valign = 1
 
+[connection signal="pressed" from="loading/click_to_continue" to="." method="_on_click_to_continue_pressed"]
 [connection signal="pressed" from="main_menu/buttons/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="main_menu/buttons/credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="main_menu/buttons/exit" to="." method="_on_exit_pressed"]

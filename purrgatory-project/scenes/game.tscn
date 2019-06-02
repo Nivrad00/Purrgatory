@@ -73,7 +73,7 @@ shortcut = SubResource( 11 )
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
-default_room = "antechamber2"
+default_room = "reception"
 
 [node name="dialog_handler" type="Node" parent="."]
 editor/display_folded = true

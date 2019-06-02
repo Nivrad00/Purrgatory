@@ -1,6 +1,7 @@
 extends Node
 
 var fade_out = false
+var fade_out_loading = false
 var game_path = 'res://scenes/game.tscn'
 
 func _ready():
@@ -11,9 +12,11 @@ func _ready():
 func finish_loading(node):
 	add_child(node.instance())
 	$game.hide()
-	$loading.hide()
-	$main_menu.show()
-	$main_menu/audio.play()
+	$loading/ding.play()
+	$loading/loading_text.set_text('ready!\r\nclick to continue')
+
+func _on_click_to_continue_pressed():
+	fade_out_loading = true
 	
 func _on_start_pressed():
 	fade_out = true
@@ -49,3 +52,17 @@ func _process(delta):
 			a = max(a - 2 * delta, 0)
 			$main_menu/audio.volume_db = $main_menu/audio.volume_db - 40 * delta
 			$main_menu.set_modulate(Color(1, 1, 1, a))
+			
+	if fade_out_loading:
+		var a = $loading.get_modulate().a
+		if a == 0:
+			$delay_timer.start()
+			$loading.hide()
+			fade_out_loading = false
+			yield($delay_timer, 'timeout')
+			$loading.hide()
+			$main_menu.show()
+			$main_menu/audio.play()
+		else:
+			a = max(a - 2 * delta, 0)
+			$loading.set_modulate(Color(1, 1, 1, a))
