@@ -60,9 +60,6 @@ func change_room(label):
 	increment_action_timers()
 	$room.change_room(label, state)
 
-func set_state(key, value):
-	state[key] = value
-
 func start_dialog(label):	
 	block = $dialog_handler.get_block(label, state)
 	$ui.show()
@@ -77,7 +74,7 @@ func start_dialog(label):
 	$ui.update_ui(block['speaker'], block['sprites'], text, choices_text)
 	
 	for pair in block['states']:
-		set_state(pair[0], pair[1])	
+		state[pair[0]] = pair[1]
 	$room.update_state(state)
 	
 func end_dialog():
@@ -112,7 +109,7 @@ func update_dialog(b: int):
 		$ui.update_ui(block['speaker'], block['sprites'], text, choices_text)
 		
 		for pair in block['states']:
-			set_state(pair[0], pair[1])	
+			state[pair[0]] = pair[1]
 		$room.update_state(state)
 
 func set_player_name():
