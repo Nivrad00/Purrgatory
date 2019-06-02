@@ -1,6 +1,9 @@
 extends Control
 
 var room_path = 'res://scenes/rooms/'
+var loader
+var loading_path
+var loading_state
 	
 func start_dialog():
 	$room_mask.set_mouse_filter(Control.MOUSE_FILTER_STOP)

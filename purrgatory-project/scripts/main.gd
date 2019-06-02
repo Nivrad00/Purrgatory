@@ -1,21 +1,19 @@
 extends Node
 
-var wait_frames = 1
-var loader
 var fade_out = false
+var game_path = 'res://scenes/game.tscn'
 
 func _ready():
-	var i = 0
-	loader = ResourceLoader.load_interactive('res://scenes/game.tscn')
+	$loader.start()
+	$loader.queue_resource(game_path)
 	set_process(true)
 	
 func finish_loading(node):
-	add_child(node)
+	add_child(node.instance())
 	$game.hide()
 	$loading.hide()
 	$main_menu.show()
 	$main_menu/audio.play()
-	loader = null
 	
 func _on_start_pressed():
 	fade_out = true
@@ -32,18 +30,11 @@ func _on_back_pressed():
 	$main_menu.show()
 
 func _process(delta):
-	if wait_frames > 0:
-		wait_frames -= 1
-		return
-		
-	if loader:
-		var t = OS.get_ticks_msec()
-		while OS.get_ticks_msec() < t + 100:
-			var err = loader.poll()
-			if err == ERR_FILE_EOF:
-				var node = loader.get_resource().instance()
-				finish_loading(node)
-				break
+	if has_node('loader'):
+		if $loader.is_ready(game_path):
+			var scene = $loader.get_resource(game_path)
+			finish_loading(scene)
+			$loader.queue_free()
 				
 	if fade_out:
 		var a = $main_menu.get_modulate().a
