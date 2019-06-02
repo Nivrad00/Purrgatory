@@ -10,7 +10,6 @@
 [ext_resource path="res://assets/exit_masks/garden1_exit2.png" type="BitMap" id=8]
 [ext_resource path="res://scenes/char_obj_button.tscn" type="PackedScene" id=9]
 
-
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0

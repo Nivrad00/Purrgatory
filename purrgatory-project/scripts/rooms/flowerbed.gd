@@ -1,7 +1,4 @@
-extends Control
-
-signal start_dialog(label, sprite)
-signal change_room(label)
+extends 'state_handler_template.gd'
 
 var flower_button = load('res://scenes/sprites/flower_button.tscn')
 var max_id = 46
@@ -94,6 +91,8 @@ func generate_flowers(ids):
 		flowers.append(flower)
 		
 func init_state(state):
+	.init_state(state)
+	
 	for i in range(num_targets):
 		var new_id = null
 		while true:
@@ -120,6 +119,8 @@ func init_state(state):
 	$flower_box.set_indicator(target_ids[0])
 
 func update_state(state):
+	.update_state(state)
+	
 	if start_flag == true:
 		start_game()
 		start_flag = false

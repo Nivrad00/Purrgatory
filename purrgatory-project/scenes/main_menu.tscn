@@ -51,7 +51,6 @@ margin_right = 1280.0
 margin_bottom = 720.0
 
 [node name="main_menu" type="Control" parent="."]
-editor/display_folded = true
 margin_top = 19.0
 margin_right = 40.0
 margin_bottom = 59.0
@@ -69,7 +68,6 @@ autoplay = "New Anim"
 "anims/New Anim" = SubResource( 1 )
 
 [node name="buttons" type="Control" parent="main_menu"]
-editor/display_folded = true
 margin_left = 504.871
 margin_top = 319.987
 margin_right = 782.871
@@ -178,6 +176,7 @@ volume_db = -3.0
 autoplay = true
 
 [node name="credits" type="Control" parent="."]
+editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0

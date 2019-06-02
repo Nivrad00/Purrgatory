@@ -1,27 +1,12 @@
-extends Control
-
-signal start_dialog(label, sprite)
-signal change_room(label)
-
-# each room should have a separate state-handling script
-# (unless that room has no state, in which case you can use state_handler_template.gd)
-# it updates the room state based on the game state (for example, making doors accessible once they've been unlocked)
+extends 'state_handler_template.gd'
 
 var fade_out_delay = false
 var fade_out_trigger = false
 var charon_moving = false
 	
-func get_value(key, dict):
-	if key in dict:
-		return dict[key]
-	else:
-		return false
-
-# modify these functions
-func init_state(state):
-	pass
-	
 func update_state(state):
+	.update_state(state)
+	
 	if get_value('enable_name_input', state):
 		state['enable_name_input'] = false
 		get_node('../../../../ui/name_input').show()
