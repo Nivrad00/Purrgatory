@@ -6,9 +6,11 @@
 [ext_resource path="res://assets/rooms/escalator3.png" type="Texture" id=4]
 [ext_resource path="res://assets/rooms/escalator2.png" type="Texture" id=5]
 [ext_resource path="res://assets/rooms/escalator1.png" type="Texture" id=6]
-[ext_resource path="res://scenes/exit_left_button.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/exit_back_button.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/char_obj_button.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/outdated/exit_left_button.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/outdated/exit_back_button.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=9]
+
+
 
 
 [sub_resource type="Animation" id=1]

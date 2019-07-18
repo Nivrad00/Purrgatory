@@ -3,6 +3,7 @@ extends Node
 var blocks = {}	
 
 var placeholder_block = {
+	'label': 'placeholder',
 	'speaker': '',
 	'sprites': [],
 	'text': '(text block not found)',
@@ -30,7 +31,8 @@ func _ready():
 				i += 1
 			else:
 				label = data[0]
-		
+			
+			block['label'] = label
 			blocks[label] = block
 			if last_block and typeof(last_block['next']) == TYPE_STRING and last_block['next'] == '_next':
 				last_block['next'] = [label]
@@ -124,6 +126,7 @@ func get_block(label, state):
 		block = blocks[next_label]
 		
 	var proc_block = {}
+	proc_block['label'] = block['label']
 	proc_block['speaker'] = block['speaker']
 	proc_block['sprites'] = block['sprites']
 	proc_block['text'] = block['text']

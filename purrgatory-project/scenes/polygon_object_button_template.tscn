@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=1]
+
+[node name="welcome_sign" type="Area2D"]
+script = ExtResource( 1 )
+dialog_label = "welcome_sign"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 424.001, 262.001, 424.001, 347.001, 573.002, 350.001, 572.002, 284.001, 543.001, 263.001 )
+

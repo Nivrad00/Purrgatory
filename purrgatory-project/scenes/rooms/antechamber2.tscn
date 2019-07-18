@@ -1,11 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/antechamber2.png" type="Texture" id=3]
-[ext_resource path="res://scenes/exit_left_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/char_obj_button.tscn" type="PackedScene" id=5]
-
+[ext_resource path="res://scenes/exit_left.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=6]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -21,18 +21,19 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="room_trans_button" parent="state_handler" instance=ExtResource( 4 )]
-room_label = "antechamber1"
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
 
-[node name="room_trans_button2" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 1190.33
-margin_right = 1280.33
-room_label = "antechamber3"
+[node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 5 )]
-margin_left = 888.0
-margin_top = 264.0
-margin_right = 1069.0
-margin_bottom = 482.0
+[node name="lucifur_wuz_here" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 423.201, 108.562 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
 dialog_label = "lucifur_wuz_here"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/lucifur_wuz_here"]
+polygon = PoolVector2Array( 476.268, 230.479, 455.221, 282.326, 487.047, 309.928, 491.028, 360.348, 482.429, 410.149, 578.935, 469.475, 603.064, 437.356, 587.664, 395.775, 667.881, 348.92, 614.358, 271.033, 543.001, 263.001 )
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scripts/dialog_handler.gd" type="Script" id=2]
@@ -23,7 +23,8 @@
 [ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=21]
 [ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=22]
 [ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=23]
-[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=24]
+[ext_resource path="res://assets/ui/menu_x.png" type="Texture" id=24]
+[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=25]
 
 [sub_resource type="InputEventAction" id=1]
 action = "ui_select"
@@ -84,7 +85,7 @@ font_data = ExtResource( 18 )
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
-default_room = "reception"
+default_room = "antechamber1"
 
 [node name="delay_timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -121,7 +122,6 @@ script = ExtResource( 10 )
 script = ExtResource( 11 )
 
 [node name="room" type="Control" parent="."]
-editor/display_folded = true
 script = ExtResource( 12 )
 
 [node name="room_container" type="Control" parent="room"]
@@ -134,6 +134,7 @@ margin_bottom = 720.0
 mouse_filter = 2
 
 [node name="ui" type="Control" parent="."]
+editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 script = ExtResource( 13 )
@@ -246,6 +247,7 @@ icon = ExtResource( 20 )
 flat = true
 
 [node name="meta_ui" type="Control" parent="."]
+editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 mouse_filter = 2
@@ -292,9 +294,10 @@ editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
-margin_top = 204.007
+margin_top = 217.007
 margin_right = -515.0
-margin_bottom = -456.993
+margin_bottom = -443.993
+rect_pivot_offset = Vector2( 311.063, 2.57225 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -320,13 +323,13 @@ align = 1
 valign = 1
 
 [node name="load" type="Button" parent="meta_ui/pause_menu"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
-margin_top = 280.328
+margin_top = 293.328
 margin_right = -515.0
-margin_bottom = -380.672
+margin_bottom = -367.672
+rect_pivot_offset = Vector2( 311.063, -73.7487 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -351,13 +354,19 @@ text = "load"
 align = 1
 valign = 1
 
+[node name="x" type="Sprite" parent="meta_ui/pause_menu/load"]
+position = Vector2( 125.466, 29.0663 )
+texture = ExtResource( 24 )
+
 [node name="exit" type="Button" parent="meta_ui/pause_menu"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
-margin_top = 353.367
+margin_top = 366.367
 margin_right = -515.0
-margin_bottom = -308.633
+margin_bottom = -295.633
+rect_pivot_offset = Vector2( 311.063, -146.788 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -367,7 +376,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/exit"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 24 )
+texture = ExtResource( 25 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -387,9 +396,10 @@ editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
-margin_top = 428.008
+margin_top = 441.008
 margin_right = -515.0
-margin_bottom = -232.992
+margin_bottom = -219.992
+rect_pivot_offset = Vector2( 311.063, -221.429 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -417,6 +427,8 @@ align = 1
 valign = 1
 
 [node name="exit_confirm" type="Control" parent="meta_ui"]
+editor/display_folded = true
+visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 
@@ -505,6 +517,122 @@ text = "no"
 align = 1
 valign = 1
 
+[node name="save_confirm" type="Control" parent="meta_ui"]
+editor/display_folded = true
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[node name="white2" type="ColorRect" parent="meta_ui/save_confirm"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+
+[node name="text2" type="RichTextLabel" parent="meta_ui/save_confirm"]
+margin_top = 312.825
+margin_right = 1280.0
+margin_bottom = 436.825
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 3 )
+custom_fonts/italics_font = SubResource( 7 )
+custom_fonts/bold_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 6 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]game saved.[/center]"
+text = "game saved."
+scroll_active = false
+
+[node name="yes" type="Button" parent="meta_ui/save_confirm"]
+editor/display_folded = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 515.0
+margin_top = 365.72
+margin_right = -515.0
+margin_bottom = -295.28
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="box2" type="Sprite" parent="meta_ui/save_confirm/yes"]
+position = Vector2( 0.366638, 1.67036 )
+texture = ExtResource( 22 )
+centered = false
+offset = Vector2( -8.3689, -6.12292 )
+
+[node name="Label" type="Label" parent="meta_ui/save_confirm/yes"]
+margin_left = 1.0
+margin_top = 2.0
+margin_right = 249.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "back"
+align = 1
+valign = 1
+
+[node name="load_confirm" type="Control" parent="meta_ui"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[node name="white2" type="ColorRect" parent="meta_ui/load_confirm"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+
+[node name="text2" type="RichTextLabel" parent="meta_ui/load_confirm"]
+margin_top = 312.825
+margin_right = 1280.0
+margin_bottom = 436.825
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 3 )
+custom_fonts/italics_font = SubResource( 7 )
+custom_fonts/bold_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 6 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]game loaded.[/center]"
+text = "game loaded."
+scroll_active = false
+
+[node name="yes" type="Button" parent="meta_ui/load_confirm"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 515.0
+margin_top = 365.72
+margin_right = -515.0
+margin_bottom = -295.28
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="box2" type="Sprite" parent="meta_ui/load_confirm/yes"]
+position = Vector2( 0.366638, 1.67036 )
+texture = ExtResource( 22 )
+centered = false
+offset = Vector2( -8.3689, -6.12292 )
+
+[node name="Label" type="Label" parent="meta_ui/load_confirm/yes"]
+margin_left = 1.0
+margin_top = 2.0
+margin_right = 249.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "continue"
+align = 1
+valign = 1
+
 [node name="white_cover" type="ColorRect" parent="."]
 visible = false
 anchor_right = 1.0
@@ -516,11 +644,17 @@ color = Color( 1, 1, 1, 0 )
 [node name="main_audio" type="AudioStreamPlayer" parent="."]
 
 [connection signal="pressed" from="ui/text_box" to="." method="update_dialog" binds= [ -1 ]]
-[connection signal="pressed" from="ui/name_input/ok_button" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="ui/name_input/ok_button" to="." method="set_player_name"]
+[connection signal="pressed" from="ui/name_input/ok_button" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="ui/name_input/ok_button" to="ui/name_input" method="hide"]
-[connection signal="pressed" from="meta_ui/menu_button" to="meta_ui/pause_menu" method="show"]
+[connection signal="pressed" from="meta_ui/menu_button" to="." method="open_pause_menu"]
+[connection signal="pressed" from="meta_ui/pause_menu/save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="meta_ui/pause_menu/load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="meta_ui/pause_menu/exit" to="meta_ui/exit_confirm" method="show"]
 [connection signal="pressed" from="meta_ui/pause_menu/back" to="meta_ui/pause_menu" method="hide"]
 [connection signal="pressed" from="meta_ui/exit_confirm/yes" to="." method="return_to_main"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
+[connection signal="pressed" from="meta_ui/save_confirm/yes" to="meta_ui/pause_menu" method="hide"]
+[connection signal="pressed" from="meta_ui/save_confirm/yes" to="meta_ui/save_confirm" method="hide"]
+[connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/load_confirm" method="hide"]
+[connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/pause_menu" method="hide"]

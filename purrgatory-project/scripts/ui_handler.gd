@@ -68,3 +68,21 @@ func set_choices(choices):
 		choice.connect("pressed", get_parent(), "update_dialog", [i])
 		choice.set_position(Vector2(0, choice_y[num][i]))
 		$choices.add_child(choice)
+
+func get_speaker():
+	return $text_box/speaker.bbcode_text
+	
+func get_sprites():
+	var sprite_names = []
+	for sprite in $sprites.get_children():
+		sprite_names.append(sprite.name)
+	return sprite_names
+
+func get_text():
+	return $text_box/text.bbcode_text
+	
+func get_choices():
+	var choices_text = []
+	for choice_box in $choices.get_children():
+		choices_text.append(choice_box.get_node('text').text)
+	return choices_text

@@ -14,3 +14,5 @@ func _on_char_obj_button_pressed():
 			sprites.append(get_node(path))
 		emit_signal('start_dialog', dialog_label, sprites)
 	# this signal will be connected to the root node of the room (room_instance.gd)
+
+# this script/scene should now only be used for texture buttons (sprites), and not polygon buttons

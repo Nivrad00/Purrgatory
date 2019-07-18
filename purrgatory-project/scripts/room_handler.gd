@@ -4,6 +4,30 @@ var room_path = 'res://scenes/rooms/'
 var loader
 var loading_path
 var loading_state
+
+var current_room = null
+
+func get_current_room():
+	return current_room.get_name()
+
+func get_hidden_sprites():
+	var sprite_names = []
+	var sprites = current_room.hidden_sprites
+	if sprites == null:
+		return null
+	for sprite in sprites:
+		sprite_names.append(sprite.name)
+	return sprite_names
+	
+func set_hidden_sprites(sprite_names):
+	if sprite_names == null:
+		current_room.hidden_sprites = null
+		return
+	var sprites = []
+	for sprite_name in sprite_names:
+		var sprite = current_room.get_node('state_handler').get_node(sprite_name)
+		sprites.append(sprite)
+	current_room.hidden_sprites = sprites
 	
 func start_dialog():
 	$room_mask.set_mouse_filter(Control.MOUSE_FILTER_STOP)
@@ -19,6 +43,7 @@ func change_room(label, state):
 		get_parent().start_dialog("room_placeholder")
 		return
 	new_room = new_room.instance()
+	current_room = new_room
 	
 	new_room.connect('start_dialog', get_parent(), 'start_dialog')
 	new_room.connect('change_room', get_parent(), 'change_room')
@@ -31,6 +56,7 @@ func change_room(label, state):
 	
 	new_room.init_state(state)
 	new_room.update_state(state)
+	new_room.set_name(label)
 
 func update_state(state):
 	for child in $room_container.get_children():

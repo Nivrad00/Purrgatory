@@ -9,6 +9,16 @@ func _ready():
 	$loader.start()
 	$loader.queue_resource(game_path)
 	set_process(true)
+	check_save()
+
+func check_save():
+	var save_game = File.new()
+	if save_game.file_exists("user://save1.save"):
+		$main_menu/buttons/continue/x.hide()
+		$main_menu/buttons/continue.disabled = false
+	else:
+		$main_menu/buttons/continue/x.show()
+		$main_menu/buttons/continue.disabled = true
 	
 func finish_loading(node):
 	add_child(node.instance())
@@ -21,12 +31,17 @@ func return_to_main():
 	$game.hide()
 	$main_menu.show()
 	$main_menu/audio.play()
+	check_save()
 	
 func _on_click_to_continue_pressed():
 	print('sdfkj')
 	fade_out_loading = true
 	
 func _on_start_pressed():
+	fade_out = true
+
+func _on_continue_pressed():
+	$game.load_game()
 	fade_out = true
 
 func _on_credits_pressed():

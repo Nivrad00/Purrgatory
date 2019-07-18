@@ -14,3 +14,5 @@ func _on_room_trans_button_mouse_exited():
 
 func _on_room_trans_button_mouse_entered():
 	set_modulate(Color(0, 0, 0, 0.1))
+
+# this script has been superceded by polygon_exit_button and shouldn't be used anywhere

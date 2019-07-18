@@ -1,0 +1,122 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://assets/rooms/attic.png" type="Texture" id=3]
+[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/outdated/exit_front_button.tscn" type="PackedScene" id=5]
+
+
+
+[node name="room_instance" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 1 )
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+
+[node name="bg" type="Sprite" parent="state_handler"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="window" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 520.629
+margin_top = 176.0
+margin_right = 1868.63
+margin_bottom = 1295.0
+rect_scale = Vector2( 0.2, 0.2 )
+dialog_label = "default"
+
+[node name="bed" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 183.0
+margin_top = 486.0
+margin_right = 2669.0
+margin_bottom = 1112.0
+rect_scale = Vector2( 0.2, 0.2 )
+dialog_label = "default"
+
+[node name="bed2" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 228.0
+margin_top = 440.0
+margin_right = 608.0
+margin_bottom = 655.0
+rect_scale = Vector2( 0.2, 0.2 )
+dialog_label = "default"
+
+[node name="bed3" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 307.0
+margin_top = 462.0
+margin_right = 2157.0
+margin_bottom = 571.0
+rect_scale = Vector2( 0.2, 0.2 )
+dialog_label = "default"
+
+[node name="nightstand" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 180.0
+margin_top = 514.0
+margin_right = 507.0
+margin_bottom = 1099.0
+rect_scale = Vector2( 0.2, 0.2 )
+dialog_label = "default"
+
+[node name="lil_table" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 543.0
+margin_top = 534.0
+margin_right = 1151.0
+margin_bottom = 1046.0
+rect_scale = Vector2( 0.2, 0.2 )
+dialog_label = "default"
+
+[node name="crate" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 841.0
+margin_top = 467.0
+margin_right = 1726.0
+margin_bottom = 1167.0
+rect_scale = Vector2( 0.2, 0.2 )
+dialog_label = "default"
+
+[node name="table" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 681.0
+margin_top = 466.0
+margin_right = 1599.0
+margin_bottom = 1166.0
+rect_scale = Vector2( 0.2, 0.2 )
+dialog_label = "default"
+
+[node name="candles" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 686.0
+margin_top = 382.0
+margin_right = 855.0
+margin_bottom = 826.0
+rect_scale = Vector2( 0.2, 0.2 )
+dialog_label = "default"
+
+[node name="candles2" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 706.0
+margin_top = 423.0
+margin_right = 1192.0
+margin_bottom = 697.0
+rect_scale = Vector2( 0.2, 0.2 )
+dialog_label = "default"
+
+[node name="candles3" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 821.0
+margin_top = 599.0
+margin_right = 1152.0
+margin_bottom = 854.0
+rect_scale = Vector2( 0.2, 0.2 )
+dialog_label = "default"
+
+[node name="candles4" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 819.0
+margin_top = 570.0
+margin_right = 902.0
+margin_bottom = 736.0
+rect_scale = Vector2( 0.2, 0.2 )
+dialog_label = "default"
+
+[node name="exit_front_back_button" parent="state_handler" instance=ExtResource( 5 )]
+
