@@ -1,18 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/antechamber3.png" type="Texture" id=3]
-[ext_resource path="res://scenes/outdated/exit_left_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/exits/antechamber3_exit1.png" type="Texture" id=5]
-[ext_resource path="res://assets/exit_masks/antechamber3_exit1.png" type="BitMap" id=6]
-[ext_resource path="res://assets/exits/antechamber3_exit2.png" type="Texture" id=7]
-[ext_resource path="res://assets/exit_masks/antechamber3_exit2.png" type="BitMap" id=8]
-[ext_resource path="res://scenes/outdated/exit_front_button.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=10]
-
-
-
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=5]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=6]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -28,38 +21,45 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="room_trans_button" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 342.0
-margin_right = 421.0
-margin_bottom = 569.0
-texture_normal = ExtResource( 5 )
-texture_click_mask = ExtResource( 6 )
-room_label = "antechamber5"
-
-[node name="room_trans_button1" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 827.008
-margin_right = 906.008
-margin_bottom = 569.0
-texture_normal = ExtResource( 7 )
-texture_click_mask = ExtResource( 8 )
-room_label = "antechamber4"
-
-[node name="exit_front_back_button" parent="state_handler" instance=ExtResource( 9 )]
-margin_top = 631.502
-margin_bottom = 721.502
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
 room_label = "antechamber2"
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 10 )]
-margin_left = 459.0
-margin_top = 108.0
-margin_right = 629.0
-margin_bottom = 190.0
+[node name="exit2" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( -76.3649, -191.577 )
+script = ExtResource( 5 )
+room_label = "antechamber5"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( 418.556, 272.175, 418.669, 802.038, 487.917, 711.532, 487.917, 308.59 )
+
+[node name="exit3" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 484.52, -187.407 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+room_label = "antechamber4"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3"]
+polygon = PoolVector2Array( 420.916, 273.4, 420.497, 790.488, 354.074, 708.163, 354.074, 308.161 )
+
+[node name="library_sign" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 6 )
 dialog_label = "library_sign"
 
-[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 10 )]
-margin_left = 652.0
-margin_top = 293.0
-margin_right = 735.0
-margin_bottom = 423.0
-dialog_label = "bell_sign"
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/library_sign"]
+position = Vector2( 4.52954, -3.23535 )
+polygon = PoolVector2Array( 451.03, 259.472, 501.178, 308.972, 503.119, 289.56, 620.886, 292.796, 621.533, 240.707, 503.443, 239.736, 503.443, 224.206 )
+
+[node name="bell_sign" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 6 )
+dialog_label = " bell_sign"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/bell_sign"]
+position = Vector2( 4.52954, -3.23535 )
+polygon = PoolVector2Array( 675.737, 428.595, 677.815, 432.09, 677.438, 440.025, 678.855, 441.4, 677.956, 449.368, 674.229, 455.793, 666.004, 457.464, 670.207, 496.415, 653.24, 496.192, 682.132, 527.542, 701.496, 539.529, 731.328, 495.226, 713.175, 495.27, 710.162, 411.035, 668.189, 410.562, 669.652, 419.827, 678.431, 423.241 )
 

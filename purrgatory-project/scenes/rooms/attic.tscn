@@ -3,10 +3,8 @@
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/attic.png" type="Texture" id=3]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/outdated/exit_front_button.tscn" type="PackedScene" id=5]
-
-
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=4]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=5]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -22,101 +20,146 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="window" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 520.629
-margin_top = 176.0
-margin_right = 1868.63
-margin_bottom = 1295.0
-rect_scale = Vector2( 0.2, 0.2 )
-dialog_label = "default"
+[node name="attic_window" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 672.858, -166.579 )
+script = ExtResource( 4 )
+dialog_label = "attic_window"
 
-[node name="bed" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 183.0
-margin_top = 486.0
-margin_right = 2669.0
-margin_bottom = 1112.0
-rect_scale = Vector2( 0.2, 0.2 )
-dialog_label = "default"
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_window"]
+position = Vector2( -243.022, 251.922 )
+polygon = PoolVector2Array( 359.347, 314.313, 359.529, 89.332, 90.5891, 87.9312, 92.5749, 314.324 )
 
-[node name="bed2" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 228.0
-margin_top = 440.0
-margin_right = 608.0
-margin_bottom = 655.0
-rect_scale = Vector2( 0.2, 0.2 )
-dialog_label = "default"
+[node name="attic_galaxy" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 672.858, -166.579 )
+script = ExtResource( 4 )
+dialog_label = "attic_galaxy"
 
-[node name="bed3" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 307.0
-margin_top = 462.0
-margin_right = 2157.0
-margin_bottom = 571.0
-rect_scale = Vector2( 0.2, 0.2 )
-dialog_label = "default"
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_galaxy"]
+position = Vector2( -243.022, 251.922 )
+polygon = PoolVector2Array( 61.8439, 302.284, 58.9035, 222.894, -45.4799, 226.569, -44.0097, 308.9 )
 
-[node name="nightstand" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 180.0
-margin_top = 514.0
-margin_right = 507.0
-margin_bottom = 1099.0
-rect_scale = Vector2( 0.2, 0.2 )
-dialog_label = "default"
+[node name="attic_dog" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 672.858, -166.579 )
+script = ExtResource( 4 )
+dialog_label = "attic_dog"
 
-[node name="lil_table" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 543.0
-margin_top = 534.0
-margin_right = 1151.0
-margin_bottom = 1046.0
-rect_scale = Vector2( 0.2, 0.2 )
-dialog_label = "default"
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_dog"]
+position = Vector2( -243.022, 251.922 )
+polygon = PoolVector2Array( -60.8451, 334.562, -60.6758, 298.861, -107.493, 298.373, -108.279, 334.839 )
 
-[node name="crate" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 841.0
-margin_top = 467.0
-margin_right = 1726.0
-margin_bottom = 1167.0
-rect_scale = Vector2( 0.2, 0.2 )
-dialog_label = "default"
+[node name="attic_rainbow" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 832.162, -155.29 )
+script = ExtResource( 4 )
+dialog_label = "attic_rainbow"
 
-[node name="table" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 681.0
-margin_top = 466.0
-margin_right = 1599.0
-margin_bottom = 1166.0
-rect_scale = Vector2( 0.2, 0.2 )
-dialog_label = "default"
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_rainbow"]
+position = Vector2( -243.022, 251.922 )
+polygon = PoolVector2Array( -75.5794, 327.53, -75.895, 299.288, -107.293, 299.13, -107.603, 327.83 )
 
-[node name="candles" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 686.0
-margin_top = 382.0
-margin_right = 855.0
-margin_bottom = 826.0
-rect_scale = Vector2( 0.2, 0.2 )
-dialog_label = "default"
+[node name="attic_ufo" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 1167.74, -303.53 )
+script = ExtResource( 4 )
+dialog_label = "attic_ufo"
 
-[node name="candles2" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 706.0
-margin_top = 423.0
-margin_right = 1192.0
-margin_bottom = 697.0
-rect_scale = Vector2( 0.2, 0.2 )
-dialog_label = "default"
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_ufo"]
+position = Vector2( -244.686, 253.111 )
+polygon = PoolVector2Array( -72.4695, 341.403, -73.1338, 299.55, -106.849, 299.052, -107.181, 341.569 )
 
-[node name="candles3" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 821.0
-margin_top = 599.0
-margin_right = 1152.0
-margin_bottom = 854.0
-rect_scale = Vector2( 0.2, 0.2 )
-dialog_label = "default"
+[node name="attic_dog2" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 1213.75, -275.13 )
+script = ExtResource( 4 )
+dialog_label = "attic_dog2"
 
-[node name="candles4" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 819.0
-margin_top = 570.0
-margin_right = 902.0
-margin_bottom = 736.0
-rect_scale = Vector2( 0.2, 0.2 )
-dialog_label = "default"
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_dog2"]
+position = Vector2( -244.686, 253.111 )
+polygon = PoolVector2Array( -73.134, 319.148, -73.1338, 299.55, -101.534, 299.218, -101.036, 318.816 )
 
-[node name="exit_front_back_button" parent="state_handler" instance=ExtResource( 5 )]
+[node name="attic_grandma" type="Area2D" parent="state_handler"]
+position = Vector2( 1178.88, -239.874 )
+script = ExtResource( 4 )
+dialog_label = "attic_grandma"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_grandma"]
+position = Vector2( -244.686, 253.111 )
+polygon = PoolVector2Array( -37.3846, 367.908, -37.0691, 300.221, -101.534, 299.218, -101.443, 366.173 )
+
+[node name="attic_moth" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 1234.64, -159.087 )
+script = ExtResource( 4 )
+dialog_label = "attic_moth"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_moth"]
+position = Vector2( -244.686, 253.111 )
+polygon = PoolVector2Array( -61.6185, 341.286, -61.8627, 299.654, -101.053, 299.532, -101.175, 341.164 )
+
+[node name="attic_crate" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 672.858, -166.579 )
+script = ExtResource( 4 )
+dialog_label = "attic_crate"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_crate"]
+position = Vector2( -243.022, 251.922 )
+polygon = PoolVector2Array( 444.302, 524.545, 597.215, 524.886, 596.874, 405.008, 508.669, 375.719, 393.218, 375.379, 392.691, 469.523 )
+
+[node name="attic_desk" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 443.482, -178.481 )
+script = ExtResource( 4 )
+dialog_label = "  attic_desk"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_desk"]
+position = Vector2( -243.022, 251.922 )
+polygon = PoolVector2Array( 469.917, 377.419, 478.015, 488.223, 485.315, 488.807, 485.315, 439.752, 490.69, 451.04, 490.69, 526.645, 493.175, 536.975, 516.336, 534.708, 516.66, 454.471, 602.396, 455.442, 602.51, 483.104, 612.496, 494.755, 627.475, 495.032, 627.752, 455.643, 635.797, 455.643, 636.352, 525.822, 644.119, 536.363, 661.871, 536.086, 661.871, 455.643, 666.032, 455.643, 666.345, 409.668, 604.51, 376.872 )
+
+[node name="attic_candles" type="Area2D" parent="state_handler"]
+position = Vector2( 672.858, -166.579 )
+script = ExtResource( 4 )
+dialog_label = "attic_candles"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_candles"]
+position = Vector2( -243.022, 251.922 )
+polygon = PoolVector2Array( 254.283, 359.269, 246.484, 370.421, 251.071, 380.876, 269.466, 386.132, 279.394, 398.98, 299.833, 396.936, 306.841, 387.592, 332.536, 385.548, 340.426, 397.533, 377.052, 394.203, 373.246, 381.599, 372.771, 335.936, 352.1, 331.238, 345.092, 340.29, 312.311, 335.449, 301.877, 345.254, 286.402, 332.114, 285.964, 302.64, 270.505, 293.84, 254.332, 300.262 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/attic_candles"]
+position = Vector2( -243.022, 251.922 )
+polygon = PoolVector2Array( 382.049, 546.995, 463.425, 546.995, 462.708, 518.315, 449.444, 511.504, 434.953, 523.666, 425.784, 523.334, 411.445, 509.712, 410.728, 485.335, 398.587, 477.55, 385.275, 485.335 )
+
+[node name="attic_bed" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 4 )
+dialog_label = " attic_bed"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_bed"]
+position = Vector2( -243.022, 251.922 )
+polygon = PoolVector2Array( 539.384, 209.74, 518.337, 187.153, 466.489, 191.26, 483.421, 219.662, 445.711, 230.138, 423.882, 230.274, 423.882, 357.07, 921.28, 358.632, 922.895, 227.712, 910.184, 199.907, 901.048, 199.907, 900.966, 212.998 )
+
+[node name="attic_footstool" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 317.046, -100.561 )
+script = ExtResource( 4 )
+dialog_label = " attic_footstool"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_footstool"]
+position = Vector2( -243.022, 251.922 )
+polygon = PoolVector2Array( 464.737, 415.24, 470.962, 419.318, 470.972, 480.811, 483.853, 480.792, 484.038, 462.961, 494.895, 462.593, 495.079, 419.163, 574.211, 418.795, 574.763, 458.176, 577.155, 480.627, 590.589, 480.627, 591.792, 419.338, 594.786, 414.548, 588.584, 383.259, 479.547, 383.903 )
+
+[node name="attic_nightstand" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 4 )
+dialog_label = "attic_nightstand"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_nightstand"]
+position = Vector2( -243.022, 251.922 )
+polygon = PoolVector2Array( 424.001, 262.001, 423.879, 380.797, 443.619, 379.845, 443.047, 357.537, 462.883, 345.36, 463.121, 368.43, 475.622, 367.551, 485.477, 360.344, 488.138, 262.601 )
+
+[node name="exit" parent="state_handler" instance=ExtResource( 5 )]
+room_label = " house5"
 

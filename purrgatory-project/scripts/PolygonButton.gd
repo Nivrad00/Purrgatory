@@ -9,6 +9,7 @@ var hovering = 0 # number of polygons that are being hovered over
 var holding_click = false
 
 signal pressed()
+signal mouse_down()
 
 func _ready():
 	# print("ready")
@@ -17,13 +18,14 @@ func _ready():
 	input = Input
 	
 	# make visible polygon
-	for collision_polygon in get_children():	
-		var new_polygon = Polygon2D.new()
-		new_polygon.set_polygon(collision_polygon.get_polygon())
-		new_polygon.set_modulate(Color(0, 0, 0, 0.1))
-		new_polygon.hide()
-		visible_polygons.append(new_polygon)
-		add_child(new_polygon)
+	for collision_polygon in get_children():
+		if collision_polygon is CollisionPolygon2D:	
+			var new_polygon = Polygon2D.new()
+			new_polygon.set_polygon(collision_polygon.get_polygon())
+			new_polygon.set_modulate(Color(0, 0, 0, 0.1))
+			new_polygon.hide()
+			visible_polygons.append(new_polygon)
+			add_child(new_polygon)
 		
 	# hook up hover methods
 	connect("mouse_entered", self, "mouse_entered")
@@ -40,6 +42,7 @@ func mouse_exited():
 	
 func mouse_clicked_on_button():
 	holding_click = true
+	emit_signal("mouse_down")
 	# print("mouse clicked")
 	
 func mouse_released():

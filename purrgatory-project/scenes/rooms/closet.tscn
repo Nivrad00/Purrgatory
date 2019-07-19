@@ -1,15 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/closet.png" type="Texture" id=3]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/outdated/room_trans_button.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/outdated/exit_front_button.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/outdated/exit_left_button.tscn" type="PackedScene" id=7]
-
-
-
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=4]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=5]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -25,20 +20,280 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 49.0048
-margin_top = 40.9472
-margin_right = 495.005
-margin_bottom = 600.947
-rect_scale = Vector2( 0.2, 0.2 )
+[node name="bulletin_board" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 4 )
+dialog_label = "bulletin_board"
 
-[node name="room_trans_button" parent="state_handler" instance=ExtResource( 5 )]
-margin_left = 710.534
-margin_top = 348.756
-margin_right = 981.534
-margin_bottom = 603.756
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/bulletin_board"]
+polygon = PoolVector2Array( 111, 159, 111, 647.002, 347.001, 504.001, 347.001, 242.001 )
 
-[node name="exit_front_back_button" parent="state_handler" instance=ExtResource( 6 )]
+[node name="calendar" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 4 )
+dialog_label = "calendar"
 
-[node name="exit_side_button" parent="state_handler" instance=ExtResource( 7 )]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/calendar"]
+polygon = PoolVector2Array( 226.001, 254.001, 225.001, 429.001, 335.001, 407.001, 334.001, 269.001 )
+
+[node name="closet_notes" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 4 )
+dialog_label = "closet_notes"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_notes"]
+polygon = PoolVector2Array( 169.861, 362.835, 175.225, 412.578, 216.678, 409.651, 214.727, 361.372 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/closet_notes"]
+polygon = PoolVector2Array( 223.168, 465.294, 234.039, 499.58, 255.363, 488.291, 251.182, 474.075, 262.471, 468.639, 257.036, 441.461, 240.729, 446.061, 241.565, 458.604 )
+
+[node name="cylinder" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 4 )
+dialog_label = "cylinder"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/cylinder"]
+polygon = PoolVector2Array( 312.318, 606.176, 313.907, 636.364, 463.657, 636.364, 464.451, 600.615, 445.385, 584.726, 415.991, 572.81, 361.97, 574.399, 325.426, 587.11 )
+
+[node name="paper_towel_holder" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 4 )
+dialog_label = "paper_towel_holder"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/paper_towel_holder"]
+polygon = PoolVector2Array( 458.165, 363.505, 459.746, 379.547, 472.85, 383.388, 473.302, 431.512, 463.587, 439.42, 458.616, 443.939, 457.035, 452.298, 408.685, 451.621, 408.911, 441.002, 445.512, 440.55, 431.504, 432.19, 431.052, 383.162, 447.772, 379.321, 448.223, 374.576, 411.17, 373.898, 410.944, 364.409 )
+
+[node name="closet_pipe" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 189.368, -40.2259 )
+script = ExtResource( 4 )
+dialog_label = "closet_pipe"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_pipe"]
+position = Vector2( 0, 0.225937 )
+polygon = PoolVector2Array( 319.61, 147.43, 319.671, 191.246, 316.089, 193.748, 315.946, 203.288, 319.8, 205.706, 319.364, 212.259, 313.81, 222.369, 301.048, 222.425, 298.432, 219.094, 288.322, 218.81, 283.877, 222.425, 221.735, 222.125, 217.232, 231.663, 221.84, 240.952, 284.199, 240.952, 288.322, 245.295, 299.998, 244.726, 299.428, 241.451, 330.064, 239.822, 338.423, 229.881, 340.005, 204.576, 342.29, 204.57, 343.144, 193.748, 340.005, 192.15, 339.357, 148.074, 328.84, 144.855 )
+
+[node name="closet_wood" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 4 )
+dialog_label = "closet_wood"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_wood"]
+polygon = PoolVector2Array( 512.891, 368.087, 514, 398.322, 629.117, 398.045, 628.71, 368.603 )
+
+[node name="broom" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 4 )
+dialog_label = "broom"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/broom"]
+polygon = PoolVector2Array( 536.479, 275.812, 599.162, 598.146, 559.76, 605.53, 561.804, 627.429, 664, 611.37, 656.992, 588.01, 614.654, 594.434, 549.859, 271.631 )
+
+[node name="closet_sink" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 4 )
+dialog_label = "closet_sink"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_sink"]
+polygon = PoolVector2Array( 465.395, 494.651, 445.937, 522.912, 445.858, 529.269, 450.573, 532.887, 450.822, 541.532, 458.997, 550.292, 461.917, 574.527, 570.563, 574.801, 583.998, 521.059, 571.953, 450.638, 466.785, 454.345 )
+
+[node name="closet_pipe2" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 4 )
+dialog_label = "closet_pipe2"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_pipe2"]
+polygon = PoolVector2Array( 517.152, 592.208, 539.385, 593.75, 540.156, 596.192, 544.782, 596.192, 546.453, 593.879, 557.119, 593.75, 559.947, 598.12, 560.589, 607.244, 569.971, 604.417, 570.613, 591.308, 566.758, 585.397, 545.168, 584.626, 544.911, 582.698, 538.742, 583.084, 538.742, 584.754, 523.064, 583.855, 522.293, 574.473, 510.983, 574.73, 511.241, 588.995 )
+
+[node name="closet_water" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 4 )
+dialog_label = "closet_water"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_water"]
+polygon = PoolVector2Array( 476.491, 613.724, 478.53, 617.395, 471.189, 626.366, 474.248, 632.688, 518.292, 633.911, 518.7, 625.755, 510.67, 621.214, 516.049, 614.132, 498.717, 602.305, 475.064, 600.674, 467.519, 608.423 )
+
+[node name="bucket" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 4 )
+dialog_label = "bucket"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/bucket"]
+polygon = PoolVector2Array( 729.695, 548.393, 721.71, 543.026, 708.894, 541.175, 694.092, 538.064, 677.14, 538.185, 669.593, 543.311, 665.475, 552.021, 672.818, 611.636, 687.678, 620.378, 707.259, 619.329, 719.147, 614.434, 724.391, 607.266 )
+
+[node name="closet_wires" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( -88.251, -502.87 )
+script = ExtResource( 4 )
+dialog_label = "closet_wires"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_wires"]
+polygon = PoolVector2Array( 694.263, 591.06, 683.813, 626.099, 696.107, 654.069, 698.874, 688.493, 727.458, 695.869, 831.844, 673.63, 830.263, 657.292, 810.763, 649.914, 796.796, 633.312, 810.499, 625.933, 812.596, 611.961, 701.947, 589.216 )
+
+[node name="closet_tile" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 4.15088, -256.978 )
+script = ExtResource( 4 )
+dialog_label = "closet_tile"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_tile"]
+polygon = PoolVector2Array( 640.704, 425.508, 634.494, 446.146, 633.586, 656.188, 641.027, 662.335, 785, 661.364, 783.487, 424.978 )
+
+[node name="electric_box" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 4.15088, -256.978 )
+script = ExtResource( 4 )
+dialog_label = "electric_box"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/electric_box"]
+polygon = PoolVector2Array( 586.625, 281.354, 615.438, 367.913, 720.605, 366.79, 732.533, 277.748 )
+
+[node name="electric_box_note" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 4.15088, -256.978 )
+script = ExtResource( 4 )
+dialog_label = "electric_box_note"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/electric_box_note"]
+polygon = PoolVector2Array( 652.923, 564.977, 652.923, 595.92, 678.206, 593.278, 678.206, 565.354 )
+
+[node name="electric_box_warning" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 4.15088, -256.978 )
+script = ExtResource( 4 )
+dialog_label = "electric_box_warning"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/electric_box_warning"]
+polygon = PoolVector2Array( 712.466, 599.039, 712.917, 644.678, 777.083, 648.293, 777.535, 598.587 )
+
+[node name="closet_shelves" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 4.15088, -256.978 )
+script = ExtResource( 4 )
+dialog_label = "closet_shelves"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_shelves"]
+polygon = PoolVector2Array( 752.151, 465.92, 752.471, 471.822, 929.026, 472.068, 1275.41, 338.27, 1276.22, 305.014, 927.815, 303.43 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/closet_shelves"]
+polygon = PoolVector2Array( 753.069, 551.086, 751.673, 557.432, 930.034, 558.062, 1259.87, 516.389, 1261.58, 498.756, 931.103, 498.756 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="state_handler/closet_shelves"]
+polygon = PoolVector2Array( 753.068, 654.608, 932.81, 722.864, 1258.73, 722.864, 1258.73, 707.506, 883.324, 645.507, 750.793, 645.507 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="state_handler/closet_shelves"]
+position = Vector2( 0.26355, 0 )
+polygon = PoolVector2Array( 752.5, 772.918, 858.866, 895.779, 1188.77, 893.504, 936.875, 758.731, 751.362, 758.698 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="state_handler/closet_shelves"]
+polygon = PoolVector2Array( 752.324, 895.173, 766.095, 892.778, 766.693, 470.069, 752.324, 468.273 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="state_handler/closet_shelves"]
+polygon = PoolVector2Array( 929.985, 767.042, 959.839, 778.983, 961.165, 457.887, 931.975, 466.511 )
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="state_handler/closet_shelves"]
+polygon = PoolVector2Array( 1257.05, 889.775, 1276.29, 890.438, 1275.63, 333.827, 1256.39, 341.124 )
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="state_handler/closet_shelves"]
+polygon = PoolVector2Array( 915.763, 752.658, 927.734, 752.334, 928.188, 467.849, 914.544, 466.528 )
+
+[node name="closet_rope" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 4.15088, -256.978 )
+script = ExtResource( 4 )
+dialog_label = "closet_rope"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_rope"]
+polygon = PoolVector2Array( 803.549, 525.172, 794.02, 531.585, 794.187, 537.232, 798.172, 539.059, 794.685, 549.19, 794.278, 571.477, 802.989, 578.753, 813.286, 577.258, 815.445, 568.622, 807.473, 558.325, 818.909, 533.529, 886.341, 514.117, 870.675, 509.008, 826.979, 508.022, 801.418, 520.935 )
+
+[node name="closet_boxes" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 4.15088, -256.978 )
+script = ExtResource( 4 )
+dialog_label = "closet_boxes"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_boxes"]
+polygon = PoolVector2Array( 981.948, 498.65, 1128.2, 498.597, 1129.74, 427.29, 1079.94, 428.212, 1079.33, 422.372, 1026.01, 428.303, 982.204, 447.575 )
+
+[node name="closet_snowglobe" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 4.15088, -256.978 )
+script = ExtResource( 4 )
+dialog_label = "closet_snowglobe"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_snowglobe"]
+polygon = PoolVector2Array( 971.946, 472.419, 972.103, 485.515, 977.473, 492.44, 970.999, 499.557, 1013.13, 498.926, 1004.66, 492.44, 1008.39, 486.146, 1008.23, 473.208, 998.61, 461.217, 982.832, 461.217 )
+
+[node name="closet_paper_towels" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( -169.773, -115.232 )
+script = ExtResource( 4 )
+dialog_label = "closet_snowglobe"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_paper_towels"]
+polygon = PoolVector2Array( 1005.62, 454.978, 980.363, 455.631, 965.957, 461.081, 965.68, 503.799, 968.763, 509.726, 987.742, 514.981, 1004.09, 512.938, 1004.39, 521.697, 1021.9, 527.829, 1051.98, 525.201, 1051.41, 534.001, 1066.54, 540.38, 1091.53, 541.542, 1104.9, 536.893, 1105.41, 467.679, 1090.91, 464.2, 1091.28, 461.492, 1083, 457.634, 1058.97, 457.634, 1048.06, 463.578, 1035.03, 460.249, 1019.22, 459.971 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/closet_paper_towels"]
+polygon = PoolVector2Array( 1188.73, 528.313, 1189.51, 470.819, 1172.32, 463.088, 1146.03, 462.791, 1134.27, 468.777, 1134.28, 533.961, 1140.02, 537.784 )
+
+[node name="closet_soap" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 13.9998, -58.8041 )
+script = ExtResource( 4 )
+dialog_label = "closet_soap"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_soap"]
+polygon = PoolVector2Array( 956.085, 471.344, 955.814, 496.776, 967.138, 502.595, 1031, 502.227, 1031.16, 474.997, 1008.17, 471.75 )
+
+[node name="fertilizer_bag" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 99.1535, -92.898 )
+script = ExtResource( 4 )
+dialog_label = "fertilizer_bag"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/fertilizer_bag"]
+position = Vector2( 0.291992, 0 )
+polygon = PoolVector2Array( 964.586, 437.136, 941.81, 503.417, 942.261, 517.551, 1000.79, 531.698, 1023.81, 532.253, 1042.95, 519.216, 1060.71, 495.083, 1069.03, 470.395, 1070.06, 431.798, 1076.13, 410.857, 984.149, 412.025 )
+
+[node name="cleaner" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 13.9998, -58.8041 )
+script = ExtResource( 4 )
+dialog_label = "cleaner"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/cleaner"]
+polygon = PoolVector2Array( 808.706, 522.105, 780.019, 524.089, 779.521, 533.556, 790.165, 533.602, 784.836, 540.531, 785.998, 546.842, 797.559, 535.158, 785.496, 566.391, 784.499, 586.896, 795.535, 594.046, 809.703, 594.158, 818.674, 591.167, 821.807, 575.646, 814.833, 545.787, 809.418, 538.196, 819.386, 529.368 )
+
+[node name="closet_towels" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 13.9998, -58.8041 )
+script = ExtResource( 4 )
+dialog_label = "closet_towels"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_towels"]
+polygon = PoolVector2Array( 893.881, 513.608, 841.787, 513.672, 838.487, 528.509, 839.975, 535.408, 834.564, 546.365, 835.376, 558.27, 831.034, 568.835, 845.672, 574.741, 818.574, 589.776, 815.602, 602.014, 822.07, 605.86, 818.565, 614.877, 853.014, 618.447, 905.268, 575.461, 905.503, 517.89 )
+
+[node name="wipes" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 13.9998, -58.8041 )
+script = ExtResource( 4 )
+dialog_label = "wipes"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/wipes"]
+polygon = PoolVector2Array( 863.585, 586.105, 853.307, 591.112, 853.571, 645.134, 866.22, 651.458, 878.605, 652.249, 889.818, 649.874, 889.41, 588.477, 880.378, 585.014 )
+
+[node name="closet_big_box" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 13.9998, -58.8041 )
+script = ExtResource( 4 )
+dialog_label = "closet_big_box"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_big_box"]
+polygon = PoolVector2Array( 1132.09, 722.915, 1131.79, 587.063, 1071.85, 557.557, 950.564, 554.312, 951.319, 717.707 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/closet_big_box"]
+polygon = PoolVector2Array( 914.375, 716.662, 920.082, 716.424, 920.334, 553.168, 889.343, 552.146, 889.002, 667.256 )
+
+[node name="exit" parent="state_handler" instance=ExtResource( 5 )]
+room_label = "hallway 12"
 

@@ -22,11 +22,12 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+room_label = "antechamber1"
 
 [node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
+room_label = "antechamber3"
 
 [node name="lucifur_wuz_here" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 423.201, 108.562 )
 script = ExtResource( 6 )
 __meta__ = {
