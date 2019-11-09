@@ -1,15 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/library5.png" type="Texture" id=3]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/outdated/room_trans_button.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/outdated/exit_front_button.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/outdated/exit_left_button.tscn" type="PackedScene" id=7]
-
-
-
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=6]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -25,20 +21,37 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 49.0048
-margin_top = 40.9472
-margin_right = 495.005
-margin_bottom = 600.947
-rect_scale = Vector2( 0.2, 0.2 )
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+room_label = "library2"
 
-[node name="room_trans_button" parent="state_handler" instance=ExtResource( 5 )]
-margin_left = 710.534
-margin_top = 348.756
-margin_right = 981.534
-margin_bottom = 603.756
+[node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
+room_label = "library4"
 
-[node name="exit_front_back_button" parent="state_handler" instance=ExtResource( 6 )]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( -440.483, 445.549, -459.346, 527, -377.037, 568.154, -362.462, 477.272 )
 
-[node name="exit_side_button" parent="state_handler" instance=ExtResource( 7 )]
+[node name="object" parent="state_handler" instance=ExtResource( 6 )]
+dialog_label = "library_lamp"
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+polygon = PoolVector2Array( 613.077, 490.613, 613.617, 559.239, 628.862, 567.151, 628.07, 631.818, 665.657, 632.168, 665.133, 568.531, 676.84, 564.102, 676.84, 490.072, 642.797, 486.83 )
+
+[node name="object2" parent="state_handler" instance=ExtResource( 6 )]
+dialog_label = "library_round_desk"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
+polygon = PoolVector2Array( 423.698, 631.836, 456.714, 621.543, 540.676, 612.514, 631.279, 611.079, 661.721, 611.079, 787.44, 615.928, 842.06, 625.194, 862.118, 631.947 )
+
+[node name="object3" parent="state_handler" instance=ExtResource( 6 )]
+dialog_label = "library_books"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
+polygon = PoolVector2Array( 32.5947, -1.73251, 85.5815, 48.6695, 172.17, 117.165, 275.558, 166.274, 366.023, 194.706, 484.92, 211.507, 692.99, 217.969, 827.396, 210.214, 946.648, 191.986, 1052.27, 161.105, 1128.52, 122.334, 1189.26, 66.7625, 1222.23, -5.74506, 1282.97, -1.86798, 1281.68, 157.092, 1182.17, 228.172, 1074.91, 265.65, 958.593, 301.836, 775.078, 317.345, 576.054, 317.345, 420.971, 312.175, 265.575, 278.574, 111.785, 229.464, -3.23544, 164.846, -3.23544, -1.86798 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object3"]
+polygon = PoolVector2Array( 173.531, 296.348, 154.916, 409.474, 321.025, 435.249, 551.573, 440.977, 796.441, 442.409, 1074.55, 418.746, 1211.71, 379.402, 1282.17, 344.099, 1277.5, 225.131, 1145.84, 289.188, 1032.57, 319.605, 886.656, 347.899, 731.646, 352.263, 500.708, 353.43, 315.297, 335.011 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="state_handler/object3"]
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="state_handler/object3"]
+polygon = PoolVector2Array( -2.9651, 442.944, 137.369, 465.855, 324.115, 475.036, 764.575, 478.743, 1018.03, 474.447, 1281.52, 441.512, 1279.51, 631.615, 1010.88, 631.907, 867.581, 609.646, 760.96, 599.193, 667.2, 596.165, 514.268, 600.447, 374.615, 611.737, 273.848, 631.388, 0.463383, 632.282 )

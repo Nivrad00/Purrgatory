@@ -6,6 +6,7 @@ signal start_action_timer(actions, callback)
 signal change_audio(song)
 
 var hidden_sprites = null
+var dialog_ongoing = false
 
 func _ready():
 	var children = $state_handler.get_children()
@@ -42,6 +43,11 @@ func init_state(state):
 	$state_handler.init_state(state)
 	
 func start_dialog(label, sprites):
+	if dialog_ongoing:
+		return
+	else:
+		dialog_ongoing = true
+		
 	if sprites != null:
 		for sprite in sprites:
 			sprite.hide()
@@ -49,6 +55,7 @@ func start_dialog(label, sprites):
 	emit_signal('start_dialog', label)
 
 func end_dialog():
+	dialog_ongoing = false
 	if hidden_sprites != null:
 		for sprite in hidden_sprites:
 			sprite.show()

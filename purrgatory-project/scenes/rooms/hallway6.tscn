@@ -1,19 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/hallway6.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/hallway6.png" type="Texture" id=3]
-[ext_resource path="res://scenes/sprites/kyungsoon_at_vent.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/outdated/room_trans_button.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/exits/hallway6_exit2.png" type="Texture" id=6]
-[ext_resource path="res://assets/exit_masks/hallway6_exit2.png" type="BitMap" id=7]
-[ext_resource path="res://scenes/outdated/exit_back_button.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/exits/hallway6_exit1.png" type="Texture" id=9]
-[ext_resource path="res://assets/exit_masks/hallway6_exit1.png" type="BitMap" id=10]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=11]
-
-
-
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/sprites/kyungsoon_at_vent.tscn" type="PackedScene" id=6]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -29,42 +21,37 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="kyungsoon_at_vent" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 404.603
-margin_top = 22.2135
-margin_right = 1904.61
-margin_bottom = 1522.21
-rect_scale = Vector2( 0.8, 0.8 )
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+room_label = "field6"
 
-[node name="room_trans_button" parent="state_handler" instance=ExtResource( 5 )]
-margin_left = 830.19
-margin_top = 0.19812
-margin_right = 933.19
-margin_bottom = 209.198
-texture_normal = ExtResource( 6 )
-texture_click_mask = ExtResource( 7 )
-expand = false
+[node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 room_label = "hallway7"
 
-[node name="exit_front_back_button2" parent="state_handler" instance=ExtResource( 8 )]
-room_label = "garden5"
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( 208.633, 389.948, 438.234, 456.449, 461.505, 412.02, 478.371, 393.412, 480.46, 177.248, 208.822, 177.248 )
 
-[node name="vent_open" parent="state_handler" instance=ExtResource( 5 )]
-margin_left = 140.737
-margin_top = -0.0546265
-margin_right = 314.737
-margin_bottom = 231.945
-texture_normal = ExtResource( 9 )
-texture_click_mask = ExtResource( 10 )
-expand = false
+[node name="exit3" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 room_label = "vent1"
 
-[node name="vent_closed" parent="state_handler" instance=ExtResource( 11 )]
-margin_left = 140.733
-margin_top = 1.09749
-margin_right = 314.733
-margin_bottom = 233.097
-texture_normal = ExtResource( 9 )
-texture_click_mask = ExtResource( 10 )
-dialog_label = "vent"
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3"]
+polygon = PoolVector2Array( -325.058, 182.397, -136.647, 185.051, -135.983, 364.838, -325.722, 465.015 )
+
+[node name="kyungsoon_at_vent" parent="state_handler" instance=ExtResource( 6 )]
+margin_left = 168.686
+margin_top = 35.1716
+margin_right = 489.686
+margin_bottom = 720.172
+
+[node name="cover" type="Button" parent="state_handler"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 180.0
+margin_top = 632.0
+margin_right = 523.0
+margin_bottom = 725.0
 

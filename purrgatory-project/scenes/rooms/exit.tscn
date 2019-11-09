@@ -1,15 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/exit.png" type="Texture" id=3]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/outdated/room_trans_button.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/outdated/exit_front_button.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/outdated/exit_left_button.tscn" type="PackedScene" id=7]
-
-
-
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=4]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=5]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -25,20 +20,26 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 49.0048
-margin_top = 40.9472
-margin_right = 495.005
-margin_bottom = 600.947
-rect_scale = Vector2( 0.2, 0.2 )
+[node name="exit" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 453.085, -178.215 )
+script = ExtResource( 4 )
+room_label = "warehouse3"
 
-[node name="room_trans_button" parent="state_handler" instance=ExtResource( 5 )]
-margin_left = 710.534
-margin_top = 348.756
-margin_right = 981.534
-margin_bottom = 603.756
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
+polygon = PoolVector2Array( -282.299, 871.379, 76.915, 738.215, 226.915, 788.215, 0.712372, 902.253, -258.041, 901.517 )
 
-[node name="exit_front_back_button" parent="state_handler" instance=ExtResource( 6 )]
+[node name="exit_door" type="Area2D" parent="state_handler"]
+script = ExtResource( 5 )
+dialog_label = "exit_door"
 
-[node name="exit_side_button" parent="state_handler" instance=ExtResource( 7 )]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit_door"]
+polygon = PoolVector2Array( 869.587, 220.676, 871.803, 568.599, 1105.21, 614.891, 1106.22, 193.825 )
+
+[node name="exit_painting" type="Area2D" parent="state_handler"]
+script = ExtResource( 5 )
+dialog_label = "exit_painting"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit_painting"]
+polygon = PoolVector2Array( 674.711, 316.982, 673.578, 386.938, 779.223, 398.204, 779.423, 313.051 )
 

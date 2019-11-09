@@ -5,8 +5,4 @@
 [node name="exit" type="Area2D"]
 position = Vector2( 453.085, -178.215 )
 script = ExtResource( 1 )
-room_label = "antechamber2"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 420.315, 275.436, 427.398, 728.346, 710.089, 732.574, 720.31, 276.723 )
 

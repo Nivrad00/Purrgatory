@@ -57,7 +57,7 @@ polygon = PoolVector2Array( 451.03, 259.472, 501.178, 308.972, 503.119, 289.56, 
 [node name="bell_sign" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 script = ExtResource( 6 )
-dialog_label = " bell_sign"
+dialog_label = "bell_sign"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/bell_sign"]
 position = Vector2( 4.52954, -3.23535 )

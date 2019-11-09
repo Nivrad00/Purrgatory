@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/sprites/numa-idle-poetry_elijah_3.png" type="Texture" id=1]
-[ext_resource path="res://assets/sprite_masks/numa-idle-poetry_elijah_1.png" type="BitMap" id=2]
+[ext_resource path="res://assets/sprites/elijah_and_numa_poetry3.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprite_masks/elijah_and_numa_poetry1.png" type="BitMap" id=2]
 [ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=3]
-[ext_resource path="res://assets/sprites/numa-idle-poetry_elijah_1.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/numa-idle-poetry_elijah_2.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/elijah_and_numa_poetry1.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/elijah_and_numa_poetry2.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "oliver_idle"

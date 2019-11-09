@@ -92,7 +92,6 @@ enabled_focus_mode = 0
 flat = true
 
 [node name="main_menu" type="Control" parent="."]
-editor/display_folded = true
 visible = false
 margin_top = 19.0
 margin_right = 40.0
@@ -331,7 +330,6 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "back"
 align = 1
 valign = 1
-
 [connection signal="pressed" from="loading/click_to_continue" to="." method="_on_click_to_continue_pressed"]
 [connection signal="pressed" from="main_menu/buttons/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="main_menu/buttons/continue" to="." method="_on_continue_pressed"]

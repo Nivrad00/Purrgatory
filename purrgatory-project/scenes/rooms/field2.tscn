@@ -1,15 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/field2.png" type="Texture" id=3]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/outdated/room_trans_button.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/outdated/exit_front_button.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/outdated/exit_left_button.tscn" type="PackedScene" id=7]
-
-
-
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/exit_left-overlap.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=6]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -25,20 +21,100 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 49.0048
-margin_top = 40.9472
-margin_right = 495.005
-margin_bottom = 600.947
-rect_scale = Vector2( 0.2, 0.2 )
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+room_label = "field1"
 
-[node name="room_trans_button" parent="state_handler" instance=ExtResource( 5 )]
-margin_left = 710.534
-margin_top = 348.756
-margin_right = 981.534
-margin_bottom = 603.756
+[node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
 
-[node name="exit_front_back_button" parent="state_handler" instance=ExtResource( 6 )]
+[node name="field_tree" type="Area2D" parent="state_handler"]
+script = ExtResource( 6 )
+dialog_label = "field_tree"
 
-[node name="exit_side_button" parent="state_handler" instance=ExtResource( 7 )]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_tree"]
+polygon = PoolVector2Array( 494.835, 299.264, 526.6, 365.24, 568.955, 359.538, 554.266, 394.579, 585.93, 389.402, 584.43, 375.014, 592.576, 347.32, 633.339, 340.903, 621.083, 294.377, 634.115, 270.757, 581.987, 244.692, 561.624, 262.612, 524.971, 263.426 )
+
+[node name="field_grave2" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 6 )
+dialog_label = "field_grave2"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_grave2"]
+polygon = PoolVector2Array( 655.375, 457.746, 655.977, 556.665, 752.161, 572.336, 753.143, 458.481, 738.441, 448.925, 667.137, 444.515 )
+
+[node name="field_bricks" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 6 )
+dialog_label = "field_bricks"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_bricks"]
+polygon = PoolVector2Array( 362.242, 414.973, 432.289, 416.602, 515.369, 429.635, 561.796, 457.328, 656.279, 480.949, 810.221, 489.908, 1039.1, 535.521, 1034.21, 548.553, 1062.72, 550.182, 1031.77, 601.496, 784.972, 544.48, 631.844, 523.303, 566.683, 501.311, 464.055, 445.925, 314.186, 440.223 )
+
+[node name="field_arch" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 6 )
+dialog_label = "field_arch"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_arch"]
+polygon = PoolVector2Array( 231.086, 455.388, 231.086, 301.43, 240.52, 265.135, 266.187, 231.768, 303.148, 215.341, 359.385, 212.787, 406.039, 236.114, 427.377, 265.135, 437.644, 300.556, 436.364, 397.071, 404.872, 404.069, 402.54, 294.432, 382.712, 264.106, 351.22, 251.276, 318.562, 257.108, 293.651, 275.644, 280.619, 316.369, 283.572, 449.557, 247.415, 467.052 )
+
+[node name="field_path" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 6 )
+dialog_label = "field_path"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_path"]
+polygon = PoolVector2Array( 90.2303, 451.446, 161.386, 433.933, 231.433, 433.119, 312.07, 440.449, 365.827, 416.014, 310.441, 416.014, 229.681, 406.207, 157.928, 406.596, 90.2134, 418.792 )
+
+[node name="field_grave1" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 6 )
+dialog_label = "field_grave1"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_grave1"]
+polygon = PoolVector2Array( 585.417, 443.481, 586.231, 384.837, 607.409, 377.506, 623.699, 377.506, 642.433, 384.837, 643.933, 446.576 )
+
+[node name="field_grave3" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 6 )
+dialog_label = "field_grave3"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_grave3"]
+polygon = PoolVector2Array( 664.082, 396.718, 664.622, 358.893, 681.374, 356.191, 699.206, 361.595, 699.206, 395.637 )
+
+[node name="field_grave4" type="Area2D" parent="state_handler"]
+script = ExtResource( 6 )
+dialog_label = "field_grave4"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_grave4"]
+polygon = PoolVector2Array( 734.329, 438.866, 732.168, 398.339, 738.112, 381.588, 750, 357.812, 757.024, 349.166, 765.67, 348.626, 774.316, 358.893, 782.962, 394.016, 784.042, 441.028 )
+
+[node name="field_grave5" type="Area2D" parent="state_handler"]
+script = ExtResource( 6 )
+dialog_label = "field_grave5"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_grave5"]
+polygon = PoolVector2Array( 809.444, 390.621, 808.65, 366.391, 814.608, 353.68, 828.113, 353.68, 834.866, 358.446, 840.824, 371.157, 840.824, 397.771, 832.88, 399.757 )
+
+[node name="field_grave6" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 6 )
+dialog_label = "field_grave6"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_grave6"]
+polygon = PoolVector2Array( 891.27, 445.834, 893.256, 392.607, 912.323, 379.499, 936.553, 379.896, 953.236, 396.579, 960.783, 415.645, 960.386, 470.064, 939.333, 472.05 )
+
+[node name="field_bush" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 6 )
+dialog_label = "field_bush"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_bush"]
+polygon = PoolVector2Array( 1106.85, 528.796, 1134.4, 495.865, 1109.85, 449.164, 1048.18, 443.775, 1020.64, 485.088, 1040.99, 521.012 )
+
+[node name="field_flowers" type="Area2D" parent="state_handler"]
+script = ExtResource( 6 )
+dialog_label = "field_flowers"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_flowers"]
+polygon = PoolVector2Array( 850.004, 458.683, 876.391, 475.254, 885.878, 471.038, 881.969, 436.861, 856.627, 437.044 )
 

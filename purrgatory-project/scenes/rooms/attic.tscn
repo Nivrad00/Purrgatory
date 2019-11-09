@@ -20,16 +20,6 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="attic_window" type="Area2D" parent="state_handler"]
-editor/display_folded = true
-position = Vector2( 672.858, -166.579 )
-script = ExtResource( 4 )
-dialog_label = "attic_window"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_window"]
-position = Vector2( -243.022, 251.922 )
-polygon = PoolVector2Array( 359.347, 314.313, 359.529, 89.332, 90.5891, 87.9312, 92.5749, 314.324 )
-
 [node name="attic_galaxy" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 position = Vector2( 672.858, -166.579 )
@@ -81,6 +71,7 @@ position = Vector2( -244.686, 253.111 )
 polygon = PoolVector2Array( -73.134, 319.148, -73.1338, 299.55, -101.534, 299.218, -101.036, 318.816 )
 
 [node name="attic_grandma" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( 1178.88, -239.874 )
 script = ExtResource( 4 )
 dialog_label = "attic_grandma"
@@ -99,15 +90,57 @@ dialog_label = "attic_moth"
 position = Vector2( -244.686, 253.111 )
 polygon = PoolVector2Array( -61.6185, 341.286, -61.8627, 299.654, -101.053, 299.532, -101.175, 341.164 )
 
-[node name="attic_crate" type="Area2D" parent="state_handler"]
+[node name="attic_candles" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 position = Vector2( 672.858, -166.579 )
 script = ExtResource( 4 )
-dialog_label = "attic_crate"
+dialog_label = "attic_candles"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_crate"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_candles"]
 position = Vector2( -243.022, 251.922 )
-polygon = PoolVector2Array( 444.302, 524.545, 597.215, 524.886, 596.874, 405.008, 508.669, 375.719, 393.218, 375.379, 392.691, 469.523 )
+polygon = PoolVector2Array( 254.283, 359.269, 246.484, 370.421, 251.071, 380.876, 269.466, 386.132, 279.394, 398.98, 299.833, 396.936, 306.841, 387.592, 332.536, 385.548, 340.426, 397.533, 377.052, 394.203, 373.246, 381.599, 372.771, 335.936, 352.1, 331.238, 345.092, 340.29, 312.311, 335.449, 301.877, 345.254, 286.402, 332.114, 285.964, 302.64, 270.505, 293.84, 254.332, 300.262 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/attic_candles"]
+position = Vector2( -243.022, 251.922 )
+polygon = PoolVector2Array( 382.245, 546.599, 463.201, 546.599, 462.708, 518.315, 449.444, 511.504, 434.953, 523.666, 425.784, 523.334, 411.445, 509.712, 410.728, 485.335, 398.587, 477.55, 385.275, 485.335 )
+
+[node name="attic_window" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 672.858, -166.579 )
+script = ExtResource( 4 )
+dialog_label = "attic_window"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_window"]
+position = Vector2( -243.022, 251.922 )
+polygon = PoolVector2Array( 359.347, 314.313, 359.529, 89.332, 90.5891, 87.9312, 92.5749, 314.324 )
+
+[node name="attic_footstool" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 317.046, -100.561 )
+script = ExtResource( 4 )
+dialog_label = " attic_footstool"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_footstool"]
+position = Vector2( -243.022, 251.922 )
+polygon = PoolVector2Array( 464.737, 415.24, 470.962, 419.318, 470.894, 480.726, 483.614, 480.613, 484.038, 462.961, 494.895, 462.593, 495.079, 419.163, 574.211, 418.795, 574.763, 458.176, 577.155, 480.627, 590.589, 480.627, 591.792, 419.338, 594.786, 414.548, 588.584, 383.259, 479.547, 383.903 )
+
+[node name="attic_nightstand" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 4 )
+dialog_label = "antechamber_ttt"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_nightstand"]
+position = Vector2( -243.022, 251.922 )
+polygon = PoolVector2Array( 424.001, 262.001, 423.879, 380.797, 443.619, 379.845, 443.047, 357.537, 462.883, 345.36, 463.121, 368.43, 475.622, 367.551, 485.477, 360.344, 488.138, 262.601 )
+
+[node name="attic_bed" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 4 )
+dialog_label = "lucifur_wuz_here"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_bed"]
+position = Vector2( -243.022, 251.922 )
+polygon = PoolVector2Array( 539.384, 209.74, 518.337, 187.153, 466.489, 191.26, 483.421, 219.662, 445.711, 230.138, 423.882, 230.274, 424.118, 357.861, 921.28, 358.632, 922.895, 227.712, 910.184, 199.907, 901.048, 199.907, 900.966, 212.998 )
 
 [node name="attic_desk" type="Area2D" parent="state_handler"]
 editor/display_folded = true
@@ -119,47 +152,16 @@ dialog_label = "  attic_desk"
 position = Vector2( -243.022, 251.922 )
 polygon = PoolVector2Array( 469.917, 377.419, 478.015, 488.223, 485.315, 488.807, 485.315, 439.752, 490.69, 451.04, 490.69, 526.645, 493.175, 536.975, 516.336, 534.708, 516.66, 454.471, 602.396, 455.442, 602.51, 483.104, 612.496, 494.755, 627.475, 495.032, 627.752, 455.643, 635.797, 455.643, 636.352, 525.822, 644.119, 536.363, 661.871, 536.086, 661.871, 455.643, 666.032, 455.643, 666.345, 409.668, 604.51, 376.872 )
 
-[node name="attic_candles" type="Area2D" parent="state_handler"]
+[node name="attic_crate" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( 672.858, -166.579 )
 script = ExtResource( 4 )
-dialog_label = "attic_candles"
+dialog_label = "attic_crate"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_candles"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_crate"]
 position = Vector2( -243.022, 251.922 )
-polygon = PoolVector2Array( 254.283, 359.269, 246.484, 370.421, 251.071, 380.876, 269.466, 386.132, 279.394, 398.98, 299.833, 396.936, 306.841, 387.592, 332.536, 385.548, 340.426, 397.533, 377.052, 394.203, 373.246, 381.599, 372.771, 335.936, 352.1, 331.238, 345.092, 340.29, 312.311, 335.449, 301.877, 345.254, 286.402, 332.114, 285.964, 302.64, 270.505, 293.84, 254.332, 300.262 )
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/attic_candles"]
-position = Vector2( -243.022, 251.922 )
-polygon = PoolVector2Array( 382.049, 546.995, 463.425, 546.995, 462.708, 518.315, 449.444, 511.504, 434.953, 523.666, 425.784, 523.334, 411.445, 509.712, 410.728, 485.335, 398.587, 477.55, 385.275, 485.335 )
-
-[node name="attic_bed" type="Area2D" parent="state_handler"]
-editor/display_folded = true
-script = ExtResource( 4 )
-dialog_label = " attic_bed"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_bed"]
-position = Vector2( -243.022, 251.922 )
-polygon = PoolVector2Array( 539.384, 209.74, 518.337, 187.153, 466.489, 191.26, 483.421, 219.662, 445.711, 230.138, 423.882, 230.274, 423.882, 357.07, 921.28, 358.632, 922.895, 227.712, 910.184, 199.907, 901.048, 199.907, 900.966, 212.998 )
-
-[node name="attic_footstool" type="Area2D" parent="state_handler"]
-editor/display_folded = true
-position = Vector2( 317.046, -100.561 )
-script = ExtResource( 4 )
-dialog_label = " attic_footstool"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_footstool"]
-position = Vector2( -243.022, 251.922 )
-polygon = PoolVector2Array( 464.737, 415.24, 470.962, 419.318, 470.972, 480.811, 483.853, 480.792, 484.038, 462.961, 494.895, 462.593, 495.079, 419.163, 574.211, 418.795, 574.763, 458.176, 577.155, 480.627, 590.589, 480.627, 591.792, 419.338, 594.786, 414.548, 588.584, 383.259, 479.547, 383.903 )
-
-[node name="attic_nightstand" type="Area2D" parent="state_handler"]
-editor/display_folded = true
-script = ExtResource( 4 )
-dialog_label = "attic_nightstand"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_nightstand"]
-position = Vector2( -243.022, 251.922 )
-polygon = PoolVector2Array( 424.001, 262.001, 423.879, 380.797, 443.619, 379.845, 443.047, 357.537, 462.883, 345.36, 463.121, 368.43, 475.622, 367.551, 485.477, 360.344, 488.138, 262.601 )
+polygon = PoolVector2Array( 444.302, 524.545, 597.215, 524.886, 596.874, 405.008, 508.669, 375.719, 393.218, 375.379, 392.691, 469.523 )
 
 [node name="exit" parent="state_handler" instance=ExtResource( 5 )]
-room_label = " house5"
+room_label = "house5"
 

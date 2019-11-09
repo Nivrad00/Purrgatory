@@ -25,7 +25,7 @@ centered = false
 room_label = "antechamber3"
 
 [node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
-room_label = "  bell_tower"
+room_label = "bell_tower"
 
 [node name="antechamber_ttt" type="Area2D" parent="state_handler"]
 editor/display_folded = true

@@ -1,15 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/dropoff2.png" type="Texture" id=3]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/outdated/room_trans_button.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/outdated/exit_front_button.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/outdated/exit_left_button.tscn" type="PackedScene" id=7]
-
-
-
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=5]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -22,23 +17,18 @@ script = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="bg" type="Sprite" parent="state_handler"]
+position = Vector2( 1.36041, 0 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 49.0048
-margin_top = 40.9472
-margin_right = 495.005
-margin_bottom = 600.947
-rect_scale = Vector2( 0.2, 0.2 )
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+room_label = " dropoff1"
 
-[node name="room_trans_button" parent="state_handler" instance=ExtResource( 5 )]
-margin_left = 710.534
-margin_top = 348.756
-margin_right = 981.534
-margin_bottom = 603.756
+[node name="dropoff_pit" type="Area2D" parent="state_handler"]
+script = ExtResource( 5 )
+dialog_label = "dropoff_pit"
 
-[node name="exit_front_back_button" parent="state_handler" instance=ExtResource( 6 )]
-
-[node name="exit_side_button" parent="state_handler" instance=ExtResource( 7 )]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/dropoff_pit"]
+position = Vector2( 1, 0 )
+polygon = PoolVector2Array( 424.001, 262.001, 424.68, 437.129, 812.956, 434.336, 813.163, 261.497 )
 

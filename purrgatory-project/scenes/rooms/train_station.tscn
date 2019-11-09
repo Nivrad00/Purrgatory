@@ -1,15 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/train_station.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/trainstation.png" type="Texture" id=3]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/outdated/room_trans_button.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/outdated/exit_front_button.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/outdated/exit_left_button.tscn" type="PackedScene" id=7]
-
-
-
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/sprites/tori_idle.tscn" type="PackedScene" id=6]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -25,20 +21,58 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 49.0048
-margin_top = 40.9472
-margin_right = 495.005
-margin_bottom = 600.947
-rect_scale = Vector2( 0.2, 0.2 )
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+room_label = "warehouse2"
 
-[node name="room_trans_button" parent="state_handler" instance=ExtResource( 5 )]
-margin_left = 710.534
-margin_top = 348.756
-margin_right = 981.534
-margin_bottom = 603.756
+[node name="object" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
+dialog_label = "train_display"
 
-[node name="exit_front_back_button" parent="state_handler" instance=ExtResource( 6 )]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+polygon = PoolVector2Array( 281.689, 109.033, 285.372, 239.173, 534.603, 239.173, 537.059, 106.577, 438.84, 104.122, 442.523, 41.507, 372.542, 41.507, 374.997, 105.35 )
 
-[node name="exit_side_button" parent="state_handler" instance=ExtResource( 7 )]
+[node name="object3" parent="state_handler" instance=ExtResource( 5 )]
+dialog_label = "train_bench"
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
+polygon = PoolVector2Array( 939.758, 466.305, 1236.87, 469.989, 1239.33, 509.276, 1272.48, 531.376, 1279.84, 586.624, 1279.6, 631.672, 965.207, 631.953, 944.669, 607.496 )
+
+[node name="object2" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
+dialog_label = "vending_machine"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
+polygon = PoolVector2Array( 823.123, 221.985, 820.667, 512.96, 859.955, 590.307, 972.907, 586.624, 1014.65, 468.761, 1013.42, 212.163, 864.866, 210.935 )
+
+[node name="object4" parent="state_handler" instance=ExtResource( 5 )]
+dialog_label = "train_exits"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object4"]
+polygon = PoolVector2Array( 77.8838, 455.256, 137.398, 453.006, 141.726, 101.666, 117.171, 94.2999, 74.2005, 111.488 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object4"]
+position = Vector2( 1027.62, 7.36646 )
+polygon = PoolVector2Array( 74.287, 445.639, 163.826, 444.206, 158.915, 109.033, 130.677, 88.1611, 99.9832, 88.1611, 74.2005, 111.488 )
+
+[node name="object5" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
+dialog_label = "train_tracks"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object5"]
+position = Vector2( 2, 0 )
+polygon = PoolVector2Array( 261.193, 424.438, 257.111, 461.168, 818.948, 463.889, 816.227, 424.438 )
+
+[node name="object6" parent="state_handler" instance=ExtResource( 5 )]
+dialog_label = "train_columns"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object6"]
+polygon = PoolVector2Array( 140.119, 39.451, 142.84, 586.323, 228.543, 582.242, 263.913, 555.034, 261.193, 47.6132, 227.183, 28.568 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object6"]
+polygon = PoolVector2Array( 988.995, 51.6944, 987.634, 209.498, 1016.2, 209.498, 1014.84, 466.61, 1099.19, 472.051, 1104.63, 38.0906, 1017.56, 35.3698 )
+
+[node name="tori_idle" parent="state_handler" instance=ExtResource( 6 )]
+margin_left = 566.0
+margin_top = 282.0
+margin_right = 2066.0
+margin_bottom = 1782.0

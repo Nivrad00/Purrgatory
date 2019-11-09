@@ -1,15 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/field4.png" type="Texture" id=3]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/outdated/room_trans_button.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/outdated/exit_front_button.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/outdated/exit_left_button.tscn" type="PackedScene" id=7]
-
-
-
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/exit_left-overlap.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=6]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -25,20 +21,52 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 49.0048
-margin_top = 40.9472
-margin_right = 495.005
-margin_bottom = 600.947
-rect_scale = Vector2( 0.2, 0.2 )
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+room_label = "field3"
 
-[node name="room_trans_button" parent="state_handler" instance=ExtResource( 5 )]
-margin_left = 710.534
-margin_top = 348.756
-margin_right = 981.534
-margin_bottom = 603.756
+[node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
+room_label = "field6"
 
-[node name="exit_front_back_button" parent="state_handler" instance=ExtResource( 6 )]
+[node name="exit3" parent="state_handler" instance=ExtResource( 5 )]
+position = Vector2( 724.982, -290.858 )
+room_label = "field2"
 
-[node name="exit_side_button" parent="state_handler" instance=ExtResource( 7 )]
+[node name="field_bench" type="Area2D" parent="state_handler"]
+script = ExtResource( 6 )
+dialog_label = "field_bench"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_bench"]
+polygon = PoolVector2Array( 353.792, 330.229, 359.939, 373.567, 361.476, 394.16, 391.451, 406.363, 396.958, 380.649, 434.074, 372.079, 436.471, 381.865, 467.207, 384.939, 469.973, 357.891, 465.115, 344.281, 443.803, 335.942, 436.164, 316.398 )
+
+[node name="field_sign" type="Area2D" parent="state_handler"]
+script = ExtResource( 6 )
+dialog_label = "field_sign"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_sign"]
+polygon = PoolVector2Array( 296.998, 360.405, 297.416, 419.36, 309.311, 418.29, 319.159, 389.422, 331.898, 408.024, 337.137, 402.635, 337.137, 343.68 )
+
+[node name="field_bush" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 6 )
+dialog_label = "field_bush"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_bush"]
+polygon = PoolVector2Array( 137.031, 481.594, 174.499, 501.142, 202.192, 478.336, 202.192, 442.498, 166.354, 428.651, 137.031, 443.312 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/field_bush"]
+polygon = PoolVector2Array( 699.042, 451.457, 701.486, 488.925, 732.437, 508.473, 758.501, 508.473, 781.308, 493.812, 785.38, 462.86, 760.13, 432.724, 725.107, 434.353 )
+
+[node name="horseshoe" type="Area2D" parent="state_handler"]
+script = ExtResource( 6 )
+dialog_label = "welcome_sign"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/horseshoe"]
+polygon = PoolVector2Array( 1027.19, 476.978, 1013.96, 536.52, 1027.93, 552.692, 1055.86, 554.898, 1063.95, 536.52, 1047.78, 476.243 )
+
+[node name="field_path" type="Area2D" parent="state_handler"]
+script = ExtResource( 6 )
+dialog_label = "field_path"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_path"]
+polygon = PoolVector2Array( 90.24, 490.841, 166.481, 504.18, 296.211, 511.519, 418.966, 510.401, 586.633, 476.529, 723.096, 442.704, 826.279, 431.39, 922.543, 410.046, 1000.69, 405.381, 936.962, 418.108, 878.222, 441.538, 749.923, 462.532, 635.59, 505.239, 634.454, 518.517, 710.18, 539.986, 821.07, 539.512, 888.719, 519.684, 894.107, 509.871, 968.234, 487.17, 1044.21, 480.684, 1099.06, 486.417, 1134.56, 502.922, 1160.96, 538.596, 1158.18, 566.393, 1134.56, 590.021, 1075.25, 599.287, 996.172, 601.035, 910.434, 572.155, 809.354, 597.425, 714.591, 592.912, 529.578, 555.007, 452.865, 555.91, 361.713, 577.57, 193.942, 580.462, 90.0976, 563.606 )
 

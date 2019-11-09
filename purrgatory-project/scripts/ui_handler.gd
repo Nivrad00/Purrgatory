@@ -55,10 +55,11 @@ func set_text(text):
 	
 func set_choices(choices):
 	var num = choices.size()
+	for child in $choices.get_children():
+		child.queue_free()
+		
 	if num == 0:
 		$text_box.disabled = false
-		for child in $choices.get_children():
-			child.queue_free()
 		return
 		
 	$text_box.disabled = true

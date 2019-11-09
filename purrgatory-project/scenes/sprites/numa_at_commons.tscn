@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/sprites/numa-idle-kyungsoon_sit_3.png" type="Texture" id=1]
-[ext_resource path="res://assets/sprite_masks/numa-idle-kyungsoon_sit_1.png" type="BitMap" id=2]
+[ext_resource path="res://assets/sprites/numa_with_ks3.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprite_masks/numa_with_ks1.png" type="BitMap" id=2]
 [ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=3]
-[ext_resource path="res://assets/sprites/numa-idle-kyungsoon_sit_1.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/numa-idle-kyungsoon_sit_2.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/numa_with_ks1.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/numa_with_ks2.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "oliver_idle"
@@ -24,8 +24,8 @@ tracks/0/keys = {
 }
 
 [node name="numa_at_commons" type="TextureButton"]
-margin_right = 1500.0
-margin_bottom = 1500.0
+margin_right = 221.0
+margin_bottom = 229.0
 focus_mode = 0
 enabled_focus_mode = 0
 texture_normal = ExtResource( 1 )

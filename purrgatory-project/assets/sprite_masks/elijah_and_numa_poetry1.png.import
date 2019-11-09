@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/elijah_and_numa_poetry1.png-9d9fda2ec0d6cb26d018e4042084e84c.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/elijah_and_numa_poetry1.png"
+dest_files=[ "res://.import/elijah_and_numa_poetry1.png-9d9fda2ec0d6cb26d018e4042084e84c.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

@@ -1,19 +1,13 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/hallway8.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/hallway8.png" type="Texture" id=3]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/outdated/exit_left_button.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/exits/hallway8_exit2.png" type="Texture" id=6]
-[ext_resource path="res://assets/exit_masks/hallway8_exit2.png" type="BitMap" id=7]
-[ext_resource path="res://assets/exits/hallway8_exit1.png" type="Texture" id=8]
-[ext_resource path="res://assets/exit_masks/hallway8_exit1.png" type="BitMap" id=9]
-[ext_resource path="res://assets/sprites/chair.png" type="Texture" id=10]
-[ext_resource path="res://scenes/sprites/elijah_idle.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scenes/sprites/sean_idle.tscn" type="PackedScene" id=12]
-
-
+[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/sprites/chair.png" type="Texture" id=5]
+[ext_resource path="res://scenes/sprites/elijah_idle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/sprites/sean_idle.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=8]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -29,55 +23,86 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 76.0
-margin_top = 321.0
-margin_right = 253.0
-margin_bottom = 448.0
-dialog_label = "club_chair"
-
-[node name="exit_side_button" parent="state_handler" instance=ExtResource( 5 )]
-margin_left = 402.0
-margin_top = 209.0
-margin_right = 624.0
-margin_bottom = 387.0
-rect_pivot_offset = Vector2( -128.256, 4.74733 )
-texture_normal = ExtResource( 6 )
-texture_click_mask = ExtResource( 7 )
-expand = false
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
 room_label = "hallway7"
 
-[node name="exit_side_button3" parent="state_handler" instance=ExtResource( 5 )]
-margin_left = 1008.81
-margin_top = 238.039
-margin_right = 1182.81
-margin_bottom = 703.039
-texture_normal = ExtResource( 8 )
-texture_click_mask = ExtResource( 9 )
-expand = false
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
+position = Vector2( -104.621, -98.3189 )
+polygon = PoolVector2Array( 22.6813, 466.329, 296.404, 466.463, 296.537, 730.969, 22.2939, 730.939 )
+
+[node name="exit2" parent="state_handler" instance=ExtResource( 4 )]
+editor/display_folded = true
 room_label = "hallway9"
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( 591.403, 383.856, 727.683, 352.251, 728.958, 803.388, 590.318, 726.366 )
+
 [node name="chair" type="Sprite" parent="state_handler"]
-position = Vector2( 92.4039, 562.921 )
-texture = ExtResource( 10 )
+position = Vector2( 307.809, 453.571 )
+texture = ExtResource( 5 )
 
-[node name="elijah_idle" parent="state_handler" instance=ExtResource( 11 )]
-margin_left = 50.4116
-margin_top = 423.784
-margin_right = 208.412
-margin_bottom = 662.784
+[node name="elijah_idle" parent="state_handler" instance=ExtResource( 6 )]
+margin_left = 265.817
+margin_top = 319.184
+margin_right = 423.817
+margin_bottom = 558.184
+expand = true
 
-[node name="sean_idle" parent="state_handler" instance=ExtResource( 12 )]
-margin_left = 326.409
-margin_top = 353.125
-margin_right = 1826.41
-margin_bottom = 1853.13
-rect_scale = Vector2( 0.5, 0.5 )
+[node name="sean_idle" parent="state_handler" instance=ExtResource( 7 )]
+margin_left = 904.317
+margin_top = 238.386
+margin_right = 1056.32
+margin_bottom = 568.386
 
-[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 506.0
-margin_top = -3.0
-margin_right = 528.0
-margin_bottom = 540.0
-dialog_label = "pole"
+[node name="object" parent="state_handler" instance=ExtResource( 8 )]
+dialog_label = "crumpled_papers"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+polygon = PoolVector2Array( 108.258, 428.585, 58.62, 447.538, 60.425, 501.688, 0, 520, 0, 720, 120, 720, 210.923, 666.5, 205.235, 582.886, 175.029, 545.398, 143.404, 530.976, 148.245, 457.475 )
+
+[node name="object2" parent="state_handler" instance=ExtResource( 8 )]
+editor/display_folded = true
+dialog_label = "more_crumpled_papers"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
+position = Vector2( 0.418121, 0 )
+polygon = PoolVector2Array( 147.262, 458.965, 173.7, 454.939, 189.429, 463.961, 209.429, 448.867, 224.9, 456.414, 224.008, 469.612, 195.089, 485.847, 221.224, 510.785, 219.776, 532.194, 279.582, 570, 275.22, 642.478, 222.3, 625.952, 199.119, 548.882, 170.687, 543.865, 142.893, 530.067 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object2"]
+polygon = PoolVector2Array( 230.706, 677.957, 218.945, 696.334, 244.535, 724.605, 271.137, 698.539, 261.58, 675.016 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="state_handler/object2"]
+polygon = PoolVector2Array( 343.176, 606.653, 327.739, 641.937, 354.559, 681.559, 381.022, 664.651, 409.389, 687.352, 438.738, 690.453, 458.207, 659.506, 447.18, 638.923, 383.962, 636.718, 378.082, 608.049 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="state_handler/object2"]
+polygon = PoolVector2Array( 544.436, 587.474, 487.989, 612.533, 548.986, 657.436, 601.023, 646.088, 612.954, 590.481 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="state_handler/object2"]
+position = Vector2( -0.2146, 0 )
+polygon = PoolVector2Array( 586.346, 454.554, 605.88, 474.544, 646.663, 479.692, 672.218, 456.472, 644.949, 454.598 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="state_handler/object2"]
+polygon = PoolVector2Array( 868.318, 469.07, 930.267, 467.741, 1022.35, 526.794, 972.119, 539.961, 862.392, 484.366 )
+
+[node name="object3" parent="state_handler" instance=ExtResource( 8 )]
+editor/display_folded = true
+dialog_label = "elijahs_bookshelf"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
+polygon = PoolVector2Array( 679.188, 188.074, 680, 470, 913.16, 467.575, 914.249, 189.505 )
+
+[node name="object4" parent="state_handler" instance=ExtResource( 8 )]
+editor/display_folded = true
+dialog_label = "elijahs_desk"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object4"]
+polygon = PoolVector2Array( 99.1628, 338.882, 98.0552, 400.488, 192.591, 404.076, 261.892, 371.736, 261.892, 345.555, 204.318, 327.188, 177.13, 331.508, 161.972, 317.031, 131.618, 307.881, 111.996, 310.135 )
+
+[node name="object5" parent="state_handler" instance=ExtResource( 8 )]
+editor/display_folded = true
+dialog_label = "odontophorous"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object5"]
+position = Vector2( 0, 1.25171 )
+polygon = PoolVector2Array( 202.711, 244.018, 203.903, 304.792, 321.478, 305.189, 320.684, 244.415 )
 

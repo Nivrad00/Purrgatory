@@ -3,12 +3,9 @@
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/piano3.png" type="Texture" id=3]
-[ext_resource path="res://scenes/outdated/exit_left_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/outdated/exit_front_button.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=6]
-
-
-
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=6]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -24,27 +21,29 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="exit_side_button" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 1190.0
-margin_right = 1280.0
-room_label = "piano4"
-
-[node name="exit_front_back_button" parent="state_handler" instance=ExtResource( 5 )]
-margin_top = 630.0
-margin_bottom = 720.0
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
 room_label = "piano1"
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 6 )]
-margin_left = 334.0
-margin_top = 402.0
-margin_right = 437.0
-margin_bottom = 503.0
+[node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
+room_label = "piano4"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( 369.274, 208.894, 369.274, 684.463, 420.223, 810.131, 544.77, 810.16, 545.094, 178.961, 396.767, 177.246 )
+
+[node name="Polygon2D" type="Polygon2D" parent="state_handler/exit2"]
+modulate = Color( 0, 0, 0, 0.101961 )
+polygon = PoolVector2Array( 369.375, 207.366, 369.375, 684.405, 455.616, 899.867, 545.022, 897.637, 545.094, 178.961, 396.767, 177.246 )
+
+[node name="object" parent="state_handler" instance=ExtResource( 6 )]
+dialog_label = "clock"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+position = Vector2( -0.894714, 0.842102 )
+polygon = PoolVector2Array( 650.553, 117.813, 615.633, 159.211, 621.949, 208.685, 666.159, 235.001, 717.738, 224.474, 739.844, 188.685, 736.686, 149.737, 700.896, 112.895 )
+
+[node name="object2" parent="state_handler" instance=ExtResource( 6 )]
 dialog_label = "spiderweb1"
 
-[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 6 )]
-margin_left = 688.0
-margin_top = 84.0
-margin_right = 805.0
-margin_bottom = 199.0
-dialog_label = "clock"
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
+polygon = PoolVector2Array( 467.212, 445.527, 431.422, 459.212, 435.633, 530.791, 485.106, 525.528, 508.264, 504.475, 491.422, 458.159 )
 

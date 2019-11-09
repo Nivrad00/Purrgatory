@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/sean_idle1.png-93df69cdcfa3549fd963176e0a8a9d4f.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/sean_idle1.png"
+dest_files=[ "res://.import/sean_idle1.png-93df69cdcfa3549fd963176e0a8a9d4f.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

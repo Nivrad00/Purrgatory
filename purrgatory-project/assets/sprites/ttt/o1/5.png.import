@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/oliver_neutral.png-1b6afa126f177f3420808c0156c844f8.stex"
+path="res://.import/5.png-945dba5107c6154c6e3158266bb128fe.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/oliver_neutral.png"
-dest_files=[ "res://.import/oliver_neutral.png-1b6afa126f177f3420808c0156c844f8.stex" ]
+source_file="res://assets/sprites/ttt/o1/5.png"
+dest_files=[ "res://.import/5.png-945dba5107c6154c6e3158266bb128fe.stex" ]
 
 [params]
 

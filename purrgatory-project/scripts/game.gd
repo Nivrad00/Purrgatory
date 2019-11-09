@@ -4,8 +4,21 @@ signal return_to_main()
 
 export var default_room = ''
 
+var default_state = {
+	'true': true,
+}
+
 var state = {
 	'true': true,
+	'fed_kyungsoon_book': true,
+	'met_kyungsoon': true,
+	'met_oliver': true,
+	'asked_ks_about_door': true,
+	'checked_out_book': true,
+	'tried_door': true,
+	'book_state': true,
+	'oliver_questioned': true,
+	'_inv_commons_key': true
 }
 
 var numa_test_state = {
@@ -65,6 +78,7 @@ func _process(delta):
 			fade_out = false
 			$delay_timer.start()
 			change_audio(null)
+			
 			$main_audio.volume_db = 0
 			yield($delay_timer, 'timeout')
 			
@@ -153,7 +167,7 @@ func update_dialog(b: int):
 func set_player_name():
 	format_dict['player'] = $ui/name_input/text.get_text().to_lower()
 
-func change_audio(song):
+func change_audio(song, play = true):
 	current_audio = song
 	if song == null:
 		$main_audio.stop()
@@ -162,7 +176,8 @@ func change_audio(song):
 		var stream = load('res://assets/audio/' + song + '.ogg')
 		if stream != $main_audio.get_stream():
 			$main_audio.set_stream(stream)
-			$main_audio.play()
+			if play:
+				$main_audio.play()
 
 func return_to_main():
 	$white_cover.show()
@@ -210,7 +225,7 @@ func load_game():
 	format_dict = save_dict["name_dict"]
 	action_timers = save_dict["action_timers"]
 	block = save_dict["block"]
-	change_audio(save_dict["music"])
+	change_audio(save_dict["music"], false)
 	
 	$room.change_room(save_dict["room"], state)
 	$room.set_hidden_sprites(save_dict["hidden_sprites"])

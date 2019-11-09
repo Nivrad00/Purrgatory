@@ -1,30 +1,32 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scripts/dialog_handler.gd" type="Script" id=2]
 [ext_resource path="res://scripts/dialog/reception_dialog.gd" type="Script" id=3]
 [ext_resource path="res://scripts/dialog/oliver_kyungsoon_intro.gd" type="Script" id=4]
 [ext_resource path="res://scripts/dialog/misc_objects.gd" type="Script" id=5]
-[ext_resource path="res://scripts/dialog/oliver.gd" type="Script" id=6]
-[ext_resource path="res://scripts/dialog/kyungsoon.gd" type="Script" id=7]
+[ext_resource path="res://scripts/dialog/kyungsoon.gd" type="Script" id=6]
+[ext_resource path="res://scripts/dialog/oliver.gd" type="Script" id=7]
 [ext_resource path="res://scripts/dialog/numa.gd" type="Script" id=8]
-[ext_resource path="res://scripts/dialog/elijah.gd" type="Script" id=9]
-[ext_resource path="res://scripts/dialog/sean.gd" type="Script" id=10]
-[ext_resource path="res://scripts/dialog/flowers.gd" type="Script" id=11]
-[ext_resource path="res://scripts/room_handler.gd" type="Script" id=12]
-[ext_resource path="res://scripts/ui_handler.gd" type="Script" id=13]
-[ext_resource path="res://assets/ui/text_box.png" type="Texture" id=14]
-[ext_resource path="res://assets/fonts/Krub-MediumItalic.ttf" type="DynamicFontData" id=15]
-[ext_resource path="res://assets/fonts/Krub-ExtraLightItalic.ttf" type="DynamicFontData" id=16]
-[ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=17]
-[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=18]
-[ext_resource path="res://assets/ui/choice2.png" type="Texture" id=19]
-[ext_resource path="res://assets/ui/ok_button.png" type="Texture" id=20]
-[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=21]
-[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=22]
-[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=23]
-[ext_resource path="res://assets/ui/menu_x.png" type="Texture" id=24]
-[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=25]
+[ext_resource path="res://scripts/dialog/flowers.gd" type="Script" id=9]
+[ext_resource path="res://scripts/dialog/elijah.gd" type="Script" id=10]
+[ext_resource path="res://scripts/dialog/sean.gd" type="Script" id=11]
+[ext_resource path="res://scripts/dialog/tori.gd" type="Script" id=12]
+[ext_resource path="res://scripts/dialog/natalie.gd" type="Script" id=13]
+[ext_resource path="res://scripts/room_handler.gd" type="Script" id=14]
+[ext_resource path="res://scripts/ui_handler.gd" type="Script" id=15]
+[ext_resource path="res://assets/ui/text_box.png" type="Texture" id=16]
+[ext_resource path="res://assets/fonts/Krub-MediumItalic.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://assets/fonts/Krub-ExtraLightItalic.ttf" type="DynamicFontData" id=18]
+[ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=19]
+[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=20]
+[ext_resource path="res://assets/ui/choice2.png" type="Texture" id=21]
+[ext_resource path="res://assets/ui/ok_button.png" type="Texture" id=22]
+[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=23]
+[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=24]
+[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=25]
+[ext_resource path="res://assets/ui/menu_x.png" type="Texture" id=26]
+[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=27]
 
 [sub_resource type="InputEventAction" id=1]
 action = "ui_select"
@@ -35,31 +37,31 @@ shortcut = SubResource( 1 )
 [sub_resource type="DynamicFont" id=3]
 size = 22
 use_filter = true
-font_data = ExtResource( 15 )
+font_data = ExtResource( 17 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 22
 use_filter = true
-font_data = ExtResource( 16 )
+font_data = ExtResource( 18 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 22
 use_filter = true
-font_data = ExtResource( 17 )
+font_data = ExtResource( 19 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 22
 use_filter = true
-font_data = ExtResource( 18 )
+font_data = ExtResource( 20 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 22
-font_data = ExtResource( 16 )
+font_data = ExtResource( 18 )
 
 [sub_resource type="StyleBoxEmpty" id=8]
 
 [sub_resource type="StyleBoxTexture" id=9]
-texture = ExtResource( 19 )
+texture = ExtResource( 21 )
 region_rect = Rect2( 0, 0, 552, 83 )
 margin_left = 40.0
 margin_right = 40.0
@@ -68,7 +70,7 @@ margin_bottom = 12.0
 
 [sub_resource type="DynamicFont" id=10]
 size = 28
-font_data = ExtResource( 18 )
+font_data = ExtResource( 20 )
 
 [sub_resource type="InputEventAction" id=11]
 action = "ui_enter"
@@ -77,21 +79,20 @@ action = "ui_enter"
 shortcut = SubResource( 11 )
 
 [sub_resource type="DynamicFont" id=13]
-font_data = ExtResource( 18 )
+font_data = ExtResource( 20 )
 
 [sub_resource type="DynamicFont" id=14]
 size = 25
-font_data = ExtResource( 18 )
+font_data = ExtResource( 20 )
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
-default_room = "antechamber1"
+default_room = "commons1"
 
 [node name="delay_timer" type="Timer" parent="."]
 wait_time = 0.5
 
 [node name="dialog_handler" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="reception_dialog" type="Node" parent="dialog_handler"]
@@ -103,26 +104,32 @@ script = ExtResource( 4 )
 [node name="misc_objects" type="Node" parent="dialog_handler"]
 script = ExtResource( 5 )
 
-[node name="oliver" type="Node" parent="dialog_handler"]
+[node name="kyungsoon" type="Node" parent="dialog_handler"]
 script = ExtResource( 6 )
 
-[node name="kyungsoon" type="Node" parent="dialog_handler"]
+[node name="oliver" type="Node" parent="dialog_handler"]
 script = ExtResource( 7 )
 
 [node name="numa" type="Node" parent="dialog_handler"]
 script = ExtResource( 8 )
 
-[node name="elijah" type="Node" parent="dialog_handler"]
+[node name="flowers" type="Node" parent="dialog_handler"]
 script = ExtResource( 9 )
 
-[node name="sean" type="Node" parent="dialog_handler"]
+[node name="elijah" type="Node" parent="dialog_handler"]
 script = ExtResource( 10 )
 
-[node name="flowers" type="Node" parent="dialog_handler"]
+[node name="sean" type="Node" parent="dialog_handler"]
 script = ExtResource( 11 )
 
-[node name="room" type="Control" parent="."]
+[node name="tori" type="Node" parent="dialog_handler"]
 script = ExtResource( 12 )
+
+[node name="natalie" type="Node" parent="dialog_handler"]
+script = ExtResource( 13 )
+
+[node name="room" type="Control" parent="."]
+script = ExtResource( 14 )
 
 [node name="room_container" type="Control" parent="room"]
 anchor_right = 1.0
@@ -134,10 +141,9 @@ margin_bottom = 720.0
 mouse_filter = 2
 
 [node name="ui" type="Control" parent="."]
-editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
-script = ExtResource( 13 )
+script = ExtResource( 15 )
 
 [node name="sprites" type="Control" parent="ui"]
 
@@ -163,7 +169,7 @@ flat = true
 
 [node name="box" type="Sprite" parent="ui/text_box"]
 position = Vector2( 20, 10 )
-texture = ExtResource( 14 )
+texture = ExtResource( 16 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -243,11 +249,10 @@ focus_mode = 0
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
 shortcut = SubResource( 12 )
-icon = ExtResource( 20 )
+icon = ExtResource( 22 )
 flat = true
 
 [node name="meta_ui" type="Control" parent="."]
-editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 mouse_filter = 2
@@ -265,7 +270,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/menu_button"]
 position = Vector2( 2.2108, 1.67036 )
-texture = ExtResource( 21 )
+texture = ExtResource( 23 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -307,7 +312,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/save"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 22 )
+texture = ExtResource( 24 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -339,7 +344,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/load"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 23 )
+texture = ExtResource( 25 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -356,7 +361,7 @@ valign = 1
 
 [node name="x" type="Sprite" parent="meta_ui/pause_menu/load"]
 position = Vector2( 125.466, 29.0663 )
-texture = ExtResource( 24 )
+texture = ExtResource( 26 )
 
 [node name="exit" type="Button" parent="meta_ui/pause_menu"]
 editor/display_folded = true
@@ -376,7 +381,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/exit"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 25 )
+texture = ExtResource( 27 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -409,7 +414,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/back"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 22 )
+texture = ExtResource( 24 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
@@ -427,7 +432,6 @@ align = 1
 valign = 1
 
 [node name="exit_confirm" type="Control" parent="meta_ui"]
-editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -470,7 +474,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/exit_confirm/yes"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 22 )
+texture = ExtResource( 24 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -502,7 +506,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/exit_confirm/no"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 23 )
+texture = ExtResource( 25 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -561,7 +565,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/save_confirm/yes"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 22 )
+texture = ExtResource( 24 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -577,6 +581,7 @@ align = 1
 valign = 1
 
 [node name="load_confirm" type="Control" parent="meta_ui"]
+editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -618,7 +623,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/load_confirm/yes"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 22 )
+texture = ExtResource( 24 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -642,11 +647,10 @@ margin_bottom = 720.0
 color = Color( 1, 1, 1, 0 )
 
 [node name="main_audio" type="AudioStreamPlayer" parent="."]
-
 [connection signal="pressed" from="ui/text_box" to="." method="update_dialog" binds= [ -1 ]]
-[connection signal="pressed" from="ui/name_input/ok_button" to="." method="set_player_name"]
-[connection signal="pressed" from="ui/name_input/ok_button" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="ui/name_input/ok_button" to="ui/name_input" method="hide"]
+[connection signal="pressed" from="ui/name_input/ok_button" to="." method="update_dialog" binds= [ -1 ]]
+[connection signal="pressed" from="ui/name_input/ok_button" to="." method="set_player_name"]
 [connection signal="pressed" from="meta_ui/menu_button" to="." method="open_pause_menu"]
 [connection signal="pressed" from="meta_ui/pause_menu/save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="meta_ui/pause_menu/load" to="." method="_on_load_pressed"]
@@ -654,7 +658,7 @@ color = Color( 1, 1, 1, 0 )
 [connection signal="pressed" from="meta_ui/pause_menu/back" to="meta_ui/pause_menu" method="hide"]
 [connection signal="pressed" from="meta_ui/exit_confirm/yes" to="." method="return_to_main"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
-[connection signal="pressed" from="meta_ui/save_confirm/yes" to="meta_ui/pause_menu" method="hide"]
 [connection signal="pressed" from="meta_ui/save_confirm/yes" to="meta_ui/save_confirm" method="hide"]
+[connection signal="pressed" from="meta_ui/save_confirm/yes" to="meta_ui/pause_menu" method="hide"]
 [connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/load_confirm" method="hide"]
 [connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/pause_menu" method="hide"]

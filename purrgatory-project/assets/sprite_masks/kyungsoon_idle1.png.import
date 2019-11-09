@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/kyungsoon_idle1.png-d02f4e7fc306b00bc784ce61547754dc.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/kyungsoon_idle1.png"
+dest_files=[ "res://.import/kyungsoon_idle1.png-d02f4e7fc306b00bc784ce61547754dc.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

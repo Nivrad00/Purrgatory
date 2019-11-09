@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/elijah_idle1.png-6fba1b2dd8db4cf9c6fd57b319b36257.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/elijah_idle1.png"
+dest_files=[ "res://.import/elijah_idle1.png-6fba1b2dd8db4cf9c6fd57b319b36257.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

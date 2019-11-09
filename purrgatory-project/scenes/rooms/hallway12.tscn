@@ -1,15 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/hallway12.png" type="Texture" id=3]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/outdated/room_trans_button.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/outdated/exit_front_button.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/outdated/exit_left_button.tscn" type="PackedScene" id=7]
-
-
-
+[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=4]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -25,20 +19,30 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 49.0048
-margin_top = 40.9472
-margin_right = 495.005
-margin_bottom = 600.947
-rect_scale = Vector2( 0.2, 0.2 )
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+editor/display_folded = true
+room_label = "piano4"
 
-[node name="room_trans_button" parent="state_handler" instance=ExtResource( 5 )]
-margin_left = 710.534
-margin_top = 348.756
-margin_right = 981.534
-margin_bottom = 603.756
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
+polygon = PoolVector2Array( -18.5519, 664.736, -273.446, 668.228, -275.541, 791.135, 3.79489, 784.152, 4.49326, 712.223 )
 
-[node name="exit_front_back_button" parent="state_handler" instance=ExtResource( 6 )]
+[node name="Polygon2D2" type="Polygon2D" parent="state_handler/exit"]
+modulate = Color( 0, 0, 0, 0.1 )
+position = Vector2( -248.066, 181.713 )
+scale = Vector2( -1, 1 )
+polygon = PoolVector2Array( -172.627, 511.97, -67.7563, 512.029, -67.8756, 493.181, -24.0566, 529.995, -68.1134, 566.907, -68.0188, 548.259, -172.785, 547.944 )
 
-[node name="exit_side_button" parent="state_handler" instance=ExtResource( 7 )]
+[node name="exit2" parent="state_handler" instance=ExtResource( 4 )]
+editor/display_folded = true
+room_label = "hallway13"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( 126.035, 252.563, 260.918, 257.215, 262.048, 443.938, 125.535, 392.746 )
+
+[node name="exit3" parent="state_handler" instance=ExtResource( 4 )]
+editor/display_folded = true
+room_label = "closet"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3"]
+polygon = PoolVector2Array( 424.562, 177.368, 423.963, 507.273, 301.221, 459.374, 302.419, 177.368 )
 

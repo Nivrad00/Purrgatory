@@ -3,11 +3,8 @@
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/cubby.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/cubby.png" type="Texture" id=3]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/outdated/exit_back_button.tscn" type="PackedScene" id=5]
-
-
-
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=5]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -20,79 +17,52 @@ script = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="bg" type="Sprite" parent="state_handler"]
+position = Vector2( 0, -3.1579 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="char_obj_button3" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = -1.0
-margin_top = 57.0
-margin_right = 402.0
-margin_bottom = 543.0
-dialog_label = "cubby_tally"
-
-[node name="char_obj_button4" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = -1.0
-margin_top = 541.0
-margin_right = 344.0
-margin_bottom = 630.0
-dialog_label = "cubby_tally"
-
-[node name="char_obj_button5" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 403.0
-margin_top = 279.0
-margin_right = 945.0
-margin_bottom = 550.0
-dialog_label = "cubby_tally"
-
-[node name="char_obj_button6" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 402.0
-margin_top = 158.0
-margin_right = 879.0
-margin_bottom = 273.0
-dialog_label = "cubby_tally"
-
-[node name="char_obj_button7" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 949.0
-margin_top = 278.0
-margin_right = 1280.0
-margin_bottom = 621.0
-dialog_label = "cubby_tally"
-
-[node name="char_obj_button8" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 1042.0
-margin_top = 126.0
-margin_right = 1280.0
-margin_bottom = 273.0
-dialog_label = "cubby_tally"
-
-[node name="char_obj_button9" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 505.442
-margin_top = 463.081
-margin_right = 794.442
-margin_bottom = 583.081
-dialog_label = "pillow"
-
-[node name="char_obj_button10" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 384.0
-margin_top = 561.0
-margin_right = 981.0
-margin_bottom = 715.0
-dialog_label = "blanket"
-
-[node name="exit_front_back_button" parent="state_handler" instance=ExtResource( 5 )]
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
 room_label = "vent3"
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 397.162
-margin_top = 584.081
-margin_right = 537.162
-margin_bottom = 651.081
+[node name="numas_notebook" type="Area2D" parent="state_handler"]
+script = ExtResource( 5 )
 dialog_label = "numas_notebook"
 
-[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 332.0
-margin_top = 382.0
-margin_right = 395.0
-margin_bottom = 437.0
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/numas_notebook"]
+polygon = PoolVector2Array( 430.59, 551.531, 494.968, 587.85, 569.318, 570.416, 572.793, 563.448, 493.77, 513.008, 430.987, 533.657 )
+
+[node name="cubby_pillow" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 5 )
+dialog_label = "cubby_pillow"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/cubby_pillow"]
+polygon = PoolVector2Array( 525.033, 432.857, 555.916, 480.756, 596.252, 523.613, 621.462, 513.529, 834.486, 514.789, 827.554, 465.63, 812.428, 435.378, 746.251, 398.823, 618.941, 398.823, 554.025, 413.319 )
+
+[node name="cubby_blanket" type="Area2D" parent="state_handler"]
+script = ExtResource( 5 )
+dialog_label = "cubby_blanket"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/cubby_blanket"]
+polygon = PoolVector2Array( 448.748, 509.424, 455.968, 609.601, 414.85, 632.188, 1031.97, 631.882, 1018.23, 580.721, 924.367, 540.109, 869.314, 540.109, 516.436, 461.591, 459.435, 492.169 )
+
+[node name="numas_drawing" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 5 )
 dialog_label = "numas_drawing"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/numas_drawing"]
+polygon = PoolVector2Array( 364.154, 319.723, 368.704, 382.86, 428.429, 360.677, 426.722, 318.585 )
+
+[node name="cubby_tally" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 5 )
+dialog_label = "cubby_tally"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/cubby_tally"]
+polygon = PoolVector2Array( 333.064, 266.208, 403.296, 271.464, 435.949, 253.347, 434.234, 463.405, 864.638, 457.403, 864.423, 244.685, 958.107, 207.843, 950.739, 158.369, 860.212, 207.843, 749.686, 211.001, 769.469, 114.452, 614.283, 111.023, 587.705, 134.172, 493.393, 166.752, 411.085, 166.752, 400.797, 182.185, 319.346, 174.469, 287.58, 233.106 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/cubby_tally"]
+position = Vector2( 2.10527, 0 )
+polygon = PoolVector2Array( 86.5265, 179.422, 114.948, 252.053, 122.316, 341.527, 285.474, 323.632, 287.58, 257.316, 179.158, 244.685, 142.316, 156.264 )
 

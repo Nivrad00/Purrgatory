@@ -17,20 +17,33 @@ func _ready():
 	# get input object
 	input = Input
 	
-	# make visible polygon
-	for collision_polygon in get_children():
-		if collision_polygon is CollisionPolygon2D:	
-			var new_polygon = Polygon2D.new()
-			new_polygon.set_polygon(collision_polygon.get_polygon())
-			new_polygon.set_modulate(Color(0, 0, 0, 0.1))
-			new_polygon.hide()
-			visible_polygons.append(new_polygon)
-			add_child(new_polygon)
+	# make visible polygon, if there is none
+	var children = get_children()
+	var visible_exists = false
+	
+	for child in children:
+		if child is Polygon2D:
+			visible_polygons.append(child)
+			visible_exists = true
+	
+	if not visible_exists:
+		make_visible_polygons()
 		
 	# hook up hover methods
 	connect("mouse_entered", self, "mouse_entered")
 	connect("mouse_exited", self, "mouse_exited")
 	connect("input_event", self, "input_event")
+
+func make_visible_polygons():
+	for collision_polygon in get_children():
+		if collision_polygon is CollisionPolygon2D:	
+			var new_polygon = Polygon2D.new()
+			new_polygon.set_polygon(collision_polygon.get_polygon())
+			new_polygon.position = collision_polygon.position
+			new_polygon.set_modulate(Color(0, 0, 0, 0.1))
+			new_polygon.hide()
+			visible_polygons.append(new_polygon)
+			add_child(new_polygon)
 	
 func mouse_entered():
 	hovering += 1

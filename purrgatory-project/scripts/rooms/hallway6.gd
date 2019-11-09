@@ -3,13 +3,6 @@ extends 'state_handler_template.gd'
 func update_state(state):
 	.update_state(state)
 			
-	if state.get('opened_vent') and !state.get('numa_snooped'):
-		$vent_open.show()
-		$vent_closed.hide()
-	else:
-		$vent_open.hide()
-		$vent_closed.show()
-		
 	if state.get('ks_at_vent'):
 		$kyungsoon_at_vent.show()
 	else:

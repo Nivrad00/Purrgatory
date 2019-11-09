@@ -1,17 +1,15 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
-[ext_resource path="res://assets/rooms/escalator4.png" type="Texture" id=3]
-[ext_resource path="res://assets/rooms/escalator3.png" type="Texture" id=4]
-[ext_resource path="res://assets/rooms/escalator2.png" type="Texture" id=5]
-[ext_resource path="res://assets/rooms/escalator1.png" type="Texture" id=6]
-[ext_resource path="res://scenes/outdated/exit_left_button.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/outdated/exit_back_button.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=9]
-
-
-
+[ext_resource path="res://assets/rooms/escalator_bg.png" type="Texture" id=3]
+[ext_resource path="res://assets/rooms/escalator_left.png" type="Texture" id=4]
+[ext_resource path="res://assets/rooms/escalator_mg.png" type="Texture" id=5]
+[ext_resource path="res://assets/rooms/escalator_right.png" type="Texture" id=6]
+[ext_resource path="res://assets/rooms/escalator_fg.png" type="Texture" id=7]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=9]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "New Anim"
@@ -27,7 +25,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 12 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -1280, 640 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, -100 ), Vector2( -1280, 525 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("esc2:position")
@@ -39,7 +37,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 12 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 1280, -640 ) ]
+"values": [ Vector2( 1280, -740 ), Vector2( 0, -115 ) ]
 }
 
 [node name="room_instance" type="Control"]
@@ -48,6 +46,9 @@ anchor_bottom = 1.0
 margin_right = -1280.0
 margin_bottom = -720.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
 
 [node name="state_handler" type="Control" parent="."]
 script = ExtResource( 2 )
@@ -57,86 +58,95 @@ autoplay = "New Anim"
 "anims/New Anim" = SubResource( 1 )
 
 [node name="bg" type="Sprite" parent="state_handler"]
+position = Vector2( 1.29236, -2.58472 )
 texture = ExtResource( 3 )
 centered = false
 
 [node name="esc1" type="Node2D" parent="state_handler"]
 editor/display_folded = true
-position = Vector2( -757.662, 378.831 )
+position = Vector2( -1279.26, 525 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="esc1a" type="Sprite" parent="state_handler/esc1"]
+position = Vector2( 0.214111, -7.18695 )
 texture = ExtResource( 4 )
 centered = false
 
 [node name="esc1b" type="Sprite" parent="state_handler/esc1"]
+position = Vector2( 1280.34, -630.07 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="mg" type="Sprite" parent="state_handler"]
 texture = ExtResource( 5 )
 centered = false
 
 [node name="esc2" type="Node2D" parent="state_handler"]
 editor/display_folded = true
-position = Vector2( 522.338, -261.169 )
+position = Vector2( 0, -115 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="esc2a" type="Sprite" parent="state_handler/esc2"]
-texture = ExtResource( 4 )
-centered = false
-
-[node name="esc2b" type="Sprite" parent="state_handler/esc2"]
-texture = ExtResource( 5 )
-centered = false
-
-[node name="fg" type="Sprite" parent="state_handler"]
+position = Vector2( -0.0786133, 20.7094 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="exit_side_button" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 145.0
-margin_top = 174.0
-margin_right = 329.0
-margin_bottom = 407.0
-room_label = "train1"
+[node name="esc2b" type="Sprite" parent="state_handler/esc2"]
+position = Vector2( -1280.38, 645.216 )
+texture = ExtResource( 6 )
+centered = false
 
-[node name="exit_front_back_button" parent="state_handler" instance=ExtResource( 8 )]
-room_label = "hallway11"
+[node name="fg" type="Sprite" parent="state_handler"]
+texture = ExtResource( 7 )
+centered = false
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 9 )]
-margin_left = 159.0
-margin_top = 121.0
-margin_right = 302.0
-margin_bottom = 144.0
-dialog_label = "empty_sign"
+[node name="exit" parent="state_handler" instance=ExtResource( 8 )]
+room_label = "hallway14"
 
-[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 9 )]
-margin_left = 1056.0
-margin_top = 5.0
-margin_right = 1289.0
-margin_bottom = 560.0
+[node name="exit2" type="Area2D" parent="state_handler"]
+position = Vector2( -465.02, -291.018 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+room_label = "hallway16"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+position = Vector2( 0.902466, 0 )
+polygon = PoolVector2Array( 1464.58, 542.869, 1746.17, 410.888, 1746.72, 287.068, 1568.16, 286.608, 1303.34, 421.789 )
+
+[node name="Polygon2D" type="Polygon2D" parent="state_handler/exit2"]
+modulate = Color( 0, 0, 0, 0.1 )
+position = Vector2( -79.1797, -17.7653 )
+polygon = PoolVector2Array( 1516.21, 403.596, 1535.24, 440.109, 1631.95, 391.761, 1640.8, 407.151, 1660.94, 351.163, 1604.67, 340.568, 1612.45, 355.882 )
+
+[node name="caution_sign" type="Area2D" parent="state_handler"]
+position = Vector2( -3.80984, 1.10803 )
+script = ExtResource( 10 )
+dialog_label = "caution_sign"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/caution_sign"]
+position = Vector2( -3.3241, -1.10803 )
+polygon = PoolVector2Array( 135.654, 191.757, 134.512, 269.275, 348.364, 271.491, 350.185, 193.427 )
+
+[node name="emergency_lights" type="Area2D" parent="state_handler"]
+position = Vector2( -3.80984, 1.10803 )
+script = ExtResource( 10 )
+dialog_label = "emergency_lights"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/emergency_lights"]
+position = Vector2( -3.3241, -1.10803 )
+polygon = PoolVector2Array( 166.462, 152.359, 166.462, 182.619, 319.924, 182.079, 319.924, 152.359 )
+
+[node name="escalator" type="Area2D" parent="state_handler"]
+position = Vector2( -3.80984, 1.10803 )
+script = ExtResource( 10 )
 dialog_label = "escalator"
 
-[node name="char_obj_button3" parent="state_handler" instance=ExtResource( 9 )]
-margin_left = 826.0
-margin_top = 77.0
-margin_right = 1059.0
-margin_bottom = 564.0
-dialog_label = "escalator"
-
-[node name="char_obj_button4" parent="state_handler" instance=ExtResource( 9 )]
-margin_left = 558.0
-margin_top = 234.0
-margin_right = 791.0
-margin_bottom = 561.0
-dialog_label = "escalator"
-
-[node name="char_obj_button5" parent="state_handler" instance=ExtResource( 9 )]
-margin_left = 301.0
-margin_top = 384.0
-margin_right = 534.0
-margin_bottom = 557.0
-dialog_label = "escalator"
-
-[node name="char_obj_button6" parent="state_handler" instance=ExtResource( 9 )]
-margin_left = 100.0
-margin_top = 489.0
-margin_right = 278.0
-margin_bottom = 570.0
-dialog_label = "escalator"
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/escalator"]
+polygon = PoolVector2Array( 106.256, 582.388, 1285, 582.388, 1284.92, 119.274, 1004.22, 250.883, 842.886, 129.797, 38.4256, 523.602 )
 

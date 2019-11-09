@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://assets/rooms/hallway5.png" type="Texture" id=3]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=6]
+
+[node name="room_instance" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 1 )
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+
+[node name="bg" type="Sprite" parent="state_handler"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+room_label = "hallway4"
+
+[node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
+room_label = "dropoff1"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( 153.118, 604.881, 246.083, 605.788, 246.449, 455.865, 243.885, 453.668, 232.653, 423.635, 191.754, 423.635, 189.679, 463.069, 187.359, 464.045, 180.522, 455.255, 178.813, 454.889, 166.646, 483.982, 166.646, 489.961, 162.826, 497.601, 160.667, 516.369, 157.918, 503.962, 156.186, 572.542 )
+
+[node name="object" parent="state_handler" instance=ExtResource( 6 )]
+dialog_label = "more_cave_stuff"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+polygon = PoolVector2Array( 643.58, 243.233, 640.813, 284.419, 633.437, 274.584, 618.17, 304.083, 613.156, 331.31, 610.474, 322.947, 605.947, 427.214, 695.543, 554.277, 566.948, 632.118, 148.667, 631.966, 223.527, 446.58, 269.843, 435.002, 328.79, 551.844, 527.738, 413.949, 518.264, 267.633, 355.106, 244.475, 262.474, 426.58, 213.106, 437.149, 64.7285, -26.3257, 1289.07, -16.3018, 1167.21, 230.843, 1034.58, 211.896, 1062.94, 631.614, 706.675, 631.614, 759.237, 536.441, 693.366, 472.002, 739.626, 433.686, 785.827, 475.267, 779.667, 352.064, 729.165, 252.91, 700.441, 277.657, 685.38, 243.848 )
+

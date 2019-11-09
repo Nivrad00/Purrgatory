@@ -1,14 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/library.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/library.png" type="Texture" id=3]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/outdated/exit_front_button.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/sprites/oliver_idle.tscn" type="PackedScene" id=6]
-
-
-
+[ext_resource path="res://scenes/sprites/oliver_idle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/exit_left-overlap.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=8]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -24,44 +23,33 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 4 )]
-margin_right = 407.0
-margin_bottom = 456.0
+[node name="oliver_idle" parent="state_handler" instance=ExtResource( 4 )]
+margin_left = 862.023
+margin_top = 195.422
+margin_right = 1016.02
+margin_bottom = 564.422
+
+[node name="exit" parent="state_handler" instance=ExtResource( 5 )]
+room_label = "commons2"
+
+[node name="exit2" parent="state_handler" instance=ExtResource( 6 )]
+room_label = "library3"
+
+[node name="exit3" parent="state_handler" instance=ExtResource( 7 )]
+room_label = "library2"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3"]
+position = Vector2( -56.0134, 108.328 )
+polygon = PoolVector2Array( 257.541, 69.2997, 260.716, 453.315, 418.187, 452.863, 418.187, 66.5922 )
+
+[node name="object" parent="state_handler" instance=ExtResource( 8 )]
 dialog_label = "read_book"
 
-[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 475.0
-margin_right = 579.0
-margin_bottom = 334.0
-dialog_label = "read_book"
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+polygon = PoolVector2Array( 376.548, -2.02642, 378.881, 501.838, 90.4899, 493.294, 90.4899, -0.180565 )
 
-[node name="char_obj_button3" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 647.0
-margin_right = 734.0
-margin_bottom = 260.0
-dialog_label = "read_book"
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object"]
+polygon = PoolVector2Array( 480.901, 16.7001, 585.352, 15.8202, 581.483, 405.032, 481.665, 404.259 )
 
-[node name="char_obj_button4" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 798.0
-margin_right = 843.0
-margin_bottom = 190.0
-dialog_label = "read_book"
-
-[node name="char_obj_button5" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 863.228
-margin_top = 1.22771
-margin_right = 1282.23
-margin_bottom = 449.228
-dialog_label = "read_book"
-
-[node name="exit_front_back_button2" parent="state_handler" instance=ExtResource( 5 )]
-margin_top = 630.0
-margin_bottom = 720.0
-room_label = "commons1"
-
-[node name="oliver_idle" parent="state_handler" instance=ExtResource( 6 )]
-margin_left = 861.003
-margin_top = 134.001
-margin_right = 1015.0
-margin_bottom = 503.001
-
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="state_handler/object"]
+polygon = PoolVector2Array( 833.142, -7.43884, 833.142, 508.212, 1279, 521.135, 1282.88, -6.14648 )

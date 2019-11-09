@@ -2,6 +2,7 @@ extends 'state_handler_template.gd'
 
 func init_state(state):
 	.init_state(state)
+	$exit_dialog.set_highlight_on_hover(true)
 	if state.get('flowers_goto_garden'):
 		emit_signal('set_hidden_sprite', [$numa])
 		state['flowers_goto_garden'] = false
@@ -9,6 +10,9 @@ func init_state(state):
 func update_state(state):
 	.update_state(state)
 	
+	if state.get('_inv_screwdriver'):
+		$screwdriver2.hide()
+		
 	# numa is visible by default
 	
 	$numa.show()
@@ -22,8 +26,10 @@ func update_state(state):
 		
 	if state.get('trample_flag') and not state.get('nearly_trampled_flower'):
 		$exit_dialog.show()
+		$exit.hide()
 	else:
 		$exit_dialog.hide()
+		$exit.show()
 		
 	# numa's quest
 	
@@ -37,11 +43,11 @@ func update_state(state):
 	
 	if state.get('poetry_session'):
 		$numa.hide()
-		$numa_with_elijah.show()
-		$elijah_with_numa.show()
+		$garden_flower2.hide()
+		$numa_and_elijah_poetry.show()
 	else:
-		$numa_with_elijah.hide()
-		$elijah_with_numa.hide()
+		$garden_flower2.show()
+		$numa_and_elijah_poetry.hide()
 	
 	if state.get('elijah_working_with_numa_timer'):
 		state['elijah_working_with_numa_timer'] = false

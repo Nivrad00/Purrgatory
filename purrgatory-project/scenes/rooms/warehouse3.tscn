@@ -1,15 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/warehouse3.png" type="Texture" id=3]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/outdated/room_trans_button.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/outdated/exit_front_button.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/outdated/exit_left_button.tscn" type="PackedScene" id=7]
-
-
-
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=6]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -25,20 +21,78 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 49.0048
-margin_top = 40.9472
-margin_right = 495.005
-margin_bottom = 600.947
-rect_scale = Vector2( 0.2, 0.2 )
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+room_label = "warehouse2"
 
-[node name="room_trans_button" parent="state_handler" instance=ExtResource( 5 )]
-margin_left = 710.534
-margin_top = 348.756
-margin_right = 981.534
-margin_bottom = 603.756
+[node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
+room_label = "house4"
 
-[node name="exit_front_back_button" parent="state_handler" instance=ExtResource( 6 )]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( -311.319, 484.15, -309.605, 737.933, -159.564, 718.214, -160.421, 492.723 )
 
-[node name="exit_side_button" parent="state_handler" instance=ExtResource( 7 )]
+[node name="exit3" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
+room_label = "exit"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3"]
+polygon = PoolVector2Array( 92.2491, 178.649, 244.931, 448.1, 397.073, 419.978, 257.384, 177.537 )
+
+[node name="Polygon2D" type="Polygon2D" parent="state_handler/exit3"]
+modulate = Color( 0, 0, 0, 0.1 )
+polygon = PoolVector2Array( 224.931, 368.101, 258.516, 380.931, 287.195, 396.025, 317.006, 415.647, 332.478, 431.496, 396.628, 419.798, 258.139, 178.669, 94.3667, 179.423, 124.673, 235.607, 151.932, 219.08, 158.584, 213.528, 162.662, 215.363, 163.682, 219.441, 129.222, 242.075, 160.827, 297.334, 168.372, 296.314, 169.558, 272.851, 211.724, 262.064, 219.297, 259.292, 226.063, 262.064 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="state_handler/exit3"]
+modulate = Color( 0, 0, 0, 0.1 )
+polygon = PoolVector2Array( 225.797, 377.913, 225.534, 414.279, 245.298, 448.8, 281.927, 441.158, 282.191, 401.103, 259.792, 389.508, 240.555, 381.339 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="state_handler/exit3"]
+modulate = Color( 0, 0, 0, 0.1 )
+polygon = PoolVector2Array( 286.525, 404.847, 285.605, 439.996, 322.042, 433.187, 322.042, 431.714, 312.105, 421.777 )
+
+[node name="object" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "stained_glass"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+polygon = PoolVector2Array( 327.288, 331.94, 328.369, 472.434, 355.387, 466.49, 358.089, 336.804 )
+
+[node name="object2" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "warehouse_cardboard"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
+polygon = PoolVector2Array( 291.162, 567.735, 372.868, 545.388, 422.45, 557.26, 421.509, 540.674, 469.359, 526.897, 545.464, 531.178, 546.755, 584.495, 574.241, 592.3, 573.761, 632.107, 289.766, 631.982 )
+
+[node name="object3" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "spiral_staircase"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
+polygon = PoolVector2Array( 577.402, 57.1081, 554.008, 76.9613, 543.581, 100.579, 545.687, 219.527, 576.666, 258.143, 655.161, 297.422, 659.371, 371.107, 546.739, 453.212, 546.739, 547.949, 680.424, 553.212, 683.582, 483.738, 757.414, 445.906, 794.417, 415.221, 801.477, 376.37, 803.582, 290.054, 785.159, 253.771, 698.066, 270.076 )
+
+[node name="object4" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "warehouse_skylight"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object4"]
+polygon = PoolVector2Array( 768.213, -2.68119, 890.097, 212.278, 1168.21, 140.255, 1077.36, -4.89726 )
+
+[node name="object5" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "small_containers"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object5"]
+position = Vector2( 1.08075, 0.540344 )
+polygon = PoolVector2Array( 724.286, 468.413, 724.286, 560.275, 788.924, 577.961, 832.245, 535.544, 1010.94, 504.859, 1011.84, 494.029, 782.645, 458.687 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object5"]
+polygon = PoolVector2Array( 828.576, 591.075, 899.904, 614.311, 899.363, 545.685, 857.215, 553.79 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="state_handler/object5"]
+position = Vector2( 102.128, -46.4711 )
+polygon = PoolVector2Array( 828.576, 591.075, 827.495, 665.645, 906.703, 639.773, 906.928, 581.889, 862.619, 579.728 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="state_handler/object5"]
+position = Vector2( 251.279, -147.171 )
+polygon = PoolVector2Array( 825.994, 587.981, 823.575, 779.175, 1029.2, 779.057, 1027.63, 586.172, 917.425, 575.722 )
 

@@ -22,6 +22,7 @@ func _ready():
 	var true_evaluator = EvalEvaluate.new(true_tree.get_tree())
 	
 	for child in get_children():
+		print(child.name)
 		for data in child.raw_blocks:
 			var block = {}
 			
@@ -116,12 +117,19 @@ func get_block(label, state):
 	# note: you can't modify the state with an empty block
 	while block['text'] == '_pass':
 		var next_label
-		if block['conditions'].evaluate(state):
-			next_label = block['next'][0]
+		
+		if block['next'][0] == '_rand':
+			var size = block['next'].size()
+			next_label = block['next'][(randi() % (size - 1)) + 1]
 		else:
-			next_label = block['next'][1]
+			if block['conditions'].evaluate(state):
+				next_label = block['next'][0]
+			else:
+				next_label = block['next'][1]
+				
 		if next_label == null:
 			return null
+			
 		print(next_label)
 		block = blocks[next_label]
 		
@@ -139,10 +147,16 @@ func get_block(label, state):
 	proc_block['choices'] = proc_choices
 	
 	var next_label
-	if block['conditions'].evaluate(state):
-		next_label = block['next'][0]
+	
+	if block['next'][0] == '_rand':
+		var size = block['next'].size()
+		next_label = block['next'][(randi() % (size - 1)) + 1]
 	else:
-		next_label = block['next'][1]
+		if block['conditions'].evaluate(state):
+			next_label = block['next'][0]
+		else:
+			next_label = block['next'][1]
+				
 	proc_block['next'] = next_label
 	
 	return proc_block

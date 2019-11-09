@@ -1,15 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/hallway10.png" type="Texture" id=3]
-[ext_resource path="res://scenes/outdated/exit_left_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/exits/hallway10_exit1.png" type="Texture" id=5]
-[ext_resource path="res://assets/exit_masks/hallway10_exit1.png" type="BitMap" id=6]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=7]
-
-
-
+[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=5]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -25,51 +20,33 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="exit_side_button" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 385.0
-margin_top = 352.0
-margin_right = 698.0
-margin_bottom = 570.0
-room_label = "meowseum1"
-
-[node name="exit_side_button3" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 976.413
-margin_top = 571.207
-margin_right = 1279.41
-margin_bottom = 708.207
-texture_normal = ExtResource( 5 )
-texture_click_mask = ExtResource( 6 )
-expand = false
-room_label = "hallway11"
-
-[node name="exit_side_button2" parent="state_handler" instance=ExtResource( 4 )]
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
 room_label = "hallway9"
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 177.0
-margin_top = 253.0
-margin_right = 239.0
-margin_bottom = 292.0
-dialog_label = "meowseum_lamp"
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
+polygon = PoolVector2Array( -454.102, 437.471, -384.868, 465.979, -384.868, 754.314, -454.102, 892.78 )
 
-[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 345.0
-margin_top = 208.0
-margin_right = 792.0
-margin_bottom = 300.0
-dialog_label = "meowseum_sign"
+[node name="exit2" parent="state_handler" instance=ExtResource( 4 )]
+room_label = "meowseum1"
 
-[node name="char_obj_button3" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 733.0
-margin_top = 461.0
-margin_right = 809.0
-margin_bottom = 590.0
-dialog_label = "donations"
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( -41.0161, 550.131, -41.8855, 754.312, 222.329, 750.849, 222.329, 549.105 )
 
-[node name="char_obj_button4" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 1176.0
-margin_top = 423.0
-margin_right = 1214.0
-margin_bottom = 458.0
+[node name="object" parent="state_handler" instance=ExtResource( 5 )]
+dialog_label = "meowseum sign"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+polygon = PoolVector2Array( 328.873, 194.092, 328.873, 304.356, 758.902, 308.766, 759.637, 205.118 )
+
+[node name="object2" parent="state_handler" instance=ExtResource( 5 )]
+dialog_label = "hours sign"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
+polygon = PoolVector2Array( 728.763, 403.593, 728.028, 477.838, 800.802, 477.838, 800.067, 402.858 )
+
+[node name="object3" parent="state_handler" instance=ExtResource( 5 )]
 dialog_label = "meowseum_ttt"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
+polygon = PoolVector2Array( 1056.8, 521.568, 1055.17, 553.333, 1091.82, 572.882, 1096.71, 524.826 )
 

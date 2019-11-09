@@ -1,15 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/piano2.png" type="Texture" id=3]
-[ext_resource path="res://scenes/outdated/room_trans_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/outdated/exit_left_button.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=6]
-
-
-
-
+[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=5]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -25,42 +20,43 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="room_trans_button" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 590.0
-margin_top = 19.0
-margin_right = 832.0
-margin_bottom = 284.0
-room_label = "piano4"
-
-[node name="exit_side_button" parent="state_handler" instance=ExtResource( 5 )]
-margin_right = 95.0
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
 room_label = "piano1"
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 6 )]
-margin_left = 526.0
-margin_top = 386.0
-margin_right = 796.0
-margin_bottom = 434.0
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
+polygon = PoolVector2Array( -338.834, 219.915, -341.023, 755.34, -455.921, 813.927, -455.685, 171.465 )
+
+[node name="exit2" parent="state_handler" instance=ExtResource( 4 )]
+editor/display_folded = true
+room_label = "piano4"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( 104.041, 332.61, 107.069, 555.032, 328.308, 550.75, 329.67, 333.87 )
+
+[node name="Polygon2D" type="Polygon2D" parent="state_handler/exit2"]
+modulate = Color( 0, 0, 0, 0.1 )
+polygon = PoolVector2Array( 104.619, 334.234, 106.78, 554.578, 329.158, 549.814, 329.558, 334.969 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="state_handler/exit2"]
+modulate = Color( 0, 0, 0, 0.1 )
+polygon = PoolVector2Array( 106.287, 587.929, 105.377, 617.98, 183.585, 617.923, 161.65, 604.565, 129.468, 606.174 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="state_handler/exit2"]
+modulate = Color( 0, 0, 0, 0.1 )
+polygon = PoolVector2Array( 199.006, 617.959, 257.241, 617.959, 289.82, 598.544, 279.715, 598.661, 176.182, 604.103, 183.791, 608.918, 187.449, 608.44, 189.763, 609.873, 190.093, 613.068 )
+
+[node name="Polygon2D4" type="Polygon2D" parent="state_handler/exit2"]
+modulate = Color( 0, 0, 0, 0.1 )
+polygon = PoolVector2Array( 269.057, 618.05, 300.556, 618.05, 328.503, 598.151, 300.238, 598.424 )
+
+[node name="Polygon2D5" type="Polygon2D" parent="state_handler/exit2"]
+modulate = Color( 0, 0, 0, 0.1 )
+polygon = PoolVector2Array( 309.956, 618.172, 328.147, 618.172, 328.178, 605.352 )
+
+[node name="object" parent="state_handler" instance=ExtResource( 5 )]
 dialog_label = "piano"
 
-[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 6 )]
-margin_left = 606.0
-margin_top = 434.0
-margin_right = 716.0
-margin_bottom = 527.0
-dialog_label = "piano"
-
-[node name="char_obj_button3" parent="state_handler" instance=ExtResource( 6 )]
-margin_left = 930.0
-margin_top = 259.0
-margin_right = 1014.0
-margin_bottom = 385.0
-dialog_label = "piano_chair"
-
-[node name="char_obj_button4" parent="state_handler" instance=ExtResource( 6 )]
-margin_left = 1164.0
-margin_top = 621.0
-margin_right = 1248.0
-margin_bottom = 691.0
-dialog_label = "bowling_pin"
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+position = Vector2( -0.902466, 0 )
+polygon = PoolVector2Array( 540.033, 377.366, 540.321, 398.203, 622.94, 467.55, 573.093, 515.839, 618.218, 550.134, 705.027, 508.314, 793.304, 548.329, 821.281, 535.694, 754.733, 471.242, 836.208, 420.096, 836.208, 393.402, 789.37, 372.464 )
 

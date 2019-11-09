@@ -3,13 +3,10 @@
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/library4.png" type="Texture" id=3]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/outdated/room_trans_button.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/outdated/exit_front_button.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/outdated/exit_left_button.tscn" type="PackedScene" id=7]
-
-
-
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/exit_left-overlap.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=7]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -17,6 +14,9 @@ anchor_bottom = 1.0
 margin_right = -1280.0
 margin_bottom = -720.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
 
 [node name="state_handler" type="Control" parent="."]
 script = ExtResource( 2 )
@@ -25,20 +25,43 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 49.0048
-margin_top = 40.9472
-margin_right = 495.005
-margin_bottom = 600.947
-rect_scale = Vector2( 0.2, 0.2 )
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+room_label = "library3"
 
-[node name="room_trans_button" parent="state_handler" instance=ExtResource( 5 )]
-margin_left = 710.534
-margin_top = 348.756
-margin_right = 981.534
-margin_bottom = 603.756
+[node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
+position = Vector2( 724.922, -290.849 )
+room_label = "library5"
 
-[node name="exit_front_back_button" parent="state_handler" instance=ExtResource( 6 )]
+[node name="exit3" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+room_label = "study"
 
-[node name="exit_side_button" parent="state_handler" instance=ExtResource( 7 )]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3"]
+polygon = PoolVector2Array( 144.077, 546.15, 145.215, 720.772, 211.765, 705.983, 212.221, 551.708 )
+
+[node name="object" parent="state_handler" instance=ExtResource( 7 )]
+editor/display_folded = true
+dialog_label = "library_infinity"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+polygon = PoolVector2Array( 670.305, 255.49, 782.775, 278.278, 783.51, 218.001, 671.04, 184.186 )
+
+[node name="object2" parent="state_handler" instance=ExtResource( 7 )]
+editor/display_folded = true
+dialog_label = "david"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
+polygon = PoolVector2Array( 897.404, 308.453, 895.599, 351.773, 877.549, 367.116, 879.722, 470.26, 857.694, 509.711, 864.011, 516.931, 891.697, 506.185, 901.917, 527.761, 875.744, 534.079, 878.452, 554.836, 938.919, 562.959, 986.752, 556.641, 983.083, 535.806, 961.482, 525.054, 937.114, 429.388, 943.432, 386.068, 960.579, 405.021, 966.897, 389.678, 943.432, 351.773, 928.089, 351.773, 942.529, 311.161, 916.357, 312.966 )
+
+[node name="object3" parent="state_handler" instance=ExtResource( 7 )]
+dialog_label = " library_books"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
+polygon = PoolVector2Array( 93.1475, 631.59, 417.338, 264.676, 697.632, 328.542, 1188.96, 329.085, 1189.28, 554.266, 1129.43, 552.648, 1105.16, 517.383, 818.188, 508, 750.57, 539.059, 703.334, 536.148, 703.981, 367.263, 588.479, 353.998, 588.479, 557.501, 347.446, 631.914 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object3"]
+polygon = PoolVector2Array( -3.68428, 312.001, 30.0576, 308.546, 33.4871, 251.102, 98.6478, 245.1, 102.935, 193.658, 158.664, 192.8, 157.807, 134.499, 372.317, 137.001, 667.318, 249.001, 785.219, 271.108, 1189.02, 266.399, 1189.02, 82.0075, 699.972, 105.528, 567.288, 0.0784073, -6.04896, -1.31829 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="state_handler/object3"]
+polygon = PoolVector2Array( 694.16, 600.613, 693.84, 631.899, 1130.18, 632.009, 1129.97, 625.82 )
 

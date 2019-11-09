@@ -1,15 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/commons2.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/commons2.png" type="Texture" id=3]
-[ext_resource path="res://scenes/outdated/room_trans_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/exits/exit_side.png" type="Texture" id=5]
-[ext_resource path="res://assets/exit_masks/exit_side.png" type="BitMap" id=6]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=7]
-
-
-
+[ext_resource path="res://scenes/exit_left.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=5]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=6]
 
 [node name="room_template" type="Control"]
 anchor_right = 1.0
@@ -25,61 +21,81 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="room_trans_button2" parent="state_handler" instance=ExtResource( 4 )]
-margin_right = 90.0
-margin_bottom = 720.0
-texture_normal = ExtResource( 5 )
-texture_click_mask = ExtResource( 6 )
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
 room_label = "commons1"
 
-[node name="commons_door_exit" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 189.0
-margin_top = 72.0
-margin_right = 340.0
-margin_bottom = 333.0
-texture_normal = ExtResource( 5 )
-texture_click_mask = ExtResource( 6 )
-room_label = "hallway1"
+[node name="exit2" type="Area2D" parent="state_handler"]
+position = Vector2( 451.61, -194.952 )
+script = ExtResource( 5 )
+room_label = "library"
 
-[node name="commons_door_dialog" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 190.0
-margin_top = 75.0
-margin_right = 341.0
-margin_bottom = 338.0
-dialog_label = "try_door"
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( -336.115, 293.819, -336.889, 714.757, -23.0817, 667.179, -20.3742, 319.715 )
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 450.0
-margin_top = 215.0
-margin_right = 559.0
-margin_bottom = 382.0
+[node name="commons_mat" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( -1.47528, -16.7366 )
+script = ExtResource( 6 )
+dialog_label = "commons_mat"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_mat"]
+polygon = PoolVector2Array( 173.807, 553.354, 155.429, 643.036, 454.054, 595.738, 417.122, 513.659 )
+
+[node name="commons_chair1" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 368.232, -148.775 )
+script = ExtResource( 6 )
 dialog_label = "commons_chair1"
 
-[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 727.448
-margin_top = 491.0
-margin_right = 912.448
-margin_bottom = 630.0
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_chair1"]
+position = Vector2( 0, -0.463257 )
+polygon = PoolVector2Array( 184.764, 479.142, 185.191, 563.254, 185.708, 623.072, 247.635, 648.37, 292.697, 630.187, 304.556, 630.187, 304.292, 566.942, 308.772, 563.78, 306.4, 553.502, 253.169, 531.367, 252.531, 468.94, 234, 454.578, 205.276, 456.431 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/commons_chair1"]
+position = Vector2( 0, -0.463257 )
+polygon = PoolVector2Array( 337.054, 461.726, 338.135, 597.122, 378.554, 618.372, 448.259, 605.998, 448.968, 542.594, 413.478, 523.236, 412.621, 460.708, 395.554, 444.727, 354.974, 444.86 )
+
+[node name="commons_chair2" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 471.117, 26.9874 )
+script = ExtResource( 6 )
 dialog_label = "commons_chair2"
 
-[node name="char_obj_button3" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 968.0
-margin_top = 163.0
-margin_right = 1039.0
-margin_bottom = 363.0
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/commons_chair2"]
+position = Vector2( 0, -0.463257 )
+polygon = PoolVector2Array( 361.695, 461.555, 352.496, 534.308, 283.506, 555.632, 270.127, 568.594, 273.89, 585.737, 315.702, 626.713, 328.245, 629.639, 361.695, 629.221, 510.546, 580.301, 502.184, 566.921, 460.177, 566.781, 442.345, 537.602, 505.529, 492.496, 499.257, 480.37, 415.01, 484.691, 464.253, 443.023, 452.061, 429.855, 375.075, 456.537, 367.549, 455.701 )
+
+[node name="poetry_slam_sign" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 471.117, 26.9874 )
+script = ExtResource( 6 )
 dialog_label = "poetry_slam_sign"
 
-[node name="char_obj_button4" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 1005.0
-margin_top = 235.0
-margin_right = 1071.0
-margin_bottom = 444.0
-dialog_label = "poetry_slam_sign"
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/poetry_slam_sign"]
+position = Vector2( 0, -0.463257 )
+polygon = PoolVector2Array( 537.914, 80.7565, 530.176, 180.574, 529.402, 230.87, 540.235, 298.189, 637.311, 452.152, 647.261, 453.84, 636.088, 430.096, 627.708, 395.179, 619.328, 219.896, 606.758, 164.727, 557.176, 92.1001 )
 
-[node name="char_obj_button5" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 1043.0
-margin_top = 441.0
-margin_right = 1085.0
-margin_bottom = 515.0
-dialog_label = "poetry_slam_sign"
+[node name="commons_poem" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 446.417, 252.137 )
+script = ExtResource( 6 )
+dialog_label = "commons_poem"
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/commons_poem"]
+position = Vector2( -0.377319, -0.463257 )
+polygon = PoolVector2Array( 586.906, 299.305, 571.817, 323.969, 610.739, 328.155, 610.105, 295.021 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="state_handler/commons_poem"]
+position = Vector2( -0.377319, -0.463257 )
+polygon = PoolVector2Array( 555.638, 265.348, 585.898, 289.665, 604.27, 256.702, 586.979, 245.895 )
+
+[node name="tack" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 446.417, 252.137 )
+script = ExtResource( 6 )
+dialog_label = "tack"
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="state_handler/tack"]
+position = Vector2( -0.377319, -0.463257 )
+polygon = PoolVector2Array( 637.773, 288.043, 664.25, 301.552, 674.517, 281.559, 648.58, 271.833 )
 

@@ -20,6 +20,7 @@ func update_state(state):
 	if state.get('met_receptionist'):
 		charon_moving = true
 		$receptionist_idle.hide()
+		$elbow.hide()
 		$receptionist_idle2.show()		
 	if fade_out_delay == true:
 		fade_out_trigger = true

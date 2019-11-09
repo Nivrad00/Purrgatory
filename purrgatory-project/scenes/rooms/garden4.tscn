@@ -1,16 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/garden4.png" type="Texture" id=3]
-[ext_resource path="res://scenes/outdated/room_trans_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/exits/garden4_exit1.png" type="Texture" id=5]
-[ext_resource path="res://assets/exit_masks/garden4_exit1.png" type="BitMap" id=6]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/outdated/exit_back_button.tscn" type="PackedScene" id=8]
-
-
-
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=6]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -26,79 +21,59 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="room_trans_button" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 505.0
-margin_top = 200.0
-margin_right = 714.0
-margin_bottom = 356.0
-room_label = "garden5"
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+room_label = "garden2"
 
-[node name="room_trans_button2" parent="state_handler" instance=ExtResource( 4 )]
-margin_left = 1141.16
-margin_top = 375.0
-margin_right = 1237.16
-margin_bottom = 671.0
-texture_normal = ExtResource( 5 )
-texture_click_mask = ExtResource( 6 )
-expand = false
+[node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 room_label = "garden3"
 
-[node name="char_obj_button" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 735.827
-margin_top = 77.3202
-margin_right = 851.827
-margin_bottom = 446.32
-dialog_label = "tree2"
+[node name="CollisionPolygon2D" type="Polygon2D" parent="state_handler/exit2"]
+visible = false
+modulate = Color( 0, 0, 0, 0.101961 )
+polygon = PoolVector2Array( 678.787, 781.692, 677.599, 477.815, 777.555, 466.774, 778.17, 832.207 )
 
-[node name="char_obj_button2" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 244.0
-margin_top = 90.0
-margin_right = 463.0
-margin_bottom = 326.0
-dialog_label = "tree1"
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( 678.787, 781.692, 677.599, 477.815, 777.555, 466.774, 778.175, 810.187, 734.901, 810.214 )
 
-[node name="char_obj_button3" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 341.0
-margin_top = 201.0
-margin_right = 379.0
-margin_bottom = 437.0
-dialog_label = "tree1"
+[node name="exit3" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
+room_label = "field1"
 
-[node name="char_obj_button4" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 97.0
-margin_top = 423.0
-margin_right = 143.0
-margin_bottom = 659.0
-dialog_label = "tree1"
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3"]
+polygon = PoolVector2Array( 87.3104, 403.931, 87.3104, 606.948, 250.705, 607.703, 251.082, 403.554 )
 
-[node name="char_obj_button5" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 11.5867
-margin_top = 212.453
-margin_right = 268.587
-margin_bottom = 448.453
-dialog_label = "tree1"
+[node name="garden_tree" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "garden_tree"
 
-[node name="char_obj_button6" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 338.0
-margin_top = 516.0
-margin_right = 538.0
-margin_bottom = 631.0
-dialog_label = "bush"
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/garden_tree"]
+polygon = PoolVector2Array( 263.077, 146.938, 244.001, 231.001, 285.001, 284.001, 368.049, 309.062, 365.001, 415.002, 320.228, 445.525, 427.659, 446.338, 414.703, 405.869, 411.002, 313.001, 478.852, 289.234, 510.002, 235.001, 538.337, 142.273, 404.206, 80.4561, 327.226, 80.4561 )
 
-[node name="char_obj_button7" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 687.24
-margin_top = 519.52
-margin_right = 860.24
-margin_bottom = 623.52
-dialog_label = "bush"
+[node name="garden_bush" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "garden_bush"
 
-[node name="char_obj_button8" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 977.827
-margin_top = 205.173
-margin_right = 1072.83
-margin_bottom = 396.173
-dialog_label = "vine"
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/garden_bush"]
+polygon = PoolVector2Array( 444.03, 457.583, 384.671, 494.595, 381.179, 542.781, 417.493, 560.938, 490.819, 554.652, 522.244, 535.797, 529.227, 492.5, 488.723, 462.472 )
 
-[node name="exit_front_back_button2" parent="state_handler" instance=ExtResource( 8 )]
-room_label = "garden2"
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/garden_bush"]
+polygon = PoolVector2Array( 717.779, 509.959, 677.275, 537.194, 666.102, 580.491, 698.225, 620.296, 770.154, 620.296, 802.278, 596.553, 805.071, 567.223, 787.613, 533.004, 754.093, 512.054 )
+
+[node name="garden_leaves" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "garden_leaves"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/garden_leaves"]
+polygon = PoolVector2Array( 316.234, 444.794, 289.9, 452.597, 277.708, 465.764, 299.653, 475.518, 371.066, 473.542, 457.661, 458.449, 462.05, 444.794, 424.074, 435.942, 426.942, 445.621 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/garden_leaves"]
+polygon = PoolVector2Array( 382.913, 517.075, 381.266, 542.624, 326.565, 538.96, 300.04, 525.468, 307.82, 513.095 )
+
+[node name="garden_sapling" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "garden_sapling"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/garden_sapling"]
+polygon = PoolVector2Array( 788.029, 337.383, 775.52, 381.396, 788.661, 400.368, 795.905, 433.748, 813.973, 432.358, 817.386, 398.051, 825.092, 359.621 )
 
