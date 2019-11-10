@@ -1,0 +1,138 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/commons1.gd" type="Script" id=2]
+[ext_resource path="res://assets/rooms/commons1.png" type="Texture" id=3]
+[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/exits/exit_square_empty.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/ending_sign.png" type="Texture" id=6]
+[ext_resource path="res://scenes/sprites/numa_at_commons.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/sprites/kyungsoon_idle.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/sprites/basket-flower-and-card.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite_masks/basket-flower-and-card.png" type="BitMap" id=10]
+[ext_resource path="res://scenes/sprites/oliver_huh.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/cat1_idle.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=14]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=15]
+
+[node name="room_template" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 1 )
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+
+[node name="bg" type="Sprite" parent="state_handler"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="ending_sign" parent="state_handler" instance=ExtResource( 4 )]
+modulate = Color( 1, 1, 1, 1 )
+margin_left = 945.0
+margin_top = 465.0
+margin_right = 1049.0
+margin_bottom = 605.0
+texture_normal = ExtResource( 5 )
+dialog_label = "ending_sign"
+
+[node name="sprite" type="Sprite" parent="state_handler/ending_sign"]
+texture = ExtResource( 6 )
+centered = false
+
+[node name="numa_at_commons" parent="state_handler" instance=ExtResource( 7 )]
+visible = false
+margin_left = 405.733
+margin_top = 313.617
+margin_right = 626.733
+margin_bottom = 542.617
+
+[node name="kyungsoon_idle" parent="state_handler" instance=ExtResource( 8 )]
+margin_left = 304.629
+margin_top = 327.683
+margin_right = 567.629
+margin_bottom = 647.683
+
+[node name="flowers_etc" parent="state_handler" instance=ExtResource( 4 )]
+visible = false
+modulate = Color( 1, 1, 1, 1 )
+margin_left = 617.398
+margin_top = 499.255
+margin_right = 818.398
+margin_bottom = 648.255
+texture_normal = ExtResource( 9 )
+texture_click_mask = ExtResource( 10 )
+expand = false
+dialog_label = "flowers_etc"
+
+[node name="oliver_huh" parent="state_handler" instance=ExtResource( 11 )]
+visible = false
+margin_left = 1029.18
+margin_top = 209.466
+margin_right = 1181.18
+margin_bottom = 541.466
+dialog_label = "talk_to_oliver_about_numa"
+
+[node name="cat1_idle" parent="state_handler" instance=ExtResource( 12 )]
+margin_left = 940.571
+margin_top = 464.095
+margin_right = 1080.57
+margin_bottom = 598.095
+
+[node name="exit" parent="state_handler" instance=ExtResource( 13 )]
+room_label = "commons2"
+
+[node name="exit2" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 456.517, -238.127 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_group_": true
+}
+room_label = "antechamber5"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( -459.085, 322.215, -455.713, 875.844, -322.6, 822.858, -323.376, 337.436 )
+
+[node name="commons_door_exit" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+visible = false
+position = Vector2( 453.517, -203.127 )
+script = ExtResource( 14 )
+room_label = "commons3"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_door_exit"]
+position = Vector2( -3.07965, -34.1489 )
+polygon = PoolVector2Array( 413.864, 387.731, 412.011, 687.48, 569.53, 711.108, 568.603, 384.952 )
+
+[node name="commons_door_dialog" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 0.431946, -59.9116 )
+script = ExtResource( 15 )
+dialog_label = "try_door"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_door_dialog"]
+position = Vector2( -1.31677, -0.227722 )
+polygon = PoolVector2Array( 865.429, 508.608, 1021.99, 533.956, 1020.8, 205.639, 866.26, 208.881 )
+
+[node name="commons_lamp" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 0.431946, -59.9116 )
+script = ExtResource( 15 )
+dialog_label = "commons_lamp"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_lamp"]
+polygon = PoolVector2Array( 778.808, 373.277, 777.445, 349.097, 794.304, 338.323, 767.218, 286.476, 741.382, 286.084, 732.468, 293.262, 708.023, 340.249, 735.135, 352.675, 744.218, 352.215, 744.45, 510.333, 735.521, 511.956, 727.134, 518.855, 727.54, 526.431, 732.139, 531.842, 745.532, 536.847, 763.388, 536.847, 774.481, 532.112, 780.298, 526.025, 777.728, 516.285, 769.881, 511.28, 760.295, 511.35, 761.846, 390.644 )
+
+[node name="commons_cord" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 0.431946, -59.9116 )
+script = ExtResource( 15 )
+dialog_label = "commons_cord"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_cord"]
+polygon = PoolVector2Array( 721.638, 439.803, 706.163, 439.219, 706.511, 467.441, 682.419, 500.436, 686.415, 520.107, 726.986, 519.492, 736.206, 511.194, 722.599, 468.55 )
+

@@ -1,0 +1,102 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://assets/rooms/house4.png" type="Texture" id=3]
+[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=5]
+
+[node name="room_instance" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 1 )
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+
+[node name="bg" type="Sprite" parent="state_handler"]
+position = Vector2( -0.244202, 0 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+room_label = "house5"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
+polygon = PoolVector2Array( -171.593, 289.974, -68.0712, 335.76, -68.2818, 655.481, -169.231, 712.374 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="state_handler/exit"]
+modulate = Color( 0, 0, 0, 0.1 )
+polygon = PoolVector2Array( -68.2825, 650.569, -68.2818, 655.481, -156.535, 705.219, -156.397, 697.977 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="state_handler/exit"]
+modulate = Color( 0, 0, 0, 0.101961 )
+polygon = PoolVector2Array( -171.593, 289.974, -67.8371, 335.77, -68.2864, 623.231, -169.483, 667.297 )
+
+[node name="exit2" parent="state_handler" instance=ExtResource( 4 )]
+room_label = "warehouse3"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( 639.525, 421.031, 546.811, 434.682, 546.811, 696.331, 604.652, 732.008, 628.927, 731.137, 628.611, 715.337, 606.544, 705.995, 590.766, 703.171, 571.335, 667.795, 584.289, 643.215, 585.784, 618.136, 611.745, 614.133, 628.466, 602.103, 639.826, 599.424 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="state_handler/exit2"]
+modulate = Color( 0, 0, 0, 0.101961 )
+position = Vector2( 0.0332947, -0.182617 )
+polygon = PoolVector2Array( 639.525, 421.031, 546.811, 434.682, 546.811, 696.331, 605.965, 732.787, 616.794, 730.56, 631.164, 730.176, 631.013, 715.902, 622.548, 698.105, 615.406, 690.299, 617.399, 688.97, 626.202, 698.105, 631.018, 706.575, 630.852, 695.281, 626.534, 676.016, 615.905, 659.075, 598.134, 635.491, 599.462, 633, 613.911, 648.28, 626.202, 667.047, 633.343, 680.666, 636.997, 678.507, 639.343, 670.622 )
+
+[node name="exit3" parent="state_handler" instance=ExtResource( 4 )]
+room_label = "house2"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3"]
+polygon = PoolVector2Array( 49.612, 703.882, -107.093, 900.033, -497.981, 897.747, -151.219, 702.597 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="state_handler/exit3"]
+modulate = Color( 0, 0, 0, 0.1 )
+polygon = PoolVector2Array( -374.991, 898.814, -497.691, 897.968, -376.592, 829.734 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="state_handler/exit3"]
+modulate = Color( 0, 0, 0, 0.1 )
+polygon = PoolVector2Array( -177.644, 899.712, -340.643, 898.971, -340.939, 809.448, -178.579, 718.551 )
+
+[node name="Polygon2D4" type="Polygon2D" parent="state_handler/exit3"]
+modulate = Color( 0, 0, 0, 0.1 )
+polygon = PoolVector2Array( -40.1638, 816.289, -107.093, 900.033, -156.019, 899.811, -156.766, 705.832, -151.219, 702.597, -40.9078, 703.303 )
+
+[node name="Polygon2D5" type="Polygon2D" parent="state_handler/exit3"]
+modulate = Color( 0, 0, 0, 0.1 )
+polygon = PoolVector2Array( 49.612, 703.882, -27.6264, 800.563, -27.5777, 703.388 )
+
+[node name="object" parent="state_handler" instance=ExtResource( 5 )]
+dialog_label = "house_potted_plant"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+polygon = PoolVector2Array( 1100.4, 420.444, 1081.51, 424.055, 1064.71, 436.138, 1039.03, 440.027, 1037.51, 464.817, 1024.45, 489.781, 1043.69, 524.659, 1059.73, 527.714, 1081.81, 537.161, 1082.13, 552.955, 1057.63, 553.969, 1043.15, 555.577, 1022.12, 563.914, 1024.43, 590.785, 1018.87, 622.289, 1030.46, 654.72, 1086.98, 673.251, 1139.33, 661.206, 1157.86, 618.12, 1152.3, 592.175, 1158.79, 569.474, 1131.92, 556.502, 1096.55, 552.712, 1096.68, 533.826, 1136.09, 524.998, 1154.62, 481.912, 1156.01, 455.504, 1129.6, 433.266 )
+
+[node name="object2" parent="state_handler" instance=ExtResource( 5 )]
+dialog_label = "stained_glass"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
+polygon = PoolVector2Array( 951.217, 281.254, 951.757, 419.586, 973.372, 426.611, 974.993, 279.633 )
+
+[node name="object3" parent="state_handler" instance=ExtResource( 5 )]
+dialog_label = "house_upstairs_carpet"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
+polygon = PoolVector2Array( 587.554, 514.69, 891.237, 511.448, 950.136, 588.719, 544.865, 588.719 )
+
+[node name="object4" parent="state_handler" instance=ExtResource( 5 )]
+dialog_label = "house_pillows"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object4"]
+position = Vector2( -0.418152, 0 )
+polygon = PoolVector2Array( 490.829, 642.756, 496.474, 660.158, 554.051, 704.357, 636.726, 704.897, 671.85, 700.574, 686.98, 690.848, 690.9, 703.643, 744.258, 714.624, 764.252, 705.438, 817.207, 710.301, 854.386, 700.716, 865.299, 677.879, 833.418, 661.128, 816.755, 628.799, 760.309, 618.346, 696.336, 627.126, 684.819, 653.563, 676.713, 658.426, 619.435, 616.278, 534.058, 620.06 )
+
+[node name="object5" parent="state_handler" instance=ExtResource( 5 )]
+position = Vector2( 185.609, 5.98737 )
+dialog_label = "live_laugh_meow"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object5"]
+polygon = PoolVector2Array( 357.702, 232.51, 360.695, 376.806, 589.414, 373.813, 588.216, 233.708 )
+

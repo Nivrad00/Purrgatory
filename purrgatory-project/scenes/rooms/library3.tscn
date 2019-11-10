@@ -1,0 +1,97 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://assets/rooms/library3.png" type="Texture" id=3]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=6]
+
+[node name="room_instance" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 1 )
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+
+[node name="bg" type="Sprite" parent="state_handler"]
+position = Vector2( -0.080719, 0 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+room_label = "library"
+
+[node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
+room_label = "library4"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( -65.3102, 547.139, -64.8921, 578.499, -40.2229, 578.917, -39.8047, 547.976 )
+
+[node name="object6" parent="state_handler" instance=ExtResource( 6 )]
+dialog_label = "library_pencil"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object6"]
+polygon = PoolVector2Array( 229.627, 455.646, 229.627, 475.058, 249.72, 477.442, 250.741, 455.987 )
+
+[node name="object7" parent="state_handler" instance=ExtResource( 6 )]
+dialog_label = "library_magnifying_glass"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object7"]
+polygon = PoolVector2Array( 217.366, 455.646, 191.484, 468.587, 200.947, 481.268, 221.794, 479.485, 235.416, 463.819 )
+
+[node name="object2" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "library_work_papers"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
+polygon = PoolVector2Array( 66.0459, 509.684, 26.3243, 523.586, 35.4603, 542.653, 82.3318, 529.942, 79.9485, 544.242, 151.05, 543.05, 160.186, 527.559, 186.005, 514.451, 154.625, 485.057, 125.231, 499.356, 135.161, 513.656, 94.2482, 516.039, 86.3039, 512.862 )
+
+[node name="object3" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "library_work_books"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
+polygon = PoolVector2Array( 51.3489, 452.485, 47.774, 481.879, 51.7462, 508.492, 93.851, 512.464, 124.437, 493.398, 110.931, 441.76, 79.9485, 441.363 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object3"]
+polygon = PoolVector2Array( 127.217, 452.882, 124.437, 468.771, 147.872, 477.907, 176.869, 463.607, 164.555, 450.102, 143.106, 444.938 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="state_handler/object3"]
+polygon = PoolVector2Array( 252.737, 484.659, 280.542, 491.412, 301.595, 473.14, 310.334, 454.471, 278.953, 449.307, 268.229, 463.21, 257.107, 469.168 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="state_handler/object3"]
+polygon = PoolVector2Array( 202.688, 482.276, 195.538, 516.834, 251.943, 519.614, 259.49, 485.454 )
+
+[node name="object4" parent="state_handler" instance=ExtResource( 6 )]
+dialog_label = "library_work_table"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object4"]
+polygon = PoolVector2Array( 340.039, 446.539, 340.502, 456.732, 327.299, 473.469, 327.067, 571.165, 307.609, 575.798, 307.609, 532.712, 277.958, 531.322, 238.578, 572.555, 219.356, 573.903, 218, 632.194, 189.984, 631.742, 189.532, 572.999, 43.3516, 574.58, 44.0294, 610.956, 189.758, 606.663, 189.532, 623.834, 44.2553, 628.579, 43.4719, 632.091, 14.6773, 632.091, 12.8672, 574.117, -5.28967, 575.514, -3.26086, 516.497, 172.102, 445.335 )
+
+[node name="object5" parent="state_handler" instance=ExtResource( 6 )]
+dialog_label = "library_ceiling_lamps"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object5"]
+polygon = PoolVector2Array( 394.719, 303.475, 395.454, 341.7, 417.507, 343.906, 417.507, 299.8 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object5"]
+polygon = PoolVector2Array( 406.481, 201.297, 405.746, 279.952, 435.149, 284.363, 436.62, 203.503 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="state_handler/object5"]
+polygon = PoolVector2Array( 452.057, 196.887, 486.606, 198.357, 487.341, 13.1132, 453.527, 7.23245 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="state_handler/object5"]
+polygon = PoolVector2Array( 586.512, 41.1359, 630.495, 40.3214, 630.902, -7.0495, 585.302, -7.99951 )
+
+[node name="object" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "library_books"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+polygon = PoolVector2Array( 1230.64, 105.785, 1112.28, 145.236, 935.435, 145.236, 651.116, 262.228, 651.302, 293.092, 579.453, 311.37, 517.799, 312.562, 442.001, 341.031, 353.709, 341.438, 34.8651, 84.0189, 33.8714, 500.945, 175.677, 444.143, 268.85, 445.879, 354.554, 398.266, 385.104, 398.1, 384.804, 366.772, 415.382, 366.922, 415.532, 398.399, 438.915, 400.048, 523.241, 428.195, 577.656, 425.474, 650.672, 448.764, 652.477, 474.447, 927.273, 577.836, 1113.64, 575.115, 1225.2, 610.485 )
+

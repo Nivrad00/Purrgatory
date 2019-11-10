@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://assets/rooms/house5.png" type="Texture" id=3]
+[ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=6]
+
+[node name="room_instance" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 1 )
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+
+[node name="bg" type="Sprite" parent="state_handler"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+room_label = "house4"
+
+[node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
+room_label = "attic"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( 399.891, 287.331, 528.741, 333.019, 736.578, 275.643, 736.578, 265.632, 639.623, 198.009 )
+
+[node name="Polygon2D" type="Polygon2D" parent="state_handler/exit2"]
+modulate = Color( 0, 0, 0, 0.1 )
+polygon = PoolVector2Array( 638.035, 197.717, 745.681, 271.996, 529.198, 333.168, 400.103, 287.488 )
+
+[node name="object2" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "cat_bed"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
+polygon = PoolVector2Array( 447.22, 543.07, 387.077, 577.437, 394.237, 621.829, 465.836, 641.876, 531.706, 637.58, 556.05, 620.397, 561.778, 580.301, 544.594, 548.798 )
+
+[node name="object" parent="state_handler" instance=ExtResource( 6 )]
+dialog_label = "bedroom_bed"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+polygon = PoolVector2Array( 733.615, 104.885, 732.183, 508.702, 778.006, 520.158, 778.006, 670.516, 673.472, 703.451, 647.697, 689.131, 646.265, 626.125, 475.859, 661.924, 458.676, 714.907, 442.924, 717.771, 423.81, 668.731, 135.049, 727.795, -9.58078, 724.931, -8.06396, 596.003, 531.706, 523.022, 532.867, 459.831, 706.408, 504.406, 703.544, 263.834, 531.575, 311.209, 530.283, 241.422, 31.9466, 173.62, 33.3785, 586.029, -5.28485, 594.621, -0.988922, -5.37732, 411.42, 1.78257 )
+
+[node name="object3" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "bedroom_lamp"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
+polygon = PoolVector2Array( 805.889, 421.938, 790.456, 455.376, 805.875, 459.119, 811.891, 487.956, 829.226, 487.26, 835.813, 459.119, 849.615, 457.09, 835.04, 421.938 )
+
+[node name="object4" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "bedroom_table"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object4"]
+polygon = PoolVector2Array( 736.226, 481.874, 735.596, 566.958, 876.142, 607.924, 927.193, 592.168, 928.453, 496.369, 790.428, 474.941 )
+
+[node name="object5" parent="state_handler" instance=ExtResource( 6 )]
+dialog_label = "bedroom_rug"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object5"]
+polygon = PoolVector2Array( 988.319, 655.916, 929.044, 661.903, 894.317, 673.878, 870.367, 694.235, 861.386, 724.172, 1155.37, 722.376, 1146.98, 705.611, 1085.91, 668.489 )
+

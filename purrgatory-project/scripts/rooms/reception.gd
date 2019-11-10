@@ -1,0 +1,46 @@
+extends 'state_handler_template.gd'
+
+var fade_out_delay = false
+var fade_out_trigger = false
+var charon_moving = false
+	
+func update_state(state):
+	.update_state(state)
+	$fadeout.hide()
+	
+	if state.get('enable_name_input'):
+		state['enable_name_input'] = false
+		get_node('../../../../ui/name_input').show()
+		get_node('../../../../ui/name_input/text').grab_focus()
+		
+	if state.get('enable_name_input_flag'):
+		state['enable_name_input'] = true
+		state['enable_name_input_flag'] = false
+		
+	if state.get('met_receptionist'):
+		charon_moving = true
+		$receptionist_idle.hide()
+		$elbow.hide()
+		$receptionist_idle2.show()		
+	if fade_out_delay == true:
+		fade_out_trigger = true
+		$portal_audio.play()
+		$portal.hide()
+	if state.get('recep_entered_portal'):
+		fade_out_delay = true
+		$fadeout.show()
+
+func _process(delta):
+	if charon_moving:
+		var pos = $receptionist_idle2.get_position()
+		$receptionist_idle2.set_position(Vector2(pos.x - 5 * delta, pos.y))
+	if fade_out_trigger:
+		var a = $fadeout.get_modulate().a
+		if a == 1:
+			fade_out_trigger = false
+			$white_timer.start()
+			yield($white_timer, 'timeout')
+			emit_signal('change_room', 'antechamber1')
+		else:
+			a = min(a + 0.2 * delta, 1)
+			$fadeout.set_modulate(Color(1, 1, 1, a))

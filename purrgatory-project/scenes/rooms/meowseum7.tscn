@@ -1,0 +1,142 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://assets/rooms/meowseum7.png" type="Texture" id=3]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=6]
+
+[node name="room_instance" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 1 )
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+
+[node name="bg" type="Sprite" parent="state_handler"]
+position = Vector2( 0.916077, 0 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+room_label = "meowseum6"
+
+[node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
+room_label = "hallway14"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( 196.739, 345.51, 197.905, 645.263, 389.187, 646.43, 386.854, 343.177 )
+
+[node name="object" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "cat_butt"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+polygon = PoolVector2Array( 210.578, 196.4, 210.578, 359.753, 296.316, 329.068, 296.316, 204.523 )
+
+[node name="object2" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "filing_boxes"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
+polygon = PoolVector2Array( 365.809, 203.62, 367.614, 250.551, 433.496, 252.356, 431.691, 200.01 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object2"]
+position = Vector2( 73.1027, 3.61 )
+polygon = PoolVector2Array( 371.224, 200.01, 367.614, 250.551, 457.864, 250.551, 431.691, 200.01 )
+
+[node name="object3" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "meowseum_glass"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
+polygon = PoolVector2Array( 409.441, 281.74, 418.997, 312.614, 437.375, 311.879, 446.196, 280.27, 427.819, 275.124 )
+
+[node name="object4" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "meowseum_pencil"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object4"]
+position = Vector2( -0.540344, 2.16144 )
+polygon = PoolVector2Array( 391.064, 304.528, 406.97, 319.046, 417.237, 319.586, 422.1, 312.561, 407.971, 293.502, 396.163, 293.108 )
+
+[node name="object5" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "meowseum_snowglobe"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object5"]
+polygon = PoolVector2Array( 383.245, 329.983, 366.304, 339.736, 366.304, 361.81, 382.731, 371.05, 400.698, 364.89, 397.618, 334.603 )
+
+[node name="object6" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "meowseum_cards"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object6"]
+polygon = PoolVector2Array( 437.146, 355.136, 427.392, 368.483, 450.033, 374.788, 475.133, 377.724, 487.453, 364.377, 462.414, 357.765 )
+
+[node name="object7" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "exit_sign "
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object7"]
+polygon = PoolVector2Array( 693.001, 74.5603, 694.549, 132.594, 805.2, 129.499, 805.973, 73.7865 )
+
+[node name="object8" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "this_side_right"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object8"]
+polygon = PoolVector2Array( 341.703, 457.583, 343.73, 516.155, 350.663, 508.611, 408.249, 509.426, 415.213, 504.784, 415.213, 445.976, 356.405, 444.429 )
+
+[node name="object9" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "litter_box"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object9"]
+polygon = PoolVector2Array( 452.189, 421.11, 451.374, 505.819, 474.995, 534.327, 579.252, 512.335, 586.583, 429.255, 547.487, 410.521, 499.43, 404.005, 500.245, 417.852 )
+
+[node name="object10" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "spilled_litter"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object10"]
+polygon = PoolVector2Array( 350.375, 509.077, 302.319, 562.02, 305.083, 632.013, 431.042, 632.09, 453.284, 627.843, 454.633, 584.012, 428.602, 580.319, 450.56, 528.625, 431.012, 509.077 )
+
+[node name="object11" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "flat_box"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object11"]
+polygon = PoolVector2Array( 236.71, 444.34, 236.046, 535.229, 266.564, 610.859, 313.003, 551.814, 287.13, 412.495 )
+
+[node name="object12" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "mop_bucket"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object12"]
+polygon = PoolVector2Array( 830.182, 492.762, 825.117, 570.472, 836.397, 583.123, 847.546, 611.313, 878.955, 604.652, 907.69, 614.904, 913.528, 607.072, 913.25, 599.249, 952.727, 523.529, 959.243, 448.594, 933.179, 446.965, 931.55, 490.949, 914.329, 498.624, 891.253, 483.781 )
+
+[node name="object13" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "mop"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object13"]
+polygon = PoolVector2Array( 1067.13, 257.213, 984.105, 585.418, 995.045, 614.432, 1008.9, 632.029, 897.941, 631.985, 918.225, 599.196, 918.726, 590.183, 930.492, 577.917, 949.768, 574.912, 1029.46, 249.359 )
+
+[node name="object14" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "mop_water"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object14"]
+polygon = PoolVector2Array( 823.071, 562.956, 813.141, 576.064, 816.716, 594.733, 765.872, 615.388, 770.361, 631.976, 1026.13, 632.049, 982.752, 592.747, 929.128, 568.517 )
+
+[node name="object15" parent="state_handler" instance=ExtResource( 6 )]
+dialog_label = "padlock"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object15"]
+polygon = PoolVector2Array( 631.052, 308.768, 631.251, 342.08, 640.598, 346.356, 650.344, 345.362, 650.344, 309.762, 634.035, 305.983 )
+

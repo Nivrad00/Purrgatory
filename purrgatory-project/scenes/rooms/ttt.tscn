@@ -1,0 +1,192 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/ttt.gd" type="Script" id=2]
+[ext_resource path="res://assets/rooms/ttt.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/ttt/o1/1.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/ttt/o1/2.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/ttt/o1/3.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/ttt/o1/4.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/ttt/o1/5.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/ttt_done.png" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ null, ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "o1",
+"speed": 15.0
+} ]
+
+[node name="room_instance" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 1 )
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+
+[node name="bg" type="Sprite" parent="state_handler"]
+position = Vector2( 7.68423, -41.4402 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( -7.68423, 41.1628 )
+
+[node name="spaces" type="Control" parent="state_handler"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="0" type="ColorRect" parent="state_handler/spaces"]
+margin_left = 376.0
+margin_top = 77.0
+margin_right = 542.0
+margin_bottom = 240.0
+color = Color( 0, 1, 0.835294, 0.266667 )
+
+[node name="1" type="ColorRect" parent="state_handler/spaces"]
+margin_left = 542.0
+margin_top = 79.0
+margin_right = 711.0
+margin_bottom = 240.0
+color = Color( 0.803922, 0, 1, 0.266667 )
+
+[node name="2" type="ColorRect" parent="state_handler/spaces"]
+margin_left = 711.0
+margin_top = 81.0
+margin_right = 878.0
+margin_bottom = 240.0
+color = Color( 0, 1, 0.203922, 0.266667 )
+
+[node name="3" type="ColorRect" parent="state_handler/spaces"]
+margin_left = 370.0
+margin_top = 240.0
+margin_right = 535.0
+margin_bottom = 403.0
+color = Color( 1, 0.423529, 0, 0.266667 )
+
+[node name="4" type="ColorRect" parent="state_handler/spaces"]
+margin_left = 535.0
+margin_top = 240.0
+margin_right = 707.0
+margin_bottom = 404.0
+color = Color( 0.85098, 1, 0, 0.266667 )
+
+[node name="5" type="ColorRect" parent="state_handler/spaces"]
+margin_left = 707.0
+margin_top = 240.0
+margin_right = 878.0
+margin_bottom = 405.0
+color = Color( 0, 0.109804, 1, 0.266667 )
+
+[node name="6" type="ColorRect" parent="state_handler/spaces"]
+margin_left = 363.0
+margin_top = 402.143
+margin_right = 529.0
+margin_bottom = 565.143
+color = Color( 0, 0.647059, 1, 0.266667 )
+
+[node name="7" type="ColorRect" parent="state_handler/spaces"]
+margin_left = 529.097
+margin_top = 404.097
+margin_right = 707.097
+margin_bottom = 565.0
+color = Color( 1, 0, 0, 0.266667 )
+
+[node name="8" type="ColorRect" parent="state_handler/spaces"]
+margin_left = 707.0
+margin_top = 405.0
+margin_right = 879.0
+margin_bottom = 565.0
+color = Color( 0.313726, 1, 0, 0.266667 )
+
+[node name="shapes" type="Node2D" parent="state_handler"]
+editor/display_folded = true
+
+[node name="0" type="AnimatedSprite" parent="state_handler/shapes"]
+position = Vector2( 452.402, 152.873 )
+frames = SubResource( 1 )
+animation = "o1"
+
+[node name="1" type="AnimatedSprite" parent="state_handler/shapes"]
+position = Vector2( 622.448, 155.594 )
+frames = SubResource( 1 )
+animation = "o1"
+
+[node name="2" type="AnimatedSprite" parent="state_handler/shapes"]
+position = Vector2( 797.937, 156.954 )
+frames = SubResource( 1 )
+animation = "o1"
+
+[node name="3" type="AnimatedSprite" parent="state_handler/shapes"]
+position = Vector2( 441.519, 318.839 )
+frames = SubResource( 1 )
+animation = "o1"
+
+[node name="4" type="AnimatedSprite" parent="state_handler/shapes"]
+position = Vector2( 618.367, 318.839 )
+frames = SubResource( 1 )
+animation = "o1"
+
+[node name="5" type="AnimatedSprite" parent="state_handler/shapes"]
+position = Vector2( 799.297, 317.478 )
+frames = SubResource( 1 )
+animation = "o1"
+
+[node name="6" type="AnimatedSprite" parent="state_handler/shapes"]
+position = Vector2( 436.077, 486.165 )
+frames = SubResource( 1 )
+animation = "o1"
+
+[node name="7" type="AnimatedSprite" parent="state_handler/shapes"]
+position = Vector2( 618.367, 488.886 )
+frames = SubResource( 1 )
+animation = "o1"
+
+[node name="8" type="AnimatedSprite" parent="state_handler/shapes"]
+position = Vector2( 799.297, 486.165 )
+frames = SubResource( 1 )
+animation = "o1"
+
+[node name="draw_container" type="Control" parent="state_handler"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="done_button" type="Button" parent="state_handler"]
+editor/display_folded = true
+visible = false
+margin_left = 514.479
+margin_top = 580.603
+margin_right = 726.479
+margin_bottom = 674.603
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="Sprite" type="Sprite" parent="state_handler/done_button"]
+position = Vector2( -4.88702, -16.1143 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="placeholder_input" type="TextEdit" parent="state_handler"]
+visible = false
+margin_left = 328.857
+margin_top = 569.677
+margin_right = 467.857
+margin_bottom = 693.677
+
+[node name="turn_delay" type="Timer" parent="state_handler"]
+wait_time = 0.5
+one_shot = true
+[connection signal="animation_finished" from="state_handler/shapes/0" to="state_handler" method="end_olivers_turn"]
+[connection signal="animation_finished" from="state_handler/shapes/1" to="state_handler" method="end_olivers_turn"]
+[connection signal="animation_finished" from="state_handler/shapes/2" to="state_handler" method="end_olivers_turn"]
+[connection signal="animation_finished" from="state_handler/shapes/3" to="state_handler" method="end_olivers_turn"]
+[connection signal="animation_finished" from="state_handler/shapes/4" to="state_handler" method="end_olivers_turn"]
+[connection signal="animation_finished" from="state_handler/shapes/5" to="state_handler" method="end_olivers_turn"]
+[connection signal="animation_finished" from="state_handler/shapes/6" to="state_handler" method="end_olivers_turn"]
+[connection signal="animation_finished" from="state_handler/shapes/7" to="state_handler" method="end_olivers_turn"]
+[connection signal="animation_finished" from="state_handler/shapes/8" to="state_handler" method="end_olivers_turn"]
+[connection signal="pressed" from="state_handler/done_button" to="state_handler" method="end_players_turn"]
+[connection signal="timeout" from="state_handler/turn_delay" to="state_handler" method="end_olivers_turn2"]

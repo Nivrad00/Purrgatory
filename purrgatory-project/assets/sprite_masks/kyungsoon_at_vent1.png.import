@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/kyungsoon_at_vent1.png-fa19aab05f221aab37604b7d70da582a.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/kyungsoon_at_vent1.png"
+dest_files=[ "res://.import/kyungsoon_at_vent1.png-fa19aab05f221aab37604b7d70da582a.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

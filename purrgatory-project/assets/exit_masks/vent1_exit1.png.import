@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/vent1_exit1.png-c4de934f85c01119d3642e0e03520951.res"
+
+[deps]
+
+source_file="res://assets/exit_masks/vent1_exit1.png"
+dest_files=[ "res://.import/vent1_exit1.png-c4de934f85c01119d3642e0e03520951.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

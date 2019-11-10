@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/game.gd" type="Script" id=1]
+[ext_resource path="res://scripts/dialog_handler.gd" type="Script" id=2]
+[ext_resource path="res://scripts/room_handler.gd" type="Script" id=3]
+[ext_resource path="res://scripts/ui_handler.gd" type="Script" id=4]
+[ext_resource path="res://assets/rainbow1.png" type="Texture" id=5]
+[ext_resource path="res://assets/ComicNeue_Light.otf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 29
+font_data = ExtResource( 6 )
+
+[node name="game" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="dialog_handler" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="room" type="Control" parent="."]
+script = ExtResource( 3 )
+
+[node name="room_container" type="Control" parent="room"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="room_mask" type="Control" parent="room"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[node name="ui" type="Control" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+script = ExtResource( 4 )
+
+[node name="sprites" type="Control" parent="ui"]
+
+[node name="choices" type="Control" parent="ui"]
+margin_left = 426.703
+margin_top = 70.9189
+margin_right = 881.703
+margin_bottom = 462.919
+
+[node name="text_box" type="Button" parent="ui"]
+margin_left = 271.215
+margin_top = 522.1
+margin_right = 1013.22
+margin_bottom = 656.1
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="box" type="Sprite" parent="ui/text_box"]
+position = Vector2( -0.877563, 2.01062 )
+scale = Vector2( 0.716655, 0.232295 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="speaker" type="RichTextLabel" parent="ui/text_box"]
+margin_left = 18.3687
+margin_top = 11.632
+margin_right = 284.369
+margin_bottom = 33.632
+mouse_filter = 1
+custom_fonts/mono_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "fdfgjlsdfsdf323"
+text = "fdfgjlsdfsdf323"
+
+[node name="text" type="RichTextLabel" parent="ui/text_box"]
+margin_left = 18.0
+margin_top = 35.0
+margin_right = 732.0
+margin_bottom = 122.0
+mouse_filter = 1
+custom_fonts/mono_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "fdfgjlsdfsdf323"
+text = "fdfgjlsdfsdf323"
+
+[connection signal="pressed" from="ui/text_box" to="." method="update_dialog" binds= [ -1 ]]

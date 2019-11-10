@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/charon.png-5b80705685c31012427c513a6dca2f43.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/charon.png"
+dest_files=[ "res://.import/charon.png-5b80705685c31012427c513a6dca2f43.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

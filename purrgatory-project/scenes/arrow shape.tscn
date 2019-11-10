@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="Polygon2D" type="Polygon2D"]
+modulate = Color( 0, 0, 0, 0.1 )
+position = Vector2( -79.1797, -17.7653 )
+polygon = PoolVector2Array( 1516.21, 403.596, 1535.24, 440.109, 1631.95, 391.761, 1640.8, 407.151, 1660.94, 351.163, 1604.67, 340.568, 1612.45, 355.882 )
+

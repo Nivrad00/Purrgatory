@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/antechamber3_exit1.png-c98f28a18ccff9b089bddb62780b24dd.res"
+
+[deps]
+
+source_file="res://assets/exit_masks/antechamber3_exit1.png"
+dest_files=[ "res://.import/antechamber3_exit1.png-c98f28a18ccff9b089bddb62780b24dd.res" ]
+
+[params]
+
+create_from=1
+threshold=0.01

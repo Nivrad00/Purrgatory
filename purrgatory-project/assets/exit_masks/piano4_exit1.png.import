@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/piano4_exit1.png-0bb6360edfdc69213efe116f1f1ac6dc.res"
+
+[deps]
+
+source_file="res://assets/exit_masks/piano4_exit1.png"
+dest_files=[ "res://.import/piano4_exit1.png-0bb6360edfdc69213efe116f1f1ac6dc.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

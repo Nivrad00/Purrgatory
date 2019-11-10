@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://assets/rooms/hallway10.png" type="Texture" id=3]
+[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=5]
+
+[node name="room_instance" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 1 )
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+
+[node name="bg" type="Sprite" parent="state_handler"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+room_label = "hallway9"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
+polygon = PoolVector2Array( -454.102, 437.471, -384.868, 465.979, -384.868, 754.314, -454.102, 892.78 )
+
+[node name="exit2" parent="state_handler" instance=ExtResource( 4 )]
+room_label = "meowseum1"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( -41.0161, 550.131, -41.8855, 754.312, 222.329, 750.849, 222.329, 549.105 )
+
+[node name="object" parent="state_handler" instance=ExtResource( 5 )]
+dialog_label = "meowseum sign"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+polygon = PoolVector2Array( 328.873, 194.092, 328.873, 304.356, 758.902, 308.766, 759.637, 205.118 )
+
+[node name="object2" parent="state_handler" instance=ExtResource( 5 )]
+dialog_label = "hours sign"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
+polygon = PoolVector2Array( 728.763, 403.593, 728.028, 477.838, 800.802, 477.838, 800.067, 402.858 )
+
+[node name="object3" parent="state_handler" instance=ExtResource( 5 )]
+dialog_label = "meowseum_ttt"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
+polygon = PoolVector2Array( 1056.8, 521.568, 1055.17, 553.333, 1091.82, 572.882, 1096.71, 524.826 )
+

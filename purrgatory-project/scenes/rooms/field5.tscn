@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://assets/rooms/field5.png" type="Texture" id=3]
+[ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=5]
+
+[node name="room_instance" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 1 )
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+
+[node name="bg" type="Sprite" parent="state_handler"]
+position = Vector2( -1.36038, 0 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+room_label = "field3"
+
+[node name="bad_tree" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 5 )
+dialog_label = "bad_tree"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/bad_tree"]
+polygon = PoolVector2Array( 1095.94, 277.353, 1103.06, 306.34, 1125.15, 328.652, 1148.59, 339.306, 1148.17, 434.352, 1181.59, 433.621, 1174.21, 336.118, 1189.7, 332.214, 1190.04, 222.961, 1163.67, 214.108, 1129.67, 225.44, 1102.78, 247.896 )
+
+[node name="field_fence" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 5 )
+dialog_label = "field_fence"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_fence"]
+polygon = PoolVector2Array( 775.749, 532.465, 777.378, 661.971, 886.529, 639.084, 959.013, 609.843, 1035.9, 630.26, 1124.25, 641.595, 1189.81, 643.864, 1189.95, 532.448, 1097.8, 522.778, 980.259, 496.022, 977.786, 488.65, 947.071, 487.512, 943.047, 497.694, 874.833, 522.209, 809.99, 535.861, 804.871, 527.897 )
+
+[node name="field_river" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 5 )
+dialog_label = "field_river"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_river"]
+polygon = PoolVector2Array( 1021.31, 423.511, 1054.7, 423.511, 1096.37, 440.337, 1105.58, 464.175, 1144.7, 487.187, 1189.71, 504.97, 1189.71, 472.316, 1160, 457.072, 1143.71, 435.016, 1115.57, 421.558, 1091.48, 416.605, 1016.4, 414.322 )
+
+[node name="field_poem" type="Area2D" parent="state_handler"]
+script = ExtResource( 5 )
+dialog_label = "welcome_sign"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_poem"]
+polygon = PoolVector2Array( 751.528, 241.578, 739.31, 261.94, 742.568, 288.005, 774.334, 291.263, 793.883, 281.489, 785.737, 249.723 )
+
+[node name="hill" type="Area2D" parent="state_handler"]
+script = ExtResource( 5 )
+dialog_label = "hill"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/hill"]
+polygon = PoolVector2Array( 152.076, 459.817, 395.451, 311.251, 583.315, 208.147, 656.701, 194.4, 750.642, 201.345, 879.952, 249.5, 1037.65, 441.401, 1082.57, 514.232, 964.221, 590.414, 779.21, 631.225, 429.593, 589.053 )
+

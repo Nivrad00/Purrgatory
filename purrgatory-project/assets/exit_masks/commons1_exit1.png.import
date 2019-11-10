@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/commons1_exit1.png-5ac0e122297c2d9f7fcaa5ce4001e392.res"
+
+[deps]
+
+source_file="res://assets/exit_masks/commons1_exit1.png"
+dest_files=[ "res://.import/commons1_exit1.png-5ac0e122297c2d9f7fcaa5ce4001e392.res" ]
+
+[params]
+
+create_from=1
+threshold=0.01

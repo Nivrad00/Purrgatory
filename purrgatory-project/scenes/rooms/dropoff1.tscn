@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/dropoff1.gd" type="Script" id=2]
+[ext_resource path="res://assets/rooms/dropoff1.png" type="Texture" id=3]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=5]
+
+[node name="room_instance" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 1 )
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+
+[node name="bg" type="Sprite" parent="state_handler"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+room_label = "hallway5"
+
+[node name="dropoff_fence" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 5 )
+dialog_label = "dropoff_fence"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/dropoff_fence"]
+polygon = PoolVector2Array( 160.801, 396.716, 160.102, 412.777, 173.371, 416.269, 173.371, 602.027, 578.407, 602.027, 575.614, 414.873, 591.676, 414.873, 588.883, 387.637, 190.829, 389.034 )
+
+[node name="dropoff_platform" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 5 )
+dialog_label = "dropoff_platform"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/dropoff_platform"]
+polygon = PoolVector2Array( 176.685, 592.686, 110.933, 631.954, 1180.94, 631.807, 1124.06, 592.686 )
+
+[node name="dropoff_dropoff" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 5 )
+dialog_label = "dropoff_dropoff"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/dropoff_dropoff"]
+polygon = PoolVector2Array( 168.45, 596.351, 418.897, 439.058, 906.433, 439.058, 1122.36, 593.39 )

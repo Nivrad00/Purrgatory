@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/bell.png-61cf0dfc5018045f4c649d4856520577.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/bell.png"
+dest_files=[ "res://.import/bell.png-61cf0dfc5018045f4c649d4856520577.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

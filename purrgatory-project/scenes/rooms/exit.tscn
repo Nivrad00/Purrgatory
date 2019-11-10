@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://assets/rooms/exit.png" type="Texture" id=3]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=4]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=5]
+
+[node name="room_instance" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 1 )
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+
+[node name="bg" type="Sprite" parent="state_handler"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="exit" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 453.085, -178.215 )
+script = ExtResource( 4 )
+room_label = "warehouse3"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
+polygon = PoolVector2Array( -282.299, 871.379, 76.915, 738.215, 226.915, 788.215, 0.712372, 902.253, -258.041, 901.517 )
+
+[node name="exit_door" type="Area2D" parent="state_handler"]
+script = ExtResource( 5 )
+dialog_label = "exit_door"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit_door"]
+polygon = PoolVector2Array( 869.587, 220.676, 871.803, 568.599, 1105.21, 614.891, 1106.22, 193.825 )
+
+[node name="exit_painting" type="Area2D" parent="state_handler"]
+script = ExtResource( 5 )
+dialog_label = "exit_painting"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit_painting"]
+polygon = PoolVector2Array( 674.711, 316.982, 673.578, 386.938, 779.223, 398.204, 779.423, 313.051 )
+

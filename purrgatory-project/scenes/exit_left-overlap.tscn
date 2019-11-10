@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=1]
+
+[node name="exit2" type="Area2D"]
+position = Vector2( -465.02, -291.018 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+room_label = "field4"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 465.033, 291.01, 465.033, 922.97, 555.186, 923, 555.195, 291.021 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 0.1 )
+polygon = PoolVector2Array( 465.033, 291.01, 465.026, 1011.01, 555.174, 1011.01, 555.195, 291.021 )
+
