@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/hallway4.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/hallway4.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
@@ -48,4 +48,3 @@ dialog_label = "cave_stuff "
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
 polygon = PoolVector2Array( 277.639, 631.938, -0.116302, 631.875, -30.315, -31.9776, 1300.11, -19.0437, 1280.1, 632.129, 944.675, 631.979, 849.002, 596.002, 877.678, 474.988, 965.029, 463.532, 987.94, 314.607, 900.59, 284.535, 837.583, 306.015, 744.504, 270.216, 694.385, 204.345, 651.63, 230.247, 482.453, 212.936, 418.441, 285.07, 439.515, 417.999, 376.281, 422.767, 387.981, 310.805, 366.523, 312.755, 283.618, 212.294, 208.028, 359.085, 233.097, 524.45, 269.842, 341.268, 302.263, 340.187, 366.612, 422.767, 287.704, 434.893, 273.384, 469.26 )
-

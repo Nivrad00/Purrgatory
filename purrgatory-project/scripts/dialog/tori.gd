@@ -2,7 +2,7 @@ extends Node
 
 var raw_blocks = [
 ["talk_to_tori","tori","tori_neutral","(placeholder)","","","","",""],
-["tori_visiting_oliver","tori",['tori_neutral', 'oliver_neutral'],"oliver. good to see you.","tori_go_to_study","","","",""],
+["tori_visiting_oliver","tori",['tori_neutral', 'oliver_neutral'],"oliver. good to see you.","tori_goto_study","","","",""],
 ["","oliver","","huh?","tori_visited_oliver","","","",""],
 ["","","","oh, tori. good to see you!","","","","",""],
 ["","","","can i help you with something? looking for a book?","","","","",""],

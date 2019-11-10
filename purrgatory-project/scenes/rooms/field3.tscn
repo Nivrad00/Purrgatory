@@ -111,4 +111,3 @@ dialog_label = "field_distant_doorway"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_distant_doorway"]
 polygon = PoolVector2Array( 211.948, 350.054, 212.384, 378.414, 251.208, 381.326, 251.531, 349.943 )
-

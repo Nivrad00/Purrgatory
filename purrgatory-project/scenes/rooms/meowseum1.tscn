@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/meowseum1.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/meowseum1.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
@@ -130,4 +130,3 @@ dialog_label = " standing_cat_sign"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object7"]
 polygon = PoolVector2Array( 482.474, 540.08, 482.474, 554.3, 516.034, 563.401, 516.603, 543.493 )
-

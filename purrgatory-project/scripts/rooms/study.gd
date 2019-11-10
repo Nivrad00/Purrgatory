@@ -7,6 +7,18 @@ func update_state(state):
 	else:
 		$oliver_study.show()
 		
-	if state.get('tori_go_to_study'):
-		state['tori_go_to_study'] = false
+	if state.get('tori_goto_study'):
+		state['tori_goto_study'] = false
 		emit_signal('set_hidden_sprite', [$oliver_study])
+		
+	if state.get('oliver_goto_park1'):
+		state['oliver_goto_park1'] = false
+		emit_signal('change_room', 'field1')
+		
+	if state.get('oliver_goto_meowseum1'):
+		state['oliver_goto_meowseum1'] = false
+		emit_signal('change_room', 'meowseum2')
+		
+	if state.get('oliver_goto_dropoff1'):
+		state['oliver_goto_dropoff1'] = false
+		emit_signal('change_room', 'hallway4')

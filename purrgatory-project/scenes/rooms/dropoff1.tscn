@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/dropoff1.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/dropoff1.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=5]
@@ -46,4 +46,3 @@ dialog_label = "dropoff_dropoff"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/dropoff_dropoff"]
 polygon = PoolVector2Array( 168.45, 596.351, 418.897, 439.058, 906.433, 439.058, 1122.36, 593.39 )
-

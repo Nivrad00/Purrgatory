@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/field4.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/field4.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/exit_left-overlap.tscn" type="PackedScene" id=5]
@@ -69,4 +69,3 @@ dialog_label = "field_path"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_path"]
 polygon = PoolVector2Array( 90.24, 490.841, 166.481, 504.18, 296.211, 511.519, 418.966, 510.401, 586.633, 476.529, 723.096, 442.704, 826.279, 431.39, 922.543, 410.046, 1000.69, 405.381, 936.962, 418.108, 878.222, 441.538, 749.923, 462.532, 635.59, 505.239, 634.454, 518.517, 710.18, 539.986, 821.07, 539.512, 888.719, 519.684, 894.107, 509.871, 968.234, 487.17, 1044.21, 480.684, 1099.06, 486.417, 1134.56, 502.922, 1160.96, 538.596, 1158.18, 566.393, 1134.56, 590.021, 1075.25, 599.287, 996.172, 601.035, 910.434, 572.155, 809.354, 597.425, 714.591, 592.912, 529.578, 555.007, 452.865, 555.91, 361.713, 577.57, 193.942, 580.462, 90.0976, 563.606 )
-

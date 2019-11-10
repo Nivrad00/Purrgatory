@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/field2.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/field2.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/exit_left-overlap.tscn" type="PackedScene" id=5]
@@ -117,4 +117,3 @@ dialog_label = "field_flowers"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_flowers"]
 polygon = PoolVector2Array( 850.004, 458.683, 876.391, 475.254, 885.878, 471.038, 881.969, 436.861, 856.627, 437.044 )
-

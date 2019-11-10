@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/meowseum4.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/meowseum4.png" type="Texture" id=3]
 [ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=5]
@@ -82,4 +82,3 @@ dialog_label = "airplane"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object6"]
 polygon = PoolVector2Array( 175.351, 631.367, 217.135, 655.354, 255.05, 617.439, 184.636, 615.892 )
-
