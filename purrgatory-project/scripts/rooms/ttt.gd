@@ -4,18 +4,40 @@ var dialog_map = {
 	'game1': {
 		'move1': 'ttt_now_you_go',
 		'move2': 'ttt_hmm',
-		'move5': 'ttt_test1',
-		'move6': 'ttt_test2',
-		'move7': 'ttt_test3',
 		'stalemate': 'ttt_stalemate1',
 		'loss': 'ttt_loss1',
-		'bad_move': 'ttt_bad',
-		'very_bad_move': 'ttt_very_bad',
-		'about_to_lose': 'ttt_about_to_lose'
+		'bad_move': 'ttt_bad1',
+		'very_bad_move': 'ttt_very_bad1',
+		'about_to_lose': 'ttt_about_to_lose1'
 	},
 	'game2': {
-		'start': 'ttt_game2'
+		'stalemate': 'ttt_stalemate2',
+		'loss': 'ttt_loss2',
+		'bad_move': 'ttt_bad2',
+		'very_bad_move': 'ttt_very_bad2',
+		'about_to_lose': 'ttt_about_to_lose2'
 	},
+	'game3': {
+		'stalemate': 'ttt_stalemate3',
+		'loss': 'ttt_loss3',
+		'bad_move': 'ttt_bad3',
+		'very_bad_move': 'ttt_very_bad3',
+		'about_to_lose': 'ttt_about_to_lose3'
+	},
+	'game4': {
+		'stalemate': 'ttt_stalemate4',
+		'loss': 'ttt_loss4',
+		'bad_move': 'ttt_bad4',
+		'very_bad_move': 'ttt_very_bad4',
+		'about_to_lose': 'ttt_about_to_lose4'
+	},
+	'game5': {
+		'stalemate': 'ttt_stalemate5',
+		'loss': 'ttt_loss5',
+		'bad_move': 'ttt_bad5',
+		'very_bad_move': 'ttt_very_bad5',
+		'about_to_lose': 'ttt_about_to_lose5'
+	}
 }
 
 var dialog_queue = []
@@ -44,6 +66,16 @@ func update_state(state):
 		state['ttt_continue_delay'] = false
 		state['ttt_continue'] = true
 		
+	if state.get('ttt_goto_park'):
+		state['ttt_goto_park'] = false
+		emit_signal('change_room', 'field4')
+	if state.get('ttt_goto_meowseum'):
+		state['ttt_goto_meowseum'] = false
+		emit_signal('change_room', 'meowseum1')
+	if state.get('ttt_goto_dropoff'):
+		state['ttt_goto_dropoff'] = false
+		emit_signal('change_room', 'dropoff1')
+		
 func start_game():
 	game_num += 1
 	move_num = 1 # it should start at 0 but oliver's first move is predetermined
@@ -53,6 +85,7 @@ func start_game():
 	for shape in $shapes.get_children():
 		shape.frame = 0
 		shape.playing = false
+	prev_score = 0
 	$shapes.get_child(0).play()
 	
 func start_olivers_turn():
@@ -77,7 +110,7 @@ func end_olivers_turn2():
 		var j = 'move' + str(move_num)
 		if prev_score == 8:
 			dialog_queue.append(dialog_map[i]['about_to_lose'])
-		if dialog_map.has(i) and dialog_map[i].has(j):
+		elif dialog_map.has(i) and dialog_map[i].has(j):
 			dialog_queue.append(dialog_map[i][j])
 		dialog_queue.append('players_turn')
 		
@@ -111,7 +144,7 @@ func end_players_turn():
 	elif new_score > 0 and prev_score == 0:
 		dialog_queue.append(dialog_map[i]['bad_move'])
 		
-	if dialog_map.has(i) and dialog_map[i].has(j):
+	elif dialog_map.has(i) and dialog_map[i].has(j):
 		dialog_queue.append(dialog_map[i][j])
 	dialog_queue.append('olivers_turn')
 	
@@ -158,15 +191,6 @@ func end_game(result):
 	var i = 'game' + str(game_num)
 	if dialog_map.has(i) and dialog_map[i].has(result):
 		dialog_queue.append(dialog_map[i][result])
-	
-	for x in range(9 - move_num):
-		var j = 'move' + str(move_num + x)
-		if dialog_map.has(i) and dialog_map[i].has(j):
-			dialog_queue.append(dialog_map[i][j])
-	
-	i = 'game' + str(game_num + 1)
-	if dialog_map.has(i) and dialog_map[i].has('start'):
-		dialog_queue.append(dialog_map[i]['start'])
 		
 	continue_game()
 	

@@ -104,6 +104,7 @@ margin_bottom = 565.0
 color = Color( 0.313726, 1, 0, 0.266667 )
 
 [node name="shapes" type="Node2D" parent="state_handler"]
+editor/display_folded = true
 
 [node name="0" type="AnimatedSprite" parent="state_handler/shapes"]
 position = Vector2( 452.402, 152.873 )
@@ -178,7 +179,7 @@ margin_right = 467.857
 margin_bottom = 693.677
 
 [node name="turn_delay" type="Timer" parent="state_handler"]
-wait_time = 0.5
+wait_time = 0.4
 one_shot = true
 [connection signal="animation_finished" from="state_handler/shapes/0" to="state_handler" method="end_olivers_turn"]
 [connection signal="animation_finished" from="state_handler/shapes/1" to="state_handler" method="end_olivers_turn"]

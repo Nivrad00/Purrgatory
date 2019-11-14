@@ -42,7 +42,8 @@ var raw_blocks = [
 ["clock","_none","_none","a clock with no hands.","","","null","",""],
 ["trash_can","_none","_none","a trash can.","","","null","",""],
 ["water_tap","_none","_none","a water cooler. it looks like it's full of orange soda.","","oliver_asked_for_soda",['water_tap2', 'null'],"",""],
-["water_tap2","","","you could bring some back to oliver if you had a cup. wonder where you can find one...?","","","null","",""],
+["water_tap2","","","no cups, though.","","","","",""],
+["","","","wonder where you could find one...?","","","null","",""],
 ["piano","_none","_none","it's an electric piano.","","","null","",""],
 ["piano_chair","_none","_none","yet another chair.","","","null","",""],
 ["fake_door","_none","_none","this isn't a door, just a drawing of a door on the wall.","","","null","",""],
@@ -111,5 +112,6 @@ var raw_blocks = [
 ["house_glass2","","","you could use this to get oliver some orange soda!","house_cat_pushed_glass","","","",""],
 ["","","","as you reach for the glass, the cat locks eyes with you.","house_natalie_heard_glass","","","",""],
 ["","you","","don't you dare.","house_cat_pushing_glass","","null","",""],
-["house_glass_next","you","_none","dammit.","","","null","",""]
+["house_glass_next","you","_none","dammit.","","","null","",""],
+["null","_none","_none","_pass","","","null","",""]
 ]
