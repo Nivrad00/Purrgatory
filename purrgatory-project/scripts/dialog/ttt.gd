@@ -141,14 +141,17 @@ var raw_blocks = [
 ["","you","","oh","","","","",""],
 ["","","","so THAT'S why you always went first!","","","","",""],
 ["","oliver","","yes, indeed.","","","","",""],
-["","you","","then why would you even ask to play in the first place???","","","","",""],
+["","you","","why would you even play if you know you're going to win every time???","","","","",""],
 ["","oliver","","well...","","","","",""],
 ["","","","i guess...","","","","",""],
 ["","","","i just like the feeling of winning.","","","","",""],
 ["","you","","oh.","","","","",""],
-["","","","who doesn't?","","oliver_chose_park",['ttt_backto_park', 'ttt_backto'],"",""],
+["","","","...","","","","",""],
+["","","","well, who doesn't, am i right?","","","","",""],
+["","oliver","","...","","","","",""],
+["","you","","...","","oliver_chose_park",['ttt_backto_park', 'ttt_backto'],"",""],
 ["ttt_backto","_none","_none","_pass","","oliver_chose_meowseum",['ttt_backto_meowseum', 'ttt_backto_dropoff'],"",""],
-["ttt_backto_park","oliver","oliver_neutral","...","ttt_goto_park","","oliver_after_ttt","",""],
-["ttt_backto_meowseum","oliver","oliver_neutral","...","ttt_goto_meowseum","","oliver_after_ttt","",""],
-["ttt_backto_dropoff","oliver","oliver_neutral","...","ttt_goto_dropoff","","oliver_after_ttt","",""]
+["ttt_backto_park","oliver","oliver_neutral","{player}?","ttt_goto_park","","oliver_after_ttt","",""],
+["ttt_backto_meowseum","oliver","oliver_neutral","{player}?","ttt_goto_meowseum","","oliver_after_ttt","",""],
+["ttt_backto_dropoff","oliver","oliver_neutral","{player}?","ttt_goto_dropoff","","oliver_after_ttt","",""]
 ]

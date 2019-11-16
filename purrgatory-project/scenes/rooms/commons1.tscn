@@ -135,4 +135,3 @@ dialog_label = "commons_cord"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_cord"]
 polygon = PoolVector2Array( 721.638, 439.803, 706.163, 439.219, 706.511, 467.441, 682.419, 500.436, 686.415, 520.107, 726.986, 519.492, 736.206, 511.194, 722.599, 468.55 )
-

@@ -18,7 +18,13 @@ var state = {
 	'tried_door': true,
 	'book_state': true,
 	'oliver_questioned': true,
-	'_inv_commons_key': true
+	'_inv_commons_key': true,
+	'oliver_in_study': true,
+	'seen_study': true,
+	'_inv_chess_letter': true,
+	'tori_visited_oliver': true,
+	'oliver_asked_for_soda': true,
+	'house_cat_pushed_glass': true
 }
 
 var numa_test_state = {

@@ -13,12 +13,33 @@ func init_state(state):
 		$flowers_etc.show()
 	else:
 		$flowers_etc.hide()
+		
+	if state.get('oliver_goto_commons'):
+		state['oliver_goto_commons'] = false
+		if state.get('numa_at_commons'):
+			emit_signal('set_hidden_sprite', [$kyungsoon_idle, $numa_at_commons])
+		else:
+			emit_signal('set_hidden_sprite', [$kyungsoon_idle])
+	
+	if state.get('flashback_goto_commons'):
+		state['flashback_goto_commons'] = false
+		if state.get('numa_at_commons'):
+			emit_signal('set_hidden_sprite', [$kyungsoon_idle, $numa_at_commons])
+		else:
+			emit_signal('set_hidden_sprite', [$kyungsoon_idle])
 	
 func update_state(state):
 	.update_state(state)
 	if state.get('display_kyungsoon_and_numa'):
 		state['display_kyungsoon_and_numa'] = false
 		emit_signal('set_hidden_sprite', [$kyungsoon_idle, $numa_at_commons])
+	
+	if state.get('start_flashback_oliver'):
+		state['start_flashback_oliver'] = false
+		emit_signal('change_room', 'flashback_oliver')
+	if state.get('start_flashback_oliver_delay'):
+		state['start_flashback_oliver_delay'] = false
+		state['start_flashback_oliver'] = true
 		
 	if state.get('ks_goto_vents'):
 		emit_signal('change_room', 'hallway6')

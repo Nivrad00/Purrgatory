@@ -6,6 +6,16 @@ func update_state(state):
 		$oliver_study.hide()
 	else:
 		$oliver_study.show()
+	
+	if state.get('oliver_sleeping'):
+		$oliver_study.hide()
+		$oliver_sleeping.show()
+	elif state.get('oliver_in_study'):
+		$oliver_study.show()
+		$oliver_sleeping.hide()
+	else:
+		$oliver_study.hide()
+		$oliver_sleeping.hide()
 		
 	if state.get('tori_goto_study'):
 		state['tori_goto_study'] = false

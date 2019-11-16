@@ -5,4 +5,3 @@
 [node name="exit" type="Area2D"]
 position = Vector2( 453.085, -178.215 )
 script = ExtResource( 1 )
-

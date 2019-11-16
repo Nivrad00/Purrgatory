@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scripts/dialog_handler.gd" type="Script" id=2]
@@ -29,39 +29,54 @@
 [ext_resource path="res://assets/ui/menu_x.png" type="Texture" id=27]
 [ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=28]
 
-[sub_resource type="InputEventAction" id=1]
+[sub_resource type="InputEventAction" id=5]
 action = "ui_select"
 
-[sub_resource type="ShortCut" id=2]
-shortcut = SubResource( 1 )
+[sub_resource type="ShortCut" id=6]
+shortcut = SubResource( 5 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=7]
 size = 22
 use_filter = true
 font_data = ExtResource( 18 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=8]
 size = 22
 use_filter = true
 font_data = ExtResource( 19 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=9]
 size = 22
 use_filter = true
 font_data = ExtResource( 20 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=10]
 size = 22
 use_filter = true
 font_data = ExtResource( 21 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=1]
+size = 22
+use_filter = true
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=11]
 size = 22
 font_data = ExtResource( 19 )
 
-[sub_resource type="StyleBoxEmpty" id=8]
+[sub_resource type="DynamicFont" id=3]
+size = 22
+use_filter = true
+font_data = ExtResource( 20 )
 
-[sub_resource type="StyleBoxTexture" id=9]
+[sub_resource type="DynamicFont" id=4]
+size = 22
+use_filter = true
+font_data = ExtResource( 21 )
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxTexture" id=13]
 texture = ExtResource( 22 )
 region_rect = Rect2( 0, 0, 552, 83 )
 margin_left = 40.0
@@ -69,31 +84,32 @@ margin_right = 40.0
 margin_top = 11.0
 margin_bottom = 12.0
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=14]
 size = 28
 font_data = ExtResource( 21 )
 
-[sub_resource type="InputEventAction" id=11]
+[sub_resource type="InputEventAction" id=15]
 action = "ui_enter"
 
-[sub_resource type="ShortCut" id=12]
-shortcut = SubResource( 11 )
+[sub_resource type="ShortCut" id=16]
+shortcut = SubResource( 15 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=17]
 font_data = ExtResource( 21 )
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=18]
 size = 25
 font_data = ExtResource( 21 )
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
-default_room = "commons1"
+default_room = "study"
 
 [node name="delay_timer" type="Timer" parent="."]
 wait_time = 0.5
 
 [node name="dialog_handler" type="Node" parent="."]
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="reception_dialog" type="Node" parent="dialog_handler"]
@@ -146,7 +162,6 @@ margin_bottom = 720.0
 mouse_filter = 2
 
 [node name="ui" type="Control" parent="."]
-editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 script = ExtResource( 16 )
@@ -160,7 +175,6 @@ margin_right = 882.606
 margin_bottom = 463.822
 
 [node name="text_box" type="Button" parent="ui"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 90.0
@@ -170,7 +184,7 @@ margin_bottom = -20.0
 focus_mode = 0
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
-shortcut = SubResource( 2 )
+shortcut = SubResource( 6 )
 flat = true
 
 [node name="box" type="Sprite" parent="ui/text_box"]
@@ -185,10 +199,10 @@ margin_top = 23.9275
 margin_right = 316.556
 margin_bottom = 54.9275
 mouse_filter = 1
-custom_fonts/bold_italics_font = SubResource( 3 )
-custom_fonts/italics_font = SubResource( 4 )
-custom_fonts/bold_font = SubResource( 5 )
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/bold_italics_font = SubResource( 7 )
+custom_fonts/italics_font = SubResource( 8 )
+custom_fonts/bold_font = SubResource( 9 )
+custom_fonts/normal_font = SubResource( 10 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "oliver"
@@ -201,10 +215,10 @@ margin_top = 74.8088
 margin_right = 1049.4
 margin_bottom = 198.809
 mouse_filter = 1
-custom_fonts/bold_italics_font = SubResource( 3 )
-custom_fonts/italics_font = SubResource( 7 )
-custom_fonts/bold_font = SubResource( 5 )
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 11 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "to be, or not to be: that is the question: whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune, or to take arms against a sea of troubles, and by opposing end them?"
@@ -234,9 +248,9 @@ margin_left = 11.0
 margin_top = 2.0
 margin_right = -91.0
 margin_bottom = 2.0
-custom_styles/focus = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
-custom_fonts/font = SubResource( 10 )
+custom_styles/focus = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/selection_color = Color( 0, 0, 0, 0.129412 )
 custom_colors/cursor_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -254,7 +268,7 @@ margin_bottom = 4.0
 focus_mode = 0
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
-shortcut = SubResource( 12 )
+shortcut = SubResource( 16 )
 icon = ExtResource( 23 )
 flat = true
 
@@ -284,7 +298,7 @@ offset = Vector2( -8.3689, -6.12292 )
 [node name="Label" type="Label" parent="meta_ui/menu_button"]
 margin_right = 77.0
 margin_bottom = 26.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 17 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "menu"
 align = 1
@@ -328,7 +342,7 @@ margin_left = 1.0
 margin_top = 2.0
 margin_right = 249.0
 margin_bottom = 58.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 18 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "save"
 align = 1
@@ -360,7 +374,7 @@ margin_left = 1.0
 margin_top = 2.0
 margin_right = 249.0
 margin_bottom = 58.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 18 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "load"
 align = 1
@@ -397,7 +411,7 @@ margin_left = 1.0
 margin_top = 2.0
 margin_right = 249.0
 margin_bottom = 58.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 18 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "exit to main menu"
 align = 1
@@ -432,7 +446,7 @@ margin_left = 1.0
 margin_top = 2.0
 margin_right = 249.0
 margin_bottom = 58.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 18 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "back"
 align = 1
@@ -454,10 +468,10 @@ margin_top = 275.993
 margin_right = 1280.0
 margin_bottom = 399.993
 mouse_filter = 1
-custom_fonts/bold_italics_font = SubResource( 3 )
-custom_fonts/italics_font = SubResource( 7 )
-custom_fonts/bold_font = SubResource( 5 )
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 11 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]are you sure? unsaved progress will be lost.[/center]"
@@ -490,7 +504,7 @@ margin_left = 1.0
 margin_top = 2.0
 margin_right = 249.0
 margin_bottom = 58.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 18 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "yes"
 align = 1
@@ -522,7 +536,7 @@ margin_left = 1.0
 margin_top = 2.0
 margin_right = 249.0
 margin_bottom = 58.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 18 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "no"
 align = 1
@@ -545,10 +559,10 @@ margin_top = 312.825
 margin_right = 1280.0
 margin_bottom = 436.825
 mouse_filter = 1
-custom_fonts/bold_italics_font = SubResource( 3 )
-custom_fonts/italics_font = SubResource( 7 )
-custom_fonts/bold_font = SubResource( 5 )
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 11 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]game saved.[/center]"
@@ -581,7 +595,7 @@ margin_left = 1.0
 margin_top = 2.0
 margin_right = 249.0
 margin_bottom = 58.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 18 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "back"
 align = 1
@@ -604,10 +618,10 @@ margin_top = 312.825
 margin_right = 1280.0
 margin_bottom = 436.825
 mouse_filter = 1
-custom_fonts/bold_italics_font = SubResource( 3 )
-custom_fonts/italics_font = SubResource( 7 )
-custom_fonts/bold_font = SubResource( 5 )
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 11 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]game loaded.[/center]"
@@ -639,7 +653,7 @@ margin_left = 1.0
 margin_top = 2.0
 margin_right = 249.0
 margin_bottom = 58.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 18 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "continue"
 align = 1
@@ -655,9 +669,9 @@ color = Color( 1, 1, 1, 0 )
 
 [node name="main_audio" type="AudioStreamPlayer" parent="."]
 [connection signal="pressed" from="ui/text_box" to="." method="update_dialog" binds= [ -1 ]]
-[connection signal="pressed" from="ui/name_input/ok_button" to="ui/name_input" method="hide"]
-[connection signal="pressed" from="ui/name_input/ok_button" to="." method="set_player_name"]
 [connection signal="pressed" from="ui/name_input/ok_button" to="." method="update_dialog" binds= [ -1 ]]
+[connection signal="pressed" from="ui/name_input/ok_button" to="." method="set_player_name"]
+[connection signal="pressed" from="ui/name_input/ok_button" to="ui/name_input" method="hide"]
 [connection signal="pressed" from="meta_ui/menu_button" to="." method="open_pause_menu"]
 [connection signal="pressed" from="meta_ui/pause_menu/save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="meta_ui/pause_menu/load" to="." method="_on_load_pressed"]

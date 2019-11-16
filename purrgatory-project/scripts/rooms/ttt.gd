@@ -26,17 +26,11 @@ var dialog_map = {
 	},
 	'game4': {
 		'stalemate': 'ttt_stalemate4',
-		'loss': 'ttt_loss4',
-		'bad_move': 'ttt_bad4',
-		'very_bad_move': 'ttt_very_bad4',
-		'about_to_lose': 'ttt_about_to_lose4'
+		'loss': 'ttt_loss4'
 	},
 	'game5': {
 		'stalemate': 'ttt_stalemate5',
-		'loss': 'ttt_loss5',
-		'bad_move': 'ttt_bad5',
-		'very_bad_move': 'ttt_very_bad5',
-		'about_to_lose': 'ttt_about_to_lose5'
+		'loss': 'ttt_loss5'
 	}
 }
 
@@ -52,6 +46,7 @@ var draw_scene = preload("res://scenes/draw.tscn")
 
 func update_state(state):
 	.update_state(state)
+		
 	if state.get('ttt_init'):
 		state['ttt_init'] = false
 		start_game()
@@ -109,7 +104,8 @@ func end_olivers_turn2():
 		var i = 'game' + str(game_num)
 		var j = 'move' + str(move_num)
 		if prev_score == 8:
-			dialog_queue.append(dialog_map[i]['about_to_lose'])
+			if dialog_map[i].has('about_to_lose'):
+				dialog_queue.append(dialog_map[i]['about_to_lose'])
 		elif dialog_map.has(i) and dialog_map[i].has(j):
 			dialog_queue.append(dialog_map[i][j])
 		dialog_queue.append('players_turn')
@@ -140,9 +136,11 @@ func end_players_turn():
 	
 	var new_score = get_best_move(current_board)[1]
 	if new_score == 10 and prev_score == 0:
-		dialog_queue.append(dialog_map[i]['very_bad_move'])
+		if dialog_map[i].has('very_bad_move'):
+			dialog_queue.append(dialog_map[i]['very_bad_move'])
 	elif new_score > 0 and prev_score == 0:
-		dialog_queue.append(dialog_map[i]['bad_move'])
+		if dialog_map[i].has('bad_move'):
+			dialog_queue.append(dialog_map[i]['bad_move'])
 		
 	elif dialog_map.has(i) and dialog_map[i].has(j):
 		dialog_queue.append(dialog_map[i][j])

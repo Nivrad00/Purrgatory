@@ -37,4 +37,3 @@ room_label = "antechamber2"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
 polygon = PoolVector2Array( 420.315, 275.436, 421.237, 723.504, 427.398, 728.346, 429.223, 732.916, 710.089, 732.574, 714.372, 726.253, 721.508, 723.194, 720.31, 276.723, 716.115, 274.975, 714.366, 270.604, 711.33, 264.561, 426.19, 265.024, 425.083, 270.668 )
-

@@ -12,6 +12,9 @@ func update_state(state):
 	else:
 		$oliver_idle.show()
 		
+	if state.get('oliver_goto_commons'):
+		emit_signal('change_room', 'commons1')
+
 	if state.get('display_oliver'):
 		emit_signal('set_hidden_sprite', [$oliver_idle])
 		state['display_oliver'] = false
