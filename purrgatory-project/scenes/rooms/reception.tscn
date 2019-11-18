@@ -232,4 +232,3 @@ dialog_label = "click_portal"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object12"]
 polygon = PoolVector2Array( 897.981, 192.103, 859.173, 385.239, 896.175, 585.594, 1189.49, 579.277, 1228.3, 385.239, 1189.49, 186.688 )
-

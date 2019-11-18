@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/flashback_oliver.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/fonts/Krub-ExtraLightItalic.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://scripts/flashback_button.gd" type="Script" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
@@ -87,8 +88,16 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "Fadein"
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="DynamicFont" id=11]
+size = 22
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=12]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
@@ -102,8 +111,21 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=10]
-resource_name = "Fadein"
+[sub_resource type="Animation" id=13]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=14]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
@@ -136,12 +158,13 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="text_container" type="Control" parent="state_handler"]
 editor/display_folded = true
-margin_right = 1280.0
-margin_bottom = 538.0
+margin_left = 383.829
+margin_top = 32.3089
+margin_right = 912.829
+margin_bottom = 570.309
 
-[node name="t1" type="RichTextLabel" parent="state_handler/text_container"]
+[node name="t0" type="RichTextLabel" parent="state_handler/text_container"]
 editor/display_folded = true
-modulate = Color( 1, 1, 1, 0 )
 margin_top = 150.0
 margin_right = 1280.0
 margin_bottom = 202.0
@@ -152,16 +175,15 @@ custom_fonts/bold_font = SubResource( 3 )
 custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
-bbcode_text = "[center]you liked some things about yourself.[/center]"
+bbcode_text = "you liked some things about yourself."
 text = "you liked some things about yourself."
 scroll_active = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text_container/t1"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text_container/t0"]
 anims/Fadein = SubResource( 5 )
 
-[node name="c2" type="RichTextLabel" parent="state_handler/text_container"]
+[node name="c1" type="RichTextLabel" parent="state_handler/text_container"]
 editor/display_folded = true
-modulate = Color( 1, 1, 1, 0 )
 margin_top = 200.0
 margin_right = 1280.0
 margin_bottom = 252.0
@@ -172,16 +194,208 @@ custom_fonts/bold_font = SubResource( 3 )
 custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
-bbcode_text = "[center]you were [u]kind to strangers[/u]."
-text = "you were kind to strangers."
+bbcode_text = "you were"
+text = "you were"
 scroll_active = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text_container/c2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text_container/c1"]
 anims/Fadein = SubResource( 6 )
 
-[node name="t3" type="RichTextLabel" parent="state_handler/text_container"]
+[node name="choice_container" type="Control" parent="state_handler/text_container/c1"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="0" type="RichTextLabel" parent="state_handler/text_container/c1/choice_container"]
 editor/display_folded = true
-modulate = Color( 1, 1, 1, 0 )
+visible = false
+margin_left = 97.2
+margin_right = 597.2
+margin_bottom = 50.0
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[u]kind to strangers[/u]."
+text = "kind to strangers."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text_container/c1/choice_container/0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
+margin_right = 5.00003
+margin_bottom = 15.0
+rect_scale = Vector2( 0.36, 0.400001 )
+flat = true
+script = ExtResource( 7 )
+
+[node name="1" type="RichTextLabel" parent="state_handler/text_container/c1/choice_container"]
+editor/display_folded = true
+visible = false
+margin_left = 97.2
+margin_right = 597.2
+margin_bottom = 50.0
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[u]honest and resilient[/u]."
+text = "honest and resilient."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text_container/c1/choice_container/1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
+margin_right = 80.0
+margin_bottom = 15.0
+rect_scale = Vector2( 0.36, 0.400001 )
+flat = true
+script = ExtResource( 7 )
+
+[node name="2" type="RichTextLabel" parent="state_handler/text_container/c1/choice_container"]
+editor/display_folded = true
+visible = false
+margin_left = 97.2
+margin_right = 597.2
+margin_bottom = 50.0
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[u]clever and well-spoken[/u]."
+text = "clever and well-spoken."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text_container/c1/choice_container/2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
+margin_right = 169.0
+margin_bottom = 15.0
+rect_scale = Vector2( 0.36, 0.400001 )
+flat = true
+script = ExtResource( 7 )
+
+[node name="3" type="RichTextLabel" parent="state_handler/text_container/c1/choice_container"]
+editor/display_folded = true
+visible = false
+margin_left = 97.2
+margin_right = 597.2
+margin_bottom = 50.0
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[u]beautiful beyond words[/u]."
+text = "beautiful beyond words."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text_container/c1/choice_container/3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
+margin_right = 181.0
+margin_bottom = 15.0
+rect_scale = Vector2( 0.36, 0.400001 )
+flat = true
+script = ExtResource( 7 )
+
+[node name="4" type="RichTextLabel" parent="state_handler/text_container/c1/choice_container"]
+editor/display_folded = true
+visible = false
+margin_left = 97.2
+margin_right = 597.2
+margin_bottom = 50.0
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[u]always there for your friends[/u]."
+text = "always there for your friends."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text_container/c1/choice_container/4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
+margin_right = 330.0
+margin_bottom = 15.0
+rect_scale = Vector2( 0.36, 0.400001 )
+flat = true
+script = ExtResource( 7 )
+
+[node name="5" type="RichTextLabel" parent="state_handler/text_container/c1/choice_container"]
+editor/display_folded = true
+visible = false
+margin_left = 97.2
+margin_right = 597.2
+margin_bottom = 50.0
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[u]a talented musician[/u]."
+text = "a talented musician."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text_container/c1/choice_container/5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
+margin_right = 75.0
+margin_bottom = 15.0
+rect_scale = Vector2( 0.36, 0.400001 )
+flat = true
+script = ExtResource( 7 )
+
+[node name="6" type="RichTextLabel" parent="state_handler/text_container/c1/choice_container"]
+editor/display_folded = true
+visible = false
+margin_left = 97.2
+margin_right = 597.2
+margin_bottom = 50.0
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[u]endlessly optimistic[/u]."
+text = "endlessly optimistic."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text_container/c1/choice_container/6"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
+margin_right = 73.0
+margin_bottom = 15.0
+rect_scale = Vector2( 0.36, 0.400001 )
+flat = true
+script = ExtResource( 7 )
+
+[node name="t2" type="RichTextLabel" parent="state_handler/text_container"]
+editor/display_folded = true
 margin_top = 250.0
 margin_right = 1280.0
 margin_bottom = 302.0
@@ -192,16 +406,15 @@ custom_fonts/bold_font = SubResource( 3 )
 custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
-bbcode_text = "[center]you think back to your proudest moment.[/center]"
+bbcode_text = "you think back to your proudest moment."
 text = "you think back to your proudest moment."
 scroll_active = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text_container/t3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text_container/t2"]
 anims/Fadein = SubResource( 7 )
 
-[node name="c4" type="RichTextLabel" parent="state_handler/text_container"]
+[node name="c3" type="RichTextLabel" parent="state_handler/text_container"]
 editor/display_folded = true
-modulate = Color( 1, 1, 1, 0 )
 margin_top = 300.0
 margin_right = 1280.0
 margin_bottom = 352.0
@@ -212,16 +425,207 @@ custom_fonts/bold_font = SubResource( 3 )
 custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
-bbcode_text = "[center]it was when you [u]won the spelling bee in 6th grade[/u].[/center]"
-text = "it was when you won the spelling bee in 6th grade."
+bbcode_text = "it was when you"
+text = "it was when you"
 scroll_active = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text_container/c4"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text_container/c3"]
 anims/Fadein = SubResource( 8 )
 
-[node name="t5" type="RichTextLabel" parent="state_handler/text_container"]
+[node name="choice_container" type="Control" parent="state_handler/text_container/c3"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="0" type="RichTextLabel" parent="state_handler/text_container/c3/choice_container"]
 editor/display_folded = true
-modulate = Color( 1, 1, 1, 0 )
+visible = false
+margin_left = 169.876
+margin_right = 669.876
+margin_bottom = 50.0
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[u]won the spelling bee in 6th grade[/u]."
+text = "won the spelling bee in 6th grade."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text_container/c3/choice_container/0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
+margin_right = 462.0
+margin_bottom = 15.0
+rect_scale = Vector2( 0.36, 0.400001 )
+flat = true
+script = ExtResource( 7 )
+
+[node name="1" type="RichTextLabel" parent="state_handler/text_container/c3/choice_container"]
+editor/display_folded = true
+visible = false
+margin_left = 169.876
+margin_right = 669.876
+margin_bottom = 50.0
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[u]first played the guitar on stage[/u]."
+text = "first played the guitar on stage."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text_container/c3/choice_container/1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
+margin_right = 381.0
+margin_bottom = 15.0
+rect_scale = Vector2( 0.36, 0.400001 )
+flat = true
+script = ExtResource( 7 )
+
+[node name="2" type="RichTextLabel" parent="state_handler/text_container/c3/choice_container"]
+editor/display_folded = true
+visible = false
+margin_left = 169.876
+margin_right = 669.876
+margin_bottom = 50.0
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[u]finished your first half-marathon[/u]."
+text = "finished your first half-marathon."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text_container/c3/choice_container/2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
+margin_right = 448.0
+margin_bottom = 15.0
+rect_scale = Vector2( 0.36, 0.400001 )
+flat = true
+script = ExtResource( 7 )
+
+[node name="3" type="RichTextLabel" parent="state_handler/text_container/c3/choice_container"]
+editor/display_folded = true
+visible = false
+margin_left = 169.876
+margin_right = 669.876
+margin_bottom = 50.0
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[u]had your first child[/u]."
+text = "had your first child."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text_container/c3/choice_container/3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
+margin_right = 52.0
+margin_bottom = 15.0
+rect_scale = Vector2( 0.36, 0.400001 )
+flat = true
+script = ExtResource( 7 )
+
+[node name="4" type="RichTextLabel" parent="state_handler/text_container/c3/choice_container"]
+editor/display_folded = true
+visible = false
+margin_left = 169.876
+margin_right = 669.876
+margin_bottom = 50.0
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[u]set the world record in a video game[/u]."
+text = "set the world record in a video game."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text_container/c3/choice_container/4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
+margin_right = 548.0
+margin_bottom = 15.0
+rect_scale = Vector2( 0.36, 0.400001 )
+flat = true
+script = ExtResource( 7 )
+
+[node name="5" type="RichTextLabel" parent="state_handler/text_container/c3/choice_container"]
+editor/display_folded = true
+visible = false
+margin_left = 169.876
+margin_right = 669.876
+margin_bottom = 50.0
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[u]graduated college[/u]."
+text = "graduated college."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text_container/c3/choice_container/5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
+margin_right = 25.0
+margin_bottom = 15.0
+rect_scale = Vector2( 0.36, 0.400001 )
+flat = true
+script = ExtResource( 7 )
+
+[node name="6" type="RichTextLabel" parent="state_handler/text_container/c3/choice_container"]
+visible = false
+margin_left = 169.876
+margin_right = 669.876
+margin_bottom = 50.0
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[u]cut your hair off[/u]."
+text = "cut your hair off."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text_container/c3/choice_container/6"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
+margin_right = -28.0
+margin_bottom = 15.0
+rect_scale = Vector2( 0.36, 0.400001 )
+flat = true
+script = ExtResource( 7 )
+
+[node name="t4" type="RichTextLabel" parent="state_handler/text_container"]
+editor/display_folded = true
 margin_top = 350.0
 margin_right = 1280.0
 margin_bottom = 402.0
@@ -232,17 +636,148 @@ custom_fonts/bold_font = SubResource( 3 )
 custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
-bbcode_text = "[center]the winning word was \"billionare.\"[/center]"
-text = "the winning word was \"billionare.\""
 scroll_active = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text_container/t5"]
-anims/Fadein = SubResource( 9 )
+[node name="0" type="RichTextLabel" parent="state_handler/text_container/t4"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 52.0
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "the winning word was \"billionaire.\""
+text = "the winning word was \"billionaire.\""
+scroll_active = false
+
+[node name="1" type="RichTextLabel" parent="state_handler/text_container/t4"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 52.0
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "it was a cover of [i]hotel california[/i]."
+text = "it was a cover of hotel california."
+scroll_active = false
+
+[node name="2" type="RichTextLabel" parent="state_handler/text_container/t4"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 52.0
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "you finished in just under 3 hours."
+text = "you finished in just under 3 hours."
+scroll_active = false
+
+[node name="e3" type="RichTextLabel" parent="state_handler/text_container/t4"]
+editor/display_folded = true
+visible = false
+margin_right = 1280.0
+margin_bottom = 52.0
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "%s must miss you so much."
+text = "%s must miss you so much."
+scroll_active = false
+
+[node name="underline" type="RichTextLabel" parent="state_handler/text_container/t4/e3"]
+margin_top = 5.0
+margin_right = 1280.0
+margin_bottom = 57.0
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[u]                              [/u]"
+text = "                              "
+scroll_active = false
+
+[node name="LineEdit" type="LineEdit" parent="state_handler/text_container/t4/e3"]
+margin_top = -21.0
+margin_right = 184.0
+margin_bottom = 51.0
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
+context_menu_enabled = false
+caret_blink = true
+
+[node name="4" type="RichTextLabel" parent="state_handler/text_container/t4"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 52.0
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "your time was 12 minutes and 59 seconds."
+text = "your time was 12 minutes and 59 seconds."
+scroll_active = false
+
+[node name="5" type="RichTextLabel" parent="state_handler/text_container/t4"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 52.0
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "you still have nightmares about that last semester."
+text = "you still have nightmares about that last semester."
+scroll_active = false
+
+[node name="6" type="RichTextLabel" parent="state_handler/text_container/t4"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 52.0
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 1 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "good riddance."
+text = "good riddance."
+scroll_active = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text_container/t4"]
+anims/Fadein = SubResource( 12 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text_container"]
+anims/Fadein = SubResource( 13 )
 
 [node name="next_button" type="Button" parent="state_handler"]
 editor/display_folded = true
 visible = false
-modulate = Color( 1, 1, 1, 0 )
 margin_left = 611.0
 margin_top = 571.168
 margin_right = 670.0
@@ -268,12 +803,10 @@ text = "next"
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/next_button"]
-anims/Fadein = SubResource( 10 )
-
-[node name="next_timer" type="Timer" parent="state_handler"]
-one_shot = true
+anims/Fadein = SubResource( 14 )
 
 [node name="next_cover" type="Button" parent="state_handler"]
+visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 focus_mode = 0
@@ -287,9 +820,50 @@ margin_bottom = 720.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
+[connection signal="mouse_entered" from="state_handler/text_container/c1/choice_container/0/Button" to="state_handler/text_container/c1/choice_container/0/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text_container/c1/choice_container/0/Button" to="state_handler/text_container/c1/choice_container/0/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text_container/c1/choice_container/0/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text_container/c1/choice_container/1/Button" to="state_handler/text_container/c1/choice_container/1/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text_container/c1/choice_container/1/Button" to="state_handler/text_container/c1/choice_container/1/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text_container/c1/choice_container/1/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text_container/c1/choice_container/2/Button" to="state_handler/text_container/c1/choice_container/2/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text_container/c1/choice_container/2/Button" to="state_handler/text_container/c1/choice_container/2/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text_container/c1/choice_container/2/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text_container/c1/choice_container/3/Button" to="state_handler/text_container/c1/choice_container/3/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text_container/c1/choice_container/3/Button" to="state_handler/text_container/c1/choice_container/3/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text_container/c1/choice_container/3/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text_container/c1/choice_container/4/Button" to="state_handler/text_container/c1/choice_container/4/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text_container/c1/choice_container/4/Button" to="state_handler/text_container/c1/choice_container/4/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text_container/c1/choice_container/4/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text_container/c1/choice_container/5/Button" to="state_handler/text_container/c1/choice_container/5/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text_container/c1/choice_container/5/Button" to="state_handler/text_container/c1/choice_container/5/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text_container/c1/choice_container/5/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text_container/c1/choice_container/6/Button" to="state_handler/text_container/c1/choice_container/6/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text_container/c1/choice_container/6/Button" to="state_handler/text_container/c1/choice_container/6/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text_container/c1/choice_container/6/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text_container/c3/choice_container/0/Button" to="state_handler/text_container/c3/choice_container/0/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text_container/c3/choice_container/0/Button" to="state_handler/text_container/c3/choice_container/0/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text_container/c3/choice_container/0/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text_container/c3/choice_container/1/Button" to="state_handler/text_container/c3/choice_container/1/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text_container/c3/choice_container/1/Button" to="state_handler/text_container/c3/choice_container/1/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text_container/c3/choice_container/1/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text_container/c3/choice_container/2/Button" to="state_handler/text_container/c3/choice_container/2/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text_container/c3/choice_container/2/Button" to="state_handler/text_container/c3/choice_container/2/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text_container/c3/choice_container/2/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text_container/c3/choice_container/3/Button" to="state_handler/text_container/c3/choice_container/3/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text_container/c3/choice_container/3/Button" to="state_handler/text_container/c3/choice_container/3/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text_container/c3/choice_container/3/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text_container/c3/choice_container/4/Button" to="state_handler/text_container/c3/choice_container/4/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text_container/c3/choice_container/4/Button" to="state_handler/text_container/c3/choice_container/4/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text_container/c3/choice_container/4/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text_container/c3/choice_container/5/Button" to="state_handler/text_container/c3/choice_container/5/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text_container/c3/choice_container/5/Button" to="state_handler/text_container/c3/choice_container/5/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text_container/c3/choice_container/5/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text_container/c3/choice_container/6/Button" to="state_handler/text_container/c3/choice_container/6/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text_container/c3/choice_container/6/Button" to="state_handler/text_container/c3/choice_container/6/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text_container/c3/choice_container/6/Button" to="state_handler" method="cycle_choice"]
 [connection signal="mouse_entered" from="state_handler/next_button" to="state_handler/next_button/text" method="set_bbcode" binds= [ "[center][color=gray]next[/color][/center]" ]]
 [connection signal="mouse_exited" from="state_handler/next_button" to="state_handler/next_button/text" method="set_bbcode" binds= [ "[center]next[/center]" ]]
 [connection signal="pressed" from="state_handler/next_button" to="state_handler" method="next"]
-[connection signal="timeout" from="state_handler/next_timer" to="state_handler" method="show_next_button"]
 [connection signal="pressed" from="state_handler/next_cover" to="state_handler" method="next"]
 [connection signal="pressed" from="state_handler/wake_up_cover" to="state_handler" method="wake_up"]
