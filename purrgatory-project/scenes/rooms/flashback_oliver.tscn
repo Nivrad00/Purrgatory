@@ -157,7 +157,6 @@ margin_bottom = 722.333
 color = Color( 0, 0, 0, 1 )
 
 [node name="text_container" type="Control" parent="state_handler"]
-editor/display_folded = true
 margin_left = 383.829
 margin_top = 32.3089
 margin_right = 912.829
@@ -625,7 +624,6 @@ flat = true
 script = ExtResource( 7 )
 
 [node name="t4" type="RichTextLabel" parent="state_handler/text_container"]
-editor/display_folded = true
 margin_top = 350.0
 margin_right = 1280.0
 margin_bottom = 402.0
@@ -684,7 +682,6 @@ text = "you finished in just under 3 hours."
 scroll_active = false
 
 [node name="e3" type="RichTextLabel" parent="state_handler/text_container/t4"]
-editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 52.0
@@ -862,6 +859,7 @@ flat = true
 [connection signal="mouse_entered" from="state_handler/text_container/c3/choice_container/6/Button" to="state_handler/text_container/c3/choice_container/6/Button" method="highlight_text" binds= [ true ]]
 [connection signal="mouse_exited" from="state_handler/text_container/c3/choice_container/6/Button" to="state_handler/text_container/c3/choice_container/6/Button" method="highlight_text" binds= [ false ]]
 [connection signal="pressed" from="state_handler/text_container/c3/choice_container/6/Button" to="state_handler" method="cycle_choice"]
+[connection signal="text_changed" from="state_handler/text_container/t4/e3/LineEdit" to="state_handler" method="show_next_button"]
 [connection signal="mouse_entered" from="state_handler/next_button" to="state_handler/next_button/text" method="set_bbcode" binds= [ "[center][color=gray]next[/color][/center]" ]]
 [connection signal="mouse_exited" from="state_handler/next_button" to="state_handler/next_button/text" method="set_bbcode" binds= [ "[center]next[/center]" ]]
 [connection signal="pressed" from="state_handler/next_button" to="state_handler" method="next"]

@@ -32,13 +32,6 @@ func next():
 		old_choice.set_bbcode(old_choice.get_bbcode().lstrip('[u]').rstrip('[/u].') + '.')
 		choice_log[text_n] = choice_n
 	
-	# else if the previous line of text had a lineedit, format it correctly
-	if old and old.find_node('LineEdit'):
-		var lineedit = old.find_node('LineEdit')
-		lineedit.get_parent().set_bbcode(last_editable_text % lineedit.text)
-		lineedit.get_parent().get_node('underline').hide()
-		lineedit.hide()
-	
 	# try getting the next line of text
 	text_n += 1
 	var current = $text_container.get_child(text_n)
@@ -62,14 +55,12 @@ func next():
 					last_editable_text = var_text.get_bbcode()
 					var_text.set_bbcode(last_editable_text % '                              ')
 					$next_cover.hide()
-					show_next_button()
 		
 		# if it's a lineedit...
 		if current.name[0] == 'e':
 			last_editable_text = current.get_bbcode()
 			current.set_bbcode(last_editable_text % '                              ')
 			$next_cover.hide()
-			show_next_button()
 			
 		# if it's a choice...
 		elif current.name[0] == 'c':
@@ -84,13 +75,21 @@ func next():
 		$next_cover.hide()
 		
 		# if the last line of text was interactable, then let them look at it for a while
-		if old and (old.name[0] == 'c' or old.find_node('LineEdit')):
+		if old and (old.name[0] == 'c' or last_editable_text):
 			$next_cover.show()
 		
 		# otherwise fade out all the text and enable the "wake up" cover
 		else:
 			$text_container/AnimationPlayer.play_backwards('Fadein')
 			$wake_up_cover.show()
+	
+	# also, if the previous line of text had a lineedit, format it correctly
+	if old and old.find_node('LineEdit') and last_editable_text:
+		var lineedit = old.find_node('LineEdit')
+		lineedit.get_parent().set_bbcode(last_editable_text % lineedit.text)
+		lineedit.get_parent().get_node('underline').hide()
+		lineedit.hide()
+		last_editable_text = null
 
 func cycle_choice():
 	var choice_container = $text_container.get_child(text_n).get_node('choice_container')
@@ -105,7 +104,11 @@ func cycle_choice():
 	if not $next_button.visible:
 		show_next_button()
 
-func show_next_button():
+# there's a placeholder argument as a hack, because...? reasons?
+func show_next_button(what = null):
+	print('boop')
+	if $next_button.visible:
+		return
 	$next_button.modulate.a = 0
 	$next_button.get_node('text').set_bbcode('[center]next[/center]')
 	$next_button.show()
