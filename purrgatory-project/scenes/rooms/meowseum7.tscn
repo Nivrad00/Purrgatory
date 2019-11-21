@@ -16,6 +16,7 @@ script = ExtResource( 1 )
 
 [node name="state_handler" type="Control" parent="."]
 script = ExtResource( 2 )
+default_music = "the library draft"
 
 [node name="bg" type="Sprite" parent="state_handler"]
 position = Vector2( 0.916077, 0 )
@@ -139,4 +140,3 @@ dialog_label = "padlock"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object15"]
 polygon = PoolVector2Array( 631.052, 308.768, 631.251, 342.08, 640.598, 346.356, 650.344, 345.362, 650.344, 309.762, 634.035, 305.983 )
-

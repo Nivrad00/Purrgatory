@@ -41,6 +41,9 @@ func update_state(state):
 
 func init_state(state):
 	$state_handler.init_state(state)
+
+func play_default_music():
+	$state_handler.play_default_music()
 	
 func start_dialog(label, sprites):
 	if dialog_ongoing:

@@ -48,6 +48,10 @@ config/name="purrgatory"
 run/main_scene="res://scenes/main_menu.tscn"
 config/icon="res://assets/icon.png"
 
+[audio]
+
+mix_rate=48000
+
 [display]
 
 window/size/width=1280

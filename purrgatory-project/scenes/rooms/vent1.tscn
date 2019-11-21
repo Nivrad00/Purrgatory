@@ -41,8 +41,8 @@ room_label = "hallway6"
 polygon = PoolVector2Array( 515.425, 350.318, 516.653, 662.163, 826.043, 815.631, 827.271, 243.504 )
 
 [node name="object" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "vent_leaf"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
 polygon = PoolVector2Array( 531.435, 510.959, 555.99, 549.019, 616.149, 566.207, 660.347, 560.068, 616.149, 508.503 )
-

@@ -35,6 +35,7 @@ func failure():
 	emit_signal('start_dialog', 'flowers_fail', null)
 		
 func success():
+	$success.play()
 	$game_timer.stop()
 	$flower_timer/AnimationPlayer.stop(false)
 	$flower_box.set_indicator('success')
@@ -49,10 +50,12 @@ func pick_flower(id):
 			if target_ids.empty():
 				success()
 			else:
+				$yes.play()
 				$flower_box.set_indicator('check')
 				$indicator_timer.set_wait_time(1)
 				$indicator_timer.start()
 		else:
+			$no.play()
 			$flower_box.set_indicator('x')
 			$indicator_timer.set_wait_time(1)
 			$indicator_timer.start()

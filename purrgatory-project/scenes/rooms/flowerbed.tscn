@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/flowerbed.gd" type="Script" id=2]
@@ -27,6 +27,9 @@
 [ext_resource path="res://assets/sprites/flowers/0.png" type="Texture" id=25]
 [ext_resource path="res://scripts/flower_progress.gd" type="Script" id=26]
 [ext_resource path="res://assets/ui/flower_progress0.png" type="Texture" id=27]
+[ext_resource path="res://assets/audio/correct.ogg" type="AudioStream" id=28]
+[ext_resource path="res://assets/audio/wrong.ogg" type="AudioStream" id=29]
+[ext_resource path="res://assets/audio/success.wav" type="AudioStream" id=30]
 
 [sub_resource type="Animation" id=1]
 resource_name = "New Anim"
@@ -159,5 +162,15 @@ one_shot = true
 [node name="indicator_timer" type="Timer" parent="state_handler"]
 one_shot = true
 
+[node name="yes" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 28 )
+volume_db = 5.0
+
+[node name="no" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 29 )
+
+[node name="success" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 30 )
+volume_db = -15.0
 [connection signal="timeout" from="state_handler/game_timer" to="state_handler" method="failure"]
 [connection signal="timeout" from="state_handler/indicator_timer" to="state_handler" method="reset_indicator"]

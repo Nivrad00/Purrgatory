@@ -64,4 +64,3 @@ dialog_label = "house_welcome"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
 polygon = PoolVector2Array( 608.032, 573.711, 588.793, 624.131, 998.125, 624.131, 944.736, 573.485 )
-

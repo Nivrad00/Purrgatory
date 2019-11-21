@@ -24,4 +24,3 @@ script = ExtResource( 2 )
 margin_right = 1280.0
 margin_bottom = 720.0
 [connection signal="draw" from="draw_viewport/pen" to="draw_viewport/pen" method="_on_draw"]
-[connection signal="drew_line" from="draw_viewport/pen" to="." method="_on_pen_drew_line"]

@@ -103,12 +103,13 @@ font_data = ExtResource( 21 )
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
-default_room = "study"
+default_room = "house3"
 
 [node name="delay_timer" type="Timer" parent="."]
 wait_time = 0.5
 
 [node name="dialog_handler" type="Node" parent="."]
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="reception_dialog" type="Node" parent="dialog_handler"]
@@ -161,6 +162,7 @@ margin_bottom = 720.0
 mouse_filter = 2
 
 [node name="ui" type="Control" parent="."]
+editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 script = ExtResource( 16 )
@@ -225,6 +227,7 @@ text = "to be, or not to be: that is the question: whether 'tis nobler in the mi
 scroll_active = false
 
 [node name="name_input" type="Control" parent="ui"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 300.0
@@ -667,9 +670,9 @@ color = Color( 1, 1, 1, 0 )
 
 [node name="main_audio" type="AudioStreamPlayer" parent="."]
 [connection signal="pressed" from="ui/text_box" to="." method="update_dialog" binds= [ -1 ]]
-[connection signal="pressed" from="ui/name_input/ok_button" to="ui/name_input" method="hide"]
-[connection signal="pressed" from="ui/name_input/ok_button" to="." method="set_player_name"]
 [connection signal="pressed" from="ui/name_input/ok_button" to="." method="update_dialog" binds= [ -1 ]]
+[connection signal="pressed" from="ui/name_input/ok_button" to="." method="set_player_name"]
+[connection signal="pressed" from="ui/name_input/ok_button" to="ui/name_input" method="hide"]
 [connection signal="pressed" from="meta_ui/menu_button" to="." method="open_pause_menu"]
 [connection signal="pressed" from="meta_ui/pause_menu/save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="meta_ui/pause_menu/load" to="." method="_on_load_pressed"]
@@ -677,7 +680,7 @@ color = Color( 1, 1, 1, 0 )
 [connection signal="pressed" from="meta_ui/pause_menu/back" to="meta_ui/pause_menu" method="hide"]
 [connection signal="pressed" from="meta_ui/exit_confirm/yes" to="." method="return_to_main"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
-[connection signal="pressed" from="meta_ui/save_confirm/yes" to="meta_ui/pause_menu" method="hide"]
 [connection signal="pressed" from="meta_ui/save_confirm/yes" to="meta_ui/save_confirm" method="hide"]
-[connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/pause_menu" method="hide"]
+[connection signal="pressed" from="meta_ui/save_confirm/yes" to="meta_ui/pause_menu" method="hide"]
 [connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/load_confirm" method="hide"]
+[connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/pause_menu" method="hide"]

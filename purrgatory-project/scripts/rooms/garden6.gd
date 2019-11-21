@@ -2,6 +2,7 @@ extends 'state_handler_template.gd'
 
 func init_state(state):
 	.init_state(state)
+	
 	$exit_dialog.set_highlight_on_hover(true)
 	if state.get('flowers_goto_garden'):
 		emit_signal('set_hidden_sprite', [$numa])
@@ -9,6 +10,11 @@ func init_state(state):
 	
 func update_state(state):
 	.update_state(state)
+	
+	if state.get('surprise_audio'):
+		state['surprise_audio'] = false
+		$surprise.play()
+		emit_signal('change_audio', null)
 	
 	if state.get('_inv_screwdriver'):
 		$screwdriver2.hide()

@@ -37,7 +37,7 @@ func end_dialog():
 		child.end_dialog()
 	$room_mask.set_mouse_filter(Control.MOUSE_FILTER_IGNORE)
 
-func change_room(label, state):
+func change_room(label, state, music = true):
 	var new_room = load(room_path + label + '.tscn')
 	if new_room == null:
 		get_parent().start_dialog("room_placeholder")
@@ -53,10 +53,12 @@ func change_room(label, state):
 	for child in $room_container.get_children():
 		child.queue_free()
 	$room_container.add_child(new_room)
-	
-	new_room.init_state(state)
-	new_room.update_state(state)
 	new_room.set_name(label)
+	
+	if music:
+		current_room.play_default_music()
+	current_room.init_state(state)
+	current_room.update_state(state)
 
 func update_state(state):
 	for child in $room_container.get_children():

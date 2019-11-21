@@ -44,6 +44,8 @@ var current_draw = null
 var draw_freq = null
 var draw_scene = preload("res://scenes/draw.tscn")
 
+var audio_pos = 0
+
 func update_state(state):
 	.update_state(state)
 		
@@ -70,8 +72,10 @@ func update_state(state):
 	if state.get('ttt_goto_dropoff'):
 		state['ttt_goto_dropoff'] = false
 		emit_signal('change_room', 'dropoff1')
-		
+
 func start_game():
+	set_process(true)
+	
 	game_num += 1
 	move_num = 1 # it should start at 0 but oliver's first move is predetermined
 	current_board = [1, 0, 0, 0, 0, 0, 0, 0, 0] # 0 = empty, 1 = oliver, 2 = player
@@ -82,18 +86,34 @@ func start_game():
 		shape.playing = false
 	prev_score = 0
 	$shapes.get_child(0).play()
+	$asmr.play(audio_pos)
+
+# the player uses this method, but not oliver
+func start_audio(a, b):
+	if not $asmr.playing:
+		$asmr.play(audio_pos)
+	$audio_delay.start()
+	
+# both the player and oliver use this method
+func stop_audio():
+	audio_pos = $asmr.get_playback_position()
+	$asmr.stop()
+
+func _process(delta):
+	print($audio_delay.time_left)
 	
 func start_olivers_turn():
 	move_num += 1
 	var best_move = get_best_move(current_board)
 	var i = best_move[0]
 	prev_score = best_move[1]
-	print(prev_score)
 	$shapes.get_child(i).play()
 	current_board[i] = 1
+	$asmr.play(audio_pos)
 
 func end_olivers_turn():
 	$turn_delay.start()
+	$audio_delay.start()
 	
 func end_olivers_turn2():
 	if check_for_stalemate(current_board):
@@ -116,6 +136,7 @@ func start_players_turn():
 	move_num += 1
 	current_draw = draw_scene.instance()
 	current_draw.enable()
+	current_draw.connect('drew_line', self, 'start_audio')
 	current_draw.connect('drew_line', self, 'record_freq')
 	$draw_container.add_child(current_draw)
 	$done_button.show()
@@ -166,7 +187,7 @@ func record_freq(start, end):
 			if $spaces.get_child(j).get_rect().has_point(start + i * unit):
 				draw_freq[j] += 1
 	
-	print(draw_freq)
+	# print(draw_freq)
 	
 func detect_players_move():
 	var square = -1

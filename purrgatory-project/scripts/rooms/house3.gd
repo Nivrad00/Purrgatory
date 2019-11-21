@@ -17,6 +17,7 @@ func update_state(state):
 		anim_playing = true
 
 func _on_glass_timer_timeout():
+	$shatter.play()
 	anim_playing = false
 	
 func _on_glass_cover_pressed():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/exit_left.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=7]
+[ext_resource path="res://scenes/river.tscn" type="PackedScene" id=8]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -111,3 +112,5 @@ dialog_label = "field_distant_doorway"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_distant_doorway"]
 polygon = PoolVector2Array( 211.948, 350.054, 212.384, 378.414, 251.208, 381.326, 251.531, 349.943 )
+
+[node name="river" parent="state_handler" instance=ExtResource( 8 )]

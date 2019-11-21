@@ -11,6 +11,11 @@ signal change_audio(song)
 # it updates the room state based on the game state 
 #   (for example, making doors accessible once they've been unlocked)
 
+export var default_music = 'welcome to purrgatory'
+
+func play_default_music():
+	emit_signal('change_audio', default_music)
+
 func init_state(state):
 	pass
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/garden6.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scenes/sprites/numa_with_elijah.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=8]
 [ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=9]
+[ext_resource path="res://scenes/surprise.tscn" type="PackedScene" id=10]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -141,3 +142,4 @@ dialog_label = "garden_shelf2"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/garden_shelf2"]
 polygon = PoolVector2Array( 272.207, 381.999, 273.282, 394.546, 299.81, 393.829, 327.414, 409.961, 340.678, 409.961, 351.074, 394.546, 367.923, 394.187, 399.828, 390.602, 399.828, 379.848 )
 
+[node name="surprise" parent="state_handler" instance=ExtResource( 10 )]

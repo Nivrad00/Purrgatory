@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/house3.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/house3.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_left.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/audio/glass.ogg" type="AudioStream" id=6]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -112,6 +113,9 @@ dialog_label = " house_cabinets"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object13"]
 polygon = PoolVector2Array( 354.602, 100.774, 358.285, 261.608, 576.823, 270.202, 648.032, 251.786, 651.715, 218.637, 721.696, 226.004, 722.924, 264.064, 845.698, 275.113, 956.195, 270.202, 954.967, 127.784, 402.484, 34.4761 )
+
+[node name="shatter" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 6 )
 
 [node name="glass_cover" type="Button" parent="state_handler"]
 visible = false

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/field5.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=5]
+[ext_resource path="res://scenes/river.tscn" type="PackedScene" id=6]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -62,3 +63,5 @@ dialog_label = "hill"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/hill"]
 polygon = PoolVector2Array( 152.076, 459.817, 395.451, 311.251, 583.315, 208.147, 656.701, 194.4, 750.642, 201.345, 879.952, 249.5, 1037.65, 441.401, 1082.57, 514.232, 964.221, 590.414, 779.21, 631.225, 429.593, 589.053 )
 
+[node name="river" parent="state_handler" instance=ExtResource( 6 )]
+volume_db = -35.0

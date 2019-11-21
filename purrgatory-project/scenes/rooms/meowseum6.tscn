@@ -15,6 +15,7 @@ script = ExtResource( 1 )
 
 [node name="state_handler" type="Control" parent="."]
 script = ExtResource( 2 )
+default_music = "the library draft"
 
 [node name="bg" type="Sprite" parent="state_handler"]
 texture = ExtResource( 3 )
@@ -68,4 +69,3 @@ polygon = PoolVector2Array( 409.968, 172.271, 386.641, 214.014, 429.612, 220.153
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="state_handler/object2"]
 position = Vector2( 462.858, -2.45547 )
 polygon = PoolVector2Array( 409.968, 172.271, 386.641, 214.014, 429.612, 220.153, 466.444, 212.786, 439.434, 172.271 )
-

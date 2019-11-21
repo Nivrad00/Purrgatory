@@ -23,8 +23,8 @@ var state = {
 	'seen_study': true,
 	'_inv_chess_letter': true,
 	'tori_visited_oliver': true,
-	'oliver_asked_for_soda': true,
-	'house_cat_pushed_glass': true
+	'oliver_asked_for_soda': true # ,
+	# 'house_cat_pushed_glass': true
 }
 
 var numa_test_state = {
@@ -62,7 +62,8 @@ var current_audio = null
 
 func _ready():
 	randomize()
-	change_room(default_room)
+	$room.change_room(default_room, state, false)
+	change_audio(null)
 	var f = File.new()
 	f.open("res://scripts/procgen/meowkov.json", File.READ)
 	meowkov_json = JSON.parse(f.get_as_text())
@@ -184,6 +185,7 @@ func change_audio(song, play = true):
 			$main_audio.set_stream(stream)
 			if play:
 				$main_audio.play()
+	print('changed audio to ' + str(song))
 
 func return_to_main():
 	$white_cover.show()
@@ -196,6 +198,7 @@ func _on_save_pressed():
 
 func _on_load_pressed():
 	load_game()
+	$main_audio.play()
 	$meta_ui/load_confirm.show()
 
 func save():
@@ -231,9 +234,9 @@ func load_game():
 	format_dict = save_dict["name_dict"]
 	action_timers = save_dict["action_timers"]
 	block = save_dict["block"]
-	change_audio(save_dict["music"], false)
 	
-	$room.change_room(save_dict["room"], state)
+	$room.change_room(save_dict["room"], state, false)
+	change_audio(save_dict["music"], false)
 	$room.set_hidden_sprites(save_dict["hidden_sprites"])
 	$room.update_state(state)
 	
@@ -254,7 +257,8 @@ func reset_state():
 		'player_upper': ''
 	}
 	action_timers = []
-	$room.change_room('reception', state)
+	$room.change_room('reception', state, false)
+	change_audio(null)
 
 func open_pause_menu():
 	$meta_ui/pause_menu.show()
