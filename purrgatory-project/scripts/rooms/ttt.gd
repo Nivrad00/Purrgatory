@@ -66,12 +66,15 @@ func update_state(state):
 	if state.get('ttt_goto_park'):
 		state['ttt_goto_park'] = false
 		emit_signal('change_room', 'field4')
+		emit_signal('change_audio', null)
 	if state.get('ttt_goto_meowseum'):
 		state['ttt_goto_meowseum'] = false
 		emit_signal('change_room', 'meowseum1')
+		emit_signal('change_audio', null)
 	if state.get('ttt_goto_dropoff'):
 		state['ttt_goto_dropoff'] = false
 		emit_signal('change_room', 'dropoff1')
+		emit_signal('change_audio', null)
 
 func start_game():
 	set_process(true)
@@ -100,7 +103,8 @@ func stop_audio():
 	$asmr.stop()
 
 func _process(delta):
-	print($audio_delay.time_left)
+	pass
+	# print($audio_delay.time_left)
 	
 func start_olivers_turn():
 	move_num += 1

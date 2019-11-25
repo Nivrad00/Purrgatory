@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scripts/dialog_handler.gd" type="Script" id=2]
@@ -28,6 +28,7 @@
 [ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=26]
 [ext_resource path="res://assets/ui/menu_x.png" type="Texture" id=27]
 [ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=28]
+[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=29]
 
 [sub_resource type="InputEventAction" id=1]
 action = "ui_select"
@@ -103,7 +104,7 @@ font_data = ExtResource( 21 )
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
-default_room = "house3"
+default_room = "study"
 
 [node name="delay_timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -162,7 +163,6 @@ margin_bottom = 720.0
 mouse_filter = 2
 
 [node name="ui" type="Control" parent="."]
-editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 script = ExtResource( 16 )
@@ -321,9 +321,9 @@ editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
-margin_top = 217.007
+margin_top = 177.504
 margin_right = -515.0
-margin_bottom = -443.993
+margin_bottom = -483.496
 rect_pivot_offset = Vector2( 311.063, 2.57225 )
 focus_mode = 0
 enabled_focus_mode = 0
@@ -350,12 +350,13 @@ align = 1
 valign = 1
 
 [node name="load" type="Button" parent="meta_ui/pause_menu"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
-margin_top = 293.328
+margin_top = 253.825
 margin_right = -515.0
-margin_bottom = -367.672
+margin_bottom = -407.175
 rect_pivot_offset = Vector2( 311.063, -73.7487 )
 focus_mode = 0
 enabled_focus_mode = 0
@@ -385,14 +386,48 @@ valign = 1
 position = Vector2( 125.466, 29.0663 )
 texture = ExtResource( 27 )
 
+[node name="options" type="Button" parent="meta_ui/pause_menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 515.0
+margin_top = 329.505
+margin_right = -515.0
+margin_bottom = -331.495
+rect_pivot_offset = Vector2( 311.063, -221.429 )
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="box2" type="Sprite" parent="meta_ui/pause_menu/options"]
+position = Vector2( 0.366638, 1.67036 )
+texture = ExtResource( 28 )
+centered = false
+offset = Vector2( -8.3689, -6.12292 )
+flip_h = true
+flip_v = true
+
+[node name="Label" type="Label" parent="meta_ui/pause_menu/options"]
+margin_left = 1.0
+margin_top = 2.0
+margin_right = 249.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 17 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "options"
+align = 1
+valign = 1
+
 [node name="exit" type="Button" parent="meta_ui/pause_menu"]
 editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
-margin_top = 366.367
+margin_top = 400.864
 margin_right = -515.0
-margin_bottom = -295.633
+margin_bottom = -261.136
 rect_pivot_offset = Vector2( 311.063, -146.788 )
 focus_mode = 0
 enabled_focus_mode = 0
@@ -403,9 +438,11 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/exit"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 28 )
+texture = ExtResource( 25 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
+flip_h = true
+flip_v = true
 
 [node name="Label" type="Label" parent="meta_ui/pause_menu/exit"]
 margin_left = 1.0
@@ -423,9 +460,9 @@ editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
-margin_top = 441.008
+margin_top = 475.505
 margin_right = -515.0
-margin_bottom = -219.992
+margin_bottom = -185.495
 rect_pivot_offset = Vector2( 311.063, -221.429 )
 focus_mode = 0
 enabled_focus_mode = 0
@@ -436,7 +473,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/back"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 25 )
+texture = ExtResource( 26 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
@@ -453,7 +490,10 @@ text = "back"
 align = 1
 valign = 1
 
+[node name="options_menu" parent="meta_ui" instance=ExtResource( 29 )]
+
 [node name="exit_confirm" type="Control" parent="meta_ui"]
+editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -682,5 +722,5 @@ color = Color( 1, 1, 1, 0 )
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
 [connection signal="pressed" from="meta_ui/save_confirm/yes" to="meta_ui/save_confirm" method="hide"]
 [connection signal="pressed" from="meta_ui/save_confirm/yes" to="meta_ui/pause_menu" method="hide"]
-[connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/load_confirm" method="hide"]
 [connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/pause_menu" method="hide"]
+[connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/load_confirm" method="hide"]

@@ -23,8 +23,8 @@ var state = {
 	'seen_study': true,
 	'_inv_chess_letter': true,
 	'tori_visited_oliver': true,
-	'oliver_asked_for_soda': true # ,
-	# 'house_cat_pushed_glass': true
+	'oliver_asked_for_soda': true,
+	'house_cat_pushed_glass': true
 }
 
 var numa_test_state = {
@@ -185,7 +185,6 @@ func change_audio(song, play = true):
 			$main_audio.set_stream(stream)
 			if play:
 				$main_audio.play()
-	print('changed audio to ' + str(song))
 
 func return_to_main():
 	$white_cover.show()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://scripts/resource_queue.gd" type="Script" id=2]
@@ -6,11 +6,12 @@
 [ext_resource path="res://assets/ui/logo2.png" type="Texture" id=4]
 [ext_resource path="res://assets/ui/logo1.png" type="Texture" id=5]
 [ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=6]
-[ext_resource path="res://assets/ui/menu_x.png" type="Texture" id=7]
-[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/menu_x.png" type="Texture" id=8]
 [ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=9]
 [ext_resource path="res://scenes/cat1_idle.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/audio/slice of heaven.ogg" type="AudioStream" id=11]
+[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -92,10 +93,11 @@ enabled_focus_mode = 0
 flat = true
 
 [node name="main_menu" type="Control" parent="."]
+editor/display_folded = true
 visible = false
-margin_top = 19.0
+margin_top = -15.0093
 margin_right = 40.0
-margin_bottom = 59.0
+margin_bottom = 24.9907
 
 [node name="logo" type="Sprite" parent="main_menu"]
 editor/display_folded = true
@@ -161,7 +163,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/continue"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 centered = false
 
 [node name="Label" type="Label" parent="main_menu/buttons/continue"]
@@ -176,14 +178,44 @@ valign = 1
 [node name="x" type="Sprite" parent="main_menu/buttons/continue"]
 visible = false
 position = Vector2( 125.826, 29.3703 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
+
+[node name="options" type="Button" parent="main_menu/buttons"]
+editor/display_folded = true
+margin_left = 12.1426
+margin_top = 153.735
+margin_right = 262.143
+margin_bottom = 211.734
+focus_mode = 0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="main_menu/buttons/options"]
+position = Vector2( -8.38, -4.88837 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="Label" type="Label" parent="main_menu/buttons/options"]
+margin_right = 251.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "options"
+align = 1
+valign = 1
 
 [node name="credits" type="Button" parent="main_menu/buttons"]
 editor/display_folded = true
 margin_left = 12.1426
-margin_top = 155.735
+margin_top = 224.735
 margin_right = 262.143
-margin_bottom = 213.734
+margin_bottom = 282.734
 focus_mode = 0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -196,8 +228,10 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/credits"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 8 )
+texture = ExtResource( 6 )
 centered = false
+flip_h = true
+flip_v = true
 
 [node name="Label" type="Label" parent="main_menu/buttons/credits"]
 margin_right = 251.0
@@ -209,11 +243,10 @@ align = 1
 valign = 1
 
 [node name="exit" type="Button" parent="main_menu/buttons"]
-editor/display_folded = true
 margin_left = 12.8502
-margin_top = 225.734
+margin_top = 297.734
 margin_right = 262.85
-margin_bottom = 283.734
+margin_bottom = 355.734
 focus_mode = 0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -226,8 +259,10 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/exit"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 9 )
+texture = ExtResource( 7 )
 centered = false
+flip_h = true
+flip_v = true
 
 [node name="Label" type="Label" parent="main_menu/buttons/exit"]
 margin_right = 251.0
@@ -319,7 +354,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="credits/back"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 centered = false
 
 [node name="Label" type="Label" parent="credits/back"]
@@ -330,9 +365,13 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "back"
 align = 1
 valign = 1
+
+[node name="options_menu" parent="." instance=ExtResource( 12 )]
+visible = false
 [connection signal="pressed" from="loading/click_to_continue" to="." method="_on_click_to_continue_pressed"]
 [connection signal="pressed" from="main_menu/buttons/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="main_menu/buttons/continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="main_menu/buttons/options" to="options_menu" method="show"]
 [connection signal="pressed" from="main_menu/buttons/credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="main_menu/buttons/exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="credits/back" to="." method="_on_back_pressed"]

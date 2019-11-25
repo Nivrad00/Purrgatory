@@ -740,7 +740,6 @@ var raw_blocks = [
 ["","","","there's nothing you can do to change the past","","","","",""],
 ["","oliver","","i know...","","","","",""],
 ["","","","that's the worst part about it.","","","","",""],
-["","you","","i'm sorry...","","","","",""],
 ["","_none","","you let oliver cry into your shoulder for a while.","","","oliver_hug3","",""],
 ["oliver_hug2","you","","...","","","","",""],
 ["oliver_hug3","oliver","oliver_neutral"," [i]sniff[/i]","","","","",""],
