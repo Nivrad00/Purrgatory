@@ -52,3 +52,4 @@ polygon = PoolVector2Array( 168.45, 596.351, 418.897, 439.058, 906.433, 439.058,
 [node name="hhhhhh" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 6 )
 autoplay = true
+bus = "SFX"

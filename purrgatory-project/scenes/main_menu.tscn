@@ -101,9 +101,12 @@ autoplay = "New Anim"
 
 [node name="buttons" type="Control" parent="main_menu"]
 margin_left = 504.871
-margin_top = 295.987
+margin_top = 284.323
 margin_right = 782.871
-margin_bottom = 512.987
+margin_bottom = 501.323
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="start" type="Button" parent="main_menu/buttons"]
 editor/display_folded = true
@@ -264,6 +267,7 @@ mouse_filter = 2
 [node name="audio" type="AudioStreamPlayer" parent="main_menu"]
 stream = ExtResource( 12 )
 volume_db = -3.0
+bus = "Music"
 
 [node name="credits" type="Control" parent="."]
 editor/display_folded = true

@@ -27,3 +27,22 @@ func show_custom():
 	$text_size/preview_b.set_bbcode(current_quip[1])
 	
 	show()
+
+func _on_music_value_changed(value):
+	change_volume('Music', value)
+
+func _on_sfx_value_changed(value):
+	change_volume('SFX', value)
+
+func change_volume(bus, volume):
+	var db = math(volume)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus), db)
+	AudioServer.set_bus_mute(AudioServer.get_bus_index(bus), db == -80)
+	
+func math(value):
+	if value == 0:
+		return -80
+	return 27 * log(value)/log(10)
+
+func _on_fullscreen_toggled(on):
+	OS.window_fullscreen = on

@@ -116,6 +116,7 @@ polygon = PoolVector2Array( 354.602, 100.774, 358.285, 261.608, 576.823, 270.202
 
 [node name="shatter" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 6 )
+bus = "SFX"
 
 [node name="glass_cover" type="Button" parent="state_handler"]
 visible = false

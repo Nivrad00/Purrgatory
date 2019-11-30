@@ -148,6 +148,7 @@ one_shot = true
 [node name="portal_audio" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 15 )
 volume_db = -6.0
+bus = "SFX"
 
 [node name="fadeout" type="ColorRect" parent="state_handler"]
 visible = false

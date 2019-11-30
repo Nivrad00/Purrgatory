@@ -187,6 +187,7 @@ one_shot = true
 [node name="asmr" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 10 )
 volume_db = 10.0
+bus = "SFX"
 
 [node name="audio_delay" type="Timer" parent="state_handler"]
 wait_time = 0.03

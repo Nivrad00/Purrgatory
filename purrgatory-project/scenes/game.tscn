@@ -647,6 +647,7 @@ margin_bottom = 720.0
 color = Color( 1, 1, 1, 0 )
 
 [node name="main_audio" type="AudioStreamPlayer" parent="."]
+bus = "Music"
 [connection signal="pressed" from="ui/text_box" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="ui/name_input/ok_button" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="ui/name_input/ok_button" to="." method="set_player_name"]

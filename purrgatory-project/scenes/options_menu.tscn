@@ -32,8 +32,20 @@ script = ExtResource( 2 )
 [node name="white" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 0.949997
-margin_bottom = 0.950012
+
+[node name="Line2D" type="Line2D" parent="."]
+visible = false
+position = Vector2( 369.758, -15.7146 )
+points = PoolVector2Array( 0, 0, 0, 800 )
+width = 1.0
+texture_mode = -1023013864
+
+[node name="Line2D2" type="Line2D" parent="."]
+visible = false
+position = Vector2( 398.949, -15.7146 )
+points = PoolVector2Array( 0, 0, 0, 800 )
+width = 1.0
+texture_mode = -1023013864
 
 [node name="back" type="Button" parent="."]
 editor/display_folded = true
@@ -69,10 +81,22 @@ align = 1
 valign = 1
 
 [node name="text_size" type="Control" parent="."]
+editor/display_folded = true
 margin_left = 400.0
-margin_top = 83.0
+margin_top = 95.0708
 margin_right = 440.0
-margin_bottom = 123.0
+margin_bottom = 135.071
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="slider_label" type="Label" parent="text_size"]
+margin_left = -127.191
+margin_top = -5.21382
+margin_right = -30.1908
+margin_bottom = 28.7862
+text = "text size"
+align = 2
 
 [node name="slider" type="HSlider" parent="text_size"]
 anchor_right = 1.0
@@ -96,19 +120,19 @@ ticks_on_borders = true
 focus_mode = 0
 
 [node name="preview_a" type="Label" parent="text_size"]
-margin_left = 25.0
-margin_top = 119.0
-margin_right = 451.0
-margin_bottom = 173.0
+margin_left = 26.3268
+margin_top = 65.2425
+margin_right = 452.327
+margin_bottom = 119.243
 theme = ExtResource( 8 )
 text = "oliver"
 valign = 1
 
 [node name="preview_b" type="RichTextLabel" parent="text_size"]
-margin_left = 26.0
-margin_top = 183.0
-margin_right = 451.0
-margin_bottom = 273.0
+margin_left = 27.3268
+margin_top = 129.243
+margin_right = 452.327
+margin_bottom = 219.243
 theme = ExtResource( 8 )
 bbcode_enabled = true
 bbcode_text = "wahoo i sure [i]love[/i] purrgatory!"
@@ -116,23 +140,108 @@ text = "wahoo i sure love purrgatory!"
 script = ExtResource( 9 )
 
 [node name="preview_box" type="Sprite" parent="text_size"]
-position = Vector2( 235.726, 202.577 )
+position = Vector2( 236.327, 149 )
 texture = ExtResource( 10 )
 
 [node name="preview_label" type="Label" parent="text_size"]
-margin_left = 1.10803
-margin_top = 73.1302
-margin_right = 98.108
-margin_bottom = 100.13
+margin_left = -127.497
+margin_top = 56.9917
+margin_right = -30.497
+margin_bottom = 90.9917
 theme = ExtResource( 1 )
 text = "preview"
+align = 2
 
-[node name="slider_label" type="Label" parent="text_size"]
-margin_left = 1.10803
-margin_top = -44.8698
-margin_right = 98.108
-margin_bottom = -17.8698
-text = "text size"
+[node name="audio" type="Control" parent="."]
+editor/display_folded = true
+margin_left = 400.0
+margin_top = 421.585
+margin_right = 440.0
+margin_bottom = 461.585
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="music_label" type="Label" parent="audio"]
+margin_left = -191.6
+margin_top = -7.0
+margin_right = -30.6001
+margin_bottom = 27.0
+text = "music volume"
+align = 2
+
+[node name="music" type="HSlider" parent="audio"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -8.0
+margin_right = 439.0
+margin_bottom = -6.0
+focus_mode = 0
+custom_icons/tick = ExtResource( 5 )
+custom_icons/grabber_highlight = ExtResource( 6 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 2 )
+custom_styles/grabber_area = SubResource( 3 )
+max_value = 1.0
+step = 0.01
+value = 1.0
+scrollable = false
+focus_mode = 0
+
+[node name="sfx_label" type="Label" parent="audio"]
+margin_left = -153.742
+margin_top = 53.9303
+margin_right = -30.7422
+margin_bottom = 87.9303
+text = "sfx volume"
+align = 2
+
+[node name="sfx" type="HSlider" parent="audio"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 52.8001
+margin_right = 439.0
+margin_bottom = 54.8001
+focus_mode = 0
+custom_icons/tick = ExtResource( 5 )
+custom_icons/grabber_highlight = ExtResource( 6 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 2 )
+custom_styles/grabber_area = SubResource( 3 )
+max_value = 1.0
+step = 0.01
+value = 1.0
+scrollable = false
+focus_mode = 0
+
+[node name="fullscreen" type="Control" parent="."]
+margin_left = 1113.26
+margin_top = 98.1077
+margin_right = 1153.26
+margin_bottom = 138.108
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="fs_label" type="Label" parent="fullscreen"]
+margin_left = -191.6
+margin_top = -7.0
+margin_right = -30.6001
+margin_bottom = 27.0
+text = "fullscreen"
+align = 2
+
+[node name="fullscreen" type="CheckBox" parent="fullscreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -22.5424
+margin_top = -27.7207
+margin_right = 5.45755
+margin_bottom = 0.279274
+focus_mode = 0
 [connection signal="pressed" from="back" to="." method="hide"]
 [connection signal="pressed" from="back" to="." method="options_changed"]
 [connection signal="value_changed" from="text_size/slider" to="text_size/preview_b" method="_on_text_size_value_changed"]
+[connection signal="value_changed" from="audio/music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="audio/sfx" to="." method="_on_sfx_value_changed"]
+[connection signal="toggled" from="fullscreen/fullscreen" to="." method="_on_fullscreen_toggled"]

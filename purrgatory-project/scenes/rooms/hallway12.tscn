@@ -45,4 +45,3 @@ room_label = "closet"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3"]
 polygon = PoolVector2Array( 424.562, 177.368, 423.963, 507.273, 301.221, 459.374, 302.419, 177.368 )
-

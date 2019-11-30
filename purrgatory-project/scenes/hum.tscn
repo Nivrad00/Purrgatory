@@ -5,3 +5,4 @@
 [node name="hum" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
 autoplay = true
+bus = "SFX"
