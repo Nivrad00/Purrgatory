@@ -63,4 +63,3 @@ func change_room(label, state, music = true):
 func update_state(state):
 	for child in $room_container.get_children():
 		child.update_state(state)
-	

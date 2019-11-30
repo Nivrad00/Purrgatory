@@ -121,6 +121,8 @@ stream = ExtResource( 6 )
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
+focus_mode = 0
+enabled_focus_mode = 0
 flat = true
 [connection signal="timeout" from="state_handler/glass_timer" to="state_handler" method="_on_glass_timer_timeout"]
 [connection signal="pressed" from="state_handler/glass_cover" to="state_handler" method="_on_glass_cover_pressed"]

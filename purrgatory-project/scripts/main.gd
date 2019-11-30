@@ -34,7 +34,6 @@ func return_to_main():
 	check_save()
 	
 func _on_click_to_continue_pressed():
-	print('sdfkj')
 	fade_out_loading = true
 	
 func _on_start_pressed():

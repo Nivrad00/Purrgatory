@@ -4,11 +4,11 @@ signal return_to_main()
 
 export var default_room = ''
 
-var default_state = {
+var state = {
 	'true': true,
 }
 
-var state = {
+var oliver_test_state = {
 	'true': true,
 	'fed_kyungsoon_book': true,
 	'met_kyungsoon': true,
@@ -19,13 +19,15 @@ var state = {
 	'book_state': true,
 	'oliver_questioned': true,
 	'_inv_commons_key': true,
-	'oliver_in_study': true,
 	'seen_study': true,
 	'_inv_chess_letter': true,
 	'tori_visited_oliver': true,
 	'oliver_asked_for_soda': true,
-	'house_cat_pushed_glass': true
+	'house_cat_pushed_glass': true,
+	'comforted_oliver': true,
+	'oliver_in_study': false
 }
+
 
 var numa_test_state = {
 	'true': true,
@@ -115,6 +117,7 @@ func increment_action_timers():
 	action_timers = new_list
 	
 func change_room(label):
+	# print(state)
 	increment_action_timers()
 	$room.change_room(label, state)
 
@@ -262,3 +265,9 @@ func reset_state():
 func open_pause_menu():
 	$meta_ui/pause_menu.show()
 	check_save()
+
+func options_changed():
+	var state_handler = $room/room_container.find_node('state_handler', true, false)
+	if state_handler.has_method('options_changed'):
+		state_handler.options_changed()
+	

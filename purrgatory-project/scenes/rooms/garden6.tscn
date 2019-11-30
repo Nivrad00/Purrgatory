@@ -55,7 +55,6 @@ margin_left = 701.039
 margin_top = 376.916
 margin_right = 1172.04
 margin_bottom = 628.916
-sprite_path = [ ".", "../elijah_with_numa" ]
 
 [node name="exit" type="Area2D" parent="state_handler"]
 editor/display_folded = true

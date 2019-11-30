@@ -32,7 +32,6 @@ func update_ui(speaker, sprites, text, choices):
 
 func set_speaker(speaker):
 	$text_box/speaker.text = speaker
-	$text_box/speaker.bbcode_text = speaker
 	
 func set_sprites(sprites):	
 	for child in $sprites.get_children():
@@ -65,14 +64,14 @@ func set_choices(choices):
 	$text_box.disabled = true
 	for i in range(num):
 		var choice = load('res://scenes/choice' + String(i) + '.tscn').instance()
-		choice.get_node('text').text = choices[i]
+		choice.get_node('text').set_text(choices[i])
 		choice.connect("pressed", get_parent(), "update_dialog", [i])
 		choice.set_position(Vector2(0, choice_y[num][i]))
 		$choices.add_child(choice)
 
 func get_speaker():
-	return $text_box/speaker.bbcode_text
-	
+	return $text_box/speaker.text
+		
 func get_sprites():
 	var sprite_names = []
 	for sprite in $sprites.get_children():
