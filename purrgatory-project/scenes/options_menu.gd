@@ -11,8 +11,57 @@ var quips = [
 	['elijah', '\'tis better to have meowed and lost than never to have meowed at all.']
 ]
 
-func options_changed():
+var default_options = {
+	"fullscreen": false,
+	"music_volume": 1,
+	"sfx_volume": 1,
+	"text_size": 24
+}
+
+func save_options():
+	# saves options to file whenever the options menu is closed
+	# (the options are applied as soon as the values are changed or the game starts, so no need to apply anything here)
+	
+	var options_dict = {
+		"fullscreen": $fullscreen/fullscreen.pressed,
+		"music_volume": $audio/music.value,
+		"sfx_volume": $audio/sfx.value,
+		"text_size": $text_size/slider.value
+	}
+	var options_save = File.new()
+	options_save.open("user://options.save", File.WRITE)
+	options_save.store_line(to_json(options_dict))
+	options_save.close()	
+		
 	emit_signal('options_changed')
+
+func load_options():
+	# loads options from file whenever the options menu is opened
+	# ensures options are consistent between sessions and between the main and pause menus
+	# (the options are applied as soon as the values are changed or the game starts, so no need to apply anything here)
+	
+	var options_save = File.new()
+	var options_dict = default_options
+	
+	if options_save.file_exists("user://options.save"):
+		options_save.open("user://options.save", File.READ)
+		options_dict = parse_json(options_save.get_line())
+		options_save.close()
+		
+	$fullscreen/fullscreen.pressed = options_dict['fullscreen']
+	$audio/music.value = options_dict['music_volume']
+	$audio/sfx.value = options_dict['sfx_volume']
+	$text_size/slider.value = options_dict['text_size']
+	
+	return options_dict
+
+func load_and_apply_options():
+	# this is only called when the game starts
+	var options_dict = load_options()
+	_on_music_value_changed(options_dict['music_volume'])
+	_on_sfx_value_changed(options_dict['sfx_volume'])
+	_on_fullscreen_toggled(options_dict['fullscreen'])
+	_on_text_size_value_changed(options_dict['text_size'])
 
 func show_custom():
 	var state = get_node('/root/main/game').state
@@ -26,13 +75,8 @@ func show_custom():
 	$text_size/preview_a.set_text(current_quip[0])
 	$text_size/preview_b.set_bbcode(current_quip[1])
 	
+	load_options()
 	show()
-
-func _on_music_value_changed(value):
-	change_volume('Music', value)
-
-func _on_sfx_value_changed(value):
-	change_volume('SFX', value)
 
 func change_volume(bus, volume):
 	var db = math(volume)
@@ -44,5 +88,20 @@ func math(value):
 		return -80
 	return 27 * log(value)/log(10)
 
+# below are functions that apply changes to the options
+
+func _on_music_value_changed(value):
+	change_volume('Music', value)
+
+func _on_sfx_value_changed(value):
+	change_volume('SFX', value)
+	
 func _on_fullscreen_toggled(on):
 	OS.window_fullscreen = on
+	
+func _on_text_size_value_changed(value):
+	$text_size/preview_b.get_font('normal_font').set_size(value)
+	$text_size/preview_b.get_font('italics_font').set_size(value)
+	var bb = $text_size/preview_b.get_bbcode()
+	$text_size/preview_b.clear()
+	$text_size/preview_b.set_bbcode(bb)

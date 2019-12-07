@@ -84,6 +84,7 @@ enabled_focus_mode = 0
 flat = true
 
 [node name="main_menu" type="Control" parent="."]
+editor/display_folded = true
 visible = false
 margin_top = -15.0093
 margin_right = 40.0

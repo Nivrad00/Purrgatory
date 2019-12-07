@@ -9,6 +9,7 @@ func _ready():
 	$loader.start()
 	$loader.queue_resource(game_path)
 	set_process(true)
+	$options_menu.load_and_apply_options()
 	check_save()
 
 func check_save():

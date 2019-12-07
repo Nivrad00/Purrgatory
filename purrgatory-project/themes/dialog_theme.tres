@@ -3,7 +3,7 @@
 [ext_resource path="res://themes/dialog_font_italics.tres" type="DynamicFont" id=1]
 [ext_resource path="res://themes/dialog_font.tres" type="DynamicFont" id=2]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 1, 1, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -16,6 +16,20 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 corner_detail = 3
 shadow_color = Color( 0, 0, 0, 0 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 3
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id=3]
@@ -33,20 +47,6 @@ corner_detail = 3
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 1, 1, 1, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 3
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 20.0
 bg_color = Color( 1, 1, 1, 1 )
 border_width_left = 1
@@ -67,7 +67,7 @@ default_font = ExtResource( 2 )
 Label/colors/font_color = Color( 0, 0, 0, 1 )
 RichTextLabel/colors/default_color = Color( 0, 0, 0, 1 )
 RichTextLabel/fonts/italics_font = ExtResource( 1 )
-VScrollBar/styles/grabber = SubResource( 2 )
-VScrollBar/styles/grabber_highlight = SubResource( 3 )
-VScrollBar/styles/grabber_pressed = SubResource( 4 )
-VScrollBar/styles/scroll = SubResource( 1 )
+VScrollBar/styles/grabber = SubResource( 1 )
+VScrollBar/styles/grabber_highlight = SubResource( 2 )
+VScrollBar/styles/grabber_pressed = SubResource( 3 )
+VScrollBar/styles/scroll = SubResource( 4 )
