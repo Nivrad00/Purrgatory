@@ -194,16 +194,7 @@ func return_to_main():
 	set_process(true)
 	fade_out = true
 
-func _on_save_pressed():
-	save()
-	$meta_ui/save_confirm.show()
-
-func _on_load_pressed():
-	load_game()
-	$main_audio.play()
-	$meta_ui/load_confirm.show()
-
-func save():
+func save(file):
 	var save_dict = {
 		"state_dict": state,
 		"room": $room.get_current_room(),
@@ -218,16 +209,25 @@ func save():
 		"music": current_audio
 	}
 	var save_game = File.new()
-	save_game.open("user://save1.save", File.WRITE)
+	save_game.open("user://save" + str(file) + ".save", File.WRITE)
 	save_game.store_line(to_json(save_dict))
 	save_game.close()
+	
+	$meta_ui/save_menu.hide()
+	$meta_ui/save_confirm.show()
 
-func load_game():
+func load_game_while_playing(file):
+	load_game(file)
+	$main_audio.play()
+	$meta_ui/load_menu.hide()
+	$meta_ui/load_confirm.show()
+
+func load_game(file):
 	var save_game = File.new()
-	if not save_game.file_exists("user://save1.save"):
+	if not save_game.file_exists("user://save" + str(file) + ".save"):
 		return
 		
-	save_game.open("user://save1.save", File.READ)
+	save_game.open("user://save" + str(file) + ".save", File.READ)
 	var save_dict = parse_json(save_game.get_line())
 	save_game.close()
 	
@@ -246,7 +246,7 @@ func load_game():
 		$ui.show()
 		$room.start_dialog()
 		$ui.update_ui(save_dict["speaker"], save_dict["sprites"], save_dict["text"], save_dict["choices"])
-			
+	
 func reset_state():
 	end_dialog()
 	$ui/name_input.hide()
@@ -271,3 +271,6 @@ func options_changed():
 	if state_handler.has_method('options_changed'):
 		state_handler.options_changed()
 	
+func save_confirmed():
+	$meta_ui/pause_menu.hide()
+	$meta_ui/save_confirm.hide()

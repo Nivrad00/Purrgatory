@@ -10,16 +10,6 @@ func _ready():
 	$loader.queue_resource(game_path)
 	set_process(true)
 	$options_menu.load_and_apply_options()
-	check_save()
-
-func check_save():
-	var save_game = File.new()
-	if save_game.file_exists("user://save1.save"):
-		$main_menu/buttons/continue/x.hide()
-		$main_menu/buttons/continue.disabled = false
-	else:
-		$main_menu/buttons/continue/x.show()
-		$main_menu/buttons/continue.disabled = true
 	
 func finish_loading(node):
 	add_child(node.instance())
@@ -32,16 +22,15 @@ func return_to_main():
 	$game.hide()
 	$main_menu.show()
 	$main_menu/audio.play()
-	check_save()
+
+func load_file(file):
+	$game.load_game(file)
+	fade_out = true
 	
 func _on_click_to_continue_pressed():
 	fade_out_loading = true
 	
 func _on_start_pressed():
-	fade_out = true
-
-func _on_continue_pressed():
-	$game.load_game()
 	fade_out = true
 
 func _on_credits_pressed():
@@ -67,8 +56,11 @@ func _process(delta):
 			$loader.queue_free()
 				
 	if fade_out:
-		var a = $main_menu.get_modulate().a
-		if a == 0:
+		if not $cover.visible:
+			$cover.show()
+		var a = $cover.color.a
+		
+		if a == 1:
 			$delay_timer.start()
 			fade_out = false
 			$main_menu/audio.stop()
@@ -76,13 +68,16 @@ func _process(delta):
 			yield($delay_timer, 'timeout')
 			
 			$main_menu.hide()
-			$main_menu.set_modulate(Color(1, 1, 1, 1))
+			$load_menu.hide()
+			$cover.color = Color(1, 1, 1, 0)
+			$cover.hide()
 			$game.show()
 			$game/main_audio.play()
+			
 		else:
-			a = max(a - 2 * delta, 0)
+			a = min(a + 2 * delta, 1)
 			$main_menu/audio.volume_db = $main_menu/audio.volume_db - 40 * delta
-			$main_menu.set_modulate(Color(1, 1, 1, a))
+			$cover.color = Color(1, 1, 1, a)
 			
 	if fade_out_loading:
 		var a = $loading.get_modulate().a

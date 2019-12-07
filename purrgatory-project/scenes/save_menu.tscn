@@ -1,0 +1,123 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://themes/ui_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/save_menu.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/save.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/save files.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 3 )
+
+[node name="save_menu" type="Control"]
+margin_right = 1280.0
+margin_bottom = 720.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="white2" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="back" type="Button" parent="."]
+editor/display_folded = true
+margin_left = 515.0
+margin_top = 607.676
+margin_right = 765.0
+margin_bottom = 665.676
+focus_mode = 0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="back"]
+position = Vector2( -8.38, -4.88837 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Label" type="Label" parent="back"]
+margin_right = 251.0
+margin_bottom = 60.0
+text = "back"
+align = 1
+valign = 1
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 647.503, 91.4409 )
+texture = ExtResource( 5 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 635.839, 356.69 )
+texture = ExtResource( 6 )
+
+[node name="file0" type="Button" parent="."]
+margin_left = 147.0
+margin_top = 178.0
+margin_right = 442.0
+margin_bottom = 337.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="file1" type="Button" parent="."]
+margin_left = 487.166
+margin_top = 178.0
+margin_right = 782.166
+margin_bottom = 337.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="file2" type="Button" parent="."]
+margin_left = 829.548
+margin_top = 178.0
+margin_right = 1124.55
+margin_bottom = 337.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="file3" type="Button" parent="."]
+margin_left = 149.216
+margin_top = 379.662
+margin_right = 444.216
+margin_bottom = 538.662
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="file4" type="Button" parent="."]
+margin_left = 488.274
+margin_top = 379.662
+margin_right = 783.274
+margin_bottom = 538.662
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="file5" type="Button" parent="."]
+margin_left = 828.44
+margin_top = 377.446
+margin_right = 1123.44
+margin_bottom = 536.446
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+[connection signal="pressed" from="back" to="." method="hide"]
+[connection signal="pressed" from="file0" to="." method="save_file" binds= [ 0 ]]
+[connection signal="pressed" from="file1" to="." method="save_file" binds= [ 1 ]]
+[connection signal="pressed" from="file2" to="." method="save_file" binds= [ 2 ]]
+[connection signal="pressed" from="file3" to="." method="save_file" binds= [ 3 ]]
+[connection signal="pressed" from="file4" to="." method="save_file" binds= [ 4 ]]
+[connection signal="pressed" from="file5" to="." method="save_file" binds= [ 5 ]]

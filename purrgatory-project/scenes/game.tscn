@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scripts/dialog_handler.gd" type="Script" id=2]
@@ -31,6 +31,8 @@
 [ext_resource path="res://assets/fonts/Krub-MediumItalic.ttf" type="DynamicFontData" id=29]
 [ext_resource path="res://assets/fonts/Krub-ExtraLightItalic.ttf" type="DynamicFontData" id=30]
 [ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=31]
+[ext_resource path="res://scenes/save_menu.tscn" type="PackedScene" id=32]
+[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=33]
 
 [sub_resource type="InputEventAction" id=1]
 action = "ui_select"
@@ -88,7 +90,7 @@ font_data = ExtResource( 20 )
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
-default_room = "study"
+default_room = "reception"
 
 [node name="delay_timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -146,6 +148,7 @@ margin_bottom = 720.0
 mouse_filter = 2
 
 [node name="ui" type="Control" parent="."]
+editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 theme = ExtResource( 16 )
@@ -281,6 +284,7 @@ align = 1
 valign = 1
 
 [node name="pause_menu" type="Control" parent="meta_ui"]
+editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -357,6 +361,7 @@ position = Vector2( 125.466, 29.0663 )
 texture = ExtResource( 26 )
 
 [node name="options" type="Button" parent="meta_ui/pause_menu"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
@@ -541,7 +546,6 @@ align = 1
 valign = 1
 
 [node name="save_confirm" type="Control" parent="meta_ui"]
-editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -588,6 +592,13 @@ margin_bottom = 58.0
 text = "back"
 align = 1
 valign = 1
+
+[node name="save_menu" parent="meta_ui" instance=ExtResource( 32 )]
+visible = false
+margin_left = -0.418121
+margin_top = -0.418091
+margin_right = 1279.58
+margin_bottom = 719.582
 
 [node name="load_confirm" type="Control" parent="meta_ui"]
 editor/display_folded = true
@@ -638,6 +649,9 @@ text = "continue"
 align = 1
 valign = 1
 
+[node name="load_menu" parent="meta_ui" instance=ExtResource( 33 )]
+visible = false
+
 [node name="white_cover" type="ColorRect" parent="."]
 visible = false
 anchor_right = 1.0
@@ -653,15 +667,16 @@ bus = "Music"
 [connection signal="pressed" from="ui/name_input/ok_button" to="." method="set_player_name"]
 [connection signal="pressed" from="ui/name_input/ok_button" to="ui/name_input" method="hide"]
 [connection signal="pressed" from="meta_ui/menu_button" to="." method="open_pause_menu"]
-[connection signal="pressed" from="meta_ui/pause_menu/save" to="." method="_on_save_pressed"]
-[connection signal="pressed" from="meta_ui/pause_menu/load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="meta_ui/pause_menu/save" to="meta_ui/save_menu" method="show_custom"]
+[connection signal="pressed" from="meta_ui/pause_menu/load" to="meta_ui/load_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/options" to="meta_ui/options_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/exit" to="meta_ui/exit_confirm" method="show"]
 [connection signal="pressed" from="meta_ui/pause_menu/back" to="meta_ui/pause_menu" method="hide"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
 [connection signal="pressed" from="meta_ui/exit_confirm/yes" to="." method="return_to_main"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
-[connection signal="pressed" from="meta_ui/save_confirm/yes" to="meta_ui/save_confirm" method="hide"]
-[connection signal="pressed" from="meta_ui/save_confirm/yes" to="meta_ui/pause_menu" method="hide"]
-[connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/pause_menu" method="hide"]
+[connection signal="pressed" from="meta_ui/save_confirm/yes" to="." method="save_confirmed"]
+[connection signal="save_file" from="meta_ui/save_menu" to="." method="save"]
 [connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/load_confirm" method="hide"]
+[connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/pause_menu" method="hide"]
+[connection signal="load_file" from="meta_ui/load_menu" to="." method="load_game_while_playing"]

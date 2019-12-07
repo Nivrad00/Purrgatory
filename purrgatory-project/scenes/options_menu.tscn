@@ -80,6 +80,7 @@ align = 1
 valign = 1
 
 [node name="text_size" type="Control" parent="."]
+editor/display_folded = true
 margin_left = 400.0
 margin_top = 95.0708
 margin_right = 440.0
