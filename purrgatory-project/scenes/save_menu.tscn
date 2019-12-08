@@ -62,7 +62,6 @@ position = Vector2( 635.839, 354.69 )
 texture = ExtResource( 6 )
 
 [node name="files" type="Control" parent="."]
-editor/display_folded = true
 margin_left = 635.839
 margin_top = 349.69
 margin_right = 675.839
@@ -83,7 +82,7 @@ margin_left = -136.038
 margin_top = -173.372
 margin_right = 1143.96
 margin_bottom = 546.628
-rect_scale = Vector2( 0.21, 0.21 )
+rect_scale = Vector2( 0.21, 0.208 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -93,7 +92,7 @@ margin_left = 207.246
 margin_top = -175.177
 margin_right = 1487.25
 margin_bottom = 544.823
-rect_scale = Vector2( 0.21, 0.21 )
+rect_scale = Vector2( 0.21, 0.208 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
