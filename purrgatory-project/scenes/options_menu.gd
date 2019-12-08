@@ -19,8 +19,9 @@ var default_options = {
 }
 
 func save_options():
-	# saves options to file whenever the options menu is closed
+	# saves options to file
 	# (the options are applied as soon as the values are changed or the game starts, so no need to apply anything here)
+	# this method is called when the game closes
 	
 	var options_dict = {
 		"fullscreen": $fullscreen/fullscreen.pressed,

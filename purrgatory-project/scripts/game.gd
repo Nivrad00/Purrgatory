@@ -4,6 +4,8 @@ signal return_to_main()
 
 export var default_room = ''
 
+var seen_blocks = []
+
 var state = {
 	'true': true,
 }
@@ -62,17 +64,52 @@ var action_timers = []
 var fade_out = false
 var current_audio = null
 
+var skip = false
+
 onready var room = get_node('content/room')
 onready var ui = get_node('content/ui')
 
 func _ready():
-	randomize()
-	room.change_room(default_room, state, false)
-	change_audio(null)
+	randomize() # seed random
+	room.change_room(default_room, state, false) # load default room
+	change_audio(null) # load default audio (none)
+	
+	# load meowkov chain
 	var f = File.new()
 	f.open("res://scripts/procgen/meowkov.json", File.READ)
 	meowkov_json = JSON.parse(f.get_as_text())
+	f.close()
+	
+	# interrupt the default quit behavior (see _notification())
+	get_tree().set_auto_accept_quit(false)
+	
+	# load seen blocks
+	if f.file_exists("res://save_data/seen_blocks.save"):
+		f.open("res://save_data/seen_blocks.save", File.READ)
+		seen_blocks = parse_json(f.get_line())
+		f.close()
 
+func _notification(what):
+	# when the user quits...
+	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+		# save seen_blocks to file
+		# (that's the only time it needs to be saved, afaik)
+		var f = File.new()
+		f.open("res://save_data/seen_blocks.save", File.WRITE)
+		f.store_line(to_json(seen_blocks))
+		f.close()
+		
+		# also save options
+		# (i'm doing it here instead of when they press "back" in case they quit
+		#   while on the options menu)
+		# (also these paths suck but whatever)
+		if visible:
+			$meta_ui/options_menu.save_options()
+		else:
+			get_node('../options_menu').save_options()
+		
+		get_tree().quit() 
+		
 func _process(delta):
 	if fade_out:
 		var a = $white_cover.color.a
@@ -131,6 +168,16 @@ func start_dialog(label):
 		state[pair[0]] = pair[1]
 	room.update_state(state)
 	
+	# handle skip stuff
+	if seen_blocks.has(block['label']):
+		enable_skip()
+		if skip:
+			skip()
+	else:
+		disable_skip()
+		if skip:
+			turn_off_skip()
+	
 func end_dialog():
 	ui.hide_ui()
 	room.end_dialog()
@@ -143,7 +190,10 @@ func end_dialog():
 #    'next': 150
 # }
 
-func update_dialog(b: int):	
+func update_dialog(b: int):
+	# mark the previous block as seen
+	seen_blocks.append(block['label'])
+	
 	# if there's no choice, get the next block directly
 	if b == -1:
 		block = $dialog_handler.get_block(block['next'], state)
@@ -153,6 +203,8 @@ func update_dialog(b: int):
 		
 	if block == null:
 		end_dialog()
+		if skip:
+			turn_off_skip()
 		room.update_state(state)
 	else:
 		var choices_text = []
@@ -166,6 +218,16 @@ func update_dialog(b: int):
 		for pair in block['states']:
 			state[pair[0]] = pair[1]
 		room.update_state(state)
+		
+		# handle skip stuff
+		if seen_blocks.has(block['label']):
+			enable_skip()
+			if skip:
+				skip()
+		else:
+			disable_skip()
+			if skip:
+				turn_off_skip()
 
 func set_player_name():
 	format_dict['player'] = ui.get_node('name_input/text').get_text().to_lower()
@@ -312,3 +374,32 @@ func options_changed():
 func save_confirmed():
 	$meta_ui/pause_menu.hide()
 	$meta_ui/save_confirm.hide()
+
+func toggle_skip():
+	if ui.get_node('skip_button/x').visible:
+		return
+	if skip:
+		turn_off_skip()
+	else:
+		turn_on_skip()
+
+func turn_off_skip():
+	skip = false
+	ui.get_node('skip_button/box2').set_modulate(Color(1, 1, 1))
+
+func turn_on_skip():
+	skip = true
+	ui.get_node('skip_button/box2').set_modulate(Color(0.9, 0.9, 0.9))
+	skip()
+
+func enable_skip():
+	ui.get_node('skip_button/x').hide()
+
+func disable_skip():
+	ui.get_node('skip_button/x').show()
+	
+func skip():
+	if block['choices'].size() == 0 and (block['states'].size() == 0 or block['states'][0][0] != 'no_skip'):
+		# no_skip is used to prevent it from skipping the name input
+		$skip_timer.start()
+	

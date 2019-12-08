@@ -10,6 +10,7 @@ func update_state(state):
 	
 	if state.get('enable_name_input'):
 		state['enable_name_input'] = false
+		# this is the worst but i don't feel like fixing it
 		get_node('../../../../ui/name_input').show()
 		get_node('../../../../ui/name_input/text').grab_focus()
 		

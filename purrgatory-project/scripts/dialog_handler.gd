@@ -9,7 +9,8 @@ var placeholder_block = {
 	'text': '(text block not found)',
 	'states': [],
 	'next': null,
-	'choices': []
+	'choices': [],
+	'seen': false
 }
 
 func _ready():
@@ -101,7 +102,7 @@ func _ready():
 					var evaluator = EvalEvaluate.new(tree.get_tree())
 					new_array.append(evaluator)
 			block['choice_conditions'] = new_array
-				
+					
 			last_block = block
 		
 func get_block(label, state):
