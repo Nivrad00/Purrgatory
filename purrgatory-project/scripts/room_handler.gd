@@ -6,6 +6,7 @@ var loading_path
 var loading_state
 
 var current_room = null
+onready var game = get_node("../..")
 
 func get_current_room():
 	return current_room.get_name()
@@ -40,18 +41,19 @@ func end_dialog():
 func change_room(label, state, music = true):
 	var new_room = load(room_path + label + '.tscn')
 	if new_room == null:
-		get_parent().start_dialog("room_placeholder")
+		game.start_dialog("room_placeholder")
 		return
 	new_room = new_room.instance()
 	current_room = new_room
 	
-	new_room.connect('start_dialog', get_parent(), 'start_dialog')
-	new_room.connect('change_room', get_parent(), 'change_room')
-	new_room.connect('start_action_timer', get_parent(), 'start_action_timer')
-	new_room.connect('change_audio', get_parent(), 'change_audio')
+	new_room.connect('start_dialog', game, 'start_dialog')
+	new_room.connect('change_room', game, 'change_room')
+	new_room.connect('start_action_timer', game, 'start_action_timer')
+	new_room.connect('change_audio', game, 'change_audio')
 	
 	for child in $room_container.get_children():
 		child.queue_free()
+		yield(get_tree(), 'idle_frame')
 	$room_container.add_child(new_room)
 	new_room.set_name(label)
 	

@@ -29,7 +29,7 @@ func save_options():
 		"text_size": $text_size/slider.value
 	}
 	var options_save = File.new()
-	options_save.open("user://options.save", File.WRITE)
+	options_save.open("res://save_data/options.save", File.WRITE)
 	options_save.store_line(to_json(options_dict))
 	options_save.close()	
 		
@@ -43,8 +43,8 @@ func load_options():
 	var options_save = File.new()
 	var options_dict = default_options
 	
-	if options_save.file_exists("user://options.save"):
-		options_save.open("user://options.save", File.READ)
+	if options_save.file_exists("res://save_data/options.save"):
+		options_save.open("res://save_data/options.save", File.READ)
 		options_dict = parse_json(options_save.get_line())
 		options_save.close()
 		

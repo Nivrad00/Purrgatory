@@ -14,6 +14,8 @@ var choice_y = {
 	4: [45, 115, 185, 255]
 }
 
+onready var game = get_node("../..")
+
 func _ready():
 	hide_ui()
 
@@ -65,7 +67,7 @@ func set_choices(choices):
 	for i in range(num):
 		var choice = load('res://scenes/choice' + String(i) + '.tscn').instance()
 		choice.get_node('text').set_text(choices[i])
-		choice.connect("pressed", get_parent(), "update_dialog", [i])
+		choice.connect("pressed", game, "update_dialog", [i])
 		choice.set_position(Vector2(0, choice_y[num][i]))
 		$choices.add_child(choice)
 

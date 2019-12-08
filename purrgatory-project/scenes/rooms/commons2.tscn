@@ -98,4 +98,3 @@ dialog_label = "tack"
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="state_handler/tack"]
 position = Vector2( -0.377319, -0.463257 )
 polygon = PoolVector2Array( 637.773, 288.043, 664.25, 301.552, 674.517, 281.559, 648.58, 271.833 )
-

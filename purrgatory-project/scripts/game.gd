@@ -62,23 +62,16 @@ var action_timers = []
 var fade_out = false
 var current_audio = null
 
+onready var room = get_node('content/room')
+onready var ui = get_node('content/ui')
+
 func _ready():
 	randomize()
-	$room.change_room(default_room, state, false)
+	room.change_room(default_room, state, false)
 	change_audio(null)
 	var f = File.new()
 	f.open("res://scripts/procgen/meowkov.json", File.READ)
 	meowkov_json = JSON.parse(f.get_as_text())
-	check_save()
-
-func check_save():
-	var save_game = File.new()
-	if save_game.file_exists("user://save1.save"):
-		$meta_ui/pause_menu/load/x.hide()
-		$meta_ui/pause_menu/load.disabled = false
-	else:
-		$meta_ui/pause_menu/load/x.show()
-		$meta_ui/pause_menu/load.disabled = true
 
 func _process(delta):
 	if fade_out:
@@ -93,7 +86,7 @@ func _process(delta):
 			
 			emit_signal('return_to_main')
 			$white_cover.color = Color(1, 1, 1, 0)
-			reset_state()
+			reset_state(true) # reset state and room
 			$meta_ui/pause_menu.hide()
 			$meta_ui/exit_confirm.hide()
 			$white_cover.hide()
@@ -119,12 +112,12 @@ func increment_action_timers():
 func change_room(label):
 	# print(state)
 	increment_action_timers()
-	$room.change_room(label, state)
+	room.change_room(label, state)
 
 func start_dialog(label):
 	block = $dialog_handler.get_block(label, state)
-	$ui.show()
-	$room.start_dialog()
+	ui.show()
+	room.start_dialog()
 	
 	var choices_text = []
 	for choice in block['choices']:
@@ -132,15 +125,15 @@ func start_dialog(label):
 	var text = block['text']
 	if text != null:
 		text = text.format(format_dict)
-	$ui.update_ui(block['speaker'], block['sprites'], text, choices_text)
+	ui.update_ui(block['speaker'], block['sprites'], text, choices_text)
 	
 	for pair in block['states']:
 		state[pair[0]] = pair[1]
-	$room.update_state(state)
+	room.update_state(state)
 	
 func end_dialog():
-	$ui.hide_ui()
-	$room.end_dialog()
+	ui.hide_ui()
+	room.end_dialog()
 	block = null
 
 # block = {
@@ -160,7 +153,7 @@ func update_dialog(b: int):
 		
 	if block == null:
 		end_dialog()
-		$room.update_state(state)
+		room.update_state(state)
 	else:
 		var choices_text = []
 		for choice in block['choices']:
@@ -168,14 +161,14 @@ func update_dialog(b: int):
 		var text = block['text']
 		if text != null:
 			text = text.format(format_dict)
-		$ui.update_ui(block['speaker'], block['sprites'], text, choices_text)
+		ui.update_ui(block['speaker'], block['sprites'], text, choices_text)
 		
 		for pair in block['states']:
 			state[pair[0]] = pair[1]
-		$room.update_state(state)
+		room.update_state(state)
 
 func set_player_name():
-	format_dict['player'] = $ui/name_input/text.get_text().to_lower()
+	format_dict['player'] = ui.get_node('name_input/text').get_text().to_lower()
 
 func change_audio(song, play = true):
 	current_audio = song
@@ -195,24 +188,67 @@ func return_to_main():
 	fade_out = true
 
 func save(file):
+	# get the timestamp
+	var months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
+	var ampm = ['am', 'pm']
+	var datetime = OS.get_datetime()
+	
+	var format = '%s %d, %d - %d:%02d %s'
+	var timestamp = format % [
+		months[datetime['month'] - 1],
+		datetime['day'],
+		datetime['year'],
+		datetime['hour'] % 12,
+		datetime['minute'],
+		ampm[datetime['hour'] / 12]
+	]
+	
+	# make a dict
 	var save_dict = {
 		"state_dict": state,
-		"room": $room.get_current_room(),
+		"room": room.get_current_room(),
 		"block": block,
 		"name_dict": format_dict,
 		"action_timers": action_timers,
-		"sprites": $ui.get_sprites(),
-		"choices": $ui.get_choices(),
-		"text": $ui.get_text(),
-		"speaker": $ui.get_speaker(),
-		"hidden_sprites": $room.get_hidden_sprites(),
-		"music": current_audio
+		"sprites": ui.get_sprites(),
+		"choices": ui.get_choices(),
+		"text": ui.get_text(),
+		"speaker": ui.get_speaker(),
+		"hidden_sprites": room.get_hidden_sprites(),
+		"music": current_audio,
+		"timestamp": timestamp
 	}
+	
+	# save a dict
 	var save_game = File.new()
-	save_game.open("user://save" + str(file) + ".save", File.WRITE)
+	save_game.open("res://save_data/save" + str(file) + ".save", File.WRITE)
 	save_game.store_line(to_json(save_dict))
 	save_game.close()
 	
+	# take a screenshot by moving all the relevant nodes to the "ss" viewport
+	$content.remove_child(room)
+	$content.remove_child(ui)
+	$ss.add_child(room)
+	$ss.add_child(ui)
+	$ss_tex.show()
+	yield(get_tree(), "idle_frame")
+	yield(get_tree(), "idle_frame")
+	yield(get_tree(), "idle_frame")
+	
+	# grab the texture from the "ss" viewport
+	var img = $ss.get_texture().get_data()
+	yield(get_tree(), "idle_frame")
+	yield(get_tree(), "idle_frame")
+	img.save_png("res://save_data/thumb" + str(file) + ".png")
+	
+	# then move the nodes back
+	$ss.remove_child(room)
+	$ss.remove_child(ui)
+	$content.add_child(room)
+	$content.add_child(ui)
+	$ss_tex.hide()
+	
+	# ok done
 	$meta_ui/save_menu.hide()
 	$meta_ui/save_confirm.show()
 
@@ -224,33 +260,35 @@ func load_game_while_playing(file):
 
 func load_game(file):
 	var save_game = File.new()
-	if not save_game.file_exists("user://save" + str(file) + ".save"):
+	if not save_game.file_exists("res://save_data/save" + str(file) + ".save"):
 		return
 		
-	save_game.open("user://save" + str(file) + ".save", File.READ)
+	save_game.open("res://save_data/save" + str(file) + ".save", File.READ)
 	var save_dict = parse_json(save_game.get_line())
 	save_game.close()
 	
-	reset_state()
+	reset_state(false) # reset state, but don't mess with the room
+	# (resetting the room to the default and then immediately changing it to the new room was 
+	#   causing a bug where the defulut room didn't get deleted)
 	state = save_dict["state_dict"]
 	format_dict = save_dict["name_dict"]
 	action_timers = save_dict["action_timers"]
 	block = save_dict["block"]
 	
-	$room.change_room(save_dict["room"], state, false)
+	room.change_room(save_dict["room"], state, false)
 	change_audio(save_dict["music"], false)
-	$room.set_hidden_sprites(save_dict["hidden_sprites"])
-	$room.update_state(state)
+	room.set_hidden_sprites(save_dict["hidden_sprites"])
+	room.update_state(state)
 	
 	if block:
-		$ui.show()
-		$room.start_dialog()
-		$ui.update_ui(save_dict["speaker"], save_dict["sprites"], save_dict["text"], save_dict["choices"])
+		ui.show()
+		room.start_dialog()
+		ui.update_ui(save_dict["speaker"], save_dict["sprites"], save_dict["text"], save_dict["choices"])
 	
-func reset_state():
+func reset_state(reset_room):
 	end_dialog()
-	$ui/name_input.hide()
-	$ui/name_input/text.set_text('')
+	ui.get_node('name_input').hide()
+	ui.get_node('name_input/text').set_text('')
 	state = {
 		'true': true
 	}
@@ -259,15 +297,15 @@ func reset_state():
 		'player_upper': ''
 	}
 	action_timers = []
-	$room.change_room('reception', state, false)
+	if reset_room:
+		room.change_room(default_room, state, false)
 	change_audio(null)
 
 func open_pause_menu():
 	$meta_ui/pause_menu.show()
-	check_save()
 
 func options_changed():
-	var state_handler = $room/room_container.find_node('state_handler', true, false)
+	var state_handler = room.find_node('state_handler', true, false)
 	if state_handler.has_method('options_changed'):
 		state_handler.options_changed()
 	

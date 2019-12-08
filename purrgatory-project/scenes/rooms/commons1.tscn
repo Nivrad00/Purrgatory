@@ -31,6 +31,7 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="ending_sign" parent="state_handler" instance=ExtResource( 4 )]
+editor/display_folded = true
 modulate = Color( 1, 1, 1, 1 )
 margin_left = 945.0
 margin_top = 465.0
