@@ -37,14 +37,12 @@ visible = false
 position = Vector2( 369.758, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
-texture_mode = -1023013864
 
 [node name="Line2D2" type="Line2D" parent="."]
 visible = false
 position = Vector2( 398.949, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
-texture_mode = -1023013864
 
 [node name="back" type="Button" parent="."]
 editor/display_folded = true
@@ -183,6 +181,7 @@ max_value = 1.0
 step = 0.01
 value = 1.0
 scrollable = false
+ticks_on_borders = true
 focus_mode = 0
 
 [node name="sfx_label" type="Label" parent="audio"]
@@ -209,6 +208,7 @@ max_value = 1.0
 step = 0.01
 value = 1.0
 scrollable = false
+ticks_on_borders = true
 focus_mode = 0
 
 [node name="fullscreen" type="Control" parent="."]

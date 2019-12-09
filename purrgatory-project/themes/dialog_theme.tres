@@ -64,6 +64,8 @@ anti_aliasing = false
 
 [resource]
 default_font = ExtResource( 2 )
+GridContainer/constants/hseparation = 20
+GridContainer/constants/vseparation = 15
 Label/colors/font_color = Color( 0, 0, 0, 1 )
 RichTextLabel/colors/default_color = Color( 0, 0, 0, 1 )
 RichTextLabel/fonts/italics_font = ExtResource( 1 )

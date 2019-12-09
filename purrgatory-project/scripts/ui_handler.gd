@@ -31,6 +31,10 @@ func update_ui(speaker, sprites, text, choices):
 	if text != null:
 		set_text(text)
 	set_choices(choices)
+	
+	# if either the speaker or text changes, and there IS a speaker or text, save the current speaker and text to history
+	if (speaker != null or text != null) and (get_speaker() != '' or get_text() != ''):
+		game.add_to_history([get_speaker(), get_text()])
 
 func set_speaker(speaker):
 	$text_box/speaker.text = speaker

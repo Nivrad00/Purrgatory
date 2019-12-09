@@ -9,7 +9,7 @@
 [ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=8]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=1]
 resource_name = "Fadein"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -24,7 +24,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=2]
 resource_name = "Fadein"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -39,7 +39,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 resource_name = "Fadein"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -54,7 +54,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=4]
 resource_name = "Fadein"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -69,22 +69,22 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=5]
 size = 22
 use_filter = true
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=6]
 size = 22
 use_filter = true
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=7]
 size = 22
 use_filter = true
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=8]
 size = 22
 use_filter = true
 font_data = ExtResource( 8 )
@@ -92,6 +92,20 @@ font_data = ExtResource( 8 )
 [sub_resource type="StyleBoxEmpty" id=9]
 
 [sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="Animation" id=11]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=12]
 tracks/0/type = "value"
@@ -108,20 +122,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=13]
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=14]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
@@ -180,7 +180,7 @@ text = "you liked some things about yourself."
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/hc/vc/t0"]
-anims/Fadein = SubResource( 5 )
+anims/Fadein = SubResource( 1 )
 
 [node name="c1" type="RichTextLabel" parent="state_handler/hc/vc"]
 editor/display_folded = true
@@ -196,7 +196,7 @@ text = "you were "
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/hc/vc/c1"]
-anims/Fadein = SubResource( 6 )
+anims/Fadein = SubResource( 2 )
 
 [node name="choice_container" type="Control" parent="state_handler/hc/vc/c1"]
 margin_left = 103.0
@@ -369,7 +369,7 @@ text = "you think back to your proudest moment."
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/hc/vc/t2"]
-anims/Fadein = SubResource( 7 )
+anims/Fadein = SubResource( 3 )
 
 [node name="c3" type="RichTextLabel" parent="state_handler/hc/vc"]
 editor/display_folded = true
@@ -385,7 +385,7 @@ text = "it was when you "
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/hc/vc/c3"]
-anims/Fadein = SubResource( 8 )
+anims/Fadein = SubResource( 4 )
 
 [node name="choice_container" type="Control" parent="state_handler/hc/vc/c3"]
 margin_left = 182.0
@@ -547,15 +547,16 @@ flat = true
 script = ExtResource( 4 )
 
 [node name="t4" type="RichTextLabel" parent="state_handler/hc/vc"]
+editor/display_folded = true
 margin_top = 458.0
 margin_right = 800.0
 margin_bottom = 518.0
 rect_min_size = Vector2( 0, 60 )
 mouse_filter = 1
-custom_fonts/bold_italics_font = SubResource( 1 )
-custom_fonts/italics_font = SubResource( 2 )
-custom_fonts/bold_font = SubResource( 3 )
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/bold_italics_font = SubResource( 5 )
+custom_fonts/italics_font = SubResource( 6 )
+custom_fonts/bold_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
 scroll_active = false
@@ -658,10 +659,10 @@ text = "good riddance."
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/hc/vc/t4"]
-anims/Fadein = SubResource( 12 )
+anims/Fadein = SubResource( 11 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/hc/vc"]
-anims/Fadein = SubResource( 13 )
+anims/Fadein = SubResource( 12 )
 
 [node name="next_button" type="Button" parent="state_handler"]
 margin_left = 611.0
@@ -685,7 +686,7 @@ text = "next"
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/next_button"]
-anims/Fadein = SubResource( 14 )
+anims/Fadein = SubResource( 13 )
 
 [node name="next_cover" type="Button" parent="state_handler"]
 visible = false

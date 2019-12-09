@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://ss.tscn" type="PackedScene" id=2]
@@ -34,6 +34,8 @@
 [ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=32]
 [ext_resource path="res://scenes/save_menu.tscn" type="PackedScene" id=33]
 [ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=34]
+[ext_resource path="res://scripts/history.gd" type="Script" id=35]
+[ext_resource path="res://assets/ui/history.png" type="Texture" id=36]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("ss")
@@ -169,7 +171,6 @@ margin_bottom = 720.0
 mouse_filter = 2
 
 [node name="ui" type="Control" parent="content"]
-editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 theme = ExtResource( 17 )
@@ -304,16 +305,42 @@ text = "skip"
 align = 1
 valign = 1
 
+[node name="history_button" type="Button" parent="content/ui"]
+editor/display_folded = true
+margin_left = 996.904
+margin_top = 431.47
+margin_right = 1072.9
+margin_bottom = 457.47
+focus_mode = 0
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+enabled_focus_mode = 0
+flat = true
+
+[node name="box2" type="Sprite" parent="content/ui/history_button"]
+position = Vector2( 2.2108, 1.67036 )
+texture = ExtResource( 23 )
+centered = false
+offset = Vector2( -8.3689, -6.12292 )
+
+[node name="Label" type="Label" parent="content/ui/history_button"]
+margin_top = 1.0
+margin_right = 77.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 10 )
+text = "history"
+align = 1
+valign = 1
+
 [node name="meta_ui" type="Control" parent="."]
-margin_left = 0.418121
+margin_left = -0.634491
 margin_top = 0.418091
-margin_right = 1280.42
+margin_right = 1279.37
 margin_bottom = 720.418
 mouse_filter = 2
 theme = ExtResource( 25 )
 
 [node name="menu_button" type="Button" parent="meta_ui"]
-editor/display_folded = true
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 86.0
@@ -704,6 +731,63 @@ valign = 1
 [node name="load_menu" parent="meta_ui" instance=ExtResource( 34 )]
 visible = false
 
+[node name="history" type="Control" parent="meta_ui"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_pivot_offset = Vector2( -460, 150 )
+script = ExtResource( 35 )
+
+[node name="bg" type="Sprite" parent="meta_ui/history"]
+texture = ExtResource( 36 )
+centered = false
+
+[node name="back" type="Button" parent="meta_ui/history"]
+editor/display_folded = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 515.0
+margin_top = 618.0
+margin_right = -515.0
+margin_bottom = -43.0
+rect_pivot_offset = Vector2( 311.063, -221.429 )
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="box2" type="Sprite" parent="meta_ui/history/back"]
+position = Vector2( 0.366638, 1.67036 )
+texture = ExtResource( 27 )
+centered = false
+offset = Vector2( -8.3689, -6.12292 )
+flip_h = true
+flip_v = true
+
+[node name="Label" type="Label" parent="meta_ui/history/back"]
+margin_left = 1.0
+margin_top = 2.0
+margin_right = 249.0
+margin_bottom = 58.0
+text = "back"
+align = 1
+valign = 1
+
+[node name="container" type="ScrollContainer" parent="meta_ui/history"]
+margin_left = 186.0
+margin_top = 51.0
+margin_right = 1096.0
+margin_bottom = 557.0
+mouse_filter = 1
+theme = ExtResource( 17 )
+
+[node name="grid" type="GridContainer" parent="meta_ui/history/container"]
+mouse_filter = 2
+theme = ExtResource( 17 )
+columns = 2
+
 [node name="white_cover" type="ColorRect" parent="."]
 visible = false
 anchor_right = 1.0
@@ -716,10 +800,11 @@ color = Color( 1, 1, 1, 0 )
 bus = "Music"
 [connection signal="timeout" from="skip_timer" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="content/ui/text_box" to="." method="update_dialog" binds= [ -1 ]]
-[connection signal="pressed" from="content/ui/name_input/ok_button" to="content/ui/name_input" method="hide"]
 [connection signal="pressed" from="content/ui/name_input/ok_button" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="content/ui/name_input/ok_button" to="." method="set_player_name"]
+[connection signal="pressed" from="content/ui/name_input/ok_button" to="content/ui/name_input" method="hide"]
 [connection signal="pressed" from="content/ui/skip_button" to="." method="toggle_skip"]
+[connection signal="pressed" from="content/ui/history_button" to="." method="show_history"]
 [connection signal="pressed" from="meta_ui/menu_button" to="." method="open_pause_menu"]
 [connection signal="pressed" from="meta_ui/pause_menu/save" to="meta_ui/save_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/load" to="meta_ui/load_menu" method="show_custom"]
@@ -734,3 +819,4 @@ bus = "Music"
 [connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/pause_menu" method="hide"]
 [connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/load_confirm" method="hide"]
 [connection signal="load_file" from="meta_ui/load_menu" to="." method="load_game_while_playing"]
+[connection signal="pressed" from="meta_ui/history/back" to="meta_ui/history" method="hide"]

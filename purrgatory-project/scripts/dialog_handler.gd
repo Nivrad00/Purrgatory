@@ -9,8 +9,7 @@ var placeholder_block = {
 	'text': '(text block not found)',
 	'states': [],
 	'next': null,
-	'choices': [],
-	'seen': false
+	'choices': []
 }
 
 func _ready():

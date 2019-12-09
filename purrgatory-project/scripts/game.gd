@@ -4,8 +4,6 @@ signal return_to_main()
 
 export var default_room = ''
 
-var seen_blocks = []
-
 var state = {
 	'true': true,
 }
@@ -63,8 +61,12 @@ var meowkov_json = null
 var action_timers = []
 var fade_out = false
 var current_audio = null
-
 var skip = false
+
+var seen_blocks = []
+
+var history = []
+var max_history = 50
 
 onready var room = get_node('content/room')
 onready var ui = get_node('content/ui')
@@ -205,6 +207,7 @@ func update_dialog(b: int):
 		end_dialog()
 		if skip:
 			turn_off_skip()
+		add_to_history(null)
 		room.update_state(state)
 	else:
 		var choices_text = []
@@ -402,4 +405,15 @@ func skip():
 	if block['choices'].size() == 0 and (block['states'].size() == 0 or block['states'][0][0] != 'no_skip'):
 		# no_skip is used to prevent it from skipping the name input
 		$skip_timer.start()
-	
+
+func show_history():
+	$meta_ui/history.show_history(history)
+
+# stuff is added to history when
+# a) the text is updated (in the ui node), or 
+# b) dialog ends (in the end_dialog function)
+
+func add_to_history(thing):
+	history.append(thing)
+	while history.size() > max_history:
+		history.pop_front()
