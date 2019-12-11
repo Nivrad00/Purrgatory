@@ -65,9 +65,6 @@ var skip = false
 
 var seen_blocks = []
 
-var history = []
-var max_history = 50
-
 onready var room = get_node('content/room')
 onready var ui = get_node('content/ui')
 
@@ -76,11 +73,11 @@ func _ready():
 	room.change_room(default_room, state, false) # load default room
 	change_audio(null) # load default audio (none)
 	
-	# load meowkov chain
+	# load meowkov chain (disabled for now, don't click on any books!)
 	var f = File.new()
-	f.open("res://scripts/procgen/meowkov.json", File.READ)
-	meowkov_json = JSON.parse(f.get_as_text())
-	f.close()
+	# f.open("res://scripts/procgen/meowkov.json", File.READ)
+	# meowkov_json = JSON.parse(f.get_as_text())
+	# f.close()
 	
 	# interrupt the default quit behavior (see _notification())
 	get_tree().set_auto_accept_quit(false)
@@ -207,7 +204,7 @@ func update_dialog(b: int):
 		end_dialog()
 		if skip:
 			turn_off_skip()
-		add_to_history(null)
+		$meta_ui/history.add_space()
 		room.update_state(state)
 	else:
 		var choices_text = []
@@ -281,7 +278,8 @@ func save(file):
 		"speaker": ui.get_speaker(),
 		"hidden_sprites": room.get_hidden_sprites(),
 		"music": current_audio,
-		"timestamp": timestamp
+		"timestamp": timestamp,
+		"history": $meta_ui/history.history
 	}
 	
 	# save a dict
@@ -350,6 +348,11 @@ func load_game(file):
 		room.start_dialog()
 		ui.update_ui(save_dict["speaker"], save_dict["sprites"], save_dict["text"], save_dict["choices"])
 	
+	# wait until the ui is done updating so it doesn't interfere with the history
+	yield(get_tree(), 'idle_frame')
+	
+	$meta_ui/history.load_history(save_dict["history"])
+	
 func reset_state(reset_room):
 	end_dialog()
 	ui.get_node('name_input').hide()
@@ -405,15 +408,3 @@ func skip():
 	if block['choices'].size() == 0 and (block['states'].size() == 0 or block['states'][0][0] != 'no_skip'):
 		# no_skip is used to prevent it from skipping the name input
 		$skip_timer.start()
-
-func show_history():
-	$meta_ui/history.show_history(history)
-
-# stuff is added to history when
-# a) the text is updated (in the ui node), or 
-# b) dialog ends (in the end_dialog function)
-
-func add_to_history(thing):
-	history.append(thing)
-	while history.size() > max_history:
-		history.pop_front()

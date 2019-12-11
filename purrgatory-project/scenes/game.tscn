@@ -341,6 +341,7 @@ mouse_filter = 2
 theme = ExtResource( 25 )
 
 [node name="menu_button" type="Button" parent="meta_ui"]
+editor/display_folded = true
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 86.0
@@ -732,7 +733,7 @@ valign = 1
 visible = false
 
 [node name="history" type="Control" parent="meta_ui"]
-visible = false
+editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 rect_pivot_offset = Vector2( -460, 150 )
@@ -780,7 +781,6 @@ margin_left = 186.0
 margin_top = 51.0
 margin_right = 1096.0
 margin_bottom = 557.0
-mouse_filter = 1
 theme = ExtResource( 17 )
 
 [node name="grid" type="GridContainer" parent="meta_ui/history/container"]
@@ -800,23 +800,26 @@ color = Color( 1, 1, 1, 0 )
 bus = "Music"
 [connection signal="timeout" from="skip_timer" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="content/ui/text_box" to="." method="update_dialog" binds= [ -1 ]]
+[connection signal="pressed" from="content/ui/name_input/ok_button" to="content/ui/name_input" method="hide"]
 [connection signal="pressed" from="content/ui/name_input/ok_button" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="content/ui/name_input/ok_button" to="." method="set_player_name"]
-[connection signal="pressed" from="content/ui/name_input/ok_button" to="content/ui/name_input" method="hide"]
 [connection signal="pressed" from="content/ui/skip_button" to="." method="toggle_skip"]
-[connection signal="pressed" from="content/ui/history_button" to="." method="show_history"]
+[connection signal="pressed" from="content/ui/history_button" to="meta_ui/history" method="show_custom"]
+[connection signal="pressed" from="content/ui/history_button" to="." method="turn_off_skip"]
+[connection signal="pressed" from="meta_ui/menu_button" to="." method="turn_off_skip"]
 [connection signal="pressed" from="meta_ui/menu_button" to="." method="open_pause_menu"]
 [connection signal="pressed" from="meta_ui/pause_menu/save" to="meta_ui/save_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/load" to="meta_ui/load_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/options" to="meta_ui/options_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/exit" to="meta_ui/exit_confirm" method="show"]
 [connection signal="pressed" from="meta_ui/pause_menu/back" to="meta_ui/pause_menu" method="hide"]
+[connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
 [connection signal="pressed" from="meta_ui/exit_confirm/yes" to="." method="return_to_main"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
 [connection signal="pressed" from="meta_ui/save_confirm/yes" to="." method="save_confirmed"]
 [connection signal="save_file" from="meta_ui/save_menu" to="." method="save"]
-[connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/pause_menu" method="hide"]
 [connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/load_confirm" method="hide"]
+[connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/pause_menu" method="hide"]
 [connection signal="load_file" from="meta_ui/load_menu" to="." method="load_game_while_playing"]
-[connection signal="pressed" from="meta_ui/history/back" to="meta_ui/history" method="hide"]
+[connection signal="pressed" from="meta_ui/history/back" to="meta_ui/history" method="hide_custom"]
