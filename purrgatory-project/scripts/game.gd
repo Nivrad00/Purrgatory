@@ -75,9 +75,9 @@ func _ready():
 	
 	# load meowkov chain (disabled for now, don't click on any books!)
 	var f = File.new()
-	# f.open("res://scripts/procgen/meowkov.json", File.READ)
-	# meowkov_json = JSON.parse(f.get_as_text())
-	# f.close()
+	f.open("res://scripts/procgen/meowkov.json", File.READ)
+	meowkov_json = JSON.parse(f.get_as_text())
+	f.close()
 	
 	# interrupt the default quit behavior (see _notification())
 	get_tree().set_auto_accept_quit(false)
@@ -153,6 +153,7 @@ func change_room(label):
 func start_dialog(label):
 	block = $dialog_handler.get_block(label, state)
 	ui.show()
+	$meta_ui/history_button2.hide()
 	room.start_dialog()
 	
 	var choices_text = []
@@ -164,6 +165,7 @@ func start_dialog(label):
 	ui.update_ui(block['speaker'], block['sprites'], text, choices_text)
 	
 	for pair in block['states']:
+		check_inv_state(pair)
 		state[pair[0]] = pair[1]
 	room.update_state(state)
 	
@@ -179,6 +181,7 @@ func start_dialog(label):
 	
 func end_dialog():
 	ui.hide_ui()
+	$meta_ui/history_button2.show()
 	room.end_dialog()
 	block = null
 
@@ -216,6 +219,7 @@ func update_dialog(b: int):
 		ui.update_ui(block['speaker'], block['sprites'], text, choices_text)
 		
 		for pair in block['states']:
+			check_inv_state(pair)
 			state[pair[0]] = pair[1]
 		room.update_state(state)
 		
@@ -279,7 +283,8 @@ func save(file):
 		"hidden_sprites": room.get_hidden_sprites(),
 		"music": current_audio,
 		"timestamp": timestamp,
-		"history": $meta_ui/history.history
+		"history": $meta_ui/history.history,
+		"inventory": $meta_ui/dropdown.get_inv_list()
 	}
 	
 	# save a dict
@@ -345,8 +350,11 @@ func load_game(file):
 	
 	if block:
 		ui.show()
+		$meta_ui/history_button2.hide()
 		room.start_dialog()
 		ui.update_ui(save_dict["speaker"], save_dict["sprites"], save_dict["text"], save_dict["choices"])
+	
+	$meta_ui/dropdown.load_inv(save_dict["inventory"])
 	
 	# wait until the ui is done updating so it doesn't interfere with the history
 	yield(get_tree(), 'idle_frame')
@@ -408,3 +416,16 @@ func skip():
 	if block['choices'].size() == 0 and (block['states'].size() == 0 or block['states'][0][0] != 'no_skip'):
 		# no_skip is used to prevent it from skipping the name input
 		$skip_timer.start()
+
+# examine an item from the inventory
+func examine_item(_name):
+	if not ui.is_visible():
+		start_dialog('examine_' + _name)
+	
+func check_inv_state(pair):
+	if pair[0].substr(0,  5) == '_inv_':
+		if pair[1]:
+			$meta_ui/dropdown.add_to_inv(pair[0].substr(5, len(pair[0])))
+		else:
+			$meta_ui/dropdown.remove_from_inv(pair[0].substr(5, len(pair[0])))
+			

@@ -260,7 +260,7 @@ var raw_blocks = [
 ["","numa","","um, please don't tell anyone about this","","","","",""],
 ["","you","","my lips are sealed.","","","","",""],
 ["","numa","","can i have the screwdriver please","","","","",""],
-["","you","","here","","","","",""],
+["","you","","here",[['_inv_screwdriver', false]],"","","",""],
 ["","_none","","numa takes the screwdriver and hurries down the stairs.","","","null","",""],
 ["numa_follow_up","you","","um","numa_followed_up","","","",""],
 ["","","","hey","","","","",""],

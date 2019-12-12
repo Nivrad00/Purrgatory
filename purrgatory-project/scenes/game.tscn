@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://ss.tscn" type="PackedScene" id=2]
@@ -6,36 +6,39 @@
 [ext_resource path="res://scripts/dialog/reception_dialog.gd" type="Script" id=4]
 [ext_resource path="res://scripts/dialog/oliver_kyungsoon_intro.gd" type="Script" id=5]
 [ext_resource path="res://scripts/dialog/misc_objects.gd" type="Script" id=6]
-[ext_resource path="res://scripts/dialog/kyungsoon.gd" type="Script" id=7]
-[ext_resource path="res://scripts/dialog/oliver.gd" type="Script" id=8]
-[ext_resource path="res://scripts/dialog/numa.gd" type="Script" id=9]
-[ext_resource path="res://scripts/dialog/flowers.gd" type="Script" id=10]
-[ext_resource path="res://scripts/dialog/elijah.gd" type="Script" id=11]
-[ext_resource path="res://scripts/dialog/sean.gd" type="Script" id=12]
-[ext_resource path="res://scripts/dialog/tori.gd" type="Script" id=13]
-[ext_resource path="res://scripts/dialog/natalie.gd" type="Script" id=14]
-[ext_resource path="res://scripts/dialog/ttt.gd" type="Script" id=15]
-[ext_resource path="res://scripts/room_handler.gd" type="Script" id=16]
-[ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=17]
-[ext_resource path="res://scripts/ui_handler.gd" type="Script" id=18]
-[ext_resource path="res://assets/ui/text_box.png" type="Texture" id=19]
-[ext_resource path="res://assets/ui/choice2.png" type="Texture" id=20]
-[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=21]
-[ext_resource path="res://assets/ui/ok_button.png" type="Texture" id=22]
-[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=23]
-[ext_resource path="res://assets/ui/small_menu_x.png" type="Texture" id=24]
-[ext_resource path="res://themes/ui_theme.tres" type="Theme" id=25]
-[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=26]
-[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=27]
-[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=28]
-[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=29]
-[ext_resource path="res://assets/fonts/Krub-MediumItalic.ttf" type="DynamicFontData" id=30]
-[ext_resource path="res://assets/fonts/Krub-ExtraLightItalic.ttf" type="DynamicFontData" id=31]
-[ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=32]
-[ext_resource path="res://scenes/save_menu.tscn" type="PackedScene" id=33]
-[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=34]
-[ext_resource path="res://scripts/history.gd" type="Script" id=35]
-[ext_resource path="res://assets/ui/history.png" type="Texture" id=36]
+[ext_resource path="res://scripts/dialog/inventory.gd" type="Script" id=7]
+[ext_resource path="res://scripts/dialog/kyungsoon.gd" type="Script" id=8]
+[ext_resource path="res://scripts/dialog/oliver.gd" type="Script" id=9]
+[ext_resource path="res://scripts/dialog/numa.gd" type="Script" id=10]
+[ext_resource path="res://scripts/dialog/flowers.gd" type="Script" id=11]
+[ext_resource path="res://scripts/dialog/elijah.gd" type="Script" id=12]
+[ext_resource path="res://scripts/dialog/sean.gd" type="Script" id=13]
+[ext_resource path="res://scripts/dialog/tori.gd" type="Script" id=14]
+[ext_resource path="res://scripts/dialog/natalie.gd" type="Script" id=15]
+[ext_resource path="res://scripts/dialog/ttt.gd" type="Script" id=16]
+[ext_resource path="res://scripts/room_handler.gd" type="Script" id=17]
+[ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=18]
+[ext_resource path="res://scripts/ui_handler.gd" type="Script" id=19]
+[ext_resource path="res://assets/ui/text_box.png" type="Texture" id=20]
+[ext_resource path="res://assets/ui/choice2.png" type="Texture" id=21]
+[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=22]
+[ext_resource path="res://assets/ui/ok_button.png" type="Texture" id=23]
+[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=24]
+[ext_resource path="res://assets/ui/small_menu_x.png" type="Texture" id=25]
+[ext_resource path="res://themes/ui_theme.tres" type="Theme" id=26]
+[ext_resource path="res://scripts/dropdown.gd" type="Script" id=27]
+[ext_resource path="res://assets/ui/dropdown_box.png" type="Texture" id=28]
+[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=29]
+[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=30]
+[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=31]
+[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=32]
+[ext_resource path="res://assets/fonts/Krub-MediumItalic.ttf" type="DynamicFontData" id=33]
+[ext_resource path="res://assets/fonts/Krub-ExtraLightItalic.ttf" type="DynamicFontData" id=34]
+[ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=35]
+[ext_resource path="res://scenes/save_menu.tscn" type="PackedScene" id=36]
+[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=37]
+[ext_resource path="res://scripts/history.gd" type="Script" id=38]
+[ext_resource path="res://assets/ui/history.png" type="Texture" id=39]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("ss")
@@ -49,7 +52,7 @@ shortcut = SubResource( 2 )
 [sub_resource type="StyleBoxEmpty" id=4]
 
 [sub_resource type="StyleBoxTexture" id=5]
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 region_rect = Rect2( 0, 0, 552, 83 )
 margin_left = 40.0
 margin_right = 40.0
@@ -58,7 +61,7 @@ margin_bottom = 12.0
 
 [sub_resource type="DynamicFont" id=6]
 size = 28
-font_data = ExtResource( 21 )
+font_data = ExtResource( 22 )
 
 [sub_resource type="InputEventAction" id=7]
 action = "ui_enter"
@@ -68,31 +71,31 @@ shortcut = SubResource( 7 )
 
 [sub_resource type="DynamicFont" id=9]
 size = 10
-font_data = ExtResource( 21 )
+font_data = ExtResource( 22 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 18
 use_filter = true
-font_data = ExtResource( 21 )
+font_data = ExtResource( 22 )
 
 [sub_resource type="DynamicFont" id=11]
 size = 22
 use_filter = true
-font_data = ExtResource( 30 )
+font_data = ExtResource( 33 )
 
 [sub_resource type="DynamicFont" id=12]
 size = 22
-font_data = ExtResource( 31 )
+font_data = ExtResource( 34 )
 
 [sub_resource type="DynamicFont" id=13]
 size = 22
 use_filter = true
-font_data = ExtResource( 32 )
+font_data = ExtResource( 35 )
 
 [sub_resource type="DynamicFont" id=14]
 size = 22
 use_filter = true
-font_data = ExtResource( 21 )
+font_data = ExtResource( 22 )
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
@@ -122,35 +125,38 @@ script = ExtResource( 4 )
 [node name="oliver_kyungsoon_intro" type="Node" parent="dialog_handler"]
 script = ExtResource( 5 )
 
-[node name="misc_objects" type="Node" parent="dialog_handler"]
+[node name="objects" type="Node" parent="dialog_handler"]
 script = ExtResource( 6 )
 
-[node name="kyungsoon" type="Node" parent="dialog_handler"]
+[node name="inventory" type="Node" parent="dialog_handler"]
 script = ExtResource( 7 )
 
-[node name="oliver" type="Node" parent="dialog_handler"]
+[node name="kyungsoon" type="Node" parent="dialog_handler"]
 script = ExtResource( 8 )
 
-[node name="numa" type="Node" parent="dialog_handler"]
+[node name="oliver" type="Node" parent="dialog_handler"]
 script = ExtResource( 9 )
 
-[node name="flowers" type="Node" parent="dialog_handler"]
+[node name="numa" type="Node" parent="dialog_handler"]
 script = ExtResource( 10 )
 
-[node name="elijah" type="Node" parent="dialog_handler"]
+[node name="flowers" type="Node" parent="dialog_handler"]
 script = ExtResource( 11 )
 
-[node name="sean" type="Node" parent="dialog_handler"]
+[node name="elijah" type="Node" parent="dialog_handler"]
 script = ExtResource( 12 )
 
-[node name="tori" type="Node" parent="dialog_handler"]
+[node name="sean" type="Node" parent="dialog_handler"]
 script = ExtResource( 13 )
 
-[node name="natalie" type="Node" parent="dialog_handler"]
+[node name="tori" type="Node" parent="dialog_handler"]
 script = ExtResource( 14 )
 
-[node name="ttt" type="Node" parent="dialog_handler"]
+[node name="natalie" type="Node" parent="dialog_handler"]
 script = ExtResource( 15 )
+
+[node name="ttt" type="Node" parent="dialog_handler"]
+script = ExtResource( 16 )
 
 [node name="content" type="Control" parent="."]
 margin_right = 1280.0
@@ -159,7 +165,7 @@ mouse_filter = 2
 
 [node name="room" type="Control" parent="content"]
 editor/display_folded = true
-script = ExtResource( 16 )
+script = ExtResource( 17 )
 
 [node name="room_container" type="Control" parent="content/room"]
 anchor_right = 1.0
@@ -171,10 +177,11 @@ margin_bottom = 720.0
 mouse_filter = 2
 
 [node name="ui" type="Control" parent="content"]
+editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
-theme = ExtResource( 17 )
-script = ExtResource( 18 )
+theme = ExtResource( 18 )
+script = ExtResource( 19 )
 
 [node name="sprites" type="Control" parent="content/ui"]
 
@@ -200,7 +207,7 @@ flat = true
 
 [node name="box" type="Sprite" parent="content/ui/text_box"]
 position = Vector2( 20, 10 )
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -228,9 +235,9 @@ editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 288.421
+margin_left = 288.0
 margin_top = 199.0
-margin_right = -311.579
+margin_right = -312.0
 margin_bottom = -436.0
 
 [node name="mask" type="Control" parent="content/ui/name_input"]
@@ -268,7 +275,7 @@ focus_mode = 0
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
 shortcut = SubResource( 8 )
-icon = ExtResource( 22 )
+icon = ExtResource( 23 )
 flat = true
 
 [node name="skip_button" type="Button" parent="content/ui"]
@@ -285,14 +292,14 @@ flat = true
 
 [node name="box2" type="Sprite" parent="content/ui/skip_button"]
 position = Vector2( 2.2108, 1.67036 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
 [node name="x" type="Sprite" parent="content/ui/skip_button"]
 visible = false
 position = Vector2( 2.2108, 1.67036 )
-texture = ExtResource( 24 )
+texture = ExtResource( 25 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -319,7 +326,7 @@ flat = true
 
 [node name="box2" type="Sprite" parent="content/ui/history_button"]
 position = Vector2( 2.2108, 1.67036 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -338,23 +345,25 @@ margin_top = 0.418091
 margin_right = 1279.37
 margin_bottom = 720.418
 mouse_filter = 2
-theme = ExtResource( 25 )
+theme = ExtResource( 26 )
 
 [node name="menu_button" type="Button" parent="meta_ui"]
-editor/display_folded = true
-margin_left = 10.0
+margin_left = 27.3198
 margin_top = 10.0
-margin_right = 86.0
+margin_right = 103.32
 margin_bottom = 36.0
 focus_mode = 0
 custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 enabled_focus_mode = 0
 flat = true
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="box2" type="Sprite" parent="meta_ui/menu_button"]
 position = Vector2( 2.2108, 1.67036 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -364,6 +373,114 @@ margin_right = 77.0
 margin_bottom = 27.0
 custom_fonts/font = SubResource( 10 )
 text = "menu"
+align = 1
+valign = 1
+
+[node name="dropdown" type="Control" parent="meta_ui"]
+margin_left = 146.458
+margin_top = -284.152
+margin_right = 1263.46
+margin_bottom = -5.0
+script = ExtResource( 27 )
+
+[node name="dropdown_box" type="Sprite" parent="meta_ui/dropdown"]
+position = Vector2( -23.9236, 0 )
+texture = ExtResource( 28 )
+centered = false
+
+[node name="inv_container" type="HBoxContainer" parent="meta_ui/dropdown"]
+margin_left = 15.0
+margin_top = 177.097
+margin_right = 1105.0
+margin_bottom = 267.097
+
+[node name="notes_button" type="Button" parent="meta_ui"]
+editor/display_folded = true
+margin_left = 1083.6
+margin_top = 11.24
+margin_right = 1159.61
+margin_bottom = 37.24
+focus_mode = 0
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="box2" type="Sprite" parent="meta_ui/notes_button"]
+position = Vector2( 2.2108, 1.67036 )
+texture = ExtResource( 24 )
+centered = false
+offset = Vector2( -8.3689, -6.12292 )
+
+[node name="Label" type="Label" parent="meta_ui/notes_button"]
+margin_top = 1.0
+margin_right = 77.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 10 )
+text = "notes"
+align = 1
+valign = 1
+
+[node name="items_button" type="Button" parent="meta_ui"]
+editor/display_folded = true
+margin_left = 1174.23
+margin_top = 11.24
+margin_right = 1250.23
+margin_bottom = 37.24
+focus_mode = 0
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="box2" type="Sprite" parent="meta_ui/items_button"]
+position = Vector2( 2.2108, 1.67036 )
+texture = ExtResource( 24 )
+centered = false
+offset = Vector2( -8.3689, -6.12292 )
+
+[node name="Label" type="Label" parent="meta_ui/items_button"]
+margin_top = 1.0
+margin_right = 77.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 10 )
+text = "items"
+align = 1
+valign = 1
+
+[node name="history_button2" type="Button" parent="meta_ui"]
+editor/display_folded = true
+margin_left = 1175.68
+margin_top = 684.317
+margin_right = 1251.68
+margin_bottom = 710.317
+focus_mode = 0
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="box2" type="Sprite" parent="meta_ui/history_button2"]
+position = Vector2( 2.2108, 1.67036 )
+texture = ExtResource( 24 )
+centered = false
+offset = Vector2( -8.3689, -6.12292 )
+
+[node name="Label" type="Label" parent="meta_ui/history_button2"]
+margin_top = 1.0
+margin_right = 77.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 10 )
+text = "history"
 align = 1
 valign = 1
 
@@ -396,7 +513,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/save"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 26 )
+texture = ExtResource( 29 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -426,7 +543,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/load"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 27 )
+texture = ExtResource( 30 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -457,7 +574,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/options"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 28 )
+texture = ExtResource( 31 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
@@ -489,7 +606,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/exit"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 26 )
+texture = ExtResource( 29 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
@@ -521,7 +638,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/back"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 27 )
+texture = ExtResource( 30 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
@@ -536,7 +653,7 @@ text = "back"
 align = 1
 valign = 1
 
-[node name="options_menu" parent="meta_ui" instance=ExtResource( 29 )]
+[node name="options_menu" parent="meta_ui" instance=ExtResource( 32 )]
 visible = false
 
 [node name="exit_confirm" type="Control" parent="meta_ui"]
@@ -582,7 +699,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/exit_confirm/yes"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 26 )
+texture = ExtResource( 29 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -611,7 +728,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/exit_confirm/no"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 27 )
+texture = ExtResource( 30 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -660,7 +777,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/save_confirm/yes"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 26 )
+texture = ExtResource( 29 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -673,7 +790,7 @@ text = "back"
 align = 1
 valign = 1
 
-[node name="save_menu" parent="meta_ui" instance=ExtResource( 33 )]
+[node name="save_menu" parent="meta_ui" instance=ExtResource( 36 )]
 visible = false
 margin_left = -0.418121
 margin_top = -0.418091
@@ -716,7 +833,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/load_confirm/yes"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 26 )
+texture = ExtResource( 29 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -729,18 +846,19 @@ text = "continue"
 align = 1
 valign = 1
 
-[node name="load_menu" parent="meta_ui" instance=ExtResource( 34 )]
+[node name="load_menu" parent="meta_ui" instance=ExtResource( 37 )]
 visible = false
 
 [node name="history" type="Control" parent="meta_ui"]
 editor/display_folded = true
+visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 rect_pivot_offset = Vector2( -460, 150 )
-script = ExtResource( 35 )
+script = ExtResource( 38 )
 
 [node name="bg" type="Sprite" parent="meta_ui/history"]
-texture = ExtResource( 36 )
+texture = ExtResource( 39 )
 centered = false
 
 [node name="back" type="Button" parent="meta_ui/history"]
@@ -761,7 +879,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/history/back"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 27 )
+texture = ExtResource( 30 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
@@ -781,11 +899,11 @@ margin_left = 186.0
 margin_top = 51.0
 margin_right = 1096.0
 margin_bottom = 557.0
-theme = ExtResource( 17 )
+theme = ExtResource( 18 )
 
 [node name="grid" type="GridContainer" parent="meta_ui/history/container"]
 mouse_filter = 2
-theme = ExtResource( 17 )
+theme = ExtResource( 18 )
 columns = 2
 
 [node name="white_cover" type="ColorRect" parent="."]
@@ -800,26 +918,31 @@ color = Color( 1, 1, 1, 0 )
 bus = "Music"
 [connection signal="timeout" from="skip_timer" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="content/ui/text_box" to="." method="update_dialog" binds= [ -1 ]]
-[connection signal="pressed" from="content/ui/name_input/ok_button" to="content/ui/name_input" method="hide"]
 [connection signal="pressed" from="content/ui/name_input/ok_button" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="content/ui/name_input/ok_button" to="." method="set_player_name"]
+[connection signal="pressed" from="content/ui/name_input/ok_button" to="content/ui/name_input" method="hide"]
 [connection signal="pressed" from="content/ui/skip_button" to="." method="toggle_skip"]
-[connection signal="pressed" from="content/ui/history_button" to="meta_ui/history" method="show_custom"]
 [connection signal="pressed" from="content/ui/history_button" to="." method="turn_off_skip"]
+[connection signal="pressed" from="content/ui/history_button" to="meta_ui/history" method="show_custom"]
 [connection signal="pressed" from="meta_ui/menu_button" to="." method="turn_off_skip"]
 [connection signal="pressed" from="meta_ui/menu_button" to="." method="open_pause_menu"]
+[connection signal="examine_item" from="meta_ui/dropdown" to="." method="examine_item"]
+[connection signal="pressed" from="meta_ui/notes_button" to="meta_ui/dropdown" method="toggle_notes"]
+[connection signal="pressed" from="meta_ui/items_button" to="meta_ui/dropdown" method="toggle_items"]
+[connection signal="pressed" from="meta_ui/history_button2" to="." method="turn_off_skip"]
+[connection signal="pressed" from="meta_ui/history_button2" to="meta_ui/history" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/save" to="meta_ui/save_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/load" to="meta_ui/load_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/options" to="meta_ui/options_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/exit" to="meta_ui/exit_confirm" method="show"]
 [connection signal="pressed" from="meta_ui/pause_menu/back" to="meta_ui/pause_menu" method="hide"]
-[connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
+[connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
 [connection signal="pressed" from="meta_ui/exit_confirm/yes" to="." method="return_to_main"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
 [connection signal="pressed" from="meta_ui/save_confirm/yes" to="." method="save_confirmed"]
 [connection signal="save_file" from="meta_ui/save_menu" to="." method="save"]
-[connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/load_confirm" method="hide"]
 [connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/pause_menu" method="hide"]
+[connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/load_confirm" method="hide"]
 [connection signal="load_file" from="meta_ui/load_menu" to="." method="load_game_while_playing"]
 [connection signal="pressed" from="meta_ui/history/back" to="meta_ui/history" method="hide_custom"]
