@@ -75,9 +75,9 @@ func _ready():
 	
 	# load meowkov chain (disabled for now, don't click on any books!)
 	var f = File.new()
-	f.open("res://scripts/procgen/meowkov.json", File.READ)
-	meowkov_json = JSON.parse(f.get_as_text())
-	f.close()
+	# f.open("res://scripts/procgen/meowkov.json", File.READ)
+	# meowkov_json = JSON.parse(f.get_as_text())
+	# f.close()
 	
 	# interrupt the default quit behavior (see _notification())
 	get_tree().set_auto_accept_quit(false)
@@ -165,7 +165,7 @@ func start_dialog(label):
 	ui.update_ui(block['speaker'], block['sprites'], text, choices_text)
 	
 	for pair in block['states']:
-		check_inv_state(pair)
+		check_inv_and_quest_state(pair)
 		state[pair[0]] = pair[1]
 	room.update_state(state)
 	
@@ -219,7 +219,7 @@ func update_dialog(b: int):
 		ui.update_ui(block['speaker'], block['sprites'], text, choices_text)
 		
 		for pair in block['states']:
-			check_inv_state(pair)
+			check_inv_and_quest_state(pair)
 			state[pair[0]] = pair[1]
 		room.update_state(state)
 		
@@ -422,10 +422,20 @@ func examine_item(_name):
 	if not ui.is_visible():
 		start_dialog('examine_' + _name)
 	
-func check_inv_state(pair):
+func check_inv_and_quest_state(pair):
 	if pair[0].substr(0,  5) == '_inv_':
 		if pair[1]:
 			$meta_ui/dropdown.add_to_inv(pair[0].substr(5, len(pair[0])))
 		else:
 			$meta_ui/dropdown.remove_from_inv(pair[0].substr(5, len(pair[0])))
+	if pair[0].substr(0,  7) == '_quest_':
+		if pair[1]:
+			$meta_ui/dropdown.add_quest(pair[0].substr(7, len(pair[0])))
+		else:
+			$meta_ui/dropdown.remove_quest(pair[0].substr(7, len(pair[0])))
 			
+func test_add_quest():
+	check_inv_and_quest_state([$meta_ui/dropdown/LineEdit.text, true])
+
+func test_remove_quest():
+	check_inv_and_quest_state([$meta_ui/dropdown/LineEdit.text, false])

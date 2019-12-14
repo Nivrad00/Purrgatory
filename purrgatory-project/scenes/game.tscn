@@ -1,7 +1,7 @@
 [gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
-[ext_resource path="res://ss.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/ss.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/dialog_handler.gd" type="Script" id=3]
 [ext_resource path="res://scripts/dialog/reception_dialog.gd" type="Script" id=4]
 [ext_resource path="res://scripts/dialog/oliver_kyungsoon_intro.gd" type="Script" id=5]
@@ -159,6 +159,7 @@ script = ExtResource( 15 )
 script = ExtResource( 16 )
 
 [node name="content" type="Control" parent="."]
+editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 mouse_filter = 2
@@ -348,9 +349,10 @@ mouse_filter = 2
 theme = ExtResource( 26 )
 
 [node name="menu_button" type="Button" parent="meta_ui"]
-margin_left = 27.3198
+editor/display_folded = true
+margin_left = 57.3198
 margin_top = 10.0
-margin_right = 103.32
+margin_right = 133.32
 margin_bottom = 36.0
 focus_mode = 0
 custom_fonts/font = SubResource( 9 )
@@ -389,16 +391,51 @@ texture = ExtResource( 28 )
 centered = false
 
 [node name="inv_container" type="HBoxContainer" parent="meta_ui/dropdown"]
-margin_left = 15.0
-margin_top = 177.097
-margin_right = 1105.0
-margin_bottom = 267.097
+margin_left = 24.0
+margin_top = 172.0
+margin_right = 1093.0
+margin_bottom = 262.0
+
+[node name="quest_container" type="ScrollContainer" parent="meta_ui/dropdown"]
+margin_left = 35.0
+margin_top = 55.0
+margin_right = 1108.0
+margin_bottom = 259.0
+theme = ExtResource( 18 )
+scroll_horizontal_enabled = false
+
+[node name="vbox" type="VBoxContainer" parent="meta_ui/dropdown/quest_container"]
+margin_right = 1052.0
+margin_bottom = 203.0
+rect_min_size = Vector2( 1052, 203 )
+alignment = 2
+
+[node name="LineEdit" type="LineEdit" parent="meta_ui/dropdown"]
+visible = false
+margin_left = 4.0
+margin_top = 293.0
+margin_right = 535.0
+margin_bottom = 337.0
+
+[node name="Button" type="Button" parent="meta_ui/dropdown"]
+visible = false
+margin_left = 2.10527
+margin_top = 352.632
+margin_right = 61.1053
+margin_bottom = 392.632
+
+[node name="Button2" type="Button" parent="meta_ui/dropdown"]
+visible = false
+margin_left = 74.7369
+margin_top = 353.685
+margin_right = 133.737
+margin_bottom = 393.685
 
 [node name="notes_button" type="Button" parent="meta_ui"]
 editor/display_folded = true
-margin_left = 1083.6
+margin_left = 1053.6
 margin_top = 11.24
-margin_right = 1159.61
+margin_right = 1129.61
 margin_bottom = 37.24
 focus_mode = 0
 custom_fonts/font = SubResource( 9 )
@@ -426,9 +463,9 @@ valign = 1
 
 [node name="items_button" type="Button" parent="meta_ui"]
 editor/display_folded = true
-margin_left = 1174.23
+margin_left = 1144.23
 margin_top = 11.24
-margin_right = 1250.23
+margin_right = 1220.23
 margin_bottom = 37.24
 focus_mode = 0
 custom_fonts/font = SubResource( 9 )
@@ -456,9 +493,9 @@ valign = 1
 
 [node name="history_button2" type="Button" parent="meta_ui"]
 editor/display_folded = true
-margin_left = 1175.68
+margin_left = 1144.23
 margin_top = 684.317
-margin_right = 1251.68
+margin_right = 1220.23
 margin_bottom = 710.317
 focus_mode = 0
 custom_fonts/font = SubResource( 9 )
@@ -927,6 +964,8 @@ bus = "Music"
 [connection signal="pressed" from="meta_ui/menu_button" to="." method="turn_off_skip"]
 [connection signal="pressed" from="meta_ui/menu_button" to="." method="open_pause_menu"]
 [connection signal="examine_item" from="meta_ui/dropdown" to="." method="examine_item"]
+[connection signal="pressed" from="meta_ui/dropdown/Button" to="." method="test_add_quest"]
+[connection signal="pressed" from="meta_ui/dropdown/Button2" to="." method="test_remove_quest"]
 [connection signal="pressed" from="meta_ui/notes_button" to="meta_ui/dropdown" method="toggle_notes"]
 [connection signal="pressed" from="meta_ui/items_button" to="meta_ui/dropdown" method="toggle_items"]
 [connection signal="pressed" from="meta_ui/history_button2" to="." method="turn_off_skip"]
@@ -937,6 +976,7 @@ bus = "Music"
 [connection signal="pressed" from="meta_ui/pause_menu/exit" to="meta_ui/exit_confirm" method="show"]
 [connection signal="pressed" from="meta_ui/pause_menu/back" to="meta_ui/pause_menu" method="hide"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
+[connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/dropdown" method="format_quests"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
 [connection signal="pressed" from="meta_ui/exit_confirm/yes" to="." method="return_to_main"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]

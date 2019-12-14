@@ -65,10 +65,11 @@ anti_aliasing = false
 [resource]
 default_font = ExtResource( 2 )
 GridContainer/constants/hseparation = 30
-GridContainer/constants/vseparation = 30
+GridContainer/constants/vseparation = 25
 Label/colors/font_color = Color( 0, 0, 0, 1 )
 RichTextLabel/colors/default_color = Color( 0, 0, 0, 1 )
 RichTextLabel/fonts/italics_font = ExtResource( 1 )
+VBoxContainer/constants/separation = 20
 VScrollBar/styles/grabber = SubResource( 1 )
 VScrollBar/styles/grabber_highlight = SubResource( 2 )
 VScrollBar/styles/grabber_pressed = SubResource( 3 )

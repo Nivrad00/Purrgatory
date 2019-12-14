@@ -40,8 +40,8 @@ func add_to_history(s, t):
 	if history.size() == 1:
 		a = Control.new()
 		b = Control.new()
-		a.set_custom_minimum_size(Vector2(250, 1))
-		b.set_custom_minimum_size(Vector2(600, 1))
+		a.set_custom_minimum_size(Vector2(200, 1))
+		b.set_custom_minimum_size(Vector2(650, 1))
 		grid.add_child(a)
 		grid.add_child(b)
 	
@@ -63,10 +63,10 @@ func add_to_history(s, t):
 	
 	# set heights
 	var height = speaker.get_content_height()
-	speaker.set_custom_minimum_size(Vector2(250, height))
+	speaker.set_custom_minimum_size(Vector2(200, height))
 	
 	height = text.get_content_height()
-	text.set_custom_minimum_size(Vector2(600, height))
+	text.set_custom_minimum_size(Vector2(650, height))
 	
 	# getting rid of those extra controls 
 	if a != null and b != null:
@@ -78,7 +78,7 @@ func add_to_history(s, t):
 
 # this is called when the font size changes
 func format_history():
-	var widths = [250, 600]
+	var widths = [200, 650]
 	var i = 0
 	
 	for label in grid.get_children():

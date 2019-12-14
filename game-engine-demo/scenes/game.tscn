@@ -80,5 +80,4 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "fdfgjlsdfsdf323"
 text = "fdfgjlsdfsdf323"
-
 [connection signal="pressed" from="ui/text_box" to="." method="update_dialog" binds= [ -1 ]]
