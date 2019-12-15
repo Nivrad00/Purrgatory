@@ -284,7 +284,8 @@ func save(file):
 		"music": current_audio,
 		"timestamp": timestamp,
 		"history": $meta_ui/history.history,
-		"inventory": $meta_ui/dropdown.get_inv_list()
+		"inventory": $meta_ui/dropdown.get_inv_list(),
+		"quest_log": $meta_ui/dropdown.get_quest_log()
 	}
 	
 	# save a dict
@@ -355,6 +356,7 @@ func load_game(file):
 		ui.update_ui(save_dict["speaker"], save_dict["sprites"], save_dict["text"], save_dict["choices"])
 	
 	$meta_ui/dropdown.load_inv(save_dict["inventory"])
+	$meta_ui/dropdown.load_quest_log(save_dict["quest_log"])
 	
 	# wait until the ui is done updating so it doesn't interfere with the history
 	yield(get_tree(), 'idle_frame')
@@ -435,7 +437,7 @@ func check_inv_and_quest_state(pair):
 			$meta_ui/dropdown.remove_quest(pair[0].substr(7, len(pair[0])))
 			
 func test_add_quest():
-	check_inv_and_quest_state([$meta_ui/dropdown/LineEdit.text, true])
+	check_inv_and_quest_state([$meta_ui/dropdown/quest_debug.text, true])
 
 func test_remove_quest():
-	check_inv_and_quest_state([$meta_ui/dropdown/LineEdit.text, false])
+	check_inv_and_quest_state([$meta_ui/dropdown/quest_debug.text, false])

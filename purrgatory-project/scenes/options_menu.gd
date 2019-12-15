@@ -1,6 +1,7 @@
 extends Control
 
 signal options_changed()
+signal toggle_notes(on)
 
 var quips = [
 	['cat', 'meow meow, meow meow meow :3'],
@@ -21,23 +22,24 @@ var default_options = {
 func save_options():
 	# saves options to file
 	# (the options are applied as soon as the values are changed or the game starts, so no need to apply anything here)
-	# this method is called when the game closes
+	# this method is called when the options menu closes, and when the game closes
 	
 	var options_dict = {
 		"fullscreen": $fullscreen/fullscreen.pressed,
 		"music_volume": $audio/music.value,
 		"sfx_volume": $audio/sfx.value,
-		"text_size": $text_size/slider.value
+		"text_size": $text_size/slider.value,
+		"notes_enabled": $enable_notes/enable_notes.pressed
 	}
 	var options_save = File.new()
 	options_save.open("res://save_data/options.save", File.WRITE)
 	options_save.store_line(to_json(options_dict))
-	options_save.close()	
+	options_save.close()
 		
 	emit_signal('options_changed')
 
 func load_options():
-	# loads options from file whenever the options menu is opened
+	# loads options from file whenever the options menu is opened (and when the game starts)
 	# ensures options are consistent between sessions and between the main and pause menus
 	# (the options are applied as soon as the values are changed or the game starts, so no need to apply anything here)
 	
@@ -53,6 +55,16 @@ func load_options():
 	$audio/music.value = options_dict['music_volume']
 	$audio/sfx.value = options_dict['sfx_volume']
 	$text_size/slider.value = options_dict['text_size']
+	$enable_notes/enable_notes.pressed = options_dict['notes_enabled']
+	
+	# also, connect the "enabled_notes" option to the notes menu if not done already
+	# and this absolute path is disgusting but find_node isn't working so whatever
+	if get_signal_connection_list('toggle_notes').size() == 0:
+		var dropdown = get_node('/root/main/game/meta_ui/dropdown')
+		if dropdown == null:
+			print('hey boss, the options menu can\'t find the dropdown menu to connect enabled_notes')
+		else:
+			connect('toggle_notes', dropdown, 'toggle_quest_log')
 	
 	return options_dict
 
@@ -63,6 +75,7 @@ func load_and_apply_options():
 	_on_sfx_value_changed(options_dict['sfx_volume'])
 	_on_fullscreen_toggled(options_dict['fullscreen'])
 	_on_text_size_value_changed(options_dict['text_size'])
+	_on_enable_notes_toggled(options_dict['notes_enabled'])
 
 func show_custom():
 	var state = get_node('/root/main/game').state
@@ -106,3 +119,7 @@ func _on_text_size_value_changed(value):
 	var bb = $text_size/preview_b.get_bbcode()
 	$text_size/preview_b.clear()
 	$text_size/preview_b.set_bbcode(bb)
+
+func _on_enable_notes_toggled(button_pressed):
+	emit_signal('toggle_notes', button_pressed)
+		

@@ -18,13 +18,13 @@ func set_bbcode(bbcode):
 		node = node.get_parent()
 		
 	if !really_visible:
-		print('waiting...')
+		# print('waiting...')
 		yield(self, 'visibility_changed')
 	yield(get_tree(), 'idle_frame')
 	
 	# now you can change the height
 	var height = get_content_height()
-	print(height)
+	# print(height)
 	set_custom_minimum_size(Vector2(get_size().x, height))
 	set_size(Vector2(get_size().x, height))
 
@@ -37,7 +37,7 @@ func update_formatting():
 		node = node.get_parent()
 			
 	if !really_visible:
-		print('waiting...')
+		# print('waiting...')
 		yield(self, 'visibility_changed')
 	yield(get_tree(), 'idle_frame')
 	

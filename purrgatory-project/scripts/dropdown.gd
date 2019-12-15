@@ -23,6 +23,8 @@ onready var quests = load('res://scripts/quests.gd').new().quests
 
 var FormattedRichTextLabel = preload('res://scenes/FormattedRichTextLabel.tscn')
 
+var notes_enabled = false
+
 func _ready():
 	set_process(true) 
 	add_quest('nothing')
@@ -116,10 +118,12 @@ func load_inv(list):
 	for item in $inv_container.get_children():
 		item.queue_free()
 	
+	yield(get_tree(), 'idle_frame')
+	
 	for _name in list:
 		add_to_inv(_name)
 
-func add_quest(quest):
+func add_quest(quest, popup = true):
 	for item in $quest_container/vbox.get_children():
 		if item.name == quest:
 			print(quest + ' is already on the quest log, can\'t add it')
@@ -144,7 +148,7 @@ func add_quest(quest):
 			if item.name == 'nothing':
 				item.queue_free()
 	
-	if not notes_shown and quest != 'nothing':
+	if not notes_shown and quest != 'nothing' and popup and notes_enabled:
 		toggle_notes()
 		
 	if notes_shown:
@@ -175,8 +179,9 @@ func format_quests():
 		
 	yield(get_tree(), 'idle_frame')
 	
-	target_height = min(default_height + get_quest_log_size() + 30, notes_max_height)
-	move = true
+	if notes_shown:
+		target_height = min(default_height + get_quest_log_size() + 30, notes_max_height)
+		move = true
 
 func get_quest_log_size():
 	# this shouldn't ever happen
@@ -189,3 +194,30 @@ func get_quest_log_size():
 			sum += item.get_size().y
 			sum += $quest_container.get_theme().get_constant('separation', 'VBoxContainer')
 	return sum
+
+func get_quest_log():
+	var list = []
+	for item in $quest_container/vbox.get_children():
+		list.append(item.name)
+	return list
+	
+# called when loading a save file
+func load_quest_log(list):
+	for item in $quest_container/vbox.get_children():
+		item.queue_free()
+	
+	# wait for the items to go away so there's no name clash
+	yield(get_tree(), 'idle_frame') 
+	
+	for _name in list:
+		add_quest(_name, false) # popup = false so that it doesn't cause the menu to appear
+
+func toggle_quest_log(on):
+	notes_enabled = on
+	if on:
+		get_parent().get_node('notes_button').show()
+	else:
+		if notes_shown:
+	 		toggle_notes()
+		get_parent().get_node('notes_button').hide()
+	
