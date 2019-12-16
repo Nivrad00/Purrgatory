@@ -9,7 +9,6 @@ func _ready():
 	$loader.start()
 	$loader.queue_resource(game_path)
 	set_process(true)
-	$options_menu.load_and_apply_options()
 	
 func finish_loading(node):
 	add_child(node.instance())
@@ -17,6 +16,7 @@ func finish_loading(node):
 	$game.hide()
 	$loading/loading_text.set_text('ready!\r\nclick to continue')
 	loaded_flag = true
+	$options_menu.load_and_apply_options()
 
 func return_to_main():
 	$game.hide()

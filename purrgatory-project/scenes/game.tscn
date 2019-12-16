@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ss.tscn" type="PackedScene" id=2]
@@ -28,17 +28,18 @@
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=26]
 [ext_resource path="res://scripts/dropdown.gd" type="Script" id=27]
 [ext_resource path="res://assets/ui/dropdown_box.png" type="Texture" id=28]
-[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=29]
-[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=30]
-[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=31]
-[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=32]
-[ext_resource path="res://assets/fonts/Krub-MediumItalic.ttf" type="DynamicFontData" id=33]
-[ext_resource path="res://assets/fonts/Krub-ExtraLightItalic.ttf" type="DynamicFontData" id=34]
-[ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=35]
-[ext_resource path="res://scenes/save_menu.tscn" type="PackedScene" id=36]
-[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=37]
-[ext_resource path="res://scripts/history.gd" type="Script" id=38]
-[ext_resource path="res://assets/ui/history.png" type="Texture" id=39]
+[ext_resource path="res://scripts/items_button.gd" type="Script" id=29]
+[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=30]
+[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=31]
+[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=32]
+[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=33]
+[ext_resource path="res://assets/fonts/Krub-MediumItalic.ttf" type="DynamicFontData" id=34]
+[ext_resource path="res://assets/fonts/Krub-ExtraLightItalic.ttf" type="DynamicFontData" id=35]
+[ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=36]
+[ext_resource path="res://scenes/save_menu.tscn" type="PackedScene" id=37]
+[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=38]
+[ext_resource path="res://scripts/history.gd" type="Script" id=39]
+[ext_resource path="res://assets/ui/history.png" type="Texture" id=40]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("ss")
@@ -53,7 +54,7 @@ shortcut = SubResource( 2 )
 
 [sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 21 )
-region_rect = Rect2( 0, 0, 552, 83 )
+region_rect = Rect2( 0, 0, 900, 83 )
 margin_left = 40.0
 margin_right = 40.0
 margin_top = 11.0
@@ -81,16 +82,16 @@ font_data = ExtResource( 22 )
 [sub_resource type="DynamicFont" id=11]
 size = 22
 use_filter = true
-font_data = ExtResource( 33 )
+font_data = ExtResource( 34 )
 
 [sub_resource type="DynamicFont" id=12]
 size = 22
-font_data = ExtResource( 34 )
+font_data = ExtResource( 35 )
 
 [sub_resource type="DynamicFont" id=13]
 size = 22
 use_filter = true
-font_data = ExtResource( 35 )
+font_data = ExtResource( 36 )
 
 [sub_resource type="DynamicFont" id=14]
 size = 22
@@ -116,7 +117,6 @@ wait_time = 0.06
 one_shot = true
 
 [node name="dialog_handler" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 3 )
 
 [node name="reception_dialog" type="Node" parent="dialog_handler"]
@@ -159,7 +159,6 @@ script = ExtResource( 15 )
 script = ExtResource( 16 )
 
 [node name="content" type="Control" parent="."]
-editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 mouse_filter = 2
@@ -232,7 +231,6 @@ bbcode_text = "to be, or not to be: that is the question: whether 'tis nobler in
 text = "to be, or not to be: that is the question: whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune, or to take arms against a sea of troubles, and by opposing end them?"
 
 [node name="name_input" type="Control" parent="content/ui"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -253,7 +251,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 11.0
 margin_top = 2.0
-margin_right = -91.0
+margin_right = -85.0
 margin_bottom = 2.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
@@ -379,9 +377,9 @@ align = 1
 valign = 1
 
 [node name="dropdown" type="Control" parent="meta_ui"]
-margin_left = 146.458
+margin_left = 163.458
 margin_top = -284.152
-margin_right = 1263.46
+margin_right = 1280.46
 margin_bottom = -5.0
 script = ExtResource( 27 )
 
@@ -397,17 +395,18 @@ margin_right = 1093.0
 margin_bottom = 262.0
 
 [node name="quest_container" type="ScrollContainer" parent="meta_ui/dropdown"]
+editor/display_folded = true
 margin_left = 35.0
 margin_top = 55.0
-margin_right = 1088.0
+margin_right = 1060.0
 margin_bottom = 259.0
 theme = ExtResource( 18 )
 scroll_horizontal_enabled = false
 
 [node name="vbox" type="VBoxContainer" parent="meta_ui/dropdown/quest_container"]
-margin_right = 1032.0
+margin_right = 1025.0
 margin_bottom = 203.0
-rect_min_size = Vector2( 1032, 203 )
+rect_min_size = Vector2( 1025, 203 )
 alignment = 2
 
 [node name="quest_debug" type="LineEdit" parent="meta_ui/dropdown"]
@@ -432,9 +431,9 @@ margin_right = 133.737
 margin_bottom = 393.685
 
 [node name="notes_button" type="Button" parent="meta_ui"]
-margin_left = 1053.6
+margin_left = 1058.6
 margin_top = 11.24
-margin_right = 1129.61
+margin_right = 1134.61
 margin_bottom = 37.24
 focus_mode = 0
 custom_fonts/font = SubResource( 9 )
@@ -461,16 +460,16 @@ align = 1
 valign = 1
 
 [node name="items_button" type="Button" parent="meta_ui"]
-editor/display_folded = true
-margin_left = 1144.23
+margin_left = 1149.23
 margin_top = 11.24
-margin_right = 1220.23
+margin_right = 1225.23
 margin_bottom = 37.24
 focus_mode = 0
 custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 enabled_focus_mode = 0
 flat = true
+script = ExtResource( 29 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -489,6 +488,10 @@ custom_fonts/font = SubResource( 10 )
 text = "items"
 align = 1
 valign = 1
+
+[node name="flash_timer" type="Timer" parent="meta_ui/items_button"]
+wait_time = 0.15
+one_shot = true
 
 [node name="history_button2" type="Button" parent="meta_ui"]
 editor/display_folded = true
@@ -549,7 +552,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/save"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 29 )
+texture = ExtResource( 30 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -579,7 +582,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/load"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 30 )
+texture = ExtResource( 31 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -610,7 +613,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/options"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 31 )
+texture = ExtResource( 32 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
@@ -642,7 +645,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/exit"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 29 )
+texture = ExtResource( 30 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
@@ -674,7 +677,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/back"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 30 )
+texture = ExtResource( 31 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
@@ -689,7 +692,7 @@ text = "back"
 align = 1
 valign = 1
 
-[node name="options_menu" parent="meta_ui" instance=ExtResource( 32 )]
+[node name="options_menu" parent="meta_ui" instance=ExtResource( 33 )]
 visible = false
 
 [node name="exit_confirm" type="Control" parent="meta_ui"]
@@ -735,7 +738,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/exit_confirm/yes"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 29 )
+texture = ExtResource( 30 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -764,7 +767,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/exit_confirm/no"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 30 )
+texture = ExtResource( 31 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -813,7 +816,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/save_confirm/yes"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 29 )
+texture = ExtResource( 30 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -826,7 +829,7 @@ text = "back"
 align = 1
 valign = 1
 
-[node name="save_menu" parent="meta_ui" instance=ExtResource( 36 )]
+[node name="save_menu" parent="meta_ui" instance=ExtResource( 37 )]
 visible = false
 margin_left = -0.418121
 margin_top = -0.418091
@@ -869,7 +872,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/load_confirm/yes"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 29 )
+texture = ExtResource( 30 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -882,7 +885,7 @@ text = "continue"
 align = 1
 valign = 1
 
-[node name="load_menu" parent="meta_ui" instance=ExtResource( 37 )]
+[node name="load_menu" parent="meta_ui" instance=ExtResource( 38 )]
 visible = false
 
 [node name="history" type="Control" parent="meta_ui"]
@@ -891,10 +894,10 @@ visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 rect_pivot_offset = Vector2( -460, 150 )
-script = ExtResource( 38 )
+script = ExtResource( 39 )
 
 [node name="bg" type="Sprite" parent="meta_ui/history"]
-texture = ExtResource( 39 )
+texture = ExtResource( 40 )
 centered = false
 
 [node name="back" type="Button" parent="meta_ui/history"]
@@ -915,7 +918,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/history/back"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 30 )
+texture = ExtResource( 31 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
@@ -981,7 +984,7 @@ bus = "Music"
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
 [connection signal="pressed" from="meta_ui/save_confirm/yes" to="." method="save_confirmed"]
 [connection signal="save_file" from="meta_ui/save_menu" to="." method="save"]
-[connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/load_confirm" method="hide"]
 [connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/pause_menu" method="hide"]
+[connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/load_confirm" method="hide"]
 [connection signal="load_file" from="meta_ui/load_menu" to="." method="load_game_while_playing"]
 [connection signal="pressed" from="meta_ui/history/back" to="meta_ui/history" method="hide_custom"]

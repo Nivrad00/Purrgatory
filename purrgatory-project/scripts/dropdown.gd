@@ -97,12 +97,15 @@ func add_to_inv(_name):
 	$inv_container.add_child(button)
 	
 	if not items_shown:
-		toggle_items()
+		items_button.flash()
 
 func remove_from_inv(_name):
 	for item in $inv_container.get_children():
 		if item.name == _name:
 			item.queue_free()
+			
+	if not items_shown:
+		items_button.flash()
 
 func examine_item(_name):
 	emit_signal('examine_item', _name)
@@ -123,7 +126,7 @@ func load_inv(list):
 	for _name in list:
 		add_to_inv(_name)
 
-func add_quest(quest, popup = true):
+func add_quest(quest):
 	for item in $quest_container/vbox.get_children():
 		if item.name == quest:
 			print(quest + ' is already on the quest log, can\'t add it')
@@ -147,9 +150,6 @@ func add_quest(quest, popup = true):
 		for item in $quest_container/vbox.get_children():
 			if item.name == 'nothing':
 				item.queue_free()
-	
-	if not notes_shown and quest != 'nothing' and popup and notes_enabled:
-		toggle_notes()
 		
 	if notes_shown:
 		format_quests()
@@ -210,14 +210,13 @@ func load_quest_log(list):
 	yield(get_tree(), 'idle_frame') 
 	
 	for _name in list:
-		add_quest(_name, false) # popup = false so that it doesn't cause the menu to appear
+		add_quest(_name)
 
 func toggle_quest_log(on):
 	notes_enabled = on
 	if on:
-		get_parent().get_node('notes_button').show()
+		notes_button.show()
 	else:
 		if notes_shown:
 	 		toggle_notes()
-		get_parent().get_node('notes_button').hide()
-	
+		notes_button.hide()
