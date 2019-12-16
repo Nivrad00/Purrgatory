@@ -75,9 +75,7 @@ func _ready():
 	
 	# load meowkov chain (disabled for now, don't click on any books!)
 	var f = File.new()
-	f.open("res://scripts/procgen/meowkov.json", File.READ)
-	meowkov_json = JSON.parse(f.get_as_text())
-	f.close()
+	# load_meowkov_chain()
 	
 	# interrupt the default quit behavior (see _notification())
 	get_tree().set_auto_accept_quit(false)
@@ -87,6 +85,12 @@ func _ready():
 		f.open("res://save_data/seen_blocks.save", File.READ)
 		seen_blocks = parse_json(f.get_line())
 		f.close()
+
+func load_meowkov_chain(f):
+	f.open("res://scripts/procgen/meowkov.json", File.READ)
+	meowkov_json = JSON.parse(f.get_as_text())
+	f.close()
+	
 
 func _notification(what):
 	# when the user quits...
@@ -156,6 +160,16 @@ func start_dialog(label):
 	$meta_ui/history_button2.hide()
 	room.start_dialog()
 	
+	# handle skip stuff before updating the ui so it knows if it should TTS or not
+	if seen_blocks.has(block['label']):
+		enable_skip()
+		if skip:
+			skip()
+	else:
+		disable_skip()
+		if skip:
+			turn_off_skip()
+	
 	var choices_text = []
 	for choice in block['choices']:
 		choices_text.append(choice[0])
@@ -168,16 +182,6 @@ func start_dialog(label):
 		check_inv_and_quest_state(pair)
 		state[pair[0]] = pair[1]
 	room.update_state(state)
-	
-	# handle skip stuff
-	if seen_blocks.has(block['label']):
-		enable_skip()
-		if skip:
-			skip()
-	else:
-		disable_skip()
-		if skip:
-			turn_off_skip()
 	
 func end_dialog():
 	ui.hide_ui()
@@ -210,6 +214,16 @@ func update_dialog(b: int):
 		$meta_ui/history.add_space()
 		room.update_state(state)
 	else:
+		# handle skip stuff before updating the ui so it knows if it should TTS or not
+		if seen_blocks.has(block['label']):
+			enable_skip()
+			if skip:
+				skip()
+		else:
+			disable_skip()
+			if skip:
+				turn_off_skip()
+				
 		var choices_text = []
 		for choice in block['choices']:
 			choices_text.append(choice[0])
@@ -222,16 +236,6 @@ func update_dialog(b: int):
 			check_inv_and_quest_state(pair)
 			state[pair[0]] = pair[1]
 		room.update_state(state)
-		
-		# handle skip stuff
-		if seen_blocks.has(block['label']):
-			enable_skip()
-			if skip:
-				skip()
-		else:
-			disable_skip()
-			if skip:
-				turn_off_skip()
 
 func set_player_name():
 	format_dict['player'] = ui.get_node('name_input/text').get_text().to_lower()

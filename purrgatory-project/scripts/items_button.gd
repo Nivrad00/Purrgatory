@@ -9,7 +9,7 @@ func flash():
 	
 	flashing = true
 		
-	for x in range(5):
+	for x in range(4):
 		$flash_timer.start()
 		yield($flash_timer, 'timeout')
 		set_modulate(Color(0.9, 0.9, 0.9))

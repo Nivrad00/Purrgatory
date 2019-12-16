@@ -97,7 +97,8 @@ func add_to_inv(_name):
 	$inv_container.add_child(button)
 	
 	if not items_shown:
-		items_button.flash()
+		toggle_items()
+		# items_button.flash()
 
 func remove_from_inv(_name):
 	for item in $inv_container.get_children():

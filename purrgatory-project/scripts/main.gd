@@ -1,6 +1,9 @@
 extends Node
 
-var fade_out = false
+# null when not fading out
+# -1 when fading out to start a new game
+# n when fading out to load save file n
+var fade_out = null
 var fade_out_loading = false
 var game_path = 'res://scenes/game.tscn'
 var loaded_flag = false
@@ -24,14 +27,13 @@ func return_to_main():
 	$main_menu/audio.play()
 
 func load_file(file):
-	$game.load_game(file)
-	fade_out = true
+	fade_out = file
 	
 func _on_click_to_continue_pressed():
 	fade_out_loading = true
 	
 func _on_start_pressed():
-	fade_out = true
+	fade_out = -1
 
 func _on_credits_pressed():
 	$main_menu.hide()
@@ -55,18 +57,21 @@ func _process(delta):
 			finish_loading(scene)
 			$loader.queue_free()
 				
-	if fade_out:
+	if fade_out != null:
 		if not $cover.visible:
 			$cover.show()
 		var a = $cover.color.a
 		
 		if a == 1:
-			$delay_timer.start()
-			fade_out = false
+			var file = fade_out
+			fade_out = null
 			$main_menu/audio.stop()
 			$main_menu/audio.volume_db = -3
+			
+			$delay_timer.start()
 			yield($delay_timer, 'timeout')
 			
+			$game.load_game(file)
 			$main_menu.hide()
 			$load_menu.hide()
 			$cover.color = Color(1, 1, 1, 0)
