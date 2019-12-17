@@ -2,6 +2,7 @@ extends Control
 
 signal options_changed()
 signal toggle_notes(on)
+signal toggle_voicing(on)
 
 var quips = [
 	['cat', 'meow meow, meow meow meow :3'],
@@ -29,7 +30,8 @@ func save_options():
 		"music_volume": $audio/music.value,
 		"sfx_volume": $audio/sfx.value,
 		"text_size": $text_size/slider.value,
-		"notes_enabled": $enable_notes/enable_notes.pressed
+		"notes_enabled": $enable_notes/enable_notes.pressed,
+		"voicing_enabled": $voicing/enable_voicing.pressed 
 	}
 	var options_save = File.new()
 	options_save.open("res://save_data/options.save", File.WRITE)
@@ -56,8 +58,9 @@ func load_options():
 	$audio/sfx.value = options_dict['sfx_volume']
 	$text_size/slider.value = options_dict['text_size']
 	$enable_notes/enable_notes.pressed = options_dict['notes_enabled']
+	$voicing/enable_voicing.pressed = options_dict['voicing_enabled']
 	
-	# also, connect the "enabled_notes" option to the notes menu if not done already
+	# also, connect the "enabled_notes" and "enabled_tts" option to the notes menu if not done already
 	# and this absolute path is disgusting but find_node isn't working so whatever
 	if get_signal_connection_list('toggle_notes').size() == 0:
 		var dropdown = get_node('/root/main/game/meta_ui/dropdown')
@@ -65,6 +68,13 @@ func load_options():
 			print('hey boss, the options menu can\'t find the dropdown menu to connect enabled_notes')
 		else:
 			connect('toggle_notes', dropdown, 'toggle_quest_log')
+			
+	if get_signal_connection_list('toggle_voicing').size() == 0:
+		var tts_node = get_node('/root/main/game/tts_node')
+		if tts_node == null:
+			print('hey boss, the options menu can\'t find the tts node to connect enabled_voicing')
+		else:
+			connect('toggle_voicing', tts_node, 'toggle_voicing')
 	
 	return options_dict
 
@@ -76,6 +86,7 @@ func load_and_apply_options():
 	_on_fullscreen_toggled(options_dict['fullscreen'])
 	_on_text_size_value_changed(options_dict['text_size'])
 	_on_enable_notes_toggled(options_dict['notes_enabled'])
+	_on_enable_voicing_toggled(options_dict['voicing_enabled'])
 
 func show_custom():
 	var state = get_node('/root/main/game').state
@@ -123,3 +134,5 @@ func _on_text_size_value_changed(value):
 func _on_enable_notes_toggled(button_pressed):
 	emit_signal('toggle_notes', button_pressed)
 		
+func _on_enable_voicing_toggled(button_pressed):
+	emit_signal('toggle_voicing', button_pressed)

@@ -76,7 +76,11 @@ func _process(delta):
 			$load_menu.hide()
 			$cover.color = Color(1, 1, 1, 0)
 			$cover.hide()
+			
+			yield(get_tree(), 'idle_frame')
 			$game.show()
+			# we have the game speak the ui, if enabled, as soon as it's shown
+			$game/content/ui.speak_ui()
 			$game/main_audio.play()
 			
 		else:

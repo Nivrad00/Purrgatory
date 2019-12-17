@@ -90,7 +90,6 @@ func load_meowkov_chain(f):
 	f.open("res://scripts/procgen/meowkov.json", File.READ)
 	meowkov_json = JSON.parse(f.get_as_text())
 	f.close()
-	
 
 func _notification(what):
 	# when the user quits...
@@ -127,7 +126,8 @@ func _process(delta):
 			emit_signal('return_to_main')
 			$white_cover.color = Color(1, 1, 1, 0)
 			reset_state(true) # reset state and room
-			$meta_ui/pause_menu.hide()
+			$meta_ui/pause_menu.hide() # hide it directly instead of using close_pause_menu()
+			# bc you're not returning to the game
 			$meta_ui/exit_confirm.hide()
 			$white_cover.hide()
 			set_process(false)
@@ -357,7 +357,7 @@ func load_game(file):
 		ui.show()
 		$meta_ui/history_button2.hide()
 		room.start_dialog()
-		ui.update_ui(save_dict["speaker"], save_dict["sprites"], save_dict["text"], save_dict["choices"])
+		ui.update_ui(save_dict["speaker"], save_dict["sprites"], save_dict["text"], save_dict["choices"], false)
 	
 	$meta_ui/dropdown.load_inv(save_dict["inventory"])
 	$meta_ui/dropdown.load_quest_log(save_dict["quest_log"])
@@ -384,7 +384,13 @@ func reset_state(reset_room):
 	change_audio(null)
 
 func open_pause_menu():
+	$tts_node.stop()
 	$meta_ui/pause_menu.show()
+
+func close_pause_menu():
+	if ui.is_visible():
+		ui.speak_ui()
+	$meta_ui/pause_menu.hide()
 
 func options_changed():
 	var state_handler = room.find_node('state_handler', true, false)
@@ -392,8 +398,12 @@ func options_changed():
 		state_handler.options_changed()
 	
 func save_confirmed():
-	$meta_ui/pause_menu.hide()
 	$meta_ui/save_confirm.hide()
+	close_pause_menu()
+
+func load_confirmed():
+	$meta_ui/load_confirm.hide()
+	close_pause_menu()
 
 func toggle_skip():
 	if ui.get_node('skip_button/x').visible:

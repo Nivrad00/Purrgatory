@@ -23,8 +23,9 @@ func _ready():
 func hide_ui():
 	update_ui('', [], '', [])
 	hide()
-	
-func update_ui(speaker, sprites, text, choices):
+
+# tts is usually true, but is false when loading a game (bc it shouldn't immediately speak it)
+func update_ui(speaker, sprites, text, choices, tts = true):
 	if speaker != null:
 		set_speaker(speaker)
 	if sprites != null:
@@ -35,24 +36,35 @@ func update_ui(speaker, sprites, text, choices):
 	
 	# if either the speaker or text changes, and there IS a speaker or text...
 	# a) save the current speaker and text to history
-	# b) speak it through tts, if enabled
 	if (speaker != null or text != null) and (get_speaker() != '' or get_text() != ''):
 		game.get_node('meta_ui/history').add_to_history(get_speaker(), get_text())
 	
-	# handle tts stuff here, unless it's disabled or skip is on
+	# do tts if tts is enabled and skip is off
 	tts_node.stop()
+	yield(get_tree(), 'idle_frame') # wait a frame for the ui to finish updating
+	if tts:
+		# only speak the speaker/text if it's changed
+		speak_ui(speaker != null or text != null)
+
+func speak_ui(all = true):
 	if game.skip:
 		return
 	
-	if speaker != null and speaker != '':
-		tts_node.speak(speaker)
-		
-	if text != null and text != '':
-		tts_node.speak(text)
+	var speaker = get_speaker()
+	var text = get_text()
+	var choices = get_choices()
 	
-	for choice in choices:
-		tts_node.speak(choice)
-
+	if all:
+		tts_node.speak(speaker)
+		tts_node.speak(text)
+		
+	if choices.size() > 0:
+		var i = 1
+		for choice in choices:
+			tts_node.speak(str(i) + ', ' + choice)
+			i += 1
+	
+	
 func set_speaker(speaker):
 	$text_box/speaker.text = speaker
 	

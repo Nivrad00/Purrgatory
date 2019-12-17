@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ss.tscn" type="PackedScene" id=2]
@@ -30,17 +30,18 @@
 [ext_resource path="res://scripts/dropdown.gd" type="Script" id=28]
 [ext_resource path="res://assets/ui/dropdown_box.png" type="Texture" id=29]
 [ext_resource path="res://scripts/items_button.gd" type="Script" id=30]
-[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=31]
-[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=32]
-[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=33]
-[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=34]
-[ext_resource path="res://assets/fonts/Krub-MediumItalic.ttf" type="DynamicFontData" id=35]
-[ext_resource path="res://assets/fonts/Krub-ExtraLightItalic.ttf" type="DynamicFontData" id=36]
-[ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=37]
-[ext_resource path="res://scenes/save_menu.tscn" type="PackedScene" id=38]
-[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=39]
-[ext_resource path="res://scripts/history.gd" type="Script" id=40]
-[ext_resource path="res://assets/ui/history.png" type="Texture" id=41]
+[ext_resource path="res://scripts/pause_menu.gd" type="Script" id=31]
+[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=32]
+[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=33]
+[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=34]
+[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=35]
+[ext_resource path="res://assets/fonts/Krub-MediumItalic.ttf" type="DynamicFontData" id=36]
+[ext_resource path="res://assets/fonts/Krub-ExtraLightItalic.ttf" type="DynamicFontData" id=37]
+[ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=38]
+[ext_resource path="res://scenes/save_menu.tscn" type="PackedScene" id=39]
+[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=40]
+[ext_resource path="res://scripts/history.gd" type="Script" id=41]
+[ext_resource path="res://assets/ui/history.png" type="Texture" id=42]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("ss")
@@ -83,16 +84,16 @@ font_data = ExtResource( 23 )
 [sub_resource type="DynamicFont" id=11]
 size = 22
 use_filter = true
-font_data = ExtResource( 35 )
+font_data = ExtResource( 36 )
 
 [sub_resource type="DynamicFont" id=12]
 size = 22
-font_data = ExtResource( 36 )
+font_data = ExtResource( 37 )
 
 [sub_resource type="DynamicFont" id=13]
 size = 22
 use_filter = true
-font_data = ExtResource( 37 )
+font_data = ExtResource( 38 )
 
 [sub_resource type="DynamicFont" id=14]
 size = 22
@@ -381,6 +382,7 @@ align = 1
 valign = 1
 
 [node name="dropdown" type="Control" parent="meta_ui"]
+editor/display_folded = true
 margin_left = 163.458
 margin_top = -284.152
 margin_right = 1280.46
@@ -435,6 +437,7 @@ margin_right = 133.737
 margin_bottom = 393.685
 
 [node name="notes_button" type="Button" parent="meta_ui"]
+editor/display_folded = true
 margin_left = 1058.6
 margin_top = 11.24
 margin_right = 1134.61
@@ -464,6 +467,7 @@ align = 1
 valign = 1
 
 [node name="items_button" type="Button" parent="meta_ui"]
+editor/display_folded = true
 margin_left = 1149.23
 margin_top = 11.24
 margin_right = 1225.23
@@ -533,6 +537,7 @@ visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 rect_pivot_offset = Vector2( -460, 150 )
+script = ExtResource( 31 )
 
 [node name="white" type="ColorRect" parent="meta_ui/pause_menu"]
 anchor_right = 1.0
@@ -556,7 +561,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/save"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 31 )
+texture = ExtResource( 32 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -586,7 +591,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/load"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 32 )
+texture = ExtResource( 33 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -617,7 +622,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/options"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 33 )
+texture = ExtResource( 34 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
@@ -649,7 +654,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/exit"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 31 )
+texture = ExtResource( 32 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
@@ -681,7 +686,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/back"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 32 )
+texture = ExtResource( 33 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
@@ -696,7 +701,7 @@ text = "back"
 align = 1
 valign = 1
 
-[node name="options_menu" parent="meta_ui" instance=ExtResource( 34 )]
+[node name="options_menu" parent="meta_ui" instance=ExtResource( 35 )]
 visible = false
 
 [node name="exit_confirm" type="Control" parent="meta_ui"]
@@ -742,7 +747,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/exit_confirm/yes"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 31 )
+texture = ExtResource( 32 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -771,7 +776,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/exit_confirm/no"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 32 )
+texture = ExtResource( 33 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -820,7 +825,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/save_confirm/yes"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 31 )
+texture = ExtResource( 32 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -833,7 +838,7 @@ text = "back"
 align = 1
 valign = 1
 
-[node name="save_menu" parent="meta_ui" instance=ExtResource( 38 )]
+[node name="save_menu" parent="meta_ui" instance=ExtResource( 39 )]
 visible = false
 margin_left = -0.418121
 margin_top = -0.418091
@@ -841,7 +846,6 @@ margin_right = 1279.58
 margin_bottom = 719.582
 
 [node name="load_confirm" type="Control" parent="meta_ui"]
-editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -876,7 +880,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/load_confirm/yes"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 31 )
+texture = ExtResource( 32 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -889,7 +893,7 @@ text = "continue"
 align = 1
 valign = 1
 
-[node name="load_menu" parent="meta_ui" instance=ExtResource( 39 )]
+[node name="load_menu" parent="meta_ui" instance=ExtResource( 40 )]
 visible = false
 
 [node name="history" type="Control" parent="meta_ui"]
@@ -898,10 +902,10 @@ visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 rect_pivot_offset = Vector2( -460, 150 )
-script = ExtResource( 40 )
+script = ExtResource( 41 )
 
 [node name="bg" type="Sprite" parent="meta_ui/history"]
-texture = ExtResource( 41 )
+texture = ExtResource( 42 )
 centered = false
 
 [node name="back" type="Button" parent="meta_ui/history"]
@@ -922,7 +926,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/history/back"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 32 )
+texture = ExtResource( 33 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
@@ -980,7 +984,7 @@ bus = "Music"
 [connection signal="pressed" from="meta_ui/pause_menu/load" to="meta_ui/load_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/options" to="meta_ui/options_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/exit" to="meta_ui/exit_confirm" method="show"]
-[connection signal="pressed" from="meta_ui/pause_menu/back" to="meta_ui/pause_menu" method="hide"]
+[connection signal="pressed" from="meta_ui/pause_menu/back" to="." method="close_pause_menu"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/dropdown" method="format_quests"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
@@ -988,7 +992,6 @@ bus = "Music"
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
 [connection signal="pressed" from="meta_ui/save_confirm/yes" to="." method="save_confirmed"]
 [connection signal="save_file" from="meta_ui/save_menu" to="." method="save"]
-[connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/pause_menu" method="hide"]
-[connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/load_confirm" method="hide"]
+[connection signal="pressed" from="meta_ui/load_confirm/yes" to="." method="load_confirmed"]
 [connection signal="load_file" from="meta_ui/load_menu" to="." method="load_game_while_playing"]
 [connection signal="pressed" from="meta_ui/history/back" to="meta_ui/history" method="hide_custom"]

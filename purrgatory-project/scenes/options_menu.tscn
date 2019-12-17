@@ -49,15 +49,14 @@ visible = false
 position = Vector2( 398.949, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
-texture_mode = 0
 
 [node name="back" type="Button" parent="."]
 editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 515.0
+margin_left = 506.0
 margin_top = 607.98
-margin_right = -515.0
+margin_right = -524.0
 margin_bottom = -53.0197
 rect_pivot_offset = Vector2( 311.063, -221.429 )
 focus_mode = 0
@@ -86,9 +85,9 @@ valign = 1
 
 [node name="text_size" type="Control" parent="."]
 editor/display_folded = true
-margin_left = 351.0
+margin_left = 314.0
 margin_top = 95.0708
-margin_right = 391.0
+margin_right = 354.0
 margin_bottom = 135.071
 __meta__ = {
 "_edit_group_": true
@@ -156,9 +155,10 @@ text = "preview"
 align = 2
 
 [node name="audio" type="Control" parent="."]
-margin_left = 351.0
+editor/display_folded = true
+margin_left = 314.0
 margin_top = 421.585
-margin_right = 391.0
+margin_right = 354.0
 margin_bottom = 461.585
 __meta__ = {
 "_edit_group_": true
@@ -219,10 +219,11 @@ ticks_on_borders = true
 focus_mode = 0
 
 [node name="fullscreen" type="Control" parent="."]
-margin_left = 1093.26
-margin_top = 98.1077
-margin_right = 1133.26
-margin_bottom = 138.108
+editor/display_folded = true
+margin_left = 1126.26
+margin_top = 107.298
+margin_right = 1166.26
+margin_bottom = 147.299
 
 [node name="fs_label" type="Label" parent="fullscreen"]
 margin_left = -191.6
@@ -243,27 +244,27 @@ focus_mode = 0
 enabled_focus_mode = 0
 
 [node name="enable_notes" type="Control" parent="."]
-margin_left = 1093.26
-margin_top = 164.108
-margin_right = 1133.26
-margin_bottom = 204.108
+margin_left = 1126.26
+margin_top = 241.299
+margin_right = 1166.26
+margin_bottom = 281.299
 
 [node name="label" type="Label" parent="enable_notes"]
-margin_left = -191.6
+margin_left = -251.0
 margin_top = -7.0
-margin_right = -30.6001
+margin_right = -31.0
 margin_bottom = 27.0
-text = "enable notes"
+text = "objective tracker"
 align = 2
 
 [node name="label2" type="Label" parent="enable_notes"]
-margin_left = -211.0
+margin_left = -297.0
 margin_top = 38.0
-margin_right = 30.0
+margin_right = 32.0
 margin_bottom = 183.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.5, 0.5, 0.5, 1 )
-text = "if enabled, automatically keeps track of your current objectives in the \"notes\" menu."
+text = "automatically keeps track of your objectives in the \"notes\" menu."
 align = 2
 autowrap = true
 
@@ -277,6 +278,30 @@ margin_bottom = 0.279274
 focus_mode = 0
 pressed = true
 enabled_focus_mode = 0
+
+[node name="voicing" type="Control" parent="."]
+margin_left = 1126.26
+margin_top = 175.299
+margin_right = 1166.26
+margin_bottom = 215.299
+
+[node name="label" type="Label" parent="voicing"]
+margin_left = -386.0
+margin_top = -7.0
+margin_right = -30.0
+margin_bottom = 27.0
+text = "assistive self-voicing"
+align = 2
+
+[node name="enable_voicing" type="CheckBox" parent="voicing"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -22.5424
+margin_top = -27.7207
+margin_right = 5.45755
+margin_bottom = 0.279274
+focus_mode = 0
+enabled_focus_mode = 0
 [connection signal="pressed" from="back" to="." method="hide"]
 [connection signal="pressed" from="back" to="." method="save_options"]
 [connection signal="value_changed" from="text_size/slider" to="." method="_on_text_size_value_changed"]
@@ -284,3 +309,4 @@ enabled_focus_mode = 0
 [connection signal="value_changed" from="audio/sfx" to="." method="_on_sfx_value_changed"]
 [connection signal="toggled" from="fullscreen/fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="toggled" from="enable_notes/enable_notes" to="." method="_on_enable_notes_toggled"]
+[connection signal="toggled" from="voicing/enable_voicing" to="." method="_on_enable_voicing_toggled"]
