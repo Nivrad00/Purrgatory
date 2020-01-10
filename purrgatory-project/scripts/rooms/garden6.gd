@@ -16,7 +16,7 @@ func update_state(state):
 		$surprise.play()
 		emit_signal('change_audio', null)
 	
-	if state.get('_inv_screwdriver'):
+	if state.get('_inv_screwdriver') or state.get('numa_snooped'):
 		$screwdriver2.hide()
 		
 	# numa is visible by default

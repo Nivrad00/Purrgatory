@@ -26,14 +26,17 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+visible = false
 room_label = "library3"
 
 [node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
+visible = false
 position = Vector2( 724.922, -290.849 )
 room_label = "library5"
 
 [node name="exit3" parent="state_handler" instance=ExtResource( 6 )]
 editor/display_folded = true
+visible = false
 room_label = "study"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3"]
@@ -41,6 +44,7 @@ polygon = PoolVector2Array( 144.077, 546.15, 145.215, 720.772, 211.765, 705.983,
 
 [node name="object" parent="state_handler" instance=ExtResource( 7 )]
 editor/display_folded = true
+visible = false
 dialog_label = "library_infinity"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
@@ -48,12 +52,14 @@ polygon = PoolVector2Array( 670.305, 255.49, 782.775, 278.278, 783.51, 218.001, 
 
 [node name="object2" parent="state_handler" instance=ExtResource( 7 )]
 editor/display_folded = true
+visible = false
 dialog_label = "david"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
 polygon = PoolVector2Array( 897.404, 308.453, 895.599, 351.773, 877.549, 367.116, 879.722, 470.26, 857.694, 509.711, 864.011, 516.931, 891.697, 506.185, 901.917, 527.761, 875.744, 534.079, 878.452, 554.836, 938.919, 562.959, 986.752, 556.641, 983.083, 535.806, 961.482, 525.054, 937.114, 429.388, 943.432, 386.068, 960.579, 405.021, 966.897, 389.678, 943.432, 351.773, 928.089, 351.773, 942.529, 311.161, 916.357, 312.966 )
 
 [node name="object3" parent="state_handler" instance=ExtResource( 7 )]
+visible = false
 dialog_label = " library_books"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]

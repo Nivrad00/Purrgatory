@@ -51,7 +51,7 @@ polygon = PoolVector2Array( 1021.31, 423.511, 1054.7, 423.511, 1096.37, 440.337,
 
 [node name="field_poem" type="Area2D" parent="state_handler"]
 script = ExtResource( 5 )
-dialog_label = "welcome_sign"
+dialog_label = "passcode"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_poem"]
 polygon = PoolVector2Array( 751.528, 241.578, 739.31, 261.94, 742.568, 288.005, 774.334, 291.263, 793.883, 281.489, 785.737, 249.723 )

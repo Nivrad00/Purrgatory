@@ -149,7 +149,7 @@ directional_shadow_blend_splits = true
 directional_shadow_normal_bias = 0.2
 
 [node name="Viewport_quad" type="MeshInstance" parent="."]
-transform = Transform( -2, 8.74228e-08, 0, 7.64274e-15, 4.37114e-08, 1.333, 1.74846e-07, 1, -5.82673e-08, 0, 1.20996, -5.25875 )
+transform = Transform( -2, 8.74228e-008, 0, 7.64274e-015, 4.37114e-008, 1.333, 1.74846e-007, 1, -5.82673e-008, 0, 1.20996, -5.25875 )
 material_override = SubResource( 13 )
 mesh = SubResource( 1 )
 material/0 = null
@@ -161,7 +161,6 @@ usage = 0
 render_target_v_flip = true
 
 [node name="2D_World" type="Node2D" parent="Viewport"]
-editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="BG" type="Panel" parent="Viewport/2D_World"]
@@ -183,4 +182,3 @@ texture = ExtResource( 5 )
 [node name="separator" type="Sprite" parent="Viewport/2D_World"]
 position = Vector2( 298, 200 )
 texture = ExtResource( 6 )
-

@@ -105,4 +105,3 @@ dialog_label = "odontophorous"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object5"]
 position = Vector2( 0, 1.25171 )
 polygon = PoolVector2Array( 202.711, 244.018, 203.903, 304.792, 321.478, 305.189, 320.684, 244.415 )
-

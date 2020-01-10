@@ -81,4 +81,3 @@ dialog_label = "garden_grass"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/garden_grass"]
 polygon = PoolVector2Array( 90.5038, 509.951, 90.743, 719.841, 1279.84, 720.465, 1279.42, 673.468, 1082.23, 502.724, 784.291, 504.895, 784.299, 510.208, 525.05, 512.388, 526.44, 506.774 )
-

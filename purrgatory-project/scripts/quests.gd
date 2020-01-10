@@ -1,6 +1,7 @@
 var quests = {
 	'nothing': '...',
 	'commons_door': 'find a way to unlock the door.',
+	'meowseum_door': 'open the door to the meowseum.',
 	'oliver_chess': 'deliver oliver\'s chess move to tori.',
 	'oliver_soda1': 'get some orange soda for oliver.',
 	'oliver_sode2': 'tell oliver you couldn\'t find a cup for the orange soda.',

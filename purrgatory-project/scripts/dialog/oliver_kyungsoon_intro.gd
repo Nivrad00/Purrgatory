@@ -287,7 +287,7 @@ var raw_blocks = [
 ["","kyungsoon","","not your fault","","","","",""],
 ["","you","","ok","","","","",""],
 ["","_none","","kyungsoon reaches into her pocket and pulls out a key.","","","","",""],
-["","kyungsoon","","here","inv_commons_key","","","",""],
+["","kyungsoon","","here","_inv_commons_key","","","",""],
 ["","you","","what's this?","","","","",""],
 ["","kyungsoon","","opens the door over there","","","","",""],
 ["","you","","oh, thanks.","","","","",""],

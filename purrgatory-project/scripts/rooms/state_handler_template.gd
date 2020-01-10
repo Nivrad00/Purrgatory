@@ -14,6 +14,9 @@ signal change_audio(song)
 # note: if a state handler script has an options_changed() method, it will be
 #   called whenever an option changes
 
+# another note: "_music" states are handled in here, but "_inv" and
+#   "_quest" states are handled in the game node... for some reason.
+
 export var default_music = 'welcome to purrgatory'
 
 func play_default_music():

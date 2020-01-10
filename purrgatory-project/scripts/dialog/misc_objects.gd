@@ -114,5 +114,15 @@ var raw_blocks = [
 ["","","","as you reach for the glass, the cat locks eyes with you.","house_natalie_heard_glass","","","",""],
 ["","you","","don't you dare.","house_cat_pushing_glass","","null","",""],
 ["house_glass_next","you","_none","dammit.","","","null","",""],
-["null","_none","_none","_pass","","","null","",""]
+["null","_none","_none","_pass","","","null","",""],
+["meowseum_door","_none","_none","_pass","","got_meowseum_passcode",['meowseum_door1', 'meowseum_door2'],"",""],
+["meowseum_door1","_none","_none","you unlock the padlock with the code.",[['unlocked_meowseum_door', true], ['_quest_meowseum_door', false], ['got_meowseum_passcode', true]],"","null","",""],
+["meowseum_door2","_none","_none","_pass","","tried_meowseum_door",['meowseum_door3', 'meowseum_door4'],"",""],
+["meowseum_door3","_none","_none","still locked.","","","","",""],
+["","","","looks like you need a four-digit code.","","","null","",""],
+["meowseum_door4","_none","_none","the meowseum is locked with a padlock.","tried_meowseum_door","","","",""],
+["","","","looks like you need a four-digit code.","_quest_meowseum_door","","null","",""],
+["passcode","_none","_none","it's a crumpled up poem.","got_meowseum_passcode","","","",""],
+["","","","(placeholder)","","","","",""],
+["","","","in the corner is the number \"1234.\"","","","null","",""]
 ]
