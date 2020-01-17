@@ -4,19 +4,19 @@
 [ext_resource path="res://scenes/ss.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/tts.gd" type="Script" id=3]
 [ext_resource path="res://scripts/dialog_handler.gd" type="Script" id=4]
-[ext_resource path="res://scripts/dialog/reception_dialog.gd" type="Script" id=5]
-[ext_resource path="res://scripts/dialog/oliver_kyungsoon_intro.gd" type="Script" id=6]
-[ext_resource path="res://scripts/dialog/misc_objects.gd" type="Script" id=7]
-[ext_resource path="res://scripts/dialog/inventory.gd" type="Script" id=8]
+[ext_resource path="res://scripts/dialog/misc_objects.gd" type="Script" id=5]
+[ext_resource path="res://scripts/dialog/inventory.gd" type="Script" id=6]
+[ext_resource path="res://scripts/dialog/reception_dialog.gd" type="Script" id=7]
+[ext_resource path="res://scripts/dialog/oliver_kyungsoon_intro.gd" type="Script" id=8]
 [ext_resource path="res://scripts/dialog/kyungsoon.gd" type="Script" id=9]
 [ext_resource path="res://scripts/dialog/oliver.gd" type="Script" id=10]
-[ext_resource path="res://scripts/dialog/numa.gd" type="Script" id=11]
-[ext_resource path="res://scripts/dialog/flowers.gd" type="Script" id=12]
-[ext_resource path="res://scripts/dialog/elijah.gd" type="Script" id=13]
-[ext_resource path="res://scripts/dialog/sean.gd" type="Script" id=14]
-[ext_resource path="res://scripts/dialog/tori.gd" type="Script" id=15]
-[ext_resource path="res://scripts/dialog/natalie.gd" type="Script" id=16]
-[ext_resource path="res://scripts/dialog/ttt.gd" type="Script" id=17]
+[ext_resource path="res://scripts/dialog/ttt.gd" type="Script" id=11]
+[ext_resource path="res://scripts/dialog/numa.gd" type="Script" id=12]
+[ext_resource path="res://scripts/dialog/flowers.gd" type="Script" id=13]
+[ext_resource path="res://scripts/dialog/elijah.gd" type="Script" id=14]
+[ext_resource path="res://scripts/dialog/sean.gd" type="Script" id=15]
+[ext_resource path="res://scripts/dialog/tori.gd" type="Script" id=16]
+[ext_resource path="res://scripts/dialog/natalie.gd" type="Script" id=17]
 [ext_resource path="res://scripts/room_handler.gd" type="Script" id=18]
 [ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=19]
 [ext_resource path="res://scripts/ui_handler.gd" type="Script" id=20]
@@ -124,16 +124,16 @@ script = ExtResource( 3 )
 [node name="dialog_handler" type="Node" parent="."]
 script = ExtResource( 4 )
 
-[node name="reception_dialog" type="Node" parent="dialog_handler"]
+[node name="objects" type="Node" parent="dialog_handler"]
 script = ExtResource( 5 )
 
-[node name="oliver_kyungsoon_intro" type="Node" parent="dialog_handler"]
+[node name="inventory" type="Node" parent="dialog_handler"]
 script = ExtResource( 6 )
 
-[node name="objects" type="Node" parent="dialog_handler"]
+[node name="receptionist" type="Node" parent="dialog_handler"]
 script = ExtResource( 7 )
 
-[node name="inventory" type="Node" parent="dialog_handler"]
+[node name="oliver_kyungsoon_intro" type="Node" parent="dialog_handler"]
 script = ExtResource( 8 )
 
 [node name="kyungsoon" type="Node" parent="dialog_handler"]
@@ -142,25 +142,25 @@ script = ExtResource( 9 )
 [node name="oliver" type="Node" parent="dialog_handler"]
 script = ExtResource( 10 )
 
-[node name="numa" type="Node" parent="dialog_handler"]
+[node name="ttt" type="Node" parent="dialog_handler"]
 script = ExtResource( 11 )
 
-[node name="flowers" type="Node" parent="dialog_handler"]
+[node name="numa" type="Node" parent="dialog_handler"]
 script = ExtResource( 12 )
 
-[node name="elijah" type="Node" parent="dialog_handler"]
+[node name="flowers" type="Node" parent="dialog_handler"]
 script = ExtResource( 13 )
 
-[node name="sean" type="Node" parent="dialog_handler"]
+[node name="elijah" type="Node" parent="dialog_handler"]
 script = ExtResource( 14 )
 
-[node name="tori" type="Node" parent="dialog_handler"]
+[node name="sean" type="Node" parent="dialog_handler"]
 script = ExtResource( 15 )
 
-[node name="natalie" type="Node" parent="dialog_handler"]
+[node name="tori" type="Node" parent="dialog_handler"]
 script = ExtResource( 16 )
 
-[node name="ttt" type="Node" parent="dialog_handler"]
+[node name="natalie" type="Node" parent="dialog_handler"]
 script = ExtResource( 17 )
 
 [node name="content" type="Control" parent="."]
@@ -964,11 +964,11 @@ bus = "Music"
 [connection signal="timeout" from="skip_timer" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="content/ui/text_box" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="content/ui/name_input/ok_button" to="content/ui/name_input" method="hide"]
-[connection signal="pressed" from="content/ui/name_input/ok_button" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="content/ui/name_input/ok_button" to="." method="set_player_name"]
+[connection signal="pressed" from="content/ui/name_input/ok_button" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="content/ui/skip_button" to="." method="toggle_skip"]
-[connection signal="pressed" from="content/ui/history_button" to="meta_ui/history" method="show_custom"]
 [connection signal="pressed" from="content/ui/history_button" to="." method="turn_off_skip"]
+[connection signal="pressed" from="content/ui/history_button" to="meta_ui/history" method="show_custom"]
 [connection signal="pressed" from="meta_ui/menu_button" to="." method="turn_off_skip"]
 [connection signal="pressed" from="meta_ui/menu_button" to="." method="open_pause_menu"]
 [connection signal="examine_item" from="meta_ui/dropdown" to="." method="examine_item"]
@@ -976,16 +976,16 @@ bus = "Music"
 [connection signal="pressed" from="meta_ui/dropdown/remove_quest" to="." method="test_remove_quest"]
 [connection signal="pressed" from="meta_ui/notes_button" to="meta_ui/dropdown" method="toggle_notes"]
 [connection signal="pressed" from="meta_ui/items_button" to="meta_ui/dropdown" method="toggle_items"]
-[connection signal="pressed" from="meta_ui/history_button2" to="meta_ui/history" method="show_custom"]
 [connection signal="pressed" from="meta_ui/history_button2" to="." method="turn_off_skip"]
+[connection signal="pressed" from="meta_ui/history_button2" to="meta_ui/history" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/save" to="meta_ui/save_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/load" to="meta_ui/load_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/options" to="meta_ui/options_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/exit" to="meta_ui/exit_confirm" method="show"]
 [connection signal="pressed" from="meta_ui/pause_menu/back" to="." method="close_pause_menu"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/dropdown" method="format_quests"]
-[connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
+[connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
 [connection signal="pressed" from="meta_ui/exit_confirm/yes" to="." method="return_to_main"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
 [connection signal="pressed" from="meta_ui/save_confirm/yes" to="." method="save_confirmed"]

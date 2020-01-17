@@ -91,12 +91,12 @@ func _ready():
 				block['next'] = [data[6]]
 			else:
 				block['next'] = data[6]
-				
-			if typeof(data[8]) == TYPE_STRING and data[8] == '':
-				block['choices'] = []
-			else:
-				block['choices'] = data[8]
 			
+			block['choices'] = []
+			if typeof(data[8]) == TYPE_ARRAY and typeof(data[9]) == TYPE_ARRAY:
+				for i in range(data[8].size()):
+					block['choices'].append([data[8][i], data[9][i]])
+					
 			var new_array = []
 			if typeof(data[7]) == TYPE_STRING and data[7] == '':
 				for i in range(block['choices'].size()):
@@ -108,7 +108,7 @@ func _ready():
 					var evaluator = EvalEvaluate.new(tree.get_tree())
 					new_array.append(evaluator)
 			block['choice_conditions'] = new_array
-					
+				
 			last_block = block
 		
 func get_block(label, state):
