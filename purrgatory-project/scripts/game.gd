@@ -81,8 +81,8 @@ func _ready():
 	get_tree().set_auto_accept_quit(false)
 	
 	# load seen blocks
-	if f.file_exists("res://save_data/seen_blocks.save"):
-		f.open("res://save_data/seen_blocks.save", File.READ)
+	if f.file_exists("user://seen_blocks.save"):
+		f.open("user://seen_blocks.save", File.READ)
 		seen_blocks = parse_json(f.get_line())
 		f.close()
 
@@ -97,7 +97,7 @@ func _notification(what):
 		# save seen_blocks to file
 		# (that's the only time it needs to be saved, afaik)
 		var f = File.new()
-		f.open("res://save_data/seen_blocks.save", File.WRITE)
+		f.open("user://seen_blocks.save", File.WRITE)
 		f.store_line(to_json(seen_blocks))
 		f.close()
 		
@@ -294,7 +294,7 @@ func save(file):
 	
 	# save a dict
 	var save_game = File.new()
-	save_game.open("res://save_data/save" + str(file) + ".save", File.WRITE)
+	save_game.open("user://save" + str(file) + ".save", File.WRITE)
 	save_game.store_line(to_json(save_dict))
 	save_game.close()
 	
@@ -312,7 +312,7 @@ func save(file):
 	var img = $ss.get_texture().get_data()
 	yield(get_tree(), "idle_frame")
 	yield(get_tree(), "idle_frame")
-	img.save_png("res://save_data/thumb" + str(file) + ".png")
+	img.save_png("user://thumb" + str(file) + ".png")
 	
 	# then move the nodes back
 	$ss.remove_child(room)
@@ -333,10 +333,10 @@ func load_game_while_playing(file):
 
 func load_game(file):
 	var save_game = File.new()
-	if not save_game.file_exists("res://save_data/save" + str(file) + ".save"):
+	if not save_game.file_exists("user://save" + str(file) + ".save"):
 		return
 		
-	save_game.open("res://save_data/save" + str(file) + ".save", File.READ)
+	save_game.open("user://save" + str(file) + ".save", File.READ)
 	var save_dict = parse_json(save_game.get_line())
 	save_game.close()
 	

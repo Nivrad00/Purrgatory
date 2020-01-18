@@ -122,6 +122,7 @@ one_shot = true
 script = ExtResource( 3 )
 
 [node name="dialog_handler" type="Node" parent="."]
+editor/display_folded = true
 script = ExtResource( 4 )
 
 [node name="objects" type="Node" parent="dialog_handler"]
@@ -343,6 +344,7 @@ align = 1
 valign = 1
 
 [node name="meta_ui" type="Control" parent="."]
+editor/display_folded = true
 margin_top = 0.418091
 margin_right = 1280.0
 margin_bottom = 720.418
