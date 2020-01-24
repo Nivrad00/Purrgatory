@@ -42,13 +42,13 @@ visible = false
 position = Vector2( 369.758, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
-texture_mode = 1072693247
 
 [node name="Line2D2" type="Line2D" parent="."]
 visible = false
 position = Vector2( 398.949, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
+texture_mode = 41273112
 
 [node name="back" type="Button" parent="."]
 editor/display_folded = true
@@ -219,7 +219,6 @@ ticks_on_borders = true
 focus_mode = 0
 
 [node name="fullscreen" type="Control" parent="."]
-editor/display_folded = true
 margin_left = 1126.26
 margin_top = 107.298
 margin_right = 1166.26

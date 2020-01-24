@@ -18,7 +18,7 @@ var raw_blocks = [
 ["","","","now hurry up, dear, we don't have all eternity.","","","recep_main","","",""],
 ["recep_ok","_none","","you pick up the pen to write your name…","enable_name_input_flag","","","","",""],
 ["","","","","no_skip","","","","",""],
-["","receptionist","","wonderful. let's get you filed away with the others.","","","","","",""],
+["","receptionist","","{player}? wonderful. let's get you filed away with the others.","","","","","",""],
 ["","_none","","the receptionist takes your documents and opens a filing cabinet.","","","","","",""],
 ["","receptionist","","let's see. you're number… eight?","","","","","",""],
 ["","","","oh dear, that's over capacity.","","","","","",""],

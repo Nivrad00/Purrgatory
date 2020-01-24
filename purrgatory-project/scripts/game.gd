@@ -53,7 +53,12 @@ var numa_test_state = {
 
 var format_dict = {
 	'player': '',
-	'player_upper': ''
+	'player_upper': '',
+	'they': '',
+	'them': '',
+	'their': '',
+	'theirs': '',
+	'themself': ''
 }
 
 var block = null
@@ -174,8 +179,17 @@ func start_dialog(label):
 	for choice in block['choices']:
 		choices_text.append(choice[0])
 	var text = block['text']
+	
 	if text != null:
 		text = text.format(format_dict)
+		
+		var regex = RegEx.new()
+		regex.compile('{([^/]+)/([^}]+)}')
+		if format_dict['they'] == 'they':
+			text = regex.sub(text, '$1', true)
+		else:
+			text = regex.sub(text, '$2', true)
+		
 	ui.update_ui(block['speaker'], block['sprites'], text, choices_text)
 	
 	for pair in block['states']:
@@ -228,8 +242,17 @@ func update_dialog(b: int):
 		for choice in block['choices']:
 			choices_text.append(choice[0])
 		var text = block['text']
+		
 		if text != null:
 			text = text.format(format_dict)
+			
+			var regex = RegEx.new()
+			regex.compile('{([^/]+)/([^}]+)}')
+			if format_dict['they'] == 'they':
+				text = regex.sub(text, '$1', true)
+			else:
+				text = regex.sub(text, '$2', true)
+			
 		ui.update_ui(block['speaker'], block['sprites'], text, choices_text)
 		
 		for pair in block['states']:
@@ -238,7 +261,37 @@ func update_dialog(b: int):
 		room.update_state(state)
 
 func set_player_name():
-	format_dict['player'] = ui.get_node('name_input/text').get_text().to_lower()
+	var text = ui.get_node('name_input/text').get_text().to_lower()
+	if text.length() != 0:
+		format_dict['player'] = text
+		
+		if ui.get_node('name_input/pronouns/they').pressed:
+			state['_pronouns_they'] = true
+			format_dict['they'] = 'they'
+			format_dict['them'] = 'them'
+			format_dict['their'] = 'their'
+			format_dict['theirs'] = 'theirs'
+			format_dict['themself'] = 'themself'
+			
+		elif ui.get_node('name_input/pronouns/she').pressed:
+			state['_pronouns_she'] = true
+			format_dict['they'] = 'she'
+			format_dict['them'] = 'her'
+			format_dict['their'] = 'her'
+			format_dict['theirs'] = 'hers'
+			format_dict['themself'] = 'herself'
+			
+		elif ui.get_node('name_input/pronouns/he').pressed:
+			state['_pronouns_he'] = true
+			format_dict['they'] = 'he'
+			format_dict['them'] = 'him'
+			format_dict['their'] = 'his'
+			format_dict['theirs'] = 'his'
+			format_dict['themself'] = 'himself'
+			
+		ui.get_node('name_input').hide()
+		ui.get_node('text_box').disabled = false
+		update_dialog(-1)
 
 func change_audio(song, play = true):
 	current_audio = song
@@ -278,7 +331,7 @@ func save(file):
 		"state_dict": state,
 		"room": room.get_current_room(),
 		"block": block,
-		"name_dict": format_dict,
+		"format_dict": format_dict,
 		"action_timers": action_timers,
 		"sprites": ui.get_sprites(),
 		"choices": ui.get_choices(),
@@ -344,7 +397,7 @@ func load_game(file):
 	# (resetting the room to the default and then immediately changing it to the new room was 
 	#   causing a bug where the defulut room didn't get deleted)
 	state = save_dict["state_dict"]
-	format_dict = save_dict["name_dict"]
+	format_dict = save_dict["format_dict"]
 	action_timers = save_dict["action_timers"]
 	block = save_dict["block"]
 	
@@ -371,6 +424,7 @@ func reset_state(reset_room):
 	end_dialog()
 	ui.get_node('name_input').hide()
 	ui.get_node('name_input/text').set_text('')
+	ui.get_node('name_input/pronouns/they').pressed = true
 	state = {
 		'true': true
 	}
