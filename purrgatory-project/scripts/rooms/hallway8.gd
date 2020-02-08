@@ -14,3 +14,7 @@ func update_state(state):
 	if state.get('display_sean'):
 		emit_signal('set_hidden_sprite', [$sean_idle])
 		state['display_sean'] = false
+		
+	if state.get('display_elijah'):
+		emit_signal('set_hidden_sprite', [$elijah_idle])
+		state['display_elijah'] = false

@@ -124,5 +124,7 @@ var raw_blocks = [
 ["","","","looks like you need a four-digit code.","_quest_meowseum_door","","null","","",""],
 ["passcode","_none","_none","it's a crumpled up poem.","got_meowseum_passcode","","","","",""],
 ["","","","(placeholder)","","","","","",""],
-["","","","in the corner is the number \"1234.\"","","","null","","",""]
+["","","","in the corner is the number \"1234.\"","","","null","","",""],
+["battery1","_none","_none","it's a double-a battery! this'll come in handy.","_inv_battery1","","null","","",""],
+["battery2","_none","_none","it's a double-a battery! what luck.","_inv_battery2","","null","","",""]
 ]

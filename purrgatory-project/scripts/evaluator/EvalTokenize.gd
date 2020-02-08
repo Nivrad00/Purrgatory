@@ -38,6 +38,8 @@ func to_token(res):
 	return s
 
 func tokenize(s):
+	if s is Array:
+		print(s)
 	var ret = []
 	for tok in regex.search_all(s):
 		ret.append(to_token(tok))

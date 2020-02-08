@@ -154,7 +154,7 @@ func get_block(label, state):
 		if block['choice_conditions'][i].evaluate(state):
 			proc_choices.append(block['choices'][i])
 	if proc_choices.size() > 4:
-		proc_choices = proc_choices.resize(4)
+		proc_choices.resize(4)
 	proc_block['choices'] = proc_choices
 	
 	var next_label

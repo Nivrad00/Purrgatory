@@ -47,9 +47,9 @@
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("ss")
 
-[sub_resource type="StyleBoxEmpty" id=4]
+[sub_resource type="StyleBoxEmpty" id=2]
 
-[sub_resource type="StyleBoxTexture" id=5]
+[sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 21 )
 region_rect = Rect2( 0, 0, 900, 83 )
 margin_left = 40.0
@@ -57,21 +57,21 @@ margin_right = 40.0
 margin_top = 11.0
 margin_bottom = 12.0
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=4]
 size = 28
 font_data = ExtResource( 22 )
 
-[sub_resource type="InputEventAction" id=7]
+[sub_resource type="InputEventAction" id=5]
 action = "ui_enter"
+
+[sub_resource type="ShortCut" id=6]
+shortcut = SubResource( 5 )
+
+[sub_resource type="InputEventAction" id=7]
+action = "ui_select"
 
 [sub_resource type="ShortCut" id=8]
 shortcut = SubResource( 7 )
-
-[sub_resource type="InputEventAction" id=2]
-action = "ui_select"
-
-[sub_resource type="ShortCut" id=3]
-shortcut = SubResource( 2 )
 
 [sub_resource type="DynamicFont" id=9]
 size = 10
@@ -220,9 +220,9 @@ margin_left = 11.0
 margin_top = 2.0
 margin_right = -85.0
 margin_bottom = 2.0
-custom_styles/focus = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
 custom_colors/cursor_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -296,7 +296,7 @@ margin_bottom = 4.0
 focus_mode = 0
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
-shortcut = SubResource( 8 )
+shortcut = SubResource( 6 )
 icon = ExtResource( 25 )
 flat = true
 
@@ -310,7 +310,7 @@ margin_bottom = -20.0
 focus_mode = 0
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
-shortcut = SubResource( 3 )
+shortcut = SubResource( 8 )
 flat = true
 
 [node name="box" type="Sprite" parent="content/ui/text_box"]

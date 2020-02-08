@@ -60,4 +60,3 @@ polygon = PoolVector2Array( 841.149, 648.941, 889.782, 631.109, 849.795, 607.874
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object4"]
 polygon = PoolVector2Array( 909.775, 611.116, 890.322, 639.215, 942.197, 639.755, 950.302, 611.656 )
-
