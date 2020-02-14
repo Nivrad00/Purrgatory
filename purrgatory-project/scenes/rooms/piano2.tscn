@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/piano2.png" type="Texture" id=3]
 [ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=6]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -53,10 +54,10 @@ polygon = PoolVector2Array( 269.057, 618.05, 300.556, 618.05, 328.503, 598.151, 
 modulate = Color( 0, 0, 0, 0.1 )
 polygon = PoolVector2Array( 309.956, 618.172, 328.147, 618.172, 328.178, 605.352 )
 
-[node name="object" parent="state_handler" instance=ExtResource( 5 )]
-dialog_label = "piano"
+[node name="exit3" parent="state_handler" instance=ExtResource( 5 )]
+script = ExtResource( 6 )
+room_label = "keyboard"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3"]
 position = Vector2( -0.902466, 0 )
 polygon = PoolVector2Array( 540.033, 377.366, 540.321, 398.203, 622.94, 467.55, 573.093, 515.839, 618.218, 550.134, 705.027, 508.314, 793.304, 548.329, 821.281, 535.694, 754.733, 471.242, 836.208, 420.096, 836.208, 393.402, 789.37, 372.464 )
-

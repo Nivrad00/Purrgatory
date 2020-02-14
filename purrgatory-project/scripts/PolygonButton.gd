@@ -10,6 +10,7 @@ var holding_click = false
 
 signal pressed()
 signal mouse_down()
+signal mouse_up()
 
 func _ready():
 	# print("ready")
@@ -61,10 +62,9 @@ func mouse_clicked_on_button():
 func mouse_released():
 	if holding_click:
 		holding_click = false
-		# print("mouse released")
+		emit_signal("mouse_up")
 		if hovering > 0:
 			emit_signal("pressed")
-			# print("press!")
 	
 func input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton \

@@ -1,0 +1,196 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://assets/rooms/keyboard_bg.png" type="Texture" id=3]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/keyboard_white_key.gd" type="Script" id=5]
+[ext_resource path="res://assets/sprites/keyboard/c1.png" type="Texture" id=6]
+[ext_resource path="res://assets/audio/meow.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/sprites/keyboard/d1.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/keyboard/e1.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/keyboard/f1.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/keyboard/g1.png" type="Texture" id=11]
+[ext_resource path="res://assets/rooms/keyboard_fg.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/keyboard/keyboard_slider.png" type="Texture" id=13]
+[ext_resource path="res://scripts/volume_knob.gd" type="Script" id=14]
+[ext_resource path="res://assets/sprites/keyboard/volume_line.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/keyboard/power_button_on.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/keyboard/power_button_off.png" type="Texture" id=17]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=18]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Shake"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 839.136, 198.487 ), Vector2( 835.136, 198.487 ), Vector2( 839.136, 198.487 ), Vector2( 835.136, 198.487 ), Vector2( 839.136, 198.487 ) ]
+}
+
+[node name="room_instance" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 1 )
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+
+[node name="bg" type="Sprite" parent="state_handler"]
+position = Vector2( 1.19745, -0.598724 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="c1" parent="state_handler" instance=ExtResource( 4 )]
+editor/display_folded = true
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/c1"]
+position = Vector2( 70.9778, 368.297 )
+texture = ExtResource( 6 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/c1"]
+polygon = PoolVector2Array( 60.6975, 292.133, 38.2376, 450.666, 79.7001, 450.958, 100.009, 291.699 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/c1"]
+stream = ExtResource( 7 )
+volume_db = 3.0
+pitch_scale = 0.5
+
+[node name="d1" parent="state_handler" instance=ExtResource( 4 )]
+editor/display_folded = true
+position = Vector2( 40.1187, 0 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/d1"]
+position = Vector2( 70.9778, 368.297 )
+texture = ExtResource( 8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/d1"]
+polygon = PoolVector2Array( 60.3077, 291.112, 38.9791, 450.727, 81.2867, 451.251, 101.042, 291.462 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/d1"]
+stream = ExtResource( 7 )
+volume_db = 3.0
+pitch_scale = 0.56
+
+[node name="e1" parent="state_handler" instance=ExtResource( 4 )]
+editor/display_folded = true
+position = Vector2( 81.1138, 0 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/e1"]
+position = Vector2( 70.9778, 368.297 )
+texture = ExtResource( 9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/e1"]
+polygon = PoolVector2Array( 59.8335, 291.31, 39.8981, 450.194, 81.5676, 450.343, 100.754, 290.86 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/e1"]
+stream = ExtResource( 7 )
+volume_db = 3.0
+pitch_scale = 0.63
+
+[node name="f1" parent="state_handler" instance=ExtResource( 4 )]
+editor/display_folded = true
+position = Vector2( 121.378, 0 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/f1"]
+position = Vector2( 70.9778, 368.297 )
+texture = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/f1"]
+polygon = PoolVector2Array( 59.8335, 291.31, 40.9254, 450.684, 82.1452, 450.534, 99.6824, 291.35 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/f1"]
+stream = ExtResource( 7 )
+volume_db = 3.0
+pitch_scale = 0.67
+
+[node name="g1" parent="state_handler" instance=ExtResource( 4 )]
+editor/display_folded = true
+position = Vector2( 161.641, 0 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/g1"]
+position = Vector2( 70.9778, 368.297 )
+texture = ExtResource( 11 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/g1"]
+polygon = PoolVector2Array( 57.6409, 291.376, 40.9254, 450.684, 82.845, 449.862, 98.7933, 291.518 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/g1"]
+stream = ExtResource( 7 )
+volume_db = 3.0
+pitch_scale = 0.75
+
+[node name="fg" type="Sprite" parent="state_handler"]
+texture = ExtResource( 12 )
+centered = false
+
+[node name="instrument" type="Button" parent="state_handler"]
+margin_left = 839.136
+margin_top = 198.487
+margin_right = 890.136
+margin_bottom = 247.487
+rect_pivot_offset = Vector2( -22.8117, 83.4602 )
+focus_mode = 0
+action_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 13 )
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/instrument"]
+playback_speed = 2.0
+anims/Shake = SubResource( 1 )
+
+[node name="volume" type="Button" parent="state_handler"]
+editor/display_folded = true
+margin_left = 485.079
+margin_top = 188.012
+margin_right = 536.079
+margin_bottom = 237.012
+rect_pivot_offset = Vector2( 26.4538, 22.3453 )
+focus_mode = 0
+action_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 14 )
+
+[node name="TextureRect" type="TextureRect" parent="state_handler/volume"]
+margin_left = 84.7526
+margin_top = 26.2592
+margin_right = 100.753
+margin_bottom = 27.2592
+rect_rotation = 89.9999
+rect_pivot_offset = Vector2( -29.5061, -28.5394 )
+texture = ExtResource( 15 )
+expand = true
+
+[node name="power" type="CheckBox" parent="state_handler"]
+margin_left = 417.0
+margin_top = 191.0
+margin_right = 452.0
+margin_bottom = 259.0
+rect_pivot_offset = Vector2( 36.5985, -2.65051 )
+focus_mode = 0
+custom_icons/checked = ExtResource( 16 )
+custom_icons/unchecked = ExtResource( 17 )
+action_mode = 0
+enabled_focus_mode = 0
+
+[node name="exit4" parent="state_handler" instance=ExtResource( 18 )]
+room_label = "piano2"
+[connection signal="pressed" from="state_handler/instrument" to="state_handler/instrument/AnimationPlayer" method="play" binds= [ "Shake" ]]
+[connection signal="button_down" from="state_handler/volume" to="state_handler/volume" method="_on_volume_button_down"]
+[connection signal="button_up" from="state_handler/volume" to="state_handler/volume" method="_on_volume_button_up"]
