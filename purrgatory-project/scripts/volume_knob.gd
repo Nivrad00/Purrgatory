@@ -3,9 +3,6 @@ extends Button
 const SENS = 1
 
 var dragging = false
-
-func _ready():
-	rect_rotation = 270
 	
 func _on_volume_button_down():
 	dragging = true
@@ -25,3 +22,5 @@ func _input(event):
 			rect_rotation = 360
 		elif rect_rotation < 0:
 			rect_rotation = 0
+		
+		get_parent().get_parent().update_volume(rect_rotation)

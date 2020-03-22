@@ -6,8 +6,8 @@ var visible_polygons = []
 var hovering = 0 # number of polygons that are being hovered over
 var holding_click = false
 
-signal key_down()
-signal key_up()
+signal key_down(key)
+signal key_up(key)
 
 func _ready():
 	connect("mouse_entered", self, "mouse_entered")
@@ -32,8 +32,11 @@ func _input_event(viewport, event, shape_idx):
 	
 func mouse_pressed():
 	holding_click = true
-	emit_signal("key_down")
+	emit_signal("key_down", self)
 	
 func mouse_released():
 	holding_click = false
-	emit_signal("key_up")
+	emit_signal("key_up", self)
+	
+func play_note():
+	$sound.play()

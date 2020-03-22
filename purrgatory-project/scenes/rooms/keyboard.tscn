@@ -1,23 +1,70 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/keyboard.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/keyboard_bg.png" type="Texture" id=3]
-[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scripts/keyboard_white_key.gd" type="Script" id=5]
-[ext_resource path="res://assets/sprites/keyboard/c1.png" type="Texture" id=6]
-[ext_resource path="res://assets/audio/meow.ogg" type="AudioStream" id=7]
-[ext_resource path="res://assets/sprites/keyboard/d1.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprites/keyboard/e1.png" type="Texture" id=9]
-[ext_resource path="res://assets/sprites/keyboard/f1.png" type="Texture" id=10]
-[ext_resource path="res://assets/sprites/keyboard/g1.png" type="Texture" id=11]
-[ext_resource path="res://assets/rooms/keyboard_fg.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprites/keyboard/keyboard_slider.png" type="Texture" id=13]
-[ext_resource path="res://scripts/volume_knob.gd" type="Script" id=14]
-[ext_resource path="res://assets/sprites/keyboard/volume_line.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprites/keyboard/power_button_on.png" type="Texture" id=16]
-[ext_resource path="res://assets/sprites/keyboard/power_button_off.png" type="Texture" id=17]
-[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scripts/keyboard_handler.gd" type="Script" id=4]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/keyboard_white_key.gd" type="Script" id=6]
+[ext_resource path="res://assets/sprites/keyboard/c1.png" type="Texture" id=7]
+[ext_resource path="res://assets/audio/meow.ogg" type="AudioStream" id=8]
+[ext_resource path="res://assets/sprites/keyboard/d1.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/keyboard/e1.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/keyboard/f1.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/keyboard/g1.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/keyboard/a1.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/keyboard/b1.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/keyboard/c2.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/keyboard/d2.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/keyboard/e2.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/keyboard/f2.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/keyboard/g2.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/keyboard/a2.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/keyboard/b2.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/keyboard/c3.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/keyboard/d3.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/keyboard/e3.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/keyboard/f3.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprites/keyboard/g3.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprites/keyboard/a3.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprites/keyboard/b3.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprites/keyboard/c4.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprites/keyboard/d4.png" type="Texture" id=30]
+[ext_resource path="res://assets/sprites/keyboard/e4.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprites/keyboard/f4.png" type="Texture" id=32]
+[ext_resource path="res://assets/sprites/keyboard/g4.png" type="Texture" id=33]
+[ext_resource path="res://assets/sprites/keyboard/a4.png" type="Texture" id=34]
+[ext_resource path="res://assets/sprites/keyboard/b4.png" type="Texture" id=35]
+[ext_resource path="res://assets/sprites/keyboard/c5.png" type="Texture" id=36]
+[ext_resource path="res://assets/rooms/keyboard_fg.png" type="Texture" id=37]
+[ext_resource path="res://scripts/keyboard_black_key.gd" type="Script" id=38]
+[ext_resource path="res://assets/sprites/keyboard/c#1.png" type="Texture" id=39]
+[ext_resource path="res://assets/sprites/keyboard/black_key_line.png" type="Texture" id=40]
+[ext_resource path="res://assets/sprites/keyboard/d#1.png" type="Texture" id=41]
+[ext_resource path="res://assets/sprites/keyboard/f#1.png" type="Texture" id=42]
+[ext_resource path="res://assets/sprites/keyboard/g#1.png" type="Texture" id=43]
+[ext_resource path="res://assets/sprites/keyboard/a#1.png" type="Texture" id=44]
+[ext_resource path="res://assets/sprites/keyboard/c#2.png" type="Texture" id=45]
+[ext_resource path="res://assets/sprites/keyboard/d#2.png" type="Texture" id=46]
+[ext_resource path="res://assets/sprites/keyboard/f#2.png" type="Texture" id=47]
+[ext_resource path="res://assets/sprites/keyboard/g#2.png" type="Texture" id=48]
+[ext_resource path="res://assets/sprites/keyboard/a#2.png" type="Texture" id=49]
+[ext_resource path="res://assets/sprites/keyboard/c#3.png" type="Texture" id=50]
+[ext_resource path="res://assets/sprites/keyboard/d#3.png" type="Texture" id=51]
+[ext_resource path="res://assets/sprites/keyboard/f#3.png" type="Texture" id=52]
+[ext_resource path="res://assets/sprites/keyboard/g#3.png" type="Texture" id=53]
+[ext_resource path="res://assets/sprites/keyboard/a#3.png" type="Texture" id=54]
+[ext_resource path="res://assets/sprites/keyboard/c#4.png" type="Texture" id=55]
+[ext_resource path="res://assets/sprites/keyboard/d#4.png" type="Texture" id=56]
+[ext_resource path="res://assets/sprites/keyboard/f#4.png" type="Texture" id=57]
+[ext_resource path="res://assets/sprites/keyboard/g#4.png" type="Texture" id=58]
+[ext_resource path="res://assets/sprites/keyboard/a#4.png" type="Texture" id=59]
+[ext_resource path="res://assets/sprites/keyboard/keyboard_slider.png" type="Texture" id=60]
+[ext_resource path="res://scripts/volume_knob.gd" type="Script" id=61]
+[ext_resource path="res://assets/sprites/keyboard/volume_line.png" type="Texture" id=62]
+[ext_resource path="res://assets/sprites/keyboard/power_button_on.png" type="Texture" id=63]
+[ext_resource path="res://assets/sprites/keyboard/power_button_off.png" type="Texture" id=64]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=65]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Shake"
@@ -44,153 +91,1002 @@ script = ExtResource( 1 )
 
 [node name="state_handler" type="Control" parent="."]
 script = ExtResource( 2 )
+default_music = ""
 
 [node name="bg" type="Sprite" parent="state_handler"]
-position = Vector2( 1.19745, -0.598724 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="c1" parent="state_handler" instance=ExtResource( 4 )]
+[node name="bg2" type="Sprite" parent="state_handler"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="keyboard_handler" type="Node2D" parent="state_handler"]
 editor/display_folded = true
-script = ExtResource( 5 )
+position = Vector2( 1.19745, -0.598724 )
+script = ExtResource( 4 )
 
-[node name="Sprite" type="Sprite" parent="state_handler/c1"]
+[node name="c1" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
+position = Vector2( -1.19745, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/c1"]
 position = Vector2( 70.9778, 368.297 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/c1"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/c1"]
 polygon = PoolVector2Array( 60.6975, 292.133, 38.2376, 450.666, 79.7001, 450.958, 100.009, 291.699 )
 
-[node name="sound" type="AudioStreamPlayer" parent="state_handler/c1"]
-stream = ExtResource( 7 )
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/c1"]
+stream = ExtResource( 8 )
 volume_db = 3.0
 pitch_scale = 0.5
+bus = "Keyboard"
 
-[node name="d1" parent="state_handler" instance=ExtResource( 4 )]
-editor/display_folded = true
-position = Vector2( 40.1187, 0 )
-script = ExtResource( 5 )
+[node name="d1" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 38.9212, 0.598724 )
+script = ExtResource( 6 )
 
-[node name="Sprite" type="Sprite" parent="state_handler/d1"]
-position = Vector2( 70.9778, 368.297 )
-texture = ExtResource( 8 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/d1"]
-polygon = PoolVector2Array( 60.3077, 291.112, 38.9791, 450.727, 81.2867, 451.251, 101.042, 291.462 )
-
-[node name="sound" type="AudioStreamPlayer" parent="state_handler/d1"]
-stream = ExtResource( 7 )
-volume_db = 3.0
-pitch_scale = 0.56
-
-[node name="e1" parent="state_handler" instance=ExtResource( 4 )]
-editor/display_folded = true
-position = Vector2( 81.1138, 0 )
-script = ExtResource( 5 )
-
-[node name="Sprite" type="Sprite" parent="state_handler/e1"]
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/d1"]
 position = Vector2( 70.9778, 368.297 )
 texture = ExtResource( 9 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/e1"]
-polygon = PoolVector2Array( 59.8335, 291.31, 39.8981, 450.194, 81.5676, 450.343, 100.754, 290.86 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/d1"]
+polygon = PoolVector2Array( 60.3077, 291.112, 38.9791, 450.727, 81.2867, 451.251, 101.042, 291.462 )
 
-[node name="sound" type="AudioStreamPlayer" parent="state_handler/e1"]
-stream = ExtResource( 7 )
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/d1"]
+stream = ExtResource( 8 )
 volume_db = 3.0
-pitch_scale = 0.63
+pitch_scale = 0.56
+bus = "Keyboard"
 
-[node name="f1" parent="state_handler" instance=ExtResource( 4 )]
-editor/display_folded = true
-position = Vector2( 121.378, 0 )
-script = ExtResource( 5 )
+[node name="e1" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 79.9164, 0.598724 )
+script = ExtResource( 6 )
 
-[node name="Sprite" type="Sprite" parent="state_handler/f1"]
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/e1"]
 position = Vector2( 70.9778, 368.297 )
 texture = ExtResource( 10 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/f1"]
-polygon = PoolVector2Array( 59.8335, 291.31, 40.9254, 450.684, 82.1452, 450.534, 99.6824, 291.35 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/e1"]
+polygon = PoolVector2Array( 59.8335, 291.31, 39.8981, 450.194, 81.5676, 450.343, 100.754, 290.86 )
 
-[node name="sound" type="AudioStreamPlayer" parent="state_handler/f1"]
-stream = ExtResource( 7 )
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/e1"]
+stream = ExtResource( 8 )
 volume_db = 3.0
-pitch_scale = 0.67
+pitch_scale = 0.63
+bus = "Keyboard"
 
-[node name="g1" parent="state_handler" instance=ExtResource( 4 )]
-editor/display_folded = true
-position = Vector2( 161.641, 0 )
-script = ExtResource( 5 )
+[node name="f1" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 120.181, 0.598724 )
+script = ExtResource( 6 )
 
-[node name="Sprite" type="Sprite" parent="state_handler/g1"]
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/f1"]
 position = Vector2( 70.9778, 368.297 )
 texture = ExtResource( 11 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/g1"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/f1"]
+polygon = PoolVector2Array( 59.8335, 291.31, 40.9254, 450.684, 82.1452, 450.534, 99.6824, 291.35 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/f1"]
+stream = ExtResource( 8 )
+volume_db = 3.0
+pitch_scale = 0.67
+bus = "Keyboard"
+
+[node name="g1" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 160.444, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/g1"]
+position = Vector2( 70.9778, 368.297 )
+texture = ExtResource( 12 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/g1"]
 polygon = PoolVector2Array( 57.6409, 291.376, 40.9254, 450.684, 82.845, 449.862, 98.7933, 291.518 )
 
-[node name="sound" type="AudioStreamPlayer" parent="state_handler/g1"]
-stream = ExtResource( 7 )
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/g1"]
+stream = ExtResource( 8 )
 volume_db = 3.0
 pitch_scale = 0.75
+bus = "Keyboard"
+
+[node name="a1" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 202.443, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/a1"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 13 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/a1"]
+polygon = PoolVector2Array( 56.3519, 291.609, 40.9254, 450.684, 83.2748, 450.174, 96.3866, 291.958 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/a1"]
+stream = ExtResource( 8 )
+volume_db = 3.0
+pitch_scale = 0.84
+bus = "Keyboard"
+
+[node name="b1" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 244.443, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/b1"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 14 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/b1"]
+polygon = PoolVector2Array( 54.1382, 291.757, 40.9254, 450.684, 82.1542, 450.363, 94.8066, 291.305 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/b1"]
+stream = ExtResource( 8 )
+volume_db = 3.0
+pitch_scale = 0.94
+bus = "Keyboard"
+
+[node name="c2" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 284.443, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/c2"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 15 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/c2"]
+polygon = PoolVector2Array( 54.1382, 291.757, 42.0097, 450.623, 83.6496, 450.623, 94.3815, 291.361 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/c2"]
+stream = ExtResource( 8 )
+volume_db = 3.0
+bus = "Keyboard"
+
+[node name="d2" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 324.443, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/d2"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 16 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/d2"]
+polygon = PoolVector2Array( 54.1382, 291.757, 43.1333, 450.617, 83.7431, 450.36, 94.3815, 291.361 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/d2"]
+stream = ExtResource( 8 )
+volume_db = 3.0
+pitch_scale = 1.12
+bus = "Keyboard"
+
+[node name="e2" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 365.443, -0.401276 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/e2"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 17 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/e2"]
+polygon = PoolVector2Array( 52.5475, 291.594, 42.4955, 451.873, 85.4699, 451.629, 94.3815, 291.361 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/e2"]
+stream = ExtResource( 8 )
+volume_db = 3.0
+pitch_scale = 1.26
+bus = "Keyboard"
+
+[node name="f2" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 406.443, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/f2"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 18 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/f2"]
+polygon = PoolVector2Array( 53.4142, 291.702, 44.3685, 451.219, 84.4101, 451.895, 91.562, 291.973 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/f2"]
+stream = ExtResource( 8 )
+volume_db = 3.0
+pitch_scale = 1.33
+bus = "Keyboard"
+
+[node name="g2" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 446.443, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/g2"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 19 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/g2"]
+polygon = PoolVector2Array( 51.6203, 291.702, 44.3685, 451.219, 87.399, 450.735, 93.4205, 291.702 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/g2"]
+stream = ExtResource( 8 )
+volume_db = 3.0
+pitch_scale = 1.5
+bus = "Keyboard"
+
+[node name="a2" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 488.443, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/a2"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 20 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/a2"]
+polygon = PoolVector2Array( 51.6203, 291.702, 45.4788, 451.216, 86.2557, 450.484, 91.4687, 291.549 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/a2"]
+stream = ExtResource( 8 )
+volume_db = 3.0
+pitch_scale = 1.68
+bus = "Keyboard"
+
+[node name="b2" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 529.443, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/b2"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 21 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/b2"]
+polygon = PoolVector2Array( 49.3011, 291.432, 45.4788, 451.216, 86.2557, 450.484, 89.4932, 291.598 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/b2"]
+stream = ExtResource( 8 )
+volume_db = 3.0
+pitch_scale = 1.89
+bus = "Keyboard"
+
+[node name="c3" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 569.443, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/c3"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 22 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/c3"]
+polygon = PoolVector2Array( 49.3011, 291.432, 46.3936, 451.901, 88.3515, 451.377, 89.4932, 291.598 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/c3"]
+stream = ExtResource( 8 )
+volume_db = 3.0
+pitch_scale = 2.0
+bus = "Keyboard"
+
+[node name="d3" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 611.443, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/d3"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 23 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/d3"]
+polygon = PoolVector2Array( 47.3217, 291.518, 46.2938, 450.616, 87.6746, 451.13, 87.4174, 291.389 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/d3"]
+stream = ExtResource( 8 )
+volume_db = 3.0
+pitch_scale = 2.25
+bus = "Keyboard"
+
+[node name="e3" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 650.443, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/e3"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 24 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/e3"]
+polygon = PoolVector2Array( 48.454, 291.79, 48.5309, 451.118, 88.491, 450.74, 88.6246, 291.79 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/e3"]
+stream = ExtResource( 8 )
+volume_db = 3.0
+pitch_scale = 2.52
+bus = "Keyboard"
+
+[node name="f3" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 691.443, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/f3"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 25 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/f3"]
+polygon = PoolVector2Array( 47.5175, 291.236, 47.7962, 451.151, 89.4341, 450.766, 87.4511, 291.42 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/f3"]
+stream = ExtResource( 8 )
+volume_db = 3.0
+pitch_scale = 2.67
+bus = "Keyboard"
+
+[node name="g3" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 731.443, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/g3"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 26 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/g3"]
+polygon = PoolVector2Array( 47.5175, 291.236, 49.6729, 450.021, 91.1688, 450.336, 87.4511, 291.42 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/g3"]
+stream = ExtResource( 8 )
+volume_db = 3.0
+pitch_scale = 3.0
+bus = "Keyboard"
+
+[node name="a3" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 772.443, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/a3"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 27 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/a3"]
+polygon = PoolVector2Array( 46.2486, 291.191, 49.6729, 450.021, 92.0045, 450.39, 87.4511, 291.42 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/a3"]
+stream = ExtResource( 8 )
+volume_db = 3.0
+pitch_scale = 3.36
+bus = "Keyboard"
+
+[node name="b3" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 814.443, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/b3"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 28 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/b3"]
+polygon = PoolVector2Array( 44.6086, 291.5, 49.6729, 450.021, 92.0045, 450.39, 85.3156, 291.658 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/b3"]
+stream = ExtResource( 8 )
+volume_db = 3.0
+pitch_scale = 3.78
+bus = "Keyboard"
+
+[node name="c4" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 855.443, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/c4"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 29 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/c4"]
+polygon = PoolVector2Array( 44.127, 291.44, 51.0262, 450.66, 90.9326, 450.119, 82.5453, 291.305 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/c4"]
+stream = ExtResource( 8 )
+volume_db = 4.0
+pitch_scale = 4.0
+bus = "Keyboard"
+
+[node name="d4" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 894.443, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/d4"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 30 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/d4"]
+polygon = PoolVector2Array( 44.127, 291.44, 51.8151, 451.752, 93.6907, 451.508, 85.5109, 291.575 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/d4"]
+stream = ExtResource( 8 )
+volume_db = 4.0
+pitch_scale = 4.49
+bus = "Keyboard"
+
+[node name="e4" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 935.443, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/e4"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 31 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/e4"]
+polygon = PoolVector2Array( 44.127, 291.44, 52.5021, 451.639, 93.6907, 451.508, 82.9533, 291.651 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/e4"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 5.0
+bus = "Keyboard"
+
+[node name="f4" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 976.443, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/f4"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 32 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/f4"]
+polygon = PoolVector2Array( 41.6685, 291.429, 52.4919, 450.746, 94.416, 450.742, 82.9533, 291.651 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/f4"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 5.34
+bus = "Keyboard"
+
+[node name="g4" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 1017.44, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/g4"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 33 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/g4"]
+polygon = PoolVector2Array( 41.8903, 291.932, 53.2042, 451.028, 94.9014, 451.189, 81.0057, 291.985 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/g4"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 6.0
+bus = "Keyboard"
+
+[node name="a4" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 1057.44, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/a4"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 34 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/a4"]
+polygon = PoolVector2Array( 40.8038, 291.968, 53.9952, 451.259, 95.6606, 450.961, 81.0057, 291.985 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/a4"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 6.73
+bus = "Keyboard"
+
+[node name="b4" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 1097.44, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/b4"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 35 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/b4"]
+polygon = PoolVector2Array( 40.1691, 291.79, 55.5232, 451.012, 97.5352, 450.781, 81.5564, 292.034 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/b4"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 7.55
+bus = "Keyboard"
+
+[node name="c5" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+position = Vector2( 1138.44, 0.598724 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler/c5"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 36 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler/c5"]
+polygon = PoolVector2Array( 40.0107, 291.597, 55.9132, 450.968, 98.8983, 451.038, 80.9821, 291.736 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler/c5"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 8.0
+bus = "Keyboard"
 
 [node name="fg" type="Sprite" parent="state_handler"]
-texture = ExtResource( 12 )
+texture = ExtResource( 37 )
 centered = false
 
-[node name="instrument" type="Button" parent="state_handler"]
-margin_left = 839.136
-margin_top = 198.487
-margin_right = 890.136
-margin_bottom = 247.487
+[node name="keyboard_handler2" type="Node2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 1.19745, -0.598724 )
+
+[node name="c#1" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+position = Vector2( 24.0716, -31.861 )
+script = ExtResource( 38 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler2/c#1"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 39 )
+
+[node name="line" type="Sprite" parent="state_handler/keyboard_handler2/c#1"]
+position = Vector2( 64.9778, 402.297 )
+texture = ExtResource( 40 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler2/c#1"]
+polygon = PoolVector2Array( 65.0796, 321.757, 52.682, 415.513, 73.6029, 415.125, 87.1626, 321.369 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler2/c#1"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 0.53
+bus = "Keyboard"
+
+[node name="d#1" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+position = Vector2( 65.0716, -31.861 )
+script = ExtResource( 38 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler2/d#1"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 41 )
+
+[node name="line" type="Sprite" parent="state_handler/keyboard_handler2/d#1"]
+position = Vector2( 64.9778, 402.297 )
+texture = ExtResource( 40 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler2/d#1"]
+polygon = PoolVector2Array( 64.4076, 321.434, 52.682, 415.513, 73.6029, 415.125, 86.7637, 321.434 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler2/d#1"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 0.59
+bus = "Keyboard"
+
+[node name="f#1" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+position = Vector2( 145.072, -31.861 )
+script = ExtResource( 38 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler2/f#1"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 42 )
+
+[node name="line" type="Sprite" parent="state_handler/keyboard_handler2/f#1"]
+position = Vector2( 64.9778, 402.297 )
+texture = ExtResource( 40 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler2/f#1"]
+polygon = PoolVector2Array( 62.5327, 321.227, 52.682, 415.513, 73.6029, 415.125, 85.4079, 321.355 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler2/f#1"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 0.71
+bus = "Keyboard"
+
+[node name="g#1" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+position = Vector2( 185.072, -31.861 )
+script = ExtResource( 38 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler2/g#1"]
+position = Vector2( 68.9778, 368.297 )
+texture = ExtResource( 43 )
+
+[node name="line" type="Sprite" parent="state_handler/keyboard_handler2/g#1"]
+position = Vector2( 65.9778, 402.297 )
+texture = ExtResource( 40 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler2/g#1"]
+polygon = PoolVector2Array( 63.1877, 321.555, 53.8537, 415.302, 75.3626, 415.166, 84.8163, 321.78 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler2/g#1"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 0.79
+bus = "Keyboard"
+
+[node name="a#1" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+position = Vector2( 226.072, -31.861 )
+script = ExtResource( 38 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler2/a#1"]
+position = Vector2( 67.9778, 368.297 )
+texture = ExtResource( 44 )
+
+[node name="line" type="Sprite" parent="state_handler/keyboard_handler2/a#1"]
+position = Vector2( 65.9778, 402.297 )
+texture = ExtResource( 40 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler2/a#1"]
+polygon = PoolVector2Array( 63.7738, 321.082, 54.3345, 415.134, 75.3626, 415.166, 83.8117, 321.24 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler2/a#1"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 0.89
+bus = "Keyboard"
+
+[node name="c#2" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+position = Vector2( 307.072, -31.861 )
+script = ExtResource( 38 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler2/c#2"]
+position = Vector2( 67.9778, 368.297 )
+texture = ExtResource( 45 )
+
+[node name="line" type="Sprite" parent="state_handler/keyboard_handler2/c#2"]
+position = Vector2( 64.9778, 402.297 )
+texture = ExtResource( 40 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler2/c#2"]
+polygon = PoolVector2Array( 61.7252, 321.308, 54.621, 415.289, 73.6571, 414.989, 81.901, 321.308 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler2/c#2"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 1.06
+bus = "Keyboard"
+
+[node name="d#2" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+position = Vector2( 347.072, -31.861 )
+script = ExtResource( 38 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler2/d#2"]
+position = Vector2( 67.9778, 368.297 )
+texture = ExtResource( 46 )
+
+[node name="line" type="Sprite" parent="state_handler/keyboard_handler2/d#2"]
+position = Vector2( 64.9778, 402.297 )
+texture = ExtResource( 40 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler2/d#2"]
+polygon = PoolVector2Array( 60.0761, 321.025, 54.4585, 415.556, 75.1856, 415.168, 81.901, 321.308 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler2/d#2"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 1.19
+bus = "Keyboard"
+
+[node name="f#2" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+position = Vector2( 428.072, -31.861 )
+script = ExtResource( 38 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler2/f#2"]
+position = Vector2( 67.9778, 368.297 )
+texture = ExtResource( 47 )
+
+[node name="line" type="Sprite" parent="state_handler/keyboard_handler2/f#2"]
+position = Vector2( 65.9778, 402.297 )
+texture = ExtResource( 40 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler2/f#2"]
+polygon = PoolVector2Array( 59.2752, 321.2, 55.1103, 415.342, 75.1856, 415.168, 80.1076, 321.2 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler2/f#2"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 1.41
+bus = "Keyboard"
+
+[node name="g#2" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+position = Vector2( 470.072, -31.861 )
+script = ExtResource( 38 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler2/g#2"]
+position = Vector2( 67.9778, 368.297 )
+texture = ExtResource( 48 )
+
+[node name="line" type="Sprite" parent="state_handler/keyboard_handler2/g#2"]
+position = Vector2( 65.9778, 402.297 )
+texture = ExtResource( 40 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler2/g#2"]
+polygon = PoolVector2Array( 59.2752, 321.2, 55.1103, 415.342, 76.654, 415.347, 80.7793, 321.124 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler2/g#2"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 1.59
+bus = "Keyboard"
+
+[node name="a#2" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+position = Vector2( 510.072, -31.861 )
+script = ExtResource( 38 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler2/a#2"]
+position = Vector2( 67.9778, 368.297 )
+texture = ExtResource( 49 )
+
+[node name="line" type="Sprite" parent="state_handler/keyboard_handler2/a#2"]
+position = Vector2( 66.9778, 402.297 )
+texture = ExtResource( 40 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler2/a#2"]
+polygon = PoolVector2Array( 59.2752, 321.2, 56.3561, 415.473, 76.7995, 415.162, 80.2898, 321.117 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler2/a#2"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 1.78
+bus = "Keyboard"
+
+[node name="c#3" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+position = Vector2( 591.072, -31.861 )
+script = ExtResource( 38 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler2/c#3"]
+position = Vector2( 67.9778, 368.297 )
+texture = ExtResource( 50 )
+
+[node name="line" type="Sprite" parent="state_handler/keyboard_handler2/c#3"]
+position = Vector2( 66.9778, 402.297 )
+texture = ExtResource( 40 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler2/c#3"]
+polygon = PoolVector2Array( 57.575, 321.39, 56.0803, 415.559, 77.8372, 415.393, 79.3319, 321.224 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler2/c#3"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 2.12
+bus = "Keyboard"
+
+[node name="d#3" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+position = Vector2( 631.072, -31.861 )
+script = ExtResource( 38 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler2/d#3"]
+position = Vector2( 67.9778, 368.297 )
+texture = ExtResource( 51 )
+
+[node name="line" type="Sprite" parent="state_handler/keyboard_handler2/d#3"]
+position = Vector2( 67.9778, 402.297 )
+texture = ExtResource( 40 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler2/d#3"]
+polygon = PoolVector2Array( 58.1111, 321.408, 57.8791, 415.469, 77.8372, 415.393, 78.0601, 321.176 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler2/d#3"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 2.38
+bus = "Keyboard"
+
+[node name="f#3" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+position = Vector2( 712.072, -31.861 )
+script = ExtResource( 38 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler2/f#3"]
+position = Vector2( 67.9778, 368.297 )
+texture = ExtResource( 52 )
+
+[node name="line" type="Sprite" parent="state_handler/keyboard_handler2/f#3"]
+position = Vector2( 67.9778, 402.297 )
+texture = ExtResource( 40 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler2/f#3"]
+polygon = PoolVector2Array( 56.3118, 321.312, 57.2604, 415.442, 79.0173, 415.774, 78.0601, 321.176 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler2/f#3"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 2.83
+bus = "Keyboard"
+
+[node name="g#3" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+position = Vector2( 753.072, -31.861 )
+script = ExtResource( 38 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler2/g#3"]
+position = Vector2( 67.9778, 368.297 )
+texture = ExtResource( 53 )
+
+[node name="line" type="Sprite" parent="state_handler/keyboard_handler2/g#3"]
+position = Vector2( 68.9778, 402.297 )
+texture = ExtResource( 40 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler2/g#3"]
+polygon = PoolVector2Array( 56.3118, 321.312, 58.9437, 415.608, 78.5416, 415.442, 76.8807, 321.273 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler2/g#3"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 3.18
+bus = "Keyboard"
+
+[node name="a#3" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+position = Vector2( 793.072, -31.861 )
+script = ExtResource( 38 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler2/a#3"]
+position = Vector2( 67.9778, 368.297 )
+texture = ExtResource( 54 )
+
+[node name="line" type="Sprite" parent="state_handler/keyboard_handler2/a#3"]
+position = Vector2( 68.9778, 402.297 )
+texture = ExtResource( 40 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler2/a#3"]
+polygon = PoolVector2Array( 56.3118, 321.312, 58.9437, 415.608, 80.15, 415.435, 78.3231, 321.266 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler2/a#3"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 3.56
+bus = "Keyboard"
+
+[node name="c#4" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+position = Vector2( 872.072, -31.861 )
+script = ExtResource( 38 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler2/c#4"]
+position = Vector2( 67.9778, 368.297 )
+texture = ExtResource( 55 )
+
+[node name="line" type="Sprite" parent="state_handler/keyboard_handler2/c#4"]
+position = Vector2( 69.9778, 402.297 )
+texture = ExtResource( 40 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler2/c#4"]
+polygon = PoolVector2Array( 55.4497, 321.316, 59.6467, 415.447, 81.4889, 415.41, 76.8386, 321.075 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler2/c#4"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 4.24
+bus = "Keyboard"
+
+[node name="d#4" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+position = Vector2( 913.072, -31.861 )
+script = ExtResource( 38 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler2/d#4"]
+position = Vector2( 67.9778, 368.297 )
+texture = ExtResource( 56 )
+
+[node name="line" type="Sprite" parent="state_handler/keyboard_handler2/d#4"]
+position = Vector2( 70.9778, 402.297 )
+texture = ExtResource( 40 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler2/d#4"]
+polygon = PoolVector2Array( 54.7755, 321.241, 60.0901, 415.41, 81.4889, 415.41, 76.8386, 321.075 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler2/d#4"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 4.76
+bus = "Keyboard"
+
+[node name="f#4" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+position = Vector2( 994.072, -31.861 )
+script = ExtResource( 38 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler2/f#4"]
+position = Vector2( 67.9778, 368.297 )
+texture = ExtResource( 57 )
+
+[node name="line" type="Sprite" parent="state_handler/keyboard_handler2/f#4"]
+position = Vector2( 70.9778, 402.297 )
+texture = ExtResource( 40 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler2/f#4"]
+polygon = PoolVector2Array( 53.6579, 320.909, 60.6334, 415.244, 82.5563, 415.078, 76.0792, 321.075 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler2/f#4"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 5.66
+bus = "Keyboard"
+
+[node name="g#4" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+position = Vector2( 1034.07, -31.861 )
+script = ExtResource( 38 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler2/g#4"]
+position = Vector2( 67.9778, 368.297 )
+texture = ExtResource( 58 )
+
+[node name="line" type="Sprite" parent="state_handler/keyboard_handler2/g#4"]
+position = Vector2( 70.9778, 402.297 )
+texture = ExtResource( 40 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler2/g#4"]
+polygon = PoolVector2Array( 55.0126, 321.075, 62.1542, 415.244, 82.5563, 415.078, 75.2747, 320.909 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler2/g#4"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 6.35
+bus = "Keyboard"
+
+[node name="a#4" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+position = Vector2( 1074.07, -31.861 )
+script = ExtResource( 38 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/keyboard_handler2/a#4"]
+position = Vector2( 67.9778, 368.297 )
+texture = ExtResource( 59 )
+
+[node name="line" type="Sprite" parent="state_handler/keyboard_handler2/a#4"]
+position = Vector2( 71.9778, 402.297 )
+texture = ExtResource( 40 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/keyboard_handler2/a#4"]
+polygon = PoolVector2Array( 52.5214, 320.909, 62.1542, 415.244, 82.9407, 415.078, 74.4703, 320.743 )
+
+[node name="sound" type="AudioStreamPlayer" parent="state_handler/keyboard_handler2/a#4"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 7.13
+bus = "Keyboard"
+
+[node name="options" type="Control" parent="state_handler"]
+margin_left = 1.19745
+margin_top = -0.598724
+margin_right = 41.1974
+margin_bottom = 39.4013
+
+[node name="instrument" type="Button" parent="state_handler/options"]
+margin_left = 837.939
+margin_top = 199.086
+margin_right = 888.939
+margin_bottom = 248.086
 rect_pivot_offset = Vector2( -22.8117, 83.4602 )
 focus_mode = 0
 action_mode = 0
 enabled_focus_mode = 0
-icon = ExtResource( 13 )
+icon = ExtResource( 60 )
 flat = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/instrument"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/options/instrument"]
 playback_speed = 2.0
 anims/Shake = SubResource( 1 )
 
-[node name="volume" type="Button" parent="state_handler"]
-editor/display_folded = true
-margin_left = 485.079
-margin_top = 188.012
-margin_right = 536.079
-margin_bottom = 237.012
+[node name="volume" type="Button" parent="state_handler/options"]
+margin_left = 483.882
+margin_top = 188.611
+margin_right = 534.882
+margin_bottom = 237.611
 rect_pivot_offset = Vector2( 26.4538, 22.3453 )
 focus_mode = 0
 action_mode = 0
 enabled_focus_mode = 0
 flat = true
-script = ExtResource( 14 )
+script = ExtResource( 61 )
 
-[node name="TextureRect" type="TextureRect" parent="state_handler/volume"]
+[node name="TextureRect" type="TextureRect" parent="state_handler/options/volume"]
 margin_left = 84.7526
 margin_top = 26.2592
 margin_right = 100.753
 margin_bottom = 27.2592
 rect_rotation = 89.9999
 rect_pivot_offset = Vector2( -29.5061, -28.5394 )
-texture = ExtResource( 15 )
+texture = ExtResource( 62 )
 expand = true
 
-[node name="power" type="CheckBox" parent="state_handler"]
-margin_left = 417.0
-margin_top = 191.0
-margin_right = 452.0
-margin_bottom = 259.0
+[node name="power" type="CheckBox" parent="state_handler/options"]
+margin_left = 415.803
+margin_top = 191.599
+margin_right = 450.803
+margin_bottom = 259.599
 rect_pivot_offset = Vector2( 36.5985, -2.65051 )
 focus_mode = 0
-custom_icons/checked = ExtResource( 16 )
-custom_icons/unchecked = ExtResource( 17 )
+custom_icons/checked = ExtResource( 63 )
+custom_icons/unchecked = ExtResource( 64 )
 action_mode = 0
 enabled_focus_mode = 0
 
-[node name="exit4" parent="state_handler" instance=ExtResource( 18 )]
+[node name="exit4" parent="state_handler" instance=ExtResource( 65 )]
 room_label = "piano2"
-[connection signal="pressed" from="state_handler/instrument" to="state_handler/instrument/AnimationPlayer" method="play" binds= [ "Shake" ]]
-[connection signal="button_down" from="state_handler/volume" to="state_handler/volume" method="_on_volume_button_down"]
-[connection signal="button_up" from="state_handler/volume" to="state_handler/volume" method="_on_volume_button_up"]
+[connection signal="pressed" from="state_handler/options/instrument" to="state_handler/options/instrument/AnimationPlayer" method="play" binds= [ "Shake" ]]
+[connection signal="button_down" from="state_handler/options/volume" to="state_handler/options/volume" method="_on_volume_button_down"]
+[connection signal="button_up" from="state_handler/options/volume" to="state_handler/options/volume" method="_on_volume_button_up"]
+[connection signal="toggled" from="state_handler/options/power" to="state_handler" method="update_mute"]
+[connection signal="pressed" from="state_handler/exit4" to="state_handler/options" method="save_piano_options"]

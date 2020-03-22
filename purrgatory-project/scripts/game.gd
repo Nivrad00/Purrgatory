@@ -295,7 +295,7 @@ func set_player_name():
 
 func change_audio(song, play = true):
 	current_audio = song
-	if song == null:
+	if song == null or song == '':
 		$main_audio.stop()
 		$main_audio.set_stream(null)
 	else:
