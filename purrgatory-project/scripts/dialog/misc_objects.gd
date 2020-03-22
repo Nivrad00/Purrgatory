@@ -123,8 +123,16 @@ var raw_blocks = [
 ["meowseum_door4","_none","_none","the meowseum is locked with a padlock.","tried_meowseum_door","","","","",""],
 ["","","","looks like you need a four-digit code.","_quest_meowseum_door","","null","","",""],
 ["passcode","_none","_none","it's a crumpled up poem.","got_meowseum_passcode","","","","",""],
-["","","","(placeholder)","","","","","",""],
+["","","","[i]we yell \"what?\" over laughing winds[/i]","","","","","",""],
+["","","","[i]air rushing out nice and slow[/i]","","","","","",""],
+["","","","[i]cobblestone and grass to my knees[/i]","","","","","",""],
+["","","","[i]never knew this is where i belonged[/i]","","","","","",""],
+["","","","[i]highest peak to the east[/i]","","","","","",""],
+["","","","[i]of the mississippi river[/i]","","","","","",""],
+["","","","[i]three bathroom stops and each[/i]","","","","","",""],
+["","","","[i]dingy toilet is my salvation[/i]","","","","","",""],
 ["","","","in the corner is the number \"1234.\"","","","null","","",""],
 ["battery1","_none","_none","it's a double-a battery! this'll come in handy.","_inv_battery1","","null","","",""],
-["battery2","_none","_none","it's a double-a battery! what luck.","_inv_battery2","","null","","",""]
+["battery2","_none","_none","it's a double-a battery! what luck.","_inv_battery2","","null","","",""],
+["out_of_batteries","_none","_none","it's out of batteries...","","","null","","",""]
 ]

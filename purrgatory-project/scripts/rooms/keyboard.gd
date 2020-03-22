@@ -1,6 +1,7 @@
 extends 'state_handler_template.gd'
 
 var state = null
+var out_of_batteries = false
 
 func init_state(s):
 	.init_state(s)
@@ -16,6 +17,11 @@ func init_state(s):
 		state['piano_volume'] = 270
 	$options/volume.rect_rotation = state['piano_volume']
 	update_volume($options/volume.rect_rotation)
+	
+	if state.get('sean_out_of_batteries') and not state.get('sean_replaced_batteries'):
+		out_of_batteries = true
+		AudioServer.set_bus_mute(AudioServer.get_bus_index('Keyboard'), true)
+		emit_signal('start_dialog', 'out_of_batteries')
 
 func update_volume(volume):
 	state['piano_volume'] = volume
@@ -24,7 +30,8 @@ func update_volume(volume):
 
 func update_mute(on):
 	state['piano_power'] = on
-	AudioServer.set_bus_mute(AudioServer.get_bus_index('Keyboard'), !on)
+	if not out_of_batteries:
+		AudioServer.set_bus_mute(AudioServer.get_bus_index('Keyboard'), !on)
 		
 func math(value):
 	if value == 0:

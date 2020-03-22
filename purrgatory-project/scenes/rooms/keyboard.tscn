@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/keyboard.gd" type="Script" id=2]
@@ -64,7 +64,9 @@
 [ext_resource path="res://assets/sprites/keyboard/volume_line.png" type="Texture" id=62]
 [ext_resource path="res://assets/sprites/keyboard/power_button_on.png" type="Texture" id=63]
 [ext_resource path="res://assets/sprites/keyboard/power_button_off.png" type="Texture" id=64]
-[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=65]
+[ext_resource path="res://scripts/sean_player.gd" type="Script" id=65]
+[ext_resource path="res://assets/sprites/keyboard/seans_hand.png" type="Texture" id=66]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=67]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Shake"
@@ -125,6 +127,7 @@ pitch_scale = 0.5
 bus = "Keyboard"
 
 [node name="d1" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 38.9212, 0.598724 )
 script = ExtResource( 6 )
 
@@ -142,6 +145,7 @@ pitch_scale = 0.56
 bus = "Keyboard"
 
 [node name="e1" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 79.9164, 0.598724 )
 script = ExtResource( 6 )
 
@@ -159,6 +163,7 @@ pitch_scale = 0.63
 bus = "Keyboard"
 
 [node name="f1" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 120.181, 0.598724 )
 script = ExtResource( 6 )
 
@@ -176,6 +181,7 @@ pitch_scale = 0.67
 bus = "Keyboard"
 
 [node name="g1" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 160.444, 0.598724 )
 script = ExtResource( 6 )
 
@@ -193,6 +199,7 @@ pitch_scale = 0.75
 bus = "Keyboard"
 
 [node name="a1" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 202.443, 0.598724 )
 script = ExtResource( 6 )
 
@@ -210,6 +217,7 @@ pitch_scale = 0.84
 bus = "Keyboard"
 
 [node name="b1" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 244.443, 0.598724 )
 script = ExtResource( 6 )
 
@@ -227,6 +235,7 @@ pitch_scale = 0.94
 bus = "Keyboard"
 
 [node name="c2" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 284.443, 0.598724 )
 script = ExtResource( 6 )
 
@@ -243,6 +252,7 @@ volume_db = 3.0
 bus = "Keyboard"
 
 [node name="d2" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 324.443, 0.598724 )
 script = ExtResource( 6 )
 
@@ -260,6 +270,7 @@ pitch_scale = 1.12
 bus = "Keyboard"
 
 [node name="e2" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 365.443, -0.401276 )
 script = ExtResource( 6 )
 
@@ -277,6 +288,7 @@ pitch_scale = 1.26
 bus = "Keyboard"
 
 [node name="f2" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 406.443, 0.598724 )
 script = ExtResource( 6 )
 
@@ -294,6 +306,7 @@ pitch_scale = 1.33
 bus = "Keyboard"
 
 [node name="g2" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 446.443, 0.598724 )
 script = ExtResource( 6 )
 
@@ -311,6 +324,7 @@ pitch_scale = 1.5
 bus = "Keyboard"
 
 [node name="a2" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 488.443, 0.598724 )
 script = ExtResource( 6 )
 
@@ -328,6 +342,7 @@ pitch_scale = 1.68
 bus = "Keyboard"
 
 [node name="b2" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 529.443, 0.598724 )
 script = ExtResource( 6 )
 
@@ -345,6 +360,7 @@ pitch_scale = 1.89
 bus = "Keyboard"
 
 [node name="c3" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 569.443, 0.598724 )
 script = ExtResource( 6 )
 
@@ -362,6 +378,7 @@ pitch_scale = 2.0
 bus = "Keyboard"
 
 [node name="d3" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 611.443, 0.598724 )
 script = ExtResource( 6 )
 
@@ -379,6 +396,7 @@ pitch_scale = 2.25
 bus = "Keyboard"
 
 [node name="e3" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 650.443, 0.598724 )
 script = ExtResource( 6 )
 
@@ -396,6 +414,7 @@ pitch_scale = 2.52
 bus = "Keyboard"
 
 [node name="f3" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 691.443, 0.598724 )
 script = ExtResource( 6 )
 
@@ -413,6 +432,7 @@ pitch_scale = 2.67
 bus = "Keyboard"
 
 [node name="g3" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 731.443, 0.598724 )
 script = ExtResource( 6 )
 
@@ -430,6 +450,7 @@ pitch_scale = 3.0
 bus = "Keyboard"
 
 [node name="a3" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 772.443, 0.598724 )
 script = ExtResource( 6 )
 
@@ -447,6 +468,7 @@ pitch_scale = 3.36
 bus = "Keyboard"
 
 [node name="b3" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 814.443, 0.598724 )
 script = ExtResource( 6 )
 
@@ -464,6 +486,7 @@ pitch_scale = 3.78
 bus = "Keyboard"
 
 [node name="c4" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 855.443, 0.598724 )
 script = ExtResource( 6 )
 
@@ -481,6 +504,7 @@ pitch_scale = 4.0
 bus = "Keyboard"
 
 [node name="d4" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 894.443, 0.598724 )
 script = ExtResource( 6 )
 
@@ -498,6 +522,7 @@ pitch_scale = 4.49
 bus = "Keyboard"
 
 [node name="e4" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 935.443, 0.598724 )
 script = ExtResource( 6 )
 
@@ -515,6 +540,7 @@ pitch_scale = 5.0
 bus = "Keyboard"
 
 [node name="f4" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 976.443, 0.598724 )
 script = ExtResource( 6 )
 
@@ -532,6 +558,7 @@ pitch_scale = 5.34
 bus = "Keyboard"
 
 [node name="g4" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 1017.44, 0.598724 )
 script = ExtResource( 6 )
 
@@ -549,6 +576,7 @@ pitch_scale = 6.0
 bus = "Keyboard"
 
 [node name="a4" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 1057.44, 0.598724 )
 script = ExtResource( 6 )
 
@@ -566,6 +594,7 @@ pitch_scale = 6.73
 bus = "Keyboard"
 
 [node name="b4" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 1097.44, 0.598724 )
 script = ExtResource( 6 )
 
@@ -583,6 +612,7 @@ pitch_scale = 7.55
 bus = "Keyboard"
 
 [node name="c5" parent="state_handler/keyboard_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 1138.44, 0.598724 )
 script = ExtResource( 6 )
 
@@ -608,6 +638,7 @@ editor/display_folded = true
 position = Vector2( 1.19745, -0.598724 )
 
 [node name="c#1" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 24.0716, -31.861 )
 script = ExtResource( 38 )
 
@@ -629,6 +660,7 @@ pitch_scale = 0.53
 bus = "Keyboard"
 
 [node name="d#1" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 65.0716, -31.861 )
 script = ExtResource( 38 )
 
@@ -650,6 +682,7 @@ pitch_scale = 0.59
 bus = "Keyboard"
 
 [node name="f#1" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 145.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -671,6 +704,7 @@ pitch_scale = 0.71
 bus = "Keyboard"
 
 [node name="g#1" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 185.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -692,6 +726,7 @@ pitch_scale = 0.79
 bus = "Keyboard"
 
 [node name="a#1" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 226.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -713,6 +748,7 @@ pitch_scale = 0.89
 bus = "Keyboard"
 
 [node name="c#2" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 307.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -734,6 +770,7 @@ pitch_scale = 1.06
 bus = "Keyboard"
 
 [node name="d#2" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 347.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -755,6 +792,7 @@ pitch_scale = 1.19
 bus = "Keyboard"
 
 [node name="f#2" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 428.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -776,6 +814,7 @@ pitch_scale = 1.41
 bus = "Keyboard"
 
 [node name="g#2" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 470.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -797,6 +836,7 @@ pitch_scale = 1.59
 bus = "Keyboard"
 
 [node name="a#2" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 510.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -818,6 +858,7 @@ pitch_scale = 1.78
 bus = "Keyboard"
 
 [node name="c#3" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 591.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -839,6 +880,7 @@ pitch_scale = 2.12
 bus = "Keyboard"
 
 [node name="d#3" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 631.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -860,6 +902,7 @@ pitch_scale = 2.38
 bus = "Keyboard"
 
 [node name="f#3" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 712.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -881,6 +924,7 @@ pitch_scale = 2.83
 bus = "Keyboard"
 
 [node name="g#3" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 753.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -902,6 +946,7 @@ pitch_scale = 3.18
 bus = "Keyboard"
 
 [node name="a#3" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 793.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -923,6 +968,7 @@ pitch_scale = 3.56
 bus = "Keyboard"
 
 [node name="c#4" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 872.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -944,6 +990,7 @@ pitch_scale = 4.24
 bus = "Keyboard"
 
 [node name="d#4" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 913.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -965,6 +1012,7 @@ pitch_scale = 4.76
 bus = "Keyboard"
 
 [node name="f#4" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 994.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -986,6 +1034,7 @@ pitch_scale = 5.66
 bus = "Keyboard"
 
 [node name="g#4" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 1034.07, -31.861 )
 script = ExtResource( 38 )
 
@@ -1007,6 +1056,7 @@ pitch_scale = 6.35
 bus = "Keyboard"
 
 [node name="a#4" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 1074.07, -31.861 )
 script = ExtResource( 38 )
 
@@ -1028,6 +1078,7 @@ pitch_scale = 7.13
 bus = "Keyboard"
 
 [node name="options" type="Control" parent="state_handler"]
+editor/display_folded = true
 margin_left = 1.19745
 margin_top = -0.598724
 margin_right = 41.1974
@@ -1083,10 +1134,26 @@ custom_icons/unchecked = ExtResource( 64 )
 action_mode = 0
 enabled_focus_mode = 0
 
-[node name="exit4" parent="state_handler" instance=ExtResource( 65 )]
+[node name="sean_player" type="Node2D" parent="state_handler"]
+script = ExtResource( 65 )
+
+[node name="song_timer" type="Timer" parent="state_handler/sean_player"]
+wait_time = 0.15
+
+[node name="delay_timer" type="Timer" parent="state_handler/sean_player"]
+wait_time = 0.02
+one_shot = true
+
+[node name="seans_hand" type="Sprite" parent="state_handler/sean_player"]
+position = Vector2( -180.702, -109.196 )
+texture = ExtResource( 66 )
+offset = Vector2( -35, 580 )
+
+[node name="exit4" parent="state_handler" instance=ExtResource( 67 )]
 room_label = "piano2"
 [connection signal="pressed" from="state_handler/options/instrument" to="state_handler/options/instrument/AnimationPlayer" method="play" binds= [ "Shake" ]]
 [connection signal="button_down" from="state_handler/options/volume" to="state_handler/options/volume" method="_on_volume_button_down"]
 [connection signal="button_up" from="state_handler/options/volume" to="state_handler/options/volume" method="_on_volume_button_up"]
 [connection signal="toggled" from="state_handler/options/power" to="state_handler" method="update_mute"]
+[connection signal="timeout" from="state_handler/sean_player/song_timer" to="state_handler/sean_player" method="play_note"]
 [connection signal="pressed" from="state_handler/exit4" to="state_handler/options" method="save_piano_options"]
