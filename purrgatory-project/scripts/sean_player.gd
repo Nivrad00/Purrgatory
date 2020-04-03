@@ -1,17 +1,10 @@
 extends Node2D
 
-var song1 = '0.15|r16' +\
-'vee^e2vb3a#2a2g2ega' +\
-'dd^e2vb3a#2a2g2ega' +\
-'c#c#^e2vb3a#2a2g2ega' +\
-'cc^e2vb3a#1d1a2g2ega'
-
-var current_song = []
-var current_key = null
-var note_length_remaining = 0
+var current_song = {'left': [], 'right': []}
+var current_keys = {'left': [], 'right': []} # contains 2-length arrays [key, length]
 
 func _ready():
-	load_song(song1)
+	load_song($songs.songs['fur_elise'])
 	start_song()
 	
 func start_song():
@@ -20,72 +13,104 @@ func start_song():
 func stop_song():
 	$song_timer.stop()
 
-func load_song(s):
-	var a = s.split('|')
-	$song_timer.wait_time = float(a[0])
-	s = a[1]
+func load_song(song_info):
+	$song_timer.wait_time = song_info['tempo']
 	
-	var note_list = []
-	var note_dict = null
-	var octave = 3
+	current_keys = {'left': [], 'right': []}
 	
-	for c in s:
-		if c in 'abcdefgr':
-			if note_dict:
-				note_list.append(note_dict)
-			note_dict = {
-				'pitch': c,
-				'accidental': '',
-				'octave': str(octave),
-				'length': '1'
-			}
-			
-		elif c in '12345678910':
-			note_dict['length'] = c
+	for hand in ['left', 'right']:
+		var note_list = []
+		var note_dict = null
+		var octave = 3
 		
-		elif c == '#':
-			note_dict['accidental'] = '#'
+		var chord = null
+		for c in song_info[hand]:
+			if c in 'abcdefgr':
+				note_dict = {
+					'pitch': c,
+					'accidental': '',
+					'octave': str(octave),
+					'length': '1'
+				}
+				if chord != null:
+					chord.append(note_dict)
+				else:
+					note_list.append([note_dict])
+				
+			elif c in '12345678910':
+				note_dict['length'] = c
 			
-		elif c == '^':
-			octave += 1
-		
-		elif c == 'v':
-			octave -= 1
+			elif c == '#':
+				note_dict['accidental'] = '#'
+				
+			elif c == '^':
+				octave += 1
+			
+			elif c == 'v':
+				octave -= 1
+				
+			elif c == '[':
+				chord = []
+				
+			elif c == ']':
+				note_list.append(chord)
+				chord = null
 	
-	if note_dict:
-		note_list.append(note_dict)
-	
-	current_song = note_list
-	current_key = null
-	note_length_remaining = 0
+		current_song[hand] = note_list
 
 func play_note():
-	note_length_remaining -= 1
-	if note_length_remaining > 0:
-		return
+	var update_hands = []
 	
-	if current_key:
-		current_key.on_key_up()
-	
-	if current_song.size() == 0:
+	for hand in ['left', 'right']:
+		var done_with_chord = true
+		for key_info in current_keys[hand]:
+			if key_info[1] > 1:
+				key_info[1] -= 1
+				done_with_chord = false
+			elif key_info[1] == 1:
+				key_info[1] -= 1
+				if key_info[0]:
+					key_info[0].on_key_up()
+		
+		if done_with_chord:
+			current_keys[hand] = []
+			if current_song[hand].size() > 0:
+				update_hands.append(hand)
+		
+	if current_song['left'].size() == 0 and current_song['right'].size() == 0:
 		stop_song()
 		return
+	
+	if update_hands.size() > 0:
+		$delay_timer.start()
+		yield($delay_timer, 'timeout')
 		
-	$delay_timer.start()
-	yield($delay_timer, 'timeout')
-	
-	var note_dict = current_song.pop_front()
-	var note_name = note_dict['pitch'] + note_dict['accidental'] + note_dict['octave']
-	note_length_remaining = int(note_dict['length'])
-	
-	if note_dict['pitch'] != 'r':
-		current_key = get_key(note_name)
-		current_key.on_key_down()
-		current_key.play_note()
-		$seans_hand.position = current_key.position 
-	else:
-		current_key = null
-	
+		for hand in update_hands:
+			var chord = current_song[hand].pop_front()
+			for note_dict in chord:
+				var key_info = [null, null]
+				var note_name = note_dict['pitch'] + note_dict['accidental'] + note_dict['octave']
+				
+				if note_dict['pitch'] != 'r':
+					key_info[0] = get_key(note_name)
+					key_info[0].on_key_down()
+					key_info[0].play_note()
+					var sprite = get_node(hand + '_hand')
+					sprite.position = key_info[0].position
+					if chord.size() > 1:
+						sprite.get_node('claw').show()
+						sprite.get_node('finger').hide()
+					else:
+						sprite.get_node('claw').hide()
+						sprite.get_node('finger').show()
+						if key_info[0].type == 'black':
+							sprite.position.y -= 20
+				else:
+					key_info[0] = null
+					
+				key_info[1] = int(note_dict['length'])
+				
+				current_keys[hand].append(key_info)
 	
 func get_key(a):
 	if '#' in a:

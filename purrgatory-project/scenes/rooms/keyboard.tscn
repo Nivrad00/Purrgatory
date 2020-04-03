@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/keyboard.gd" type="Script" id=2]
@@ -66,7 +66,9 @@
 [ext_resource path="res://assets/sprites/keyboard/power_button_off.png" type="Texture" id=64]
 [ext_resource path="res://scripts/sean_player.gd" type="Script" id=65]
 [ext_resource path="res://assets/sprites/keyboard/seans_hand.png" type="Texture" id=66]
-[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=67]
+[ext_resource path="res://assets/sprites/keyboard/seans_hand2.png" type="Texture" id=67]
+[ext_resource path="res://scripts/songs.gd" type="Script" id=68]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=69]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Shake"
@@ -638,7 +640,6 @@ editor/display_folded = true
 position = Vector2( 1.19745, -0.598724 )
 
 [node name="c#1" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
-editor/display_folded = true
 position = Vector2( 24.0716, -31.861 )
 script = ExtResource( 38 )
 
@@ -1144,12 +1145,48 @@ wait_time = 0.15
 wait_time = 0.02
 one_shot = true
 
-[node name="seans_hand" type="Sprite" parent="state_handler/sean_player"]
+[node name="left_hand" type="Node2D" parent="state_handler/sean_player"]
+editor/display_folded = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="finger" type="Sprite" parent="state_handler/sean_player/left_hand"]
+visible = false
 position = Vector2( -180.702, -109.196 )
 texture = ExtResource( 66 )
-offset = Vector2( -35, 580 )
+offset = Vector2( 155, 705 )
 
-[node name="exit4" parent="state_handler" instance=ExtResource( 67 )]
+[node name="claw" type="Sprite" parent="state_handler/sean_player/left_hand"]
+visible = false
+position = Vector2( -180.702, -109.196 )
+texture = ExtResource( 67 )
+offset = Vector2( 180, 620 )
+
+[node name="right_hand" type="Node2D" parent="state_handler/sean_player"]
+editor/display_folded = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="finger" type="Sprite" parent="state_handler/sean_player/right_hand"]
+visible = false
+position = Vector2( -180.702, -109.196 )
+texture = ExtResource( 66 )
+offset = Vector2( 344, 705 )
+flip_h = true
+
+[node name="claw" type="Sprite" parent="state_handler/sean_player/right_hand"]
+visible = false
+position = Vector2( -180.702, -109.196 )
+texture = ExtResource( 67 )
+offset = Vector2( 320, 620 )
+flip_h = true
+
+[node name="songs" type="Node" parent="state_handler/sean_player"]
+script = ExtResource( 68 )
+
+[node name="exit4" parent="state_handler" instance=ExtResource( 69 )]
 room_label = "piano2"
 [connection signal="pressed" from="state_handler/options/instrument" to="state_handler/options/instrument/AnimationPlayer" method="play" binds= [ "Shake" ]]
 [connection signal="button_down" from="state_handler/options/volume" to="state_handler/options/volume" method="_on_volume_button_down"]
