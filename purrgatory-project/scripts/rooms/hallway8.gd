@@ -18,3 +18,9 @@ func update_state(state):
 	if state.get('display_elijah'):
 		emit_signal('set_hidden_sprite', [$elijah_idle])
 		state['display_elijah'] = false
+		
+	if state.get('sean_went_to_piano'):
+		$sean_idle.hide()
+	
+	if state.get('elijah_went_to_sleep'):
+		$elijah_idle.hide()

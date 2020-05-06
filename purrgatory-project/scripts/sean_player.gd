@@ -4,7 +4,7 @@ var current_song = {'left': [], 'right': []}
 var current_keys = {'left': [], 'right': []} # contains 2-length arrays [key, length]
 
 func _ready():
-	load_song($songs.songs['fur_elise'])
+	load_song($songs.songs['heart_and_soul1'])
 	start_song()
 	
 func start_song():

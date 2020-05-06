@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/hallway7.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/sprites/elijah_asleep.tscn" type="PackedScene" id=7]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -56,3 +57,9 @@ dialog_label = "chair_picture "
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
 polygon = PoolVector2Array( 1068.09, 336.705, 1066.83, 443.218, 1173.34, 479.142, 1173.34, 355.613, 1125.44, 291.957 )
+
+[node name="elijah_asleep" parent="state_handler" instance=ExtResource( 7 )]
+margin_left = 531.366
+margin_top = 232.243
+margin_right = 698.366
+margin_bottom = 488.243
