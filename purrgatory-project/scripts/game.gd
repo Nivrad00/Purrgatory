@@ -80,7 +80,7 @@ func _ready():
 	
 	# load meowkov chain (disabled for now, don't click on any books!)
 	var f = File.new()
-	load_meowkov_chain(f)
+	# load_meowkov_chain(f)
 	
 	# interrupt the default quit behavior (see _notification())
 	get_tree().set_auto_accept_quit(false)

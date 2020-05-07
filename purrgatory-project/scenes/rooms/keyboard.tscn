@@ -1079,7 +1079,6 @@ pitch_scale = 7.13
 bus = "Keyboard"
 
 [node name="options" type="Control" parent="state_handler"]
-editor/display_folded = true
 margin_left = 1.19745
 margin_top = -0.598724
 margin_right = 41.1974
@@ -1139,7 +1138,7 @@ enabled_focus_mode = 0
 script = ExtResource( 65 )
 
 [node name="song_timer" type="Timer" parent="state_handler/sean_player"]
-wait_time = 0.15
+wait_time = 1.63
 
 [node name="delay_timer" type="Timer" parent="state_handler/sean_player"]
 wait_time = 0.02

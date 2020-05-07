@@ -29,7 +29,6 @@ func init_state(state):
 func update_state(state):
 	for key in state.keys():
 		if key.substr(0, 7) == '_music_' and state[key]:
-			print('b')
 			state[key] = false
 			var music = key.substr(7, len(key)-7)
 			if music == 'null':
@@ -38,6 +37,10 @@ func update_state(state):
 			else:
 				print(music)
 				emit_signal('change_audio', music)
+				
+		if key.substr(0, 6) == '_goto_' and state[key]:
+			state[key] = false
+			emit_signal('change_room', key.substr(6, len(key)-6))			
 		
 	for child in get_children():
 		var key = '_inv_' + child.name

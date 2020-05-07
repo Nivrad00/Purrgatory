@@ -3,6 +3,26 @@ extends 'state_handler_template.gd'
 var state = null
 var out_of_batteries = false
 
+
+func return_to_dialog(label):
+	emit_signal('start_dialog', label, [])
+		
+func update_state(s):
+	.update_state(s)
+	
+	for key in state.keys():
+		if key.substr(0, 7) == '_piano_' and state[key]:
+			state[key] = false
+			
+			if key.substr(0, 13) == '_piano_delay_':
+				var song = key.substr(13, len(key)-13)
+				state['_piano_' + song] = true
+			else:
+				var song = key.substr(7, len(key)-7)
+				$sean_player.load_song(song)
+				$sean_player.start_song()
+		
+	
 func init_state(s):
 	.init_state(s)
 	state = s

@@ -2,19 +2,38 @@ extends Node2D
 
 var current_song = {'left': [], 'right': []}
 var current_keys = {'left': [], 'right': []} # contains 2-length arrays [key, length]
+var return_label = null
 
 func _ready():
-	load_song($songs.songs['heart_and_soul1'])
-	start_song()
+	pass
 	
 func start_song():
 	$song_timer.start()
 	
 func stop_song():
 	$song_timer.stop()
+	$left_hand.hide()
+	$right_hand.hide()
+	for key in current_keys['left'] + current_keys['right']:
+		key[0].on_key_up()
+	if return_label:
+		get_parent().return_to_dialog(return_label)
 
-func load_song(song_info):
+func load_song(song_name):
+	if not $song_timer.is_stopped():
+		$song_timer.stop()
+		$left_hand.hide()
+		$right_hand.hide()
+		for key in current_keys['left'] + current_keys['right']:
+			key[0].on_key_up()
+			
+	var song_info = $songs.songs[song_name]
+	
 	$song_timer.wait_time = song_info['tempo']
+	if 'return' in song_info:
+		return_label = song_info['return']
+	else:
+		return_label = null
 	
 	current_keys = {'left': [], 'right': []}
 	
@@ -59,6 +78,7 @@ func load_song(song_info):
 		current_song[hand] = note_list
 
 func play_note():
+	var hide_hands = []
 	var update_hands = []
 	
 	for hand in ['left', 'right']:
@@ -77,10 +97,11 @@ func play_note():
 			if current_song[hand].size() > 0:
 				update_hands.append(hand)
 		
-	if current_song['left'].size() == 0 and current_song['right'].size() == 0:
+	if current_song['left'].size() == 0 and current_song['right'].size() == 0 and \
+	   current_keys['left'] == [] and current_keys['right'] == []:
 		stop_song()
 		return
-	
+		
 	if update_hands.size() > 0:
 		$delay_timer.start()
 		yield($delay_timer, 'timeout')
@@ -95,7 +116,9 @@ func play_note():
 					key_info[0] = get_key(note_name)
 					key_info[0].on_key_down()
 					key_info[0].play_note()
+					
 					var sprite = get_node(hand + '_hand')
+					sprite.show()
 					sprite.position = key_info[0].position
 					if chord.size() > 1:
 						sprite.get_node('claw').show()
