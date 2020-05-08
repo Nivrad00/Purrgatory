@@ -1079,6 +1079,7 @@ pitch_scale = 7.13
 bus = "Keyboard"
 
 [node name="options" type="Control" parent="state_handler"]
+editor/display_folded = true
 margin_left = 1.19745
 margin_top = -0.598724
 margin_right = 41.1974
@@ -1135,6 +1136,7 @@ action_mode = 0
 enabled_focus_mode = 0
 
 [node name="sean_player" type="Node2D" parent="state_handler"]
+editor/display_folded = true
 script = ExtResource( 65 )
 
 [node name="song_timer" type="Timer" parent="state_handler/sean_player"]

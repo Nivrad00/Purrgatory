@@ -10,3 +10,8 @@ func update_state(state):
 		state['oliver_sleeping_timer'] = false
 		emit_signal('start_action_timer', 50, ['oliver_sleeping', false])
 		emit_signal('start_action_timer', 50, ['oliver_in_study', false])
+	
+	if state.get('elijah_quest_complete') and not state.get('elijah_sean_left_bench'):
+		$elijah_and_sean_bench.show()
+	else:
+		$elijah_and_sean_bench.hide()

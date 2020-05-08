@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/field1.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scenes/exit_left.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=7]
 [ext_resource path="res://scenes/river.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/sprites/elijah_park.tscn" type="PackedScene" id=9]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -76,3 +77,9 @@ room_label = "garden4"
 polygon = PoolVector2Array( 690.095, 694.817, 690.095, 474.142, 817.192, 446.208, 815.097, 738.812 )
 
 [node name="river" parent="state_handler" instance=ExtResource( 8 )]
+
+[node name="elijah_park" parent="state_handler" instance=ExtResource( 9 )]
+margin_left = 465.405
+margin_top = 386.212
+margin_right = 632.405
+margin_bottom = 642.212

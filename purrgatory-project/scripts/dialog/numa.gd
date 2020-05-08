@@ -126,7 +126,7 @@ var raw_blocks = [
 ["","","","did you like it?","","","","","",""],
 ["","numa","","mhm","","","","","",""],
 ["","","","i mean, aren't all the cool kids into accounting? haha","","","","","",""],
-["","","","","","","","",['sounds kinda boring', ['sounds like my kind of job',  'numa_job'], 'cool'],['numa_boring', ['sounds like my kind of job',  'numa_job'], 'numa_cool']],
+["","","","","","","","",['sounds kinda boring', 'sounds like my kind of job', 'cool'],['numa_boring', 'numa_job', 'numa_cool']],
 ["numa_cool","you","","that's pretty cool","","","","","",""],
 ["","numa","","yep","","","null","","",""],
 ["numa_boring","you","","isn't accounting boring? what kind of stuff did you do, anyway?","","","","","",""],

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/piano2.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=6]
 [ext_resource path="res://scenes/sprites/sean_piano.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/sprites/sean_arguing_with_tori.tscn" type="PackedScene" id=8]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -68,3 +69,10 @@ margin_left = 873.31
 margin_top = 270.776
 margin_right = 1025.31
 margin_bottom = 600.776
+
+[node name="sean_arguing_with_tori" parent="state_handler" instance=ExtResource( 8 )]
+margin_left = 509.589
+margin_top = 273.64
+margin_right = 661.589
+margin_bottom = 603.64
+rect_rotation = 90.0

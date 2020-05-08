@@ -6,10 +6,19 @@ var out_of_batteries = false
 
 func return_to_dialog(label):
 	emit_signal('start_dialog', label, [])
-		
+	
 func update_state(s):
 	.update_state(s)
 	
+	if state.get('custom_goto_piano2'):
+		emit_signal('change_room', 'piano2')
+	
+	if state.get('disable_exit'):
+		state['disable_exit'] = false
+		$exit4.hide()
+	else:
+		$exit4.show()
+		
 	for key in state.keys():
 		if key.substr(0, 7) == '_piano_' and state[key]:
 			state[key] = false

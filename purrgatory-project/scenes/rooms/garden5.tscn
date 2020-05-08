@@ -7,10 +7,6 @@
 [ext_resource path="res://scenes/outdated/exit_back_button.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/outdated/room_trans_button.tscn" type="PackedScene" id=6]
 
-
-
-
-
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -104,4 +100,3 @@ margin_top = 110.0
 margin_right = 732.0
 margin_bottom = 289.0
 room_label = "hallway6"
-

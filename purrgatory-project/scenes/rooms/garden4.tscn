@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/garden4.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/garden4.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
@@ -76,4 +76,3 @@ dialog_label = "garden_sapling"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/garden_sapling"]
 polygon = PoolVector2Array( 788.029, 337.383, 775.52, 381.396, 788.661, 400.368, 795.905, 433.748, 813.973, 432.358, 817.386, 398.051, 825.092, 359.621 )
-

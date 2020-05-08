@@ -37,21 +37,31 @@ var songs = {
 		'return': 'piano_intro3c'
 	},
 	
-	'heart_tutorial': {
+	'megalovania': {
 		'tempo': 0.15,
 		'left': '',
 		'right': 'r16[e8b4g8]' +\
 				 'vee^e2vb3a#2a2g2ega' +\
 				 'dd^e2vb3a#2a2g2ega' +\
 				 'c#c#^e2vb3a#2a2g2ega' +\
-				 'cc^e2vb3a#1d1a2g2ega[e8b4g8]',
+				 'cc^e2vb3a#1d1a2g2ega[e8b4g8]'
+	},
+	
+	'heart_tutorial': {
+		'tempo': 0.2,
+		'right': '',
+		'left':  'c3 c3 c6 r2 c v b2 a b2 ^ c d3' +\
+		         'e3 e3 e6 r2 e   d2 c d2   e f3' +\
+				 'g6    c6 r2 a   g2 f e3     d3' +\
+				 'c6',
 		'return': 'piano_heart3'
+		
 	},
 	
 	'heart_performance': {
-		'tempo': 0.25,
+		'tempo': 0.2,
 		'right': '',
-		'left':  'r8 vc2 c e2 e va2 a ^c2 c vf2 f a2 a g2 g b2 b^' +\
+		'left':  'r4 vc2 c e2 e va2 a ^c2 c vf2 f a2 a g2 g b2 b^' +\
 					 'c2 c e2 e va2 a ^c2 c vf2 f a2 a g2 g b2 b^' +\
 					 'c2 c e2 e va2 a ^c2 c vf2 f a2 a g2 g b2 b^' +\
 					 'c2 c e2 e va2 a ^c2 c vf2 f a2 a g2 g b2 b^ c3',
