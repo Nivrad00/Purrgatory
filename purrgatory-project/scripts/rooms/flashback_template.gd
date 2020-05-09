@@ -8,7 +8,7 @@ var choice_n = 0
 var choice_log = {}
 
 var text_dependencies = {}
-var ending_label = 'placeholder'
+var ending_label = null
 
 func _ready():
 	for text in $hc/vc.get_children():
@@ -27,7 +27,7 @@ func next():
 		old_choice.get_node('Button').hide()
 		
 		# also get rid of the underline and store the choice for later
-		old_choice.set_bbcode(old_choice.get_bbcode().lstrip('[u]').rstrip('[/u].') + '.')
+		old_choice.set_bbcode(old_choice.get_bbcode().replace('[u]', '').replace('[/u]', ''))
 		choice_log[text_n] = choice_n
 	
 	# try getting the next line of text
@@ -82,12 +82,15 @@ func next():
 			$wake_up_cover.show()
 	
 	# also, if the previous line of text had a lineedit, format it correctly
-	if old and old.find_node('LineEdit') and last_editable_text:
-		var lineedit = old.find_node('LineEdit')
-		lineedit.get_parent().set_bbcode(last_editable_text % lineedit.text)
-		lineedit.get_parent().get_node('underline').hide()
-		lineedit.hide()
-		last_editable_text = null
+	if old and last_editable_text:
+		for child in old.get_children():
+			if child.name[0] == 'e' and child.get_node('LineEdit').text != '':
+				print(child.name)
+				var lineedit = child.get_node('LineEdit')
+				lineedit.get_parent().set_bbcode(last_editable_text % lineedit.text)
+				lineedit.get_parent().get_node('underline').hide()
+				lineedit.hide()
+				last_editable_text = null
 
 func cycle_choice():
 	var text = $hc/vc.get_child(text_n)
@@ -121,7 +124,8 @@ func show_next_button(what = null):
 	$next_button.get_node('AnimationPlayer').play("Fadein")
 
 func wake_up():
-	emit_signal('start_dialog', ending_label, [])
+	if ending_label:
+		emit_signal('start_dialog', ending_label, [])
 
 func options_changed():
 	format_text()
@@ -186,9 +190,9 @@ func format_text():
 			# snapping end text
 			if text.has_node('end_text'):
 				var visible_choice_n = 0
-				if text_n > text.name[1]:
+				if text_n > int(text.name[1]):
 					visible_choice_n = choice_log[text.name[1]]
-				if text_n == text.name[1]:
+				if text_n == int(text.name[1]):
 					visible_choice_n = choice_n
 					
 				var visible_choice = choice_container.get_child(visible_choice_n)
