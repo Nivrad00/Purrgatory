@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/oliver_asleep.png-cd7284880aa38bea5c0c48423c5e09ae.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/oliver_asleep.png"
+dest_files=[ "res://.import/oliver_asleep.png-cd7284880aa38bea5c0c48423c5e09ae.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

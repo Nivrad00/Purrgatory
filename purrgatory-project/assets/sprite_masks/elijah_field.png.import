@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/elijah_field.png-cd24d433a556ff29873b9fc1dc01daab.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/elijah_field.png"
+dest_files=[ "res://.import/elijah_field.png-cd24d433a556ff29873b9fc1dc01daab.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

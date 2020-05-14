@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/field4.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=6]
 [ext_resource path="res://scenes/river.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/sprites/elijah_and_sean_bench.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/sprites/field_bench_armrest.png" type="Texture" id=9]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -76,7 +77,11 @@ polygon = PoolVector2Array( 90.24, 490.841, 166.481, 504.18, 296.211, 511.519, 4
 volume_db = -35.0
 
 [node name="elijah_and_sean_bench" parent="state_handler" instance=ExtResource( 8 )]
-margin_left = 390.838
-margin_top = 218.231
-margin_right = 557.838
-margin_bottom = 474.231
+margin_left = 362.998
+margin_top = 290.079
+margin_right = 529.998
+margin_bottom = 546.079
+
+[node name="field_bench_armrest" type="Sprite" parent="state_handler"]
+position = Vector2( 380.318, 364.007 )
+texture = ExtResource( 9 )

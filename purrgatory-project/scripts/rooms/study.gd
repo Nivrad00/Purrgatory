@@ -10,10 +10,16 @@ func update_state(state):
 	if state.get('oliver_sleeping'):
 		$oliver_study.hide()
 		$oliver_sleeping.show()
+		$chair1.show()
+		$chair2.hide()
 	elif state.get('oliver_in_study'):
 		$oliver_study.show()
 		$oliver_sleeping.hide()
+		$chair1.hide()
+		$chair2.show()
 	else:
+		$chair1.show()
+		$chair2.hide()
 		$oliver_study.hide()
 		$oliver_sleeping.hide()
 		

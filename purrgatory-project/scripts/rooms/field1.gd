@@ -13,8 +13,12 @@ func update_state(state):
 	
 	if state.get('elijah_sean_left_bench'):
 		$elijah_park.show()
+		$weeds.show()
+		$wheelbarrow.show()
 	else:
 		$elijah_park.hide()
+		$weeds.hide()
+		$wheelbarrow.hide()
 	
 	if state.get('elijah_why'):
 		$elijah_park.hide()
