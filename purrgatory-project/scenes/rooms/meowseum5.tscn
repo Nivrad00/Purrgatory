@@ -36,6 +36,7 @@ room_label = "meowseum6"
 polygon = PoolVector2Array( -332.293, 690.423, -332.243, 416.689, -306.525, 400.863, -277.731, 390.833, -243.76, 385.657, -201.7, 391.157, -169.023, 403.775, -152.199, 418.657, -153.316, 691.886 )
 
 [node name="object" parent="state_handler" instance=ExtResource( 5 )]
+dialog_label = "abstract_cat"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
 polygon = PoolVector2Array( 557.1, 299.556, 518.808, 319.802, 508.781, 366.228, 525.41, 396.384, 558.86, 412.669, 599.352, 409.588, 623.119, 379.659, 625.76, 338.728, 598.912, 305.278 )
@@ -59,6 +60,7 @@ dialog_label = "scaly_cat_sign"
 polygon = PoolVector2Array( 840.302, 434.087, 839.639, 486.497, 941.143, 485.834, 943.133, 434.087 )
 
 [node name="object5" parent="state_handler" instance=ExtResource( 5 )]
+dialog_label = "statue_lights"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object5"]
 polygon = PoolVector2Array( 365.48, 465.721, 379.412, 519.458, 405.949, 528.083, 443.764, 516.141, 455.042, 464.394 )

@@ -74,23 +74,23 @@ polygon = PoolVector2Array( 799.392, 600.825, 809.633, 644.716, 829.141, 650.08,
 [node name="garden_potted_tree" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 script = ExtResource( 5 )
-dialog_label = "garden_potted_tree"
+dialog_label = "garden_potted_plant"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/garden_potted_tree"]
 polygon = PoolVector2Array( 984.468, 440.902, 1026.25, 458.545, 1027.23, 481.385, 1008.43, 496.45, 1002.04, 518.643, 975.903, 562.714, 1014.82, 591.325, 1004.16, 661.746, 968.027, 677.035, 929.11, 663.136, 913.358, 597.812, 948.105, 565.381, 891.583, 523.685, 884.634, 474.112, 920.771, 435.195 )
 
-[node name="garden_sidewalk" type="Area2D" parent="state_handler"]
+[node name="garden_sidewalk_end" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 script = ExtResource( 5 )
-dialog_label = "garden_sidewalk"
+dialog_label = "garden_sidewalk_end"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/garden_sidewalk"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/garden_sidewalk_end"]
 polygon = PoolVector2Array( 182.388, 570.536, 110.996, 614.864, 176.75, 653.303, 299.996, 655.457, 298.778, 577.273, 203.844, 579.05 )
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/garden_sidewalk"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/garden_sidewalk_end"]
 polygon = PoolVector2Array( 335.67, 592.449, 382.926, 662.87, 464.465, 645.265, 414.893, 569.285 )
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="state_handler/garden_sidewalk"]
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="state_handler/garden_sidewalk_end"]
 polygon = PoolVector2Array( 473.731, 572.528, 476.974, 557.702, 543.689, 523.882, 624.302, 544.267, 578.436, 596.619 )
 
 [node name="garden_liquid" type="Area2D" parent="state_handler"]
@@ -164,14 +164,3 @@ dialog_label = "garden_cube"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/garden_cube"]
 polygon = PoolVector2Array( 447.672, 320.635, 446.675, 341.894, 464.944, 341.063, 464.778, 319.472 )
-
-[node name="garden_shelf" type="Area2D" parent="state_handler"]
-script = ExtResource( 5 )
-dialog_label = "garden_shelf"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/garden_shelf"]
-polygon = PoolVector2Array( 232.502, 333.493, 233.694, 339.451, 302.412, 348.984, 441.041, 350.97, 489.104, 328.937, 489.104, 324.51, 273.018, 323.959 )
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/garden_shelf"]
-polygon = PoolVector2Array( 284.085, 387.854, 232.659, 410.672, 233.341, 417.483, 301.113, 424.295, 440.063, 424.976, 456.069, 417.483, 483.655, 395.687, 483.655, 388.876 )
-

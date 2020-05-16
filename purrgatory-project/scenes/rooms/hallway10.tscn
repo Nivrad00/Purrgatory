@@ -43,14 +43,14 @@ polygon = PoolVector2Array( -41.0161, 550.131, -41.8855, 754.312, 222.329, 750.8
 
 [node name="object" parent="state_handler" instance=ExtResource( 6 )]
 editor/display_folded = true
-dialog_label = "meowseum sign"
+dialog_label = "meowseum_sign"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
 polygon = PoolVector2Array( 328.873, 194.092, 328.873, 304.356, 758.902, 308.766, 759.637, 205.118 )
 
 [node name="object2" parent="state_handler" instance=ExtResource( 6 )]
 editor/display_folded = true
-dialog_label = "hours sign"
+dialog_label = "hours_sign"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
 polygon = PoolVector2Array( 728.763, 403.593, 728.028, 477.838, 800.802, 477.838, 800.067, 402.858 )

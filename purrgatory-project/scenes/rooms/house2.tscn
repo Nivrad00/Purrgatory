@@ -70,15 +70,7 @@ dialog_label = "house_books"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
 polygon = PoolVector2Array( 65.8734, 572.97, 67.1938, 599.378, 119.569, 611.261, 221.281, 584.092, 221.679, 575.17, 207.154, 563.727, 152.138, 554.484 )
 
-[node name="object4" parent="state_handler" instance=ExtResource( 4 )]
-editor/display_folded = true
-dialog_label = "dining_table"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object4"]
-polygon = PoolVector2Array( -2.11272, 538.787, 124.884, 539.041, 222.665, 550.977, 282.583, 561.16, 314.532, 572.702, 333.704, 586.742, 340.145, 597.048, 339.777, 611.218, 317.219, 626.121, 273.827, 642.657, 217.369, 656.15, 120.282, 671.961, 88.3077, 706.023, 92.92, 720.679, 12.7028, 720.326, 19.1855, 706.961, -1.94138, 682.524 )
-
 [node name="object5" parent="state_handler" instance=ExtResource( 4 )]
-editor/display_folded = true
 dialog_label = "house_carpet2"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object5"]
@@ -121,13 +113,6 @@ dialog_label = " house_rag"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object10"]
 polygon = PoolVector2Array( 905.186, 394.847, 919.148, 401.262, 922.545, 425.79, 927.828, 440.13, 955.752, 448.432, 954.62, 429.564, 967.45, 393.715, 931.979, 384.659, 906.696, 388.81 )
-
-[node name="object11" parent="state_handler" instance=ExtResource( 4 )]
-editor/display_folded = true
-dialog_label = " a_shaped_table"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object11"]
-polygon = PoolVector2Array( 727.802, 576.416, 748.928, 506.436, 737.485, 484.43, 756.851, 468.585, 774.896, 400.805, 748.048, 395.084, 746.728, 390.242, 810.106, 376.158, 1026.21, 388.482, 1007.72, 406.967, 1018.06, 472.983, 980.212, 470.782, 970.002, 415.726, 820.043, 407.64, 813.759, 454.486, 1016.97, 474.307, 1024.45, 474.307, 1018.73, 490.591, 1028.85, 586.099, 1004.91, 628.216, 991.553, 625.719, 979.317, 519.575, 804.695, 497.961, 792.145, 545.807, 738.649, 581.471 )
 
 [node name="object12" parent="state_handler" instance=ExtResource( 4 )]
 editor/display_folded = true

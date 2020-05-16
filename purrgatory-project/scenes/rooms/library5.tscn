@@ -36,12 +36,6 @@ dialog_label = "library_lamp"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
 polygon = PoolVector2Array( 613.077, 490.613, 613.617, 559.239, 628.862, 567.151, 628.07, 631.818, 665.657, 632.168, 665.133, 568.531, 676.84, 564.102, 676.84, 490.072, 642.797, 486.83 )
 
-[node name="object2" parent="state_handler" instance=ExtResource( 6 )]
-dialog_label = "library_round_desk"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
-polygon = PoolVector2Array( 423.698, 631.836, 456.714, 621.543, 540.676, 612.514, 631.279, 611.079, 661.721, 611.079, 787.44, 615.928, 842.06, 625.194, 862.118, 631.947 )
-
 [node name="object3" parent="state_handler" instance=ExtResource( 6 )]
 dialog_label = "library_books"
 

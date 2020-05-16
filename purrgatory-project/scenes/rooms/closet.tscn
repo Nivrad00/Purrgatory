@@ -33,13 +33,13 @@ polygon = PoolVector2Array( 1028.85, 657.509, 1019.58, 681.292, 1063.1, 693.659,
 position = Vector2( 1046.29, 675.912 )
 texture = ExtResource( 5 )
 
-[node name="towels" type="Area2D" parent="state_handler"]
+[node name="closet_blanket" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 position = Vector2( -21, -66 )
 script = ExtResource( 4 )
-dialog_label = "bulletin_board"
+dialog_label = "closet_blanket"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/towels"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_blanket"]
 polygon = PoolVector2Array( 797.108, 650.732, 811.579, 697.864, 914.119, 698.06, 901.039, 681.412, 820.415, 639.554, 807.097, 636.938 )
 
 [node name="closet_big_box" type="Area2D" parent="state_handler"]
@@ -138,39 +138,6 @@ dialog_label = "closet_rope"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_rope"]
 polygon = PoolVector2Array( 794.02, 531.585, 794.187, 537.232, 794.278, 571.477, 802.989, 578.753, 813.286, 577.258, 815.445, 568.622, 812.36, 558.169, 818.909, 533.529, 886.341, 514.117, 870.675, 509.008, 826.979, 508.022, 801.418, 520.935 )
-
-[node name="closet_shelves" type="Area2D" parent="state_handler"]
-position = Vector2( -16.8491, -322.978 )
-script = ExtResource( 4 )
-dialog_label = "closet_shelves"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_shelves"]
-polygon = PoolVector2Array( 752.151, 465.92, 752.471, 471.822, 929.026, 472.068, 1275.41, 338.27, 1276.22, 305.014, 927.815, 303.43 )
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/closet_shelves"]
-polygon = PoolVector2Array( 753.069, 551.086, 751.673, 557.432, 930.034, 558.062, 1259.87, 516.389, 1261.58, 498.756, 931.103, 498.756 )
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="state_handler/closet_shelves"]
-polygon = PoolVector2Array( 753.068, 654.608, 932.81, 722.864, 1258.73, 722.864, 1258.73, 707.506, 883.324, 645.507, 750.793, 645.507 )
-
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="state_handler/closet_shelves"]
-position = Vector2( 0.26355, 0 )
-polygon = PoolVector2Array( 752.5, 772.918, 911.266, 955.188, 1274.72, 954.791, 1273.92, 940.491, 936.875, 758.731, 751.362, 758.698 )
-
-[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="state_handler/closet_shelves"]
-polygon = PoolVector2Array( 751.452, 911.494, 766.547, 913.083, 766.693, 470.069, 752.324, 468.273 )
-
-[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="state_handler/closet_shelves"]
-polygon = PoolVector2Array( 931.094, 760.166, 956.516, 767.713, 955.768, 461.115, 931.975, 466.511 )
-
-[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="state_handler/closet_shelves"]
-polygon = PoolVector2Array( 1253.53, 929.766, 1274.98, 942.477, 1275.63, 333.827, 1253.43, 341.424 )
-
-[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="state_handler/closet_shelves"]
-polygon = PoolVector2Array( 915.763, 752.658, 927.734, 752.334, 928.188, 467.849, 914.544, 466.528 )
-
-[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="state_handler/closet_shelves"]
-polygon = PoolVector2Array( 751.575, 911.04, 776.785, 955.275, 910.682, 955.275, 872.154, 908.899 )
 
 [node name="electric_box_warning" type="Area2D" parent="state_handler"]
 editor/display_folded = true
@@ -319,15 +286,6 @@ dialog_label = "calendar"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/calendar"]
 polygon = PoolVector2Array( 226.001, 254.001, 225.001, 429.001, 335.001, 407.001, 334.001, 269.001 )
-
-[node name="bulletin_board" type="Area2D" parent="state_handler"]
-editor/display_folded = true
-position = Vector2( -21, -66 )
-script = ExtResource( 4 )
-dialog_label = "bulletin_board"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/bulletin_board"]
-polygon = PoolVector2Array( 111, 159, 111, 631.881, 136.024, 631.839, 347.001, 504.001, 347.001, 242.001 )
 
 [node name="exit" parent="state_handler" instance=ExtResource( 6 )]
 room_label = "hallway12"

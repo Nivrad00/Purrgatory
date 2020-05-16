@@ -96,4 +96,3 @@ dialog_label = "warehouse_pallet"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object5"]
 polygon = PoolVector2Array( 451.606, 586.683, 451.606, 631.692, 162.284, 632.179, 163.119, 587.514 )
-

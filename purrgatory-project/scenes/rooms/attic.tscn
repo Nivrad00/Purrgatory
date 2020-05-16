@@ -164,4 +164,3 @@ polygon = PoolVector2Array( 444.302, 524.545, 597.215, 524.886, 596.874, 405.008
 
 [node name="exit" parent="state_handler" instance=ExtResource( 5 )]
 room_label = "house5"
-

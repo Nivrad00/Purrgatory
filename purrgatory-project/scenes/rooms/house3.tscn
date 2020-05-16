@@ -81,7 +81,7 @@ polygon = PoolVector2Array( 472.235, 376.069, 467.948, 423.225, 501.385, 436.943
 
 [node name="object8" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
-dialog_label = "house_plug"
+dialog_label = "toaster"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object8"]
 polygon = PoolVector2Array( 582.836, 377.784, 581.002, 412.001, 565.118, 416.086, 565.118, 426.919, 601.699, 423.225, 605.128, 376.069 )

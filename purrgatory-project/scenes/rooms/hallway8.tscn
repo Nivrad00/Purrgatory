@@ -5,9 +5,9 @@
 [ext_resource path="res://assets/rooms/hallway8.png" type="Texture" id=3]
 [ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/sprites/chair.png" type="Texture" id=5]
-[ext_resource path="res://scenes/sprites/elijah_idle.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/sprites/sean_idle.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/sprites/elijah_idle.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/sprites/sean_idle.tscn" type="PackedScene" id=8]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -41,28 +41,23 @@ polygon = PoolVector2Array( 591.403, 383.856, 727.683, 352.251, 728.958, 803.388
 position = Vector2( 307.809, 453.571 )
 texture = ExtResource( 5 )
 
-[node name="elijah_idle" parent="state_handler" instance=ExtResource( 6 )]
-margin_left = 265.817
-margin_top = 319.184
-margin_right = 423.817
-margin_bottom = 558.184
-expand = true
+[node name="object6" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+dialog_label = "elijahs_chair"
 
-[node name="sean_idle" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 904.317
-margin_top = 238.386
-margin_right = 1056.32
-margin_bottom = 568.386
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object6"]
+polygon = PoolVector2Array( 247.405, 378.61, 252.82, 520.302, 296.37, 546.241, 368.34, 545.572, 372.021, 468.429, 337.438, 446.274, 335.816, 377.108, 296.15, 360.863 )
 
-[node name="object" parent="state_handler" instance=ExtResource( 8 )]
+[node name="object" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
 dialog_label = "crumpled_papers"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
 polygon = PoolVector2Array( 108.258, 428.585, 58.62, 447.538, 60.425, 501.688, 0, 520, 0, 720, 120, 720, 210.923, 666.5, 205.235, 582.886, 175.029, 545.398, 143.404, 530.976, 148.245, 457.475 )
 
-[node name="object2" parent="state_handler" instance=ExtResource( 8 )]
+[node name="object2" parent="state_handler" instance=ExtResource( 6 )]
 editor/display_folded = true
-dialog_label = "more_crumpled_papers"
+dialog_label = "crumpled_papers"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
 position = Vector2( 0.418121, 0 )
@@ -84,24 +79,37 @@ polygon = PoolVector2Array( 586.346, 454.554, 605.88, 474.544, 646.663, 479.692,
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="state_handler/object2"]
 polygon = PoolVector2Array( 868.318, 469.07, 930.267, 467.741, 1022.35, 526.794, 972.119, 539.961, 862.392, 484.366 )
 
-[node name="object3" parent="state_handler" instance=ExtResource( 8 )]
+[node name="object3" parent="state_handler" instance=ExtResource( 6 )]
 editor/display_folded = true
 dialog_label = "elijahs_bookshelf"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
 polygon = PoolVector2Array( 679.188, 188.074, 680, 470, 913.16, 467.575, 914.249, 189.505 )
 
-[node name="object4" parent="state_handler" instance=ExtResource( 8 )]
+[node name="object4" parent="state_handler" instance=ExtResource( 6 )]
 editor/display_folded = true
 dialog_label = "elijahs_desk"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object4"]
 polygon = PoolVector2Array( 99.1628, 338.882, 98.0552, 400.488, 192.591, 404.076, 261.892, 371.736, 261.892, 345.555, 204.318, 327.188, 177.13, 331.508, 161.972, 317.031, 131.618, 307.881, 111.996, 310.135 )
 
-[node name="object5" parent="state_handler" instance=ExtResource( 8 )]
+[node name="object5" parent="state_handler" instance=ExtResource( 6 )]
 editor/display_folded = true
 dialog_label = "odontophorous"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object5"]
 position = Vector2( 0, 1.25171 )
 polygon = PoolVector2Array( 202.711, 244.018, 203.903, 304.792, 321.478, 305.189, 320.684, 244.415 )
+
+[node name="elijah_idle" parent="state_handler" instance=ExtResource( 7 )]
+margin_left = 265.817
+margin_top = 319.184
+margin_right = 423.817
+margin_bottom = 558.184
+expand = true
+
+[node name="sean_idle" parent="state_handler" instance=ExtResource( 8 )]
+margin_left = 904.317
+margin_top = 238.386
+margin_right = 1056.32
+margin_bottom = 568.386

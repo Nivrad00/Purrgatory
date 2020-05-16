@@ -95,4 +95,3 @@ polygon = PoolVector2Array( 828.576, 591.075, 827.495, 665.645, 906.703, 639.773
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="state_handler/object5"]
 position = Vector2( 251.279, -147.171 )
 polygon = PoolVector2Array( 825.994, 587.981, 823.575, 779.175, 1029.2, 779.057, 1027.63, 586.172, 917.425, 575.722 )
-

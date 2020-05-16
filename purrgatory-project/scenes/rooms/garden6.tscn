@@ -40,6 +40,7 @@ margin_right = 1016.05
 margin_bottom = 599.124
 
 [node name="screwdriver" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "screwdriver"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/screwdriver"]
@@ -80,6 +81,7 @@ position = Vector2( 724.798, -291.001 )
 polygon = PoolVector2Array( 465.033, 291.01, 465.026, 1011.01, 555.174, 1011.01, 555.195, 291.021 )
 
 [node name="garden_flowers" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "garden_flowers"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/garden_flowers"]
@@ -113,7 +115,7 @@ polygon = PoolVector2Array( 1006.03, 507.376, 1007.42, 581.4, 1050.02, 583.495, 
 
 [node name="flowerbed" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
-dialog_label = "flowerbed"
+dialog_label = "garden_flowers"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/flowerbed"]
 polygon = PoolVector2Array( -0.819283, 527.628, -0.819283, 642.854, 464.274, 515.058, 464.274, 447.319 )
@@ -134,11 +136,5 @@ polygon = PoolVector2Array( 253.117, 592.143, 349.516, 564.442, 429.004, 584.705
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/garden_sidewalk"]
 polygon = PoolVector2Array( 879.839, 717.954, 999.572, 671.527, 1189.73, 674.439, 1189.71, 719.879 )
-
-[node name="garden_shelf2" parent="state_handler" instance=ExtResource( 5 )]
-dialog_label = "garden_shelf2"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/garden_shelf2"]
-polygon = PoolVector2Array( 272.207, 381.999, 273.282, 394.546, 299.81, 393.829, 327.414, 409.961, 340.678, 409.961, 351.074, 394.546, 367.923, 394.187, 399.828, 390.602, 399.828, 379.848 )
 
 [node name="surprise" parent="state_handler" instance=ExtResource( 10 )]

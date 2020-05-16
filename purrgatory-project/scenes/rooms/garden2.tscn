@@ -73,11 +73,3 @@ dialog_label = "garden_sidewalk"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/garden_sidewalk"]
 polygon = PoolVector2Array( 1151.91, 562.903, 1231.51, 632.392, 1065.83, 634.767, 967.991, 691.566, 833.442, 706.989, 728.369, 656.948, 656.79, 673.791, 560.605, 721.406, 353.632, 716.949, 267.739, 645.196, 264.158, 598.001, 158.895, 588.527, 90.0005, 625.001, 90.4617, 543.719, 194.158, 521.393, 320.881, 541.54, 366.14, 609.574, 444.685, 637.896, 542.501, 636.437, 635.354, 583.002, 783.001, 570.001, 870.305, 611.382, 934.756, 606.863, 1023.65, 566.882 )
-
-[node name="garden_grass" type="Area2D" parent="state_handler"]
-editor/display_folded = true
-script = ExtResource( 6 )
-dialog_label = "garden_grass"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/garden_grass"]
-polygon = PoolVector2Array( 90.5038, 509.951, 90.743, 719.841, 1279.84, 720.465, 1279.42, 673.468, 1082.23, 502.724, 784.291, 504.895, 784.299, 510.208, 525.05, 512.388, 526.44, 506.774 )

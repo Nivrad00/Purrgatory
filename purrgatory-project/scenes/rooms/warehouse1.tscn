@@ -79,4 +79,3 @@ dialog_label = " cat_toy"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object6"]
 position = Vector2( 1.43198, 0 )
 polygon = PoolVector2Array( 597.569, 48.0003, 589.569, 136, 624.569, 135, 640.569, 48.0003 )
-

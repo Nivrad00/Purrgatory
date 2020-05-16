@@ -82,7 +82,7 @@ polygon = PoolVector2Array( 495.884, 575.663, 554.201, 618.818, 619.517, 601.323
 
 [node name="object8" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
-dialog_label = "study_poem"
+dialog_label = "study_floor_papers"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object8"]
 polygon = PoolVector2Array( 456.044, 591.341, 491.035, 572.68, 517.861, 596.007, 502.699, 617.001, 466.542, 617.001 )
@@ -93,20 +93,6 @@ dialog_label = "study_bed "
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object10"]
 polygon = PoolVector2Array( 975.513, 438.714, 1282.26, 458.542, 1281.63, 388.768, 1085.15, 359.402, 1004.81, 371.955, 972.014, 403.723 )
-
-[node name="object11" parent="state_handler" instance=ExtResource( 5 )]
-editor/display_folded = true
-dialog_label = "study_desk"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object11"]
-polygon = PoolVector2Array( 446.158, 346.96, 447.554, 380.481, 749.237, 367.212, 761.109, 339.977 )
-
-[node name="object12" parent="state_handler" instance=ExtResource( 5 )]
-editor/display_folded = true
-dialog_label = "study_table"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object12"]
-polygon = PoolVector2Array( 56.6579, 474.583, 280.947, 456.903, 333.037, 573.657, 332.9, 603.496, 302.206, 630.506, 1.40953, 631.734, -1.04594, 533.514 )
 
 [node name="books" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true

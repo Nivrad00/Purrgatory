@@ -34,7 +34,6 @@ dialog_label = "field_tree"
 polygon = PoolVector2Array( 494.835, 299.264, 526.6, 365.24, 568.955, 359.538, 554.266, 394.579, 585.93, 389.402, 584.43, 375.014, 592.576, 347.32, 633.339, 340.903, 621.083, 294.377, 634.115, 270.757, 581.987, 244.692, 561.624, 262.612, 524.971, 263.426 )
 
 [node name="field_grave2" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 script = ExtResource( 6 )
 dialog_label = "field_grave2"
 
@@ -82,6 +81,7 @@ dialog_label = "field_grave3"
 polygon = PoolVector2Array( 664.082, 396.718, 664.622, 358.893, 681.374, 356.191, 699.206, 361.595, 699.206, 395.637 )
 
 [node name="field_grave4" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 script = ExtResource( 6 )
 dialog_label = "field_grave4"
 
@@ -89,6 +89,7 @@ dialog_label = "field_grave4"
 polygon = PoolVector2Array( 734.329, 438.866, 732.168, 398.339, 738.112, 381.588, 750, 357.812, 757.024, 349.166, 765.67, 348.626, 774.316, 358.893, 782.962, 394.016, 784.042, 441.028 )
 
 [node name="field_grave5" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 script = ExtResource( 6 )
 dialog_label = "field_grave5"
 

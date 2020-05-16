@@ -36,7 +36,7 @@ polygon = PoolVector2Array( 638.035, 197.717, 745.681, 271.996, 529.198, 333.168
 
 [node name="object2" parent="state_handler" instance=ExtResource( 6 )]
 editor/display_folded = true
-dialog_label = "cat_bed"
+dialog_label = "bedroom_bed"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
 polygon = PoolVector2Array( 447.22, 543.07, 387.077, 577.437, 394.237, 621.829, 465.836, 641.876, 531.706, 637.58, 556.05, 620.397, 561.778, 580.301, 544.594, 548.798 )
@@ -66,4 +66,3 @@ dialog_label = "bedroom_rug"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object5"]
 polygon = PoolVector2Array( 988.319, 655.916, 929.044, 661.903, 894.317, 673.878, 870.367, 694.235, 861.386, 724.172, 1155.37, 722.376, 1146.98, 705.611, 1085.91, 668.489 )
-

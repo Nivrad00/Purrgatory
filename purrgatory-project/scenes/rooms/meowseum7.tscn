@@ -27,6 +27,7 @@ centered = false
 room_label = "meowseum6"
 
 [node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 room_label = "hallway14"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
@@ -49,13 +50,6 @@ polygon = PoolVector2Array( 365.809, 203.62, 367.614, 250.551, 433.496, 252.356,
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object2"]
 position = Vector2( 73.1027, 3.61 )
 polygon = PoolVector2Array( 371.224, 200.01, 367.614, 250.551, 457.864, 250.551, 431.691, 200.01 )
-
-[node name="object3" parent="state_handler" instance=ExtResource( 6 )]
-editor/display_folded = true
-dialog_label = "meowseum_glass"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
-polygon = PoolVector2Array( 409.441, 281.74, 418.997, 312.614, 437.375, 311.879, 446.196, 280.27, 427.819, 275.124 )
 
 [node name="object4" parent="state_handler" instance=ExtResource( 6 )]
 editor/display_folded = true

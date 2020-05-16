@@ -22,66 +22,77 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+editor/display_folded = true
 room_label = "meowseum1"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
 polygon = PoolVector2Array( -458.085, 372.216, -313.084, 394.216, -315.084, 743.217, -460.085, 781.217 )
 
 [node name="exit2" parent="state_handler" instance=ExtResource( 4 )]
+editor/display_folded = true
 room_label = "meowseum6"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
 polygon = PoolVector2Array( 130.964, 442.758, 130.964, 622.699, 206.074, 604.327, 207.695, 451.945 )
 
 [node name="object" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "cat_with_pearl_earring"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
 polygon = PoolVector2Array( 864.775, 252.945, 865.548, 474.247, 1034.23, 478.115, 1035.82, 253.067 )
 
 [node name="object2" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "cat_with_pearl_earring_sign"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
 polygon = PoolVector2Array( 1047.48, 357.19, 1048.5, 388.504, 1090.08, 390.557, 1091.17, 356.383 )
 
 [node name="object3" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "meowseum_tallies"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
 polygon = PoolVector2Array( 1055.13, 431.688, 1052.03, 461.092, 1111.61, 461.092, 1112.17, 432.031 )
 
 [node name="object4" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "yarn"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object4"]
 polygon = PoolVector2Array( 494.863, 519.574, 457.86, 555.674, 456.958, 599.897, 446.128, 626.972, 376.635, 603.507, 327.9, 621.557, 348.657, 647.729, 398.295, 644.119, 475.91, 649.534, 523.743, 622.459, 561.648, 591.774, 550.818, 529.501 )
 
 [node name="object5" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "yarn_sign"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object5"]
 polygon = PoolVector2Array( 502.418, 653.37, 557.482, 657.351, 587.999, 636.121, 534.925, 630.151 )
 
 [node name="object6" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "discover_the_cat"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object6"]
 polygon = PoolVector2Array( 218.121, 258.487, 220.693, 396.525, 293.57, 384.521, 294.428, 257.63 )
 
 [node name="object7" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "cat_gogh"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object7"]
 polygon = PoolVector2Array( 410.477, 232.803, 342.384, 228.934, 345.479, 304.765, 409.703, 308.634 )
 
 [node name="object8" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "apple_cat"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object8"]
 polygon = PoolVector2Array( 345.479, 340.359, 345.479, 433.987, 415.12, 422.38, 414.346, 336.49 )
 
 [node name="object9" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "the_screm"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object9"]
@@ -91,21 +102,24 @@ polygon = PoolVector2Array( 463.094, 252.148, 439.881, 297.801, 442.976, 354.287
 dialog_label = "screm_sign"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object10"]
-polygon = PoolVector2Array( 519.581, 312.503, 521.902, 354.287, 551.306, 351.966, 548.211, 312.503 )
+polygon = PoolVector2Array( 519.581, 312.503, 522.148, 338.027, 549.349, 336.7, 548.211, 312.503 )
 
 [node name="object11" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "missing_painting"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object11"]
 polygon = PoolVector2Array( 712.983, 289.541, 713.718, 351.289, 746.062, 347.613, 746.797, 298.362 )
 
 [node name="object12" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "missing_painting_sign"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object12"]
 polygon = PoolVector2Array( 684.511, 322.925, 684.511, 348.174, 709.308, 344.673, 707.102, 321.885 )
 
 [node name="object13" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "starry_night"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object13"]
@@ -117,14 +131,15 @@ dialog_label = "starry_night_sign"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object14"]
 polygon = PoolVector2Array( 780.28, 320.457, 781.418, 342.071, 804.17, 341.502, 804.17, 319.888 )
 
-[node name="object16" parent="state_handler/object14" instance=ExtResource( 5 )]
-dialog_label = "cattysburg_sign"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object14/object16"]
-polygon = PoolVector2Array( 1139.07, 326.397, 1139.34, 350.059, 1160.98, 353.11, 1160.98, 325.648 )
-
 [node name="object15" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "battle_of_cattysburg"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object15"]
 polygon = PoolVector2Array( 1159.84, 266.902, 1159.84, 368.375, 1282.31, 412.697, 1281.14, 226.08 )
+
+[node name="object16" parent="state_handler" instance=ExtResource( 5 )]
+dialog_label = "cattysburg_sign"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object16"]
+polygon = PoolVector2Array( 1139.07, 326.397, 1139.34, 350.059, 1160.98, 353.11, 1160.98, 325.648 )

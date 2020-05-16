@@ -76,4 +76,3 @@ dialog_label = "cat_picture"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object6"]
 polygon = PoolVector2Array( 723.316, 231.198, 719.447, 338.754, 866.466, 338.754, 864.144, 230.425, 793.73, 194.057 )
-

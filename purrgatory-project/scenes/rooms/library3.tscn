@@ -67,12 +67,6 @@ polygon = PoolVector2Array( 252.737, 484.659, 280.542, 491.412, 301.595, 473.14,
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="state_handler/object3"]
 polygon = PoolVector2Array( 202.688, 482.276, 195.538, 516.834, 251.943, 519.614, 259.49, 485.454 )
 
-[node name="object4" parent="state_handler" instance=ExtResource( 6 )]
-dialog_label = "library_work_table"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object4"]
-polygon = PoolVector2Array( 340.039, 446.539, 340.502, 456.732, 327.299, 473.469, 327.067, 571.165, 307.609, 575.798, 307.609, 532.712, 277.958, 531.322, 238.578, 572.555, 219.356, 573.903, 218, 632.194, 189.984, 631.742, 189.532, 572.999, 43.3516, 574.58, 44.0294, 610.956, 189.758, 606.663, 189.532, 623.834, 44.2553, 628.579, 43.4719, 632.091, 14.6773, 632.091, 12.8672, 574.117, -5.28967, 575.514, -3.26086, 516.497, 172.102, 445.335 )
-
 [node name="object5" parent="state_handler" instance=ExtResource( 6 )]
 dialog_label = "library_ceiling_lamps"
 
