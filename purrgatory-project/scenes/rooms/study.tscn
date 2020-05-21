@@ -94,6 +94,31 @@ dialog_label = "study_bed "
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object10"]
 polygon = PoolVector2Array( 975.513, 438.714, 1282.26, 458.542, 1281.63, 388.768, 1085.15, 359.402, 1004.81, 371.955, 972.014, 403.723 )
 
+[node name="chair1" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
+dialog_label = "study_chair"
+sprite_path = [ null ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/chair1"]
+polygon = PoolVector2Array( 780.291, 261.263, 737.002, 417.001, 633.002, 435.001, 632.164, 451.379, 754.002, 482.001, 757.002, 527.001, 678.818, 548.186, 683.484, 573.846, 773.293, 622.833, 871.003, 580.002, 874.003, 546.001, 797.002, 529.001, 799.604, 490.936, 863.003, 490.001, 901.592, 436.216, 928.418, 257.764 )
+
+[node name="sprite" type="Sprite" parent="state_handler/chair1"]
+position = Vector2( 783.597, 438.845 )
+texture = ExtResource( 6 )
+
+[node name="chair2" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
+position = Vector2( -4, 11 )
+dialog_label = "study_chair"
+sprite_path = [ null ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/chair2"]
+polygon = PoolVector2Array( 790.221, 263.109, 758.443, 408.489, 638.485, 428.747, 646.826, 458.141, 634.513, 467.674, 639.279, 481.974, 690.917, 491.11, 750.225, 478.755, 755.267, 519.091, 684.164, 529.639, 682.178, 563.005, 757.252, 616.232, 837.886, 571.347, 857.35, 537.186, 792.207, 521.695, 792.207, 472.441, 894.553, 439.68, 943.545, 267.875 )
+
+[node name="sprite" type="Sprite" parent="state_handler/chair2"]
+position = Vector2( 783.597, 438.845 )
+texture = ExtResource( 7 )
+
 [node name="books" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
 dialog_label = "read_book"
@@ -113,30 +138,6 @@ polygon = PoolVector2Array( 982.384, 37.4171, 982.384, 165.293, 1283.03, 102.715
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="state_handler/books"]
 polygon = PoolVector2Array( 982.653, 441.249, 979.933, 563.683, 1211.81, 631.76, 1279.5, 631.941, 1279.22, 458.934 )
-
-[node name="chair1" parent="state_handler" instance=ExtResource( 5 )]
-editor/display_folded = true
-visible = false
-dialog_label = "study_chair"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/chair1"]
-polygon = PoolVector2Array( 780.291, 261.263, 737.002, 417.001, 633.002, 435.001, 632.164, 451.379, 754.002, 482.001, 757.002, 527.001, 678.818, 548.186, 683.484, 573.846, 773.293, 622.833, 871.003, 580.002, 874.003, 546.001, 797.002, 529.001, 799.604, 490.936, 863.003, 490.001, 901.592, 436.216, 928.418, 257.764 )
-
-[node name="sprite" type="Sprite" parent="state_handler/chair1"]
-position = Vector2( 783.597, 438.845 )
-texture = ExtResource( 6 )
-
-[node name="chair2" parent="state_handler" instance=ExtResource( 5 )]
-editor/display_folded = true
-position = Vector2( -4, 11 )
-dialog_label = "study_chair"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/chair2"]
-polygon = PoolVector2Array( 790.221, 263.109, 758.443, 408.489, 638.485, 428.747, 646.826, 458.141, 634.513, 467.674, 639.279, 481.974, 690.917, 491.11, 750.225, 478.755, 755.267, 519.091, 684.164, 529.639, 682.178, 563.005, 757.252, 616.232, 837.886, 571.347, 857.35, 537.186, 792.207, 521.695, 792.207, 472.441, 894.553, 439.68, 943.545, 267.875 )
-
-[node name="sprite" type="Sprite" parent="state_handler/chair2"]
-position = Vector2( 783.597, 438.845 )
-texture = ExtResource( 7 )
 
 [node name="oliver_sleeping" parent="state_handler" instance=ExtResource( 8 )]
 margin_left = 1029.3

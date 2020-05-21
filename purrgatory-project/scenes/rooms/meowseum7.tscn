@@ -74,8 +74,7 @@ dialog_label = "meowseum_cards"
 polygon = PoolVector2Array( 437.146, 355.136, 427.392, 368.483, 450.033, 374.788, 475.133, 377.724, 487.453, 364.377, 462.414, 357.765 )
 
 [node name="object7" parent="state_handler" instance=ExtResource( 6 )]
-editor/display_folded = true
-dialog_label = "exit_sign "
+dialog_label = "exit_sign"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object7"]
 polygon = PoolVector2Array( 693.001, 74.5603, 694.549, 132.594, 805.2, 129.499, 805.973, 73.7865 )
@@ -109,28 +108,20 @@ dialog_label = "flat_box"
 polygon = PoolVector2Array( 236.71, 444.34, 236.046, 535.229, 266.564, 610.859, 313.003, 551.814, 287.13, 412.495 )
 
 [node name="object12" parent="state_handler" instance=ExtResource( 6 )]
-editor/display_folded = true
 dialog_label = "mop_bucket"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object12"]
 polygon = PoolVector2Array( 830.182, 492.762, 825.117, 570.472, 836.397, 583.123, 847.546, 611.313, 878.955, 604.652, 907.69, 614.904, 913.528, 607.072, 913.25, 599.249, 952.727, 523.529, 959.243, 448.594, 933.179, 446.965, 931.55, 490.949, 914.329, 498.624, 891.253, 483.781 )
 
 [node name="object13" parent="state_handler" instance=ExtResource( 6 )]
-editor/display_folded = true
 dialog_label = "mop"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object13"]
 polygon = PoolVector2Array( 1067.13, 257.213, 984.105, 585.418, 995.045, 614.432, 1008.9, 632.029, 897.941, 631.985, 918.225, 599.196, 918.726, 590.183, 930.492, 577.917, 949.768, 574.912, 1029.46, 249.359 )
 
 [node name="object14" parent="state_handler" instance=ExtResource( 6 )]
-editor/display_folded = true
 dialog_label = "mop_water"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object14"]
+position = Vector2( -1.62897, 0 )
 polygon = PoolVector2Array( 823.071, 562.956, 813.141, 576.064, 816.716, 594.733, 765.872, 615.388, 770.361, 631.976, 1026.13, 632.049, 982.752, 592.747, 929.128, 568.517 )
-
-[node name="object15" parent="state_handler" instance=ExtResource( 6 )]
-dialog_label = "padlock"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object15"]
-polygon = PoolVector2Array( 631.052, 308.768, 631.251, 342.08, 640.598, 346.356, 650.344, 345.362, 650.344, 309.762, 634.035, 305.983 )

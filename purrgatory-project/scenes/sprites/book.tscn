@@ -1,15 +1,36 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/book.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/book.png" type="Texture" id=2]
-[ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://scenes/meowrkov-test/meowkov.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/meowrkov-test/meowkov.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/book_distort.png" type="Texture" id=5]
 
-[sub_resource type="DynamicFont" id=1]
-size = 9
+[sub_resource type="DynamicFont" id=3]
+size = 21
 use_filter = true
 extra_spacing_top = -3
-font_data = ExtResource( 3 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="Shader" id=4]
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+uniform sampler2D displace: hint_albedo;
+
+void fragment() {
+	vec4 disp = texture(displace, SCREEN_UV);
+	vec2 newUV = SCREEN_UV + vec2(0, -0.05  ) * (1.0 - disp.xy);
+	COLOR = texture(SCREEN_TEXTURE, newUV);
+}
+"
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = SubResource( 4 )
+shader_param/displace = ExtResource( 5 )
+
+[sub_resource type="ViewportTexture" id=6]
+viewport_path = NodePath("Viewport")
 
 [node name="book" type="Node2D"]
 script = ExtResource( 1 )
@@ -17,35 +38,59 @@ script = ExtResource( 1 )
 [node name="sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
-[node name="text" type="Label" parent="."]
+[node name="meowkov" parent="." instance=ExtResource( 3 )]
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 980, 580 )
+hdr = false
+usage = 0
+render_target_v_flip = true
+
+[node name="sprite2" type="Sprite" parent="Viewport"]
+position = Vector2( -111, -74 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="text" type="Label" parent="Viewport"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -224.0
-margin_top = -128.397
-margin_right = -24.0
-margin_bottom = 115.603
-custom_fonts/font = SubResource( 1 )
+margin_left = 32.0
+margin_top = 30.0
+margin_right = -543.0
+margin_bottom = -40.0
+rect_pivot_offset = Vector2( 235.908, 203.955 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "tell you what, dear, you go and get a degree in demon resources management, then you come back and tell me how to do my job.
-tell you what, dear, you go and get a degree in demon resources management, then you come back and tell me how to do my job.
-
-tell you what, dear, you go and get a degree in demon resources management, then you come back and tell me how to do my job.
-
-"
+text = " meow meow  m eow meow meow meow m eo w    me  f fow meow meow  me ow  m ddddddd ow  meow meow meeow meow me  me  f fow meow meow  me ow  m ddw meow meow  m ow  me ow   m eow meow meow meow meow meow 
+meow meow m  me  f fow meow meow  me ow  m ddddddd ow  meow meow meeow meow meow meow meow meow meow meow   me  f fow meow meow  me ow  m ddddddd ow  meow meow meeow meow meow meow meow meow meow meow   me  f fow meow meow  me ow  m ddddddd ow  meow meoweow meow   me  f fow meow meow  me ow  m ddddddd ow  meow meow meeow meow meow meow meow meow meow meow "
 autowrap = true
 clip_text = true
 
-[node name="text2" type="Label" parent="."]
+[node name="text2" type="Label" parent="Viewport"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 36.3016
-margin_top = -132.587
-margin_right = 239.302
-margin_bottom = 109.413
-custom_fonts/font = SubResource( 1 )
+margin_left = 540.0
+margin_top = 20.0
+margin_right = -35.0
+margin_bottom = -50.0
+rect_pivot_offset = Vector2( -249.272, 200.816 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = " meow meow  m eow meow meow meow m eo w    me  f fow meow meow  me ow  m ddddddd ow  meow meow meeow meow me  me  f fow meow meow  me ow  m ddw meow meow  m ow  me ow   m eow meow meow meow meow meow 
+meow meow m  me  f fow meow meow  me ow  m ddddddd ow  meow meow meeow meow meow meow meow meow meow meow   me  f fow meow meow  me ow  m ddddddd ow  meow meow meeow meow meow meow meow meow meow meow   me  f fow meow meow  me ow  m ddddddd ow  meow meoweow meow   me  f fow meow meow  me ow  m ddddddd ow  meow meow meeow meow meow meow meow meow meow meow "
 autowrap = true
 clip_text = true
 
-[node name="meowkov" parent="." instance=ExtResource( 4 )]
+[node name="distortion" type="ColorRect" parent="Viewport"]
+material = SubResource( 5 )
+margin_right = 980.0
+margin_bottom = 580.0
 
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -241.867
+margin_top = -151.19
+margin_right = 248.133
+margin_bottom = 138.81
+texture = SubResource( 6 )
+expand = true

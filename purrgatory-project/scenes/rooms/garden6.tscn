@@ -121,7 +121,6 @@ dialog_label = "garden_flowers"
 polygon = PoolVector2Array( -0.819283, 527.628, -0.819283, 642.854, 464.274, 515.058, 464.274, 447.319 )
 
 [node name="hoe" parent="state_handler" instance=ExtResource( 5 )]
-editor/display_folded = true
 dialog_label = "hoe"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/hoe"]

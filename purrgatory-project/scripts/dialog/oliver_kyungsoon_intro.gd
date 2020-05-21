@@ -52,6 +52,7 @@ var raw_blocks = [
 ["oliver_librarian_end","oliver","","anyway, feel free to browse around! just let me know if you find something you'd like to check out.","","","","","",""],
 ["","you","","will do.","","","","","",""],
 ["","_none","","oliver steps back and watches you expectantly.","","","null","","",""],
+["library_books","_none","_none","_pass","","","read_book","","",""],
 ["read_book","_none","_none","_pass","","book_state_2",['book3', 'book_choice'],"","",""],
 ["book_choice","","","_pass","","book_state",['book2', 'book_choice2'],"","",""],
 ["book_choice2","","","_pass","","met_oliver",['book1', 'book0'],"","",""],

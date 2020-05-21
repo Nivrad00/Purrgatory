@@ -25,6 +25,8 @@ func return_to_main():
 	$game.hide()
 	$main_menu.show()
 	$main_menu/audio.play()
+	AudioServer.set_bus_mute(0, false)
+	AudioServer.set_bus_volume_db(0, 0)
 
 func load_file(file):
 	fade_out = file

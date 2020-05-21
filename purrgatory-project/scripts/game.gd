@@ -20,12 +20,13 @@ var oliver_test_state = {
 	'oliver_questioned': true,
 	'_inv_commons_key': true,
 	'seen_study': true,
+	'oliver_in_study': true,
 	'_inv_chess_letter': true,
 	'tori_visited_oliver': true,
 	'oliver_asked_for_soda': true,
-	'house_cat_pushed_glass': true,
-	'comforted_oliver': true,
-	'oliver_in_study': false
+	'house_cat_pushed_glass': true# ,
+	# 'comforted_oliver': true,
+	# 'oliver_in_study': false
 }
 
 
@@ -125,7 +126,7 @@ func _process(delta):
 			$delay_timer.start()
 			change_audio(null)
 			
-			$main_audio.volume_db = 0
+			AudioServer.set_bus_mute(0, true)
 			yield($delay_timer, 'timeout')
 			
 			emit_signal('return_to_main')
@@ -138,7 +139,7 @@ func _process(delta):
 			set_process(false)
 		else:
 			a = min(a + 2 * delta, 1)
-			$main_audio.volume_db = $main_audio.volume_db - 40 * delta
+			AudioServer.set_bus_volume_db(0, AudioServer.get_bus_volume_db(0) - 40 * delta)
 			$white_cover.color = Color(1, 1, 1, a)
 			
 func start_action_timer(actions, callback):
@@ -155,7 +156,6 @@ func increment_action_timers():
 	action_timers = new_list
 	
 func change_room(label):
-	# print(state)
 	increment_action_timers()
 	room.change_room(label, state)
 
@@ -192,8 +192,11 @@ func start_dialog(label):
 		
 	ui.update_ui(block['speaker'], block['sprites'], text, choices_text)
 	
+	if ui.get_node('AnimationPlayer').current_animation != 'default':
+		ui.get_node('AnimationPlayer').play('default')
+		
 	for pair in block['states']:
-		check_inv_and_quest_state(pair)
+		check_special_states(pair)
 		state[pair[0]] = pair[1]
 	room.update_state(state)
 	
@@ -255,8 +258,11 @@ func update_dialog(b: int):
 			
 		ui.update_ui(block['speaker'], block['sprites'], text, choices_text)
 		
+		if ui.get_node('AnimationPlayer').current_animation != 'default':
+			ui.get_node('AnimationPlayer').play('default')
+		
 		for pair in block['states']:
-			check_inv_and_quest_state(pair)
+			check_special_states(pair)
 			state[pair[0]] = pair[1]
 		room.update_state(state)
 
@@ -294,16 +300,24 @@ func set_player_name():
 		update_dialog(-1)
 
 func change_audio(song, play = true):
+	if song == current_audio:
+		return
+		
 	current_audio = song
+	
 	if song == null or song == '':
 		$main_audio.stop()
 		$main_audio.set_stream(null)
+		
 	else:
 		var stream = load('res://assets/audio/' + song + '.ogg')
-		if stream != $main_audio.get_stream():
-			$main_audio.set_stream(stream)
-			if play:
-				$main_audio.play()
+		$main_audio.volume_db = 0
+		$main_audio.set_stream(stream)
+		
+		if play:
+			$main_audio.play()
+			
+				
 
 func return_to_main():
 	$white_cover.show()
@@ -356,7 +370,10 @@ func save(file):
 	$content.remove_child(ui)
 	$ss.add_child(room)
 	$ss.add_child(ui)
+	var neg = $negative_cover.duplicate()
+	$ss.add_child(neg)
 	$ss_tex.show()
+	
 	yield(get_tree(), "idle_frame")
 	yield(get_tree(), "idle_frame")
 	yield(get_tree(), "idle_frame")
@@ -370,6 +387,7 @@ func save(file):
 	# then move the nodes back
 	$ss.remove_child(room)
 	$ss.remove_child(ui)
+	$ss.remove_child(neg)
 	$content.add_child(room)
 	$content.add_child(ui)
 	$ss_tex.hide()
@@ -492,20 +510,32 @@ func examine_item(_name):
 	if not ui.is_visible():
 		start_dialog('examine_' + _name)
 	
-func check_inv_and_quest_state(pair):
+func check_special_states(pair):
 	if pair[0].substr(0,  5) == '_inv_':
 		if pair[1]:
 			$meta_ui/dropdown.add_to_inv(pair[0].substr(5, len(pair[0])))
 		else:
 			$meta_ui/dropdown.remove_from_inv(pair[0].substr(5, len(pair[0])))
+			
 	if pair[0].substr(0,  7) == '_quest_':
 		if pair[1]:
 			$meta_ui/dropdown.add_quest(pair[0].substr(7, len(pair[0])))
 		else:
 			$meta_ui/dropdown.remove_quest(pair[0].substr(7, len(pair[0])))
 			
+	if pair[0].substr(0,  6) == '_anim_' and pair[1]:
+		state[pair[0]] = false
+		
+		var player = ui.get_node('AnimationPlayer')
+		var anim = pair[0].substr(6, len(pair[0]))
+		
+		if player.has_animation(anim):
+			player.play(anim)
+		else:
+			print('uh oh stinky this anim is missing: %s' % anim)
+			
 func test_add_quest():
-	check_inv_and_quest_state([$meta_ui/dropdown/quest_debug.text, true])
+	check_special_states([$meta_ui/dropdown/quest_debug.text, true])
 
 func test_remove_quest():
-	check_inv_and_quest_state([$meta_ui/dropdown/quest_debug.text, false])
+	check_special_states([$meta_ui/dropdown/quest_debug.text, false])

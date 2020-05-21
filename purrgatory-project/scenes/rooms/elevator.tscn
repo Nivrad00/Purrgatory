@@ -32,14 +32,6 @@ room_label = "hallway7"
 position = Vector2( -453.085, 178.215 )
 polygon = PoolVector2Array( 455.001, 573.001, 770.002, 574.001, 771.002, 177, 452.001, 176 )
 
-[node name="elevator_panel" type="Area2D" parent="state_handler"]
-editor/display_folded = true
-script = ExtResource( 5 )
-dialog_label = "elevator_panel"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/elevator_panel"]
-polygon = PoolVector2Array( 816.36, 267.635, 818.565, 414.653, 896.485, 413.918, 898.691, 267.635 )
-
 [node name="elevator_button" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 script = ExtResource( 5 )
@@ -47,6 +39,14 @@ dialog_label = "elevator_button"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/elevator_button"]
 polygon = PoolVector2Array( 828.872, 385.49, 835.955, 379.694, 847.975, 383.129, 850.765, 393.002, 848.404, 402.017, 838.101, 402.661, 828.013, 397.724 )
+
+[node name="elevator_panel" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 5 )
+dialog_label = "elevator_panel"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/elevator_panel"]
+polygon = PoolVector2Array( 816.36, 267.635, 818.565, 414.653, 896.485, 413.918, 898.691, 267.635 )
 
 [node name="elevator_railing" type="Area2D" parent="state_handler"]
 script = ExtResource( 5 )

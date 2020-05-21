@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ss.tscn" type="PackedScene" id=2]
@@ -84,24 +84,115 @@ size = 18
 use_filter = true
 font_data = ExtResource( 24 )
 
-[sub_resource type="DynamicFont" id=11]
-size = 22
-use_filter = true
-font_data = ExtResource( 39 )
+[sub_resource type="Animation" id=11]
+resource_name = "default"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:margin_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:margin_right")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:margin_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0.0 ]
+}
 
-[sub_resource type="DynamicFont" id=12]
-size = 22
-font_data = ExtResource( 40 )
+[sub_resource type="Animation" id=12]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:margin_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 806.201, -856.32 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_right")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 806.201, -856.32 ]
+}
 
 [sub_resource type="DynamicFont" id=13]
 size = 22
 use_filter = true
-font_data = ExtResource( 41 )
+font_data = ExtResource( 39 )
 
 [sub_resource type="DynamicFont" id=14]
 size = 22
+font_data = ExtResource( 40 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 22
+use_filter = true
+font_data = ExtResource( 41 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 22
 use_filter = true
 font_data = ExtResource( 24 )
+
+[sub_resource type="Shader" id=17]
+code = "shader_type canvas_item;
+
+void fragment() {
+	vec3 c = textureLod(SCREEN_TEXTURE, SCREEN_UV, 0.0).rgb;
+	c = vec3(1.0) - c;
+	COLOR.rgb = c;
+}"
+
+[sub_resource type="ShaderMaterial" id=18]
+shader = SubResource( 17 )
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
@@ -125,6 +216,7 @@ one_shot = true
 script = ExtResource( 3 )
 
 [node name="dialog_handler" type="Node" parent="."]
+editor/display_folded = true
 script = ExtResource( 4 )
 
 [node name="objects" type="Node" parent="dialog_handler"]
@@ -206,13 +298,12 @@ margin_right = 1075.0
 margin_bottom = 464.0
 
 [node name="name_input" type="Control" parent="content/ui"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 288.0
+margin_left = 299.0
 margin_top = 199.0
-margin_right = -312.0
+margin_right = -301.0
 margin_bottom = -436.0
 
 [node name="mask" type="ColorRect" parent="content/ui/name_input"]
@@ -299,15 +390,27 @@ text = "he/him"
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -100.314
-margin_right = 7.68677
-margin_bottom = 4.0
+margin_left = -79.0
+margin_top = 12.0
+margin_right = -1.0
+margin_bottom = -10.0
 focus_mode = 0
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
 shortcut = SubResource( 6 )
-icon = ExtResource( 27 )
 flat = true
+
+[node name="Sprite" type="Sprite" parent="content/ui/name_input/ok_button"]
+position = Vector2( 38.5194, 31.0667 )
+texture = ExtResource( 27 )
+
+[node name="ok" type="Label" parent="content/ui/name_input/ok_button"]
+margin_left = 5.0
+margin_top = 15.0
+margin_right = 62.0
+margin_bottom = 49.0
+text = "ok"
+align = 1
 
 [node name="text_box" type="Button" parent="content/ui"]
 anchor_right = 1.0
@@ -348,7 +451,6 @@ bbcode_text = "to be, or not to be: that is the question: whether 'tis nobler in
 text = "to be, or not to be: that is the question: whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune, or to take arms against a sea of troubles, and by opposing end them?"
 
 [node name="skip_button" type="Button" parent="content/ui"]
-editor/display_folded = true
 margin_left = 1087.43
 margin_top = 431.47
 margin_right = 1163.43
@@ -382,7 +484,6 @@ align = 1
 valign = 1
 
 [node name="history_button" type="Button" parent="content/ui"]
-editor/display_folded = true
 margin_left = 996.904
 margin_top = 431.47
 margin_right = 1072.9
@@ -408,8 +509,12 @@ text = "history"
 align = 1
 valign = 1
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="content/ui"]
+root_node = NodePath("../sprites")
+anims/default = SubResource( 11 )
+anims/right_to_left_run = SubResource( 12 )
+
 [node name="meta_ui" type="Control" parent="."]
-editor/display_folded = true
 margin_left = 5.41501
 margin_top = 0.418091
 margin_right = 1285.42
@@ -419,10 +524,10 @@ theme = ExtResource( 25 )
 
 [node name="menu_button" type="Button" parent="meta_ui"]
 editor/display_folded = true
-margin_left = 57.3198
-margin_top = 10.0
-margin_right = 133.32
-margin_bottom = 36.0
+margin_left = 9.3863
+margin_top = 14.3017
+margin_right = 85.3865
+margin_bottom = 40.3017
 focus_mode = 0
 custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -504,10 +609,10 @@ margin_bottom = 393.685
 
 [node name="notes_button" type="Button" parent="meta_ui"]
 editor/display_folded = true
-margin_left = 1058.6
-margin_top = 11.24
-margin_right = 1134.61
-margin_bottom = 37.24
+margin_left = 1093.04
+margin_top = 15.5417
+margin_right = 1169.05
+margin_bottom = 41.5417
 focus_mode = 0
 custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -534,10 +639,10 @@ valign = 1
 
 [node name="items_button" type="Button" parent="meta_ui"]
 editor/display_folded = true
-margin_left = 1149.23
-margin_top = 11.24
-margin_right = 1225.23
-margin_bottom = 37.24
+margin_left = 1183.67
+margin_top = 15.5417
+margin_right = 1259.67
+margin_bottom = 41.5417
 focus_mode = 0
 custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -569,10 +674,10 @@ one_shot = true
 
 [node name="history_button2" type="Button" parent="meta_ui"]
 editor/display_folded = true
-margin_left = 1144.23
-margin_top = 684.317
-margin_right = 1220.23
-margin_bottom = 710.317
+margin_left = 1182.28
+margin_top = 680.015
+margin_right = 1258.28
+margin_bottom = 706.015
 focus_mode = 0
 custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -787,10 +892,10 @@ margin_top = 275.993
 margin_right = 1280.0
 margin_bottom = 399.993
 mouse_filter = 1
-custom_fonts/bold_italics_font = SubResource( 11 )
-custom_fonts/italics_font = SubResource( 12 )
-custom_fonts/bold_font = SubResource( 13 )
-custom_fonts/normal_font = SubResource( 14 )
+custom_fonts/bold_italics_font = SubResource( 13 )
+custom_fonts/italics_font = SubResource( 14 )
+custom_fonts/bold_font = SubResource( 15 )
+custom_fonts/normal_font = SubResource( 16 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]are you sure? unsaved progress will be lost.[/center]"
@@ -912,6 +1017,7 @@ margin_right = 1279.58
 margin_bottom = 719.582
 
 [node name="load_confirm" type="Control" parent="meta_ui"]
+editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -963,7 +1069,6 @@ valign = 1
 visible = false
 
 [node name="history" type="Control" parent="meta_ui"]
-editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -1027,31 +1132,41 @@ margin_right = 1280.0
 margin_bottom = 720.0
 color = Color( 1, 1, 1, 0 )
 
+[node name="negative_cover" type="ColorRect" parent="."]
+visible = false
+material = SubResource( 18 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1280.0
+margin_bottom = 720.0
+mouse_filter = 2
+
 [node name="main_audio" type="AudioStreamPlayer" parent="."]
+volume_db = -49.92
 bus = "Music"
 [connection signal="timeout" from="skip_timer" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="content/ui/name_input/ok_button" to="." method="set_player_name"]
 [connection signal="pressed" from="content/ui/text_box" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="content/ui/skip_button" to="." method="toggle_skip"]
-[connection signal="pressed" from="content/ui/history_button" to="meta_ui/history" method="show_custom"]
 [connection signal="pressed" from="content/ui/history_button" to="." method="turn_off_skip"]
-[connection signal="pressed" from="meta_ui/menu_button" to="." method="turn_off_skip"]
+[connection signal="pressed" from="content/ui/history_button" to="meta_ui/history" method="show_custom"]
 [connection signal="pressed" from="meta_ui/menu_button" to="." method="open_pause_menu"]
+[connection signal="pressed" from="meta_ui/menu_button" to="." method="turn_off_skip"]
 [connection signal="examine_item" from="meta_ui/dropdown" to="." method="examine_item"]
 [connection signal="pressed" from="meta_ui/dropdown/add_quest" to="." method="test_add_quest"]
 [connection signal="pressed" from="meta_ui/dropdown/remove_quest" to="." method="test_remove_quest"]
 [connection signal="pressed" from="meta_ui/notes_button" to="meta_ui/dropdown" method="toggle_notes"]
 [connection signal="pressed" from="meta_ui/items_button" to="meta_ui/dropdown" method="toggle_items"]
-[connection signal="pressed" from="meta_ui/history_button2" to="meta_ui/history" method="show_custom"]
 [connection signal="pressed" from="meta_ui/history_button2" to="." method="turn_off_skip"]
+[connection signal="pressed" from="meta_ui/history_button2" to="meta_ui/history" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/save" to="meta_ui/save_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/load" to="meta_ui/load_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/options" to="meta_ui/options_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/exit" to="meta_ui/exit_confirm" method="show"]
 [connection signal="pressed" from="meta_ui/pause_menu/back" to="." method="close_pause_menu"]
+[connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/dropdown" method="format_quests"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
-[connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
 [connection signal="pressed" from="meta_ui/exit_confirm/yes" to="." method="return_to_main"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
 [connection signal="pressed" from="meta_ui/save_confirm/yes" to="." method="save_confirmed"]

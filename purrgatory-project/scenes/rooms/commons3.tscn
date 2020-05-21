@@ -29,5 +29,4 @@ script = ExtResource( 5 )
 room_label = "hallway1"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
-polygon = PoolVector2Array( 136.098, 227.237, 135.757, 355.179, 230.578, 355.483, 230.578, 227.846 )
-
+polygon = PoolVector2Array( 107.593, 222.931, 107.951, 355.571, 262.817, 355.213, 263.893, 222.214 )

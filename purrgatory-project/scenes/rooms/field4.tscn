@@ -61,10 +61,10 @@ polygon = PoolVector2Array( 699.042, 451.457, 701.486, 488.925, 732.437, 508.473
 
 [node name="horseshoe" type="Area2D" parent="state_handler"]
 script = ExtResource( 6 )
-dialog_label = "welcome_sign"
+dialog_label = "horseshoe"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/horseshoe"]
-polygon = PoolVector2Array( 1027.19, 476.978, 1013.96, 536.52, 1027.93, 552.692, 1055.86, 554.898, 1063.95, 536.52, 1047.78, 476.243 )
+polygon = PoolVector2Array( 971.538, 479.418, 982.371, 541.32, 1024.93, 576.14, 1074.45, 580.783, 1096.89, 533.582, 1093.02, 477.87 )
 
 [node name="field_path" type="Area2D" parent="state_handler"]
 script = ExtResource( 6 )

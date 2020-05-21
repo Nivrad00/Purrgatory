@@ -63,17 +63,16 @@ polygon = PoolVector2Array( 708.174, 555.174, 693.618, 559.824, 686.997, 572.279
 
 [node name="field_grate" type="Area2D" parent="state_handler"]
 script = ExtResource( 6 )
-dialog_label = "welcome_sign"
+dialog_label = "field_grate"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_grate"]
 polygon = PoolVector2Array( 395.307, 388.009, 451.712, 388.009, 451.467, 375.8, 395.262, 375.573 )
 
 [node name="field_river" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 script = ExtResource( 6 )
 dialog_label = "field_river"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_river"]
-polygon = PoolVector2Array( 399.256, 386.991, 411.247, 396.757, 418.362, 408.352, 418.362, 439.975, 386.213, 472.388, 395.465, 484.932, 432.593, 513.234, 488.319, 537.549, 576.531, 578.56, 672.924, 637.089, 667.39, 652.373, 677.404, 678.725, 708.763, 721.152, 1189.8, 719.958, 1189.82, 675.345, 1154.05, 652.281, 1093.44, 646.588, 863.214, 598.783, 838.011, 553.908, 839.241, 538.848, 778.076, 518.255, 683.41, 507.805, 528.96, 477.32, 482.788, 444.269, 490.748, 419.435, 485.214, 405.732, 449.806, 386.706 )
+polygon = PoolVector2Array( 399.256, 386.991, 411.247, 396.757, 418.362, 408.352, 418.362, 439.975, 386.213, 472.388, 395.465, 484.932, 432.593, 513.234, 488.319, 537.549, 576.531, 578.56, 672.924, 637.089, 667.39, 652.373, 677.404, 678.725, 708.763, 721.152, 1189.8, 719.958, 1189.82, 675.345, 1154.05, 652.281, 1093.44, 646.588, 863.214, 598.783, 838.011, 553.908, 839.241, 538.848, 778.076, 518.255, 683.41, 507.805, 528.96, 477.32, 482.788, 444.269, 490.748, 419.435, 485.214, 405.732, 449.806, 386.706, 428.424, 386.827 )
 
 [node name="river" parent="state_handler" instance=ExtResource( 7 )]

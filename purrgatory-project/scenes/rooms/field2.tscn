@@ -41,7 +41,6 @@ dialog_label = "field_grave2"
 polygon = PoolVector2Array( 655.375, 457.746, 655.977, 556.665, 752.161, 572.336, 753.143, 458.481, 738.441, 448.925, 667.137, 444.515 )
 
 [node name="field_bricks" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 script = ExtResource( 6 )
 dialog_label = "field_bricks"
 
@@ -49,7 +48,6 @@ dialog_label = "field_bricks"
 polygon = PoolVector2Array( 362.242, 414.973, 432.289, 416.602, 515.369, 429.635, 561.796, 457.328, 656.279, 480.949, 810.221, 489.908, 1039.1, 535.521, 1034.21, 548.553, 1062.72, 550.182, 1031.77, 601.496, 784.972, 544.48, 631.844, 523.303, 566.683, 501.311, 464.055, 445.925, 314.186, 440.223 )
 
 [node name="field_arch" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 script = ExtResource( 6 )
 dialog_label = "field_arch"
 

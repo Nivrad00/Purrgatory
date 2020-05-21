@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/hallway1.png" type="Texture" id=3]
-[ext_resource path="res://scenes/exit_left.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=4]
+[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=6]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -22,37 +21,52 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+[node name="exit" type="Area2D" parent="state_handler"]
+position = Vector2( -465.02, -291.018 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_horizontal_guides_": [  ]
+}
 room_label = "hallway2"
 
-[node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
+polygon = PoolVector2Array( 825.02, 291.018, 825.423, 857.249, 920.883, 709.176, 920.883, 283.991 )
+
+[node name="exit2" type="Area2D" parent="state_handler"]
+position = Vector2( 724.798, -291.001 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
 room_label = "piano1"
 
-[node name="exit3" parent="state_handler" instance=ExtResource( 6 )]
-editor/display_folded = true
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( 149.078, 286.475, 147.106, 704.87, 211.458, 848.908, 212.686, 289.059 )
+
+[node name="exit3" parent="state_handler" instance=ExtResource( 5 )]
 room_label = "commons3"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3"]
-polygon = PoolVector2Array( 312.881, 415.942, 509.733, 415.931, 509.902, 710.498, 312.15, 711.109 )
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/exit3"]
+position = Vector2( -918.105, -112.803 )
+polygon = PoolVector2Array( 465.026, 1011.01, 1745.01, 1011.01, 1745.02, 923.026, 465.007, 923.014 )
 
-[node name="object" parent="state_handler" instance=ExtResource( 7 )]
-editor/display_folded = true
+[node name="object" parent="state_handler" instance=ExtResource( 6 )]
 dialog_label = "lockers"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
-polygon = PoolVector2Array( 248.685, 165.685, 244.474, 556.212, 649.738, 556.212, 675.001, 534.106, 673.948, 174.106, 659.212, 165.685 )
+polygon = PoolVector2Array( 512.592, 131.676, 516.275, 426.333, 724.99, 433.7, 743.407, 409.145, 740.951, 132.904 )
 
-[node name="object2" parent="state_handler" instance=ExtResource( 7 )]
-editor/display_folded = true
+[node name="object2" parent="state_handler" instance=ExtResource( 6 )]
 dialog_label = "hallway_pipe"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
-polygon = PoolVector2Array( 968.686, 38.3159, 975.326, 192.316, 999.07, 212.568, 1189.73, 217.075, 1189.84, 174.544, 1008.85, 177.651, 1011.84, 36.2106 )
+position = Vector2( 0, 3.25803 )
+polygon = PoolVector2Array( 768.615, 22.8633, 773.502, 164.587, 873.02, 166.114, 873.02, 130.929, 809.34, 131.193, 806.896, 22.8633 )
 
-[node name="object3" parent="state_handler" instance=ExtResource( 7 )]
-editor/display_folded = true
+[node name="object3" parent="state_handler" instance=ExtResource( 6 )]
 dialog_label = "hallway_puddle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
+position = Vector2( -235.345, -123.794 )
 polygon = PoolVector2Array( 1042.71, 548.475, 1018.95, 570.041, 1047.12, 576.203, 1093.77, 572.242, 1077.04, 552.436 )
-

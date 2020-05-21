@@ -10,5 +10,5 @@ func _ready():
 
 func on_pressed():
 	print(room_label)
-	emit_signal('change_room', room_label)
+	emit_signal('change_room', room_label.strip_edges())
 	# this signal needs to be connected to the root node of the room (room_instance.gd)

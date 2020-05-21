@@ -36,7 +36,6 @@ dialog_label = "dropoff_fence"
 polygon = PoolVector2Array( 160.801, 396.716, 160.102, 412.777, 173.371, 416.269, 173.371, 602.027, 578.407, 602.027, 575.614, 414.873, 591.676, 414.873, 588.883, 387.637, 190.829, 389.034 )
 
 [node name="dropoff_dropoff" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 0, -66 )
 script = ExtResource( 5 )
 dialog_label = "dropoff_dropoff"

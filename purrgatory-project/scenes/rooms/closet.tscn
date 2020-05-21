@@ -34,7 +34,6 @@ position = Vector2( 1046.29, 675.912 )
 texture = ExtResource( 5 )
 
 [node name="closet_blanket" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -21, -66 )
 script = ExtResource( 4 )
 dialog_label = "closet_blanket"
@@ -101,10 +100,9 @@ dialog_label = "closet_soap"
 polygon = PoolVector2Array( 956.085, 471.344, 955.814, 496.776, 967.138, 502.595, 1031, 502.227, 1031.16, 474.997, 1008.17, 471.75 )
 
 [node name="closet_paper_towels" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -190.773, -181.232 )
 script = ExtResource( 4 )
-dialog_label = "closet_snowglobe"
+dialog_label = "closet_paper_towels"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_paper_towels"]
 polygon = PoolVector2Array( 1005.62, 454.978, 980.363, 455.631, 965.957, 461.081, 965.68, 503.799, 968.763, 509.726, 987.742, 514.981, 1004.09, 512.938, 1004.39, 521.697, 1021.9, 527.829, 1051.98, 525.201, 1051.41, 534.001, 1066.54, 540.38, 1091.53, 541.542, 1104.9, 536.893, 1105.41, 467.679, 1090.91, 464.2, 1091.28, 461.492, 1083, 457.634, 1058.97, 457.634, 1048.06, 463.578, 1035.03, 460.249, 1019.22, 459.971 )
@@ -157,22 +155,21 @@ dialog_label = "electric_box_note"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/electric_box_note"]
 polygon = PoolVector2Array( 652.923, 564.977, 652.923, 595.92, 678.206, 593.278, 678.206, 565.354 )
 
-[node name="electric_box" type="Area2D" parent="state_handler"]
+[node name="ceiling_tile" type="Area2D" parent="state_handler"]
 editor/display_folded = true
+position = Vector2( -16.8491, -322.978 )
+script = ExtResource( 4 )
+dialog_label = "ceiling_tile"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/ceiling_tile"]
+polygon = PoolVector2Array( 586.625, 281.354, 615.438, 367.913, 720.605, 366.79, 732.533, 277.748 )
+
+[node name="electric_box" type="Area2D" parent="state_handler"]
 position = Vector2( -16.8491, -322.978 )
 script = ExtResource( 4 )
 dialog_label = "electric_box"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/electric_box"]
-polygon = PoolVector2Array( 586.625, 281.354, 615.438, 367.913, 720.605, 366.79, 732.533, 277.748 )
-
-[node name="closet_tile" type="Area2D" parent="state_handler"]
-editor/display_folded = true
-position = Vector2( -16.8491, -322.978 )
-script = ExtResource( 4 )
-dialog_label = "closet_tile"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_tile"]
 polygon = PoolVector2Array( 640.704, 425.508, 634.494, 446.146, 633.586, 656.188, 641.027, 662.335, 785, 661.364, 783.487, 424.978 )
 
 [node name="closet_wires" type="Area2D" parent="state_handler"]
@@ -194,7 +191,6 @@ dialog_label = "bucket"
 polygon = PoolVector2Array( 729.695, 548.393, 721.71, 543.026, 708.894, 541.175, 694.092, 538.064, 677.14, 538.185, 669.593, 543.311, 665.475, 552.021, 672.818, 611.636, 687.678, 620.378, 707.259, 619.329, 719.147, 614.434, 724.391, 607.266 )
 
 [node name="closet_water" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -21, -66 )
 script = ExtResource( 4 )
 dialog_label = "closet_water"
@@ -221,22 +217,12 @@ dialog_label = "closet_sink"
 polygon = PoolVector2Array( 465.395, 494.651, 445.937, 522.912, 445.858, 529.269, 450.573, 532.887, 450.822, 541.532, 458.997, 550.292, 461.917, 574.527, 570.563, 574.801, 583.998, 521.059, 571.953, 450.638, 466.785, 454.345 )
 
 [node name="broom" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -21, -66 )
 script = ExtResource( 4 )
 dialog_label = "broom"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/broom"]
 polygon = PoolVector2Array( 536.479, 275.812, 599.162, 598.146, 559.76, 605.53, 561.804, 627.429, 664, 611.37, 656.992, 588.01, 614.654, 594.434, 549.859, 271.631 )
-
-[node name="closet_wood" type="Area2D" parent="state_handler"]
-editor/display_folded = true
-position = Vector2( -21, -66 )
-script = ExtResource( 4 )
-dialog_label = "closet_wood"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_wood"]
-polygon = PoolVector2Array( 512.891, 368.087, 514, 398.322, 629.117, 398.045, 628.71, 368.603 )
 
 [node name="closet_pipe" type="Area2D" parent="state_handler"]
 editor/display_folded = true

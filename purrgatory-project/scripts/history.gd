@@ -4,6 +4,7 @@ onready var grid = get_node('container/grid')
 
 var max_history = 50
 var history = []
+var widths = [150, 700]
 
 # since the history needs to be rendered for the text formatting to work,
 #   it's actually never hidden, just off-screen
@@ -40,33 +41,35 @@ func add_to_history(s, t):
 	if history.size() == 1:
 		a = Control.new()
 		b = Control.new()
-		a.set_custom_minimum_size(Vector2(200, 1))
-		b.set_custom_minimum_size(Vector2(650, 1))
+		a.set_custom_minimum_size(Vector2(widths[0], 1))
+		b.set_custom_minimum_size(Vector2(widths[1], 1))
 		grid.add_child(a)
 		grid.add_child(b)
 	
-	# make labels
+	# make labels, including the width
 	var speaker = RichTextLabel.new()
 	speaker.set_bbcode('[right]' + s + '[/right]')
 	speaker.set_use_bbcode(true)
 	speaker.set_mouse_filter(MOUSE_FILTER_IGNORE)
+	speaker.set_custom_minimum_size(Vector2(widths[0], 500))
 	grid.add_child(speaker)
 	
 	var text = RichTextLabel.new()
 	text.set_bbcode(t)
 	text.set_use_bbcode(true)
 	text.set_mouse_filter(MOUSE_FILTER_IGNORE)
+	text.set_custom_minimum_size(Vector2(widths[1], 500))
 	grid.add_child(text)
 	
 	# wait until the text is drawn
 	yield(get_tree(), 'idle_frame')
 	
-	# set heights
+	# do a second pass to set heights
 	var height = speaker.get_content_height()
-	speaker.set_custom_minimum_size(Vector2(200, height))
+	speaker.set_custom_minimum_size(Vector2(widths[0], height))
 	
 	height = text.get_content_height()
-	text.set_custom_minimum_size(Vector2(650, height))
+	text.set_custom_minimum_size(Vector2(widths[1], height))
 	
 	# getting rid of those extra controls 
 	if a != null and b != null:
@@ -78,14 +81,33 @@ func add_to_history(s, t):
 
 # this is called when the font size changes
 func format_history():
-	var widths = [200, 650]
+	widths = [150, 700]
 	var i = 0
 	
+	# the first column should be wide enough to print "kyungsoon", at least
+	var kyungsoon_width = $container.get_font('normal_font').get_string_size('kyungsoon').x
+	print(kyungsoon_width)
+	
+	if widths[0] < kyungsoon_width + 60:
+		widths[0] = kyungsoon_width + 60
+		widths[1] = 850 - widths[0]
+	
+	# first pass: set widths
 	for label in grid.get_children():
-		var height = label.get_content_height()
-		label.set_custom_minimum_size(Vector2(widths[i], height))
+		var height = label.rect_min_size.y
+		label.set_custom_minimum_size(Vector2(widths[i], 500))
+		
 		i += 1
 		i %= 2
+		
+	# let that change be drawn
+	yield(get_tree(), "idle_frame")
+	
+	# second pass: set heights
+	for label in grid.get_children():
+		var width = label.rect_min_size.x
+		var height = label.get_content_height()
+		label.set_custom_minimum_size(Vector2(width, height))
 
 # and THIS is called when a file is loaded
 func load_history(_history):
@@ -100,3 +122,6 @@ func load_history(_history):
 	
 	for quote in _history:
 		add_to_history(quote[0], quote[1])
+	
+	yield(get_tree(), 'idle_frame')
+	format_history()

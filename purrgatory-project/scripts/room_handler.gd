@@ -61,6 +61,11 @@ func change_room(label, state, music = true):
 		current_room.play_default_music()
 	current_room.init_state(state)
 	current_room.update_state(state)
+	
+	if label.substr(0, 10) == 'flashback_':
+		game.get_node('negative_cover').show()
+	else:
+		game.get_node('negative_cover').hide()
 
 func update_state(state):
 	for child in $room_container.get_children():
