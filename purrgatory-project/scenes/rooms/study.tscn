@@ -144,6 +144,7 @@ margin_left = 1029.3
 margin_top = 296.859
 margin_right = 1281.3
 margin_bottom = 665.859
+sprite_path = [ null ]
 
 [node name="oliver_study" parent="state_handler" instance=ExtResource( 9 )]
 margin_left = 576.081

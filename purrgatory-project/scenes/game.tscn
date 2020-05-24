@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ss.tscn" type="PackedScene" id=2]
@@ -37,14 +37,28 @@
 [ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=35]
 [ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=36]
 [ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=37]
-[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=38]
-[ext_resource path="res://assets/fonts/Krub-MediumItalic.ttf" type="DynamicFontData" id=39]
-[ext_resource path="res://assets/fonts/Krub-ExtraLightItalic.ttf" type="DynamicFontData" id=40]
-[ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=41]
-[ext_resource path="res://scenes/save_menu.tscn" type="PackedScene" id=42]
-[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=43]
-[ext_resource path="res://scripts/history.gd" type="Script" id=44]
-[ext_resource path="res://assets/ui/history.png" type="Texture" id=45]
+[ext_resource path="res://assets/sprites/icons/kyungsoon1.png" type="Texture" id=38]
+[ext_resource path="res://assets/sprites/icons/kyungsoon2.png" type="Texture" id=39]
+[ext_resource path="res://assets/sprites/icons/oliver1.png" type="Texture" id=40]
+[ext_resource path="res://assets/sprites/icons/oliver2.png" type="Texture" id=41]
+[ext_resource path="res://assets/sprites/icons/numa1.png" type="Texture" id=42]
+[ext_resource path="res://assets/sprites/icons/numa2.png" type="Texture" id=43]
+[ext_resource path="res://assets/sprites/icons/elijah1.png" type="Texture" id=44]
+[ext_resource path="res://assets/sprites/icons/elijah2.png" type="Texture" id=45]
+[ext_resource path="res://assets/sprites/icons/sean1.png" type="Texture" id=46]
+[ext_resource path="res://assets/sprites/icons/sean2.png" type="Texture" id=47]
+[ext_resource path="res://assets/sprites/icons/tori1.png" type="Texture" id=48]
+[ext_resource path="res://assets/sprites/icons/tori2.png" type="Texture" id=49]
+[ext_resource path="res://assets/sprites/icons/natalie1.png" type="Texture" id=50]
+[ext_resource path="res://assets/sprites/icons/natalie2.png" type="Texture" id=51]
+[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=52]
+[ext_resource path="res://assets/fonts/Krub-MediumItalic.ttf" type="DynamicFontData" id=53]
+[ext_resource path="res://assets/fonts/Krub-ExtraLightItalic.ttf" type="DynamicFontData" id=54]
+[ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=55]
+[ext_resource path="res://scenes/save_menu.tscn" type="PackedScene" id=56]
+[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=57]
+[ext_resource path="res://scripts/history.gd" type="Script" id=58]
+[ext_resource path="res://assets/ui/history.png" type="Texture" id=59]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("ss")
@@ -166,16 +180,16 @@ tracks/1/keys = {
 [sub_resource type="DynamicFont" id=13]
 size = 22
 use_filter = true
-font_data = ExtResource( 39 )
+font_data = ExtResource( 53 )
 
 [sub_resource type="DynamicFont" id=14]
 size = 22
-font_data = ExtResource( 40 )
+font_data = ExtResource( 54 )
 
 [sub_resource type="DynamicFont" id=15]
 size = 22
 use_filter = true
-font_data = ExtResource( 41 )
+font_data = ExtResource( 55 )
 
 [sub_resource type="DynamicFont" id=16]
 size = 22
@@ -265,13 +279,11 @@ script = ExtResource( 18 )
 script = ExtResource( 19 )
 
 [node name="content" type="Control" parent="."]
-editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 mouse_filter = 2
 
 [node name="room" type="Control" parent="content"]
-editor/display_folded = true
 script = ExtResource( 20 )
 
 [node name="room_container" type="Control" parent="content/room"]
@@ -284,6 +296,7 @@ margin_bottom = 720.0
 mouse_filter = 2
 
 [node name="ui" type="Control" parent="content"]
+editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 theme = ExtResource( 21 )
@@ -298,6 +311,7 @@ margin_right = 1075.0
 margin_bottom = 464.0
 
 [node name="name_input" type="Control" parent="content/ui"]
+editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -331,6 +345,7 @@ context_menu_enabled = false
 caret_blink = true
 
 [node name="pronouns" type="Control" parent="content/ui/name_input"]
+editor/display_folded = true
 margin_left = 26.0
 margin_top = 87.0
 margin_right = 580.0
@@ -413,6 +428,7 @@ text = "ok"
 align = 1
 
 [node name="text_box" type="Button" parent="content/ui"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 90.0
@@ -447,7 +463,7 @@ margin_right = 1049.0
 margin_bottom = 205.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "to be, or not to be: that is the question: whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune, or to take arms against a sea of troubles, and by opposing end them?"
+bbcode_text = "[s]to be, or not to be: that is the question: whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune, or to take arms against a sea of troubles, and by opposing end them?"
 text = "to be, or not to be: that is the question: whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune, or to take arms against a sea of troubles, and by opposing end them?"
 
 [node name="skip_button" type="Button" parent="content/ui"]
@@ -484,6 +500,7 @@ align = 1
 valign = 1
 
 [node name="history_button" type="Button" parent="content/ui"]
+editor/display_folded = true
 margin_left = 996.904
 margin_top = 431.47
 margin_right = 1072.9
@@ -515,12 +532,13 @@ anims/default = SubResource( 11 )
 anims/right_to_left_run = SubResource( 12 )
 
 [node name="meta_ui" type="Control" parent="."]
-margin_left = 5.41501
-margin_top = 0.418091
-margin_right = 1285.42
-margin_bottom = 720.418
+margin_right = 1280.01
+margin_bottom = 720.0
 mouse_filter = 2
 theme = ExtResource( 25 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="menu_button" type="Button" parent="meta_ui"]
 editor/display_folded = true
@@ -679,6 +697,7 @@ margin_top = 680.015
 margin_right = 1258.28
 margin_bottom = 706.015
 focus_mode = 0
+mouse_filter = 1
 custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 enabled_focus_mode = 0
@@ -714,15 +733,23 @@ script = ExtResource( 34 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="save" type="Button" parent="meta_ui/pause_menu"]
+[node name="buttons" type="Control" parent="meta_ui/pause_menu"]
+editor/display_folded = true
+margin_top = 10.0
+margin_right = 1280.0
+margin_bottom = 730.0
+rect_pivot_offset = Vector2( 159.479, 184.921 )
+mouse_filter = 1
+
+[node name="save" type="Button" parent="meta_ui/pause_menu/buttons"]
 editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
-margin_top = 177.504
+margin_top = 215.0
 margin_right = -515.0
-margin_bottom = -483.496
-rect_pivot_offset = Vector2( 311.063, 2.57225 )
+margin_bottom = -445.0
+rect_pivot_offset = Vector2( -682.782, 12.3451 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -730,13 +757,13 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="box2" type="Sprite" parent="meta_ui/pause_menu/save"]
+[node name="box2" type="Sprite" parent="meta_ui/pause_menu/buttons/save"]
 position = Vector2( 0.366638, 1.67036 )
 texture = ExtResource( 35 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
-[node name="Label" type="Label" parent="meta_ui/pause_menu/save"]
+[node name="Label" type="Label" parent="meta_ui/pause_menu/buttons/save"]
 margin_left = 1.0
 margin_top = 2.0
 margin_right = 249.0
@@ -745,14 +772,15 @@ text = "save"
 align = 1
 valign = 1
 
-[node name="load" type="Button" parent="meta_ui/pause_menu"]
+[node name="load" type="Button" parent="meta_ui/pause_menu/buttons"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
-margin_top = 253.825
+margin_top = 290.825
 margin_right = -515.0
-margin_bottom = -407.175
-rect_pivot_offset = Vector2( 311.063, -73.7487 )
+margin_bottom = -369.175
+rect_pivot_offset = Vector2( -682.782, -63.9758 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -760,13 +788,13 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="box2" type="Sprite" parent="meta_ui/pause_menu/load"]
+[node name="box2" type="Sprite" parent="meta_ui/pause_menu/buttons/load"]
 position = Vector2( 0.366638, 1.67036 )
 texture = ExtResource( 36 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
-[node name="Label" type="Label" parent="meta_ui/pause_menu/load"]
+[node name="Label" type="Label" parent="meta_ui/pause_menu/buttons/load"]
 margin_left = 1.0
 margin_top = 2.0
 margin_right = 249.0
@@ -775,15 +803,15 @@ text = "load"
 align = 1
 valign = 1
 
-[node name="options" type="Button" parent="meta_ui/pause_menu"]
+[node name="options" type="Button" parent="meta_ui/pause_menu/buttons"]
 editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
-margin_top = 329.505
+margin_top = 366.505
 margin_right = -515.0
-margin_bottom = -331.495
-rect_pivot_offset = Vector2( 311.063, -221.429 )
+margin_bottom = -297.495
+rect_pivot_offset = Vector2( -682.782, -139.656 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -791,7 +819,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="box2" type="Sprite" parent="meta_ui/pause_menu/options"]
+[node name="box2" type="Sprite" parent="meta_ui/pause_menu/buttons/options"]
 position = Vector2( 0.366638, 1.67036 )
 texture = ExtResource( 37 )
 centered = false
@@ -799,7 +827,7 @@ offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
 flip_v = true
 
-[node name="Label" type="Label" parent="meta_ui/pause_menu/options"]
+[node name="Label" type="Label" parent="meta_ui/pause_menu/buttons/options"]
 margin_left = 1.0
 margin_top = 2.0
 margin_right = 249.0
@@ -808,14 +836,15 @@ text = "options"
 align = 1
 valign = 1
 
-[node name="exit" type="Button" parent="meta_ui/pause_menu"]
+[node name="exit" type="Button" parent="meta_ui/pause_menu/buttons"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
-margin_top = 400.864
+margin_top = 437.864
 margin_right = -515.0
-margin_bottom = -261.136
-rect_pivot_offset = Vector2( 311.063, -146.788 )
+margin_bottom = -224.136
+rect_pivot_offset = Vector2( -682.782, -211.015 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -823,7 +852,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="box2" type="Sprite" parent="meta_ui/pause_menu/exit"]
+[node name="box2" type="Sprite" parent="meta_ui/pause_menu/buttons/exit"]
 position = Vector2( 0.366638, 1.67036 )
 texture = ExtResource( 35 )
 centered = false
@@ -831,7 +860,7 @@ offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
 flip_v = true
 
-[node name="Label" type="Label" parent="meta_ui/pause_menu/exit"]
+[node name="Label" type="Label" parent="meta_ui/pause_menu/buttons/exit"]
 margin_left = 1.0
 margin_top = 2.0
 margin_right = 249.0
@@ -840,14 +869,15 @@ text = "exit to main menu"
 align = 1
 valign = 1
 
-[node name="back" type="Button" parent="meta_ui/pause_menu"]
+[node name="back" type="Button" parent="meta_ui/pause_menu/buttons"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
-margin_top = 475.505
+margin_top = 512.505
 margin_right = -515.0
-margin_bottom = -185.495
-rect_pivot_offset = Vector2( 311.063, -221.429 )
+margin_bottom = -149.495
+rect_pivot_offset = Vector2( -682.782, -285.656 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -855,7 +885,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="box2" type="Sprite" parent="meta_ui/pause_menu/back"]
+[node name="box2" type="Sprite" parent="meta_ui/pause_menu/buttons/back"]
 position = Vector2( 0.366638, 1.67036 )
 texture = ExtResource( 36 )
 centered = false
@@ -863,7 +893,7 @@ offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
 flip_v = true
 
-[node name="Label" type="Label" parent="meta_ui/pause_menu/back"]
+[node name="Label" type="Label" parent="meta_ui/pause_menu/buttons/back"]
 margin_left = 1.0
 margin_top = 2.0
 margin_right = 249.0
@@ -872,7 +902,101 @@ text = "back"
 align = 1
 valign = 1
 
-[node name="options_menu" parent="meta_ui" instance=ExtResource( 38 )]
+[node name="icons" type="HBoxContainer" parent="meta_ui/pause_menu"]
+editor/display_folded = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 111.0
+margin_bottom = -509.0
+rect_pivot_offset = Vector2( 225.35, 106.721 )
+mouse_filter = 2
+alignment = 1
+
+[node name="kyungsoon1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
+margin_left = 12.0
+margin_right = 98.0
+margin_bottom = 100.0
+texture = ExtResource( 38 )
+
+[node name="kyungsoon2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
+margin_left = 102.0
+margin_right = 188.0
+margin_bottom = 100.0
+texture = ExtResource( 39 )
+
+[node name="oliver1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
+margin_left = 192.0
+margin_right = 278.0
+margin_bottom = 100.0
+texture = ExtResource( 40 )
+
+[node name="oliver2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
+margin_left = 282.0
+margin_right = 368.0
+margin_bottom = 100.0
+texture = ExtResource( 41 )
+
+[node name="numa1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
+margin_left = 372.0
+margin_right = 458.0
+margin_bottom = 100.0
+texture = ExtResource( 42 )
+
+[node name="numa2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
+margin_left = 462.0
+margin_right = 548.0
+margin_bottom = 100.0
+texture = ExtResource( 43 )
+
+[node name="elijah1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
+margin_left = 552.0
+margin_right = 638.0
+margin_bottom = 100.0
+texture = ExtResource( 44 )
+
+[node name="elijah2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
+margin_left = 642.0
+margin_right = 728.0
+margin_bottom = 100.0
+texture = ExtResource( 45 )
+
+[node name="sean1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
+margin_left = 732.0
+margin_right = 818.0
+margin_bottom = 100.0
+texture = ExtResource( 46 )
+
+[node name="sean2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
+margin_left = 822.0
+margin_right = 908.0
+margin_bottom = 100.0
+texture = ExtResource( 47 )
+
+[node name="tori1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
+margin_left = 912.0
+margin_right = 998.0
+margin_bottom = 100.0
+texture = ExtResource( 48 )
+
+[node name="tori2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
+margin_left = 1002.0
+margin_right = 1088.0
+margin_bottom = 100.0
+texture = ExtResource( 49 )
+
+[node name="natalie1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
+margin_left = 1092.0
+margin_right = 1178.0
+margin_bottom = 100.0
+texture = ExtResource( 50 )
+
+[node name="natalie2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
+margin_left = 1182.0
+margin_right = 1268.0
+margin_bottom = 100.0
+texture = ExtResource( 51 )
+
+[node name="options_menu" parent="meta_ui" instance=ExtResource( 52 )]
 visible = false
 
 [node name="exit_confirm" type="Control" parent="meta_ui"]
@@ -1009,7 +1133,7 @@ text = "back"
 align = 1
 valign = 1
 
-[node name="save_menu" parent="meta_ui" instance=ExtResource( 42 )]
+[node name="save_menu" parent="meta_ui" instance=ExtResource( 56 )]
 visible = false
 margin_left = -0.418121
 margin_top = -0.418091
@@ -1065,18 +1189,19 @@ text = "continue"
 align = 1
 valign = 1
 
-[node name="load_menu" parent="meta_ui" instance=ExtResource( 43 )]
+[node name="load_menu" parent="meta_ui" instance=ExtResource( 57 )]
 visible = false
 
 [node name="history" type="Control" parent="meta_ui"]
+editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 rect_pivot_offset = Vector2( -460, 150 )
-script = ExtResource( 44 )
+script = ExtResource( 58 )
 
 [node name="bg" type="Sprite" parent="meta_ui/history"]
-texture = ExtResource( 45 )
+texture = ExtResource( 59 )
 centered = false
 
 [node name="back" type="Button" parent="meta_ui/history"]
@@ -1142,7 +1267,7 @@ margin_bottom = 720.0
 mouse_filter = 2
 
 [node name="main_audio" type="AudioStreamPlayer" parent="."]
-volume_db = -49.92
+volume_db = -9.0
 bus = "Music"
 [connection signal="timeout" from="skip_timer" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="content/ui/name_input/ok_button" to="." method="set_player_name"]
@@ -1150,23 +1275,27 @@ bus = "Music"
 [connection signal="pressed" from="content/ui/skip_button" to="." method="toggle_skip"]
 [connection signal="pressed" from="content/ui/history_button" to="." method="turn_off_skip"]
 [connection signal="pressed" from="content/ui/history_button" to="meta_ui/history" method="show_custom"]
-[connection signal="pressed" from="meta_ui/menu_button" to="." method="open_pause_menu"]
+[connection signal="mouse_entered" from="meta_ui/menu_button" to="content/room" method="stop_all_hovering"]
 [connection signal="pressed" from="meta_ui/menu_button" to="." method="turn_off_skip"]
+[connection signal="pressed" from="meta_ui/menu_button" to="." method="open_pause_menu"]
 [connection signal="examine_item" from="meta_ui/dropdown" to="." method="examine_item"]
 [connection signal="pressed" from="meta_ui/dropdown/add_quest" to="." method="test_add_quest"]
 [connection signal="pressed" from="meta_ui/dropdown/remove_quest" to="." method="test_remove_quest"]
+[connection signal="mouse_entered" from="meta_ui/notes_button" to="content/room" method="stop_all_hovering"]
 [connection signal="pressed" from="meta_ui/notes_button" to="meta_ui/dropdown" method="toggle_notes"]
+[connection signal="mouse_entered" from="meta_ui/items_button" to="content/room" method="stop_all_hovering"]
 [connection signal="pressed" from="meta_ui/items_button" to="meta_ui/dropdown" method="toggle_items"]
+[connection signal="mouse_entered" from="meta_ui/history_button2" to="content/room" method="stop_all_hovering"]
 [connection signal="pressed" from="meta_ui/history_button2" to="." method="turn_off_skip"]
 [connection signal="pressed" from="meta_ui/history_button2" to="meta_ui/history" method="show_custom"]
-[connection signal="pressed" from="meta_ui/pause_menu/save" to="meta_ui/save_menu" method="show_custom"]
-[connection signal="pressed" from="meta_ui/pause_menu/load" to="meta_ui/load_menu" method="show_custom"]
-[connection signal="pressed" from="meta_ui/pause_menu/options" to="meta_ui/options_menu" method="show_custom"]
-[connection signal="pressed" from="meta_ui/pause_menu/exit" to="meta_ui/exit_confirm" method="show"]
-[connection signal="pressed" from="meta_ui/pause_menu/back" to="." method="close_pause_menu"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/save" to="meta_ui/save_menu" method="show_custom"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/load" to="meta_ui/load_menu" method="show_custom"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/options" to="meta_ui/options_menu" method="show_custom"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/exit" to="meta_ui/exit_confirm" method="show"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/back" to="." method="close_pause_menu"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
-[connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/dropdown" method="format_quests"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
+[connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/dropdown" method="format_quests"]
 [connection signal="pressed" from="meta_ui/exit_confirm/yes" to="." method="return_to_main"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
 [connection signal="pressed" from="meta_ui/save_confirm/yes" to="." method="save_confirmed"]

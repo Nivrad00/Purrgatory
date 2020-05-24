@@ -24,6 +24,8 @@ func _ready():
 				child.connect("start_action_timer", self, "start_action_timer")
 			if sig['name'] == "change_audio":
 				child.connect("change_audio", self, "change_audio")
+			if sig['name'] == "stop_all_hovering":
+				child.connect("stop_all_hovering", get_parent().get_parent(), "stop_all_hovering")
 	
 func set_hidden_sprite(sprites):
 	if hidden_sprites != null:
@@ -33,8 +35,11 @@ func set_hidden_sprite(sprites):
 	for sprite in sprites:
 		sprite.hide()
 	
-func update_state(state):
-	$state_handler.update_state(state)
+func update_state(state, end = false):
+	if end:
+		$state_handler.update_state_end(state)
+	else:
+		$state_handler.update_state(state)
 	if hidden_sprites != null:
 		for sprite in hidden_sprites:
 			sprite.hide()

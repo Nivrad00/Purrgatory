@@ -269,7 +269,7 @@ mouse_filter = 2
 
 [node name="audio" type="AudioStreamPlayer" parent="main_menu"]
 stream = ExtResource( 12 )
-volume_db = -3.0
+volume_db = -10.0
 bus = "Music"
 
 [node name="credits" type="Control" parent="."]

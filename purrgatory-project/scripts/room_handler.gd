@@ -38,7 +38,8 @@ func end_dialog():
 		child.end_dialog()
 	$room_mask.set_mouse_filter(Control.MOUSE_FILTER_IGNORE)
 
-func change_room(label, state, music = true):
+func change_room(label, state, music = true, loading_file = false):
+	# when loading a file, you don't call init_state. in all other situations, you do.
 	var new_room = load(room_path + label + '.tscn')
 	if new_room == null:
 		game.start_dialog("room_placeholder")
@@ -59,7 +60,8 @@ func change_room(label, state, music = true):
 	
 	if music:
 		current_room.play_default_music()
-	current_room.init_state(state)
+	if not loading_file:
+		current_room.init_state(state)
 	current_room.update_state(state)
 	
 	if label.substr(0, 10) == 'flashback_':
@@ -67,6 +69,26 @@ func change_room(label, state, music = true):
 	else:
 		game.get_node('negative_cover').hide()
 
-func update_state(state):
+func update_state(state, end = false):
 	for child in $room_container.get_children():
-		child.update_state(state)
+		child.update_state(state, end)
+
+# if a Control, such as a UI element or character sprite, is blocking the mouse
+#   from hovering over a PolygonButton, we need to tell the PolygonButton that it's 
+#   no longer being hovered over
+# (i can't find a better way of doing it)
+
+# this means that EVERY CONTROL that could ever block a PolygonButton needs to
+#   call stop_all_hovering() when appropriate
+
+# this includes:
+#   TextureButton-derived sprites like characters and the cat (char_obj_button.gd calls stop_all_hovering())
+#   menu, notes, items, and history buttons (each button is connected to stop_all_hovering() separately)
+#   the UI itself (game.gd calls stop_all_hovering when a) dialog starts or b) the game loads with the ui visible)
+
+func stop_all_hovering():
+	if not current_room:
+		return
+	for node in current_room.get_node('state_handler').get_children():
+		if node is PolygonButton:
+			node.blocked = true

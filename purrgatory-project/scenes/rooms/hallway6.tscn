@@ -43,14 +43,3 @@ room_label = "hallway7"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
 polygon = PoolVector2Array( 208.633, 389.948, 438.234, 456.449, 461.505, 412.02, 478.371, 393.412, 480.46, 177.248, 208.822, 177.248 )
-
-[node name="cover" type="Button" parent="state_handler"]
-modulate = Color( 1, 1, 1, 0 )
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 180.0
-margin_top = 632.0
-margin_right = 523.0
-margin_bottom = 725.0

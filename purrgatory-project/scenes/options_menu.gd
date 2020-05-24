@@ -15,8 +15,8 @@ var quips = [
 
 var default_options = {
 	"fullscreen": false,
-	"music_volume": 1,
-	"sfx_volume": 1,
+	"music_volume": 0.6,
+	"sfx_volume": 0.6,
 	"text_size": 24
 }
 

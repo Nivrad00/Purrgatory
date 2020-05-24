@@ -80,9 +80,9 @@ func _process(delta):
 			set_position(pos + (target - pos)/2 * delta * speed)
 
 func add_to_inv(_name):
+	print(_name)
 	for item in $inv_container.get_children():
 		if item.name == _name:
-			print(_name + ' is already in the inventory')
 			return
 			
 	var texture = load(inv_sprite_path + _name + '.png')
@@ -101,11 +101,13 @@ func add_to_inv(_name):
 		# items_button.flash()
 
 func remove_from_inv(_name):
+	var found = false
 	for item in $inv_container.get_children():
 		if item.name == _name:
 			item.queue_free()
+			found = true
 			
-	if not items_shown:
+	if found and not items_shown:
 		items_button.flash()
 
 func examine_item(_name):
@@ -130,7 +132,6 @@ func load_inv(list):
 func add_quest(quest):
 	for item in $quest_container/vbox.get_children():
 		if item.name == quest:
-			print(quest + ' is already on the quest log, can\'t add it')
 			return
 	
 	if not quests.has(quest):
@@ -169,8 +170,6 @@ func remove_quest(quest):
 				format_quests()
 				
 			return
-	
-	print('can\'t find quest ' + quest + ' on the quest log to remove it')
 
 func format_quests():
 	yield(get_tree(), 'idle_frame')

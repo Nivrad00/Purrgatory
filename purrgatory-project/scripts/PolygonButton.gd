@@ -7,11 +7,13 @@ var input
 var visible_polygons = []
 var hovering = 0 # number of polygons that are being hovered over
 var holding_click = false
+var blocked = false
+# "blocked" is handled by room_handler, see that for more details
 
 signal pressed()
 signal mouse_down()
 signal mouse_up()
-
+	
 func _ready():
 	# print("ready")
 	
@@ -51,7 +53,7 @@ func mouse_entered():
 	# print("mouse entered")
 	
 func mouse_exited():
-	hovering -= 1
+	hovering = max(0, hovering - 1)
 	# print("mouse exited")
 	
 func mouse_clicked_on_button():
@@ -72,9 +74,13 @@ func input_event(viewport, event, shape_idx):
 	and event.pressed:
 		mouse_clicked_on_button()
 	
+	if event is InputEventMouseMotion and blocked:
+		blocked = false
+	
 func _process(delta):
+	# print(str(hovering) + ' ' + str(blocked))
 	if highlight_on_hover:
-		if holding_click or hovering > 0:
+		if (holding_click or hovering > 0) and not blocked:
 			for child in visible_polygons:
 				child.show()
 		else:

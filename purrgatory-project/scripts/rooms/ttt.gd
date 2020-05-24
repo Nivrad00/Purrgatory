@@ -48,21 +48,15 @@ var audio_pos = 0
 
 func update_state(state):
 	.update_state(state)
-		
+
 	if state.get('ttt_init'):
 		state['ttt_init'] = false
 		start_game()
-	if state.get('ttt_init_delay'):
-		state['ttt_init_delay'] = false
-		state['ttt_init'] = true
-		
+
 	if state.get('ttt_continue'):
 		state['ttt_continue'] = false
 		continue_game()
-	if state.get('ttt_continue_delay'):
-		state['ttt_continue_delay'] = false
-		state['ttt_continue'] = true
-		
+
 	if state.get('ttt_goto_park'):
 		state['ttt_goto_park'] = false
 		emit_signal('change_room', 'field4')
@@ -78,7 +72,7 @@ func update_state(state):
 
 func start_game():
 	set_process(true)
-	
+
 	game_num += 1
 	move_num = 1 # it should start at 0 but oliver's first move is predetermined
 	current_board = [1, 0, 0, 0, 0, 0, 0, 0, 0] # 0 = empty, 1 = oliver, 2 = player
@@ -96,7 +90,7 @@ func start_audio(a, b):
 	if not $asmr.playing:
 		$asmr.play(audio_pos)
 	$audio_delay.start()
-	
+
 # both the player and oliver use this method
 func stop_audio():
 	audio_pos = $asmr.get_playback_position()
@@ -105,7 +99,7 @@ func stop_audio():
 func _process(delta):
 	pass
 	# print($audio_delay.time_left)
-	
+
 func start_olivers_turn():
 	move_num += 1
 	var best_move = get_best_move(current_board)
@@ -118,7 +112,7 @@ func start_olivers_turn():
 func end_olivers_turn():
 	$turn_delay.start()
 	$audio_delay.start()
-	
+
 func end_olivers_turn2():
 	if check_for_stalemate(current_board):
 		end_game('stalemate')
@@ -133,9 +127,9 @@ func end_olivers_turn2():
 		elif dialog_map.has(i) and dialog_map[i].has(j):
 			dialog_queue.append(dialog_map[i][j])
 		dialog_queue.append('players_turn')
-		
+
 		continue_game()
-	
+
 func start_players_turn():
 	move_num += 1
 	current_draw = draw_scene.instance()
@@ -151,14 +145,14 @@ func end_players_turn():
 	current_draw.disable()
 	# $placeholder_input.hide()
 	$done_button.hide()
-	
+
 	var x = detect_players_move()
 	current_board[x] = 2
-	
+
 	# note: it's not actually possible for the game to end after the player's turn
 	var i = 'game' + str(game_num)
 	var j = 'move' + str(move_num)
-	
+
 	var new_score = get_best_move(current_board)[1]
 	if new_score == 10 and prev_score == 0:
 		if dialog_map[i].has('very_bad_move'):
@@ -166,11 +160,11 @@ func end_players_turn():
 	elif new_score > 0 and prev_score == 0:
 		if dialog_map[i].has('bad_move'):
 			dialog_queue.append(dialog_map[i]['bad_move'])
-		
+
 	elif dialog_map.has(i) and dialog_map[i].has(j):
 		dialog_queue.append(dialog_map[i][j])
 	dialog_queue.append('olivers_turn')
-	
+
 	continue_game()
 
 func continue_game():
@@ -181,18 +175,18 @@ func continue_game():
 		start_players_turn()
 	else:
 		emit_signal('start_dialog', next, [])
-	
+
 func record_freq(start, end):
 	var line = end - start
 	var unit = line.normalized()
-	
+
 	for i in line.length():
 		for j in range(9):
 			if $spaces.get_child(j).get_rect().has_point(start + i * unit):
 				draw_freq[j] += 1
-	
+
 	# print(draw_freq)
-	
+
 func detect_players_move():
 	var square = -1
 	var square2 = -1
@@ -214,9 +208,9 @@ func end_game(result):
 	var i = 'game' + str(game_num)
 	if dialog_map.has(i) and dialog_map[i].has(result):
 		dialog_queue.append(dialog_map[i][result])
-		
+
 	continue_game()
-	
+
 # |
 # |
 # |
@@ -230,7 +224,7 @@ func check_for_stalemate(board):
 		if square == 0:
 			return false
 	return true
-	
+
 func evaluate(board):
 	var sets = [
 	  [0, 1, 2],
@@ -242,7 +236,7 @@ func evaluate(board):
 	  [0, 4, 8],
 	  [2, 4, 6]
 	]
-	
+
 	for set in sets:
 		if board[set[0]] == board[set[1]] and board[set[1]] == board[set[2]]:
 			if board[set[0]] == 1:
@@ -250,7 +244,7 @@ func evaluate(board):
 			if board[set[0]] == 2:
 				return -10
 	return 0
-  
+
 func minimax(board, depth, is_max):
 	var score = evaluate(board)
 	if score == 10:
@@ -259,7 +253,7 @@ func minimax(board, depth, is_max):
 		return score + depth
 	if check_for_stalemate(board):
 		return 0
-		
+
 	if is_max:
 		var best = -1000
 		for i in range(board.size()):
@@ -268,7 +262,7 @@ func minimax(board, depth, is_max):
 				best = max(best, minimax(board, depth + 1, false))
 				board[i] = 0
 		return best
-		
+
 	else:
 		var best = 1000
 		for i in range(board.size()):
@@ -277,11 +271,11 @@ func minimax(board, depth, is_max):
 				best = min(best, minimax(board, depth + 1, true))
 				board[i] = 0
 		return best
- 
+
 func get_best_move(board):
 	var best_value = -1000
-	var best_move = -1 
-  
+	var best_move = -1
+
 	for i in range(board.size()):
 		if board[i] == 0:
 			board[i] = 1

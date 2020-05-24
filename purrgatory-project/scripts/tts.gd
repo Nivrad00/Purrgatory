@@ -6,10 +6,14 @@ var tts = TTSDriver.new()
 var pronunciation = [
 	['purrgatory', 'purgatory'],
 	['[i]', ''],
-	['[//i]', ''],
+	['[/i]', ''],
 	['):<', ', frowny face,'],
 	[';;', ', crying face,'],
-	['(:', ', smiley face,']
+	['(:', ', smiley face,'],
+	['(;', ', winky face,'],
+	[':P', ', tongue sticking out,'],
+	[':3', ', cat face,'],
+	[':C', ', frowny face,']
 ]
 
 var replacements = [

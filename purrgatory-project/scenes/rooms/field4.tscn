@@ -81,6 +81,7 @@ margin_left = 362.998
 margin_top = 290.079
 margin_right = 529.998
 margin_bottom = 546.079
+sprite_path = [ null ]
 
 [node name="field_bench_armrest" type="Sprite" parent="state_handler"]
 position = Vector2( 380.318, 364.007 )

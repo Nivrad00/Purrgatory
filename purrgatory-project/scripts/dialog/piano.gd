@@ -66,5 +66,5 @@ var raw_blocks = [
 ["piano_heart8","you","","yeah that was neat!!","","","piano_heart9","","",""],
 ["piano_heart9","you","","do you know any other duets?","","","","","",""],
 ["","sean","","well, dani was teaching me one, but--","","","","","",""],
-["","???","","what is that godawful noise?","","","sean_post_jam","","",""]
+["","???","","what is that godawful noise?","","met_tori",['sean_post_jam1', 'sean_post_jam2'],"","",""]
 ]

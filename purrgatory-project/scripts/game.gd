@@ -5,7 +5,7 @@ signal return_to_main()
 export var default_room = ''
 
 var state = {
-	'true': true,
+	'true': true
 }
 
 var oliver_test_state = {
@@ -20,13 +20,12 @@ var oliver_test_state = {
 	'oliver_questioned': true,
 	'_inv_commons_key': true,
 	'seen_study': true,
-	'oliver_in_study': true,
 	'_inv_chess_letter': true,
 	'tori_visited_oliver': true,
 	'oliver_asked_for_soda': true,
-	'house_cat_pushed_glass': true# ,
-	# 'comforted_oliver': true,
-	# 'oliver_in_study': false
+	'house_cat_pushed_glass': true,
+	'comforted_oliver': true,
+	'oliver_in_study': false
 }
 
 
@@ -78,14 +77,14 @@ func _ready():
 	randomize() # seed random
 	room.change_room(default_room, state, false) # load default room
 	change_audio(null) # load default audio (none)
-	
+
 	# load meowkov chain (disabled for now, don't click on any books!)
 	var f = File.new()
 	# load_meowkov_chain(f)
-	
+
 	# interrupt the default quit behavior (see _notification())
 	get_tree().set_auto_accept_quit(false)
-	
+
 	# load seen blocks
 	if f.file_exists("user://seen_blocks.save"):
 		f.open("user://seen_blocks.save", File.READ)
@@ -106,7 +105,7 @@ func _notification(what):
 		f.open("user://seen_blocks.save", File.WRITE)
 		f.store_line(to_json(seen_blocks))
 		f.close()
-		
+
 		# also save options
 		# (i'm doing it here instead of when they press "back" in case they quit
 		#   while on the options menu)
@@ -115,9 +114,9 @@ func _notification(what):
 			$meta_ui/options_menu.save_options()
 		else:
 			get_node('../options_menu').save_options()
-		
-		get_tree().quit() 
-		
+
+		get_tree().quit()
+
 func _process(delta):
 	if fade_out:
 		var a = $white_cover.color.a
@@ -125,10 +124,10 @@ func _process(delta):
 			fade_out = false
 			$delay_timer.start()
 			change_audio(null)
-			
+
 			AudioServer.set_bus_mute(0, true)
 			yield($delay_timer, 'timeout')
-			
+
 			emit_signal('return_to_main')
 			$white_cover.color = Color(1, 1, 1, 0)
 			reset_state(true) # reset state and room
@@ -141,7 +140,7 @@ func _process(delta):
 			a = min(a + 2 * delta, 1)
 			AudioServer.set_bus_volume_db(0, AudioServer.get_bus_volume_db(0) - 40 * delta)
 			$white_cover.color = Color(1, 1, 1, a)
-			
+
 func start_action_timer(actions, callback):
 	action_timers.append([actions, callback])
 
@@ -154,17 +153,17 @@ func increment_action_timers():
 		else:
 			new_list.append(action_timer)
 	action_timers = new_list
-	
+
 func change_room(label):
 	increment_action_timers()
 	room.change_room(label, state)
 
 func start_dialog(label):
 	block = $dialog_handler.get_block(label, state)
-	ui.show()
+	ui.show_ui()
 	$meta_ui/history_button2.hide()
 	room.start_dialog()
-	
+
 	# handle skip stuff before updating the ui so it knows if it should TTS or not
 	if seen_blocks.has(block['label']):
 		enable_skip()
@@ -174,32 +173,37 @@ func start_dialog(label):
 		disable_skip()
 		if skip:
 			turn_off_skip()
-	
+
 	var choices_text = []
 	for choice in block['choices']:
 		choices_text.append(choice[0])
 	var text = block['text']
-	
+
 	if text != null:
 		text = text.format(format_dict)
-		
+
 		var regex = RegEx.new()
 		regex.compile('{([^/]+)/([^}]+)}')
 		if 'they' in format_dict and format_dict['they'] == 'they':
 			text = regex.sub(text, '$1', true)
 		else:
 			text = regex.sub(text, '$2', true)
-		
+
 	ui.update_ui(block['speaker'], block['sprites'], text, choices_text)
-	
+
 	if ui.get_node('AnimationPlayer').current_animation != 'default':
 		ui.get_node('AnimationPlayer').play('default')
-		
+
 	for pair in block['states']:
-		check_special_states(pair)
 		state[pair[0]] = pair[1]
 	room.update_state(state)
 	
+	for pair in block['states']:
+		check_special_states(pair)
+		
+	yield(get_tree(), "idle_frame")
+	room.stop_all_hovering()
+
 func end_dialog():
 	ui.hide_ui()
 	$meta_ui/history_button2.show()
@@ -216,20 +220,24 @@ func end_dialog():
 func update_dialog(b: int):
 	# mark the previous block as seen
 	seen_blocks.append(block['label'])
-	
+
 	# if there's no choice, get the next block directly
 	if b == -1:
 		block = $dialog_handler.get_block(block['next'], state)
 	# else if there's a choice, use the parameter to decide
 	else:
 		block = $dialog_handler.get_block(block['choices'][b][1], state)
-		
+
 	if block == null:
 		end_dialog()
 		if skip:
 			turn_off_skip()
 		$meta_ui/history.add_space()
-		room.update_state(state)
+		room.update_state(state, true) # mark it as an end
+		
+		for pair in state:
+			check_special_states([pair, state[pair]])
+			
 	else:
 		# handle skip stuff before updating the ui so it knows if it should TTS or not
 		if seen_blocks.has(block['label']):
@@ -240,37 +248,39 @@ func update_dialog(b: int):
 			disable_skip()
 			if skip:
 				turn_off_skip()
-				
+
 		var choices_text = []
 		for choice in block['choices']:
 			choices_text.append(choice[0])
 		var text = block['text']
-		
+
 		if text != null:
 			text = text.format(format_dict)
-			
+
 			var regex = RegEx.new()
 			regex.compile('{([^/]+)/([^}]+)}')
-			if format_dict['they'] == 'they':
+			if format_dict.get('they') == 'they':
 				text = regex.sub(text, '$1', true)
 			else:
 				text = regex.sub(text, '$2', true)
-			
+
 		ui.update_ui(block['speaker'], block['sprites'], text, choices_text)
-		
+
 		if ui.get_node('AnimationPlayer').current_animation != 'default':
 			ui.get_node('AnimationPlayer').play('default')
 		
 		for pair in block['states']:
-			check_special_states(pair)
 			state[pair[0]] = pair[1]
 		room.update_state(state)
+		
+		for pair in block['states']:
+			check_special_states(pair)
 
 func set_player_name():
 	var text = ui.get_node('name_input/text').get_text().to_lower()
 	if text.length() != 0:
 		format_dict['player'] = text
-		
+
 		if ui.get_node('name_input/pronouns/they').pressed:
 			state['_pronouns_they'] = true
 			format_dict['they'] = 'they'
@@ -278,7 +288,7 @@ func set_player_name():
 			format_dict['their'] = 'their'
 			format_dict['theirs'] = 'theirs'
 			format_dict['themself'] = 'themself'
-			
+
 		elif ui.get_node('name_input/pronouns/she').pressed:
 			state['_pronouns_she'] = true
 			format_dict['they'] = 'she'
@@ -286,7 +296,7 @@ func set_player_name():
 			format_dict['their'] = 'her'
 			format_dict['theirs'] = 'hers'
 			format_dict['themself'] = 'herself'
-			
+
 		elif ui.get_node('name_input/pronouns/he').pressed:
 			state['_pronouns_he'] = true
 			format_dict['they'] = 'he'
@@ -294,7 +304,7 @@ func set_player_name():
 			format_dict['their'] = 'his'
 			format_dict['theirs'] = 'his'
 			format_dict['themself'] = 'himself'
-			
+
 		ui.get_node('name_input').hide()
 		ui.get_node('text_box').disabled = false
 		update_dialog(-1)
@@ -302,22 +312,22 @@ func set_player_name():
 func change_audio(song, play = true):
 	if song == current_audio:
 		return
-		
+
 	current_audio = song
-	
+
 	if song == null or song == '':
 		$main_audio.stop()
 		$main_audio.set_stream(null)
-		
+
 	else:
 		var stream = load('res://assets/audio/' + song + '.ogg')
-		$main_audio.volume_db = 0
+		$main_audio.volume_db = -4
 		$main_audio.set_stream(stream)
-		
+
 		if play:
 			$main_audio.play()
-			
-				
+
+
 
 func return_to_main():
 	$white_cover.show()
@@ -329,7 +339,7 @@ func save(file):
 	var months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
 	var ampm = ['am', 'pm']
 	var datetime = OS.get_datetime()
-	
+
 	var format = '%s %d, %d - %d:%02d %s'
 	var timestamp = format % [
 		months[datetime['month'] - 1],
@@ -339,7 +349,7 @@ func save(file):
 		datetime['minute'],
 		ampm[datetime['hour'] / 12]
 	]
-	
+
 	# make a dict
 	var save_dict = {
 		"state_dict": state,
@@ -358,13 +368,13 @@ func save(file):
 		"inventory": $meta_ui/dropdown.get_inv_list(),
 		"quest_log": $meta_ui/dropdown.get_quest_log()
 	}
-	
+
 	# save a dict
 	var save_game = File.new()
 	save_game.open("user://save" + str(file) + ".save", File.WRITE)
 	save_game.store_line(to_json(save_dict))
 	save_game.close()
-	
+
 	# take a screenshot by moving all the relevant nodes to the "ss" viewport
 	$content.remove_child(room)
 	$content.remove_child(ui)
@@ -373,17 +383,17 @@ func save(file):
 	var neg = $negative_cover.duplicate()
 	$ss.add_child(neg)
 	$ss_tex.show()
-	
+
 	yield(get_tree(), "idle_frame")
 	yield(get_tree(), "idle_frame")
 	yield(get_tree(), "idle_frame")
-	
+
 	# grab the texture from the "ss" viewport
 	var img = $ss.get_texture().get_data()
 	yield(get_tree(), "idle_frame")
 	yield(get_tree(), "idle_frame")
 	img.save_png("user://thumb" + str(file) + ".png")
-	
+
 	# then move the nodes back
 	$ss.remove_child(room)
 	$ss.remove_child(ui)
@@ -391,7 +401,7 @@ func save(file):
 	$content.add_child(room)
 	$content.add_child(ui)
 	$ss_tex.hide()
-	
+
 	# ok done
 	$meta_ui/save_menu.hide()
 	$meta_ui/save_confirm.show()
@@ -406,38 +416,43 @@ func load_game(file):
 	var save_game = File.new()
 	if not save_game.file_exists("user://save" + str(file) + ".save"):
 		return
-		
+
 	save_game.open("user://save" + str(file) + ".save", File.READ)
 	var save_dict = parse_json(save_game.get_line())
 	save_game.close()
-	
+
 	reset_state(false) # reset state, but don't mess with the room
-	# (resetting the room to the default and then immediately changing it to the new room was 
+	# (resetting the room to the default and then immediately changing it to the new room was
 	#   causing a bug where the defulut room didn't get deleted)
 	state = save_dict["state_dict"]
 	format_dict = save_dict["format_dict"]
 	action_timers = save_dict["action_timers"]
 	block = save_dict["block"]
-	
-	room.change_room(save_dict["room"], state, false)
+
+	room.change_room(save_dict["room"], state, false, true)
 	change_audio(save_dict["music"], false)
 	room.set_hidden_sprites(save_dict["hidden_sprites"])
 	room.update_state(state)
-	
+
 	if block:
-		ui.show()
+		ui.show_ui()
 		$meta_ui/history_button2.hide()
 		room.start_dialog()
 		ui.update_ui(save_dict["speaker"], save_dict["sprites"], save_dict["text"], save_dict["choices"], false)
-	
+		print(save_dict["sprites"])
+
 	$meta_ui/dropdown.load_inv(save_dict["inventory"])
 	$meta_ui/dropdown.load_quest_log(save_dict["quest_log"])
-	
+
 	# wait until the ui is done updating so it doesn't interfere with the history
 	yield(get_tree(), 'idle_frame')
-	
 	$meta_ui/history.load_history(save_dict["history"])
 	
+	if ui.visible:
+		# wait again to make sure that stop_all_hovering takes place AFTER any hovering
+		yield(get_tree(), "idle_frame")
+		room.stop_all_hovering()
+
 func reset_state(reset_room):
 	end_dialog()
 	ui.get_node('name_input').hide()
@@ -454,10 +469,13 @@ func reset_state(reset_room):
 	if reset_room:
 		room.change_room(default_room, state, false)
 	change_audio(null)
+	
+	$meta_ui/dropdown.load_inv([])
+	$meta_ui/dropdown.load_quest_log([])
 
 func open_pause_menu():
 	$tts_node.stop()
-	$meta_ui/pause_menu.show()
+	$meta_ui/pause_menu.show_custom()
 
 func close_pause_menu():
 	if ui.is_visible():
@@ -468,7 +486,7 @@ func options_changed():
 	var state_handler = room.find_node('state_handler', true, false)
 	if state_handler.has_method('options_changed'):
 		state_handler.options_changed()
-	
+
 func save_confirmed():
 	$meta_ui/save_confirm.hide()
 	close_pause_menu()
@@ -499,7 +517,7 @@ func enable_skip():
 
 func disable_skip():
 	ui.get_node('skip_button/x').show()
-	
+
 func skip():
 	if block['choices'].size() == 0 and (block['states'].size() == 0 or block['states'][0][0] != 'no_skip'):
 		# no_skip is used to prevent it from skipping the name input
@@ -509,31 +527,31 @@ func skip():
 func examine_item(_name):
 	if not ui.is_visible():
 		start_dialog('examine_' + _name)
-	
+
 func check_special_states(pair):
 	if pair[0].substr(0,  5) == '_inv_':
 		if pair[1]:
 			$meta_ui/dropdown.add_to_inv(pair[0].substr(5, len(pair[0])))
 		else:
 			$meta_ui/dropdown.remove_from_inv(pair[0].substr(5, len(pair[0])))
-			
+
 	if pair[0].substr(0,  7) == '_quest_':
 		if pair[1]:
 			$meta_ui/dropdown.add_quest(pair[0].substr(7, len(pair[0])))
 		else:
 			$meta_ui/dropdown.remove_quest(pair[0].substr(7, len(pair[0])))
-			
+
 	if pair[0].substr(0,  6) == '_anim_' and pair[1]:
 		state[pair[0]] = false
-		
+
 		var player = ui.get_node('AnimationPlayer')
 		var anim = pair[0].substr(6, len(pair[0]))
-		
+
 		if player.has_animation(anim):
 			player.play(anim)
 		else:
 			print('uh oh stinky this anim is missing: %s' % anim)
-			
+
 func test_add_quest():
 	check_special_states([$meta_ui/dropdown/quest_debug.text, true])
 

@@ -1,7 +1,7 @@
 extends Node
 
 var raw_blocks = [
-["talk_to_tori","tori","tori_neutral","(placeholder)",[['_quest_oliver_chess', false]],"","","","",""],
+["talk_to_tori","tori","tori_neutral","(placeholder)",[['_quest_oliver_chess', false], ['met_tori', true]],"","","","",""],
 ["tori_visiting_oliver","tori",['tori_neutral', 'oliver_neutral'],"oliver. good to see you.","tori_goto_study","","","","",""],
 ["","oliver","","huh?","tori_visited_oliver","","","","",""],
 ["","","","oh, tori. good to see you!","","","","","",""],
@@ -44,7 +44,7 @@ var raw_blocks = [
 ["","oliver","","don't worry about me. i'm indefatiguable.","","","","","",""],
 ["","you","","indefa-what?","","","","","",""],
 ["","oliver","","indefatiguable. tireless.","","","","","",""],
-["","tori","","if you ask me, he doesn't want to play chess because he's losing.","","","","","",""],
+["","tori","","suuure, it's not that you're avoiding the game because you know your queen is as good as mine.","","","","","",""],
 ["","oliver","","don't be ridiculous!","","","","","",""],
 ["","","","the weak points in your pawn structure are almost too easy to exploit. ","","","","","",""],
 ["","","","we'll see what good your extra knight does when your king is left defenseless on the back rank!","","","","","",""],

@@ -4,4 +4,3 @@
 
 [node name="object" type="Area2D"]
 script = ExtResource( 1 )
-

@@ -68,7 +68,7 @@ func _process(delta):
 			var file = fade_out
 			fade_out = null
 			$main_menu/audio.stop()
-			$main_menu/audio.volume_db = -3
+			$main_menu/audio.volume_db = -4
 			
 			$delay_timer.start()
 			yield($delay_timer, 'timeout')

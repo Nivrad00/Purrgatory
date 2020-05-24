@@ -15,10 +15,6 @@ func update_state(state):
 		get_node('../../../../ui/text_box').disabled = true
 		get_node('../../../../ui/name_input/text').grab_focus()
 		
-	if state.get('enable_name_input_flag'):
-		state['enable_name_input'] = true
-		state['enable_name_input_flag'] = false
-		
 	if state.get('met_receptionist'):
 		charon_moving = true
 		$receptionist_idle.hide()

@@ -1,7 +1,7 @@
 extends Node
 
 var raw_blocks = [
-["natalie_glass","natalie","natalie_neutral","{player}?","","","","","",""],
+["natalie_glass","natalie","natalie_neutral","{player}?","met_natalie","","","","",""],
 ["","","","what was that noise?","","","","","",""],
 ["","you","","natalie!","","","","","",""],
 ["","","","it's nothing, just broke a glass","","","","","",""],

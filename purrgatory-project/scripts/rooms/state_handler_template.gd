@@ -25,14 +25,19 @@ func play_default_music():
 
 func init_state(state):
 	pass
-	
-func update_state(state):
-	for key in state.keys():		
+
+# this is called when the dialog is ending, so it can enact _delay states
+func update_state_end(state):
+	for key in state.keys():
 		if key.substr(0, 7) == '_delay_' and state[key]:
-			print('DELAY')
+			print('deloy')
 			state[key] = false
 			state[key.substr(7, len(key)-7)] = true
-			
+	
+	update_state(state)
+	
+func update_state(state):
+	for key in state.keys():
 		if key.substr(0, 7) == '_music_' and state[key]:
 			print('MUSIC')
 			state[key] = false
