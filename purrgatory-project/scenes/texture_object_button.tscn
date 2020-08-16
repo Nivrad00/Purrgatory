@@ -15,5 +15,4 @@ texture_click_mask = ExtResource( 2 )
 expand = true
 script = ExtResource( 3 )
 dialog_label = "talk_to_oliver"
-
 [connection signal="pressed" from="." to="." method="_on_char_obj_button_pressed"]

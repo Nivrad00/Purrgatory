@@ -103,6 +103,7 @@ autoplay = "New Anim"
 "anims/New Anim" = SubResource( 1 )
 
 [node name="buttons" type="Control" parent="main_menu"]
+editor/display_folded = true
 margin_left = 504.871
 margin_top = 284.323
 margin_right = 782.871
@@ -372,4 +373,5 @@ __meta__ = {
 [connection signal="pressed" from="main_menu/buttons/credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="main_menu/buttons/exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="credits/back" to="." method="_on_back_pressed"]
+[connection signal="deleted_data" from="load_menu" to="." method="deleted_data"]
 [connection signal="load_file" from="load_menu" to="." method="load_file"]

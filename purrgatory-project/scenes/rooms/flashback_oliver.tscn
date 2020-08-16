@@ -154,7 +154,6 @@ margin_right = 1276.5
 margin_bottom = 722.333
 
 [node name="hc" type="HBoxContainer" parent="state_handler"]
-editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 alignment = 1
@@ -198,6 +197,7 @@ scroll_active = false
 anims/Fadein = SubResource( 2 )
 
 [node name="choice_container" type="Control" parent="state_handler/hc/vc/c1"]
+editor/display_folded = true
 margin_left = 103.0
 margin_right = 135.0
 margin_bottom = 40.0
@@ -369,7 +369,6 @@ scroll_active = false
 anims/Fadein = SubResource( 3 )
 
 [node name="c3" type="RichTextLabel" parent="state_handler/hc/vc"]
-editor/display_folded = true
 margin_top = 410.0
 margin_right = 800.0
 margin_bottom = 470.0
@@ -389,6 +388,7 @@ margin_right = 211.0
 margin_bottom = 40.0
 
 [node name="0" type="RichTextLabel" parent="state_handler/hc/vc/c3/choice_container"]
+editor/display_folded = true
 visible = false
 margin_right = 800.0
 margin_bottom = 50.0
@@ -410,6 +410,7 @@ flat = true
 script = ExtResource( 4 )
 
 [node name="1" type="RichTextLabel" parent="state_handler/hc/vc/c3/choice_container"]
+editor/display_folded = true
 visible = false
 margin_right = 800.0
 margin_bottom = 50.0
@@ -431,6 +432,7 @@ flat = true
 script = ExtResource( 4 )
 
 [node name="2" type="RichTextLabel" parent="state_handler/hc/vc/c3/choice_container"]
+editor/display_folded = true
 visible = false
 margin_right = 800.0
 margin_bottom = 50.0
@@ -452,6 +454,7 @@ flat = true
 script = ExtResource( 4 )
 
 [node name="3" type="RichTextLabel" parent="state_handler/hc/vc/c3/choice_container"]
+editor/display_folded = true
 visible = false
 margin_right = 800.0
 margin_bottom = 50.0
@@ -473,6 +476,7 @@ flat = true
 script = ExtResource( 4 )
 
 [node name="4" type="RichTextLabel" parent="state_handler/hc/vc/c3/choice_container"]
+editor/display_folded = true
 visible = false
 margin_right = 800.0
 margin_bottom = 50.0
@@ -494,6 +498,7 @@ flat = true
 script = ExtResource( 4 )
 
 [node name="5" type="RichTextLabel" parent="state_handler/hc/vc/c3/choice_container"]
+editor/display_folded = true
 visible = false
 margin_right = 800.0
 margin_bottom = 50.0
@@ -515,6 +520,7 @@ flat = true
 script = ExtResource( 4 )
 
 [node name="6" type="RichTextLabel" parent="state_handler/hc/vc/c3/choice_container"]
+editor/display_folded = true
 visible = false
 margin_right = 800.0
 margin_bottom = 50.0

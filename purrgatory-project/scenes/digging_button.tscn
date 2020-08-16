@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/digging_button.gd" type="Script" id=1]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=2]
+[ext_resource path="res://assets/placeholder_hole.png" type="Texture" id=3]
+
+[node name="digging_button" type="Area2D"]
+script = ExtResource( 1 )
+dialog_label = "tori_park_coin"
+
+[node name="polygon" type="CollisionPolygon2D" parent="."]
+position = Vector2( -1089.42, -495.369 )
+polygon = PoolVector2Array( 1161.96, 518.493, 1169.74, 484.365, 1122.24, 459.533, 1054.72, 459.533, 1010.48, 469.397, 1010.48, 505.321, 1034.43, 522.685, 1122.44, 528.073 )
+
+[node name="hole_button" type="Area2D" parent="."]
+script = ExtResource( 2 )
+dialog_label = "tori_park_hole"
+
+[node name="polygon" type="CollisionPolygon2D" parent="hole_button"]
+position = Vector2( -1089.42, -495.369 )
+polygon = PoolVector2Array( 1161.96, 518.493, 1169.74, 484.365, 1122.24, 459.533, 1054.72, 459.533, 1010.48, 469.397, 1010.48, 505.321, 1034.43, 522.685, 1122.44, 528.073 )
+
+[node name="hole" type="Sprite" parent="."]
+position = Vector2( 2.98865, -1.13129 )
+scale = Vector2( 0.496106, 0.483057 )
+texture = ExtResource( 3 )

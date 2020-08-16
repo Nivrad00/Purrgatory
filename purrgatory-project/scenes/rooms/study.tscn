@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/study.gd" type="Script" id=2]
@@ -9,6 +9,27 @@
 [ext_resource path="res://assets/sprites/chair2.png" type="Texture" id=7]
 [ext_resource path="res://scenes/sprites/oliver_sleeping.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/sprites/oliver_study.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/sprites/oliver_asleep_at_desk.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite_masks/oliver_asleep_at_desk.png" type="BitMap" id=11]
+[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=12]
+[ext_resource path="res://assets/sprites/oliver_study.png" type="Texture" id=13]
+
+[sub_resource type="Animation" id=1]
+resource_name = "New Anim"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture_normal")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 13 ), ExtResource( 13 ), ExtResource( 13 ) ]
+}
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -144,6 +165,7 @@ margin_left = 1029.3
 margin_top = 296.859
 margin_right = 1281.3
 margin_bottom = 665.859
+blackout_label = "oliver_sleeping"
 sprite_path = [ null ]
 
 [node name="oliver_study" parent="state_handler" instance=ExtResource( 9 )]
@@ -151,3 +173,22 @@ margin_left = 576.081
 margin_top = 171.348
 margin_right = 788.081
 margin_bottom = 579.348
+blackout_label = "oliver_blackout"
+
+[node name="oliver_asleep_at_desk" type="TextureButton" parent="state_handler"]
+margin_left = 535.081
+margin_top = 274.348
+margin_right = 792.081
+margin_bottom = 682.348
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 10 )
+texture_click_mask = ExtResource( 11 )
+script = ExtResource( 12 )
+dialog_label = "talk_to_oliver"
+blackout_label = "oliver_blackout_nap"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/oliver_asleep_at_desk"]
+autoplay = "oliver_idle"
+anims/oliver_idle = SubResource( 1 )
+[connection signal="pressed" from="state_handler/oliver_asleep_at_desk" to="state_handler/oliver_asleep_at_desk" method="_on_char_obj_button_pressed"]

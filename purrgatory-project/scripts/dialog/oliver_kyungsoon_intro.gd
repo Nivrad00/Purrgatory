@@ -30,7 +30,7 @@ var raw_blocks = [
 ["talk_to_oliver","_none","_none","_pass","","met_oliver",['oliver_choice', 'oliver_intro'],"","",""],
 ["oliver_choice","","","_pass","","book_state",['oliver_choice_2', 'oliver_go_on'],"","",""],
 ["oliver_choice_2","","","_pass","","oliver_questioned",['oliver_c3', 'oliver_books'],"","",""],
-["oliver_c3","","","_pass","","_inv_commons_key",['oliver_default', 'oliver_c4'],"","",""],
+["oliver_c3","","","_pass","","_inv_commons_key or unlocked_commons_door",['oliver_default', 'oliver_c4'],"","",""],
 ["oliver_c4","","","_pass","","fed_book",['oliver_drama', 'oliver_chat_choice'],"","",""],
 ["oliver_intro","???","oliver_neutral","oh, hello! you must be new!","met_oliver","","","","",""],
 ["","","","allow me to introduce myself. my name is oliver.","","","","","",""],

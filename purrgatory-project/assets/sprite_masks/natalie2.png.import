@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/natalie2.png-07ced932fcbe2b35e6542193cd794899.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/natalie2.png"
+dest_files=[ "res://.import/natalie2.png-07ced932fcbe2b35e6542193cd794899.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

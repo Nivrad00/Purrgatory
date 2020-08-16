@@ -107,9 +107,11 @@ margin_top = 319.184
 margin_right = 423.817
 margin_bottom = 558.184
 expand = true
+blackout_label = "elijah_blackout"
 
 [node name="sean_idle" parent="state_handler" instance=ExtResource( 8 )]
 margin_left = 904.317
 margin_top = 238.386
 margin_right = 1056.32
 margin_bottom = 568.386
+blackout_label = "sean_blackout"

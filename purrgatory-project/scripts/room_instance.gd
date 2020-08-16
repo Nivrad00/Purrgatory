@@ -47,10 +47,10 @@ func update_state(state, end = false):
 func init_state(state):
 	$state_handler.init_state(state)
 
-func play_default_music():
-	$state_handler.play_default_music()
+func play_default_music(state):
+	$state_handler.play_default_music(state)
 	
-func start_dialog(label, sprites):
+func start_dialog(label, sprites, blackout_label=null):
 	if dialog_ongoing:
 		return
 	else:
@@ -60,7 +60,7 @@ func start_dialog(label, sprites):
 		for sprite in sprites:
 			sprite.hide()
 	hidden_sprites = sprites
-	emit_signal('start_dialog', label)
+	emit_signal('start_dialog', label, blackout_label)
 
 func end_dialog():
 	dialog_ongoing = false

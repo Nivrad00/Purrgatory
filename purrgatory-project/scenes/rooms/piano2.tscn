@@ -48,9 +48,12 @@ margin_left = 873.31
 margin_top = 220.055
 margin_right = 1055.31
 margin_bottom = 606.055
+blackout_label = "sean_blackout"
 
 [node name="sean_arguing_with_tori" parent="state_handler" instance=ExtResource( 8 )]
 margin_left = 495.549
 margin_top = 191.474
 margin_right = 922.549
 margin_bottom = 576.474
+blackout_label = "sean_arguing_with_tori"
+sprite_path = [ null ]

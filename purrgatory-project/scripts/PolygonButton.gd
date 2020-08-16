@@ -26,6 +26,7 @@ func _ready():
 	
 	for child in children:
 		if child is Polygon2D:
+			child.set_modulate(Color(0, 0, 0, 0.15))
 			visible_polygons.append(child)
 			visible_exists = true
 	
@@ -43,7 +44,7 @@ func make_visible_polygons():
 			var new_polygon = Polygon2D.new()
 			new_polygon.set_polygon(collision_polygon.get_polygon())
 			new_polygon.position = collision_polygon.position
-			new_polygon.set_modulate(Color(0, 0, 0, 0.1))
+			new_polygon.set_modulate(Color(0, 0, 0, 0.15))
 			new_polygon.hide()
 			visible_polygons.append(new_polygon)
 			add_child(new_polygon)

@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/closet.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/closet.png" type="Texture" id=3]
 [ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=4]
 [ext_resource path="res://assets/sprites/battery1.png" type="Texture" id=5]
 [ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/sprites/tori_closet.tscn" type="PackedScene" id=7]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -275,3 +276,10 @@ polygon = PoolVector2Array( 226.001, 254.001, 225.001, 429.001, 335.001, 407.001
 
 [node name="exit" parent="state_handler" instance=ExtResource( 6 )]
 room_label = "hallway12"
+
+[node name="tori_closet" parent="state_handler" instance=ExtResource( 7 )]
+margin_left = 459.174
+margin_top = 305.707
+margin_right = 759.174
+margin_bottom = 605.707
+blackout_label = "tori_blackout"

@@ -1,12 +1,68 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/dropoff1.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/dropoff1.png" type="Texture" id=3]
-[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=5]
-[ext_resource path="res://assets/audio/hhhhhh.ogg" type="AudioStream" id=6]
-[ext_resource path="res://scenes/sprites/elijah_dropoff.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/rooms/dropoff_with_rope.png" type="Texture" id=4]
+[ext_resource path="res://assets/rooms/dropoff_after_climb.png" type="Texture" id=5]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=6]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=7]
+[ext_resource path="res://assets/audio/hhhhhh.ogg" type="AudioStream" id=8]
+[ext_resource path="res://scenes/sprites/elijah_dropoff.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/sprites/tori_dropoff.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/sprites/coin1.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/coin2.png" type="Texture" id=12]
+[ext_resource path="res://assets/audio/coin_flip.wav" type="AudioStream" id=13]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "paraola"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 876.798, 800 ), Vector2( 876.798, 168.585 ), Vector2( 876.798, 168.585 ), Vector2( 876.798, 800 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 13 )
+} ],
+"times": PoolRealArray( 0.2 )
+}
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -23,33 +79,124 @@ default_music = "null"
 texture = ExtResource( 3 )
 centered = false
 
-[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+[node name="bg1" type="Sprite" parent="state_handler"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="bg2" type="Sprite" parent="state_handler"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="exit" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( -465.02, -291.018 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
 room_label = "hallway5"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
+polygon = PoolVector2Array( 465.026, 1011.01, 1745.01, 1011.01, 1745.02, 923.026, 465.007, 923.014 )
+
+[node name="cant_leave" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+visible = false
+position = Vector2( 0, -66 )
+script = ExtResource( 7 )
+dialog_label = "tori_leave_dropoff"
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/cant_leave"]
+position = Vector2( -465.02, -225.018 )
+polygon = PoolVector2Array( 465.026, 1011.01, 1745.01, 1011.01, 1745.02, 923.026, 465.007, 923.014 )
 
 [node name="dropoff_fence" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 position = Vector2( 0, -66 )
-script = ExtResource( 5 )
+script = ExtResource( 7 )
 dialog_label = "dropoff_fence"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/dropoff_fence"]
 polygon = PoolVector2Array( 160.801, 396.716, 160.102, 412.777, 173.371, 416.269, 173.371, 602.027, 578.407, 602.027, 575.614, 414.873, 591.676, 414.873, 588.883, 387.637, 190.829, 389.034 )
 
 [node name="dropoff_dropoff" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( 0, -66 )
-script = ExtResource( 5 )
-dialog_label = "dropoff_dropoff"
+script = ExtResource( 6 )
+room_label = "dropoff2"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/dropoff_dropoff"]
-polygon = PoolVector2Array( 168.45, 596.351, 418.897, 439.058, 906.433, 439.058, 1122.36, 593.39 )
+polygon = PoolVector2Array( 181.19, 588.512, 417.113, 443.352, 906.674, 442.494, 1118.1, 590.497 )
+
+[node name="Polygon2D" type="Polygon2D" parent="state_handler/dropoff_dropoff"]
+modulate = Color( 0, 0, 0, 0.145098 )
+polygon = PoolVector2Array( 576.609, 443.297, 906.674, 442.494, 1119.85, 590.502, 575.249, 589.97 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="state_handler/dropoff_dropoff"]
+modulate = Color( 0, 0, 0, 0.15 )
+polygon = PoolVector2Array( 407.507, 449.262, 417.113, 443.352, 548.146, 443.122, 548.214, 448.482 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="state_handler/dropoff_dropoff"]
+modulate = Color( 0, 0, 0, 0.15 )
+polygon = PoolVector2Array( 290.423, 521.302, 349.218, 485.126, 547.743, 485.785, 547.416, 520.007, 499.697, 520.248, 494.568, 525.352, 493.863, 531.143, 483.4, 530.645, 445.057, 520.523 )
+
+[node name="Polygon2D4" type="Polygon2D" parent="state_handler/dropoff_dropoff"]
+modulate = Color( 0, 0, 0, 0.15 )
+polygon = PoolVector2Array( 197.587, 578.423, 225.396, 561.313, 549.162, 560.784, 548.82, 588.844, 196.763, 588.844 )
+
+[node name="dropoff_again" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+visible = false
+position = Vector2( 0, -66 )
+script = ExtResource( 7 )
+dialog_label = "tori_climb_again"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/dropoff_again"]
+polygon = PoolVector2Array( 181.19, 588.512, 417.113, 443.352, 906.674, 442.494, 1118.1, 590.497 )
+
+[node name="Polygon2D" type="Polygon2D" parent="state_handler/dropoff_again"]
+modulate = Color( 0, 0, 0, 0.145098 )
+polygon = PoolVector2Array( 576.609, 443.297, 906.674, 442.494, 1119.85, 590.502, 575.249, 589.97 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="state_handler/dropoff_again"]
+modulate = Color( 0, 0, 0, 0.15 )
+polygon = PoolVector2Array( 407.507, 449.262, 417.113, 443.352, 548.146, 443.122, 548.214, 448.482 )
+
+[node name="Polygon2D3" type="Polygon2D" parent="state_handler/dropoff_again"]
+modulate = Color( 0, 0, 0, 0.15 )
+polygon = PoolVector2Array( 290.423, 521.302, 349.218, 485.126, 547.743, 485.785, 547.416, 520.007, 499.697, 520.248, 494.568, 525.352, 493.863, 531.143, 483.4, 530.645, 445.057, 520.523 )
+
+[node name="Polygon2D4" type="Polygon2D" parent="state_handler/dropoff_again"]
+modulate = Color( 0, 0, 0, 0.15 )
+polygon = PoolVector2Array( 197.587, 578.423, 225.396, 561.313, 549.162, 560.784, 548.82, 588.844, 196.763, 588.844 )
 
 [node name="hhhhhh" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 6 )
+stream = ExtResource( 8 )
 autoplay = true
 bus = "SFX"
 
-[node name="elijah_dropoff" parent="state_handler" instance=ExtResource( 7 )]
+[node name="elijah_dropoff" parent="state_handler" instance=ExtResource( 9 )]
 margin_left = 561.79
 margin_top = 304.265
 margin_right = 837.79
 margin_bottom = 613.265
+blackout_label = "elijah_dropoff"
+
+[node name="tori_dropoff" parent="state_handler" instance=ExtResource( 10 )]
+margin_left = 846.151
+margin_top = 293.84
+margin_right = 1146.15
+margin_bottom = 593.84
+
+[node name="coin" type="AnimatedSprite" parent="state_handler"]
+visible = false
+position = Vector2( 876.798, 800 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/coin"]
+anims/paraola = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="state_handler/coin"]
+stream = ExtResource( 13 )

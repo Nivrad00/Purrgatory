@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/dropoff2.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/dropoff2.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=5]
-[ext_resource path="res://assets/audio/hhhhhh.ogg" type="AudioStream" id=6]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=5]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=6]
+[ext_resource path="res://assets/audio/hhhhhh.ogg" type="AudioStream" id=7]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -26,8 +27,21 @@ centered = false
 [node name="exit" parent="state_handler" instance=ExtResource( 4 )]
 room_label = " dropoff1"
 
-[node name="dropoff_pit" type="Area2D" parent="state_handler"]
+[node name="dropoff_transition" type="Area2D" parent="state_handler"]
+position = Vector2( -465.02, -291.018 )
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+room_label = " dropoff_long"
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/dropoff_transition"]
+position = Vector2( 466.02, 291.018 )
+polygon = PoolVector2Array( 424.001, 262.001, 424.68, 437.129, 812.956, 434.336, 813.163, 261.497 )
+
+[node name="dropoff_pit" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 6 )
 dialog_label = "dropoff_pit"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/dropoff_pit"]
@@ -35,6 +49,6 @@ position = Vector2( 1, 0 )
 polygon = PoolVector2Array( 424.001, 262.001, 424.68, 437.129, 812.956, 434.336, 813.163, 261.497 )
 
 [node name="hhhhhh" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 6 )
+stream = ExtResource( 7 )
 autoplay = true
 bus = "SFX"

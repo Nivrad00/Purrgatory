@@ -1,12 +1,16 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/field6.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/field6.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=5]
 [ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=6]
 [ext_resource path="res://scenes/river.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/surprise.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scripts/digging_container.gd" type="Script" id=9]
+[ext_resource path="res://scenes/digging_button.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/hole_score.tscn" type="PackedScene" id=11]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -31,6 +35,14 @@ script = ExtResource( 5 )
 room_label = "hallway6"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( 135.16, 472.403, 135.523, 547.981, 202.555, 548.044, 200.046, 474.913 )
+
+[node name="exit2_game" type="Area2D" parent="state_handler"]
+position = Vector2( 453.085, -178.215 )
+script = ExtResource( 6 )
+dialog_label = "tori_park_leave"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2_game"]
 polygon = PoolVector2Array( 135.16, 472.403, 135.523, 547.981, 202.555, 548.044, 200.046, 474.913 )
 
 [node name="field_path" type="Area2D" parent="state_handler"]
@@ -76,3 +88,18 @@ dialog_label = "field_river"
 polygon = PoolVector2Array( 399.256, 386.991, 411.247, 396.757, 418.362, 408.352, 418.362, 439.975, 386.213, 472.388, 395.465, 484.932, 432.593, 513.234, 488.319, 537.549, 576.531, 578.56, 672.924, 637.089, 667.39, 652.373, 677.404, 678.725, 708.763, 721.152, 1189.8, 719.958, 1189.82, 675.345, 1154.05, 652.281, 1093.44, 646.588, 863.214, 598.783, 838.011, 553.908, 839.241, 538.848, 778.076, 518.255, 683.41, 507.805, 528.96, 477.32, 482.788, 444.269, 490.748, 419.435, 485.214, 405.732, 449.806, 386.706, 428.424, 386.827 )
 
 [node name="river" parent="state_handler" instance=ExtResource( 7 )]
+
+[node name="surprise" parent="state_handler" instance=ExtResource( 8 )]
+
+[node name="digging" type="Node2D" parent="state_handler"]
+script = ExtResource( 9 )
+
+[node name="digging_button" parent="state_handler/digging" instance=ExtResource( 10 )]
+position = Vector2( 266.3, 624.7 )
+dialog_label = "tori_park_bone"
+
+[node name="digging_button2" parent="state_handler/digging" instance=ExtResource( 10 )]
+position = Vector2( 1080.29, 413.529 )
+dialog_label = "tori_park_bag"
+
+[node name="score" parent="state_handler/digging" instance=ExtResource( 11 )]

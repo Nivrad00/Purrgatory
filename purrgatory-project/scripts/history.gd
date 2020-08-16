@@ -94,7 +94,7 @@ func format_history():
 	
 	# first pass: set widths
 	for label in grid.get_children():
-		var height = label.rect_min_size.y
+		# var height = label.rect_min_size.y
 		label.set_custom_minimum_size(Vector2(widths[i], 500))
 		
 		i += 1

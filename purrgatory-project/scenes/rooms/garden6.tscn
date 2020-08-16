@@ -31,6 +31,7 @@ margin_left = 757.642
 margin_top = 396.946
 margin_right = 1024.64
 margin_bottom = 608.946
+blackout_label = "numa_blackout"
 
 [node name="numa2" parent="state_handler" instance=ExtResource( 4 )]
 modulate = Color( 1, 1, 1, 0 )
@@ -38,6 +39,7 @@ margin_left = 749.048
 margin_top = 387.124
 margin_right = 1016.05
 margin_bottom = 599.124
+blackout_label = "numa_blackout"
 
 [node name="screwdriver" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
@@ -56,6 +58,7 @@ margin_left = 701.039
 margin_top = 376.916
 margin_right = 1172.04
 margin_bottom = 628.916
+blackout_label = "elijah_helping_numa"
 
 [node name="exit" type="Area2D" parent="state_handler"]
 editor/display_folded = true

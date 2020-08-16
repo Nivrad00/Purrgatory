@@ -1,21 +1,26 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/options_menu.gd" type="Script" id=2]
 [ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://assets/ui/slider_tick.png" type="Texture" id=5]
-[ext_resource path="res://assets/ui/slider_grabber.png" type="Texture" id=6]
-[ext_resource path="res://assets/ui/slider.png" type="Texture" id=7]
-[ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=8]
-[ext_resource path="res://assets/ui/font_preview.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/pronoun_input_box.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/slider_tick.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/slider_grabber.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/slider.png" type="Texture" id=8]
+[ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=9]
+[ext_resource path="res://assets/ui/font_preview.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
 font_data = ExtResource( 4 )
 
-[sub_resource type="StyleBoxTexture" id=2]
-texture = ExtResource( 7 )
+[sub_resource type="DynamicFont" id=2]
+size = 25
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 8 )
 region_rect = Rect2( 0, 0, 479, 12 )
 axis_stretch_horizontal = 1
 
@@ -42,13 +47,13 @@ visible = false
 position = Vector2( 369.758, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
+texture_mode = -1453297963
 
 [node name="Line2D2" type="Line2D" parent="."]
 visible = false
 position = Vector2( 398.949, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
-texture_mode = 1138589696
 
 [node name="back" type="Button" parent="."]
 editor/display_folded = true
@@ -83,6 +88,39 @@ text = "back"
 align = 1
 valign = 1
 
+[node name="reset" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1117.8
+margin_top = 658.029
+margin_right = -12.1976
+margin_bottom = -12.9712
+rect_pivot_offset = Vector2( 311.063, -221.429 )
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="box2" type="Sprite" parent="reset"]
+position = Vector2( 0.366638, 1.67036 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( -8.3689, -6.12292 )
+
+[node name="Label" type="Label" parent="reset"]
+margin_left = 1.0
+margin_top = 2.0
+margin_right = 186.0
+margin_bottom = 60.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "reset settings"
+align = 1
+valign = 1
+
 [node name="text_size" type="Control" parent="."]
 editor/display_folded = true
 margin_left = 314.0
@@ -108,10 +146,10 @@ margin_top = -8.0
 margin_right = 439.0
 margin_bottom = -6.0
 focus_mode = 0
-custom_icons/tick = ExtResource( 5 )
-custom_icons/grabber_highlight = ExtResource( 6 )
-custom_icons/grabber = ExtResource( 6 )
-custom_styles/slider = SubResource( 2 )
+custom_icons/tick = ExtResource( 6 )
+custom_icons/grabber_highlight = ExtResource( 7 )
+custom_icons/grabber = ExtResource( 7 )
+custom_styles/slider = SubResource( 5 )
 custom_styles/grabber_area = SubResource( 3 )
 min_value = 20.0
 max_value = 40.0
@@ -127,7 +165,7 @@ margin_left = 26.3268
 margin_top = 65.2425
 margin_right = 452.327
 margin_bottom = 119.243
-theme = ExtResource( 8 )
+theme = ExtResource( 9 )
 text = "oliver"
 valign = 1
 
@@ -136,14 +174,14 @@ margin_left = 27.3268
 margin_top = 129.243
 margin_right = 452.327
 margin_bottom = 219.243
-theme = ExtResource( 8 )
+theme = ExtResource( 9 )
 bbcode_enabled = true
 bbcode_text = "wahoo i sure [i]love[/i] purrgatory!"
 text = "wahoo i sure love purrgatory!"
 
 [node name="preview_box" type="Sprite" parent="text_size"]
 position = Vector2( 236.327, 149 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="preview_label" type="Label" parent="text_size"]
 margin_left = -127.497
@@ -155,6 +193,7 @@ text = "preview"
 align = 2
 
 [node name="audio" type="Control" parent="."]
+editor/display_folded = true
 margin_left = 314.0
 margin_top = 421.585
 margin_right = 354.0
@@ -178,14 +217,14 @@ margin_top = -8.0
 margin_right = 439.0
 margin_bottom = -6.0
 focus_mode = 0
-custom_icons/tick = ExtResource( 5 )
-custom_icons/grabber_highlight = ExtResource( 6 )
-custom_icons/grabber = ExtResource( 6 )
-custom_styles/slider = SubResource( 2 )
+custom_icons/tick = ExtResource( 6 )
+custom_icons/grabber_highlight = ExtResource( 7 )
+custom_icons/grabber = ExtResource( 7 )
+custom_styles/slider = SubResource( 5 )
 custom_styles/grabber_area = SubResource( 3 )
 max_value = 1.0
 step = 0.01
-value = 1.0
+value = 0.6
 scrollable = false
 ticks_on_borders = true
 focus_mode = 0
@@ -205,19 +244,20 @@ margin_top = 52.8001
 margin_right = 439.0
 margin_bottom = 54.8001
 focus_mode = 0
-custom_icons/tick = ExtResource( 5 )
-custom_icons/grabber_highlight = ExtResource( 6 )
-custom_icons/grabber = ExtResource( 6 )
-custom_styles/slider = SubResource( 2 )
+custom_icons/tick = ExtResource( 6 )
+custom_icons/grabber_highlight = ExtResource( 7 )
+custom_icons/grabber = ExtResource( 7 )
+custom_styles/slider = SubResource( 5 )
 custom_styles/grabber_area = SubResource( 3 )
 max_value = 1.0
 step = 0.01
-value = 1.0
+value = 0.6
 scrollable = false
 ticks_on_borders = true
 focus_mode = 0
 
 [node name="fullscreen" type="Control" parent="."]
+editor/display_folded = true
 margin_left = 1126.26
 margin_top = 107.298
 margin_right = 1166.26
@@ -261,7 +301,7 @@ margin_top = 38.0
 margin_right = 32.0
 margin_bottom = 183.0
 custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0.5, 0.5, 0.5, 1 )
+custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
 text = "automatically keeps track of your objectives in the \"notes\" menu."
 align = 2
 autowrap = true
@@ -278,6 +318,7 @@ pressed = true
 enabled_focus_mode = 0
 
 [node name="voicing" type="Control" parent="."]
+editor/display_folded = true
 margin_left = 1126.26
 margin_top = 175.299
 margin_right = 1166.26
@@ -302,6 +343,7 @@ focus_mode = 0
 enabled_focus_mode = 0
 [connection signal="pressed" from="back" to="." method="hide"]
 [connection signal="pressed" from="back" to="." method="save_options"]
+[connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]
 [connection signal="value_changed" from="text_size/slider" to="." method="_on_text_size_value_changed"]
 [connection signal="value_changed" from="audio/music" to="." method="_on_music_value_changed"]
 [connection signal="value_changed" from="audio/sfx" to="." method="_on_sfx_value_changed"]

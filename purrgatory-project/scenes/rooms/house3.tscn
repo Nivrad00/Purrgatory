@@ -51,18 +51,11 @@ dialog_label = "broken_glasses"
 position = Vector2( 0, 0.949951 )
 polygon = PoolVector2Array( 367.301, 594.102, 463.252, 725.202, 376.801, 724.252, 327.401, 690.052, 280.851, 685.302, 276.101, 670.102, 304.601, 651.102, 317.901, 602.652 )
 
-[node name="object4" parent="state_handler" instance=ExtResource( 5 )]
-editor/display_folded = true
-dialog_label = "conveyer_belt"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object4"]
-polygon = PoolVector2Array( 346.401, 435.451, 347.351, 391.751, 401.501, 389.851, 408.013, 420.807, 819.094, 623.578, 822.419, 653.495, 693.152, 692.902 )
-
 [node name="object5" parent="state_handler" instance=ExtResource( 5 )]
-editor/display_folded = true
 dialog_label = "house_mat"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object5"]
+position = Vector2( -11.0496, 8.59418 )
 polygon = PoolVector2Array( 688.002, 555.001, 789.002, 609.002, 909.003, 583.001, 790.322, 537.256 )
 
 [node name="object6" parent="state_handler" instance=ExtResource( 5 )]
@@ -87,11 +80,11 @@ dialog_label = "toaster"
 polygon = PoolVector2Array( 582.836, 377.784, 581.002, 412.001, 565.118, 416.086, 565.118, 426.919, 601.699, 423.225, 605.128, 376.069 )
 
 [node name="house_glass" parent="state_handler" instance=ExtResource( 5 )]
-editor/display_folded = true
 dialog_label = "house_glass"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/house_glass"]
-polygon = PoolVector2Array( 569.612, 464.844, 564.025, 485.794, 604.739, 500.031, 621.987, 488.588, 613.607, 466.241 )
+position = Vector2( 84.7139, 100.674 )
+polygon = PoolVector2Array( 565.96, 467.67, 572.217, 508.624, 584.731, 513.743, 604.07, 510.33, 604.07, 470.514, 590.419, 461.982 )
 
 [node name="object10" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true

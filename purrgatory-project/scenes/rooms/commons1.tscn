@@ -50,12 +50,14 @@ margin_left = 405.733
 margin_top = 313.617
 margin_right = 626.733
 margin_bottom = 542.617
+blackout_label = "numa_blackout"
 
 [node name="kyungsoon_idle" parent="state_handler" instance=ExtResource( 8 )]
 margin_left = 304.629
 margin_top = 327.683
 margin_right = 567.629
 margin_bottom = 647.683
+blackout_label = "kyungsoon_blackout"
 
 [node name="flowers_etc" parent="state_handler" instance=ExtResource( 4 )]
 visible = false
@@ -76,6 +78,7 @@ margin_top = 209.466
 margin_right = 1181.18
 margin_bottom = 541.466
 dialog_label = "talk_to_oliver_about_numa"
+blackout_label = "oliver_blackout"
 
 [node name="cat1_idle" parent="state_handler" instance=ExtResource( 12 )]
 margin_left = 940.571

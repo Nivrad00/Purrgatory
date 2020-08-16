@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/exit.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/exit.png" type="Texture" id=3]
 [ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=4]
 [ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=5]
+[ext_resource path="res://scenes/sprites/tori_exit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/sprites/tori_exit2.tscn" type="PackedScene" id=7]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -29,6 +31,15 @@ room_label = "warehouse3"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
 polygon = PoolVector2Array( -282.299, 871.379, 76.915, 738.215, 226.915, 788.215, 0.712372, 902.253, -258.041, 901.517 )
 
+[node name="exit2" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 453.085, -178.215 )
+script = ExtResource( 4 )
+room_label = "flashback_tori"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( -282.299, 871.379, 76.915, 738.215, 226.915, 788.215, 0.712372, 902.253, -258.041, 901.517 )
+
 [node name="exit_door" type="Area2D" parent="state_handler"]
 script = ExtResource( 5 )
 dialog_label = "exit_door"
@@ -43,3 +54,11 @@ dialog_label = "exit_painting"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit_painting"]
 polygon = PoolVector2Array( 674.711, 316.982, 673.578, 386.938, 779.223, 398.204, 779.423, 313.051 )
 
+[node name="tori_exit1" parent="state_handler" instance=ExtResource( 6 )]
+margin_left = 696.51
+margin_top = 350.976
+margin_right = 996.51
+margin_bottom = 650.976
+dialog_label = "tori_end"
+
+[node name="tori_exit2" parent="state_handler" instance=ExtResource( 7 )]

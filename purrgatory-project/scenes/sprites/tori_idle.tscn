@@ -29,7 +29,7 @@ enabled_focus_mode = 0
 texture_normal = ExtResource( 1 )
 texture_click_mask = ExtResource( 2 )
 script = ExtResource( 3 )
-dialog_label = "talk_to_tori"
+dialog_label = "tori_train"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "oliver_idle"

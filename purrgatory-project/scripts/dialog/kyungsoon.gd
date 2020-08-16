@@ -225,7 +225,7 @@ var raw_blocks = [
 ["","kyungsoon","","i like the cronch","","","","","",""],
 ["","you","","ok","","","null","","",""],
 ["ks_and_numa","_none","_none","_pass","","ks_at_vent",['ks_and_numa_vent', 'ks_and_numa_commons_c1'],"","",""],
-["ks_and_numa_vent","_none","kyungsoon_neutral","kyungsoon and numa are still chatting.","","","","","",""],
+["ks_and_numa_vent","_none","_none","kyungsoon and numa are still chatting.","","","","","",""],
 ["","","","seems like your work here is done.","","","null","","",""],
 ["ks_and_numa_commons_c1","_none","_none","_pass","","not ks_and_numa_commons1_done",['ks_and_numa_commons1', 'ks_and_numa_commons_c2'],"","",""],
 ["ks_and_numa_commons_c2","","","_pass","","not ks_and_numa_commons2_done",['ks_and_numa_commons2', 'ks_and_numa_commons3'],"","",""],

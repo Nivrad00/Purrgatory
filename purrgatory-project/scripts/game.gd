@@ -8,6 +8,12 @@ var state = {
 	'true': true
 }
 
+var cracked = {
+	'true': true,
+	'unlocked_commons_door': true,
+	'unlocked_meowseum_door': true
+}
+
 var oliver_test_state = {
 	'true': true,
 	'fed_kyungsoon_book': true,
@@ -27,7 +33,6 @@ var oliver_test_state = {
 	'comforted_oliver': true,
 	'oliver_in_study': false
 }
-
 
 var numa_test_state = {
 	'true': true,
@@ -68,6 +73,8 @@ var fade_out = false
 var current_audio = null
 var skip = false
 
+var mural_drawing = null
+
 var seen_blocks = []
 
 onready var room = get_node('content/room')
@@ -90,6 +97,9 @@ func _ready():
 		f.open("user://seen_blocks.save", File.READ)
 		seen_blocks = parse_json(f.get_line())
 		f.close()
+	
+	# cursor
+	Input.set_custom_mouse_cursor(load("res://assets/draw_cursor.png"), Input.CURSOR_POINTING_HAND)
 
 func load_meowkov_chain(f):
 	f.open("res://scripts/procgen/meowkov.json", File.READ)
@@ -99,17 +109,18 @@ func load_meowkov_chain(f):
 func _notification(what):
 	# when the user quits...
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-		# save seen_blocks to file
-		# (that's the only time it needs to be saved, afaik)
-		var f = File.new()
-		f.open("user://seen_blocks.save", File.WRITE)
-		f.store_line(to_json(seen_blocks))
-		f.close()
-
-		# also save options
-		# (i'm doing it here instead of when they press "back" in case they quit
+		# save the changes to options
+		# (i'm doing it here as well as when they press "back" in case they quit
 		#   while on the options menu)
-		# (also these paths suck but whatever)
+		
+		# this won't trigger if the game crashes
+		# so if you're in the options menu and the game crashes,
+		#   you'll have to redo any changes you made
+		# idk if it triggers if you force quit the game or shut off the computer
+		
+		# btw there's no need to save seen_blocks here bc it's saved as soon
+		#   as it's altered
+		
 		if visible:
 			$meta_ui/options_menu.save_options()
 		else:
@@ -156,14 +167,26 @@ func increment_action_timers():
 
 func change_room(label):
 	increment_action_timers()
-	room.change_room(label, state)
+	if label == '_prev':
+		room.change_room(room.prev_room_label, state)
+	elif label == room.get_current_room():
+		pass
+	else:
+		room.change_room(label, state)
+		
+		# a little hack: going into the draw-a-paw minigame should close the inventory
+		if label == "draw_a_paw" and $meta_ui/dropdown.items_shown:
+			$meta_ui/dropdown.toggle_items() 
 
-func start_dialog(label):
+func start_dialog(label, blackout_label=null):
+	if state.get('blackout') and blackout_label:
+		label = blackout_label
+		
 	block = $dialog_handler.get_block(label, state)
 	ui.show_ui()
 	$meta_ui/history_button2.hide()
 	room.start_dialog()
-
+	
 	# handle skip stuff before updating the ui so it knows if it should TTS or not
 	if seen_blocks.has(block['label']):
 		enable_skip()
@@ -218,9 +241,14 @@ func end_dialog():
 # }
 
 func update_dialog(b: int):
-	# mark the previous block as seen
+	# mark the previous block as seen, and immediately write to file
 	seen_blocks.append(block['label'])
 
+	var f = File.new()
+	f.open("user://seen_blocks.save", File.WRITE)
+	f.store_line(to_json(seen_blocks))
+	f.close()
+		
 	# if there's no choice, get the next block directly
 	if b == -1:
 		block = $dialog_handler.get_block(block['next'], state)
@@ -305,11 +333,26 @@ func set_player_name():
 			format_dict['theirs'] = 'his'
 			format_dict['themself'] = 'himself'
 
+		elif ui.get_node('name_input/pronouns/custom').pressed:
+			state['_pronouns_custom'] = true
+			var pronoun_inputs = ui.get_node('name_input/custom_pronouns')
+			format_dict['they'] = pronoun_inputs.get_node('they').text
+			format_dict['them'] = pronoun_inputs.get_node('them').text
+			format_dict['their'] = pronoun_inputs.get_node('their').text
+			format_dict['theirs'] = pronoun_inputs.get_node('theirs').text
+			format_dict['themself'] = pronoun_inputs.get_node('them').text + 'self'
+			
 		ui.get_node('name_input').hide()
 		ui.get_node('text_box').disabled = false
 		update_dialog(-1)
 
 func change_audio(song, play = true):
+	if AudioServer.is_bus_mute(0):
+		AudioServer.set_bus_mute(0, false)
+	
+	if state.get('blackout'):
+		song = null
+		
 	if song == current_audio:
 		return
 
@@ -326,8 +369,6 @@ func change_audio(song, play = true):
 
 		if play:
 			$main_audio.play()
-
-
 
 func return_to_main():
 	$white_cover.show()
@@ -375,10 +416,23 @@ func save(file):
 	save_game.store_line(to_json(save_dict))
 	save_game.close()
 
+	# save the mural drawing separately, if there is one
+	if mural_drawing:
+		mural_drawing.save_png("user://mural" + str(file) + ".png")
+	# or remove the existing mural drawing
+	else:
+		var dir = Directory.new()
+		if dir.file_exists("user://mural" + str(file) + ".png"):
+			dir.remove("user://mural" + str(file) + ".png")
+	
+	var dark_covers = $content/dark_covers
+	
 	# take a screenshot by moving all the relevant nodes to the "ss" viewport
 	$content.remove_child(room)
+	$content.remove_child(dark_covers)
 	$content.remove_child(ui)
 	$ss.add_child(room)
+	$ss.add_child(dark_covers)
 	$ss.add_child(ui)
 	var neg = $negative_cover.duplicate()
 	$ss.add_child(neg)
@@ -396,9 +450,11 @@ func save(file):
 
 	# then move the nodes back
 	$ss.remove_child(room)
+	$ss.remove_child(dark_covers)
 	$ss.remove_child(ui)
 	$ss.remove_child(neg)
 	$content.add_child(room)
+	$content.add_child(dark_covers)
 	$content.add_child(ui)
 	$ss_tex.hide()
 
@@ -413,6 +469,9 @@ func load_game_while_playing(file):
 	$meta_ui/load_confirm.show()
 
 func load_game(file):
+	# temporarily mute audio to prevent artifacts
+	AudioServer.set_bus_mute(0, true)
+	
 	var save_game = File.new()
 	if not save_game.file_exists("user://save" + str(file) + ".save"):
 		return
@@ -428,6 +487,14 @@ func load_game(file):
 	format_dict = save_dict["format_dict"]
 	action_timers = save_dict["action_timers"]
 	block = save_dict["block"]
+	
+	# mural drawing needs to be loaded separately
+	var f = File.new()
+	if f.file_exists("user://mural" + str(file) + ".png"):
+		mural_drawing = Image.new()
+		mural_drawing.load("user://mural" + str(file) + ".png")
+	else:
+		mural_drawing = null
 
 	room.change_room(save_dict["room"], state, false, true)
 	change_audio(save_dict["music"], false)
@@ -443,7 +510,7 @@ func load_game(file):
 
 	$meta_ui/dropdown.load_inv(save_dict["inventory"])
 	$meta_ui/dropdown.load_quest_log(save_dict["quest_log"])
-
+	
 	# wait until the ui is done updating so it doesn't interfere with the history
 	yield(get_tree(), 'idle_frame')
 	$meta_ui/history.load_history(save_dict["history"])
@@ -452,12 +519,24 @@ func load_game(file):
 		# wait again to make sure that stop_all_hovering takes place AFTER any hovering
 		yield(get_tree(), "idle_frame")
 		room.stop_all_hovering()
+	
+	yield(get_tree(), "idle_frame")
+	AudioServer.set_bus_mute(0, false)
 
 func reset_state(reset_room):
 	end_dialog()
+	
 	ui.get_node('name_input').hide()
 	ui.get_node('name_input/text').set_text('')
 	ui.get_node('name_input/pronouns/they').pressed = true
+	
+	ui.get_node('name_input/custom_pronouns').hide()
+	ui.get_node('name_input/custom_pronouns/they').text = "they"
+	ui.get_node('name_input/custom_pronouns/them').text = "them"
+	ui.get_node('name_input/custom_pronouns/their').text = "their"
+	ui.get_node('name_input/custom_pronouns/theirs').text = "theirs"
+	
+	
 	state = {
 		'true': true
 	}
@@ -509,7 +588,7 @@ func turn_off_skip():
 
 func turn_on_skip():
 	skip = true
-	ui.get_node('skip_button/box2').set_modulate(Color(0.9, 0.9, 0.9))
+	ui.get_node('skip_button/box2').set_modulate(Color(0.85, 0.85, 0.85))
 	skip()
 
 func enable_skip():
@@ -557,3 +636,8 @@ func test_add_quest():
 
 func test_remove_quest():
 	check_special_states([$meta_ui/dropdown/quest_debug.text, false])
+
+# this is called from the save/load screens when you delete your data
+# just so that we can delete seen_blocks
+func deleted_data():
+	seen_blocks = []

@@ -1079,7 +1079,6 @@ pitch_scale = 7.13
 bus = "Keyboard"
 
 [node name="options" type="Control" parent="state_handler"]
-editor/display_folded = true
 margin_left = 1.19745
 margin_top = -0.598724
 margin_right = 41.1974

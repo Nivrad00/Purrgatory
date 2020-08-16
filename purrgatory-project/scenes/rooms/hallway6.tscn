@@ -33,6 +33,9 @@ margin_left = 168.686
 margin_top = 35.1716
 margin_right = 489.686
 margin_bottom = 720.172
+dialog_label = "ks_and_numa_vent"
+blackout_label = "kyungsoon_blackout"
+sprite_path = [ null ]
 
 [node name="exit" parent="state_handler" instance=ExtResource( 6 )]
 room_label = "field6"

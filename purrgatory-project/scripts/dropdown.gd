@@ -48,7 +48,7 @@ func toggle_notes():
 		$quest_container.show()
 		
 		notes_shown = true
-		notes_button.set_modulate(Color(0.9, 0.9, 0.9))
+		notes_button.set_modulate(Color(0.85, 0.85, 0.85))
 		
 		format_quests()
 	
@@ -65,7 +65,7 @@ func toggle_items():
 		$quest_container.hide()
 		
 		items_shown = true
-		items_button.set_modulate(Color(0.9, 0.9, 0.9))
+		items_button.set_modulate(Color(0.85, 0.85, 0.85))
 		target_height = items_height
 		move = true
 
@@ -79,12 +79,13 @@ func _process(delta):
 			var target = Vector2(pos.x, target_height)
 			set_position(pos + (target - pos)/2 * delta * speed)
 
-func add_to_inv(_name):
-	print(_name)
+func add_to_inv(_name, loading = false):
 	for item in $inv_container.get_children():
 		if item.name == _name:
 			return
 			
+	print("added to inventory: " + _name)
+	
 	var texture = load(inv_sprite_path + _name + '.png')
 	if texture == null:
 		print('uh boss the inventory sprite for ' + _name + ' doesn\'t exist')
@@ -96,7 +97,8 @@ func add_to_inv(_name):
 	button.connect('examine_item', self, 'examine_item')
 	$inv_container.add_child(button)
 	
-	if not items_shown:
+	# this shouldn't happen when loading a save file
+	if not items_shown and not loading:
 		toggle_items()
 		# items_button.flash()
 
@@ -127,7 +129,7 @@ func load_inv(list):
 	yield(get_tree(), 'idle_frame')
 	
 	for _name in list:
-		add_to_inv(_name)
+		add_to_inv(_name, true) # tell it that you're loading a new file
 
 func add_quest(quest):
 	for item in $quest_container/vbox.get_children():

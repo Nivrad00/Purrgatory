@@ -103,3 +103,9 @@ func _process(delta):
 		else:
 			a = max(a - 2 * delta, 0)
 			$loading.set_modulate(Color(1, 1, 1, a))
+
+# this is a version of the function from game.gd in case you delete 
+# data while on the main menu
+func deleted_data():
+	if $game:
+		$game.seen_blocks = []

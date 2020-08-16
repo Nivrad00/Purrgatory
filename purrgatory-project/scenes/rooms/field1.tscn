@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/field1.gd" type="Script" id=2]
@@ -11,6 +11,10 @@
 [ext_resource path="res://scenes/arrow_exit_button_template.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/exit_left.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=11]
+[ext_resource path="res://scenes/surprise.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scripts/digging_container.gd" type="Script" id=13]
+[ext_resource path="res://scenes/digging_button.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/hole_score.tscn" type="PackedScene" id=15]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -38,6 +42,7 @@ polygon = PoolVector2Array( 89.4541, 303.771, 132.323, 318.346, 141.754, 321.776
 polygon = PoolVector2Array( 627.887, 271.19, 674.186, 301.198, 699.907, 305.485, 704.194, 373.218, 761.638, 374.076, 753.922, 326.92, 811.366, 295.197, 783.073, 182.88, 740.204, 163.161, 668.184, 160.589, 630.459, 176.021, 608.167, 226.607 )
 
 [node name="field_rocks" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 script = ExtResource( 4 )
 dialog_label = "field_rocks"
 
@@ -57,6 +62,7 @@ polygon = PoolVector2Array( 903.099, 544.74, 921.541, 566.562, 941.212, 562.259,
 polygon = PoolVector2Array( 956.523, 538.636, 955.601, 545.398, 968.203, 554.618, 975.272, 562.61, 987.874, 559.843, 979.575, 542.324, 963.285, 534.025 )
 
 [node name="field_river" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 script = ExtResource( 4 )
 dialog_label = "field_river"
 
@@ -70,6 +76,7 @@ margin_left = 375.78
 margin_top = 400.945
 margin_right = 556.78
 margin_bottom = 656.945
+blackout_label = "elijah_blackout"
 
 [node name="weeds" type="Sprite" parent="state_handler"]
 position = Vector2( 512.941, 551.153 )
@@ -94,10 +101,36 @@ position = Vector2( -1133.8, -4.98454 )
 room_label = "field3"
 
 [node name="exit3" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 453.942, -177.358 )
 script = ExtResource( 11 )
 room_label = "garden4"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3"]
 polygon = PoolVector2Array( 690.095, 694.817, 690.095, 474.142, 817.192, 446.208, 815.097, 738.812 )
+
+[node name="exit3_game" type="Area2D" parent="state_handler"]
+position = Vector2( 453.942, -177.358 )
+script = ExtResource( 4 )
+dialog_label = "tori_park_leave"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3_game"]
+polygon = PoolVector2Array( 690.095, 694.817, 690.095, 474.142, 817.192, 446.208, 815.097, 738.812 )
+
+[node name="surprise" parent="state_handler" instance=ExtResource( 12 )]
+
+[node name="digging" type="Node2D" parent="state_handler"]
+script = ExtResource( 13 )
+
+[node name="digging_button" parent="state_handler/digging" instance=ExtResource( 14 )]
+position = Vector2( 337.204, 649.116 )
+dialog_label = "tori_park_rock"
+
+[node name="digging_button2" parent="state_handler/digging" instance=ExtResource( 14 )]
+position = Vector2( 834.437, 588.957 )
+dialog_label = "tori_park_ukulele"
+
+[node name="digging_button3" parent="state_handler/digging" instance=ExtResource( 14 )]
+position = Vector2( 775.505, 435.49 )
+dialog_label = "tori_park_fridge"
+
+[node name="score" parent="state_handler/digging" instance=ExtResource( 15 )]

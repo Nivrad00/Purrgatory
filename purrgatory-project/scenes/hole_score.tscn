@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://themes/ui_theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/placeholder_hole.png" type="Texture" id=2]
+
+[node name="score" type="Label"]
+margin_left = 686.3
+margin_top = 25.6617
+margin_right = 733.3
+margin_bottom = 59.6617
+theme = ExtResource( 1 )
+text = "0/17"
+
+[node name="ui_hole" type="Sprite" parent="."]
+position = Vector2( -76.8008, 17.464 )
+scale = Vector2( 0.42184, 0.42184 )
+texture = ExtResource( 2 )

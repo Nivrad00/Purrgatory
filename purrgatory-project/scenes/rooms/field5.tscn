@@ -1,11 +1,15 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/field5.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/field5.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=5]
 [ext_resource path="res://scenes/river.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/surprise.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scripts/digging_container.gd" type="Script" id=8]
+[ext_resource path="res://scenes/digging_button.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/hole_score.tscn" type="PackedScene" id=10]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -56,12 +60,24 @@ dialog_label = "passcode"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_poem"]
 polygon = PoolVector2Array( 751.528, 241.578, 739.31, 261.94, 742.568, 288.005, 774.334, 291.263, 793.883, 281.489, 785.737, 249.723 )
 
-[node name="hill" type="Area2D" parent="state_handler"]
-script = ExtResource( 5 )
-dialog_label = "hill"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/hill"]
-polygon = PoolVector2Array( 152.076, 459.817, 395.451, 311.251, 583.315, 208.147, 656.701, 194.4, 750.642, 201.345, 879.952, 249.5, 1037.65, 441.401, 1082.57, 514.232, 964.221, 590.414, 779.21, 631.225, 429.593, 589.053 )
-
 [node name="river" parent="state_handler" instance=ExtResource( 6 )]
 volume_db = -35.0
+
+[node name="surprise" parent="state_handler" instance=ExtResource( 7 )]
+
+[node name="digging" type="Node2D" parent="state_handler"]
+script = ExtResource( 8 )
+
+[node name="digging_button" parent="state_handler/digging" instance=ExtResource( 9 )]
+position = Vector2( 170.697, 555.009 )
+dialog_label = "tori_park_worm"
+
+[node name="digging_button2" parent="state_handler/digging" instance=ExtResource( 9 )]
+position = Vector2( 458.523, 668.135 )
+dialog_label = "tori_park_shovel"
+
+[node name="digging_button3" parent="state_handler/digging" instance=ExtResource( 9 )]
+position = Vector2( 574.513, 390.333 )
+dialog_label = "tori_park_kyungsoon"
+
+[node name="score" parent="state_handler/digging" instance=ExtResource( 10 )]

@@ -19,7 +19,7 @@ signal change_audio(song)
 
 export var default_music = 'welcome to purrgatory'
 
-func play_default_music():
+func play_default_music(_state):
 	if default_music != '_pass':
 		emit_signal('change_audio', default_music)
 
@@ -29,8 +29,12 @@ func init_state(state):
 # this is called when the dialog is ending, so it can enact _delay states
 func update_state_end(state):
 	for key in state.keys():
+		if key.substr(0, 14) == '_delay_remove_' and state[key]:
+			print('delay remove')
+			state[key] = false
+			state[key.substr(14, len(key)-14)] = false
 		if key.substr(0, 7) == '_delay_' and state[key]:
-			print('deloy')
+			print('delay')
 			state[key] = false
 			state[key.substr(7, len(key)-7)] = true
 	
@@ -53,6 +57,12 @@ func update_state(state):
 		if key.substr(0, 6) == '_goto_' and state[key]:
 			state[key] = false
 			emit_signal('change_room', key.substr(6, len(key)-6))
+		
+		if key.substr(0, 6) == '_hide_' and state[key]:
+			state[key] = false
+			var sprite = get_node(key.substr(6, len(key)-6))
+			emit_signal('set_hidden_sprite', [sprite])
+			# useful if you need to set only one hidden sprite
 		
 		
 	for child in get_children():

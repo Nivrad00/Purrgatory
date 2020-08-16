@@ -63,13 +63,6 @@ dialog_label = "house_bowl"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
 polygon = PoolVector2Array( 6.45612, 516.193, 12.6179, 547.442, 21.8606, 561.086, 41.2262, 568.128, 68.074, 567.248, 77.7568, 560.206, 89.2002, 537.76, 94.4817, 514.433, 64.553, 507.391, 33.3039, 506.951 )
 
-[node name="object3" parent="state_handler" instance=ExtResource( 4 )]
-editor/display_folded = true
-dialog_label = "house_books"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
-polygon = PoolVector2Array( 65.8734, 572.97, 67.1938, 599.378, 119.569, 611.261, 221.281, 584.092, 221.679, 575.17, 207.154, 563.727, 152.138, 554.484 )
-
 [node name="object5" parent="state_handler" instance=ExtResource( 4 )]
 dialog_label = "house_carpet2"
 

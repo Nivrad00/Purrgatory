@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/field4.gd" type="Script" id=2]
@@ -9,6 +9,10 @@
 [ext_resource path="res://scenes/river.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/sprites/elijah_and_sean_bench.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/sprites/field_bench_armrest.png" type="Texture" id=9]
+[ext_resource path="res://scenes/surprise.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scripts/digging_container.gd" type="Script" id=11]
+[ext_resource path="res://scenes/digging_button.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/hole_score.tscn" type="PackedScene" id=13]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -66,6 +70,14 @@ dialog_label = "horseshoe"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/horseshoe"]
 polygon = PoolVector2Array( 971.538, 479.418, 982.371, 541.32, 1024.93, 576.14, 1074.45, 580.783, 1096.89, 533.582, 1093.02, 477.87 )
 
+[node name="x" type="Area2D" parent="state_handler"]
+position = Vector2( 37.1414, -86.6634 )
+script = ExtResource( 6 )
+dialog_label = "field_x"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/x"]
+polygon = PoolVector2Array( 989.058, 496.43, 990.647, 532.577, 1093.53, 538.535, 1086.77, 490.075 )
+
 [node name="field_path" type="Area2D" parent="state_handler"]
 script = ExtResource( 6 )
 dialog_label = "field_path"
@@ -81,8 +93,24 @@ margin_left = 362.998
 margin_top = 290.079
 margin_right = 529.998
 margin_bottom = 546.079
+blackout_label = "elijah_sean_on_bench"
 sprite_path = [ null ]
 
 [node name="field_bench_armrest" type="Sprite" parent="state_handler"]
 position = Vector2( 380.318, 364.007 )
 texture = ExtResource( 9 )
+
+[node name="surprise" parent="state_handler" instance=ExtResource( 10 )]
+
+[node name="digging" type="Node2D" parent="state_handler"]
+script = ExtResource( 11 )
+
+[node name="digging_button2" parent="state_handler/digging" instance=ExtResource( 12 )]
+position = Vector2( 1084.77, 427.662 )
+dialog_label = "tori_park_snowglobe"
+
+[node name="digging_button3" parent="state_handler/digging" instance=ExtResource( 12 )]
+position = Vector2( 389.274, 457.768 )
+dialog_label = "tori_park_chess"
+
+[node name="score" parent="state_handler/digging" instance=ExtResource( 13 )]

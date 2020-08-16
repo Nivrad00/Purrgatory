@@ -86,3 +86,5 @@ margin_left = 438.026
 margin_top = 383.704
 margin_right = 764.026
 margin_bottom = 639.704
+blackout_label = "elijah_blackout_nap"
+sprite_path = [ null ]

@@ -1,0 +1,1275 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/wire_game.gd" type="Script" id=2]
+[ext_resource path="res://assets/audio/power down.wav" type="AudioStream" id=3]
+[ext_resource path="res://scripts/wire_controller.gd" type="Script" id=4]
+[ext_resource path="res://assets/sprites/wires/node.png" type="Texture" id=5]
+[ext_resource path="res://scripts/wire_tiles.gd" type="Script" id=6]
+[ext_resource path="res://themes/ui_theme.tres" type="Theme" id=7]
+[ext_resource path="res://assets/sprites/wires/blank.png" type="Texture" id=8]
+[ext_resource path="res://assets/rooms/wire_game.png" type="Texture" id=9]
+
+[node name="room_instance" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 1 )
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+
+[node name="power_down" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 3 )
+
+[node name="bg" type="ColorRect" parent="state_handler"]
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[node name="GridContainer" type="GridContainer" parent="state_handler"]
+margin_left = 325.578
+margin_top = 43.7615
+margin_right = 966.578
+margin_bottom = 684.761
+rect_pivot_offset = Vector2( 13.5215, 267.939 )
+custom_constants/vseparation = -1
+custom_constants/hseparation = -1
+columns = 8
+script = ExtResource( 4 )
+
+[node name="Button" type="TextureRect" parent="state_handler/GridContainer"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+tile = "node"
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+text = "A"
+align = 1
+valign = 1
+
+[node name="Button2" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 79.0
+margin_right = 159.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button2"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button3" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 158.0
+margin_right = 238.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button3"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button4" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 237.0
+margin_right = 317.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button4"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button5" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 316.0
+margin_right = 396.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button5"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button6" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 395.0
+margin_right = 475.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button6"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button7" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 474.0
+margin_right = 554.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button7"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button8" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 553.0
+margin_right = 633.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button8"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button9" type="TextureRect" parent="state_handler/GridContainer"]
+margin_top = 79.0
+margin_right = 80.0
+margin_bottom = 159.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button9"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button10" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 79.0
+margin_top = 79.0
+margin_right = 159.0
+margin_bottom = 159.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button10"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button11" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 158.0
+margin_top = 79.0
+margin_right = 238.0
+margin_bottom = 159.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button11"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button12" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 237.0
+margin_top = 79.0
+margin_right = 317.0
+margin_bottom = 159.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button12"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button13" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 316.0
+margin_top = 79.0
+margin_right = 396.0
+margin_bottom = 159.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button13"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button14" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 395.0
+margin_top = 79.0
+margin_right = 475.0
+margin_bottom = 159.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button14"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button15" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 474.0
+margin_top = 79.0
+margin_right = 554.0
+margin_bottom = 159.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+tile = "node"
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button15"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+text = "B"
+align = 1
+valign = 1
+
+[node name="Button16" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 553.0
+margin_top = 79.0
+margin_right = 633.0
+margin_bottom = 159.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button16"]
+margin_left = -438.946
+margin_top = 36.842
+margin_right = -358.946
+margin_bottom = 116.842
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button17" type="TextureRect" parent="state_handler/GridContainer"]
+margin_top = 158.0
+margin_right = 80.0
+margin_bottom = 238.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button17"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button18" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 79.0
+margin_top = 158.0
+margin_right = 159.0
+margin_bottom = 238.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+tile = "node"
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button18"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+text = "A"
+align = 1
+valign = 1
+
+[node name="Button19" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 158.0
+margin_top = 158.0
+margin_right = 238.0
+margin_bottom = 238.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button19"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button20" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 237.0
+margin_top = 158.0
+margin_right = 317.0
+margin_bottom = 238.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button20"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button21" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 316.0
+margin_top = 158.0
+margin_right = 396.0
+margin_bottom = 238.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button21"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button22" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 395.0
+margin_top = 158.0
+margin_right = 475.0
+margin_bottom = 238.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button22"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button23" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 474.0
+margin_top = 158.0
+margin_right = 554.0
+margin_bottom = 238.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button23"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button24" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 553.0
+margin_top = 158.0
+margin_right = 633.0
+margin_bottom = 238.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button24"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button25" type="TextureRect" parent="state_handler/GridContainer"]
+margin_top = 237.0
+margin_right = 80.0
+margin_bottom = 317.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button25"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button27" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 79.0
+margin_top = 237.0
+margin_right = 159.0
+margin_bottom = 317.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button27"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button34" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 158.0
+margin_top = 237.0
+margin_right = 238.0
+margin_bottom = 317.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+tile = "node"
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button34"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+text = "E"
+align = 1
+valign = 1
+
+[node name="Button26" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 237.0
+margin_top = 237.0
+margin_right = 317.0
+margin_bottom = 317.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+tile = "node"
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button26"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+text = "C"
+align = 1
+valign = 1
+
+[node name="Button28" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 316.0
+margin_top = 237.0
+margin_right = 396.0
+margin_bottom = 317.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button28"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button29" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 395.0
+margin_top = 237.0
+margin_right = 475.0
+margin_bottom = 317.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button29"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button30" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 474.0
+margin_top = 237.0
+margin_right = 554.0
+margin_bottom = 317.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button30"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button31" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 553.0
+margin_top = 237.0
+margin_right = 633.0
+margin_bottom = 317.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button31"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button32" type="TextureRect" parent="state_handler/GridContainer"]
+margin_top = 316.0
+margin_right = 80.0
+margin_bottom = 396.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button32"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button33" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 79.0
+margin_top = 316.0
+margin_right = 159.0
+margin_bottom = 396.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button33"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button39" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 158.0
+margin_top = 316.0
+margin_right = 238.0
+margin_bottom = 396.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+tile = "node"
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button39"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+text = "D"
+align = 1
+valign = 1
+
+[node name="Button35" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 237.0
+margin_top = 316.0
+margin_right = 317.0
+margin_bottom = 396.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button35"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button36" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 316.0
+margin_top = 316.0
+margin_right = 396.0
+margin_bottom = 396.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button36"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button37" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 395.0
+margin_top = 316.0
+margin_right = 475.0
+margin_bottom = 396.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button37"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button38" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 474.0
+margin_top = 316.0
+margin_right = 554.0
+margin_bottom = 396.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button38"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button40" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 553.0
+margin_top = 316.0
+margin_right = 633.0
+margin_bottom = 396.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button40"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button41" type="TextureRect" parent="state_handler/GridContainer"]
+margin_top = 395.0
+margin_right = 80.0
+margin_bottom = 475.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button41"]
+margin_left = 309.473
+margin_top = 8.42102
+margin_right = 389.473
+margin_bottom = 88.421
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button42" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 79.0
+margin_top = 395.0
+margin_right = 159.0
+margin_bottom = 475.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button42"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button43" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 158.0
+margin_top = 395.0
+margin_right = 238.0
+margin_bottom = 475.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button43"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button44" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 237.0
+margin_top = 395.0
+margin_right = 317.0
+margin_bottom = 475.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button44"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button45" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 316.0
+margin_top = 395.0
+margin_right = 396.0
+margin_bottom = 475.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button45"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button54" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 395.0
+margin_top = 395.0
+margin_right = 475.0
+margin_bottom = 475.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+tile = "node"
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button54"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+text = "E"
+align = 1
+valign = 1
+
+[node name="Button46" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 474.0
+margin_top = 395.0
+margin_right = 554.0
+margin_bottom = 475.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button46"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button47" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 553.0
+margin_top = 395.0
+margin_right = 633.0
+margin_bottom = 475.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button47"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button48" type="TextureRect" parent="state_handler/GridContainer"]
+margin_top = 474.0
+margin_right = 80.0
+margin_bottom = 554.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button48"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button49" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 79.0
+margin_top = 474.0
+margin_right = 159.0
+margin_bottom = 554.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+tile = "node"
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button49"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+text = "B"
+align = 1
+valign = 1
+
+[node name="Button55" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 158.0
+margin_top = 474.0
+margin_right = 238.0
+margin_bottom = 554.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+tile = "node"
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button55"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+text = "D"
+align = 1
+valign = 1
+
+[node name="Button50" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 237.0
+margin_top = 474.0
+margin_right = 317.0
+margin_bottom = 554.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button50"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button51" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 316.0
+margin_top = 474.0
+margin_right = 396.0
+margin_bottom = 554.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button51"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button52" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 395.0
+margin_top = 474.0
+margin_right = 475.0
+margin_bottom = 554.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button52"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button53" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 474.0
+margin_top = 474.0
+margin_right = 554.0
+margin_bottom = 554.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button53"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button56" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 553.0
+margin_top = 474.0
+margin_right = 633.0
+margin_bottom = 554.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button56"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button57" type="TextureRect" parent="state_handler/GridContainer"]
+margin_top = 553.0
+margin_right = 80.0
+margin_bottom = 633.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+tile = "node"
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button57"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+text = "C"
+align = 1
+valign = 1
+
+[node name="Button58" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 79.0
+margin_top = 553.0
+margin_right = 159.0
+margin_bottom = 633.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button58"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button59" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 158.0
+margin_top = 553.0
+margin_right = 238.0
+margin_bottom = 633.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button59"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button60" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 237.0
+margin_top = 553.0
+margin_right = 317.0
+margin_bottom = 633.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button60"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button61" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 316.0
+margin_top = 553.0
+margin_right = 396.0
+margin_bottom = 633.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button61"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button62" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 395.0
+margin_top = 553.0
+margin_right = 475.0
+margin_bottom = 633.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button62"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button63" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 474.0
+margin_top = 553.0
+margin_right = 554.0
+margin_bottom = 633.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button63"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="Button64" type="TextureRect" parent="state_handler/GridContainer"]
+margin_left = 553.0
+margin_top = 553.0
+margin_right = 633.0
+margin_bottom = 633.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 40, 40 )
+mouse_default_cursor_shape = 13
+texture = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="state_handler/GridContainer/Button64"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 40, 40 )
+theme = ExtResource( 7 )
+align = 1
+valign = 1
+
+[node name="fg" type="Sprite" parent="state_handler"]
+position = Vector2( 325.165, 40.2616 )
+texture = ExtResource( 9 )
+centered = false
+offset = Vector2( -326.217, -32.8406 )
+
+[node name="cover" type="ColorRect" parent="state_handler"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 1, 1, 1, 0 )

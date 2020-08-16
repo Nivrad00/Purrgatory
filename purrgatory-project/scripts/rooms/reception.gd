@@ -7,9 +7,8 @@ var charon_moving = false
 func update_state(state):
 	.update_state(state)
 	$fadeout.hide()
-	
+		
 	if state.get('enable_name_input'):
-		state['enable_name_input'] = false
 		# this is the worst but i don't feel like fixing it
 		get_node('../../../../ui/name_input').show()
 		get_node('../../../../ui/text_box').disabled = true
@@ -20,7 +19,8 @@ func update_state(state):
 		$receptionist_idle.hide()
 		$elbow.hide()
 		$receptionist_idle2.show()		
-	if fade_out_delay == true:
+	if fade_out_delay:
+		print('a')
 		fade_out_trigger = true
 		$portal_audio.play()
 		$portal.hide()

@@ -28,6 +28,7 @@ margin_left = 862.023
 margin_top = 195.422
 margin_right = 1016.02
 margin_bottom = 564.422
+blackout_label = "oliver_blackout"
 
 [node name="exit" parent="state_handler" instance=ExtResource( 5 )]
 room_label = "commons2"

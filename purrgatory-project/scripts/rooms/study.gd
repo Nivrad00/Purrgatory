@@ -8,11 +8,19 @@ func update_state(state):
 		$oliver_study.show()
 	
 	if state.get('oliver_sleeping'):
+		$oliver_asleep_at_desk.hide()
 		$oliver_study.hide()
 		$oliver_sleeping.show()
 		$chair1.show()
 		$chair2.hide()
+	elif state.get('house_cat_pushed_glass'):
+		$oliver_asleep_at_desk.show()
+		$oliver_study.hide()
+		$oliver_sleeping.hide()
+		$chair1.hide()
+		$chair2.show()
 	elif state.get('oliver_in_study'):
+		$oliver_asleep_at_desk.hide()
 		$oliver_study.show()
 		$oliver_sleeping.hide()
 		$chair1.hide()
@@ -22,6 +30,7 @@ func update_state(state):
 		$chair2.hide()
 		$oliver_study.hide()
 		$oliver_sleeping.hide()
+		$oliver_asleep_at_desk.hide()
 		
 	if state.get('tori_goto_study'):
 		state['tori_goto_study'] = false

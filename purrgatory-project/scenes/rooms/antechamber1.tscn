@@ -17,6 +17,7 @@ script = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="bg" type="Sprite" parent="state_handler"]
+position = Vector2( -1, 0 )
 texture = ExtResource( 3 )
 centered = false
 
@@ -25,7 +26,8 @@ script = ExtResource( 4 )
 dialog_label = "welcome_sign"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/welcome_sign"]
-polygon = PoolVector2Array( 257.737, 276.904, 256.41, 365.802, 412.314, 361.822, 414.304, 301.45, 381.797, 272.26 )
+position = Vector2( 605.999, 3.99997 )
+polygon = PoolVector2Array( 266, 293, 264, 359.999, 412.314, 361.822, 415.999, 270, 292, 271 )
 
 [node name="exit" type="Area2D" parent="state_handler"]
 position = Vector2( 453.085, -178.215 )
@@ -36,4 +38,4 @@ __meta__ = {
 room_label = "antechamber2"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
-polygon = PoolVector2Array( 175.074, 753.592, 483.63, 726.978, 486.695, 305.128, 173.528, 270.833 )
+polygon = PoolVector2Array( -112.086, 729.214, 198.914, 752.214, 198.914, 271.215, -115.086, 305.215 )

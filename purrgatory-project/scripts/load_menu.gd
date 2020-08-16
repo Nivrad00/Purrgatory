@@ -1,6 +1,7 @@
 extends Control
 
 signal load_file(file)
+signal deleted_data()
 
 func load_save_files():
 	var f = File.new()
@@ -25,6 +26,9 @@ func load_save_files():
 			if name.length() > 16:
 				name = name.substr(0, 13) + "..."
 			get_node("dates/date" + str(i)).set_text(timestamp + "\r\n" + name)
+		else:
+			get_node("dates/date" + str(i)).set_text("")
+			
 			
 	
 func load_file(file):
@@ -36,3 +40,16 @@ func load_file(file):
 func show_custom():
 	load_save_files()
 	show()
+
+func delete_data():
+	var dir = Directory.new()
+	for i in range(0, 6):
+		dir.remove("user://save" + str(i) + ".save")
+		dir.remove("user://thumb" + str(i) + ".png")
+		dir.remove("user://seen_blocks" + str(i) + ".save")
+		dir.remove("user://mural" + str(i) + ".png")
+	
+	yield(get_tree(), "idle_frame")
+	load_save_files()
+
+	emit_signal('deleted_data')

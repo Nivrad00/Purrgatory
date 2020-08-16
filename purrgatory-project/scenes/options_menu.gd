@@ -17,13 +17,19 @@ var default_options = {
 	"fullscreen": false,
 	"music_volume": 0.6,
 	"sfx_volume": 0.6,
-	"text_size": 24
+	"text_size": 24,
+	"notes_enabled": true,
+	"voicing_enabled": false
 }
 
 func save_options():
 	# saves options to file
 	# (the options are applied as soon as the values are changed or the game starts, so no need to apply anything here)
 	# this method is called when the options menu closes, and when the game closes
+	
+	# unfortunately the changes you made to your options won't save if the game crashes
+	# or, you somehow force quit the game so that it doesn't get a quit notification
+	# but whatever
 	
 	var options_dict = {
 		"fullscreen": $fullscreen/fullscreen.pressed,
@@ -79,7 +85,7 @@ func load_options():
 	return options_dict
 
 func load_and_apply_options():
-	# this is only called when the game starts
+	# this is only called when the game starts and when you reset the settings
 	var options_dict = load_options()
 	_on_music_value_changed(options_dict['music_volume'])
 	_on_sfx_value_changed(options_dict['sfx_volume'])
@@ -112,6 +118,11 @@ func math(value):
 	if value == 0:
 		return -80
 	return 27 * log(value)/log(10)
+
+func _on_reset_pressed():
+	var dir = Directory.new()
+	dir.remove("user://options.save")
+	load_and_apply_options()
 
 # below are functions that apply changes to the options
 
