@@ -19,14 +19,14 @@ font_data = ExtResource( 4 )
 size = 25
 font_data = ExtResource( 4 )
 
-[sub_resource type="StyleBoxTexture" id=5]
+[sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 8 )
 region_rect = Rect2( 0, 0, 479, 12 )
 axis_stretch_horizontal = 1
 
-[sub_resource type="StyleBoxEmpty" id=3]
+[sub_resource type="StyleBoxEmpty" id=4]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 size = 20
 use_filter = true
 font_data = ExtResource( 4 )
@@ -47,13 +47,14 @@ visible = false
 position = Vector2( 369.758, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
-texture_mode = -1453297963
+texture_mode = -8175694
 
 [node name="Line2D2" type="Line2D" parent="."]
 visible = false
 position = Vector2( 398.949, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
+texture_mode = -256
 
 [node name="back" type="Button" parent="."]
 editor/display_folded = true
@@ -65,6 +66,7 @@ margin_right = -524.0
 margin_bottom = -53.0197
 rect_pivot_offset = Vector2( 311.063, -221.429 )
 focus_mode = 0
+mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 flat = true
 __meta__ = {
@@ -89,6 +91,7 @@ align = 1
 valign = 1
 
 [node name="reset" type="Button" parent="."]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1117.8
@@ -97,6 +100,7 @@ margin_right = -12.1976
 margin_bottom = -12.9712
 rect_pivot_offset = Vector2( 311.063, -221.429 )
 focus_mode = 0
+mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 flat = true
 __meta__ = {
@@ -146,11 +150,12 @@ margin_top = -8.0
 margin_right = 439.0
 margin_bottom = -6.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 custom_icons/tick = ExtResource( 6 )
 custom_icons/grabber_highlight = ExtResource( 7 )
 custom_icons/grabber = ExtResource( 7 )
-custom_styles/slider = SubResource( 5 )
-custom_styles/grabber_area = SubResource( 3 )
+custom_styles/slider = SubResource( 3 )
+custom_styles/grabber_area = SubResource( 4 )
 min_value = 20.0
 max_value = 40.0
 step = 4.0
@@ -217,11 +222,12 @@ margin_top = -8.0
 margin_right = 439.0
 margin_bottom = -6.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 custom_icons/tick = ExtResource( 6 )
 custom_icons/grabber_highlight = ExtResource( 7 )
 custom_icons/grabber = ExtResource( 7 )
-custom_styles/slider = SubResource( 5 )
-custom_styles/grabber_area = SubResource( 3 )
+custom_styles/slider = SubResource( 3 )
+custom_styles/grabber_area = SubResource( 4 )
 max_value = 1.0
 step = 0.01
 value = 0.6
@@ -244,11 +250,12 @@ margin_top = 52.8001
 margin_right = 439.0
 margin_bottom = 54.8001
 focus_mode = 0
+mouse_default_cursor_shape = 2
 custom_icons/tick = ExtResource( 6 )
 custom_icons/grabber_highlight = ExtResource( 7 )
 custom_icons/grabber = ExtResource( 7 )
-custom_styles/slider = SubResource( 5 )
-custom_styles/grabber_area = SubResource( 3 )
+custom_styles/slider = SubResource( 3 )
+custom_styles/grabber_area = SubResource( 4 )
 max_value = 1.0
 step = 0.01
 value = 0.6
@@ -279,9 +286,11 @@ margin_top = -27.7207
 margin_right = 5.45755
 margin_bottom = 0.279274
 focus_mode = 0
+mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 
 [node name="enable_notes" type="Control" parent="."]
+editor/display_folded = true
 margin_left = 1126.26
 margin_top = 241.299
 margin_right = 1166.26
@@ -300,7 +309,7 @@ margin_left = -297.0
 margin_top = 38.0
 margin_right = 32.0
 margin_bottom = 183.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
 text = "automatically keeps track of your objectives in the \"notes\" menu."
 align = 2
@@ -314,6 +323,7 @@ margin_top = -27.7207
 margin_right = 5.45755
 margin_bottom = 0.279274
 focus_mode = 0
+mouse_default_cursor_shape = 2
 pressed = true
 enabled_focus_mode = 0
 
@@ -340,6 +350,7 @@ margin_top = -27.7207
 margin_right = 5.45755
 margin_bottom = 0.279274
 focus_mode = 0
+mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 [connection signal="pressed" from="back" to="." method="hide"]
 [connection signal="pressed" from="back" to="." method="save_options"]

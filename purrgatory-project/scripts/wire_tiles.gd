@@ -32,19 +32,19 @@ var adjacent = {
 }
 
 func _ready():
-	mouse_default_cursor_shape = cursor_shape
 	connect('mouse_entered', self, 'mouse_entered')
 	connect('mouse_exited', self, 'mouse_exited')
 	for image in images:
 		images[image] = load('res://assets/sprites/wires/' + image + '.png')
 	set_tile(tile)
+	mouse_default_cursor_shape = cursor_shape
 	
 func set_tile(label):
 	tile = label
 	texture = images[label]
 	
 	if label in get_parent().clickable:
-		cursor_shape = Input.CURSOR_MOVE
+		cursor_shape = Input.CURSOR_POINTING_HAND
 	else:
 		cursor_shape = Input.CURSOR_ARROW
 

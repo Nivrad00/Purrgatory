@@ -10,6 +10,10 @@ func _ready():
 	$hole_button/polygon.disabled = true
 	$hole_button.connect('start_dialog', get_parent(), 'start_dialog')
 	
+	for child in get_children():
+		if child.name.substr(0, 6) == 'shovel':
+			visible_polygons = [child]
+	
 func on_pressed():
 	get_parent().start_dialog(dialog_label.strip_edges(), [])
 	dug_hole()

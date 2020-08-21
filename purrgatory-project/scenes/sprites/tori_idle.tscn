@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/sprites/sprite.png" type="Texture" id=1]
-[ext_resource path="res://assets/sprite_masks/sprite.png" type="BitMap" id=2]
+[ext_resource path="res://assets/sprites/tori_train.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprite_masks/tori_train.png" type="BitMap" id=2]
 [ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=1]
@@ -15,15 +15,15 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
 "update": 1,
-"values": [ ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ) ]
+"values": [  ]
 }
 
 [node name="tori_idle" type="TextureButton"]
-margin_right = 300.0
-margin_bottom = 300.0
+margin_right = 142.0
+margin_bottom = 421.0
 focus_mode = 0
 enabled_focus_mode = 0
 texture_normal = ExtResource( 1 )

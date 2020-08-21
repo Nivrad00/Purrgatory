@@ -13,7 +13,7 @@ func update_state(state):
 				button.dug_hole()
 	
 	if state.get('park_game'):
-		$digging/score.text = str(state['hole_count']) + '/17'
+		$digging/score.text = str(state['hole_count']) + '/16'
 				
 	if state.get('oliver_goto_ttt'):
 		state['oliver_goto_ttt'] = false
@@ -55,7 +55,7 @@ func update_state(state):
 		if not state.get('hole_count'):
 			state['hole_count'] = 0
 		state['hole_count'] += 1
-		$digging/score.text = str(state['hole_count']) + '/17'
+		$digging/score.text = str(state['hole_count']) + '/16'
 		
 func play_default_music(state):
 	if default_music != '_pass':

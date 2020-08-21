@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/dropoff_long.gd" type="Script" id=2]
@@ -7,10 +7,12 @@
 [ext_resource path="res://assets/rooms/dropoff_long.png" type="Texture" id=5]
 [ext_resource path="res://assets/audio/hhhhhh.ogg" type="AudioStream" id=6]
 [ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=7]
-[ext_resource path="res://assets/ui/climb_ui_box.png" type="Texture" id=8]
-[ext_resource path="res://themes/ui_theme.tres" type="Theme" id=9]
-[ext_resource path="res://assets/ui/climb_dialog.png" type="Texture" id=10]
-[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://assets/sprites/tori_dropoff2.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/tori_dropoff3.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/climb_ui_box.png" type="Texture" id=10]
+[ext_resource path="res://themes/ui_theme.tres" type="Theme" id=11]
+[ext_resource path="res://assets/ui/climb_dialog.png" type="Texture" id=12]
+[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=13]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -48,7 +50,7 @@ tracks/0/keys = {
 [sub_resource type="DynamicFont" id=6]
 size = 22
 use_filter = true
-font_data = ExtResource( 11 )
+font_data = ExtResource( 13 )
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -67,6 +69,7 @@ margin_bottom = 720.0
 mouse_filter = 2
 
 [node name="shadow" type="Sprite" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( 0, 720 )
 texture = ExtResource( 3 )
 centered = false
@@ -123,7 +126,18 @@ dialog_label = "tori_climb_lucifur"
 position = Vector2( -4.82532, 2812.56 )
 polygon = PoolVector2Array( 391.8, 6888.11, 428.802, 7040.63, 574.104, 7042.44, 537.102, 6882.69 )
 
+[node name="tori_before" type="Sprite" parent="state_handler"]
+position = Vector2( 790.984, 276.987 )
+texture = ExtResource( 8 )
+offset = Vector2( 6.45355, -119.797 )
+
+[node name="tori_after" type="Sprite" parent="state_handler"]
+position = Vector2( 521.96, -334.063 )
+texture = ExtResource( 9 )
+offset = Vector2( 0, 500 )
+
 [node name="_game" type="Control" parent="state_handler"]
+editor/display_folded = true
 visible = false
 margin_top = 592.477
 margin_right = 1280.0
@@ -136,7 +150,7 @@ margin_left = 368.9
 margin_top = -16.0001
 margin_right = -368.1
 margin_bottom = 18.9999
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 
 [node name="ProgressBar" type="ProgressBar" parent="state_handler/_game"]
 anchor_right = 1.0
@@ -154,7 +168,7 @@ percent_visible = false
 margin_top = 12.75
 margin_right = 1280.0
 margin_bottom = 48.75
-theme = ExtResource( 9 )
+theme = ExtResource( 11 )
 text = "press up repeatedly to hold on!!"
 align = 1
 valign = 1
@@ -164,10 +178,11 @@ autoplay = "blink"
 anims/blink = SubResource( 5 )
 
 [node name="_dialog" type="Control" parent="state_handler"]
+editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
-theme = ExtResource( 9 )
+theme = ExtResource( 11 )
 
 [node name="0" type="TextureRect" parent="state_handler/_dialog"]
 editor/display_folded = true
@@ -177,7 +192,7 @@ margin_top = 16.7019
 margin_right = 1083.56
 margin_bottom = 256.702
 mouse_filter = 2
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/0"]
 margin_left = 18.0
@@ -197,7 +212,7 @@ margin_right = 905.111
 margin_bottom = 256.702
 rect_scale = Vector2( -1, 1 )
 mouse_filter = 2
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/1"]
 margin_left = 320.0
@@ -217,7 +232,7 @@ margin_top = 16.7019
 margin_right = 1083.56
 margin_bottom = 256.702
 mouse_filter = 2
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/2"]
 margin_left = 17.8337
@@ -240,7 +255,7 @@ margin_right = 905.111
 margin_bottom = 256.702
 rect_scale = Vector2( -1, 1 )
 mouse_filter = 2
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/3"]
 margin_left = 320.0
@@ -260,7 +275,7 @@ margin_top = 16.7019
 margin_right = 1083.56
 margin_bottom = 256.702
 mouse_filter = 2
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/4"]
 margin_left = 17.8337

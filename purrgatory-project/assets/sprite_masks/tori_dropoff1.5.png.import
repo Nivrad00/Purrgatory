@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/tori_dropoff1.5.png-dfffaf7074bba88191dae74c2d1467da.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/tori_dropoff1.5.png"
+dest_files=[ "res://.import/tori_dropoff1.5.png-dfffaf7074bba88191dae74c2d1467da.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

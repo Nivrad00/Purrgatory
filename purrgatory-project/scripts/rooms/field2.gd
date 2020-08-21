@@ -15,22 +15,24 @@ func update_state(state):
 	if state.get('park_game'):
 		if not state.get('hole_count'):
 			state['hole_count'] = 0
-		$digging/score.text = str(state.get('hole_count')) + '/17'
+		$digging/score.text = str(state.get('hole_count')) + '/16'
 				
 	if state.get('oliver_goto_park3'):
 		state['oliver_goto_park3'] = false
 		emit_signal('change_room', 'field4')
 	
-	if state.get('met_tori') and not state.get('tori_park_complete'):
+	if state.get('tori_train_complete') and not state.get('tori_park_complete'):
 		$tori_park.show()
+		$jacket.show()
 	else:
 		$tori_park.hide()
+		$jacket.hide()
 	
 	if state.get('start_park_game'):
 		emit_signal('change_audio', 'somewhere between draft')
 		state['start_park_game'] = false
 		state['park_game'] = true
-		
+	
 	if state.get('tori_park_complete'):
 		$digging.show()
 		$digging/score.hide()
@@ -52,7 +54,12 @@ func update_state(state):
 		if not state.get('hole_count'):
 			state['hole_count'] = 0
 		state['hole_count'] += 1
-		$digging/score.text = str(state['hole_count']) + '/17'
+		$digging/score.text = str(state['hole_count']) + '/16'
+	
+	if state.get('tori_train_complete'):
+		$dirt.show()
+	else:
+		$dirt.hide()
 		
 func play_default_music(state):
 	if default_music != '_pass':

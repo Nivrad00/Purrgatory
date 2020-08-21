@@ -5,7 +5,7 @@ var max_id = 46
 var num_flowers = 70
 var num_targets = 8
 var flower_min_dist = 50
-var game_duration = 85
+var game_duration = .75
 var flowers = []
 
 var target_ids = []
@@ -126,3 +126,8 @@ func update_state(state):
 	if state.get('flower_start_flag'):
 		start_flag = true
 		state['flower_start_flag'] = false
+	
+	if state.get('increment_flower_fails'):
+		state['increment_flower_fails'] = false
+		state['flower_fails'] += 1
+		print(state['flower_fails'])

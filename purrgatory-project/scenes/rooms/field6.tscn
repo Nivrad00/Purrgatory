@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/field6.gd" type="Script" id=2]
@@ -9,8 +9,12 @@
 [ext_resource path="res://scenes/river.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/surprise.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scripts/digging_container.gd" type="Script" id=9]
-[ext_resource path="res://scenes/digging_button.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/hole_score.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scripts/digging_button.gd" type="Script" id=10]
+[ext_resource path="res://assets/sprites/hoels/field6_1.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/hoels/shovel1.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/hoels/field6_2.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/hoels/shovel6.png" type="Texture" id=14]
+[ext_resource path="res://scenes/hole_score.tscn" type="PackedScene" id=15]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -94,12 +98,54 @@ polygon = PoolVector2Array( 399.256, 386.991, 411.247, 396.757, 418.362, 408.352
 [node name="digging" type="Node2D" parent="state_handler"]
 script = ExtResource( 9 )
 
-[node name="digging_button" parent="state_handler/digging" instance=ExtResource( 10 )]
+[node name="digging_button" type="Area2D" parent="state_handler/digging"]
 position = Vector2( 266.3, 624.7 )
+script = ExtResource( 10 )
 dialog_label = "tori_park_bone"
 
-[node name="digging_button2" parent="state_handler/digging" instance=ExtResource( 10 )]
-position = Vector2( 1080.29, 413.529 )
-dialog_label = "tori_park_bag"
+[node name="polygon" type="CollisionPolygon2D" parent="state_handler/digging/digging_button"]
+position = Vector2( -1089.42, -495.369 )
+polygon = PoolVector2Array( 1200.57, 532.452, 1227.77, 475.115, 1168.96, 445.711, 1046.94, 439.095, 977.105, 458.943, 946.231, 511.134, 1007.24, 538.332, 1116.04, 547.153 )
 
-[node name="score" parent="state_handler/digging" instance=ExtResource( 11 )]
+[node name="hole_button" type="Area2D" parent="state_handler/digging/digging_button"]
+script = ExtResource( 6 )
+dialog_label = "tori_park_hole"
+
+[node name="polygon" type="CollisionPolygon2D" parent="state_handler/digging/digging_button/hole_button"]
+position = Vector2( -1089.42, -495.369 )
+polygon = PoolVector2Array( 1200.57, 532.452, 1227.77, 475.115, 1168.96, 445.711, 1046.94, 439.095, 977.105, 458.943, 946.231, 511.134, 1007.24, 538.332, 1116.04, 547.153 )
+
+[node name="hole" type="Sprite" parent="state_handler/digging/digging_button"]
+position = Vector2( -59.0611, -27.7241 )
+texture = ExtResource( 11 )
+
+[node name="shovel1" type="Sprite" parent="state_handler/digging/digging_button"]
+position = Vector2( -12.6764, -170.805 )
+texture = ExtResource( 12 )
+
+[node name="digging_button2" type="Area2D" parent="state_handler/digging"]
+position = Vector2( 1080.29, 413.529 )
+script = ExtResource( 10 )
+dialog_label = "tori_park_foot"
+
+[node name="polygon" type="CollisionPolygon2D" parent="state_handler/digging/digging_button2"]
+position = Vector2( -1107.39, -491.776 )
+polygon = PoolVector2Array( 1133.93, 508.123, 1142.66, 480.916, 1122.24, 459.533, 1054.72, 459.533, 1018.43, 469.109, 1010.48, 505.321, 1038.45, 515.31, 1091.32, 523.01 )
+
+[node name="hole_button" type="Area2D" parent="state_handler/digging/digging_button2"]
+script = ExtResource( 6 )
+dialog_label = "tori_park_hole"
+
+[node name="polygon" type="CollisionPolygon2D" parent="state_handler/digging/digging_button2/hole_button"]
+position = Vector2( -1107.39, -491.776 )
+polygon = PoolVector2Array( 1133.93, 508.123, 1142.66, 480.916, 1122.24, 459.533, 1054.72, 459.533, 1018.43, 469.109, 1010.48, 505.321, 1038.45, 515.31, 1091.32, 523.01 )
+
+[node name="hole" type="Sprite" parent="state_handler/digging/digging_button2"]
+position = Vector2( -3.65954, -38.8044 )
+texture = ExtResource( 13 )
+
+[node name="shovel6" type="Sprite" parent="state_handler/digging/digging_button2"]
+position = Vector2( -31.869, -66.1153 )
+texture = ExtResource( 14 )
+
+[node name="score" parent="state_handler/digging" instance=ExtResource( 15 )]

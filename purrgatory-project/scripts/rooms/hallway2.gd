@@ -3,10 +3,15 @@ extends 'state_handler_template.gd'
 func _ready():
 	# if you've already done the mural, replace the viewporttexture with an imagetexture
 	# i guess we're doing the terrible path again...
-	var img = get_node("../../../../..").mural_drawing
+	var game = get_node("../../../../..")
+	
+	var img = game.mural_drawing
 	if img:
-		$draw/draw_texture.texture = ImageTexture.new()
-		$draw/draw_texture.texture.create_from_image(img)
+		$draw/loaded_texture.texture = ImageTexture.new()
+		$draw/loaded_texture.texture.create_from_image(img)
+	
+	if game.state.get('mural_drawing'):
+		start_drawing()
 	
 func update_state(state):
 	.update_state(state)
@@ -27,6 +32,7 @@ func update_state(state):
 		
 	if state.get('start_drawing'):
 		state['start_drawing'] = false
+		state['mural_drawing'] = true
 		$draw.enable()
 		$draw.mouse_filter = Control.MOUSE_FILTER_PASS
 		$draw/draw_texture.mouse_filter = Control.MOUSE_FILTER_PASS
@@ -41,6 +47,14 @@ func update_state(state):
 	if state.get('natalie_chose_spongebob'):
 		$natalies_drawings/spongebob.show()
 
+func start_drawing():
+	$draw.enable()
+	$draw.mouse_filter = Control.MOUSE_FILTER_PASS
+	$draw/draw_texture.mouse_filter = Control.MOUSE_FILTER_PASS
+	$cover.mouse_filter = Control.MOUSE_FILTER_STOP
+	$cover2.mouse_filter = Control.MOUSE_FILTER_STOP
+	$done_button.show()
+	
 func stop_drawing():
 	$draw.disable()
 	$draw.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -48,8 +62,24 @@ func stop_drawing():
 	$cover.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	$cover2.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	$done_button.hide()
+	get_node("../../../../..").state['mural_drawing'] = false
 	
-	var img = $draw/draw_texture.get_texture().get_data()
-	get_node("../../../../..").mural_drawing = img
+	store_image()
 	
 	emit_signal('start_dialog', 'natalie_after_drawing', [])
+
+func store_image():
+	var texture = $draw/draw_texture.texture
+	var final_img = null
+	
+	if texture:
+		var new_img = texture.get_data()
+		
+		if $draw/loaded_texture.texture:
+			final_img = $draw/loaded_texture.texture.get_data()
+			final_img.blend_rect(new_img, Rect2(Vector2(0, 0), Vector2(1280, 720)), Vector2(0,0))
+		else:
+			final_img = new_img
+		
+	get_node("../../../../..").mural_drawing = final_img
+	

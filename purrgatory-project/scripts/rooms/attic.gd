@@ -16,6 +16,7 @@ func update_state(state):
 		emit_signal('start_action_timer', 40, ['natalie_finished_drawing3', true])
 		
 	$natalie_idle.hide()
+	$natalie_draw_a_paw.hide()
 	$natalie_sleeping.hide()
 	$natalie_nocturnal.hide()
 	
@@ -39,7 +40,10 @@ func update_state(state):
 				node.show()
 			
 	elif state.get('saw_natalie_intro'):
-		$natalie_idle.show()
+		if state.get('returned_draw_a_paw') and not state.get('natalie_finished_drawing3'):
+			$natalie_draw_a_paw.show()
+		else:
+			$natalie_idle.show()
 		$bg2.show()
 		$attic_pencil_box.show()
 		

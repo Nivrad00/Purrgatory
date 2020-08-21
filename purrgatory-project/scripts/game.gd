@@ -4,7 +4,14 @@ signal return_to_main()
 
 export var default_room = ''
 
-var state = {
+var natalie_test_state = {
+	'true': true,
+	'saw_natalie_intro': true,
+	'returned_draw_a_paw': true,
+	'natalie_finished_drawing3': true
+}
+
+var _state = {
 	'true': true
 }
 
@@ -14,7 +21,7 @@ var cracked = {
 	'unlocked_meowseum_door': true
 }
 
-var oliver_test_state = {
+var state = {
 	'true': true,
 	'fed_kyungsoon_book': true,
 	'met_kyungsoon': true,
@@ -29,9 +36,9 @@ var oliver_test_state = {
 	'_inv_chess_letter': true,
 	'tori_visited_oliver': true,
 	'oliver_asked_for_soda': true,
-	'house_cat_pushed_glass': true,
-	'comforted_oliver': true,
-	'oliver_in_study': false
+	'house_cat_pushed_glass': true #,
+	# 'comforted_oliver': true,
+	# 'oliver_in_study': false
 }
 
 var numa_test_state = {
@@ -73,7 +80,11 @@ var fade_out = false
 var current_audio = null
 var skip = false
 
+# i'm nearing the end of my rope...
+# below is some state that needs to be saved, but isn't strings or numbers
+# basically the drawings
 var mural_drawing = null
+var draw_a_paw_drawing = null
 
 var seen_blocks = []
 
@@ -99,7 +110,7 @@ func _ready():
 		f.close()
 	
 	# cursor
-	Input.set_custom_mouse_cursor(load("res://assets/draw_cursor.png"), Input.CURSOR_POINTING_HAND)
+	Input.set_custom_mouse_cursor(load("res://assets/draw_cursor.png"), Input.CURSOR_HELP)
 
 func load_meowkov_chain(f):
 	f.open("res://scripts/procgen/meowkov.json", File.READ)
@@ -376,6 +387,33 @@ func return_to_main():
 	fade_out = true
 
 func save(file):
+	# save the drawings separately, if they exist
+	# if the player is in the middle of drawing when they save, we have to retrieve the
+	#   image first
+	# (this is why we save images before the state: draw_a_paw needs to modify the state
+	#  to store the x and y coordinates of the tip)
+	
+	if room.get_current_room() == "hallway2" and state.get('mural_drawing'): 
+		room.current_room.get_node('state_handler').store_image()
+		
+	if mural_drawing:
+		mural_drawing.save_png("user://mural" + str(file) + ".png")
+	else:
+		var dir = Directory.new()
+		if dir.file_exists("user://mural" + str(file) + ".png"):
+			dir.remove("user://mural" + str(file) + ".png")
+	
+	if room.get_current_room() == 'draw_a_paw':
+		room.current_room.get_node('state_handler').store_image()
+	
+	if draw_a_paw_drawing:
+		draw_a_paw_drawing.save_png("user://draw_a_paw" + str(file) + ".png")
+	else:
+		var dir = Directory.new()
+		if dir.file_exists("user://draw_a_paw" + str(file) + ".png"):
+			dir.remove("user://draw_a_paw" + str(file) + ".png")
+			
+			
 	# get the timestamp
 	var months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
 	var ampm = ['am', 'pm']
@@ -395,6 +433,7 @@ func save(file):
 	var save_dict = {
 		"state_dict": state,
 		"room": room.get_current_room(),
+		"prev_room": room.prev_room_label,
 		"block": block,
 		"format_dict": format_dict,
 		"action_timers": action_timers,
@@ -415,16 +454,7 @@ func save(file):
 	save_game.open("user://save" + str(file) + ".save", File.WRITE)
 	save_game.store_line(to_json(save_dict))
 	save_game.close()
-
-	# save the mural drawing separately, if there is one
-	if mural_drawing:
-		mural_drawing.save_png("user://mural" + str(file) + ".png")
-	# or remove the existing mural drawing
-	else:
-		var dir = Directory.new()
-		if dir.file_exists("user://mural" + str(file) + ".png"):
-			dir.remove("user://mural" + str(file) + ".png")
-	
+			
 	var dark_covers = $content/dark_covers
 	
 	# take a screenshot by moving all the relevant nodes to the "ss" viewport
@@ -488,18 +518,26 @@ func load_game(file):
 	action_timers = save_dict["action_timers"]
 	block = save_dict["block"]
 	
-	# mural drawing needs to be loaded separately
+	# drawings need to be loaded separately
 	var f = File.new()
 	if f.file_exists("user://mural" + str(file) + ".png"):
 		mural_drawing = Image.new()
 		mural_drawing.load("user://mural" + str(file) + ".png")
 	else:
 		mural_drawing = null
+		
+	if f.file_exists("user://draw_a_paw" + str(file) + ".png"):
+		draw_a_paw_drawing = Image.new()
+		draw_a_paw_drawing.load("user://draw_a_paw" + str(file) + ".png")
+	else:
+		draw_a_paw_drawing = null
 
 	room.change_room(save_dict["room"], state, false, true)
 	change_audio(save_dict["music"], false)
 	room.set_hidden_sprites(save_dict["hidden_sprites"])
 	room.update_state(state)
+	
+	room.prev_room_label = save_dict["prev_room"]
 
 	if block:
 		ui.show_ui()
@@ -593,9 +631,11 @@ func turn_on_skip():
 
 func enable_skip():
 	ui.get_node('skip_button/x').hide()
+	ui.get_node('skip_button').mouse_default_cursor_shape = Input.CURSOR_POINTING_HAND	
 
 func disable_skip():
 	ui.get_node('skip_button/x').show()
+	ui.get_node('skip_button').mouse_default_cursor_shape = Input.CURSOR_ARROW
 
 func skip():
 	if block['choices'].size() == 0 and (block['states'].size() == 0 or block['states'][0][0] != 'no_skip'):

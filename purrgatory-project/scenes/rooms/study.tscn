@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/study.gd" type="Script" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://assets/sprites/oliver_asleep_at_desk.png" type="Texture" id=10]
 [ext_resource path="res://assets/sprite_masks/oliver_asleep_at_desk.png" type="BitMap" id=11]
 [ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=12]
-[ext_resource path="res://assets/sprites/oliver_study.png" type="Texture" id=13]
 
 [sub_resource type="Animation" id=1]
 resource_name = "New Anim"
@@ -25,10 +24,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
 "update": 1,
-"values": [ ExtResource( 13 ), ExtResource( 13 ), ExtResource( 13 ) ]
+"values": [  ]
 }
 
 [node name="room_instance" type="Control"]
@@ -187,6 +186,7 @@ texture_click_mask = ExtResource( 11 )
 script = ExtResource( 12 )
 dialog_label = "talk_to_oliver"
 blackout_label = "oliver_blackout_nap"
+sprite_path = [ null ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/oliver_asleep_at_desk"]
 autoplay = "oliver_idle"

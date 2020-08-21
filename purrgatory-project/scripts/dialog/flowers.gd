@@ -13,7 +13,7 @@ var raw_blocks = [
 ["","","","let's get started.","","","","","",""],
 ["","","","i just need 8 flowers, if that's okay.","","","","","",""],
 ["","you","","alright, let's do it.","flower_start_flag","","null","","",""],
-["flowers_fail","you","_none","argh, i can't do it any more","","","","","",""],
+["flowers_fail","you","_none","argh, i can't do it any more","increment_flower_fails","","","","",""],
 ["","","","it just smells too bad","","","","","",""],
 ["","numa","","aa i'm sorry","","","","","",""],
 ["","you","","it's okay","","","","","",""],

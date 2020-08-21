@@ -91,7 +91,6 @@ margin_bottom = 550.205
 rect_pivot_offset = Vector2( 56.748, -144.754 )
 
 [node name="flower_timer" type="Sprite" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 95.7066, 127.036 )
 texture = ExtResource( 4 )
 offset = Vector2( 0.235611, 1.03372 )

@@ -72,7 +72,7 @@ polygon = PoolVector2Array( 140.119, 39.451, 142.84, 586.323, 228.543, 582.242, 
 polygon = PoolVector2Array( 988.995, 51.6944, 987.634, 209.498, 1016.2, 209.498, 1014.84, 466.61, 1099.19, 472.051, 1104.63, 38.0906, 1017.56, 35.3698 )
 
 [node name="tori_idle" parent="state_handler" instance=ExtResource( 6 )]
-margin_left = 566.0
-margin_top = 282.0
-margin_right = 2066.0
-margin_bottom = 1782.0
+margin_left = 577.0
+margin_top = 212.0
+margin_right = 719.0
+margin_bottom = 633.0

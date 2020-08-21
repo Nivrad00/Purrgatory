@@ -11,6 +11,11 @@ var max_y = 543
 
 func _ready():
 	$draw_texture.set_texture($draw_viewport.get_texture())
+	
+	var state = get_node('../../../../../../..').state
+	if state.get('draw_a_paw_x') and state.get('draw_a_paw_y'):
+		prev_pos = Vector2(state['draw_a_paw_x'], state['draw_a_paw_y'])
+		
 	$tip.rect_position = prev_pos + Vector2(-2, -2)
 	
 func disable():

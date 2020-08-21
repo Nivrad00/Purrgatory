@@ -460,5 +460,11 @@ var raw_blocks = [
 ["attic_discarded","_none","_none","some discarded papers.","","","null","","",""],
 ["attic_ball","_none","_none","a balled up piece of paper.","","","null","","",""],
 ["attic_hotdog","_none","_none","a paper folded in half, hotdog style.","","","null","","",""],
-["attic_supplies","_none","_none","art supplies.","","","null","","",""]
+["attic_supplies","_none","_none","art supplies.","","","null","","",""],
+["field_dirt","_none","_none","the dirt tori dug up.","","","","","",""],
+["","","","it's dirty.","","","null","","",""],
+["field_jacket","_none","_none","tori's blazer.","","","null","","",""],
+["dropoff_rope","_none","_none","rope.","","","null","","",""],
+["dropoff_plank","_none","_none","someone pulled up one of the planks.","","","","","",""],
+["","","","why wood anyone do that??","","","null","","",""]
 ]

@@ -107,6 +107,7 @@ rect_min_size = Vector2( 800, 0 )
 alignment = 1
 
 [node name="t0" type="RichTextLabel" parent="state_handler/hc/vc"]
+editor/display_folded = true
 margin_top = 250.0
 margin_right = 800.0
 margin_bottom = 310.0
@@ -122,6 +123,7 @@ scroll_active = false
 anims/Fadein = SubResource( 1 )
 
 [node name="c1" type="RichTextLabel" parent="state_handler/hc/vc"]
+editor/display_folded = true
 margin_top = 330.0
 margin_right = 800.0
 margin_bottom = 390.0
@@ -156,6 +158,7 @@ anchor_bottom = 1.0
 margin_right = 4.79999
 margin_bottom = 34.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
@@ -177,6 +180,7 @@ margin_top = 4.0
 margin_right = 80.0
 margin_bottom = 15.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
@@ -198,6 +202,7 @@ margin_top = 4.0
 margin_right = 169.0
 margin_bottom = 15.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
@@ -219,6 +224,7 @@ margin_top = 4.0
 margin_right = 181.0
 margin_bottom = 15.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
@@ -240,6 +246,7 @@ margin_top = 4.0
 margin_right = 330.0
 margin_bottom = 15.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
@@ -261,6 +268,7 @@ margin_top = 4.0
 margin_right = 75.0
 margin_bottom = 15.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
@@ -282,11 +290,13 @@ margin_top = 4.0
 margin_right = 73.0
 margin_bottom = 15.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="c2" type="RichTextLabel" parent="state_handler/hc/vc"]
+editor/display_folded = true
 margin_top = 410.0
 margin_right = 800.0
 margin_bottom = 470.0
@@ -306,7 +316,6 @@ margin_right = 342.501
 margin_bottom = 40.0
 
 [node name="0" type="RichTextLabel" parent="state_handler/hc/vc/c2/choice_container"]
-editor/display_folded = true
 visible = false
 margin_right = 800.0
 margin_bottom = 50.0
@@ -323,12 +332,12 @@ margin_top = 4.0
 margin_right = 462.0
 margin_bottom = 15.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="1" type="RichTextLabel" parent="state_handler/hc/vc/c2/choice_container"]
-editor/display_folded = true
 visible = false
 margin_right = 800.0
 margin_bottom = 50.0
@@ -345,12 +354,12 @@ margin_top = 4.0
 margin_right = 381.0
 margin_bottom = 15.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="2" type="RichTextLabel" parent="state_handler/hc/vc/c2/choice_container"]
-editor/display_folded = true
 visible = false
 margin_right = 800.0
 margin_bottom = 50.0
@@ -367,12 +376,12 @@ margin_top = 4.0
 margin_right = 448.0
 margin_bottom = 15.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="3" type="RichTextLabel" parent="state_handler/hc/vc/c2/choice_container"]
-editor/display_folded = true
 visible = false
 margin_right = 800.0
 margin_bottom = 50.0
@@ -389,12 +398,12 @@ margin_top = 4.0
 margin_right = 52.0
 margin_bottom = 15.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="4" type="RichTextLabel" parent="state_handler/hc/vc/c2/choice_container"]
-editor/display_folded = true
 visible = false
 margin_right = 800.0
 margin_bottom = 50.0
@@ -411,12 +420,12 @@ margin_top = 4.0
 margin_right = 548.0
 margin_bottom = 15.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="5" type="RichTextLabel" parent="state_handler/hc/vc/c2/choice_container"]
-editor/display_folded = true
 visible = false
 margin_right = 800.0
 margin_bottom = 50.0
@@ -433,12 +442,12 @@ margin_top = 4.0
 margin_right = 25.0
 margin_bottom = 15.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="6" type="RichTextLabel" parent="state_handler/hc/vc/c2/choice_container"]
-editor/display_folded = true
 visible = false
 margin_right = 800.0
 margin_bottom = 50.0
@@ -455,6 +464,7 @@ margin_top = 4.0
 margin_right = -28.0
 margin_bottom = 15.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
@@ -480,6 +490,7 @@ margin_top = 571.168
 margin_right = 670.0
 margin_bottom = 599.168
 focus_mode = 0
+mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 flat = true
 

@@ -38,6 +38,7 @@ margin_top = 616.676
 margin_right = 766.0
 margin_bottom = 674.676
 focus_mode = 0
+mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
@@ -68,7 +69,6 @@ position = Vector2( 635.839, 384.69 )
 texture = ExtResource( 6 )
 
 [node name="files" type="Control" parent="."]
-editor/display_folded = true
 margin_left = 635.839
 margin_top = 327.69
 margin_right = 675.839
@@ -208,6 +208,7 @@ margin_right = -12.1976
 margin_bottom = -12.9712
 rect_pivot_offset = Vector2( 311.063, -221.429 )
 focus_mode = 0
+mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 flat = true
 __meta__ = {
@@ -259,6 +260,7 @@ margin_top = 329.0
 margin_right = 766.0
 margin_bottom = 387.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
@@ -287,6 +289,7 @@ margin_top = 405.0
 margin_right = 766.0
 margin_bottom = 463.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
@@ -334,6 +337,7 @@ margin_top = 366.0
 margin_right = 766.0
 margin_bottom = 424.0
 focus_mode = 0
+mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
@@ -362,8 +366,8 @@ valign = 1
 [connection signal="pressed" from="files/file4" to="." method="load_file" binds= [ 4 ]]
 [connection signal="pressed" from="files/file5" to="." method="load_file" binds= [ 5 ]]
 [connection signal="pressed" from="delete_data" to="delete_confirm" method="show"]
-[connection signal="pressed" from="delete_confirm/yes" to="delete_confirm" method="hide"]
 [connection signal="pressed" from="delete_confirm/yes" to="delete_after" method="show"]
 [connection signal="pressed" from="delete_confirm/yes" to="." method="delete_data"]
+[connection signal="pressed" from="delete_confirm/yes" to="delete_confirm" method="hide"]
 [connection signal="pressed" from="delete_confirm/no" to="delete_confirm" method="hide"]
 [connection signal="pressed" from="delete_after/back" to="delete_after" method="hide"]

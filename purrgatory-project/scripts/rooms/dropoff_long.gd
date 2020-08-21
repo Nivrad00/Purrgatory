@@ -125,6 +125,8 @@ func _process(delta):
 func init_state(state):
 	.init_state(state)
 	emit_signal('start_dialog', 'tori_climb0', [])
+	$tori_after.hide()
+	$tori_before.show()
 
 func update_state(state):
 	.update_state(state)
@@ -149,3 +151,5 @@ func update_state(state):
 		$object.hide()
 		$object2.hide()
 		$object3.hide()
+		$tori_after.show()
+		$tori_before.hide()

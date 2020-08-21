@@ -15,7 +15,7 @@ func disable():
 
 func enable():
 	enabled = true
-	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	mouse_default_cursor_shape = Control.CURSOR_HELP
 
 func _gui_input(input):
 	if not enabled or not input is InputEventMouseMotion:

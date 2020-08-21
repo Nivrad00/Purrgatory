@@ -55,10 +55,14 @@ dialog_label = "exit_painting"
 polygon = PoolVector2Array( 674.711, 316.982, 673.578, 386.938, 779.223, 398.204, 779.423, 313.051 )
 
 [node name="tori_exit1" parent="state_handler" instance=ExtResource( 6 )]
-margin_left = 696.51
-margin_top = 350.976
-margin_right = 996.51
-margin_bottom = 650.976
+margin_left = 756.366
+margin_top = 228.249
+margin_right = 1056.37
+margin_bottom = 709.249
 dialog_label = "tori_end"
 
 [node name="tori_exit2" parent="state_handler" instance=ExtResource( 7 )]
+margin_left = 351.822
+margin_top = 326.649
+margin_right = 526.822
+margin_bottom = 564.649
