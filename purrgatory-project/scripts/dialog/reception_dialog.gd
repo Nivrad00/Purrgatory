@@ -46,6 +46,7 @@ var raw_blocks = [
 ["recep_care","receptionist","","take care, now.","","","","","",""],
 ["","_none","_none","the receptionist starts walking away.","met_receptionist","","null","","",""],
 ["click_portal","_none","_none","_pass","","met_receptionist",['portal1', 'portal2'],"","",""],
-["portal1","","","you take a deep breath and step into the portal.","recep_entered_portal","","null","","",""],
-["portal2","","","looks like some sort of rotating portal.","","","null","","",""]
+["portal1","","","you take a deep breath and step into the portal.","_delay_fade_out_trigger","","null","","",""],
+["portal2","","","looks like some sort of rotating portal.","","","null","","",""],
+["charon_busy","_none","_none","she seems... busy.","","","null","","",""]
 ]

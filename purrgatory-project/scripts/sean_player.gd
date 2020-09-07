@@ -11,6 +11,7 @@ func start_song():
 	$song_timer.start()
 	
 func stop_song():
+	get_parent().state['current_piano_song'] = null
 	$song_timer.stop()
 	$left_hand.hide()
 	$right_hand.hide()
@@ -20,6 +21,7 @@ func stop_song():
 		get_parent().return_to_dialog(return_label)
 
 func load_song(song_name):
+	print(song_name)
 	if not $song_timer.is_stopped():
 		$song_timer.stop()
 		$left_hand.hide()

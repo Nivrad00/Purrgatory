@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/charon_walking1.png-029e6ec5b25dc279eb10bd761a7f36d2.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/charon_walking1.png"
+dest_files=[ "res://.import/charon_walking1.png-029e6ec5b25dc279eb10bd761a7f36d2.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

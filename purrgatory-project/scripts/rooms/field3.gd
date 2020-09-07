@@ -2,6 +2,13 @@ extends 'state_handler_template.gd'
 
 func init_state(state):
 	.init_state(state)
+	
+	randomize()
+	var r = rand_range(0, 100)
+	if state.get('met_sean') and floor(r) == 0:
+		$sean_fence.show()
+	else:
+		$sean_fence.hide()
 		
 func update_state(state):
 	.update_state(state)
@@ -13,6 +20,8 @@ func update_state(state):
 				button.dug_hole()
 	
 	if state.get('park_game'):
+		if not state.get('hole_count'):
+			state['hole_count'] = 0
 		$digging/score.text = str(state['hole_count']) + '/16'
 				
 	if state.get('tori_park_complete'):

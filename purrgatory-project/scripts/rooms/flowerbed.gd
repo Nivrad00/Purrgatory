@@ -5,30 +5,52 @@ var max_id = 46
 var num_flowers = 70
 var num_targets = 8
 var flower_min_dist = 50
-var game_duration = .75
+var game_duration = 75
 var flowers = []
 
 var target_ids = []
 
 var start_flag = false
+var paused = false
 
 func _ready():
 	$flower_box.hide()
 	$flower_timer.hide()
 	$flower_progress.hide()
+	set_process(true)
 	# debug
 	# randomize()
 	# init_state({})
 
-func start_game():
-	$game_timer.wait_time = game_duration
+func _process(delta):
+	if not paused and (get_node('../../../../ui').visible or get_node('../../../../../meta_ui/pause_menu').visible):
+		$flower_timer/AnimationPlayer.stop(false)
+		$game_timer.paused = true
+		paused = true
+	elif paused and not (get_node('../../../../ui').visible or get_node('../../../../../meta_ui/pause_menu').visible):
+		$flower_timer/AnimationPlayer.play()
+		$game_timer.paused = false
+		paused = false
+		
+func start_game(time_left = 0, progress = 0):
 	$flower_timer.show()
 	$flower_box.show()
 	$flower_progress.show()
 	
+	for i in range(progress):
+		target_ids.pop_front()
+		$flower_progress.increment()
+		reset_indicator()
+	
 	$flower_timer/AnimationPlayer.set_speed_scale(1.6 / game_duration)
 	$flower_timer/AnimationPlayer.play("New Anim")
-	$game_timer.start()
+	if time_left > 0:
+		$flower_timer/AnimationPlayer.seek(1.6 * (game_duration - time_left) / game_duration, true)
+	
+	if time_left == 0:
+		$game_timer.start(game_duration)
+	else:
+		$game_timer.start(time_left)
 	
 func failure():
 	$flower_timer/AnimationPlayer.stop(false)
@@ -61,7 +83,8 @@ func pick_flower(id):
 			$indicator_timer.start()
 
 func reset_indicator():
-	$flower_box.set_indicator(target_ids[0])
+	if target_ids.size() > 0:
+		$flower_box.set_indicator(target_ids[0])
 
 func generate_flowers(ids):
 	for id in ids:
@@ -90,6 +113,9 @@ func generate_flowers(ids):
 func init_state(state):
 	.init_state(state)
 	
+	setup_game()
+
+func setup_game():
 	for i in range(num_targets):
 		var new_id = null
 		while true:
@@ -114,13 +140,15 @@ func init_state(state):
 	for flower in flowers:
 		$flower_sorter.add_child(flower)
 	$flower_box.set_indicator(target_ids[0])
-
+	
 func update_state(state):
 	.update_state(state)
 	
 	if start_flag == true:
 		start_game()
 		start_flag = false
+		state['flower_ongoing'] = true
+		
 	if state.get('flowers_goto_garden'):
 		emit_signal('change_room', 'garden6')
 	if state.get('flower_start_flag'):
@@ -128,6 +156,11 @@ func update_state(state):
 		state['flower_start_flag'] = false
 	
 	if state.get('increment_flower_fails'):
+		state['flower_ongoing'] = false
 		state['increment_flower_fails'] = false
 		state['flower_fails'] += 1
 		print(state['flower_fails'])
+	
+	if state.get('numa_finished_flowers') and state.get('flower_ongoing'):
+		state['flower_ongoing'] = false
+		

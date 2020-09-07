@@ -4,6 +4,22 @@ signal return_to_main()
 
 export var default_room = ''
 
+var tori_test_state = {
+	'true': true,
+	'saw_tori_intro': true,
+	'met_tori': true,
+	'tori_park_complete': true,
+	'tori_closet_complete': true
+}
+
+var sean_test_state = {
+	'true': true,
+	'met_sean': true,
+	'sean_went_to_piano': true #,
+	# '_inv_battery1': true,
+	# '_inv_battery2': true
+}
+
 var natalie_test_state = {
 	'true': true,
 	'saw_natalie_intro': true,
@@ -11,7 +27,7 @@ var natalie_test_state = {
 	'natalie_finished_drawing3': true
 }
 
-var _state = {
+var state = {
 	'true': true
 }
 
@@ -21,7 +37,8 @@ var cracked = {
 	'unlocked_meowseum_door': true
 }
 
-var state = {
+var oliver_state = {
+	'met_natalie': true,
 	'true': true,
 	'fed_kyungsoon_book': true,
 	'met_kyungsoon': true,
@@ -35,8 +52,8 @@ var state = {
 	'seen_study': true,
 	'_inv_chess_letter': true,
 	'tori_visited_oliver': true,
-	'oliver_asked_for_soda': true,
-	'house_cat_pushed_glass': true #,
+	'oliver_asked_for_soda': true#,
+	# 'house_cat_pushed_glass': true,
 	# 'comforted_oliver': true,
 	# 'oliver_in_study': false
 }
@@ -55,8 +72,9 @@ var numa_test_state = {
 	'numa_snooped': true,
 	'numa_started_poem': true,
 	'numa_finished_poem': true,
-	'numa_started_flowers': true,
-	'numa_finished_flowers': true,
+	# 'numa_started_flowers': true,
+	# 'flower_fails': 0,
+	# 'numa_finished_flowers': true,
 	'numa_started_food': true,
 	'numa_progressed_food': true,
 	'numa_finished_food': true,
@@ -412,7 +430,41 @@ func save(file):
 		var dir = Directory.new()
 		if dir.file_exists("user://draw_a_paw" + str(file) + ".png"):
 			dir.remove("user://draw_a_paw" + str(file) + ".png")
-			
+	
+	# also, if the player saved in the middle of ttt, it needs to be saved separately
+	
+	if room.get_current_room() == 'ttt':
+		room.current_room.get_node('state_handler').save_ttt(file)
+	else:
+		var dir = Directory.new()
+		if dir.file_exists("user://ttt_state" + str(file) + ".save"):
+			dir.remove("user://ttt_state" + str(file) + ".save")
+		if dir.file_exists("user://ttt_drawing" + str(file) + ".png"):
+			dir.remove("user://ttt_drawing" + str(file) + ".png")
+	
+	# and flowerbed
+	
+	if room.get_current_room() == 'flowerbed' and state.get('flower_ongoing'):
+		var state_handler = room.current_room.get_node('state_handler')
+		state['flower_progress'] = state_handler.get_node('flower_progress').i
+		state['flower_time_left'] = state_handler.get_node('game_timer').time_left
+	else:
+		state['flower_progress'] = null
+		state['flower_time_left'] = null
+		
+	# and climb
+	
+	if room.get_current_room() == 'dropoff_long':
+		var state_handler = room.current_room.get_node('state_handler')
+		state['dropoff_climbing'] = state_handler.climbing
+		state['dropoff_lost_grip'] = state_handler.lost_grip
+		state['dropoff_progress'] = state_handler.progress
+		state['dropoff_stamina'] = state_handler.get_node('_game/ProgressBar').value
+	else:
+		state['dropoff_climbing'] = null
+		state['dropoff_lost_grip'] = null
+		state['dropoff_progress'] = null
+		state['dropoff_stamina'] = null
 			
 	# get the timestamp
 	var months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
@@ -519,6 +571,7 @@ func load_game(file):
 	block = save_dict["block"]
 	
 	# drawings need to be loaded separately
+	
 	var f = File.new()
 	if f.file_exists("user://mural" + str(file) + ".png"):
 		mural_drawing = Image.new()
@@ -532,6 +585,8 @@ func load_game(file):
 	else:
 		draw_a_paw_drawing = null
 
+	# ok back to room stuff
+	
 	room.change_room(save_dict["room"], state, false, true)
 	change_audio(save_dict["music"], false)
 	room.set_hidden_sprites(save_dict["hidden_sprites"])
@@ -560,7 +615,34 @@ func load_game(file):
 	
 	yield(get_tree(), "idle_frame")
 	AudioServer.set_bus_mute(0, false)
-
+	
+	# finally, if the player loaded into ttt, it needs to be loaded separately
+	if room.get_current_room() == 'ttt':
+		room.current_room.get_node('state_handler').load_ttt(file)
+		
+	# flowerbed just needs a little push
+	if room.get_current_room() == 'flowerbed':
+		room.current_room.get_node('state_handler').setup_game()
+		if state.get('flower_ongoing'):
+			var progress = 0
+			var time = 0
+			
+			if state.get('flower_progress'):
+				progress = state['flower_progress']
+			if state.get('flower_time_left'):
+				time = state['flower_time_left']
+				
+			room.current_room.get_node('state_handler').start_game(time, progress)
+	
+	# and climbing
+	if room.get_current_room() == 'dropoff_long':
+		room.current_room.get_node('state_handler').load_in(\
+			state.get('dropoff_climbing'),\
+			state.get('dropoff_lost_grip'),\
+			state.get('dropoff_progress'),\
+			state.get('dropoff_stamina')\
+		)
+			
 func reset_state(reset_room):
 	end_dialog()
 	

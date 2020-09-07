@@ -9,4 +9,4 @@ func init_state(state):
 	
 func wake_up():
 	.wake_up()
-	emit_signal('start_dialog', 'natalie_post2')
+	emit_signal('start_dialog', 'natalie_post2', [])

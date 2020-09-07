@@ -1,6 +1,27 @@
 extends Node
 
 var songs = {
+	'lick0': {
+		'tempo': 0.3,
+		'left': 'v[cge][cge]3',
+		'right': '[cge][cge]3',
+		'return': 'sean_jam0_1'
+	},
+	
+	'lick-1': {
+		'tempo': 0.5,
+		'left': 'vcdefgabr[g^dvb]rr[a^ecv][g^dvb]2',
+		'right': 'cdefgabr[g^dvb]rr[f^cva][g^dvb]2',
+		'return': 'sean_jam0_2'
+	},
+	
+	'lick-2': {
+		'tempo': 0.5,
+		'left': 'v[cge][cge]2',
+		'right': '[cge][cge]2',
+		'return': 'sean_jam0_3'
+	},
+	
 	'lick1': {
 		'tempo': 0.05,
 		'left': 'gfedcvbagfedc',

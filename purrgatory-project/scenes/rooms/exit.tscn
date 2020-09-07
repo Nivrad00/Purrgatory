@@ -62,7 +62,8 @@ margin_bottom = 709.249
 dialog_label = "tori_end"
 
 [node name="tori_exit2" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 351.822
-margin_top = 326.649
-margin_right = 526.822
-margin_bottom = 564.649
+margin_left = 327.822
+margin_top = 340.649
+margin_right = 502.822
+margin_bottom = 578.649
+sprite_path = [ null ]

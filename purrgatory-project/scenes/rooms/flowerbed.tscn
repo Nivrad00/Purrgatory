@@ -69,6 +69,9 @@ anchor_bottom = 1.0
 margin_right = -1280.0
 margin_bottom = -720.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="state_handler" type="Control" parent="."]
 script = ExtResource( 2 )
@@ -114,13 +117,15 @@ position = Vector2( 1015.47, -65.7884 )
 texture = ExtResource( 25 )
 
 [node name="flower_progress" type="Control" parent="state_handler"]
-editor/display_folded = true
 margin_left = 635.866
 margin_top = 64.2644
 margin_right = 933.866
 margin_bottom = 104.264
 rect_pivot_offset = Vector2( -578.118, 123.548 )
 script = ExtResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="1" type="Sprite" parent="state_handler/flower_progress"]
 texture = ExtResource( 27 )

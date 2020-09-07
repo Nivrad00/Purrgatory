@@ -15,13 +15,15 @@ func update_state(state):
 				button.dug_hole()
 	
 	if state.get('park_game'):
+		if not state.get('hole_count'):
+			state['hole_count'] = 0
 		$digging/score.text = str(state['hole_count']) + '/16'
 	
 	if state.get('oliver_goto_park2'):
 		state['oliver_goto_park2'] = false
 		emit_signal('change_room', 'field2')
 	
-	if state.get('elijah_sean_left_bench'):
+	if state.get('elijah_sean_left_bench') and not state.get('oliver_on_date'):
 		$elijah_park.show()
 		$weeds.show()
 		$wheelbarrow.show()

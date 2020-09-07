@@ -7,28 +7,32 @@ var pronunciation = [
 	['purrgatory', 'purgatory'],
 	['[i]', ''],
 	['[/i]', ''],
+	['purrgatory', 'purgatory'],
+	['[i]', ''],
+	['[/i]', ''],
 	['):<', ', angry face,'],
 	['>:(', ', angry face,'],
-	[';;', ', crying face,'],
 	['(:', ', smiley face,'],
 	[':)', ', smiley face,'],
-	['(;', ', winky face,'],
-	['(;;', ', winky face,'],
-	['(;;;', ', winky face,'],
-	['(;;;;', ', winky face,'],
 	['(;;;;;;;', ', winky face,'],
+	['(;;;;', ', winky face,'],
+	['(;;;', ', winky face,'],
+	['(;;', ', winky face,'],
+	[';;', ', crying face,'],
+	['(;', ', winky face,'],
 	[';)', ', winky face,'],
-	[':P', ', tongue sticking out,'],
+	[':P', ', face with tongue out,'],
 	[':3', ', cat face,'],
-	[':C', ', frowny face,'],
-	[':c', ', frowny face,'],
-	['):', ', frowny face,'],
-	[':(', ', frowny face,'],
+	[':C', ', sad face,'],
+	[':c', ', sad face,'],
+	['):', ', sad face,'],
+	[':(', ', sad face,'],
 	[':/', ', meh face,'],
 	[':\\', ', meh face,'],
 	[':3', ', cat face,'],
-	[';3', ', winking cat face,'],
 	[';3333', ', winking cat face,'],
+	[';3', ', winking cat face,'],
+	['^^', 'happy face']
 ]
 
 var replacements = [
@@ -40,7 +44,8 @@ var replacements = [
 var enabled = false
 
 func _ready():
-	tts.set_voice(tts.get_voices()[1]['name'])
+	pass
+	# tts.set_voice(tts.get_voices()[1]['name'])
 	# this is just to change the voice to zira on my machine bc i like it better
 	# i need to remember to remove this later dlfkgjglkd
 

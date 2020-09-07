@@ -6,8 +6,10 @@ func update_state(state):
 	if state.get('sean_went_to_piano') and \
 	  (not state.get('sean_looking_for_elijah') or state.get('elijah_sean_left_bench')):
 		$sean_piano.show()
+		$exit3.hide()
 	else:
 		$sean_piano.hide()
+		$exit3.show()
 	
 	if state.get('sean_arguing_with_tori'):
 		$sean_piano.hide()

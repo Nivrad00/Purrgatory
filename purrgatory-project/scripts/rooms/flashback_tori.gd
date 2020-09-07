@@ -3,6 +3,7 @@ extends "flashback_template.gd"
 func _ready():
 	._ready()
 	text_dependencies = { 2: 1 }
+	ending_label = "end_flashback"
 
 func init_state(state):
 	.init_state(state)

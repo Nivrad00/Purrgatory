@@ -4,3 +4,4 @@
 
 [node name="surprise" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
+bus = "SFX"

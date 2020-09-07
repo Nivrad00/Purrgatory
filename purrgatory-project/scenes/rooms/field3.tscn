@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/field3.gd" type="Script" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://assets/sprites/hoels/field3_3.png" type="Texture" id=17]
 [ext_resource path="res://assets/sprites/hoels/shovel5.png" type="Texture" id=18]
 [ext_resource path="res://scenes/hole_score.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/sprites/sean_idle.tscn" type="PackedScene" id=20]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -120,6 +121,7 @@ polygon = PoolVector2Array( 211.948, 350.054, 212.384, 378.414, 251.208, 381.326
 [node name="surprise" parent="state_handler" instance=ExtResource( 9 )]
 
 [node name="digging" type="Node2D" parent="state_handler"]
+editor/display_folded = true
 script = ExtResource( 10 )
 
 [node name="digging_button" type="Area2D" parent="state_handler/digging"]
@@ -234,3 +236,12 @@ dialog_label = "field_fence"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_fence"]
 polygon = PoolVector2Array( 90.3371, 528.368, 479.194, 521.819, 612.809, 548.542, 669.595, 541.862, 677.946, 658.775, 478.884, 623.347, 90.2631, 637.298 )
+
+[node name="sean_fence" parent="state_handler" instance=ExtResource( 20 )]
+visible = false
+margin_left = 535.999
+margin_top = 405.778
+margin_right = 687.999
+margin_bottom = 735.778
+rect_scale = Vector2( -0.8, 0.8 )
+dialog_label = "sean_on_the_fence"

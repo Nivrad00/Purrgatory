@@ -6,9 +6,9 @@ func update_state(state):
 	$tori_exit1.hide()
 	$tori_exit2.hide()
 	
-	if state.get('tori_dropoff_complete') and not (state.get('tori_quest_complete') or state.geT('queue_tori_flashback')):
+	if state.get('tori_dropoff_complete') and not (state.get('tori_quest_complete') or state.get('queue_tori_flashback')):
 		$tori_exit1.show()
-	elif state.get('tori_quest_complete'):
+	elif state.get('tori_quest_complete') or state.get('queue_tori_flashback'):
 		$tori_exit2.show()
 	
 	$exit.hide()

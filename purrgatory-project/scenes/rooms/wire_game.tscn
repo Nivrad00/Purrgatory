@@ -52,6 +52,7 @@ script = ExtResource( 2 )
 
 [node name="power_down" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 3 )
+bus = "SFX"
 
 [node name="bg" type="ColorRect" parent="state_handler"]
 margin_right = 1280.0
@@ -61,10 +62,11 @@ __meta__ = {
 }
 
 [node name="GridContainer" type="GridContainer" parent="state_handler"]
-margin_left = 325.578
-margin_top = 43.7615
-margin_right = 966.578
-margin_bottom = 684.761
+editor/display_folded = true
+margin_left = 327.578
+margin_top = 36.7615
+margin_right = 968.578
+margin_bottom = 677.761
 rect_pivot_offset = Vector2( 13.5215, 267.939 )
 custom_constants/vseparation = -1
 custom_constants/hseparation = -1
@@ -1408,7 +1410,7 @@ valign = 1
 "anims/come out" = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="state_handler/shelf"]
-wait_time = 60.0
+wait_time = 45.0
 one_shot = true
 
 [node name="fg" type="Sprite" parent="state_handler"]

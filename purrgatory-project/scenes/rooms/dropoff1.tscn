@@ -225,10 +225,10 @@ room_label = "hallway5"
 polygon = PoolVector2Array( 465.026, 1011.01, 1745.01, 1011.01, 1745.02, 923.026, 465.007, 923.014 )
 
 [node name="coin" type="AnimatedSprite" parent="state_handler"]
-editor/display_folded = true
 visible = false
 position = Vector2( 876.798, 800 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/coin"]
@@ -236,3 +236,4 @@ anims/paraola = SubResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="state_handler/coin"]
 stream = ExtResource( 15 )
+bus = "SFX"

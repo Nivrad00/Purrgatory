@@ -28,6 +28,10 @@ func init_state(state):
 		else:
 			emit_signal('set_hidden_sprite', [$kyungsoon_idle])
 	
+	# ks should be at the commons by default, if it's never been set before
+	if not state.has('ks_at_commons'):
+		state['ks_at_commons'] = true
+	
 func update_state(state):
 	.update_state(state)
 	if state.get('display_kyungsoon_and_numa'):
@@ -47,10 +51,10 @@ func update_state(state):
 		$ending_sign.hide()
 		$cat1_idle.show()
 		
-	if state.get('ks_at_vent'):
-		$kyungsoon_idle.hide()
-	else:
+	if state.get('ks_at_commons'):
 		$kyungsoon_idle.show()
+	else:
+		$kyungsoon_idle.hide()
 		
 	if state.get('unlocked_commons_door'):
 		$commons_door_exit.show()

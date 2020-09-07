@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/house5.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/house5.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/sprites/snowglobes/snowglobe_house.png" type="Texture" id=7]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -48,11 +49,21 @@ dialog_label = "bedroom_bed"
 polygon = PoolVector2Array( 733.615, 104.885, 732.183, 508.702, 778.006, 520.158, 778.006, 670.516, 673.472, 703.451, 647.697, 689.131, 646.265, 626.125, 475.859, 661.924, 458.676, 714.907, 442.924, 717.771, 423.81, 668.731, 135.049, 727.795, -9.58078, 724.931, -8.06396, 596.003, 531.706, 523.022, 532.867, 459.831, 706.408, 504.406, 703.544, 263.834, 531.575, 311.209, 530.283, 241.422, 31.9466, 173.62, 33.3785, 586.029, -5.28485, 594.621, -0.988922, -5.37732, 411.42, 1.78257 )
 
 [node name="object3" parent="state_handler" instance=ExtResource( 6 )]
-editor/display_folded = true
 dialog_label = "bedroom_lamp"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
 polygon = PoolVector2Array( 805.889, 421.938, 790.456, 455.376, 805.875, 459.119, 811.891, 487.956, 829.226, 487.26, 835.813, 459.119, 849.615, 457.09, 835.04, 421.938 )
+
+[node name="snowglobe_house" parent="state_handler" instance=ExtResource( 6 )]
+position = Vector2( 31.328, 34.642 )
+dialog_label = "snowglobe_house"
+
+[node name="Sprite" type="Sprite" parent="state_handler/snowglobe_house"]
+position = Vector2( 823.055, 446.75 )
+texture = ExtResource( 7 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/snowglobe_house"]
+polygon = PoolVector2Array( 809.441, 430.003, 807.706, 460.297, 822.695, 463.452, 840.997, 460.612, 836.422, 428.899 )
 
 [node name="object4" parent="state_handler" instance=ExtResource( 6 )]
 editor/display_folded = true

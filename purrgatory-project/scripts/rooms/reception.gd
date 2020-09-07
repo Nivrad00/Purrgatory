@@ -1,8 +1,9 @@
 extends 'state_handler_template.gd'
 
-var fade_out_delay = false
-var fade_out_trigger = false
-var charon_moving = false
+var state = null
+
+func _ready():
+	state = get_node('../../../../..').state
 	
 func update_state(state):
 	.update_state(state)
@@ -15,27 +16,24 @@ func update_state(state):
 		get_node('../../../../ui/name_input/text').grab_focus()
 		
 	if state.get('met_receptionist'):
-		charon_moving = true
+		state['charon_moving'] = true
 		$receptionist_idle.hide()
 		$elbow.hide()
-		$receptionist_idle2.show()		
-	if fade_out_delay:
-		print('a')
-		fade_out_trigger = true
+		$receptionist_idle2.show()
+	
+	if state.get('fade_out_trigger') and $portal.visible:
 		$portal_audio.play()
 		$portal.hide()
-	if state.get('recep_entered_portal'):
-		fade_out_delay = true
 		$fadeout.show()
 
 func _process(delta):
-	if charon_moving:
+	if state.get('charon_moving'):
 		var pos = $receptionist_idle2.get_position()
 		$receptionist_idle2.set_position(Vector2(pos.x - 5 * delta, pos.y))
-	if fade_out_trigger:
+	if state.get('fade_out_trigger'):
 		var a = $fadeout.get_modulate().a
 		if a == 1:
-			fade_out_trigger = false
+			state['fade_out_trigger'] = false
 			$white_timer.start()
 			yield($white_timer, 'timeout')
 			emit_signal('change_room', 'antechamber1')

@@ -1,0 +1,129 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/padlock.gd" type="Script" id=2]
+[ext_resource path="res://assets/rooms/padlock.png" type="Texture" id=3]
+[ext_resource path="res://assets/rooms/padlock_unlocked.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/numbers/0.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/numbers/1.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/numbers/2.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/numbers/3.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/numbers/4.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/numbers/5.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/numbers/6.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/numbers/7.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/numbers/8.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/numbers/9.png" type="Texture" id=14]
+[ext_resource path="res://scripts/padlock_digit.gd" type="Script" id=15]
+[ext_resource path="res://assets/sprites/numbers/padlock_button_up.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/numbers/padlock_button_down.png" type="Texture" id=17]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=18]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="room_instance" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 1 )
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+
+[node name="bg" type="Sprite" parent="state_handler"]
+position = Vector2( 0, -3.1579 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="bg2" type="Sprite" parent="state_handler"]
+visible = false
+position = Vector2( 0, -3.1579 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="numbers" type="Node2D" parent="state_handler"]
+editor/display_folded = true
+
+[node name="digit1" type="AnimatedSprite" parent="state_handler/numbers"]
+position = Vector2( 519.947, 331.912 )
+frames = SubResource( 1 )
+script = ExtResource( 15 )
+
+[node name="Button" type="Button" parent="state_handler/numbers/digit1"]
+margin_left = -30.0
+margin_top = -39.0
+margin_right = 29.0
+margin_bottom = 42.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="digit2" type="AnimatedSprite" parent="state_handler/numbers"]
+position = Vector2( 588.365, 332.727 )
+frames = SubResource( 1 )
+script = ExtResource( 15 )
+
+[node name="Button" type="Button" parent="state_handler/numbers/digit2"]
+margin_left = -36.0
+margin_top = -39.0
+margin_right = 36.0
+margin_bottom = 43.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="digit3" type="AnimatedSprite" parent="state_handler/numbers"]
+position = Vector2( 660.856, 332.727 )
+frames = SubResource( 1 )
+script = ExtResource( 15 )
+
+[node name="Button" type="Button" parent="state_handler/numbers/digit3"]
+margin_left = -34.0
+margin_top = -42.0
+margin_right = 34.0
+margin_bottom = 41.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="digit4" type="AnimatedSprite" parent="state_handler/numbers"]
+position = Vector2( 731.718, 330.283 )
+frames = SubResource( 1 )
+script = ExtResource( 15 )
+
+[node name="Button" type="Button" parent="state_handler/numbers/digit4"]
+margin_left = -34.0
+margin_top = -39.0
+margin_right = 35.0
+margin_bottom = 42.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="submit" type="TextureButton" parent="state_handler"]
+margin_left = 568.0
+margin_top = 408.0
+margin_right = 678.0
+margin_bottom = 441.0
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 16 )
+texture_disabled = ExtResource( 16 )
+texture_focused = ExtResource( 16 )
+
+[node name="exit" parent="state_handler" instance=ExtResource( 18 )]
+room_label = "hallway10"
+[connection signal="pressed" from="state_handler/numbers/digit1/Button" to="state_handler/numbers/digit1" method="_on_Button_pressed"]
+[connection signal="pressed" from="state_handler/numbers/digit2/Button" to="state_handler/numbers/digit2" method="_on_Button_pressed"]
+[connection signal="pressed" from="state_handler/numbers/digit3/Button" to="state_handler/numbers/digit3" method="_on_Button_pressed"]
+[connection signal="pressed" from="state_handler/numbers/digit4/Button" to="state_handler/numbers/digit4" method="_on_Button_pressed"]
+[connection signal="pressed" from="state_handler/submit" to="state_handler" method="_on_submit_pressed"]

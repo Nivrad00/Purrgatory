@@ -3,8 +3,8 @@
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/hallway10.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/hallway10.png" type="Texture" id=3]
-[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=5]
+[ext_resource path="res://assets/rooms/hallway10_alt.png" type="Texture" id=4]
+[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=6]
 
 [node name="room_instance" type="Control"]
@@ -21,24 +21,27 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+[node name="bg_unlocked" type="Sprite" parent="state_handler"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="exit" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
 room_label = "hallway9"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
 polygon = PoolVector2Array( -454.102, 437.471, -384.868, 465.979, -384.868, 754.314, -454.102, 892.78 )
 
-[node name="meowseum_door_exit" parent="state_handler" instance=ExtResource( 4 )]
+[node name="meowseum_door_exit" parent="state_handler" instance=ExtResource( 5 )]
 room_label = "meowseum1"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/meowseum_door_exit"]
 polygon = PoolVector2Array( -41.0161, 550.131, -41.8855, 754.312, 222.329, 750.849, 222.329, 549.105 )
 
-[node name="meowseum_door_dialog" parent="state_handler" instance=ExtResource( 4 )]
-script = ExtResource( 5 )
-dialog_label = "meowseum_door"
+[node name="meowseum_door_locked" parent="state_handler" instance=ExtResource( 5 )]
+room_label = "padlock"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/meowseum_door_dialog"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/meowseum_door_locked"]
 polygon = PoolVector2Array( -41.0161, 550.131, -41.8855, 754.312, 222.329, 750.849, 222.329, 549.105 )
 
 [node name="object" parent="state_handler" instance=ExtResource( 6 )]
@@ -61,3 +64,10 @@ dialog_label = "meowseum_ttt"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
 polygon = PoolVector2Array( 1056.8, 521.568, 1055.17, 553.333, 1091.82, 572.882, 1096.71, 524.826 )
+
+[node name="padlock" parent="state_handler" instance=ExtResource( 6 )]
+position = Vector2( -504.274, 54.1286 )
+dialog_label = "padlock"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/padlock"]
+polygon = PoolVector2Array( 1056.24, 523.22, 1055.17, 553.333, 1069.34, 562.942, 1119.39, 548.245, 1096.71, 524.826 )

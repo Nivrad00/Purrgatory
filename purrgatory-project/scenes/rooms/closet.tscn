@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/closet.gd" type="Script" id=2]
@@ -6,8 +6,9 @@
 [ext_resource path="res://assets/sprites/closet_open_box.png" type="Texture" id=4]
 [ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=5]
 [ext_resource path="res://assets/sprites/battery1.png" type="Texture" id=6]
-[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/sprites/tori_closet.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/sprites/snowglobes/snowglobe_closet.png" type="Texture" id=7]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/sprites/tori_closet.tscn" type="PackedScene" id=9]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -38,6 +39,19 @@ polygon = PoolVector2Array( 1028.85, 657.509, 1019.58, 681.292, 1063.1, 693.659,
 [node name="battery" type="Sprite" parent="state_handler/battery1"]
 position = Vector2( 1046.29, 675.912 )
 texture = ExtResource( 6 )
+
+[node name="snowglobe_closet" type="Area2D" parent="state_handler"]
+position = Vector2( -71.2958, -512.472 )
+script = ExtResource( 5 )
+dialog_label = "snowglobe_closet"
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/snowglobe_closet"]
+position = Vector2( 54.4467, 189.494 )
+polygon = PoolVector2Array( 971.946, 472.419, 970.999, 499.557, 1013.13, 498.926, 1008.23, 473.208, 998.61, 461.217, 982.832, 461.217 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/snowglobe_closet"]
+position = Vector2( 1045.41, 670.656 )
+texture = ExtResource( 7 )
 
 [node name="closet_blanket" type="Area2D" parent="state_handler"]
 position = Vector2( -21, -66 )
@@ -115,15 +129,6 @@ polygon = PoolVector2Array( 1005.62, 454.978, 980.363, 455.631, 965.957, 461.081
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/closet_paper_towels"]
 polygon = PoolVector2Array( 1188.73, 528.313, 1189.51, 470.819, 1172.32, 463.088, 1146.03, 462.791, 1130.91, 470.168, 1130.91, 533.853, 1140.02, 537.784 )
-
-[node name="closet_snowglobe" type="Area2D" parent="state_handler"]
-editor/display_folded = true
-position = Vector2( -16.8491, -322.978 )
-script = ExtResource( 5 )
-dialog_label = "closet_snowglobe"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_snowglobe"]
-polygon = PoolVector2Array( 971.946, 472.419, 970.999, 499.557, 1013.13, 498.926, 1008.23, 473.208, 998.61, 461.217, 982.832, 461.217 )
 
 [node name="closet_boxes" type="Area2D" parent="state_handler"]
 editor/display_folded = true
@@ -279,13 +284,13 @@ dialog_label = "calendar"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/calendar"]
 polygon = PoolVector2Array( 226.001, 254.001, 225.001, 429.001, 335.001, 407.001, 334.001, 269.001 )
 
-[node name="exit" parent="state_handler" instance=ExtResource( 7 )]
+[node name="exit" parent="state_handler" instance=ExtResource( 8 )]
 room_label = "hallway12"
 
-[node name="tori_closet" parent="state_handler" instance=ExtResource( 8 )]
-margin_left = 491.337
-margin_top = 155.913
-margin_right = 791.337
-margin_bottom = 612.913
+[node name="tori_closet" parent="state_handler" instance=ExtResource( 9 )]
+margin_left = 491.0
+margin_top = 156.0
+margin_right = 673.0
+margin_bottom = 613.0
 rect_pivot_offset = Vector2( 329.125, 13.6029 )
 blackout_label = "tori_blackout"

@@ -16,6 +16,8 @@ func update_state(state):
 				button.dug_hole()
 	
 	if state.get('park_game'):
+		if not state.get('hole_count'):
+			state['hole_count'] = 0
 		$digging/score.text = str(state['hole_count']) + '/16'
 	
 	if state.get('tori_park_complete'):

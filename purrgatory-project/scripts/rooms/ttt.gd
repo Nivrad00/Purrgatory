@@ -46,6 +46,97 @@ var draw_scene = preload("res://scenes/draw.tscn")
 
 var audio_pos = 0
 
+var whose_turn = "dialog" # dialog, oliver, player
+
+# |
+# |
+# |
+# save and load (ttt saves and loads separately from the rest of the game)
+# |
+# |
+# |
+
+func save_ttt(slot):
+	var ttt_state = {
+		'dialog_queue': dialog_queue,
+		'prev_score': prev_score,
+		'game_num': game_num,
+		'move_num': move_num,
+		'current_board': current_board,
+		'draw_freq': draw_freq,
+		'audio_pos': audio_pos,
+		'whose_turn': whose_turn
+	}
+	
+	var f = File.new()
+	f.open("user://ttt_state" + str(slot) + ".save", File.WRITE)
+	f.store_line(to_json(ttt_state))
+	f.close()
+	
+	var img = null
+	
+	if $loaded_drawing.texture:
+		img = $loaded_drawing.texture.get_data()
+	else:
+		img = Image.new()
+		img.create(1280, 720, false, 5)
+		
+	for draw_scene in $draw_container.get_children():
+		var draw_img = draw_scene.get_node('draw_texture').texture.get_data()
+		img.blend_rect(draw_img, Rect2(Vector2(0, 0), Vector2(1280, 720)), Vector2(0, 0))
+	
+	img.save_png("user://ttt_drawing" + str(slot) + ".png")
+
+func load_ttt(slot):
+	var f = File.new()
+	if not f.file_exists("user://ttt_state" + str(slot) + ".save")\
+	or not f.file_exists("user://ttt_drawing" + str(slot) + ".png"):
+		print('dude there\'s no ttt save for slot ' + str(slot))
+		return
+
+	f.open("user://ttt_state" + str(slot) + ".save", File.READ)
+	var ttt_state = parse_json(f.get_line())
+	f.close()
+	
+	var ttt_drawing = Image.new()
+	ttt_drawing.load("user://ttt_drawing" + str(slot) + ".png")
+	
+	dialog_queue = ttt_state['dialog_queue']
+	prev_score = ttt_state['prev_score']
+	game_num = ttt_state['game_num']
+	move_num = ttt_state['move_num']
+	current_board = ttt_state['current_board']
+	draw_freq = ttt_state['draw_freq']
+	audio_pos = ttt_state['audio_pos']
+	whose_turn = ttt_state['whose_turn']
+	
+	$loaded_drawing.texture = ImageTexture.new()
+	$loaded_drawing.texture.create_from_image(ttt_drawing)
+	
+	for i in range(9):
+		if current_board[i] == 1:
+			$shapes.get_node(str(i)).frame = 5
+			$shapes.get_node(str(i)).playing = false
+			
+	if whose_turn == 'oliver':
+		$turn_delay.start()
+	
+	elif whose_turn == 'player':
+		current_draw = draw_scene.instance()
+		current_draw.enable()
+		current_draw.connect('drew_line', self, 'start_audio')
+		current_draw.connect('drew_line', self, 'record_freq')
+		$draw_container.add_child(current_draw)
+		$done_button.show()
+
+# |
+# |
+# |
+# game stuff
+# |
+# |
+# |
+
 func update_state(state):
 	.update_state(state)
 
@@ -78,6 +169,7 @@ func start_game():
 	current_board = [1, 0, 0, 0, 0, 0, 0, 0, 0] # 0 = empty, 1 = oliver, 2 = player
 	for draw in $draw_container.get_children():
 		draw.queue_free()
+	$loaded_drawing.texture = null
 	for shape in $shapes.get_children():
 		shape.frame = 0
 		shape.playing = false
@@ -171,10 +263,13 @@ func continue_game():
 	var next = dialog_queue.pop_front()
 	if next == 'olivers_turn':
 		start_olivers_turn()
+		whose_turn = 'oliver'
 	elif next == 'players_turn':
 		start_players_turn()
+		whose_turn = 'player'
 	else:
 		emit_signal('start_dialog', next, [])
+		whose_turn = 'dialog'
 
 func record_freq(start, end):
 	var line = end - start

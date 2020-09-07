@@ -25,6 +25,8 @@ var FormattedRichTextLabel = preload('res://scenes/FormattedRichTextLabel.tscn')
 
 var notes_enabled = false
 
+var snowglobes = []
+
 func _ready():
 	set_process(true) 
 	add_quest('nothing')
@@ -83,10 +85,37 @@ func add_to_inv(_name, loading = false):
 	for item in $inv_container.get_children():
 		if item.name == _name:
 			return
+	
+	for snowglobe_name in snowglobes:
+		if snowglobe_name == _name:
+			return
 			
 	print("added to inventory: " + _name)
 	
-	var texture = load(inv_sprite_path + _name + '.png')
+	var texture = null
+	
+	# snowglobes are an exception
+	if _name.substr(0, 9) == 'snowglobe':
+		snowglobes.append(_name)
+		
+		# if there's already snowglobes in the inv, just update the button then return
+		for item in $inv_container.get_children():
+			if item.name.substr(0, 9) == 'snowglobe':
+				var count = int(item.name.substr(9, 10))
+				texture = load(inv_sprite_path + 'snowglobe' + str(count + 1) + '.png')
+				item.get_child(0).set_texture(texture)
+				item.set_name('snowglobe' + str(count + 1))
+				
+				# this shouldn't happen when loading a save file
+				if not items_shown and not loading:
+					toggle_items()
+					
+				return
+		
+		# else, load snowglobe1	
+		_name = 'snowglobe1'
+			
+	texture = load(inv_sprite_path + _name + '.png')
 	if texture == null:
 		print('uh boss the inventory sprite for ' + _name + ' doesn\'t exist')
 		return
@@ -102,14 +131,15 @@ func add_to_inv(_name, loading = false):
 		toggle_items()
 		# items_button.flash()
 
-func remove_from_inv(_name):
+# snowglobes can't be removed using this function btw
+func remove_from_inv(_name, flash = true):
 	var found = false
 	for item in $inv_container.get_children():
 		if item.name == _name:
 			item.queue_free()
 			found = true
 			
-	if found and not items_shown:
+	if flash and found and not items_shown:
 		items_button.flash()
 
 func examine_item(_name):
@@ -117,14 +147,21 @@ func examine_item(_name):
 
 func get_inv_list():
 	var list = []
+	
+	for snowglobe in snowglobes:
+		list.append(snowglobe)
+		
 	for item in $inv_container.get_children():
-		list.append(item.name)
+		if not item.name.substr(0, 9) == 'snowglobe':
+			list.append(item.name)
+			
 	return list
 
 # called when loading a save file
 func load_inv(list):
 	for item in $inv_container.get_children():
 		item.queue_free()
+	snowglobes = []
 	
 	yield(get_tree(), 'idle_frame')
 	
@@ -220,5 +257,5 @@ func toggle_quest_log(on):
 		notes_button.show()
 	else:
 		if notes_shown:
-	 		toggle_notes()
+			toggle_notes()
 		notes_button.hide()

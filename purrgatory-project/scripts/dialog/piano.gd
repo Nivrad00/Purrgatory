@@ -1,7 +1,7 @@
 extends Node
 
 var raw_blocks = [
-["piano_intro","_none","_none","sean plugs in the batteries.",[['_inv_battery1', false], ['_inv_battery2', false], ['_goto_keyboard', true]],"","","","",""],
+["piano_intro","_none","_none","sean plugs in the batteries.",[['_inv_battery1', false], ['_inv_battery2', false], ['_goto_keyboard', true], ['_delay_setup_piano', true]],"","","","",""],
 ["","sean","","we're green baby!!","_piano_lick1","","","","",""],
 ["","you","","green?","disable_exit","","","","",""],
 ["","sean","","you know like","sean_jammed","","","","",""],

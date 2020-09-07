@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/library2.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/library2.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=7]
+[ext_resource path="res://assets/sprites/snowglobes/snowglobe_library.png" type="Texture" id=8]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -105,10 +107,21 @@ polygon = PoolVector2Array( 741.405, 1.01147, 741.405, 122.759, 771.557, 100.043
 polygon = PoolVector2Array( 743.977, 182.775, 743.12, 355.108, 778.487, 354.411, 775.7, 182.775 )
 
 [node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="state_handler/object2"]
-polygon = PoolVector2Array( 851.001, 159.001, 848.001, 480.001, 923.002, 479.001, 918.002, 157.001 )
+polygon = PoolVector2Array( 851.001, 159.001, 848.001, 480.001, 923.002, 479.001, 919.272, 238.823, 903.637, 238.632, 904.035, 205.916, 918.761, 205.914, 918.002, 157.001 )
 
 [node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="state_handler/object2"]
 polygon = PoolVector2Array( 852.124, 45.7904, 847.459, -7.86185, 916.273, -4.36279 )
 
 [node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="state_handler/object2"]
 polygon = PoolVector2Array( 1079.56, 85.4464, 1081.96, 631.94, 1280.32, 631.277, 1281.34, 80.781 )
+
+[node name="snowglobe_library" type="Area2D" parent="state_handler"]
+script = ExtResource( 7 )
+dialog_label = "snowglobe_library"
+
+[node name="Sprite" type="Sprite" parent="state_handler/snowglobe_library"]
+position = Vector2( 913.692, 224.443 )
+texture = ExtResource( 8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/snowglobe_library"]
+polygon = PoolVector2Array( 905.129, 207.308, 904.532, 237.836, 920.841, 238.234, 921.039, 207.01 )

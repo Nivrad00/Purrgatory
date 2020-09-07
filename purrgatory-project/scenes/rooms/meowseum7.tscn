@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/meowseum7.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/meowseum7.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/sprites/snowglobes/snowglobe_meowseum.png" type="Texture" id=7]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -16,7 +17,6 @@ script = ExtResource( 1 )
 
 [node name="state_handler" type="Control" parent="."]
 script = ExtResource( 2 )
-default_music = "the library draft"
 
 [node name="bg" type="Sprite" parent="state_handler"]
 position = Vector2( 0.916077, 0 )
@@ -59,11 +59,15 @@ dialog_label = "meowseum_pencil"
 position = Vector2( -0.540344, 2.16144 )
 polygon = PoolVector2Array( 391.064, 304.528, 406.97, 319.046, 417.237, 319.586, 422.1, 312.561, 407.971, 293.502, 396.163, 293.108 )
 
-[node name="object5" parent="state_handler" instance=ExtResource( 6 )]
-editor/display_folded = true
-dialog_label = "meowseum_snowglobe"
+[node name="snowglobe_meowseum" parent="state_handler" instance=ExtResource( 6 )]
+position = Vector2( 0.751038, 4.00549 )
+dialog_label = "snowglobe_meowseum"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object5"]
+[node name="Sprite" type="Sprite" parent="state_handler/snowglobe_meowseum"]
+position = Vector2( 383.656, 350.154 )
+texture = ExtResource( 7 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/snowglobe_meowseum"]
 polygon = PoolVector2Array( 383.245, 329.983, 366.304, 339.736, 366.304, 361.81, 382.731, 371.05, 400.698, 364.89, 397.618, 334.603 )
 
 [node name="object6" parent="state_handler" instance=ExtResource( 6 )]

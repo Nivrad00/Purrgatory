@@ -65,4 +65,3 @@ polygon = PoolVector2Array( 333.064, 266.208, 403.296, 271.464, 435.949, 253.347
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/cubby_tally"]
 position = Vector2( 2.10527, 0 )
 polygon = PoolVector2Array( 86.5265, 179.422, 114.948, 252.053, 122.316, 341.527, 285.474, 323.632, 287.58, 257.316, 179.158, 244.685, 142.316, 156.264 )
-

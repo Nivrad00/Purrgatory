@@ -36,5 +36,4 @@ dialog_label = "talk_to_oliver"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "oliver_idle"
 anims/oliver_idle = SubResource( 1 )
-
 [connection signal="pressed" from="." to="." method="_on_char_obj_button_pressed"]

@@ -10,5 +10,16 @@ func update_state(state):
 		
 	if state.get('tori_park_complete'):
 		$closet_open_box.show()
+		$electric_box_warning.hide()
+		$electric_box_note.hide()
 	else:
 		$closet_open_box.hide()
+		$electric_box_warning.show()
+		$electric_box_note.show()
+	
+	if state.get('queue_hide_tori'):
+		state['queue_hide_tori'] = false
+		emit_signal('set_hidden_sprite', [$tori_closet])
+	
+	if state.get('_inv_snowglobe_closet') or state.get('spent_snowglobes'):
+		$snowglobe_closet.hide()

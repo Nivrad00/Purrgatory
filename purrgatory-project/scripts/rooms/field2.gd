@@ -21,7 +21,7 @@ func update_state(state):
 		state['oliver_goto_park3'] = false
 		emit_signal('change_room', 'field4')
 	
-	if state.get('tori_train_complete') and not state.get('tori_park_complete'):
+	if state.get('tori_train_complete') and not state.get('tori_park_complete') and not state.get('oliver_on_date'):
 		$tori_park.show()
 		$jacket.show()
 	else:

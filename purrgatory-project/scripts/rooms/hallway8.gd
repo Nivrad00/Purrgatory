@@ -24,3 +24,11 @@ func update_state(state):
 	
 	if state.get('elijah_went_to_sleep'):
 		$elijah_idle.hide()
+	
+	for key in state.keys():
+		# template: _madlib1_orange
+		if key.substr(0, 7) == '_madlib' and state[key]:
+			state[key] = false
+			var format_key = key.substr(1, 7)
+			var format_value = key.substr(9, key.length()-1)
+			get_node('../../../../..').format_dict[format_key] = format_value

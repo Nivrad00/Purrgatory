@@ -58,8 +58,8 @@ func update_state(state):
 	if state.get('elijah_working_with_numa_timer'):
 		state['elijah_working_with_numa_timer'] = false
 		state['poetry_session'] = true
-		emit_signal('start_action_timer', 30, ['poetry_session', false])
-		emit_signal('start_action_timer', 30, ['elijah_and_sean_together', true])
+		emit_signal('start_action_timer', 50, ['poetry_session', false])
+		emit_signal('start_action_timer', 50, ['elijah_and_sean_together', true])
 		
 	if state.get('numa_goto_commons'):
 		emit_signal('change_room', 'hallway1')

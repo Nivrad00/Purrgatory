@@ -6,12 +6,13 @@ func update_state(_state):
 	.update_state(_state)
 	state = _state
 	
-	if state.get('start_skip_timer'):
+	if state.get('start_skip_timer') and $shelf/Timer.time_left == 0:
 		$shelf/Timer.start()
+	
+	if state.get('tori_closet_complete'):
+		state['start_skip_timer'] = false
 
 func connected_node():
-	return
-	
 	if not state.get('blackout'):
 		state['blackout'] = true
 		get_node('../../../../../content/dark_covers/dark').show()

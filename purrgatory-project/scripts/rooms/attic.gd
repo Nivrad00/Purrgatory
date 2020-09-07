@@ -5,15 +5,15 @@ func update_state(state):
 	
 	if state.get('natalie_drawing_timer1'):
 		state['natalie_drawing_timer1'] = false
-		emit_signal('start_action_timer', 40, ['natalie_finished_drawing1', true])
+		emit_signal('start_action_timer', 30, ['natalie_finished_drawing1', true])
 		
 	if state.get('natalie_drawing_timer2'):
 		state['natalie_drawing_timer2'] = false
-		emit_signal('start_action_timer', 40, ['natalie_finished_drawing2', true])
+		emit_signal('start_action_timer', 30, ['natalie_finished_drawing2', true])
 		
 	if state.get('natalie_drawing_timer3'):
 		state['natalie_drawing_timer3'] = false
-		emit_signal('start_action_timer', 40, ['natalie_finished_drawing3', true])
+		emit_signal('start_action_timer', 30, ['natalie_finished_drawing3', true])
 		
 	$natalie_idle.hide()
 	$natalie_draw_a_paw.hide()
@@ -57,6 +57,8 @@ func update_state(state):
 			emit_signal('set_hidden_sprite', [$natalie_idle])
 		elif $natalie_nocturnal.visible:
 			emit_signal('set_hidden_sprite', [$natalie_nocturnal])
+		elif $natalie_draw_a_paw.visible:
+			emit_signal('set_hidden_sprite', [$natalie_draw_a_paw])
 		state['show_natalie'] = false
 	
 	if state.get('blackout'):
