@@ -434,7 +434,7 @@ editor/display_folded = true
 visible = false
 position = Vector2( 443.482, -234.481 )
 script = ExtResource( 6 )
-dialog_label = "  attic_books"
+dialog_label = "  attic_pencil_box"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_pencil_box"]
 polygon = PoolVector2Array( 238.703, 761.709, 239.087, 790.577, 282.285, 790.19, 281.704, 763.264 )

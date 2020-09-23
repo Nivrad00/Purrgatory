@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/hallway2.gd" type="Script" id=2]
@@ -13,10 +13,9 @@
 [ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/sprites/natalie_and_tori.tscn" type="PackedScene" id=13]
-[ext_resource path="res://assets/sprites/natalie_and_tori.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprite_masks/natalie_and_tori.png" type="BitMap" id=15]
-[ext_resource path="res://assets/ui/ttt_done.png" type="Texture" id=16]
-[ext_resource path="res://themes/ui_theme.tres" type="Theme" id=17]
+[ext_resource path="res://assets/ui/ttt_done.png" type="Texture" id=14]
+[ext_resource path="res://themes/ui_theme.tres" type="Theme" id=15]
+[ext_resource path="res://assets/audio/pencil.ogg" type="AudioStream" id=16]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -123,10 +122,9 @@ margin_left = 256.29
 margin_top = 145.755
 margin_right = 1067.29
 margin_bottom = 713.755
-texture_normal = ExtResource( 14 )
-texture_click_mask = ExtResource( 15 )
 
 [node name="done_button" type="Button" parent="state_handler"]
+editor/display_folded = true
 visible = false
 anchor_right = 1.0
 margin_left = 542.977
@@ -143,7 +141,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="state_handler/done_button"]
 position = Vector2( 2.55439, -29.7181 )
-texture = ExtResource( 16 )
+texture = ExtResource( 14 )
 centered = false
 
 [node name="Label" type="Label" parent="state_handler/done_button"]
@@ -152,7 +150,17 @@ margin_top = 19.9905
 margin_right = 125.815
 margin_bottom = 53.9905
 rect_pivot_offset = Vector2( -555.677, -604.755 )
-theme = ExtResource( 17 )
+theme = ExtResource( 15 )
 text = "done"
+
+[node name="asmr" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 16 )
+volume_db = 10.0
+bus = "SFX"
+
+[node name="audio_delay" type="Timer" parent="state_handler"]
+wait_time = 0.03
+one_shot = true
 [connection signal="draw" from="state_handler/draw/draw_viewport/pen" to="state_handler/draw/draw_viewport/pen" method="_on_draw"]
 [connection signal="pressed" from="state_handler/done_button" to="state_handler" method="stop_drawing"]
+[connection signal="timeout" from="state_handler/audio_delay" to="state_handler" method="stop_audio"]

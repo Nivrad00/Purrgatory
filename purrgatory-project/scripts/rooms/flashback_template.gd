@@ -21,7 +21,9 @@ func _ready():
 	
 func next():
 	# if the previous line of text was a choice, turn off the button so it doesn't cause highlighting
-	var old = $hc/vc.get_child(text_n)
+	var old = null
+	if text_n >= 0:
+		old = $hc/vc.get_child(text_n)
 	if old and old.name[0] == 'c':
 		var old_choice = old.get_node('choice_container').get_child(choice_n)
 		old_choice.get_node('Button').hide()
@@ -62,10 +64,13 @@ func next():
 			
 		# if it's a choice...
 		elif current.name[0] == 'c':
+			$next_button.hide()
 			$next_cover.hide()
 			choice_n = 0
 			
 			# show the default choice
+			print(current)
+			print(current.get_node('choice_container').get_child(0))
 			var default_choice = current.get_node('choice_container').get_child(0).show()
 			
 	else: 

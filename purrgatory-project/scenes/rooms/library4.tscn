@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/library4.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/library4.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/exit_left-overlap.tscn" type="PackedScene" id=5]
@@ -32,11 +32,17 @@ room_label = "library3"
 position = Vector2( 724.922, -290.849 )
 room_label = "library5"
 
-[node name="exit3" parent="state_handler" instance=ExtResource( 6 )]
-editor/display_folded = true
+[node name="door_exit" parent="state_handler" instance=ExtResource( 6 )]
 room_label = "study"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/door_exit"]
+polygon = PoolVector2Array( 144.077, 546.15, 145.215, 720.772, 211.765, 705.983, 212.221, 551.708 )
+
+[node name="door_dialog" parent="state_handler" instance=ExtResource( 7 )]
+dialog_label = "study_door"
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/door_dialog"]
+position = Vector2( 453.085, -178.215 )
 polygon = PoolVector2Array( 144.077, 546.15, 145.215, 720.772, 211.765, 705.983, 212.221, 551.708 )
 
 [node name="object" parent="state_handler" instance=ExtResource( 7 )]

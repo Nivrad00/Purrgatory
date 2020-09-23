@@ -1,4 +1,7 @@
 extends 'state_handler_template.gd'
+
+func _ready():
+	$exit3.set_highlight_on_hover(false)
 	
 func update_state(state):
 	.update_state(state)

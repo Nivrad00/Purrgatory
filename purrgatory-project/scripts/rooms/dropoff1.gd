@@ -13,6 +13,7 @@ func update_state(state):
 	$tori_dropoff2.hide()
 	$elijah_dropoff.hide()
 	$dropoff_rope.hide()
+	$dropoff_rope2.hide()
 	$cant_leave.hide()
 	$exit.show()
 	$dropoff_again.hide()
@@ -29,8 +30,8 @@ func update_state(state):
 	
 	if state.get('oliver_sleeping_timer'):
 		state['oliver_sleeping_timer'] = false
-		emit_signal('start_action_timer', 50, ['oliver_sleeping', false])
-		emit_signal('start_action_timer', 50, ['oliver_in_study', false])
+		emit_signal('start_action_timer', 40, ['oliver_sleeping', false])
+		emit_signal('start_action_timer', 40, ['oliver_in_study', false])
 	
 	if state.get('oliver_override_dropoff'):
 		return
@@ -66,6 +67,7 @@ func update_state(state):
 		$bg2.show()
 	elif state.get('preparing_for_climb'):
 		$bg1.show()
+		$dropoff_rope2.show()
 	
 	if state.get('toss_coin'):
 		$coin/AnimationPlayer.play('paraola')

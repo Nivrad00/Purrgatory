@@ -1,12 +1,13 @@
 extends 'state_handler_template.gd'
 
+func init_state(state):
+	.init_state(state)
+	if state.get('oliver_why'):
+		state['oliver_why'] = false
+		
 func update_state(state):
 	.update_state(state)
-	if state.get('oliver_why'):
-		$oliver_study.hide()
-	else:
-		$oliver_study.show()
-	
+		
 	if state.get('oliver_sleeping'):
 		$oliver_asleep_at_desk.hide()
 		$oliver_study.hide()
@@ -32,9 +33,16 @@ func update_state(state):
 		$oliver_sleeping.hide()
 		$oliver_asleep_at_desk.hide()
 		
-	if state.get('tori_goto_study'):
-		state['tori_goto_study'] = false
+	if state.get('oliver_why'):
+		$oliver_study.hide()
+		
+	if state.get('hide_oliver_custom'):
+		state['hide_oliver_custom'] = false
 		emit_signal('set_hidden_sprite', [$oliver_study])
+		
+	if state.get('show_oliver_asleep_at_desk'):
+		state['show_oliver_asleep_at_desk'] = false
+		emit_signal('set_hidden_sprite', [])
 		
 	if state.get('oliver_goto_park1'):
 		state['oliver_goto_park1'] = false

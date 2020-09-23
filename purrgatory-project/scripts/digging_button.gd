@@ -16,6 +16,7 @@ func _ready():
 	
 func on_pressed():
 	get_parent().start_dialog(dialog_label.strip_edges(), [])
+	get_parent().get_node('sound').play()
 	dug_hole()
 	
 func dug_hole():

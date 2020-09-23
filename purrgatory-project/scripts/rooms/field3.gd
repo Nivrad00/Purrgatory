@@ -3,7 +3,6 @@ extends 'state_handler_template.gd'
 func init_state(state):
 	.init_state(state)
 	
-	randomize()
 	var r = rand_range(0, 100)
 	if state.get('met_sean') and floor(r) == 0:
 		$sean_fence.show()

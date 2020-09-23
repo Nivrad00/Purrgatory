@@ -22,7 +22,7 @@ func update_state(state):
 	if state.get('sean_went_to_piano'):
 		$sean_idle.hide()
 	
-	if state.get('elijah_went_to_sleep'):
+	if state.get('elijah_went_to_sleep') or state.get('poetry_session'):
 		$elijah_idle.hide()
 	
 	for key in state.keys():

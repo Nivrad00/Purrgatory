@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/exit.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=5]
 [ext_resource path="res://scenes/sprites/tori_exit.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/sprites/tori_exit2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/audio/door_kicking.wav" type="AudioStream" id=8]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -67,3 +68,8 @@ margin_top = 340.649
 margin_right = 502.822
 margin_bottom = 578.649
 sprite_path = [ null ]
+
+[node name="thud" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 8 )
+volume_db = -10.0
+bus = "SFX"

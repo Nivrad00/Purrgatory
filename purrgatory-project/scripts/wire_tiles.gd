@@ -44,7 +44,7 @@ func set_tile(label):
 	texture = images[label]
 	
 	if label in get_parent().clickable:
-		cursor_shape = Input.CURSOR_POINTING_HAND
+		cursor_shape = Input.CURSOR_ARROW # originally i had this as CURSOR_POINTING_HAND
 	else:
 		cursor_shape = Input.CURSOR_ARROW
 

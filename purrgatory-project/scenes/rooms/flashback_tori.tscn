@@ -145,15 +145,14 @@ rect_min_size = Vector2( 0, 60 )
 rect_clip_content = false
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "there was one thing you desired above all in life."
-text = "there was one thing you desired above all in life."
+bbcode_text = "you remember the one thing you desired above all."
+text = "you remember the one thing you desired above all."
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/hc/vc/t0"]
 anims/Fadein = SubResource( 1 )
 
 [node name="c1" type="RichTextLabel" parent="state_handler/hc/vc"]
-editor/display_folded = true
 margin_top = 250.0
 margin_right = 800.0
 margin_bottom = 310.0
@@ -166,6 +165,7 @@ scroll_active = false
 anims/Fadein = SubResource( 2 )
 
 [node name="choice_container" type="Control" parent="state_handler/hc/vc/c1"]
+editor/display_folded = true
 margin_right = 32.0
 margin_bottom = 40.0
 
@@ -323,7 +323,6 @@ flat = true
 script = ExtResource( 4 )
 
 [node name="t2" type="RichTextLabel" parent="state_handler/hc/vc"]
-editor/display_folded = true
 margin_top = 330.0
 margin_right = 800.0
 margin_bottom = 390.0
@@ -427,7 +426,7 @@ margin_bottom = 50.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "you remember dreaming of a better life as you laid in bed."
-text = "you remember dreaming of a better life as you laid in bed."
+text = "you remember dreaming of a better life as you lay in bed."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/t2/4"]
@@ -489,7 +488,6 @@ script = ExtResource( 4 )
 anims/Fadein = SubResource( 3 )
 
 [node name="c3" type="RichTextLabel" parent="state_handler/hc/vc"]
-editor/display_folded = true
 margin_top = 410.0
 margin_right = 800.0
 margin_bottom = 470.0
@@ -690,10 +688,10 @@ enabled_focus_mode = 0
 flat = true
 
 [node name="text" type="RichTextLabel" parent="state_handler/next_button"]
-margin_left = -49.0
-margin_top = -2.2016
-margin_right = 109.0
-margin_bottom = 60.0
+margin_left = -10.0
+margin_top = -2.0
+margin_right = 66.0
+margin_bottom = 34.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[center]next[/center]"

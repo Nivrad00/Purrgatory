@@ -4,12 +4,23 @@ signal return_to_main()
 
 export var default_room = ''
 
+var _state = {
+	'true': true
+}
+
+var cracked = {
+	'true': true,
+	'unlocked_commons_door': true,
+	'unlocked_meowseum_door': true
+}
+
 var tori_test_state = {
 	'true': true,
 	'saw_tori_intro': true,
 	'met_tori': true,
-	'tori_park_complete': true,
-	'tori_closet_complete': true
+	'tori_train_complete': true,
+	'tori_park_complete': true#,
+	#'tori_closet_complete': true
 }
 
 var sean_test_state = {
@@ -24,20 +35,12 @@ var natalie_test_state = {
 	'true': true,
 	'saw_natalie_intro': true,
 	'returned_draw_a_paw': true,
-	'natalie_finished_drawing3': true
+	'natalie_finished_drawing3': true,
+	'natalie_completed_mural': true,
+	'natalie_working_on_nocturnal': true
 }
 
-var state = {
-	'true': true
-}
-
-var cracked = {
-	'true': true,
-	'unlocked_commons_door': true,
-	'unlocked_meowseum_door': true
-}
-
-var oliver_state = {
+var oliver_test_state = {
 	'met_natalie': true,
 	'true': true,
 	'fed_kyungsoon_book': true,
@@ -50,15 +53,15 @@ var oliver_state = {
 	'oliver_questioned': true,
 	'_inv_commons_key': true,
 	'seen_study': true,
-	'_inv_chess_letter': true,
-	'tori_visited_oliver': true,
-	'oliver_asked_for_soda': true#,
+	'_inv_chess_letter': true# ,
+	# 'tori_visited_oliver': true,
+	# 'oliver_asked_for_soda': true,
 	# 'house_cat_pushed_glass': true,
 	# 'comforted_oliver': true,
 	# 'oliver_in_study': false
 }
 
-var numa_test_state = {
+var state = {
 	'true': true,
 	'fed_kyungsoon_book': true,
 	'met_kyungsoon': true,
@@ -67,18 +70,23 @@ var numa_test_state = {
 	'checked_out_book': true,
 	'tried_door': true,
 	'_inv_commons_key': true,
+	'unlocked_commons_door': true,
 	'met_numa': true,
 	'numa_helping': true,
 	'numa_snooped': true,
 	'numa_started_poem': true,
 	'numa_finished_poem': true,
-	# 'numa_started_flowers': true,
-	# 'flower_fails': 0,
-	# 'numa_finished_flowers': true,
+	'numa_started_flowers': true,
+	'flower_fails': 0,
+	'numa_finished_flowers': true,
 	'numa_started_food': true,
 	'numa_progressed_food': true,
 	'numa_finished_food': true,
-	'met_elijah': true
+	'met_elijah': true, 
+	'numa_quest_complete': true,
+	'ks_quest_complete': true,
+	'ks_at_commons': true,
+	'numa_at_commons': true
 }
 
 var format_dict = {
@@ -269,6 +277,13 @@ func end_dialog():
 #    'next': 150
 # }
 
+# clicking the text box goes through this function, so that the player can't
+# click through text while skipping.
+# the skipper goes directly to update_dialog.
+func update_dialog_button_clicked():
+	if not skip:
+		update_dialog(-1)
+
 func update_dialog(b: int):
 	# mark the previous block as seen, and immediately write to file
 	seen_blocks.append(block['label'])
@@ -393,7 +408,7 @@ func change_audio(song, play = true):
 
 	else:
 		var stream = load('res://assets/audio/' + song + '.ogg')
-		$main_audio.volume_db = -4
+		$main_audio.volume_db = -15
 		$main_audio.set_stream(stream)
 
 		if play:
@@ -551,13 +566,13 @@ func load_game_while_playing(file):
 	$meta_ui/load_confirm.show()
 
 func load_game(file):
-	# temporarily mute audio to prevent artifacts
-	AudioServer.set_bus_mute(0, true)
-	
 	var save_game = File.new()
 	if not save_game.file_exists("user://save" + str(file) + ".save"):
 		return
 
+	# temporarily mute audio to prevent artifacts
+	AudioServer.set_bus_mute(0, true)
+	
 	save_game.open("user://save" + str(file) + ".save", File.READ)
 	var save_dict = parse_json(save_game.get_line())
 	save_game.close()
@@ -656,7 +671,6 @@ func reset_state(reset_room):
 	ui.get_node('name_input/custom_pronouns/their').text = "their"
 	ui.get_node('name_input/custom_pronouns/theirs').text = "theirs"
 	
-	
 	state = {
 		'true': true
 	}
@@ -664,6 +678,7 @@ func reset_state(reset_room):
 		'player': '',
 		'player_upper': ''
 	}
+	
 	action_timers = []
 	if reset_room:
 		room.change_room(default_room, state, false)
@@ -671,6 +686,7 @@ func reset_state(reset_room):
 	
 	$meta_ui/dropdown.load_inv([])
 	$meta_ui/dropdown.load_quest_log([])
+	$meta_ui/history.load_history([])
 
 func open_pause_menu():
 	$tts_node.stop()
@@ -683,7 +699,7 @@ func close_pause_menu():
 
 func options_changed():
 	var state_handler = room.find_node('state_handler', true, false)
-	if state_handler.has_method('options_changed'):
+	if state_handler and state_handler.has_method('options_changed'):
 		state_handler.options_changed()
 
 func save_confirmed():
@@ -705,6 +721,7 @@ func toggle_skip():
 func turn_off_skip():
 	skip = false
 	ui.get_node('skip_button/box2').set_modulate(Color(1, 1, 1))
+	$skip_timer.stop()
 
 func turn_on_skip():
 	skip = true

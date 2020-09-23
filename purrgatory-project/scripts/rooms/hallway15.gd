@@ -13,3 +13,7 @@ func update_state(state):
 		$door_exit.show()
 	else:
 		$door_dialog.show()
+	
+	if state.get('ding_dong'):
+		state['ding_dong'] = false
+		$ding_dong.play()

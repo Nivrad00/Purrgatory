@@ -39,7 +39,6 @@ anims/oliver_idle = SubResource( 1 )
 
 [node name="audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-volume_db = 3.0
 pitch_scale = 2.0
 bus = "SFX"
 [connection signal="button_down" from="." to="audio" method="play"]

@@ -1,5 +1,7 @@
 extends 'state_handler_template.gd'
 
+var audio_pos = 0
+
 func _ready():
 	# if you've already done the mural, replace the viewporttexture with an imagetexture
 	# i guess we're doing the terrible path again...
@@ -12,6 +14,8 @@ func _ready():
 	
 	if game.state.get('mural_drawing'):
 		start_drawing()
+		
+	$draw.connect('drew_line', self, 'start_audio')
 	
 func update_state(state):
 	.update_state(state)
@@ -28,7 +32,7 @@ func update_state(state):
 		
 	if state.get('natalie_tori_talking_timer'):
 		state['natalie_tori_talking_timer'] = false
-		emit_signal('start_action_timer', 50, ['natalie_working_on_nocturnal', true])
+		emit_signal('start_action_timer', 40, ['natalie_working_on_nocturnal', true])
 		
 	if state.get('start_drawing'):
 		state['start_drawing'] = false
@@ -83,3 +87,13 @@ func store_image():
 		
 	get_node("../../../../..").mural_drawing = final_img
 	
+func start_audio(_a, _b):
+	print('starting audio')
+	if not $asmr.playing:
+		$asmr.play(audio_pos)
+	$audio_delay.start()
+
+func stop_audio():
+	print('stopping audio')
+	audio_pos = $asmr.get_playback_position()
+	$asmr.stop()

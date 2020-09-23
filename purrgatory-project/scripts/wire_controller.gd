@@ -49,6 +49,9 @@ func mouse_entered(button):
 		and hovered_tile in current.adjacent.values()\
 		and (not (current.tile.substr(0, 4) == 'node' and current.origin))\
 		and hovered_tile != origin:
+			
+			get_node('../click1').play()
+			
 			origin.path.append(hovered_tile)
 			current = origin.path[origin.path.size() - 1]
 			prev = origin.path[origin.path.size() - 2]
@@ -175,7 +178,12 @@ func mouse_entered(button):
 			
 		# if they're pulling a wire back
 		elif hovered_tile == prev:
+			
+			get_node('../click2').play()
+			
 			reset_button(current)
+			if current.tile == 'node':
+				get_parent().disconnected_wire()
 				
 			origin.origin = null
 			origin.path.pop_back()
@@ -208,8 +216,10 @@ func _input(event):
 		# if they clicked on a clickable tile
 		if event.pressed and hovered_tile and hovered_tile.tile in clickable:
 			# if they clicked on a node
+			
 			if hovered_tile.tile.substr(0, 4) == 'node':
 				if hovered_tile.path.size() > 1:
+					get_parent().disconnected_wire()
 					for button in hovered_tile.path:
 						reset_button(button)
 				origin = hovered_tile
@@ -221,9 +231,11 @@ func _input(event):
 			get_tree().set_input_as_handled()
 			
 			# temporarily override all the cursor shapes with CURSOR_MOVE
-			Input.set_default_cursor_shape(Input.CURSOR_MOVE)
 			for button in get_children():
 				button.mouse_default_cursor_shape = Input.CURSOR_MOVE
+			
+			# force the cursor shape to update lol
+			get_viewport().warp_mouse(get_viewport().get_mouse_position())
 		
 		# if they previously clicked on a clickable tile, then let go
 		elif not event.pressed and origin:

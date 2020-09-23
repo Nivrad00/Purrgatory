@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/field2.gd" type="Script" id=2]
@@ -16,7 +16,8 @@
 [ext_resource path="res://assets/sprites/hoels/field2_2.png" type="Texture" id=14]
 [ext_resource path="res://assets/sprites/hoels/shovel1.png" type="Texture" id=15]
 [ext_resource path="res://scenes/hole_score.tscn" type="PackedScene" id=16]
-[ext_resource path="res://scenes/surprise.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/digging_sound.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/surprise.tscn" type="PackedScene" id=18]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -36,6 +37,7 @@ __meta__ = {
 }
 
 [node name="dirt" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 script = ExtResource( 4 )
 dialog_label = "field_dirt"
 sprite_path = [ null ]
@@ -56,8 +58,10 @@ position = Vector2( 251.538, 11.2935 )
 polygon = PoolVector2Array( 214.183, 351.984, 183.021, 403.527, 243.472, 414.306, 284.383, 406.257, 329.634, 391.829, 304.403, 360.056, 242.45, 327.528 )
 
 [node name="jacket" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 script = ExtResource( 4 )
 dialog_label = "field_jacket"
+sprite_path = [ null ]
 
 [node name="toris_jacket" type="Sprite" parent="state_handler/jacket"]
 position = Vector2( 598.362, 403.117 )
@@ -233,4 +237,6 @@ texture = ExtResource( 15 )
 
 [node name="score" parent="state_handler/digging" instance=ExtResource( 16 )]
 
-[node name="surprise" parent="state_handler" instance=ExtResource( 17 )]
+[node name="sound" parent="state_handler/digging" instance=ExtResource( 17 )]
+
+[node name="surprise" parent="state_handler" instance=ExtResource( 18 )]

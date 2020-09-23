@@ -12,6 +12,6 @@ func update_state(state):
 		state['ks_at_vent_timer'] = false
 		state['ks_at_vent'] = true
 		state['ks_at_commons'] = false
-		emit_signal('start_action_timer', 50, ['ks_at_vent', false])
-		emit_signal('start_action_timer', 50, ['ks_at_commons', true])
-		emit_signal('start_action_timer', 50, ['numa_at_commons', true])
+		emit_signal('start_action_timer', 40, ['ks_at_vent', false])
+		emit_signal('start_action_timer', 40, ['ks_at_commons', true])
+		emit_signal('start_action_timer', 40, ['numa_at_commons', true])

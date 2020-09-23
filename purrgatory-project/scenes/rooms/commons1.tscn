@@ -1,20 +1,18 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/commons1.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/commons1.png" type="Texture" id=3]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/exits/exit_square_empty.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprites/ending_sign.png" type="Texture" id=6]
-[ext_resource path="res://scenes/sprites/numa_at_commons.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/sprites/kyungsoon_idle.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/sprites/basket-flower-and-card.png" type="Texture" id=9]
-[ext_resource path="res://assets/sprite_masks/basket-flower-and-card.png" type="BitMap" id=10]
-[ext_resource path="res://scenes/sprites/oliver_huh.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scenes/cat1_idle.tscn" type="PackedScene" id=12]
-[ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=13]
-[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=14]
-[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=15]
+[ext_resource path="res://scenes/sprites/numa_at_commons.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/sprites/kyungsoon_idle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/sprites/basket-flower-and-card.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite_masks/basket-flower-and-card.png" type="BitMap" id=8]
+[ext_resource path="res://scenes/sprites/oliver_huh.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/cat1_idle.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=12]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=13]
 
 [node name="room_template" type="Control"]
 anchor_right = 1.0
@@ -30,48 +28,34 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="ending_sign" parent="state_handler" instance=ExtResource( 4 )]
-editor/display_folded = true
-modulate = Color( 1, 1, 1, 1 )
-margin_left = 945.0
-margin_top = 465.0
-margin_right = 1049.0
-margin_bottom = 605.0
-texture_normal = ExtResource( 5 )
-dialog_label = "ending_sign"
-
-[node name="sprite" type="Sprite" parent="state_handler/ending_sign"]
-texture = ExtResource( 6 )
-centered = false
-
-[node name="numa_at_commons" parent="state_handler" instance=ExtResource( 7 )]
-visible = false
+[node name="numa_at_commons" parent="state_handler" instance=ExtResource( 4 )]
 margin_left = 405.733
 margin_top = 313.617
 margin_right = 626.733
 margin_bottom = 542.617
+dialog_label = "ks_and_numa_commons"
 blackout_label = "numa_blackout"
 
-[node name="kyungsoon_idle" parent="state_handler" instance=ExtResource( 8 )]
+[node name="kyungsoon_idle" parent="state_handler" instance=ExtResource( 5 )]
 margin_left = 304.629
 margin_top = 327.683
 margin_right = 567.629
 margin_bottom = 647.683
 blackout_label = "kyungsoon_blackout"
 
-[node name="flowers_etc" parent="state_handler" instance=ExtResource( 4 )]
+[node name="flowers_etc" parent="state_handler" instance=ExtResource( 6 )]
 visible = false
 modulate = Color( 1, 1, 1, 1 )
 margin_left = 617.398
 margin_top = 499.255
 margin_right = 818.398
 margin_bottom = 648.255
-texture_normal = ExtResource( 9 )
-texture_click_mask = ExtResource( 10 )
+texture_normal = ExtResource( 7 )
+texture_click_mask = ExtResource( 8 )
 expand = false
 dialog_label = "flowers_etc"
 
-[node name="oliver_huh" parent="state_handler" instance=ExtResource( 11 )]
+[node name="oliver_huh" parent="state_handler" instance=ExtResource( 9 )]
 visible = false
 margin_left = 1029.18
 margin_top = 209.466
@@ -80,19 +64,19 @@ margin_bottom = 541.466
 dialog_label = "talk_to_oliver_about_numa"
 blackout_label = "oliver_blackout"
 
-[node name="cat1_idle" parent="state_handler" instance=ExtResource( 12 )]
+[node name="cat1_idle" parent="state_handler" instance=ExtResource( 10 )]
 margin_left = 940.571
 margin_top = 464.095
 margin_right = 1080.57
 margin_bottom = 598.095
 
-[node name="exit" parent="state_handler" instance=ExtResource( 13 )]
+[node name="exit" parent="state_handler" instance=ExtResource( 11 )]
 room_label = "commons2"
 
 [node name="exit2" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 position = Vector2( 456.517, -238.127 )
-script = ExtResource( 14 )
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -105,7 +89,7 @@ polygon = PoolVector2Array( -459.085, 322.215, -455.713, 875.844, -322.6, 822.85
 editor/display_folded = true
 visible = false
 position = Vector2( 453.517, -203.127 )
-script = ExtResource( 14 )
+script = ExtResource( 12 )
 room_label = "commons3"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_door_exit"]
@@ -115,7 +99,7 @@ polygon = PoolVector2Array( 413.864, 387.731, 412.011, 687.48, 569.53, 711.108, 
 [node name="commons_door_dialog" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 position = Vector2( 0.431946, -59.9116 )
-script = ExtResource( 15 )
+script = ExtResource( 13 )
 dialog_label = "try_door"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_door_dialog"]
@@ -125,7 +109,7 @@ polygon = PoolVector2Array( 865.429, 508.608, 1021.99, 533.956, 1020.8, 205.639,
 [node name="commons_lamp" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 position = Vector2( 0.431946, -59.9116 )
-script = ExtResource( 15 )
+script = ExtResource( 13 )
 dialog_label = "commons_lamp"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_lamp"]
@@ -134,7 +118,7 @@ polygon = PoolVector2Array( 778.808, 373.277, 777.445, 349.097, 794.304, 338.323
 [node name="commons_cord" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 position = Vector2( 0.431946, -59.9116 )
-script = ExtResource( 15 )
+script = ExtResource( 13 )
 dialog_label = "commons_lamp"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_cord"]

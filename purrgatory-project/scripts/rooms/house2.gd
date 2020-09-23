@@ -7,3 +7,7 @@ func init_state(state):
 		
 		if state.get('met_natalie'):
 			emit_signal('start_dialog', 'natalie_glass', [])
+		
+	if state.get('sean_replaced_batteries') or state.get('_inv_battery2'):
+		$battery2.hide()
+		

@@ -1,13 +1,16 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprites/elevator_door.png" type="Texture" id=3]
 [ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/rooms/hallway7.png" type="Texture" id=6]
-[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scripts/elevator_button.gd" type="Script" id=8]
+[ext_resource path="res://scripts/elevator_button.gd" type="Script" id=6]
+[ext_resource path="res://assets/audio/button.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/audio/elevator_door.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/audio/elevator_door_end.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/rooms/hallway7.png" type="Texture" id=10]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "open"
@@ -47,6 +50,7 @@ script = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="elevator" type="ColorRect" parent="state_handler"]
+editor/display_folded = true
 margin_left = 660.51
 margin_top = 101.218
 margin_right = 890.51
@@ -59,6 +63,7 @@ rotation = -1.57079
 texture = ExtResource( 3 )
 
 [node name="exit2" parent="state_handler" instance=ExtResource( 4 )]
+editor/display_folded = true
 visible = false
 room_label = "elevator"
 
@@ -66,6 +71,7 @@ room_label = "elevator"
 polygon = PoolVector2Array( 223.916, 351.887, 420.149, 301.607, 420.847, 720.61, 221.821, 583.736 )
 
 [node name="door_dialog" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "elevator_door"
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/door_dialog"]
@@ -91,11 +97,36 @@ margin_bottom = 550.803
 mouse_filter = 2
 texture = ExtResource( 3 )
 
+[node name="object" type="Button" parent="state_handler"]
+margin_left = 905.621
+margin_top = 293.081
+margin_right = 929.621
+margin_bottom = 349.081
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 6 )
+
+[node name="button" type="AudioStreamPlayer" parent="state_handler/object"]
+stream = ExtResource( 7 )
+volume_db = -5.0
+bus = "SFX"
+
+[node name="door" type="AudioStreamPlayer" parent="state_handler/object"]
+stream = ExtResource( 8 )
+volume_db = -25.0
+bus = "SFX"
+
+[node name="door_end" type="AudioStreamPlayer" parent="state_handler/object"]
+stream = ExtResource( 9 )
+volume_db = -27.0
+bus = "SFX"
+
 [node name="fg" type="Sprite" parent="state_handler"]
-texture = ExtResource( 6 )
+texture = ExtResource( 10 )
 centered = false
 
-[node name="exit" parent="state_handler" instance=ExtResource( 7 )]
+[node name="exit" parent="state_handler" instance=ExtResource( 11 )]
 room_label = "hallway8"
 
 [node name="exit3" parent="state_handler" instance=ExtResource( 4 )]
@@ -106,24 +137,26 @@ room_label = "hallway15"
 polygon = PoolVector2Array( -120.153, 278.778, -92.4216, 328.568, 67.6621, 327.937, 123.754, 276.887 )
 
 [node name="exit4" parent="state_handler" instance=ExtResource( 4 )]
+editor/display_folded = true
 room_label = "hallway6"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit4"]
 polygon = PoolVector2Array( -288.027, 187.683, -193.265, 274.323, -194.167, 620.883, -284.417, 750.844 )
 
-[node name="object" type="Button" parent="state_handler"]
-margin_left = 905.621
-margin_top = 293.081
-margin_right = 929.621
-margin_bottom = 349.081
-focus_mode = 0
-enabled_focus_mode = 0
-flat = true
-script = ExtResource( 8 )
-
 [node name="object2" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "chair_picture "
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
 polygon = PoolVector2Array( 1068.09, 336.705, 1066.83, 443.218, 1173.34, 479.142, 1173.34, 355.613, 1125.44, 291.957 )
+
+[node name="object3" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
+position = Vector2( -384.487, -23.2686 )
+dialog_label = "hallway_ladder"
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object3"]
+position = Vector2( 587.557, -177.313 )
+polygon = PoolVector2Array( 223.916, 351.887, 264.516, 355.811, 260.906, 463.208, 223.001, 465.916 )
+[connection signal="animation_finished" from="state_handler/elevator_door1/AnimationPlayer" to="state_handler/object" method="door_finished"]
 [connection signal="pressed" from="state_handler/object" to="state_handler/object" method="_on_object_pressed"]

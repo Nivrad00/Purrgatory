@@ -12,4 +12,4 @@ dest_files=[ "res://.import/31.png-db989e043b9b7cf57403aa371ea42e64.res" ]
 [params]
 
 create_from=1
-threshold=0.5
+threshold=0.0

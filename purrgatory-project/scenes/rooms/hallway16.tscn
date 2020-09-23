@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
@@ -8,8 +8,11 @@
 [ext_resource path="res://assets/rooms/hallway16_door.png" type="Texture" id=6]
 [ext_resource path="res://assets/rooms/hallway16.png" type="Texture" id=7]
 [ext_resource path="res://scripts/elevator_button.gd" type="Script" id=8]
-[ext_resource path="res://scenes/exit_left.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/hum.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/audio/button.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/audio/elevator_door.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/audio/elevator_door_end.wav" type="AudioStream" id=11]
+[ext_resource path="res://scenes/exit_left.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/hum.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Animation" id=1]
 resource_name = "open"
@@ -100,9 +103,25 @@ enabled_focus_mode = 0
 flat = true
 script = ExtResource( 8 )
 
-[node name="exit" parent="state_handler" instance=ExtResource( 9 )]
+[node name="button" type="AudioStreamPlayer" parent="state_handler/object"]
+stream = ExtResource( 9 )
+volume_db = -5.0
+bus = "SFX"
+
+[node name="door" type="AudioStreamPlayer" parent="state_handler/object"]
+stream = ExtResource( 10 )
+volume_db = -25.0
+bus = "SFX"
+
+[node name="door_end" type="AudioStreamPlayer" parent="state_handler/object"]
+stream = ExtResource( 11 )
+volume_db = -27.0
+bus = "SFX"
+
+[node name="exit" parent="state_handler" instance=ExtResource( 12 )]
 room_label = "escalator"
 
-[node name="hum" parent="state_handler" instance=ExtResource( 10 )]
+[node name="hum" parent="state_handler" instance=ExtResource( 13 )]
 volume_db = -10.0
+[connection signal="animation_finished" from="state_handler/elevator_door1/AnimationPlayer" to="state_handler/object" method="door_finished"]
 [connection signal="pressed" from="state_handler/object" to="state_handler/object" method="_on_object_pressed"]

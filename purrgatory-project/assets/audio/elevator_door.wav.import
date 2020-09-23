@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/elevator_door.wav-762ab73fa7fb496dd55613fd61c4c8ad.sample"
+
+[deps]
+
+source_file="res://assets/audio/elevator_door.wav"
+dest_files=[ "res://.import/elevator_door.wav-762ab73fa7fb496dd55613fd61c4c8ad.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

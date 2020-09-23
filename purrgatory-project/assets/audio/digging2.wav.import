@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/digging2.wav-162fb9a8f3862a235ad9562b6ea54308.sample"
+
+[deps]
+
+source_file="res://assets/audio/digging2.wav"
+dest_files=[ "res://.import/digging2.wav-162fb9a8f3862a235ad9562b6ea54308.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -5,15 +5,15 @@ func update_state(state):
 	
 	if state.get('natalie_drawing_timer1'):
 		state['natalie_drawing_timer1'] = false
-		emit_signal('start_action_timer', 30, ['natalie_finished_drawing1', true])
+		emit_signal('start_action_timer', 20, ['natalie_finished_drawing1', true])
 		
 	if state.get('natalie_drawing_timer2'):
 		state['natalie_drawing_timer2'] = false
-		emit_signal('start_action_timer', 30, ['natalie_finished_drawing2', true])
+		emit_signal('start_action_timer', 20, ['natalie_finished_drawing2', true])
 		
 	if state.get('natalie_drawing_timer3'):
 		state['natalie_drawing_timer3'] = false
-		emit_signal('start_action_timer', 30, ['natalie_finished_drawing3', true])
+		emit_signal('start_action_timer', 20, ['natalie_finished_drawing3', true])
 		
 	$natalie_idle.hide()
 	$natalie_draw_a_paw.hide()
@@ -31,13 +31,16 @@ func update_state(state):
 		if node.name.substr(0, 4) == 'post':
 			node.hide()
 	
-	if state.get('natalie_completed_mural'):
+	if state.get('natalie_working_on_nocturnal'):
 		$natalie_nocturnal.show()
 		$bg3.show()
 		$attic_pencil_box.show()
 		for node in get_children():
 			if node.name.substr(0, 4) == 'post':
 				node.show()
+				
+	elif state.get('natalie_completed_mural'): # but not working on nocturnal yet
+		$bg2.show()
 			
 	elif state.get('saw_natalie_intro'):
 		if state.get('returned_draw_a_paw') and not state.get('natalie_finished_drawing3'):

@@ -85,7 +85,6 @@ enabled_focus_mode = 0
 flat = true
 
 [node name="main_menu" type="Control" parent="."]
-editor/display_folded = true
 visible = false
 margin_top = -15.0093
 margin_right = 40.0
@@ -267,7 +266,7 @@ mouse_filter = 2
 
 [node name="audio" type="AudioStreamPlayer" parent="main_menu"]
 stream = ExtResource( 12 )
-volume_db = -10.0
+volume_db = -15.0
 bus = "Music"
 
 [node name="credits" type="Control" parent="."]

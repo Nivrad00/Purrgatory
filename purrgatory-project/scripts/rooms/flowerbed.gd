@@ -92,13 +92,13 @@ func generate_flowers(ids):
 		flower.connect('pick_flower', self, 'pick_flower')
 		flower.set_id(id)
 		
-		var size = flower.get_normal_texture().get_size()
+		var size = flower.get_node('button').get_normal_texture().get_size()
 		var area = $flower_area.get_rect()
 		var pos = null
 		
 		while true:
-			var x = rand_range(area.position.x - size.x / 4, area.end.x - size.x * 3/4)
-			var y = rand_range(area.position.y - size.y, area.end.y - size.y)
+			var x = rand_range(area.position.x - size.x * 1/4, area.end.x - size.x * 3/4)
+			var y = rand_range(area.position.y, area.end.y)
 			pos = Vector2(x, y)
 			var valid_pos = true
 			for flower in flowers:
@@ -106,7 +106,7 @@ func generate_flowers(ids):
 					valid_pos = false
 			if valid_pos:
 				break
-			
+		
 		flower.set_position(pos)
 		flowers.append(flower)
 		
@@ -137,6 +137,8 @@ func setup_game():
 		
 	generate_flowers(random_ids)
 	
+	flowers.invert()
+	
 	for flower in flowers:
 		$flower_sorter.add_child(flower)
 	$flower_box.set_indicator(target_ids[0])
@@ -159,7 +161,6 @@ func update_state(state):
 		state['flower_ongoing'] = false
 		state['increment_flower_fails'] = false
 		state['flower_fails'] += 1
-		print(state['flower_fails'])
 	
 	if state.get('numa_finished_flowers') and state.get('flower_ongoing'):
 		state['flower_ongoing'] = false

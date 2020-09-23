@@ -1,28 +1,32 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/wire_game.gd" type="Script" id=2]
 [ext_resource path="res://assets/audio/power down.wav" type="AudioStream" id=3]
-[ext_resource path="res://scripts/wire_controller.gd" type="Script" id=4]
-[ext_resource path="res://assets/sprites/wires/node.png" type="Texture" id=5]
-[ext_resource path="res://scripts/wire_tiles.gd" type="Script" id=6]
-[ext_resource path="res://themes/ui_theme.tres" type="Theme" id=7]
-[ext_resource path="res://assets/sprites/wires/blank.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprites/wire_shelf.png" type="Texture" id=9]
-[ext_resource path="res://assets/ui/ok_button.png" type="Texture" id=10]
-[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=11]
-[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=12]
-[ext_resource path="res://assets/rooms/wire_game.png" type="Texture" id=13]
+[ext_resource path="res://assets/audio/fluorescent_lights.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/audio/tweezer_click1.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/audio/epilator_click2.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/audio/epilator_click1.wav" type="AudioStream" id=7]
+[ext_resource path="res://scripts/wire_controller.gd" type="Script" id=8]
+[ext_resource path="res://assets/sprites/wires/node.png" type="Texture" id=9]
+[ext_resource path="res://scripts/wire_tiles.gd" type="Script" id=10]
+[ext_resource path="res://themes/ui_theme.tres" type="Theme" id=11]
+[ext_resource path="res://assets/sprites/wires/blank.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/wire_shelf.png" type="Texture" id=13]
+[ext_resource path="res://assets/ui/ok_button.png" type="Texture" id=14]
+[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=16]
+[ext_resource path="res://assets/rooms/wire_game.png" type="Texture" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
 use_filter = true
-font_data = ExtResource( 11 )
+font_data = ExtResource( 15 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 18
 use_filter = true
-font_data = ExtResource( 11 )
+font_data = ExtResource( 15 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "come out"
@@ -50,8 +54,36 @@ script = ExtResource( 1 )
 [node name="state_handler" type="Control" parent="."]
 script = ExtResource( 2 )
 
+[node name="power_delay" type="Timer" parent="state_handler"]
+wait_time = 2.5
+
 [node name="power_down" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 3 )
+volume_db = -8.0
+bus = "SFX"
+
+[node name="power_on" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 4 )
+volume_db = -13.0
+bus = "SFX"
+
+[node name="click1" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 5 )
+volume_db = -15.0
+bus = "SFX"
+
+[node name="click2" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 5 )
+volume_db = -20.0
+pitch_scale = 0.8
+bus = "SFX"
+
+[node name="connect" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 6 )
+bus = "SFX"
+
+[node name="disconnect" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 7 )
 bus = "SFX"
 
 [node name="bg" type="ColorRect" parent="state_handler"]
@@ -71,7 +103,7 @@ rect_pivot_offset = Vector2( 13.5215, 267.939 )
 custom_constants/vseparation = -1
 custom_constants/hseparation = -1
 columns = 8
-script = ExtResource( 4 )
+script = ExtResource( 8 )
 
 [node name="Button" type="TextureRect" parent="state_handler/GridContainer"]
 margin_right = 80.0
@@ -79,15 +111,15 @@ margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 5 )
-script = ExtResource( 6 )
+texture = ExtResource( 9 )
+script = ExtResource( 10 )
 tile = "node"
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 text = "A"
 align = 1
 valign = 1
@@ -99,14 +131,14 @@ margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button2"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -117,14 +149,14 @@ margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button3"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -135,14 +167,14 @@ margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button4"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -153,14 +185,14 @@ margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button5"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -171,14 +203,14 @@ margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button6"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -189,14 +221,14 @@ margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button7"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -207,15 +239,15 @@ margin_bottom = 80.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 5 )
-script = ExtResource( 6 )
+texture = ExtResource( 9 )
+script = ExtResource( 10 )
 tile = "node"
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button8"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 text = "F"
 align = 1
 valign = 1
@@ -227,14 +259,14 @@ margin_bottom = 159.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button9"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -246,14 +278,14 @@ margin_bottom = 159.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button10"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -265,14 +297,14 @@ margin_bottom = 159.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button11"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -284,14 +316,14 @@ margin_bottom = 159.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button12"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -303,14 +335,14 @@ margin_bottom = 159.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button13"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -322,15 +354,15 @@ margin_bottom = 159.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 5 )
-script = ExtResource( 6 )
+texture = ExtResource( 9 )
+script = ExtResource( 10 )
 tile = "node"
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button15"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 text = "B"
 align = 1
 valign = 1
@@ -343,14 +375,14 @@ margin_bottom = 159.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button14"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -362,8 +394,8 @@ margin_bottom = 159.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button16"]
 margin_left = -438.946
@@ -371,7 +403,7 @@ margin_top = 36.842
 margin_right = -358.946
 margin_bottom = 116.842
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -382,14 +414,14 @@ margin_bottom = 238.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button17"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -401,15 +433,15 @@ margin_bottom = 238.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 5 )
-script = ExtResource( 6 )
+texture = ExtResource( 9 )
+script = ExtResource( 10 )
 tile = "node"
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button18"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 text = "A"
 align = 1
 valign = 1
@@ -422,14 +454,14 @@ margin_bottom = 238.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button19"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -441,14 +473,14 @@ margin_bottom = 238.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button20"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -460,14 +492,14 @@ margin_bottom = 238.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button21"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -479,14 +511,14 @@ margin_bottom = 238.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button22"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -498,14 +530,14 @@ margin_bottom = 238.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button23"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -517,14 +549,14 @@ margin_bottom = 238.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button24"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -535,14 +567,14 @@ margin_bottom = 317.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button25"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -554,14 +586,14 @@ margin_bottom = 317.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button27"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -573,15 +605,15 @@ margin_bottom = 317.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 5 )
-script = ExtResource( 6 )
+texture = ExtResource( 9 )
+script = ExtResource( 10 )
 tile = "node"
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button34"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 text = "E"
 align = 1
 valign = 1
@@ -594,15 +626,15 @@ margin_bottom = 317.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 5 )
-script = ExtResource( 6 )
+texture = ExtResource( 9 )
+script = ExtResource( 10 )
 tile = "node"
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button26"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 text = "C"
 align = 1
 valign = 1
@@ -615,14 +647,14 @@ margin_bottom = 317.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button28"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -634,14 +666,14 @@ margin_bottom = 317.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button29"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -653,14 +685,14 @@ margin_bottom = 317.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button30"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -672,14 +704,14 @@ margin_bottom = 317.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button31"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -690,14 +722,14 @@ margin_bottom = 396.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button32"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -709,14 +741,14 @@ margin_bottom = 396.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button33"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -728,15 +760,15 @@ margin_bottom = 396.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 5 )
-script = ExtResource( 6 )
+texture = ExtResource( 9 )
+script = ExtResource( 10 )
 tile = "node"
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button39"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 text = "D"
 align = 1
 valign = 1
@@ -749,14 +781,14 @@ margin_bottom = 396.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button35"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -768,14 +800,14 @@ margin_bottom = 396.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button36"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -787,14 +819,14 @@ margin_bottom = 396.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button37"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -806,14 +838,14 @@ margin_bottom = 396.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button38"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -825,14 +857,14 @@ margin_bottom = 396.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button40"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -843,8 +875,8 @@ margin_bottom = 475.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button41"]
 margin_left = 309.473
@@ -852,7 +884,7 @@ margin_top = 8.42102
 margin_right = 389.473
 margin_bottom = 88.421
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -864,14 +896,14 @@ margin_bottom = 475.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button42"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -883,14 +915,14 @@ margin_bottom = 475.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button43"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -902,14 +934,14 @@ margin_bottom = 475.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button44"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -921,15 +953,15 @@ margin_bottom = 475.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 5 )
-script = ExtResource( 6 )
+texture = ExtResource( 9 )
+script = ExtResource( 10 )
 tile = "node"
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button54"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 text = "E"
 align = 1
 valign = 1
@@ -942,14 +974,14 @@ margin_bottom = 475.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button45"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -961,14 +993,14 @@ margin_bottom = 475.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button46"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -980,14 +1012,14 @@ margin_bottom = 475.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button47"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -998,14 +1030,14 @@ margin_bottom = 554.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button48"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -1017,15 +1049,15 @@ margin_bottom = 554.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 5 )
-script = ExtResource( 6 )
+texture = ExtResource( 9 )
+script = ExtResource( 10 )
 tile = "node"
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button49"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 text = "B"
 align = 1
 valign = 1
@@ -1038,15 +1070,15 @@ margin_bottom = 554.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 5 )
-script = ExtResource( 6 )
+texture = ExtResource( 9 )
+script = ExtResource( 10 )
 tile = "node"
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button55"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 text = "D"
 align = 1
 valign = 1
@@ -1059,14 +1091,14 @@ margin_bottom = 554.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button50"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -1078,14 +1110,14 @@ margin_bottom = 554.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button51"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -1097,14 +1129,14 @@ margin_bottom = 554.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button52"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -1116,14 +1148,14 @@ margin_bottom = 554.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button53"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -1135,14 +1167,14 @@ margin_bottom = 554.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button56"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -1153,15 +1185,15 @@ margin_bottom = 633.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 5 )
-script = ExtResource( 6 )
+texture = ExtResource( 9 )
+script = ExtResource( 10 )
 tile = "node"
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button57"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 text = "C"
 align = 1
 valign = 1
@@ -1174,14 +1206,14 @@ margin_bottom = 633.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button58"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -1193,14 +1225,14 @@ margin_bottom = 633.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button59"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -1212,14 +1244,14 @@ margin_bottom = 633.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button60"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -1231,14 +1263,14 @@ margin_bottom = 633.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button61"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -1250,14 +1282,14 @@ margin_bottom = 633.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button62"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -1269,14 +1301,14 @@ margin_bottom = 633.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button63"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 align = 1
 valign = 1
 
@@ -1288,22 +1320,23 @@ margin_bottom = 633.0
 rect_min_size = Vector2( 80, 80 )
 rect_pivot_offset = Vector2( 40, 40 )
 mouse_default_cursor_shape = 13
-texture = ExtResource( 8 )
-script = ExtResource( 6 )
+texture = ExtResource( 12 )
+script = ExtResource( 10 )
 tile = "node"
 
 [node name="Label" type="Label" parent="state_handler/GridContainer/Button64"]
 margin_right = 80.0
 margin_bottom = 80.0
 rect_pivot_offset = Vector2( 40, 40 )
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 text = "F"
 align = 1
 valign = 1
 
 [node name="shelf" type="Sprite" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( 1058.46, 348.237 )
-texture = ExtResource( 9 )
+texture = ExtResource( 13 )
 
 [node name="skip" type="Button" parent="state_handler/shelf"]
 editor/display_folded = true
@@ -1313,7 +1346,7 @@ margin_right = 16.7413
 margin_bottom = 36.4622
 rect_pivot_offset = Vector2( -315.752, -7.95071 )
 focus_mode = 0
-theme = ExtResource( 7 )
+theme = ExtResource( 11 )
 enabled_focus_mode = 0
 flat = true
 __meta__ = {
@@ -1322,7 +1355,7 @@ __meta__ = {
 
 [node name="menu_button0" type="Sprite" parent="state_handler/shelf/skip"]
 position = Vector2( 35.6935, 31.0452 )
-texture = ExtResource( 10 )
+texture = ExtResource( 14 )
 
 [node name="Label" type="Label" parent="state_handler/shelf/skip"]
 margin_left = 0.0032959
@@ -1364,7 +1397,7 @@ __meta__ = {
 
 [node name="menu_button" type="Sprite" parent="state_handler/shelf/sure?/yes"]
 position = Vector2( 37.3354, 13.2222 )
-texture = ExtResource( 12 )
+texture = ExtResource( 16 )
 
 [node name="Label" type="Label" parent="state_handler/shelf/sure?/yes"]
 margin_left = 5.0033
@@ -1392,7 +1425,7 @@ __meta__ = {
 
 [node name="menu_button" type="Sprite" parent="state_handler/shelf/sure?/no"]
 position = Vector2( 37.3354, 13.2222 )
-texture = ExtResource( 12 )
+texture = ExtResource( 16 )
 
 [node name="Label" type="Label" parent="state_handler/shelf/sure?/no"]
 margin_left = 5.0033
@@ -1414,7 +1447,7 @@ wait_time = 45.0
 one_shot = true
 
 [node name="fg" type="Sprite" parent="state_handler"]
-texture = ExtResource( 13 )
+texture = ExtResource( 17 )
 centered = false
 __meta__ = {
 "_edit_lock_": true

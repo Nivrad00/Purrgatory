@@ -12,7 +12,12 @@ func update_state(_state):
 	if state.get('tori_closet_complete'):
 		state['start_skip_timer'] = false
 
+func disconnected_wire():
+	$disconnect.play()
+	
 func connected_node():
+	$connect.play()
+	
 	if not state.get('blackout'):
 		state['blackout'] = true
 		get_node('../../../../../content/dark_covers/dark').show()
@@ -20,7 +25,10 @@ func connected_node():
 		$cover.show()
 		emit_signal('change_audio', null)
 		$GridContainer.release_wire()
-		yield($power_down, "finished")
+		
+		$power_delay.start()
+		yield($power_delay, "timeout")
+		
 		emit_signal('start_dialog', 'tori_wire_blackout', [])
 	
 	var solved = true
@@ -33,10 +41,13 @@ func connected_node():
 	if solved:
 		state['blackout'] = false
 		get_node('../../../../../content/dark_covers/wire_game').hide()
-		$power_down.play()
+		$power_on.play()
 		$cover.show()
 		$GridContainer.release_wire()
-		yield($power_down, "finished")
+		
+		$power_delay.start()
+		yield($power_delay, "timeout")
+		
 		emit_signal('start_dialog', 'tori_wire_success', [])
 		$shelf/Timer.stop()
 

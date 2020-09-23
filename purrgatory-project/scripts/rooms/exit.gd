@@ -18,3 +18,11 @@ func update_state(state):
 		$exit2.show()
 	else:
 		$exit.show()
+	
+	if state.get('stop_kicking_sounds'):
+		state['stop_kicking_sounds'] = false
+		$thud.stop()
+		
+	if state.get('start_kicking_sounds'):
+		state['start_kicking_sounds'] = false
+		$thud.play()

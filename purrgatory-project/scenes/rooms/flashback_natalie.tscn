@@ -122,6 +122,7 @@ rect_min_size = Vector2( 800, 0 )
 alignment = 1
 
 [node name="t0" type="RichTextLabel" parent="state_handler/hc/vc"]
+editor/display_folded = true
 margin_top = 210.0
 margin_right = 800.0
 margin_bottom = 270.0
@@ -129,14 +130,15 @@ rect_min_size = Vector2( 0, 60 )
 rect_clip_content = false
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "there's so much you never did."
-text = "there's so much you never did."
+bbcode_text = "you remember all the things you never did."
+text = "you remember all the things you never did."
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/hc/vc/t0"]
 anims/Fadein = SubResource( 1 )
 
 [node name="c1" type="RichTextLabel" parent="state_handler/hc/vc"]
+editor/display_folded = true
 margin_top = 290.0
 margin_right = 800.0
 margin_bottom = 350.0
@@ -308,6 +310,7 @@ flat = true
 script = ExtResource( 4 )
 
 [node name="t2" type="RichTextLabel" parent="state_handler/hc/vc"]
+editor/display_folded = true
 margin_top = 370.0
 margin_right = 800.0
 margin_bottom = 430.0
@@ -508,10 +511,10 @@ enabled_focus_mode = 0
 flat = true
 
 [node name="text" type="RichTextLabel" parent="state_handler/next_button"]
-margin_left = -49.0
-margin_top = -2.2016
-margin_right = 109.0
-margin_bottom = 60.0
+margin_left = -12.0
+margin_top = -2.0
+margin_right = 75.0
+margin_bottom = 33.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[center]next[/center]"

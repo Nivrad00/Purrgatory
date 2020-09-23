@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/flowerbed.gd" type="Script" id=2]
@@ -27,9 +27,10 @@
 [ext_resource path="res://assets/sprites/flowers/0.png" type="Texture" id=25]
 [ext_resource path="res://scripts/flower_progress.gd" type="Script" id=26]
 [ext_resource path="res://assets/ui/flower_progress0.png" type="Texture" id=27]
-[ext_resource path="res://assets/audio/correct.ogg" type="AudioStream" id=28]
-[ext_resource path="res://assets/audio/wrong.ogg" type="AudioStream" id=29]
-[ext_resource path="res://assets/audio/success.wav" type="AudioStream" id=30]
+[ext_resource path="res://assets/rooms/flowerbed_fg.png" type="Texture" id=28]
+[ext_resource path="res://assets/audio/correct.ogg" type="AudioStream" id=29]
+[ext_resource path="res://assets/audio/wrong.ogg" type="AudioStream" id=30]
+[ext_resource path="res://assets/audio/success.wav" type="AudioStream" id=31]
 
 [sub_resource type="Animation" id=1]
 resource_name = "New Anim"
@@ -88,12 +89,13 @@ offset = Vector2( -57.748, -156.068 )
 
 [node name="flower_area" type="Control" parent="state_handler"]
 margin_left = 1.0
-margin_top = 304.205
+margin_top = 306.0
 margin_right = 1281.0
-margin_bottom = 550.205
-rect_pivot_offset = Vector2( 56.748, -144.754 )
+margin_bottom = 579.0
+rect_pivot_offset = Vector2( 841.11, 181.261 )
 
 [node name="flower_timer" type="Sprite" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( 95.7066, 127.036 )
 texture = ExtResource( 4 )
 offset = Vector2( 0.235611, 1.03372 )
@@ -103,6 +105,7 @@ playback_speed = 0.1
 "anims/New Anim" = SubResource( 1 )
 
 [node name="flower_box" type="Sprite" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( 57.748, 187.812 )
 texture = ExtResource( 21 )
 offset = Vector2( 1050.6, -61.2854 )
@@ -117,6 +120,7 @@ position = Vector2( 1015.47, -65.7884 )
 texture = ExtResource( 25 )
 
 [node name="flower_progress" type="Control" parent="state_handler"]
+editor/display_folded = true
 margin_left = 635.866
 margin_top = 64.2644
 margin_right = 933.866
@@ -167,7 +171,12 @@ texture = ExtResource( 27 )
 centered = false
 
 [node name="flower_sorter" type="YSort" parent="state_handler"]
-position = Vector2( 0, 27.744 )
+
+[node name="fg" type="Sprite" parent="state_handler"]
+position = Vector2( 57.748, 723.247 )
+texture = ExtResource( 28 )
+centered = false
+offset = Vector2( -57.748, -156.068 )
 
 [node name="game_timer" type="Timer" parent="state_handler"]
 one_shot = true
@@ -176,16 +185,16 @@ one_shot = true
 one_shot = true
 
 [node name="yes" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 28 )
+stream = ExtResource( 29 )
 volume_db = 5.0
 bus = "SFX"
 
 [node name="no" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 29 )
+stream = ExtResource( 30 )
 bus = "SFX"
 
 [node name="success" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 30 )
+stream = ExtResource( 31 )
 volume_db = -15.0
 bus = "SFX"
 [connection signal="timeout" from="state_handler/game_timer" to="state_handler" method="failure"]

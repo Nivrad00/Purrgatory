@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/rope_creak6.wav-4346333fb9f981917f5da7e063abf02c.sample"
+
+[deps]
+
+source_file="res://assets/audio/rope_creak6.wav"
+dest_files=[ "res://.import/rope_creak6.wav-4346333fb9f981917f5da7e063abf02c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=false
+compress/mode=0

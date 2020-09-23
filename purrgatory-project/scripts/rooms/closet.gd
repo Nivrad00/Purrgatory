@@ -23,3 +23,6 @@ func update_state(state):
 	
 	if state.get('_inv_snowglobe_closet') or state.get('spent_snowglobes'):
 		$snowglobe_closet.hide()
+		
+	if state.get('sean_replaced_batteries') or state.get('_inv_battery1'):
+		$battery1.hide()

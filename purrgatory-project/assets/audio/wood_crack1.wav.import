@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/wood_crack1.wav-a2d2ab2a1e58fb9dbe90dadca6fe9a0d.sample"
+
+[deps]
+
+source_file="res://assets/audio/wood_crack1.wav"
+dest_files=[ "res://.import/wood_crack1.wav-a2d2ab2a1e58fb9dbe90dadca6fe9a0d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=false
+compress/mode=0

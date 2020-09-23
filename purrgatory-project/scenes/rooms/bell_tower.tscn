@@ -32,6 +32,6 @@ polygon = PoolVector2Array( 398.668, 274.383, 402.714, 303.916, 429.185, 317.781
 
 [node name="audio" type="AudioStreamPlayer" parent="state_handler/bell"]
 stream = ExtResource( 6 )
-volume_db = -6.0
+volume_db = -10.0
 bus = "SFX"
 [connection signal="mouse_down" from="state_handler/bell" to="state_handler/bell/audio" method="play"]

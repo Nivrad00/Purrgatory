@@ -2,7 +2,7 @@ extends "flashback_template.gd"
 
 func _ready():
 	._ready()
-	text_dependencies = { 4: 3 }
+	text_dependencies = { 3: 2 }
 	ending_label = 'oliver_end_pride_flashback'
 	
 func update_state(state):

@@ -1,5 +1,5 @@
 extends 'state_handler_template.gd'
-
+	
 var dialog_map = {
 	'game1': {
 		'move1': 'ttt_now_you_go',
@@ -127,7 +127,11 @@ func load_ttt(slot):
 		current_draw.connect('drew_line', self, 'start_audio')
 		current_draw.connect('drew_line', self, 'record_freq')
 		$draw_container.add_child(current_draw)
-		$done_button.show()
+		
+		if check_valid_move():
+			$done_button.show()
+		else:
+			$done_button.hide()
 
 # |
 # |
@@ -151,22 +155,24 @@ func update_state(state):
 	if state.get('ttt_goto_park'):
 		state['ttt_goto_park'] = false
 		emit_signal('change_room', 'field4')
-		emit_signal('change_audio', null)
 	if state.get('ttt_goto_meowseum'):
 		state['ttt_goto_meowseum'] = false
 		emit_signal('change_room', 'meowseum1')
-		emit_signal('change_audio', null)
 	if state.get('ttt_goto_dropoff'):
 		state['ttt_goto_dropoff'] = false
 		emit_signal('change_room', 'dropoff1')
-		emit_signal('change_audio', null)
 
 func start_game():
 	set_process(true)
 
 	game_num += 1
 	move_num = 1 # it should start at 0 but oliver's first move is predetermined
-	current_board = [1, 0, 0, 0, 0, 0, 0, 0, 0] # 0 = empty, 1 = oliver, 2 = player
+	
+	current_board = [0, 0, 0, 0, 0, 0, 0, 0, 0] # 0 = empty, 1 = oliver, 2 = player
+	
+	var first_move = [0, 2, 6, 8][randi() % 4]
+	current_board[first_move] = 1
+	
 	for draw in $draw_container.get_children():
 		draw.queue_free()
 	$loaded_drawing.texture = null
@@ -174,11 +180,11 @@ func start_game():
 		shape.frame = 0
 		shape.playing = false
 	prev_score = 0
-	$shapes.get_child(0).play()
+	$shapes.get_child(first_move).play()
 	$asmr.play(audio_pos)
 
 # the player uses this method, but not oliver
-func start_audio(a, b):
+func start_audio(_a, _b):
 	if not $asmr.playing:
 		$asmr.play(audio_pos)
 	$audio_delay.start()
@@ -194,9 +200,9 @@ func _process(delta):
 
 func start_olivers_turn():
 	move_num += 1
-	var best_move = get_best_move(current_board)
-	var i = best_move[0]
-	prev_score = best_move[1]
+	var best_moves = get_best_moves(current_board) # returns [[best moves], value]
+	var i = best_moves[0][randi() % best_moves[0].size()]
+	prev_score = best_moves[1]
 	$shapes.get_child(i).play()
 	current_board[i] = 1
 	$asmr.play(audio_pos)
@@ -229,7 +235,6 @@ func start_players_turn():
 	current_draw.connect('drew_line', self, 'start_audio')
 	current_draw.connect('drew_line', self, 'record_freq')
 	$draw_container.add_child(current_draw)
-	$done_button.show()
 	# $placeholder_input.show()
 	draw_freq = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 
@@ -245,7 +250,7 @@ func end_players_turn():
 	var i = 'game' + str(game_num)
 	var j = 'move' + str(move_num)
 
-	var new_score = get_best_move(current_board)[1]
+	var new_score = get_best_moves(current_board)[1] # returns [[best moves], value]
 	if new_score == 10 and prev_score == 0:
 		if dialog_map[i].has('very_bad_move'):
 			dialog_queue.append(dialog_map[i]['very_bad_move'])
@@ -280,22 +285,24 @@ func record_freq(start, end):
 			if $spaces.get_child(j).get_rect().has_point(start + i * unit):
 				draw_freq[j] += 1
 
-	# print(draw_freq)
+	# if this is the player's first valid mark on the board, then show the "done" button
+	if not $done_button.visible and check_valid_move():
+		$done_button.show()
 
+# a move is valid if there's some sort of mark in an empty square
+func check_valid_move():
+	for i in range(9):
+		if draw_freq[i] != 0 and current_board[i] == 0:
+			return true
+	return false
+	
 func detect_players_move():
 	var square = -1
-	var square2 = -1
 	var freq = -1
-	var freq2 = -1
 	for i in range(9):
-		if draw_freq[i] > freq:
-			freq2 = freq
+		if current_board[i] == 0 and draw_freq[i] > freq:
 			freq = draw_freq[i]
-			square2 = square
 			square = i
-		elif draw_freq[i] > freq2:
-			freq2 = draw_freq[i]
-			square2 = i
 	return square
 	#return int($placeholder_input.text)
 
@@ -367,9 +374,10 @@ func minimax(board, depth, is_max):
 				board[i] = 0
 		return best
 
-func get_best_move(board):
+ # returns [[best moves], value]
+func get_best_moves(board):
 	var best_value = -1000
-	var best_move = -1
+	var best_moves = [-1]
 
 	for i in range(board.size()):
 		if board[i] == 0:
@@ -378,5 +386,7 @@ func get_best_move(board):
 			board[i] = 0
 			if value > best_value:
 				best_value = value
-				best_move = i
-	return [best_move, best_value]
+				best_moves = [i]
+			elif value == best_value:
+				best_moves.append(i)
+	return [best_moves, best_value]

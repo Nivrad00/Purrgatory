@@ -59,7 +59,7 @@ func update_state(s):
 
 func update_volume(volume):
 	state['piano_volume'] = volume
-	var db = math(volume/360)
+	var db = math(volume/360/2)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index('Keyboard'), db)
 
 func update_mute(on):

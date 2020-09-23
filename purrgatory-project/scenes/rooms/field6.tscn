@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/field6.gd" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://assets/sprites/hoels/field6_2.png" type="Texture" id=13]
 [ext_resource path="res://assets/sprites/hoels/shovel6.png" type="Texture" id=14]
 [ext_resource path="res://scenes/hole_score.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/digging_sound.tscn" type="PackedScene" id=16]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -149,3 +150,5 @@ position = Vector2( -31.869, -66.1153 )
 texture = ExtResource( 14 )
 
 [node name="score" parent="state_handler/digging" instance=ExtResource( 15 )]
+
+[node name="sound" parent="state_handler/digging" instance=ExtResource( 16 )]

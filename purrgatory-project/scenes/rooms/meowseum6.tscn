@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/meowseum6.gd" type="Script" id=2]
@@ -6,6 +6,28 @@
 [ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/sprites/draw-a-paw.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/kyungsoon_idle1.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite_masks/kyungsoon_idle1.png" type="BitMap" id=8]
+[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=9]
+[ext_resource path="res://assets/sprites/kyungsoon_idle2.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/kyungsoon_idle3.png" type="Texture" id=11]
+
+[sub_resource type="Animation" id=1]
+resource_name = "oliver_idle"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture_normal")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ), ExtResource( 10 ), ExtResource( 11 ) ]
+}
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -51,6 +73,7 @@ dialog_label = "3d_cat_sign"
 polygon = PoolVector2Array( 436.557, 584.425, 522.286, 591.099, 545.386, 564.405, 463.764, 561.838 )
 
 [node name="draw_a_paw" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( -386.51, -29.4657 )
 dialog_label = "draw_a_paw"
 
@@ -62,12 +85,14 @@ position = Vector2( 491.393, 575.804 )
 texture = ExtResource( 6 )
 
 [node name="object3" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "3d_cat"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
 polygon = PoolVector2Array( 368.924, 548.965, 750.429, 555.997, 743.396, 274.703, 402.328, 269.429 )
 
 [node name="object2" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "3d_cat_lights"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
@@ -93,3 +118,21 @@ polygon = PoolVector2Array( 409.968, 172.271, 386.641, 214.014, 429.612, 220.153
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="state_handler/object2"]
 position = Vector2( 462.858, -2.45547 )
 polygon = PoolVector2Array( 409.968, 172.271, 386.641, 214.014, 429.612, 220.153, 466.444, 212.786, 439.434, 172.271 )
+
+[node name="ks_and_numa" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 119.733
+margin_top = 295.666
+margin_right = 382.733
+margin_bottom = 615.666
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 7 )
+texture_click_mask = ExtResource( 8 )
+script = ExtResource( 9 )
+dialog_label = "ks_and_numa_meowseum"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/ks_and_numa"]
+autoplay = "oliver_idle"
+anims/oliver_idle = SubResource( 1 )
+[connection signal="pressed" from="state_handler/ks_and_numa" to="state_handler/ks_and_numa" method="_on_char_obj_button_pressed"]

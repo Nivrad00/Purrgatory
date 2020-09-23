@@ -69,7 +69,7 @@ var songs = {
 	},
 	
 	'heart_tutorial': {
-		'tempo': 0.2,
+		'tempo': 0.25,
 		'right': '',
 		'left':  'c3 c3 c6 r2 c v b2 a b2 ^ c d3' +\
 		         'e3 e3 e6 r2 e   d2 c d2   e f3' +\
@@ -80,7 +80,7 @@ var songs = {
 	},
 	
 	'heart_performance': {
-		'tempo': 0.2,
+		'tempo': 0.25,
 		'right': '',
 		'left':  'r4 vc2 c e2 e va2 a ^c2 c vf2 f a2 a g2 g b2 b^' +\
 					 'c2 c e2 e va2 a ^c2 c vf2 f a2 a g2 g b2 b^' +\

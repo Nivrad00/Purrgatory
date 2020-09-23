@@ -611,6 +611,7 @@ editor/display_folded = true
 position = Vector2( 1.19745, -0.598724 )
 
 [node name="c#1" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 24.0716, -31.861 )
 script = ExtResource( 38 )
 
@@ -632,6 +633,7 @@ pitch_scale = 0.53
 bus = "Keyboard"
 
 [node name="d#1" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 65.0716, -31.861 )
 script = ExtResource( 38 )
 
@@ -653,6 +655,7 @@ pitch_scale = 0.59
 bus = "Keyboard"
 
 [node name="f#1" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 145.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -674,6 +677,7 @@ pitch_scale = 0.71
 bus = "Keyboard"
 
 [node name="g#1" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 185.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -695,6 +699,7 @@ pitch_scale = 0.79
 bus = "Keyboard"
 
 [node name="a#1" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 226.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -716,6 +721,7 @@ pitch_scale = 0.89
 bus = "Keyboard"
 
 [node name="c#2" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 307.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -737,6 +743,7 @@ pitch_scale = 1.06
 bus = "Keyboard"
 
 [node name="d#2" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 347.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -758,6 +765,7 @@ pitch_scale = 1.19
 bus = "Keyboard"
 
 [node name="f#2" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 428.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -779,6 +787,7 @@ pitch_scale = 1.41
 bus = "Keyboard"
 
 [node name="g#2" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 470.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -800,6 +809,7 @@ pitch_scale = 1.59
 bus = "Keyboard"
 
 [node name="a#2" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 510.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -821,6 +831,7 @@ pitch_scale = 1.78
 bus = "Keyboard"
 
 [node name="c#3" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 591.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -842,6 +853,7 @@ pitch_scale = 2.12
 bus = "Keyboard"
 
 [node name="d#3" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 631.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -863,6 +875,7 @@ pitch_scale = 2.38
 bus = "Keyboard"
 
 [node name="f#3" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 712.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -884,6 +897,7 @@ pitch_scale = 2.83
 bus = "Keyboard"
 
 [node name="g#3" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 753.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -905,6 +919,7 @@ pitch_scale = 3.18
 bus = "Keyboard"
 
 [node name="a#3" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 793.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -926,6 +941,7 @@ pitch_scale = 3.56
 bus = "Keyboard"
 
 [node name="c#4" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 872.072, -31.861 )
 script = ExtResource( 38 )
 
@@ -947,6 +963,7 @@ pitch_scale = 4.24
 bus = "Keyboard"
 
 [node name="d#4" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 913.072, -31.861 )
 script = ExtResource( 38 )
 
