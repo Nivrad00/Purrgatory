@@ -479,10 +479,11 @@ dialog_label = "natalie_default"
 blackout_label = "natalie_blackout"
 
 [node name="natalie_nocturnal" parent="state_handler" instance=ExtResource( 8 )]
-margin_left = 579.714
+margin_left = 821.714
 margin_top = 355.564
-margin_right = 814.714
+margin_right = 1056.71
 margin_bottom = 654.564
+rect_scale = Vector2( -1, 1 )
 texture_normal = ExtResource( 13 )
 texture_click_mask = ExtResource( 14 )
 dialog_label = "natalie_post"
