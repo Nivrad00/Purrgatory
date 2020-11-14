@@ -3,6 +3,7 @@ var quests = {
 	'commons_door': 'find a way to unlock the door.',
 	'meowseum_door': 'open the door to the meowseum.',
 	'return_books': 'return natalie\'s books to oliver.',
+	'call_lucifur': 'call the devil.',
 	
 	# oliver
 	'oliver_chess': 'deliver oliver\'s chess letter  to tori.',

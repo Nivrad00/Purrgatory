@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/phone_8.ogg-6aeb276116175b2b47fbb5b369d3afd9.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/phone_8.ogg"
+dest_files=[ "res://.import/phone_8.ogg-6aeb276116175b2b47fbb5b369d3afd9.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

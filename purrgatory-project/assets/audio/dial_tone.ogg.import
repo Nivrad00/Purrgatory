@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dial_tone.ogg-82d4bcbce9ab155babc2792df4f08054.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/dial_tone.ogg"
+dest_files=[ "res://.import/dial_tone.ogg-82d4bcbce9ab155babc2792df4f08054.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

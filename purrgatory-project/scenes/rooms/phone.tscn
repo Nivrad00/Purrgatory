@@ -1,0 +1,409 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/phone.gd" type="Script" id=2]
+[ext_resource path="res://assets/rooms/phone.png" type="Texture" id=3]
+[ext_resource path="res://scripts/phone_button.gd" type="Script" id=4]
+[ext_resource path="res://assets/sprites/phopne/1.png" type="Texture" id=5]
+[ext_resource path="res://assets/audio/phone_1.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/sprites/phopne/2.png" type="Texture" id=7]
+[ext_resource path="res://assets/audio/phone_2.ogg" type="AudioStream" id=8]
+[ext_resource path="res://assets/sprites/phopne/3.png" type="Texture" id=9]
+[ext_resource path="res://assets/audio/phone_3.ogg" type="AudioStream" id=10]
+[ext_resource path="res://assets/sprites/phopne/4.png" type="Texture" id=11]
+[ext_resource path="res://assets/audio/phone_4.ogg" type="AudioStream" id=12]
+[ext_resource path="res://assets/sprites/phopne/5.png" type="Texture" id=13]
+[ext_resource path="res://assets/audio/phone_5.ogg" type="AudioStream" id=14]
+[ext_resource path="res://assets/sprites/phopne/6.png" type="Texture" id=15]
+[ext_resource path="res://assets/audio/phone_6.ogg" type="AudioStream" id=16]
+[ext_resource path="res://assets/sprites/phopne/7.png" type="Texture" id=17]
+[ext_resource path="res://assets/audio/phone_7.ogg" type="AudioStream" id=18]
+[ext_resource path="res://assets/sprites/phopne/8.png" type="Texture" id=19]
+[ext_resource path="res://assets/audio/phone_8.ogg" type="AudioStream" id=20]
+[ext_resource path="res://assets/sprites/phopne/9.png" type="Texture" id=21]
+[ext_resource path="res://assets/audio/phone_9.ogg" type="AudioStream" id=22]
+[ext_resource path="res://assets/sprites/phopne/0.png" type="Texture" id=23]
+[ext_resource path="res://assets/audio/phone_0.ogg" type="AudioStream" id=24]
+[ext_resource path="res://assets/sprites/phopne/star.png" type="Texture" id=25]
+[ext_resource path="res://assets/audio/phone_star.ogg" type="AudioStream" id=26]
+[ext_resource path="res://assets/sprites/phopne/pound.png" type="Texture" id=27]
+[ext_resource path="res://assets/audio/phone_pound.ogg" type="AudioStream" id=28]
+[ext_resource path="res://assets/sprites/phopne/dial.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprites/phopne/clear.png" type="Texture" id=30]
+[ext_resource path="res://assets/sprites/phopne/meow.png" type="Texture" id=31]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=32]
+[ext_resource path="res://assets/audio/calculator_button1.wav" type="AudioStream" id=33]
+[ext_resource path="res://assets/audio/meow_filtered.ogg" type="AudioStream" id=34]
+[ext_resource path="res://assets/audio/busy_tone.ogg" type="AudioStream" id=35]
+[ext_resource path="res://assets/audio/dial_tone.ogg" type="AudioStream" id=36]
+
+[node name="room_instance" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+rect_pivot_offset = Vector2( 140.039, 51.3748 )
+script = ExtResource( 1 )
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+
+[node name="bg" type="Sprite" parent="state_handler"]
+texture = ExtResource( 3 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="numbers" type="HBoxContainer" parent="state_handler"]
+margin_left = 602.588
+margin_top = 145.25
+margin_right = 897.588
+margin_bottom = 239.25
+rect_scale = Vector2( 0.7, 0.7 )
+
+[node name="buttons" type="Control" parent="state_handler"]
+editor/display_folded = true
+margin_left = 570.0
+margin_top = 343.0
+margin_right = 934.0
+margin_bottom = 545.0
+
+[node name="1" type="Button" parent="state_handler/buttons"]
+margin_left = 11.8717
+margin_top = 16.3301
+margin_right = 84.8717
+margin_bottom = 46.3301
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 4 )
+value = "1"
+
+[node name="Sprite" type="Sprite" parent="state_handler/buttons/1"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/1"]
+stream = ExtResource( 6 )
+volume_db = -15.0
+bus = "Phone"
+
+[node name="2" type="Button" parent="state_handler/buttons"]
+margin_left = 109.0
+margin_top = 17.0
+margin_right = 176.0
+margin_bottom = 44.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 4 )
+value = "2"
+
+[node name="Sprite" type="Sprite" parent="state_handler/buttons/2"]
+texture = ExtResource( 7 )
+centered = false
+
+[node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/2"]
+stream = ExtResource( 8 )
+volume_db = -15.0
+bus = "Phone"
+
+[node name="3" type="Button" parent="state_handler/buttons"]
+margin_left = 200.0
+margin_top = 19.0
+margin_right = 268.0
+margin_bottom = 48.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 4 )
+value = "3"
+
+[node name="Sprite" type="Sprite" parent="state_handler/buttons/3"]
+texture = ExtResource( 9 )
+centered = false
+
+[node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/3"]
+stream = ExtResource( 10 )
+volume_db = -15.0
+bus = "Phone"
+
+[node name="4" type="Button" parent="state_handler/buttons"]
+margin_left = 13.0
+margin_top = 67.0
+margin_right = 84.0
+margin_bottom = 97.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 4 )
+value = "4"
+
+[node name="Sprite" type="Sprite" parent="state_handler/buttons/4"]
+texture = ExtResource( 11 )
+centered = false
+
+[node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/4"]
+stream = ExtResource( 12 )
+volume_db = -15.0
+bus = "Phone"
+
+[node name="5" type="Button" parent="state_handler/buttons"]
+margin_left = 108.0
+margin_top = 67.0
+margin_right = 174.0
+margin_bottom = 95.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 4 )
+value = "5"
+
+[node name="Sprite" type="Sprite" parent="state_handler/buttons/5"]
+texture = ExtResource( 13 )
+centered = false
+
+[node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/5"]
+stream = ExtResource( 14 )
+volume_db = -15.0
+bus = "Phone"
+
+[node name="6" type="Button" parent="state_handler/buttons"]
+margin_left = 200.0
+margin_top = 68.0
+margin_right = 268.0
+margin_bottom = 97.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 4 )
+value = "6"
+
+[node name="Sprite" type="Sprite" parent="state_handler/buttons/6"]
+texture = ExtResource( 15 )
+centered = false
+
+[node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/6"]
+stream = ExtResource( 16 )
+volume_db = -15.0
+bus = "Phone"
+
+[node name="7" type="Button" parent="state_handler/buttons"]
+margin_left = 11.8717
+margin_top = 114.226
+margin_right = 84.8717
+margin_bottom = 144.226
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 4 )
+value = "7"
+
+[node name="Sprite" type="Sprite" parent="state_handler/buttons/7"]
+texture = ExtResource( 17 )
+centered = false
+
+[node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/7"]
+stream = ExtResource( 18 )
+volume_db = -15.0
+bus = "Phone"
+
+[node name="8" type="Button" parent="state_handler/buttons"]
+margin_left = 108.0
+margin_top = 116.0
+margin_right = 175.0
+margin_bottom = 144.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 4 )
+value = "8"
+
+[node name="Sprite" type="Sprite" parent="state_handler/buttons/8"]
+texture = ExtResource( 19 )
+centered = false
+
+[node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/8"]
+stream = ExtResource( 20 )
+volume_db = -15.0
+bus = "Phone"
+
+[node name="9" type="Button" parent="state_handler/buttons"]
+margin_left = 199.0
+margin_top = 117.0
+margin_right = 264.0
+margin_bottom = 144.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 4 )
+value = "9"
+
+[node name="Sprite" type="Sprite" parent="state_handler/buttons/9"]
+texture = ExtResource( 21 )
+centered = false
+
+[node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/9"]
+stream = ExtResource( 22 )
+volume_db = -15.0
+bus = "Phone"
+
+[node name="0" type="Button" parent="state_handler/buttons"]
+margin_left = 108.0
+margin_top = 164.0
+margin_right = 175.0
+margin_bottom = 193.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 4 )
+value = "0"
+
+[node name="Sprite" type="Sprite" parent="state_handler/buttons/0"]
+texture = ExtResource( 23 )
+centered = false
+
+[node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/0"]
+stream = ExtResource( 24 )
+volume_db = -15.0
+bus = "Phone"
+
+[node name="*" type="Button" parent="state_handler/buttons"]
+margin_left = 14.0
+margin_top = 164.0
+margin_right = 85.0
+margin_bottom = 193.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 4 )
+value = "star"
+
+[node name="Sprite" type="Sprite" parent="state_handler/buttons/*"]
+texture = ExtResource( 25 )
+centered = false
+
+[node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/*"]
+stream = ExtResource( 26 )
+volume_db = -15.0
+bus = "Phone"
+
+[node name="#" type="Button" parent="state_handler/buttons"]
+margin_left = 199.0
+margin_top = 164.0
+margin_right = 265.0
+margin_bottom = 192.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 4 )
+value = "pound"
+
+[node name="Sprite" type="Sprite" parent="state_handler/buttons/#"]
+texture = ExtResource( 27 )
+centered = false
+
+[node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/#"]
+stream = ExtResource( 28 )
+volume_db = -15.0
+bus = "Phone"
+
+[node name="dial" type="Button" parent="state_handler/buttons"]
+margin_left = 289.0
+margin_top = 19.0
+margin_right = 355.0
+margin_bottom = 47.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 4 )
+value = "dial"
+
+[node name="Sprite" type="Sprite" parent="state_handler/buttons/dial"]
+texture = ExtResource( 29 )
+centered = false
+
+[node name="clear" type="Button" parent="state_handler/buttons"]
+editor/display_folded = true
+margin_left = 289.167
+margin_top = 68.0
+margin_right = 357.167
+margin_bottom = 97.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 4 )
+value = "clear"
+
+[node name="Sprite" type="Sprite" parent="state_handler/buttons/clear"]
+texture = ExtResource( 30 )
+centered = false
+
+[node name="meow" type="Button" parent="state_handler/buttons"]
+editor/display_folded = true
+margin_left = 288.167
+margin_top = 117.0
+margin_right = 353.167
+margin_bottom = 144.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 4 )
+value = "meow"
+
+[node name="Sprite" type="Sprite" parent="state_handler/buttons/meow"]
+texture = ExtResource( 31 )
+centered = false
+
+[node name="exit" parent="state_handler" instance=ExtResource( 32 )]
+room_label = "commons1"
+
+[node name="click" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 33 )
+volume_db = -5.0
+bus = "SFX"
+
+[node name="meow" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 34 )
+bus = "SFX"
+
+[node name="busy_tone" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 35 )
+bus = "Phone"
+
+[node name="dial_tone" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 36 )
+volume_db = -5.0
+autoplay = true
+bus = "Phone"
+[connection signal="button_down" from="state_handler/buttons/1" to="state_handler/buttons/1" method="_on_Button_button_down"]
+[connection signal="button_up" from="state_handler/buttons/1" to="state_handler/buttons/1" method="_on_Button_button_up"]
+[connection signal="button_down" from="state_handler/buttons/2" to="state_handler/buttons/2" method="_on_Button_button_down"]
+[connection signal="button_up" from="state_handler/buttons/2" to="state_handler/buttons/2" method="_on_Button_button_up"]
+[connection signal="button_down" from="state_handler/buttons/3" to="state_handler/buttons/3" method="_on_Button_button_down"]
+[connection signal="button_up" from="state_handler/buttons/3" to="state_handler/buttons/3" method="_on_Button_button_up"]
+[connection signal="button_down" from="state_handler/buttons/4" to="state_handler/buttons/4" method="_on_Button_button_down"]
+[connection signal="button_up" from="state_handler/buttons/4" to="state_handler/buttons/4" method="_on_Button_button_up"]
+[connection signal="button_down" from="state_handler/buttons/5" to="state_handler/buttons/5" method="_on_Button_button_down"]
+[connection signal="button_up" from="state_handler/buttons/5" to="state_handler/buttons/5" method="_on_Button_button_up"]
+[connection signal="button_down" from="state_handler/buttons/6" to="state_handler/buttons/6" method="_on_Button_button_down"]
+[connection signal="button_up" from="state_handler/buttons/6" to="state_handler/buttons/6" method="_on_Button_button_up"]
+[connection signal="button_down" from="state_handler/buttons/7" to="state_handler/buttons/7" method="_on_Button_button_down"]
+[connection signal="button_up" from="state_handler/buttons/7" to="state_handler/buttons/7" method="_on_Button_button_up"]
+[connection signal="button_down" from="state_handler/buttons/8" to="state_handler/buttons/8" method="_on_Button_button_down"]
+[connection signal="button_up" from="state_handler/buttons/8" to="state_handler/buttons/8" method="_on_Button_button_up"]
+[connection signal="button_down" from="state_handler/buttons/9" to="state_handler/buttons/9" method="_on_Button_button_down"]
+[connection signal="button_up" from="state_handler/buttons/9" to="state_handler/buttons/9" method="_on_Button_button_up"]
+[connection signal="button_down" from="state_handler/buttons/0" to="state_handler/buttons/0" method="_on_Button_button_down"]
+[connection signal="button_up" from="state_handler/buttons/0" to="state_handler/buttons/0" method="_on_Button_button_up"]
+[connection signal="button_down" from="state_handler/buttons/*" to="state_handler/buttons/*" method="_on_Button_button_down"]
+[connection signal="button_up" from="state_handler/buttons/*" to="state_handler/buttons/*" method="_on_Button_button_up"]
+[connection signal="button_down" from="state_handler/buttons/#" to="state_handler/buttons/#" method="_on_Button_button_down"]
+[connection signal="button_up" from="state_handler/buttons/#" to="state_handler/buttons/#" method="_on_Button_button_up"]
+[connection signal="button_down" from="state_handler/buttons/dial" to="state_handler/buttons/dial" method="_on_Button_button_down"]
+[connection signal="button_up" from="state_handler/buttons/dial" to="state_handler/buttons/dial" method="_on_Button_button_up"]
+[connection signal="button_down" from="state_handler/buttons/clear" to="state_handler/buttons/clear" method="_on_Button_button_down"]
+[connection signal="button_up" from="state_handler/buttons/clear" to="state_handler/buttons/clear" method="_on_Button_button_up"]
+[connection signal="button_down" from="state_handler/buttons/meow" to="state_handler/buttons/meow" method="_on_Button_button_down"]
+[connection signal="button_up" from="state_handler/buttons/meow" to="state_handler/buttons/meow" method="_on_Button_button_up"]

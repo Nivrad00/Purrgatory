@@ -57,10 +57,10 @@ dialog_label = "flowers_etc"
 
 [node name="oliver_huh" parent="state_handler" instance=ExtResource( 9 )]
 visible = false
-margin_left = 1029.18
-margin_top = 209.466
-margin_right = 1181.18
-margin_bottom = 541.466
+margin_left = 1019.18
+margin_top = 201.466
+margin_right = 1171.18
+margin_bottom = 533.466
 dialog_label = "talk_to_oliver_about_numa"
 blackout_label = "oliver_blackout"
 
@@ -72,6 +72,17 @@ margin_bottom = 598.095
 
 [node name="exit" parent="state_handler" instance=ExtResource( 11 )]
 room_label = "commons2"
+
+[node name="phone" type="Area2D" parent="state_handler"]
+position = Vector2( 724.798, -291.001 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+room_label = "phone"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/phone"]
+polygon = PoolVector2Array( 355.202, 531.001, 347.202, 648.001, 383.202, 650.001, 395.202, 623.001, 432.202, 610.001, 434.202, 535.001 )
 
 [node name="exit2" type="Area2D" parent="state_handler"]
 editor/display_folded = true

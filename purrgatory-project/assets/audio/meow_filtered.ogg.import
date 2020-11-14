@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/meow_filtered.ogg-30d0699916912a191083ddd9c5689051.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/meow_filtered.ogg"
+dest_files=[ "res://.import/meow_filtered.ogg-30d0699916912a191083ddd9c5689051.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

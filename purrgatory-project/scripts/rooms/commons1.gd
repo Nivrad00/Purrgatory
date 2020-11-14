@@ -1,5 +1,8 @@
 extends 'state_handler_template.gd'
 
+func _ready():
+	$phone.set_highlight_on_hover(false)
+	
 func init_state(state):
 	.init_state(state)
 	if state.get('drama_ongoing'):
