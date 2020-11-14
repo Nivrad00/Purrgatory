@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/phone_hang_up.ogg-73b3d5f265bf9084401e586a6f37eeb4.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/phone_hang_up.ogg"
+dest_files=[ "res://.import/phone_hang_up.ogg-73b3d5f265bf9084401e586a6f37eeb4.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

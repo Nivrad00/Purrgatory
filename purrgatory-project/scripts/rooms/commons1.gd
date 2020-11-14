@@ -1,8 +1,16 @@
 extends 'state_handler_template.gd'
 
+var anim_playing = false
+
 func _ready():
 	$phone.set_highlight_on_hover(false)
 	
+func play_default_music(state):
+	if state.get('on_hold'):
+		emit_signal('change_audio', 'hold_music')
+	else:			
+		emit_signal('change_audio', default_music)
+		
 func init_state(state):
 	.init_state(state)
 	if state.get('drama_ongoing'):
@@ -75,3 +83,20 @@ func update_state(state):
 	else:
 		$commons_door_exit.hide()
 		$commons_door_dialog.show()
+	
+	# lucifur and stuff
+	
+	if state.get('lucifur_appears'):
+		state['lucifur_appears'] = false
+		$poof_timer.start()
+		$poof_cover.show()
+		anim_playing = true
+
+func _on_poof_timer_timeout():
+	anim_playing = false
+	
+func _on_poof_cover_pressed():
+	print('boooop')
+	if not anim_playing:
+		$poof_cover.hide()
+		emit_signal('start_dialog', 'lucifur_intro', [])

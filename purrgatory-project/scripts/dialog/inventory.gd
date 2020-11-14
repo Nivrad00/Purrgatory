@@ -8,7 +8,7 @@ var raw_blocks = [
 ["examine_battery1","_none","_none","a battery.","","","null","","",""],
 ["examine_battery2","_none","_none","a battery.","","","null","","",""],
 ["examine_chess_letter","_none","_none","oliver's next chess move, for tori.","","","null","","",""],
-["examine_natalies_books","_none","_none","a bunch of books natalie checked out from oliver.","","","null","","",""],
+["examine_natalies_books","_none","_none","some books natalie checked out from oliver.","","","null","","",""],
 ["examine_draw_a_paw","_none","_none","it's one of those old draw-a-paws.","_goto_draw_a_paw","","","","",""],
 ["","","","(click and rotate the knobs, or use the QWOP keys, to draw!)","","","null","","",""],
 ["examine_candle","_none","_none","a candle that natalie gave you.","","","null","","",""],

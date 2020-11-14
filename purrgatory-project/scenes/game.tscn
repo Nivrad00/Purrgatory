@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=2]
+[gd_scene load_steps=84 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ss.tscn" type="PackedScene" id=2]
@@ -20,48 +20,50 @@
 [ext_resource path="res://scripts/dialog/tori.gd" type="Script" id=18]
 [ext_resource path="res://scripts/dialog/natalie.gd" type="Script" id=19]
 [ext_resource path="res://scripts/dialog/ending.gd" type="Script" id=20]
-[ext_resource path="res://scripts/room_handler.gd" type="Script" id=21]
-[ext_resource path="res://assets/thin black.png" type="Texture" id=22]
-[ext_resource path="res://assets/rooms/candlelight.png" type="Texture" id=23]
-[ext_resource path="res://assets/rooms/candlelight2.png" type="Texture" id=24]
-[ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=25]
-[ext_resource path="res://scripts/ui_handler.gd" type="Script" id=26]
-[ext_resource path="res://assets/ui/choice2.png" type="Texture" id=27]
-[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=28]
-[ext_resource path="res://themes/ui_theme.tres" type="Theme" id=29]
-[ext_resource path="res://pronoun_buttongroup.tres" type="ButtonGroup" id=30]
-[ext_resource path="res://assets/ui/ok_button.png" type="Texture" id=31]
-[ext_resource path="res://assets/ui/pronoun_input_box.png" type="Texture" id=32]
-[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=33]
-[ext_resource path="res://scripts/text_box.gd" type="Script" id=34]
-[ext_resource path="res://assets/ui/text_box.png" type="Texture" id=35]
-[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=36]
-[ext_resource path="res://assets/ui/small_menu_x.png" type="Texture" id=37]
-[ext_resource path="res://scripts/dropdown.gd" type="Script" id=38]
-[ext_resource path="res://assets/ui/dropdown_box.png" type="Texture" id=39]
-[ext_resource path="res://scripts/items_button.gd" type="Script" id=40]
-[ext_resource path="res://scripts/pause_menu.gd" type="Script" id=41]
-[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=42]
-[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=43]
-[ext_resource path="res://assets/sprites/icons/numa1.png" type="Texture" id=44]
-[ext_resource path="res://assets/sprites/icons/numa2.png" type="Texture" id=45]
-[ext_resource path="res://assets/sprites/icons/tori1.png" type="Texture" id=46]
-[ext_resource path="res://assets/sprites/icons/tori2.png" type="Texture" id=47]
-[ext_resource path="res://assets/sprites/icons/oliver1.png" type="Texture" id=48]
-[ext_resource path="res://assets/sprites/icons/oliver2.png" type="Texture" id=49]
-[ext_resource path="res://assets/sprites/icons/natalie1.png" type="Texture" id=50]
-[ext_resource path="res://assets/sprites/icons/natalie2.png" type="Texture" id=51]
-[ext_resource path="res://assets/sprites/icons/kyungsoon1.png" type="Texture" id=52]
-[ext_resource path="res://assets/sprites/icons/kyungsoon2.png" type="Texture" id=53]
-[ext_resource path="res://assets/sprites/icons/elijah1.png" type="Texture" id=54]
-[ext_resource path="res://assets/sprites/icons/elijah2.png" type="Texture" id=55]
-[ext_resource path="res://assets/sprites/icons/sean1.png" type="Texture" id=56]
-[ext_resource path="res://assets/sprites/icons/sean2.png" type="Texture" id=57]
-[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=58]
-[ext_resource path="res://scenes/save_menu.tscn" type="PackedScene" id=59]
-[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=60]
-[ext_resource path="res://scripts/history.gd" type="Script" id=61]
-[ext_resource path="res://assets/ui/history.png" type="Texture" id=62]
+[ext_resource path="res://scripts/dialog/ending2.gd" type="Script" id=21]
+[ext_resource path="res://scripts/dialog/heaven.gd" type="Script" id=22]
+[ext_resource path="res://scripts/room_handler.gd" type="Script" id=23]
+[ext_resource path="res://assets/thin black.png" type="Texture" id=24]
+[ext_resource path="res://assets/rooms/candlelight.png" type="Texture" id=25]
+[ext_resource path="res://assets/rooms/candlelight2.png" type="Texture" id=26]
+[ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=27]
+[ext_resource path="res://scripts/ui_handler.gd" type="Script" id=28]
+[ext_resource path="res://assets/ui/choice2.png" type="Texture" id=29]
+[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=30]
+[ext_resource path="res://themes/ui_theme.tres" type="Theme" id=31]
+[ext_resource path="res://pronoun_buttongroup.tres" type="ButtonGroup" id=32]
+[ext_resource path="res://assets/ui/ok_button.png" type="Texture" id=33]
+[ext_resource path="res://assets/ui/pronoun_input_box.png" type="Texture" id=34]
+[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=35]
+[ext_resource path="res://scripts/text_box.gd" type="Script" id=36]
+[ext_resource path="res://assets/ui/text_box.png" type="Texture" id=37]
+[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=38]
+[ext_resource path="res://assets/ui/small_menu_x.png" type="Texture" id=39]
+[ext_resource path="res://scripts/dropdown.gd" type="Script" id=40]
+[ext_resource path="res://assets/ui/dropdown_box.png" type="Texture" id=41]
+[ext_resource path="res://scripts/items_button.gd" type="Script" id=42]
+[ext_resource path="res://scripts/pause_menu.gd" type="Script" id=43]
+[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=44]
+[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=45]
+[ext_resource path="res://assets/sprites/icons/numa1.png" type="Texture" id=46]
+[ext_resource path="res://assets/sprites/icons/numa2.png" type="Texture" id=47]
+[ext_resource path="res://assets/sprites/icons/tori1.png" type="Texture" id=48]
+[ext_resource path="res://assets/sprites/icons/tori2.png" type="Texture" id=49]
+[ext_resource path="res://assets/sprites/icons/oliver1.png" type="Texture" id=50]
+[ext_resource path="res://assets/sprites/icons/oliver2.png" type="Texture" id=51]
+[ext_resource path="res://assets/sprites/icons/natalie1.png" type="Texture" id=52]
+[ext_resource path="res://assets/sprites/icons/natalie2.png" type="Texture" id=53]
+[ext_resource path="res://assets/sprites/icons/kyungsoon1.png" type="Texture" id=54]
+[ext_resource path="res://assets/sprites/icons/kyungsoon2.png" type="Texture" id=55]
+[ext_resource path="res://assets/sprites/icons/elijah1.png" type="Texture" id=56]
+[ext_resource path="res://assets/sprites/icons/elijah2.png" type="Texture" id=57]
+[ext_resource path="res://assets/sprites/icons/sean1.png" type="Texture" id=58]
+[ext_resource path="res://assets/sprites/icons/sean2.png" type="Texture" id=59]
+[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=60]
+[ext_resource path="res://scenes/save_menu.tscn" type="PackedScene" id=61]
+[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=62]
+[ext_resource path="res://scripts/history.gd" type="Script" id=63]
+[ext_resource path="res://assets/ui/history.png" type="Texture" id=64]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("ss")
@@ -69,7 +71,7 @@ viewport_path = NodePath("ss")
 [sub_resource type="StyleBoxEmpty" id=2]
 
 [sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 27 )
+texture = ExtResource( 29 )
 region_rect = Rect2( 0, 0, 900, 83 )
 margin_left = 40.0
 margin_right = 40.0
@@ -78,7 +80,7 @@ margin_bottom = 12.0
 
 [sub_resource type="DynamicFont" id=4]
 size = 28
-font_data = ExtResource( 28 )
+font_data = ExtResource( 30 )
 
 [sub_resource type="InputEventAction" id=5]
 action = "ui_enter"
@@ -104,12 +106,12 @@ shortcut = SubResource( 11 )
 
 [sub_resource type="DynamicFont" id=13]
 size = 10
-font_data = ExtResource( 28 )
+font_data = ExtResource( 30 )
 
 [sub_resource type="DynamicFont" id=14]
 size = 18
 use_filter = true
-font_data = ExtResource( 28 )
+font_data = ExtResource( 30 )
 
 [sub_resource type="Animation" id=15]
 length = 0.1
@@ -263,6 +265,7 @@ one_shot = true
 script = ExtResource( 3 )
 
 [node name="dialog_handler" type="Node" parent="."]
+editor/display_folded = true
 script = ExtResource( 4 )
 
 [node name="objects" type="Node" parent="dialog_handler"]
@@ -314,8 +317,10 @@ script = ExtResource( 19 )
 script = ExtResource( 20 )
 
 [node name="ending2" type="Node" parent="dialog_handler"]
+script = ExtResource( 21 )
 
 [node name="heaven" type="Node" parent="dialog_handler"]
+script = ExtResource( 22 )
 
 [node name="content" type="Control" parent="."]
 margin_right = 1280.0
@@ -327,7 +332,7 @@ __meta__ = {
 
 [node name="room" type="Control" parent="content"]
 editor/display_folded = true
-script = ExtResource( 21 )
+script = ExtResource( 23 )
 
 [node name="room_container" type="Control" parent="content/room"]
 anchor_right = 1.0
@@ -350,7 +355,7 @@ anchor_bottom = 1.0
 margin_right = 1280.0
 margin_bottom = 720.0
 mouse_filter = 2
-texture = ExtResource( 22 )
+texture = ExtResource( 24 )
 
 [node name="attic" type="TextureRect" parent="content/dark_covers"]
 visible = false
@@ -359,7 +364,7 @@ anchor_bottom = 1.0
 margin_right = 1280.0
 margin_bottom = 720.0
 mouse_filter = 2
-texture = ExtResource( 23 )
+texture = ExtResource( 25 )
 
 [node name="wire_game" type="TextureRect" parent="content/dark_covers"]
 visible = false
@@ -368,13 +373,13 @@ anchor_bottom = 1.0
 margin_right = 1280.0
 margin_bottom = 720.0
 mouse_filter = 2
-texture = ExtResource( 24 )
+texture = ExtResource( 26 )
 
 [node name="ui" type="Control" parent="content"]
 margin_right = 1280.0
 margin_bottom = 720.0
-theme = ExtResource( 25 )
-script = ExtResource( 26 )
+theme = ExtResource( 27 )
+script = ExtResource( 28 )
 
 [node name="sprites" type="Control" parent="content/ui"]
 margin_left = 806.201
@@ -425,7 +430,7 @@ margin_left = -24.0
 margin_top = 87.0
 margin_right = 705.0
 margin_bottom = 162.0
-theme = ExtResource( 29 )
+theme = ExtResource( 31 )
 
 [node name="they" type="CheckBox" parent="content/ui/name_input/pronouns"]
 margin_left = 7.0
@@ -435,7 +440,7 @@ margin_bottom = 71.0
 focus_mode = 0
 pressed = true
 enabled_focus_mode = 0
-group = ExtResource( 30 )
+group = ExtResource( 32 )
 
 [node name="they2" type="Label" parent="content/ui/name_input/pronouns"]
 margin_left = 72.56
@@ -451,7 +456,7 @@ margin_right = 382.0
 margin_bottom = 71.0
 focus_mode = 0
 enabled_focus_mode = 0
-group = ExtResource( 30 )
+group = ExtResource( 32 )
 
 [node name="she2" type="Label" parent="content/ui/name_input/pronouns"]
 margin_left = 280.56
@@ -467,7 +472,7 @@ margin_right = 551.0
 margin_bottom = 71.0
 focus_mode = 0
 enabled_focus_mode = 0
-group = ExtResource( 30 )
+group = ExtResource( 32 )
 
 [node name="he2" type="Label" parent="content/ui/name_input/pronouns"]
 margin_left = 452.56
@@ -483,7 +488,7 @@ margin_right = 719.452
 margin_bottom = 71.0
 focus_mode = 0
 enabled_focus_mode = 0
-group = ExtResource( 30 )
+group = ExtResource( 32 )
 
 [node name="custom2" type="Label" parent="content/ui/name_input/pronouns"]
 margin_left = 619.845
@@ -509,7 +514,7 @@ flat = true
 
 [node name="Sprite" type="Sprite" parent="content/ui/name_input/ok_button"]
 position = Vector2( 38.5194, 31.0667 )
-texture = ExtResource( 31 )
+texture = ExtResource( 33 )
 
 [node name="ok" type="Label" parent="content/ui/name_input/ok_button"]
 margin_left = 5.0
@@ -524,7 +529,7 @@ editor/display_folded = true
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
-theme = ExtResource( 29 )
+theme = ExtResource( 31 )
 
 [node name="bg" type="ColorRect" parent="content/ui/name_input/custom_pronouns"]
 margin_left = -336.546
@@ -555,7 +560,7 @@ margin_left = -19.0
 margin_top = -6.0
 margin_right = 157.0
 margin_bottom = 54.0
-texture = ExtResource( 32 )
+texture = ExtResource( 34 )
 
 [node name="Label" type="Label" parent="content/ui/name_input/custom_pronouns/they"]
 margin_left = -95.0
@@ -587,7 +592,7 @@ margin_left = -19.0
 margin_top = -6.0
 margin_right = 157.0
 margin_bottom = 54.0
-texture = ExtResource( 32 )
+texture = ExtResource( 34 )
 
 [node name="Label2" type="Label" parent="content/ui/name_input/custom_pronouns/them"]
 margin_left = -95.0
@@ -620,7 +625,7 @@ margin_left = -19.0
 margin_top = -6.0
 margin_right = 157.0
 margin_bottom = 54.0
-texture = ExtResource( 32 )
+texture = ExtResource( 34 )
 
 [node name="Label2" type="Label" parent="content/ui/name_input/custom_pronouns/their"]
 margin_left = -95.0
@@ -653,7 +658,7 @@ margin_left = -19.0
 margin_top = -6.0
 margin_right = 157.0
 margin_bottom = 54.0
-texture = ExtResource( 32 )
+texture = ExtResource( 34 )
 
 [node name="Label3" type="Label" parent="content/ui/name_input/custom_pronouns/theirs"]
 margin_left = -95.0
@@ -678,7 +683,7 @@ margin_left = -5.78436
 margin_top = -4.97546
 margin_right = 262.216
 margin_bottom = 64.0245
-texture = ExtResource( 33 )
+texture = ExtResource( 35 )
 
 [node name="Label" type="Label" parent="content/ui/name_input/custom_pronouns/back"]
 margin_right = 256.0
@@ -701,11 +706,11 @@ shortcut_in_tooltip = false
 enabled_focus_mode = 0
 shortcut = SubResource( 12 )
 flat = true
-script = ExtResource( 34 )
+script = ExtResource( 36 )
 
 [node name="box" type="Sprite" parent="content/ui/text_box"]
 position = Vector2( 20, 10 )
-texture = ExtResource( 35 )
+texture = ExtResource( 37 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -743,14 +748,14 @@ flat = true
 
 [node name="box2" type="Sprite" parent="content/ui/skip_button"]
 position = Vector2( 2.2108, 1.67036 )
-texture = ExtResource( 36 )
+texture = ExtResource( 38 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
 [node name="x" type="Sprite" parent="content/ui/skip_button"]
 visible = false
 position = Vector2( 2.2108, 1.67036 )
-texture = ExtResource( 37 )
+texture = ExtResource( 39 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -778,7 +783,7 @@ flat = true
 
 [node name="box2" type="Sprite" parent="content/ui/history_button"]
 position = Vector2( 2.2108, 1.67036 )
-texture = ExtResource( 36 )
+texture = ExtResource( 38 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -801,7 +806,7 @@ anims/right_to_left_run = SubResource( 17 )
 margin_right = 1280.01
 margin_bottom = 720.0
 mouse_filter = 2
-theme = ExtResource( 29 )
+theme = ExtResource( 31 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -824,7 +829,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/menu_button"]
 position = Vector2( 2.2108, 1.67036 )
-texture = ExtResource( 36 )
+texture = ExtResource( 38 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -842,11 +847,11 @@ margin_left = 163.458
 margin_top = -284.152
 margin_right = 1280.46
 margin_bottom = -5.0
-script = ExtResource( 38 )
+script = ExtResource( 40 )
 
 [node name="dropdown_box" type="Sprite" parent="meta_ui/dropdown"]
 position = Vector2( -23.9236, 0 )
-texture = ExtResource( 39 )
+texture = ExtResource( 41 )
 centered = false
 
 [node name="inv_container" type="HBoxContainer" parent="meta_ui/dropdown"]
@@ -860,7 +865,7 @@ margin_left = 35.0
 margin_top = 55.0
 margin_right = 1060.0
 margin_bottom = 259.0
-theme = ExtResource( 25 )
+theme = ExtResource( 27 )
 scroll_horizontal_enabled = false
 
 [node name="vbox" type="VBoxContainer" parent="meta_ui/dropdown/quest_container"]
@@ -908,7 +913,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/notes_button"]
 position = Vector2( 2.2108, 1.67036 )
-texture = ExtResource( 36 )
+texture = ExtResource( 38 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -933,14 +938,14 @@ custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 enabled_focus_mode = 0
 flat = true
-script = ExtResource( 40 )
+script = ExtResource( 42 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="box2" type="Sprite" parent="meta_ui/items_button"]
 position = Vector2( 2.2108, 1.67036 )
-texture = ExtResource( 36 )
+texture = ExtResource( 38 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -976,7 +981,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/history_button2"]
 position = Vector2( 2.2108, 1.67036 )
-texture = ExtResource( 36 )
+texture = ExtResource( 38 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -995,7 +1000,7 @@ visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 rect_pivot_offset = Vector2( -460, 150 )
-script = ExtResource( 41 )
+script = ExtResource( 43 )
 
 [node name="white" type="ColorRect" parent="meta_ui/pause_menu"]
 anchor_right = 1.0
@@ -1026,7 +1031,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/buttons/save"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 33 )
+texture = ExtResource( 35 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -1058,7 +1063,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/buttons/load"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 42 )
+texture = ExtResource( 44 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -1090,7 +1095,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/buttons/options"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 43 )
+texture = ExtResource( 45 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
@@ -1124,7 +1129,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/buttons/exit"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 33 )
+texture = ExtResource( 35 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
@@ -1158,7 +1163,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/buttons/back"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 42 )
+texture = ExtResource( 44 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
@@ -1186,87 +1191,87 @@ alignment = 1
 margin_left = 12.0
 margin_right = 98.0
 margin_bottom = 100.0
-texture = ExtResource( 44 )
+texture = ExtResource( 46 )
 
 [node name="numa2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 102.0
 margin_right = 188.0
 margin_bottom = 100.0
-texture = ExtResource( 45 )
+texture = ExtResource( 47 )
 
 [node name="tori1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 192.0
 margin_right = 278.0
 margin_bottom = 100.0
-texture = ExtResource( 46 )
+texture = ExtResource( 48 )
 
 [node name="tori2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 282.0
 margin_right = 368.0
 margin_bottom = 100.0
-texture = ExtResource( 47 )
+texture = ExtResource( 49 )
 
 [node name="oliver1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 372.0
 margin_right = 458.0
 margin_bottom = 100.0
-texture = ExtResource( 48 )
+texture = ExtResource( 50 )
 
 [node name="oliver2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 462.0
 margin_right = 548.0
 margin_bottom = 100.0
-texture = ExtResource( 49 )
+texture = ExtResource( 51 )
 
 [node name="natalie1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 552.0
 margin_right = 638.0
 margin_bottom = 100.0
-texture = ExtResource( 50 )
+texture = ExtResource( 52 )
 
 [node name="natalie2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 642.0
 margin_right = 728.0
 margin_bottom = 100.0
-texture = ExtResource( 51 )
+texture = ExtResource( 53 )
 
 [node name="kyungsoon1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 732.0
 margin_right = 818.0
 margin_bottom = 100.0
-texture = ExtResource( 52 )
+texture = ExtResource( 54 )
 
 [node name="kyungsoon2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 822.0
 margin_right = 908.0
 margin_bottom = 100.0
-texture = ExtResource( 53 )
+texture = ExtResource( 55 )
 
 [node name="elijah1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 912.0
 margin_right = 998.0
 margin_bottom = 100.0
-texture = ExtResource( 54 )
+texture = ExtResource( 56 )
 
 [node name="elijah2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 1002.0
 margin_right = 1088.0
 margin_bottom = 100.0
-texture = ExtResource( 55 )
+texture = ExtResource( 57 )
 
 [node name="sean1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 1092.0
 margin_right = 1178.0
 margin_bottom = 100.0
-texture = ExtResource( 56 )
+texture = ExtResource( 58 )
 
 [node name="sean2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 1182.0
 margin_right = 1268.0
 margin_bottom = 100.0
-texture = ExtResource( 57 )
+texture = ExtResource( 59 )
 
-[node name="options_menu" parent="meta_ui" instance=ExtResource( 58 )]
+[node name="options_menu" parent="meta_ui" instance=ExtResource( 60 )]
 visible = false
 
 [node name="exit_confirm" type="Control" parent="meta_ui"]
@@ -1309,7 +1314,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/exit_confirm/yes"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 33 )
+texture = ExtResource( 35 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -1339,7 +1344,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/exit_confirm/no"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 42 )
+texture = ExtResource( 44 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -1389,7 +1394,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/save_confirm/yes"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 33 )
+texture = ExtResource( 35 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -1402,7 +1407,7 @@ text = "back"
 align = 1
 valign = 1
 
-[node name="save_menu" parent="meta_ui" instance=ExtResource( 59 )]
+[node name="save_menu" parent="meta_ui" instance=ExtResource( 61 )]
 visible = false
 margin_left = -0.418121
 margin_top = -0.418091
@@ -1445,7 +1450,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/load_confirm/yes"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 33 )
+texture = ExtResource( 35 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -1458,7 +1463,7 @@ text = "continue"
 align = 1
 valign = 1
 
-[node name="load_menu" parent="meta_ui" instance=ExtResource( 60 )]
+[node name="load_menu" parent="meta_ui" instance=ExtResource( 62 )]
 visible = false
 
 [node name="history" type="Control" parent="meta_ui"]
@@ -1467,10 +1472,10 @@ visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 rect_pivot_offset = Vector2( -460, 150 )
-script = ExtResource( 61 )
+script = ExtResource( 63 )
 
 [node name="bg" type="Sprite" parent="meta_ui/history"]
-texture = ExtResource( 62 )
+texture = ExtResource( 64 )
 centered = false
 
 [node name="back" type="Button" parent="meta_ui/history"]
@@ -1491,7 +1496,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/history/back"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 42 )
+texture = ExtResource( 44 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
@@ -1511,11 +1516,11 @@ margin_left = 186.0
 margin_top = 51.0
 margin_right = 1096.0
 margin_bottom = 557.0
-theme = ExtResource( 25 )
+theme = ExtResource( 27 )
 
 [node name="grid" type="GridContainer" parent="meta_ui/history/container"]
 mouse_filter = 2
-theme = ExtResource( 25 )
+theme = ExtResource( 27 )
 columns = 2
 
 [node name="white_cover" type="ColorRect" parent="."]
@@ -1536,7 +1541,7 @@ margin_bottom = 720.0
 mouse_filter = 2
 
 [node name="main_audio" type="AudioStreamPlayer" parent="."]
-volume_db = -15.0
+volume_db = -10.0
 bus = "Music"
 [connection signal="timeout" from="skip_timer" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="content/ui/name_input/pronouns/custom" to="content/ui/name_input/custom_pronouns" method="show"]

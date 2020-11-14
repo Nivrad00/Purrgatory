@@ -8,10 +8,12 @@ var _state = {
 	'true': true
 }
 
-var cracked = {
+var state = {
 	'true': true,
 	'unlocked_commons_door': true,
-	'unlocked_meowseum_door': true
+	'unlocked_meowseum_door': true,
+	'_inv_business_card': true,
+	'numa_at_commons': true
 }
 
 var tori_test_state = {
@@ -61,7 +63,7 @@ var oliver_test_state = {
 	# 'oliver_in_study': false
 }
 
-var state = {
+var numa_test_state = {
 	'true': true,
 	'fed_kyungsoon_book': true,
 	'met_kyungsoon': true,
@@ -408,7 +410,7 @@ func change_audio(song, play = true):
 
 	else:
 		var stream = load('res://assets/audio/' + song + '.ogg')
-		$main_audio.volume_db = -15
+		$main_audio.volume_db = -10
 		$main_audio.set_stream(stream)
 
 		if play:

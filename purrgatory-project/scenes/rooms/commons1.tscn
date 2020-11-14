@@ -74,6 +74,7 @@ margin_bottom = 598.095
 room_label = "commons2"
 
 [node name="phone" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( 724.798, -291.001 )
 script = ExtResource( 12 )
 __meta__ = {
@@ -134,3 +135,17 @@ dialog_label = "commons_lamp"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_cord"]
 polygon = PoolVector2Array( 721.638, 439.803, 706.163, 439.219, 706.511, 467.441, 682.419, 500.436, 686.415, 520.107, 726.986, 519.492, 736.206, 511.194, 722.599, 468.55 )
+
+[node name="poof_timer" type="Timer" parent="state_handler"]
+wait_time = 2.0
+one_shot = true
+
+[node name="poof_cover" type="Button" parent="state_handler"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+[connection signal="timeout" from="state_handler/poof_timer" to="state_handler" method="_on_poof_timer_timeout"]
+[connection signal="pressed" from="state_handler/poof_cover" to="state_handler" method="_on_poof_cover_pressed"]
