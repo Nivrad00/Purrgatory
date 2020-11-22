@@ -2,14 +2,17 @@ extends "state_handler_template.gd"
 
 const empty_space = '                              '
 
+onready var game = get_node('../../../../..')
 var last_editable_text = null
 var text_n = -1
 var choice_n = 0
 var choice_log = {}
+var choice_text = {}
+var input_text = {}
 
 var text_dependencies = {}
 var ending_label = null
-
+	
 func _ready():
 	for text in $hc/vc.get_children():
 		if text is RichTextLabel:
@@ -31,6 +34,7 @@ func next():
 		# also get rid of the underline and store the choice for later
 		old_choice.set_bbcode(old_choice.get_bbcode().replace('[u]', '').replace('[/u]', ''))
 		choice_log[text_n] = choice_n
+		choice_text[text_n] = old_choice.text
 	
 	# try getting the next line of text
 	text_n += 1
@@ -96,6 +100,7 @@ func next():
 				lineedit.get_parent().get_node('underline').hide()
 				lineedit.hide()
 				last_editable_text = null
+				input_text[text_n - 1] = lineedit.text
 
 func cycle_choice():
 	var text = $hc/vc.get_child(text_n)
@@ -215,3 +220,16 @@ func format_text():
 		if lineedit:
 			var space_size = font.get_string_size(empty_space)
 			lineedit.set_size(space_size)
+			
+func set_format_dict(key, value):
+
+	var formatter = [
+		['your', 'my'], 
+		['you', 'i'], 
+		['.', '']
+	]
+	for pair in formatter:
+		value = value.replacen(pair[0], pair[1])
+		
+	game.format_dict['bio.' + key] = value
+	

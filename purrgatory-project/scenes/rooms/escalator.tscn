@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/escalator.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/escalator_bg.png" type="Texture" id=3]
 [ext_resource path="res://assets/rooms/escalator_left.png" type="Texture" id=4]
 [ext_resource path="res://assets/rooms/escalator_mg.png" type="Texture" id=5]
@@ -53,10 +53,8 @@ __meta__ = {
 
 [node name="state_handler" type="Control" parent="."]
 script = ExtResource( 2 )
-default_music = ""
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler"]
-autoplay = "New Anim"
 "anims/New Anim" = SubResource( 1 )
 
 [node name="bg" type="Sprite" parent="state_handler"]
@@ -153,4 +151,3 @@ dialog_label = "escalator"
 polygon = PoolVector2Array( 106.256, 582.388, 1285, 582.388, 1284.92, 119.274, 1004.22, 250.883, 842.886, 129.797, 38.4256, 523.602 )
 
 [node name="hum" parent="state_handler" instance=ExtResource( 11 )]
-bus = "SFX"

@@ -1,11 +1,20 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/commons2.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/commons2.png" type="Texture" id=3]
-[ext_resource path="res://scenes/exit_left.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=5]
-[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=6]
+[ext_resource path="res://assets/sprites/tori_dropoff1.5.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite_masks/tori_dropoff1.5.png" type="BitMap" id=5]
+[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=6]
+[ext_resource path="res://assets/sprites/sean_idle1.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite_masks/sean_idle1.png" type="BitMap" id=8]
+[ext_resource path="res://assets/sprites/elijah_idle1.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite_masks/elijah.png" type="BitMap" id=10]
+[ext_resource path="res://assets/sprites/natalie_nocturnal.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite_masks/natalie_nocturnal.png" type="BitMap" id=12]
+[ext_resource path="res://scenes/exit_left.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=14]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=15]
 
 [node name="room_template" type="Control"]
 anchor_right = 1.0
@@ -21,30 +30,135 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+[node name="wait_tori" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 450.284
+margin_top = 157.803
+margin_right = 678.284
+margin_bottom = 704.803
+rect_scale = Vector2( 0.7, 0.7 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 4 )
+texture_click_mask = ExtResource( 5 )
+script = ExtResource( 6 )
+dialog_label = "wait_tori"
+
+[node name="wait_sean" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 678.827
+margin_top = 164.605
+margin_right = 906.827
+margin_bottom = 711.605
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 7 )
+texture_click_mask = ExtResource( 8 )
+script = ExtResource( 6 )
+dialog_label = "wait_sean"
+
+[node name="wait_elijah" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 983.92
+margin_top = 232.883
+margin_right = 1150.92
+margin_bottom = 488.883
+rect_scale = Vector2( -1, 1 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 9 )
+texture_click_mask = ExtResource( 10 )
+script = ExtResource( 6 )
+dialog_label = "wait_elijah"
+
+[node name="wait_natalie" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 1262.8
+margin_top = 387.966
+margin_right = 1497.8
+margin_bottom = 686.966
+rect_scale = Vector2( -0.9, 0.9 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 11 )
+texture_click_mask = ExtResource( 12 )
+script = ExtResource( 6 )
+dialog_label = "wait_natalie"
+
+[node name="wait_oliver" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 1549.84
+margin_top = 30.1873
+margin_right = 1784.84
+margin_bottom = 329.187
+rect_scale = Vector2( -0.9, 0.9 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 11 )
+texture_click_mask = ExtResource( 12 )
+script = ExtResource( 6 )
+
+[node name="wait_numa" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 1549.84
+margin_top = 69.6381
+margin_right = 1784.84
+margin_bottom = 368.638
+rect_scale = Vector2( -0.9, 0.9 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 11 )
+texture_click_mask = ExtResource( 12 )
+script = ExtResource( 6 )
+
+[node name="wait_kyungsoon" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 1544.39
+margin_top = 118.612
+margin_right = 1779.39
+margin_bottom = 417.612
+rect_scale = Vector2( -0.9, 0.9 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 11 )
+texture_click_mask = ExtResource( 12 )
+script = ExtResource( 6 )
+
+[node name="exit" parent="state_handler" instance=ExtResource( 13 )]
 room_label = "commons1"
 
-[node name="exit2" type="Area2D" parent="state_handler"]
+[node name="library_door" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( 451.61, -194.952 )
-script = ExtResource( 5 )
+script = ExtResource( 14 )
 room_label = "library"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/library_door"]
+polygon = PoolVector2Array( -336.115, 293.819, -336.889, 714.757, -23.0817, 667.179, -20.3742, 319.715 )
+
+[node name="wait_library_door" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+visible = false
+position = Vector2( -1.47528, -16.7366 )
+script = ExtResource( 15 )
+dialog_label = "lucifur_library"
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/wait_library_door"]
+position = Vector2( 453.085, -178.215 )
 polygon = PoolVector2Array( -336.115, 293.819, -336.889, 714.757, -23.0817, 667.179, -20.3742, 319.715 )
 
 [node name="commons_mat" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 position = Vector2( -1.47528, -16.7366 )
-script = ExtResource( 6 )
+script = ExtResource( 15 )
 dialog_label = "commons_mat"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_mat"]
 polygon = PoolVector2Array( 173.807, 553.354, 155.429, 643.036, 454.054, 595.738, 417.122, 513.659 )
 
 [node name="commons_chair1" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 368.232, -148.775 )
-script = ExtResource( 6 )
+script = ExtResource( 15 )
 dialog_label = "commons_chair1"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_chair1"]
@@ -58,7 +172,7 @@ polygon = PoolVector2Array( 337.054, 461.726, 338.135, 597.122, 378.554, 618.372
 [node name="commons_chair2" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 position = Vector2( 471.117, 26.9874 )
-script = ExtResource( 6 )
+script = ExtResource( 15 )
 dialog_label = "commons_chair2"
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/commons_chair2"]
@@ -68,7 +182,7 @@ polygon = PoolVector2Array( 361.695, 461.555, 352.496, 534.308, 283.506, 555.632
 [node name="poetry_slam_sign" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 position = Vector2( 471.117, 26.9874 )
-script = ExtResource( 6 )
+script = ExtResource( 15 )
 dialog_label = "poetry_slam_sign"
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/poetry_slam_sign"]
@@ -78,7 +192,7 @@ polygon = PoolVector2Array( 537.914, 80.7565, 530.176, 180.574, 529.402, 230.87,
 [node name="commons_poem" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 position = Vector2( 446.417, 252.137 )
-script = ExtResource( 6 )
+script = ExtResource( 15 )
 dialog_label = "commons_poem"
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/commons_poem"]
@@ -92,9 +206,16 @@ polygon = PoolVector2Array( 555.638, 265.348, 585.898, 289.665, 604.27, 256.702,
 [node name="tack" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 position = Vector2( 446.417, 252.137 )
-script = ExtResource( 6 )
+script = ExtResource( 15 )
 dialog_label = "tack"
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="state_handler/tack"]
 position = Vector2( -0.377319, -0.463257 )
 polygon = PoolVector2Array( 637.773, 288.043, 664.25, 301.552, 674.517, 281.559, 648.58, 271.833 )
+[connection signal="pressed" from="state_handler/wait_tori" to="state_handler/wait_tori" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/wait_sean" to="state_handler/wait_sean" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/wait_elijah" to="state_handler/wait_elijah" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/wait_natalie" to="state_handler/wait_natalie" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/wait_oliver" to="state_handler/wait_oliver" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/wait_numa" to="state_handler/wait_numa" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/wait_kyungsoon" to="state_handler/wait_kyungsoon" method="_on_char_obj_button_pressed"]

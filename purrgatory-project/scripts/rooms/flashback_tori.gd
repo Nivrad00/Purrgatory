@@ -13,3 +13,6 @@ func init_state(state):
 func wake_up():
 	.wake_up()
 	emit_signal('change_room', 'warehouse3')
+	
+	set_format_dict('setback', choice_text[3])
+	set_format_dict('desire', choice_text[1])

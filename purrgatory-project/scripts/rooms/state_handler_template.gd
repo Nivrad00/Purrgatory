@@ -59,13 +59,26 @@ func update_state(state):
 			emit_signal('change_room', key.substr(6, len(key)-6))
 		
 		if key.substr(0, 6) == '_hide_' and state[key]:
-			var sprite = get_node(key.substr(6, len(key)-6))
-			if sprite:
+			var sprites = []
+			var found_all = true
+			
+			if key.substr(6, len(key)-6) == 'null':
+				sprites = null
+				
+			else:
+				for name in key.substr(6, len(key)-6).split('&'):
+					var sprite = get_node(name)
+					if sprite:
+						sprites.append(sprite)
+					else:
+						found_all = false
+				
+			if found_all:
 				state[key] = false
-				emit_signal('set_hidden_sprite', [sprite])
+				emit_signal('set_hidden_sprite', sprites)
 			else:
 				print(key.substr(6, len(key)-6) + ' not found, buffering it for later')
-			# useful if you need to set only one hidden sprite
+			
 		
 		
 	for child in get_children():

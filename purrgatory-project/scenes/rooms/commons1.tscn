@@ -1,18 +1,130 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/commons1.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/commons1.png" type="Texture" id=3]
-[ext_resource path="res://scenes/sprites/numa_at_commons.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/sprites/kyungsoon_idle.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/sprites/basket-flower-and-card.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprite_masks/basket-flower-and-card.png" type="BitMap" id=8]
-[ext_resource path="res://scenes/sprites/oliver_huh.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/cat1_idle.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=12]
-[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=13]
+[ext_resource path="res://assets/sprites/oliver_confused1.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprite_masks/oliver_confused1.png" type="BitMap" id=5]
+[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=6]
+[ext_resource path="res://assets/sprites/numa_idle1.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite_masks/numa_idle1.png" type="BitMap" id=8]
+[ext_resource path="res://assets/sprites/numa_with_ks3.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite_masks/numa_with_ks1.png" type="BitMap" id=10]
+[ext_resource path="res://assets/sprites/kyungsoon_idle1.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite_masks/kyungsoon_idle1.png" type="BitMap" id=12]
+[ext_resource path="res://assets/sprites/tori_dropoff1.5.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite_masks/tori_dropoff1.5.png" type="BitMap" id=14]
+[ext_resource path="res://assets/sprites/elijah_idle1.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite_masks/elijah_idle1.png" type="BitMap" id=16]
+[ext_resource path="res://assets/sprites/sean_idle1.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprite_masks/sean_idle1.png" type="BitMap" id=18]
+[ext_resource path="res://assets/sprites/natalie_idle.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprite_masks/natalie_idle.png" type="BitMap" id=20]
+[ext_resource path="res://scenes/sprites/numa_at_commons.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scenes/sprites/kyungsoon_idle.tscn" type="PackedScene" id=22]
+[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=23]
+[ext_resource path="res://assets/sprites/basket-flower-and-card.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprite_masks/basket-flower-and-card.png" type="BitMap" id=25]
+[ext_resource path="res://scenes/sprites/oliver_huh.tscn" type="PackedScene" id=26]
+[ext_resource path="res://scenes/cat1_idle.tscn" type="PackedScene" id=27]
+[ext_resource path="res://assets/sprites/coin1.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprites/coin2.png" type="Texture" id=29]
+[ext_resource path="res://assets/audio/coin_flip.wav" type="AudioStream" id=30]
+[ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=31]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=32]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=33]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "paraola"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 876.798, 800 ), Vector2( 876.798, 168.585 ), Vector2( 876.798, 168.585 ), Vector2( 876.798, 800 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 30 )
+} ],
+"times": PoolRealArray( 0.2 )
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "paraola"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 640, 800 ), Vector2( 640, 168.585 ), Vector2( 640, 168.585 ), Vector2( 640, 800 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 30 )
+} ],
+"times": PoolRealArray( 0.2 )
+}
 
 [node name="room_template" type="Control"]
 anchor_right = 1.0
@@ -28,7 +140,237 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="numa_at_commons" parent="state_handler" instance=ExtResource( 4 )]
+[node name="poof_oliver1" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 609.97
+margin_top = 197.886
+margin_right = 761.97
+margin_bottom = 529.886
+rect_scale = Vector2( -1, 1 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 4 )
+texture_click_mask = ExtResource( 5 )
+script = ExtResource( 6 )
+
+[node name="poof_oliver2" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 965.618
+margin_top = 208.104
+margin_right = 1117.62
+margin_bottom = 540.104
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 4 )
+texture_click_mask = ExtResource( 5 )
+script = ExtResource( 6 )
+
+[node name="poof_numa1" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 1138.67
+margin_top = 334.489
+margin_right = 1405.67
+margin_bottom = 563.489
+rect_scale = Vector2( -1, 1 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 7 )
+texture_click_mask = ExtResource( 8 )
+script = ExtResource( 6 )
+
+[node name="poof_numa2" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 405.733
+margin_top = 313.617
+margin_right = 626.733
+margin_bottom = 542.617
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 9 )
+texture_click_mask = ExtResource( 10 )
+script = ExtResource( 6 )
+
+[node name="poof_kyungsoon" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 304.629
+margin_top = 327.683
+margin_right = 567.629
+margin_bottom = 647.683
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 11 )
+texture_click_mask = ExtResource( 12 )
+script = ExtResource( 6 )
+
+[node name="poof_tori" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 1223.31
+margin_top = 195.989
+margin_right = 1486.31
+margin_bottom = 742.989
+rect_scale = Vector2( -0.8, 0.8 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 13 )
+texture_click_mask = ExtResource( 14 )
+script = ExtResource( 6 )
+
+[node name="poof_elijah" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 955.166
+margin_top = 234.069
+margin_right = 1218.17
+margin_bottom = 554.069
+rect_scale = Vector2( -1.2, 1.2 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 15 )
+texture_click_mask = ExtResource( 16 )
+script = ExtResource( 6 )
+
+[node name="poof_sean" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 752.072
+margin_top = 205.509
+margin_right = 1015.07
+margin_bottom = 535.509
+rect_scale = Vector2( -1.1, 1.1 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 17 )
+texture_click_mask = ExtResource( 18 )
+script = ExtResource( 6 )
+
+[node name="poof_natalie" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 126.922
+margin_top = 297.536
+margin_right = 389.922
+margin_bottom = 635.536
+rect_scale = Vector2( 1.2, 1.2 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 19 )
+texture_click_mask = ExtResource( 20 )
+script = ExtResource( 6 )
+
+[node name="wait_oliver1" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 665.504
+margin_top = 175.673
+margin_right = 817.504
+margin_bottom = 507.673
+rect_scale = Vector2( -1, 1 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 4 )
+texture_click_mask = ExtResource( 5 )
+script = ExtResource( 6 )
+dialog_label = "wait_oliver"
+
+[node name="wait_oliver2" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 995.765
+margin_top = 211.277
+margin_right = 1147.77
+margin_bottom = 543.277
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 4 )
+texture_click_mask = ExtResource( 5 )
+script = ExtResource( 6 )
+dialog_label = "wait_oliver"
+
+[node name="wait_numa1" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 1176.75
+margin_top = 334.489
+margin_right = 1443.75
+margin_bottom = 563.489
+rect_scale = Vector2( -1, 1 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 7 )
+texture_click_mask = ExtResource( 8 )
+script = ExtResource( 6 )
+dialog_label = "wait_numa"
+
+[node name="wait_numa2" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 405.733
+margin_top = 313.617
+margin_right = 626.733
+margin_bottom = 542.617
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 9 )
+texture_click_mask = ExtResource( 10 )
+script = ExtResource( 6 )
+dialog_label = "wait_numa"
+
+[node name="wait_kyungsoon" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 304.629
+margin_top = 327.683
+margin_right = 567.629
+margin_bottom = 647.683
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 11 )
+texture_click_mask = ExtResource( 12 )
+script = ExtResource( 6 )
+dialog_label = "wait_kyungsoon"
+
+[node name="wait_tori" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = -357.014
+margin_top = 18.2817
+margin_right = -94.0138
+margin_bottom = 338.282
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 11 )
+texture_click_mask = ExtResource( 12 )
+script = ExtResource( 6 )
+
+[node name="wait_elijah" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = -360.187
+margin_top = 73.8152
+margin_right = -97.1871
+margin_bottom = 393.815
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 11 )
+texture_click_mask = ExtResource( 12 )
+script = ExtResource( 6 )
+
+[node name="wait_sean" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = -371.294
+margin_top = 146.802
+margin_right = -108.294
+margin_bottom = 466.802
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 11 )
+texture_click_mask = ExtResource( 12 )
+script = ExtResource( 6 )
+
+[node name="wait_natalie" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = -369.707
+margin_top = 211.856
+margin_right = -106.707
+margin_bottom = 531.856
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 11 )
+texture_click_mask = ExtResource( 12 )
+script = ExtResource( 6 )
+
+[node name="numa_at_commons" parent="state_handler" instance=ExtResource( 21 )]
+visible = false
 margin_left = 405.733
 margin_top = 313.617
 margin_right = 626.733
@@ -36,26 +378,26 @@ margin_bottom = 542.617
 dialog_label = "ks_and_numa_commons"
 blackout_label = "numa_blackout"
 
-[node name="kyungsoon_idle" parent="state_handler" instance=ExtResource( 5 )]
+[node name="kyungsoon_idle" parent="state_handler" instance=ExtResource( 22 )]
 margin_left = 304.629
 margin_top = 327.683
 margin_right = 567.629
 margin_bottom = 647.683
 blackout_label = "kyungsoon_blackout"
 
-[node name="flowers_etc" parent="state_handler" instance=ExtResource( 6 )]
+[node name="flowers_etc" parent="state_handler" instance=ExtResource( 23 )]
 visible = false
 modulate = Color( 1, 1, 1, 1 )
 margin_left = 617.398
 margin_top = 499.255
 margin_right = 818.398
 margin_bottom = 648.255
-texture_normal = ExtResource( 7 )
-texture_click_mask = ExtResource( 8 )
+texture_normal = ExtResource( 24 )
+texture_click_mask = ExtResource( 25 )
 expand = false
 dialog_label = "flowers_etc"
 
-[node name="oliver_huh" parent="state_handler" instance=ExtResource( 9 )]
+[node name="oliver_huh" parent="state_handler" instance=ExtResource( 26 )]
 visible = false
 margin_left = 1019.18
 margin_top = 201.466
@@ -64,19 +406,34 @@ margin_bottom = 533.466
 dialog_label = "talk_to_oliver_about_numa"
 blackout_label = "oliver_blackout"
 
-[node name="cat1_idle" parent="state_handler" instance=ExtResource( 10 )]
+[node name="cat1_idle" parent="state_handler" instance=ExtResource( 27 )]
 margin_left = 940.571
 margin_top = 464.095
 margin_right = 1080.57
 margin_bottom = 598.095
 
-[node name="exit" parent="state_handler" instance=ExtResource( 11 )]
+[node name="coin" type="AnimatedSprite" parent="state_handler"]
+visible = false
+position = Vector2( 640, 800 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/coin"]
+anims/paraola = SubResource( 2 )
+"anims/paraola (copy)" = SubResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="state_handler/coin"]
+stream = ExtResource( 30 )
+bus = "SFX"
+
+[node name="exit" parent="state_handler" instance=ExtResource( 31 )]
 room_label = "commons2"
 
 [node name="phone" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 position = Vector2( 724.798, -291.001 )
-script = ExtResource( 12 )
+script = ExtResource( 32 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
@@ -85,10 +442,21 @@ room_label = "phone"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/phone"]
 polygon = PoolVector2Array( 355.202, 531.001, 347.202, 648.001, 383.202, 650.001, 395.202, 623.001, 432.202, 610.001, 434.202, 535.001 )
 
+[node name="phone_blackout" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+visible = false
+position = Vector2( 0.431946, -59.9116 )
+script = ExtResource( 33 )
+dialog_label = "phone_blackout"
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/phone_blackout"]
+position = Vector2( 724.366, -231.089 )
+polygon = PoolVector2Array( 355.202, 531.001, 347.202, 648.001, 383.202, 650.001, 395.202, 623.001, 432.202, 610.001, 434.202, 535.001 )
+
 [node name="exit2" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 position = Vector2( 456.517, -238.127 )
-script = ExtResource( 12 )
+script = ExtResource( 32 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -97,11 +465,24 @@ room_label = "antechamber5"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
 polygon = PoolVector2Array( -459.085, 322.215, -455.713, 875.844, -322.6, 822.858, -323.376, 337.436 )
 
+[node name="wait_exit2" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+visible = false
+position = Vector2( 456.517, -238.127 )
+script = ExtResource( 33 )
+__meta__ = {
+"_edit_group_": true
+}
+dialog_label = "lucifur_exit"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/wait_exit2"]
+polygon = PoolVector2Array( -459.085, 322.215, -455.713, 875.844, -322.6, 822.858, -323.376, 337.436 )
+
 [node name="commons_door_exit" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 visible = false
 position = Vector2( 453.517, -203.127 )
-script = ExtResource( 12 )
+script = ExtResource( 32 )
 room_label = "commons3"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_door_exit"]
@@ -111,17 +492,28 @@ polygon = PoolVector2Array( 413.864, 387.731, 412.011, 687.48, 569.53, 711.108, 
 [node name="commons_door_dialog" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 position = Vector2( 0.431946, -59.9116 )
-script = ExtResource( 13 )
+script = ExtResource( 33 )
 dialog_label = "try_door"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_door_dialog"]
 position = Vector2( -1.31677, -0.227722 )
 polygon = PoolVector2Array( 865.429, 508.608, 1021.99, 533.956, 1020.8, 205.639, 866.26, 208.881 )
 
+[node name="wait_commons_door" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+visible = false
+position = Vector2( 0.431946, -59.9116 )
+script = ExtResource( 33 )
+dialog_label = "lucifur_exit"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/wait_commons_door"]
+position = Vector2( -1.31677, -0.227722 )
+polygon = PoolVector2Array( 865.429, 508.608, 1021.99, 533.956, 1020.8, 205.639, 866.26, 208.881 )
+
 [node name="commons_lamp" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 position = Vector2( 0.431946, -59.9116 )
-script = ExtResource( 13 )
+script = ExtResource( 33 )
 dialog_label = "commons_lamp"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_lamp"]
@@ -130,7 +522,7 @@ polygon = PoolVector2Array( 778.808, 373.277, 777.445, 349.097, 794.304, 338.323
 [node name="commons_cord" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 position = Vector2( 0.431946, -59.9116 )
-script = ExtResource( 13 )
+script = ExtResource( 33 )
 dialog_label = "commons_lamp"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_cord"]
@@ -147,5 +539,23 @@ margin_bottom = 720.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
+[connection signal="pressed" from="state_handler/poof_oliver1" to="state_handler/poof_oliver1" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/poof_oliver2" to="state_handler/poof_oliver2" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/poof_numa1" to="state_handler/poof_numa1" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/poof_numa2" to="state_handler/poof_numa2" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/poof_kyungsoon" to="state_handler/poof_kyungsoon" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/poof_tori" to="state_handler/poof_tori" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/poof_elijah" to="state_handler/poof_elijah" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/poof_sean" to="state_handler/poof_sean" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/poof_natalie" to="state_handler/poof_natalie" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/wait_oliver1" to="state_handler/wait_oliver1" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/wait_oliver2" to="state_handler/wait_oliver2" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/wait_numa1" to="state_handler/wait_numa1" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/wait_numa2" to="state_handler/wait_numa2" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/wait_kyungsoon" to="state_handler/wait_kyungsoon" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/wait_tori" to="state_handler/wait_tori" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/wait_elijah" to="state_handler/wait_elijah" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/wait_sean" to="state_handler/wait_sean" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/wait_natalie" to="state_handler/wait_natalie" method="_on_char_obj_button_pressed"]
 [connection signal="timeout" from="state_handler/poof_timer" to="state_handler" method="_on_poof_timer_timeout"]
 [connection signal="pressed" from="state_handler/poof_cover" to="state_handler" method="_on_poof_cover_pressed"]

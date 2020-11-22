@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=2]
-[ext_resource path="res://scripts/rooms/flashback_sean.gd" type="Script" id=3]
+[ext_resource path="res://scripts/rooms/flashback_kyungsoon.gd" type="Script" id=3]
 [ext_resource path="res://scripts/flashback_button.gd" type="Script" id=4]
 
 [sub_resource type="Animation" id=1]
@@ -35,7 +35,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=3]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
@@ -49,7 +49,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
@@ -434,7 +434,7 @@ flat = true
 script = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/hc/vc"]
-anims/Fadein = SubResource( 8 )
+anims/Fadein = SubResource( 3 )
 
 [node name="next_button" type="Button" parent="state_handler"]
 margin_left = 603.0
@@ -459,7 +459,7 @@ text = "next"
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/next_button"]
-anims/Fadein = SubResource( 9 )
+anims/Fadein = SubResource( 4 )
 
 [node name="next_cover" type="Button" parent="state_handler"]
 visible = false

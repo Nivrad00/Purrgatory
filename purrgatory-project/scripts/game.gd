@@ -218,6 +218,8 @@ func change_room(label):
 			$meta_ui/dropdown.toggle_items() 
 
 func start_dialog(label, blackout_label=null):
+	$meta_ui/debug/Label.text = str(format_dict)
+	
 	if state.get('blackout') and blackout_label:
 		label = blackout_label
 		
@@ -250,12 +252,20 @@ func start_dialog(label, blackout_label=null):
 			text = regex.sub(text, '$1', true)
 		else:
 			text = regex.sub(text, '$2', true)
+	
+	var speaker = block['speaker']
+	if speaker != null:
+		var speaker_format_dict = { }
+		for key in ['tori', 'sean', 'elijah', 'numa']:
+			if state.get('met_' + key):
+				speaker_format_dict[key] = key
+			else:
+				speaker_format_dict[key] = '???'
+				
+		speaker = speaker.format(speaker_format_dict)
 
-	ui.update_ui(block['speaker'], block['sprites'], text, choices_text)
-
-	if ui.get_node('AnimationPlayer').current_animation != 'default':
-		ui.get_node('AnimationPlayer').play('default')
-
+	ui.update_ui(speaker, block['sprites'], text, choices_text)
+	
 	for pair in block['states']:
 		state[pair[0]] = pair[1]
 	room.update_state(state)
@@ -287,6 +297,8 @@ func update_dialog_button_clicked():
 		update_dialog(-1)
 
 func update_dialog(b: int):
+	$meta_ui/debug/Label.text = str(format_dict)
+	
 	# mark the previous block as seen, and immediately write to file
 	seen_blocks.append(block['label'])
 
@@ -338,10 +350,18 @@ func update_dialog(b: int):
 			else:
 				text = regex.sub(text, '$2', true)
 
-		ui.update_ui(block['speaker'], block['sprites'], text, choices_text)
-
-		if ui.get_node('AnimationPlayer').current_animation != 'default':
-			ui.get_node('AnimationPlayer').play('default')
+		var speaker = block['speaker']
+		if speaker != null:
+			var speaker_format_dict = { }
+			for key in ['tori', 'sean', 'elijah', 'numa']:
+				if state.get('met_' + key):
+					speaker_format_dict[key] = key
+				else:
+					speaker_format_dict[key] = '???'
+					
+			speaker = speaker.format(speaker_format_dict)
+	
+		ui.update_ui(speaker, block['sprites'], text, choices_text)
 		
 		for pair in block['states']:
 			state[pair[0]] = pair[1]

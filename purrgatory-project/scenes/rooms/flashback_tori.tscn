@@ -153,6 +153,7 @@ scroll_active = false
 anims/Fadein = SubResource( 1 )
 
 [node name="c1" type="RichTextLabel" parent="state_handler/hc/vc"]
+editor/display_folded = true
 margin_top = 250.0
 margin_right = 800.0
 margin_bottom = 310.0
@@ -323,6 +324,7 @@ flat = true
 script = ExtResource( 4 )
 
 [node name="t2" type="RichTextLabel" parent="state_handler/hc/vc"]
+editor/display_folded = true
 margin_top = 330.0
 margin_right = 800.0
 margin_bottom = 390.0
@@ -426,7 +428,7 @@ margin_bottom = 50.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "you remember dreaming of a better life as you laid in bed."
-text = "you remember dreaming of a better life as you lay in bed."
+text = "you remember dreaming of a better life as you laid in bed."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/t2/4"]
@@ -621,8 +623,8 @@ margin_right = 788.0
 margin_bottom = 50.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]you were diagnosed with illness[/u]."
-text = "you were diagnosed with illness."
+bbcode_text = "[u]you were diagnosed with an illness[/u]."
+text = "you were diagnosed with an illness."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c3/choice_container/5"]

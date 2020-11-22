@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=2]
+[gd_scene load_steps=89 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ss.tscn" type="PackedScene" id=2]
@@ -64,6 +64,7 @@
 [ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=62]
 [ext_resource path="res://scripts/history.gd" type="Script" id=63]
 [ext_resource path="res://assets/ui/history.png" type="Texture" id=64]
+[ext_resource path="res://scripts/debug.gd" type="Script" id=65]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("ss")
@@ -165,34 +166,33 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id=16]
-resource_name = "numa_with_crowbar"
-length = 0.8
+resource_name = "numa_creeping1"
 tracks/0/type = "value"
-tracks/0/path = NodePath("numa_neutral:scale")
+tracks/0/path = NodePath("../sprites/numa_neutral:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.988786 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -1, 1 ) ]
+"values": [ Vector2( -126.515, 280 ), Vector2( 0, 280 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("numa_neutral:position")
+tracks/1/path = NodePath("../sprites/numa_neutral:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -133.317, 280 ), Vector2( 1412.07, 280 ) ]
+"values": [ Vector2( -1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("kyungsoon_neutral:position")
+tracks/2/path = NodePath("../sprites/natalie_neutral:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -205,6 +205,101 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=17]
+resource_name = "numa_creeping2"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../sprites/numa_neutral:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 280 ), Vector2( 213.579, 280 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../sprites/natalie_neutral:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 640, 280 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../sprites/numa_neutral:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "numa_creeping3"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../sprites/numa_neutral:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 213.579, 280 ), Vector2( 420, 280 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../sprites/natalie_neutral:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 640, 280 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../sprites/numa_neutral:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("kyungsoon_neutral:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 640, 280 ) ]
+}
+
+[sub_resource type="Animation" id=20]
 length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:margin_left")
@@ -231,7 +326,10 @@ tracks/1/keys = {
 "values": [ 806.201, -856.32 ]
 }
 
-[sub_resource type="Shader" id=18]
+[sub_resource type="StyleBoxFlat" id=23]
+bg_color = Color( 1, 1, 1, 0.619608 )
+
+[sub_resource type="Shader" id=21]
 code = "shader_type canvas_item;
 
 void fragment() {
@@ -240,12 +338,12 @@ void fragment() {
 	COLOR.rgb = c;
 }"
 
-[sub_resource type="ShaderMaterial" id=19]
-shader = SubResource( 18 )
+[sub_resource type="ShaderMaterial" id=22]
+shader = SubResource( 21 )
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
-default_room = "commons1"
+default_room = "reception"
 
 [node name="ss" parent="." instance=ExtResource( 2 )]
 
@@ -382,8 +480,6 @@ theme = ExtResource( 27 )
 script = ExtResource( 28 )
 
 [node name="sprites" type="Control" parent="content/ui"]
-margin_left = 806.201
-margin_right = 806.201
 
 [node name="choices" type="Control" parent="content/ui"]
 margin_left = 208.0
@@ -799,8 +895,11 @@ valign = 1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="content/ui"]
 root_node = NodePath("../sprites")
 anims/default = SubResource( 15 )
-anims/numa_with_crowbar = SubResource( 16 )
-anims/right_to_left_run = SubResource( 17 )
+anims/numa_creeping1 = SubResource( 16 )
+anims/numa_creeping2 = SubResource( 17 )
+anims/numa_creeping3 = SubResource( 18 )
+anims/numa_with_crowbar = SubResource( 19 )
+anims/right_to_left_run = SubResource( 20 )
 
 [node name="meta_ui" type="Control" parent="."]
 margin_right = 1280.01
@@ -843,6 +942,7 @@ align = 1
 valign = 1
 
 [node name="dropdown" type="Control" parent="meta_ui"]
+editor/display_folded = true
 margin_left = 163.458
 margin_top = -284.152
 margin_right = 1280.46
@@ -861,6 +961,7 @@ margin_right = 1093.0
 margin_bottom = 262.0
 
 [node name="quest_container" type="ScrollContainer" parent="meta_ui/dropdown"]
+editor/display_folded = true
 margin_left = 35.0
 margin_top = 55.0
 margin_right = 1060.0
@@ -1415,6 +1516,7 @@ margin_right = 1279.58
 margin_bottom = 719.582
 
 [node name="load_confirm" type="Control" parent="meta_ui"]
+editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -1523,6 +1625,55 @@ mouse_filter = 2
 theme = ExtResource( 27 )
 columns = 2
 
+[node name="debug" type="Control" parent="meta_ui"]
+visible = false
+margin_top = 23.2134
+margin_right = 40.0
+margin_bottom = 63.2134
+rect_scale = Vector2( 0.7, 0.7 )
+script = ExtResource( 65 )
+
+[node name="LineEdit" type="LineEdit" parent="meta_ui/debug"]
+margin_left = 36.0
+margin_top = 53.0
+margin_right = 496.0
+margin_bottom = 97.0
+
+[node name="Button" type="Button" parent="meta_ui/debug"]
+margin_left = 508.376
+margin_top = 54.6
+margin_right = 608.376
+margin_bottom = 94.6
+text = "add"
+
+[node name="Button2" type="Button" parent="meta_ui/debug"]
+margin_left = 621.236
+margin_top = 54.5476
+margin_right = 719.236
+margin_bottom = 94.5476
+text = "remove"
+
+[node name="LineEdit2" type="LineEdit" parent="meta_ui/debug"]
+margin_left = 36.0
+margin_top = 109.0
+margin_right = 496.0
+margin_bottom = 153.0
+
+[node name="Button3" type="Button" parent="meta_ui/debug"]
+margin_left = 508.376
+margin_top = 110.6
+margin_right = 608.376
+margin_bottom = 150.6
+text = "go"
+
+[node name="Label" type="Label" parent="meta_ui/debug"]
+margin_left = 36.0
+margin_top = 168.0
+margin_right = 612.0
+margin_bottom = 973.0
+custom_styles/normal = SubResource( 23 )
+autowrap = true
+
 [node name="white_cover" type="ColorRect" parent="."]
 visible = false
 anchor_right = 1.0
@@ -1533,7 +1684,7 @@ color = Color( 1, 1, 1, 0 )
 
 [node name="negative_cover" type="ColorRect" parent="."]
 visible = false
-material = SubResource( 19 )
+material = SubResource( 22 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1280.0
@@ -1581,3 +1732,6 @@ bus = "Music"
 [connection signal="deleted_data" from="meta_ui/load_menu" to="." method="deleted_data"]
 [connection signal="load_file" from="meta_ui/load_menu" to="." method="load_game_while_playing"]
 [connection signal="pressed" from="meta_ui/history/back" to="meta_ui/history" method="hide_custom"]
+[connection signal="pressed" from="meta_ui/debug/Button" to="meta_ui/debug" method="_on_Button_pressed"]
+[connection signal="pressed" from="meta_ui/debug/Button2" to="meta_ui/debug" method="_on_Button2_pressed"]
+[connection signal="pressed" from="meta_ui/debug/Button3" to="meta_ui/debug" method="_on_Button3_pressed"]

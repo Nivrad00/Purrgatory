@@ -1,9 +1,21 @@
 extends 'state_handler_template.gd'
 
+var state_copy = null
 var anim_playing = false
 
 func _ready():
 	$phone.set_highlight_on_hover(false)
+	state_copy = get_node('../../../../..').state
+	if state_copy.get('numa_quest_complete'):
+		$wait_oliver2.name = 'wait_oliver'
+		$wait_numa2.name = 'wait_numa'
+		$poof_oliver2.name = 'poof_oliver'
+		$poof_numa2.name = 'poof_numa'
+	else:
+		$wait_oliver1.name = 'wait_oliver'
+		$wait_numa1.name = 'wait_numa'
+		$poof_oliver1.name = 'poof_oliver'
+		$poof_numa1.name = 'poof_numa'
 	
 func play_default_music(state):
 	if state.get('on_hold'):
@@ -13,6 +25,7 @@ func play_default_music(state):
 		
 func init_state(state):
 	.init_state(state)
+	
 	if state.get('drama_ongoing'):
 		emit_signal('start_dialog', 'drama_start', [$kyungsoon_idle])
 		
@@ -53,6 +66,7 @@ func init_state(state):
 	
 func update_state(state):
 	.update_state(state)
+		
 	if state.get('display_kyungsoon_and_numa'):
 		state['display_kyungsoon_and_numa'] = false
 		emit_signal('set_hidden_sprite', [$kyungsoon_idle, $numa_at_commons])
@@ -84,13 +98,135 @@ func update_state(state):
 		$commons_door_exit.hide()
 		$commons_door_dialog.show()
 	
+	if state.get('blackout'):
+		$phone.hide()
+		$phone_blackout.show()
+	else:
+		$phone.show()
+		$phone_blackout.hide()
+	
 	# lucifur and stuff
 	
 	if state.get('lucifur_appears'):
-		state['lucifur_appears'] = false
+		state['no_cat'] = true
 		$poof_timer.start()
 		$poof_cover.show()
 		anim_playing = true
+	
+	if state.get('lucifur_snaps'):
+		$poof_timer.start()
+		$poof_cover.show()
+		anim_playing = true
+		
+	if state.get('lucifur_frog'):
+		$poof_timer.start()
+		$poof_cover.show()
+		anim_playing = true
+		
+	if state.get('no_cat'):
+		$cat1_idle.hide()
+	else:
+		$cat1_idle.show()
+		
+	if state.get('poofing'):
+		# things that are also handled elsewhere -- we're just overriding it
+		$numa_at_commons.hide()
+		$kyungsoon_idle.hide()
+		$oliver_huh.hide()
+		
+		# things that are only handled here
+		$poof_elijah.show()
+		$poof_kyungsoon.show()
+		$poof_natalie.show()
+		$poof_numa.show()
+		$poof_oliver.show()
+		$poof_sean.show()
+		$poof_tori.show()
+	else:
+		$poof_elijah.hide()
+		$poof_kyungsoon.hide()
+		$poof_natalie.hide()
+		$poof_numa.hide()
+		$poof_oliver.hide()
+		$poof_sean.hide()
+		$poof_tori.hide()
+		
+	if state.get('waiting'):
+		# things that are also handled elsewhere -- we're just overriding it
+		$numa_at_commons.hide()
+		$kyungsoon_idle.hide()
+		$oliver_huh.hide()
+		$commons_door_exit.hide()
+		$commons_door_dialog.hide()
+		
+		# things that are only handled here
+		$exit2.hide()
+		$wait_exit2.show()
+		$wait_commons_door.show()
+		$wait_elijah.show()
+		$wait_kyungsoon.show()
+		$wait_natalie.show()
+		$wait_numa.show()
+		$wait_oliver.show()
+		$wait_sean.show()
+		$wait_tori.show()
+	else:
+		$exit2.show()
+		$wait_exit2.hide()
+		$wait_commons_door.hide()
+		$wait_elijah.hide()
+		$wait_kyungsoon.hide()
+		$wait_natalie.hide()
+		$wait_numa.hide()
+		$wait_oliver.hide()
+		$wait_sean.hide()
+		$wait_tori.hide()
+	
+	if state.get('elijah_interviewing'):
+		$wait_elijah.hide()
+	if state.get('kyungsoon_interviewing'):
+		$wait_kyungsoon.hide()
+	if state.get('natalie_interviewing'):
+		$wait_natalie.hide()
+	if state.get('numa_interviewing'):
+		$wait_numa.hide()
+	if state.get('oliver_interviewing'):
+		$wait_oliver.hide()
+	if state.get('sean_interviewing'):
+		$wait_sean.hide()
+	if state.get('tori_interviewing'):
+		$wait_tori.hide()
+	
+	if state.get('waited_once'):
+		state['waited_once'] = false
+		if state.has('wait_amount'):
+			state['wait_amount'] += 1
+		else:
+			state['wait_amount'] = 1
+		
+		if state['wait_amount'] == 2:
+			emit_signal('start_dialog', 'lucifur_calls_natalie', [])
+		elif state['wait_amount'] == 4:
+			emit_signal('start_dialog', 'lucifur_calls_oliver', [])
+		elif state['wait_amount'] == 6:
+			emit_signal('start_dialog', 'lucifur_calls_kyungsoon', [])
+		elif state['wait_amount'] == 8:
+			emit_signal('start_dialog', 'lucifur_calls_numa', [])
+		elif state['wait_amount'] == 10:
+			emit_signal('start_dialog', 'lucifur_calls_tori', [])
+		elif state['wait_amount'] == 12:
+			emit_signal('start_dialog', 'lucifur_calls_sean', [])
+		elif state['wait_amount'] >= 14:
+			emit_signal('start_dialog', 'lucifur_calls_player', [])
+	
+	if state.get('commons_flip_coin'):
+		state['commons_flip_coin'] = false
+		$coin/AnimationPlayer.play('paraola')
+		
+	if state.get('empty_commons'):
+		$numa_at_commons.hide()
+		$kyungsoon_idle.hide()
+		$oliver_huh.hide()
 
 func _on_poof_timer_timeout():
 	anim_playing = false
@@ -99,4 +235,15 @@ func _on_poof_cover_pressed():
 	print('boooop')
 	if not anim_playing:
 		$poof_cover.hide()
-		emit_signal('start_dialog', 'lucifur_intro', [])
+		
+		if state_copy.get('lucifur_appears'):
+			state_copy['lucifur_appears'] = false
+			emit_signal('start_dialog', 'lucifur_intro', [])
+			
+		elif state_copy.get('lucifur_snaps'):
+			state_copy['lucifur_snaps'] = false
+			emit_signal('start_dialog', 'lucifur_gathering', [])
+			
+		elif state_copy.get('lucifur_frog'):
+			state_copy['lucifur_frog'] = false
+			emit_signal('start_dialog', 'lucifur_gathering1', [])

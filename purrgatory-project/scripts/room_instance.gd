@@ -32,8 +32,9 @@ func set_hidden_sprite(sprites):
 		for sprite in hidden_sprites:
 			sprite.show()
 	hidden_sprites = sprites
-	for sprite in sprites:
-		sprite.hide()
+	if sprites:
+		for sprite in sprites:
+			sprite.hide()
 	
 func update_state(state, end = false):
 	if end:

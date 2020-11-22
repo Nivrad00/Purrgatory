@@ -238,6 +238,7 @@ flat = true
 script = ExtResource( 4 )
 
 [node name="t2" type="RichTextLabel" parent="state_handler/hc/vc"]
+editor/display_folded = true
 margin_top = 330.0
 margin_right = 800.0
 margin_bottom = 390.0
@@ -343,6 +344,7 @@ caret_blink = true
 anims/Fadein = SubResource( 5 )
 
 [node name="c3" type="RichTextLabel" parent="state_handler/hc/vc"]
+editor/display_folded = true
 margin_top = 410.0
 margin_right = 800.0
 margin_bottom = 470.0

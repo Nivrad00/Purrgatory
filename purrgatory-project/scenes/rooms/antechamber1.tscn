@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/antechamber1.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/antechamber1.png" type="Texture" id=3]
 [ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=4]
 [ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=5]
+[ext_resource path="res://scenes/portal_sprite2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/portal_sprite.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/audio/portal.ogg" type="AudioStream" id=8]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -22,6 +25,8 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="welcome_sign" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( -172.62, 3.49905 )
 script = ExtResource( 4 )
 dialog_label = "welcome_sign"
 
@@ -30,6 +35,7 @@ position = Vector2( 605.999, 3.99997 )
 polygon = PoolVector2Array( 266, 293, 264, 359.999, 412.314, 361.822, 415.999, 270, 292, 271 )
 
 [node name="exit" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( 453.085, -178.215 )
 script = ExtResource( 5 )
 __meta__ = {
@@ -39,3 +45,51 @@ room_label = "antechamber2"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
 polygon = PoolVector2Array( -112.086, 729.214, 198.914, 752.214, 198.914, 271.215, -115.086, 305.215 )
+
+[node name="exit_dialog" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+visible = false
+position = Vector2( 453.085, -178.215 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+dialog_label = "end_leave_antechamber"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit_dialog"]
+polygon = PoolVector2Array( -112.086, 729.214, 198.914, 752.214, 198.914, 271.215, -115.086, 305.215 )
+
+[node name="portal" type="Area2D" parent="state_handler"]
+position = Vector2( 254.806, -198.043 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+dialog_label = "end_portal"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/portal"]
+position = Vector2( 762.792, 23.327 )
+polygon = PoolVector2Array( -144.025, 802.17, 139.398, 818.499, 242.037, 551.405, 156.893, 292.475, -115.086, 305.215, -165.019, 449.933, -169.685, 547.906, -207.008, 546.74 )
+
+[node name="sprite" type="Node2D" parent="state_handler/portal"]
+position = Vector2( -285.641, 93.5109 )
+scale = Vector2( 1, 1.3 )
+
+[node name="portal_sprite2" parent="state_handler/portal/sprite" instance=ExtResource( 6 )]
+
+[node name="portal_sprite" parent="state_handler/portal/sprite" instance=ExtResource( 7 )]
+rotation = -1.44227
+
+[node name="fadeout" type="ColorRect" parent="state_handler"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[node name="white_timer" type="Timer" parent="state_handler"]
+wait_time = 2.5
+one_shot = true
+
+[node name="portal_audio" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 8 )
+volume_db = -6.0

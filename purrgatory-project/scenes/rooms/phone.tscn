@@ -381,7 +381,6 @@ bus = "Phone"
 [node name="dial_tone" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 37 )
 volume_db = -5.0
-autoplay = true
 bus = "Phone"
 
 [node name="ringtone" type="AudioStreamPlayer" parent="state_handler"]

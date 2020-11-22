@@ -2,9 +2,12 @@ extends "flashback_template.gd"
 
 func _ready():
 	._ready()
-	text_dependencies = { 3: 2 }
 	ending_label = null
 
 func wake_up():
 	.wake_up()
-	emit_signal('change_room', 'flashback_kyungsoon')
+	
+	set_format_dict('role_model', choice_text[1])
+	set_format_dict('envy', choice_text[2])
+	
+	emit_signal('change_room', 'flashback_sean')

@@ -1,5 +1,7 @@
 extends 'state_handler_template.gd'
 
+onready var state_copy = get_node('../../../../..').state
+
 func init_state(state):
 	if state.get('tori_train_complete'):
 		state['ks_and_numa_train_override'] = false
@@ -40,12 +42,12 @@ func update_state(state):
 		$smash/c.play()
 		
 	if state.get('vending_machine_flag4'):
-		state['vending_machine_flag4'] = false
 		$white/AnimationPlayer.play('fadeout')
 		yield($white/AnimationPlayer, "animation_finished")
 		$white.hide()
 		$click.show()
 
 func _on_click_pressed():
+	state_copy['vending_machine_flag4'] = false
 	$click.hide()
 	emit_signal('start_dialog', 'ks_and_numa_train2', [$ks_and_numa])

@@ -32,7 +32,8 @@ var pronunciation = [
 	[':3', ', cat face,'],
 	[';3333', ', winking cat face,'],
 	[';3', ', winking cat face,'],
-	['^^', 'happy face']
+	['^^', 'happy face'],
+	['lucifur', 'lucifer']
 ]
 
 var replacements = [

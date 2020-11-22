@@ -1,10 +1,10 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/reception.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/reception.png" type="Texture" id=3]
-[ext_resource path="res://assets/sprites/portal.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/portal2.png" type="Texture" id=5]
+[ext_resource path="res://scenes/portal_sprite.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/portal_sprite2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/exits/circle.png" type="Texture" id=7]
 [ext_resource path="res://assets/exit_masks/circle.png" type="BitMap" id=8]
@@ -21,40 +21,6 @@
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=19]
 
 [sub_resource type="Animation" id=1]
-resource_name = "rotate_portal"
-length = 15.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 15 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 360.0 ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "rotate_portal"
-length = 15.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 15 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, -360.0 ]
-}
-
-[sub_resource type="Animation" id=3]
 resource_name = "New Anim"
 loop = true
 tracks/0/type = "value"
@@ -96,23 +62,9 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="portal_sprite" type="Sprite" parent="state_handler"]
-position = Vector2( 1049.18, 373.42 )
-rotation = 4.84092
-texture = ExtResource( 4 )
+[node name="portal_sprite" parent="state_handler" instance=ExtResource( 4 )]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/portal_sprite"]
-autoplay = "rotate_portal"
-anims/rotate_portal = SubResource( 1 )
-
-[node name="portal_sprite2" type="Sprite" parent="state_handler"]
-position = Vector2( 1049.18, 373.42 )
-rotation = -1.87057
-texture = ExtResource( 5 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/portal_sprite2"]
-autoplay = "rotate_portal"
-anims/rotate_portal = SubResource( 2 )
+[node name="portal_sprite2" parent="state_handler" instance=ExtResource( 5 )]
 
 [node name="portal" parent="state_handler" instance=ExtResource( 6 )]
 margin_left = 863.317
@@ -161,7 +113,7 @@ sprite_path = [ null ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/receptionist_idle2"]
 autoplay = "New Anim"
-"anims/New Anim" = SubResource( 3 )
+"anims/New Anim" = SubResource( 1 )
 
 [node name="white_timer" type="Timer" parent="state_handler"]
 wait_time = 2.5

@@ -8,6 +8,8 @@ func init_state(_state):
 	.init_state(_state)
 	state = _state
 	
+	$dial_tone.play()
+	
 func update_state(_state):
 	.update_state(_state)
 	
