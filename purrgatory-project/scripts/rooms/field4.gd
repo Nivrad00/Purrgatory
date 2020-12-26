@@ -62,6 +62,6 @@ func update_state(state):
 func play_default_music(state):
 	if default_music != '_pass':
 		if state.get('park_game'):
-			emit_signal('change_audio', 'somewhere between draft')
+			emit_signal('change_audio', default_music)
 		else:
 			emit_signal('change_audio', default_music)

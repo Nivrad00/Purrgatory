@@ -17,6 +17,7 @@ script = ExtResource( 1 )
 
 [node name="state_handler" type="Control" parent="."]
 script = ExtResource( 2 )
+default_music = "The_Warehouse"
 
 [node name="bg" type="Sprite" parent="state_handler"]
 texture = ExtResource( 3 )

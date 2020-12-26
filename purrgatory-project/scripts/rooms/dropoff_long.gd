@@ -138,6 +138,7 @@ func _process(delta):
 			climbing = false
 			$_game.hide()
 			emit_signal('start_dialog', 'tori_climb_fall', [])
+			emit_signal('change_audio', '')
 			$_falling.play()
 			time = 0
 	
@@ -227,6 +228,7 @@ func update_state(state):
 	
 	if state.get('start_climb_game'):
 		climbing = true
+		emit_signal('change_audio', 'Oh_Shit')
 		state['start_climb_game'] = false
 		$_game.show()
 		$snowglobe_dropoff.hide()

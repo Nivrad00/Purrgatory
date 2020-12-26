@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/antechamber2.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/antechamber2.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_left.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=5]
@@ -37,4 +37,3 @@ dialog_label = "lucifur_wuz_here"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/lucifur_wuz_here"]
 polygon = PoolVector2Array( 476.268, 230.479, 455.221, 282.326, 487.047, 309.928, 491.028, 360.348, 482.429, 410.149, 578.935, 469.475, 603.064, 437.356, 587.664, 395.775, 667.881, 348.92, 614.358, 271.033, 543.001, 263.001 )
-

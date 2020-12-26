@@ -166,33 +166,32 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id=16]
-resource_name = "numa_creeping1"
 tracks/0/type = "value"
-tracks/0/path = NodePath("../sprites/numa_neutral:position")
+tracks/0/path = NodePath("../sprites/natalie_neutral:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.988786 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -126.515, 280 ), Vector2( 0, 280 ) ]
+"values": [ Vector2( 640, 280 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../sprites/numa_neutral:scale")
+tracks/1/path = NodePath("../sprites/numa_neutral:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -1, 1 ) ]
+"values": [ Vector2( -126.758, 280 ), Vector2( -4.87445, 280 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../sprites/natalie_neutral:position")
+tracks/2/path = NodePath("../sprites/numa_neutral:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -201,35 +200,34 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 640, 280 ) ]
+"values": [ Vector2( -1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=17]
-resource_name = "numa_creeping2"
 length = 2.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("../sprites/numa_neutral:position")
+tracks/0/path = NodePath("../sprites/natalie_neutral:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 280 ), Vector2( 213.579, 280 ) ]
+"values": [ Vector2( 640, 280 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../sprites/natalie_neutral:position")
+tracks/1/path = NodePath("../sprites/numa_neutral:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 640, 280 ) ]
+"values": [ Vector2( -4.87445, 280 ), Vector2( 216.732, 280 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../sprites/numa_neutral:scale")
@@ -245,31 +243,30 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=18]
-resource_name = "numa_creeping3"
 length = 2.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("../sprites/numa_neutral:position")
+tracks/0/path = NodePath("../sprites/natalie_neutral:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 213.579, 280 ), Vector2( 420, 280 ) ]
+"values": [ Vector2( 640, 280 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../sprites/natalie_neutral:position")
+tracks/1/path = NodePath("../sprites/numa_neutral:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 640, 280 ) ]
+"values": [ Vector2( 216.732, 280 ), Vector2( 415.07, 280 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../sprites/numa_neutral:scale")
@@ -287,12 +284,24 @@ tracks/2/keys = {
 [sub_resource type="Animation" id=19]
 length = 0.8
 tracks/0/type = "value"
-tracks/0/path = NodePath("kyungsoon_neutral:position")
+tracks/0/path = NodePath("../sprites/numa_crowbar:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -179.352, 280 ), Vector2( 1410.24, 280 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../sprites/kyungsoon_neutral:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -326,10 +335,10 @@ tracks/1/keys = {
 "values": [ 806.201, -856.32 ]
 }
 
-[sub_resource type="StyleBoxFlat" id=23]
+[sub_resource type="StyleBoxFlat" id=21]
 bg_color = Color( 1, 1, 1, 0.619608 )
 
-[sub_resource type="Shader" id=21]
+[sub_resource type="Shader" id=22]
 code = "shader_type canvas_item;
 
 void fragment() {
@@ -338,8 +347,8 @@ void fragment() {
 	COLOR.rgb = c;
 }"
 
-[sub_resource type="ShaderMaterial" id=22]
-shader = SubResource( 21 )
+[sub_resource type="ShaderMaterial" id=23]
+shader = SubResource( 22 )
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
@@ -429,7 +438,6 @@ __meta__ = {
 }
 
 [node name="room" type="Control" parent="content"]
-editor/display_folded = true
 script = ExtResource( 23 )
 
 [node name="room_container" type="Control" parent="content/room"]
@@ -440,6 +448,10 @@ anchor_bottom = 1.0
 margin_right = 1280.0
 margin_bottom = 720.0
 mouse_filter = 2
+
+[node name="rotating_cat_container" type="Control" parent="content/room"]
+margin_right = 40.0
+margin_bottom = 40.0
 
 [node name="dark_covers" type="Control" parent="content"]
 editor/display_folded = true
@@ -1671,8 +1683,16 @@ margin_left = 36.0
 margin_top = 168.0
 margin_right = 612.0
 margin_bottom = 973.0
-custom_styles/normal = SubResource( 23 )
+custom_styles/normal = SubResource( 21 )
 autowrap = true
+
+[node name="Button" type="Button" parent="meta_ui"]
+margin_left = 110.488
+margin_top = 17.4169
+margin_right = 261.488
+margin_bottom = 57.4169
+rect_scale = Vector2( 0.5, 0.5 )
+text = "debug"
 
 [node name="white_cover" type="ColorRect" parent="."]
 visible = false
@@ -1684,7 +1704,7 @@ color = Color( 1, 1, 1, 0 )
 
 [node name="negative_cover" type="ColorRect" parent="."]
 visible = false
-material = SubResource( 22 )
+material = SubResource( 23 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1280.0
@@ -1692,7 +1712,7 @@ margin_bottom = 720.0
 mouse_filter = 2
 
 [node name="main_audio" type="AudioStreamPlayer" parent="."]
-volume_db = -10.0
+volume_db = -5.0
 bus = "Music"
 [connection signal="timeout" from="skip_timer" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="content/ui/name_input/pronouns/custom" to="content/ui/name_input/custom_pronouns" method="show"]
@@ -1735,3 +1755,4 @@ bus = "Music"
 [connection signal="pressed" from="meta_ui/debug/Button" to="meta_ui/debug" method="_on_Button_pressed"]
 [connection signal="pressed" from="meta_ui/debug/Button2" to="meta_ui/debug" method="_on_Button2_pressed"]
 [connection signal="pressed" from="meta_ui/debug/Button3" to="meta_ui/debug" method="_on_Button3_pressed"]
+[connection signal="pressed" from="meta_ui/Button" to="meta_ui/debug" method="toggle_visibility"]

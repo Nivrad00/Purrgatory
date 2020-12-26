@@ -40,6 +40,8 @@ func connected_node():
 	
 	if solved:
 		state['blackout'] = false
+		state['blackout_music'] = false
+		emit_signal('change_audio', '')
 		get_node('../../../../../content/dark_covers/wire_game').hide()
 		$power_on.play()
 		$cover.show()

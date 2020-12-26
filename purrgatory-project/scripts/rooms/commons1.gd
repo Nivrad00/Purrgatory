@@ -9,17 +9,20 @@ func _ready():
 	if state_copy.get('numa_quest_complete'):
 		$wait_oliver2.name = 'wait_oliver'
 		$wait_numa2.name = 'wait_numa'
-		$poof_oliver2.name = 'poof_oliver'
-		$poof_numa2.name = 'poof_numa'
+		$poof_sinners2.name = 'poof_sinners'
 	else:
 		$wait_oliver1.name = 'wait_oliver'
 		$wait_numa1.name = 'wait_numa'
-		$poof_oliver1.name = 'poof_oliver'
-		$poof_numa1.name = 'poof_numa'
+		$poof_sinners1.name = 'poof_sinners'
+	
+	$wait_commons_door.set_highlight_on_hover(true)
+	$wait_exit2.set_highlight_on_hover(true)
 	
 func play_default_music(state):
 	if state.get('on_hold'):
-		emit_signal('change_audio', 'hold_music')
+		emit_signal('change_audio', 'Fly_Me_To_The_Meow')
+	elif state.get('called_lucifur'):
+		emit_signal('change_audio', 'Lucifur')
 	else:			
 		emit_signal('change_audio', default_music)
 		
@@ -109,17 +112,18 @@ func update_state(state):
 	
 	if state.get('lucifur_appears'):
 		state['no_cat'] = true
-		$poof_timer.start()
+		state['lucifur_in_commons'] = true
+		$lucifur/AnimationPlayer.play('lucifur_poof')
 		$poof_cover.show()
 		anim_playing = true
 	
 	if state.get('lucifur_snaps'):
-		$poof_timer.start()
+		$poof_sinners/AnimationPlayer.play('poof')
 		$poof_cover.show()
 		anim_playing = true
 		
 	if state.get('lucifur_frog'):
-		$poof_timer.start()
+		$frog/AnimationPlayer.play('lucifur_poof')
 		$poof_cover.show()
 		anim_playing = true
 		
@@ -128,28 +132,23 @@ func update_state(state):
 	else:
 		$cat1_idle.show()
 		
+	if state.get('frog_in_commons'):
+		$frog.show()
+		$commons_lamp.hide()
+	else:
+		$frog.hide()
+		$commons_lamp.show()
+		
+	if state.get('lucifur_in_commons'):
+		$lucifur.show()
+	else:
+		$lucifur.hide()
+		
 	if state.get('poofing'):
 		# things that are also handled elsewhere -- we're just overriding it
 		$numa_at_commons.hide()
 		$kyungsoon_idle.hide()
 		$oliver_huh.hide()
-		
-		# things that are only handled here
-		$poof_elijah.show()
-		$poof_kyungsoon.show()
-		$poof_natalie.show()
-		$poof_numa.show()
-		$poof_oliver.show()
-		$poof_sean.show()
-		$poof_tori.show()
-	else:
-		$poof_elijah.hide()
-		$poof_kyungsoon.hide()
-		$poof_natalie.hide()
-		$poof_numa.hide()
-		$poof_oliver.hide()
-		$poof_sean.hide()
-		$poof_tori.hide()
 		
 	if state.get('waiting'):
 		# things that are also handled elsewhere -- we're just overriding it
@@ -228,7 +227,7 @@ func update_state(state):
 		$kyungsoon_idle.hide()
 		$oliver_huh.hide()
 
-func _on_poof_timer_timeout():
+func animation_finished(anim_name):
 	anim_playing = false
 	
 func _on_poof_cover_pressed():
@@ -242,8 +241,10 @@ func _on_poof_cover_pressed():
 			
 		elif state_copy.get('lucifur_snaps'):
 			state_copy['lucifur_snaps'] = false
+			$poof_sinners.hide()
 			emit_signal('start_dialog', 'lucifur_gathering', [])
 			
 		elif state_copy.get('lucifur_frog'):
 			state_copy['lucifur_frog'] = false
 			emit_signal('start_dialog', 'lucifur_gathering1', [])
+

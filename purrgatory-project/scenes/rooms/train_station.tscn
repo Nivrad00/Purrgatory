@@ -1,38 +1,25 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/train_station.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/trainstation.png" type="Texture" id=3]
-[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/sprites/tori_idle.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/sprites/kyungsoon_idle1.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprite_masks/kyungsoon_idle1.png" type="BitMap" id=7]
-[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=8]
-[ext_resource path="res://assets/sprites/kyungsoon_idle2.png" type="Texture" id=9]
-[ext_resource path="res://assets/sprites/kyungsoon_idle3.png" type="Texture" id=10]
-[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/audio/smash1.wav" type="AudioStream" id=12]
-[ext_resource path="res://assets/audio/smash2.wav" type="AudioStream" id=13]
-[ext_resource path="res://assets/audio/smash3.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/rooms/train_station2.png" type="Texture" id=4]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/sprites/tori_idle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/sprites/kyungsoon_numa_train.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite_masks/kyungsoon_numa_train.png" type="BitMap" id=8]
+[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=9]
+[ext_resource path="res://assets/sprites/kyungsoon_numa_train2.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite_masks/kyungsoon_numa_train2.png" type="BitMap" id=11]
+[ext_resource path="res://assets/sprites/kyungsoon_numa_train3.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite_masks/kyungsoon_numa_train3.png" type="BitMap" id=13]
+[ext_resource path="res://assets/sprites/junk_food.png" type="Texture" id=14]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/audio/smash1.wav" type="AudioStream" id=16]
+[ext_resource path="res://assets/audio/smash2.wav" type="AudioStream" id=17]
+[ext_resource path="res://assets/audio/smash3.wav" type="AudioStream" id=18]
 
 [sub_resource type="Animation" id=1]
-resource_name = "oliver_idle"
-length = 1.5
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:texture_normal")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 10 ) ]
-}
-
-[sub_resource type="Animation" id=2]
 resource_name = "fadein"
 length = 0.05
 tracks/0/type = "value"
@@ -48,7 +35,37 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
@@ -72,96 +89,194 @@ script = ExtResource( 1 )
 
 [node name="state_handler" type="Control" parent="."]
 script = ExtResource( 2 )
+default_music = "The_Warehouse"
+
+[node name="bg_behind_the_bg" type="ColorRect" parent="state_handler"]
+editor/display_folded = true
+margin_right = 1280.0
+margin_bottom = 720.0
+mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/bg_behind_the_bg"]
+anims/fadein = SubResource( 1 )
+anims/fadeout = SubResource( 2 )
 
 [node name="bg" type="Sprite" parent="state_handler"]
+visible = false
 texture = ExtResource( 3 )
 centered = false
 
-[node name="object" parent="state_handler" instance=ExtResource( 4 )]
+[node name="bg2" type="Sprite" parent="state_handler"]
+position = Vector2( 220.747, 118.51 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( -220.747, -146.51 )
+
+[node name="train_display" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
+position = Vector2( 0, -28 )
 dialog_label = "train_display"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/train_display"]
 polygon = PoolVector2Array( 281.689, 109.033, 285.372, 239.173, 534.603, 239.173, 537.059, 106.577, 438.84, 104.122, 442.523, 41.507, 372.542, 41.507, 374.997, 105.35 )
 
-[node name="object3" parent="state_handler" instance=ExtResource( 4 )]
+[node name="train_bench" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
+position = Vector2( 0, -28 )
 dialog_label = "train_bench"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/train_bench"]
 polygon = PoolVector2Array( 939.758, 466.305, 1236.87, 469.989, 1239.33, 509.276, 1272.48, 531.376, 1279.84, 586.624, 1279.6, 631.672, 965.207, 631.953, 944.669, 607.496 )
 
-[node name="object2" parent="state_handler" instance=ExtResource( 4 )]
+[node name="vending_machine1" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
+visible = false
 dialog_label = "vending_machine"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/vending_machine1"]
 polygon = PoolVector2Array( 823.123, 221.985, 820.667, 512.96, 859.955, 590.307, 972.907, 586.624, 1014.65, 468.761, 1013.42, 212.163, 864.866, 210.935 )
 
-[node name="object4" parent="state_handler" instance=ExtResource( 4 )]
+[node name="vending_machine2" parent="state_handler" instance=ExtResource( 5 )]
+position = Vector2( 0, -28 )
+dialog_label = "vending_machine"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/vending_machine2"]
+position = Vector2( -286, 254 )
+polygon = PoolVector2Array( 803.759, 278.578, 816.263, 395.486, 1225.03, 362.833, 1223.04, 249.388, 1168.64, 182.382, 841.574, 213.563 )
+
+[node name="train_exits" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
+position = Vector2( 0, -28 )
 dialog_label = "train_exits"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object4"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/train_exits"]
 polygon = PoolVector2Array( 77.8838, 455.256, 137.398, 453.006, 141.726, 101.666, 117.171, 94.2999, 74.2005, 111.488 )
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object4"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/train_exits"]
 position = Vector2( 1027.62, 7.36646 )
 polygon = PoolVector2Array( 74.287, 445.639, 163.826, 444.206, 158.915, 109.033, 130.677, 88.1611, 99.9832, 88.1611, 74.2005, 111.488 )
 
-[node name="object5" parent="state_handler" instance=ExtResource( 4 )]
+[node name="train_tracks1" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
+visible = false
 dialog_label = "train_tracks"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object5"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/train_tracks1"]
 position = Vector2( 2, 0 )
 polygon = PoolVector2Array( 261.193, 424.438, 257.111, 461.168, 818.948, 463.889, 816.227, 424.438 )
 
-[node name="object6" parent="state_handler" instance=ExtResource( 4 )]
+[node name="train_tracks2" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
+position = Vector2( 0, -28 )
+dialog_label = "train_tracks"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/train_tracks2"]
+position = Vector2( 2, 0 )
+polygon = PoolVector2Array( 261.193, 424.438, 257.111, 461.168, 587.88, 462.77, 820.427, 439.951, 882.028, 434.304, 902.049, 460.998, 981.617, 461.511, 981.103, 425.064 )
+
+[node name="train_columns1" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
+visible = false
 dialog_label = "train_columns"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object6"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/train_columns1"]
 polygon = PoolVector2Array( 140.119, 39.451, 142.84, 586.323, 228.543, 582.242, 263.913, 555.034, 261.193, 47.6132, 227.183, 28.568 )
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object6"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/train_columns1"]
 polygon = PoolVector2Array( 988.995, 51.6944, 987.634, 209.498, 1016.2, 209.498, 1014.84, 466.61, 1099.19, 472.051, 1104.63, 38.0906, 1017.56, 35.3698 )
 
-[node name="tori_idle" parent="state_handler" instance=ExtResource( 5 )]
+[node name="train_columns2" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
+position = Vector2( 0, -28 )
+dialog_label = "train_columns"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/train_columns2"]
+polygon = PoolVector2Array( 140.119, 39.451, 142.84, 586.323, 228.543, 582.242, 263.913, 555.034, 261.193, 47.6132, 227.183, 28.568 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/train_columns2"]
+polygon = PoolVector2Array( 988.995, 51.6944, 985.498, 466.618, 1099.19, 472.051, 1104.63, 38.0906, 1017.56, 35.3698 )
+
+[node name="tori_idle" parent="state_handler" instance=ExtResource( 6 )]
 margin_left = 577.0
-margin_top = 212.0
+margin_top = 184.0
 margin_right = 719.0
-margin_bottom = 633.0
+margin_bottom = 605.0
+rect_pivot_offset = Vector2( -356.253, -65.4905 )
 
 [node name="ks_and_numa" type="TextureButton" parent="state_handler"]
-editor/display_folded = true
-margin_left = 222.221
-margin_top = 363.411
-margin_right = 485.221
-margin_bottom = 683.411
+visible = false
+margin_left = 13.5056
+margin_top = 396.56
+margin_right = 494.506
+margin_bottom = 716.56
+rect_pivot_offset = Vector2( 276.144, 136.139 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 6 )
-texture_click_mask = ExtResource( 7 )
-script = ExtResource( 8 )
+texture_normal = ExtResource( 7 )
+texture_click_mask = ExtResource( 8 )
+script = ExtResource( 9 )
 dialog_label = "ks_and_numa_train"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/ks_and_numa"]
-autoplay = "oliver_idle"
-anims/oliver_idle = SubResource( 1 )
+[node name="ks_and_numa2" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 10.9209
+margin_top = 235.016
+margin_right = 552.921
+margin_bottom = 698.016
+rect_pivot_offset = Vector2( 373.825, 189.558 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 10 )
+texture_click_mask = ExtResource( 11 )
+script = ExtResource( 9 )
+dialog_label = "ks_and_numa_train"
 
-[node name="exit" parent="state_handler" instance=ExtResource( 11 )]
+[node name="ks_and_numa3" type="TextureButton" parent="state_handler"]
+margin_left = 7.5056
+margin_top = 378.56
+margin_right = 497.506
+margin_bottom = 698.56
+rect_pivot_offset = Vector2( 213.242, -260.05 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 12 )
+texture_click_mask = ExtResource( 13 )
+script = ExtResource( 9 )
+dialog_label = "ks_and_numa_train"
+
+[node name="junk_food" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
+position = Vector2( 0, -28 )
+dialog_label = "junk_food"
+sprite_path = [ null ]
+
+[node name="junk_food" type="Sprite" parent="state_handler/junk_food"]
+position = Vector2( 202.909, 587.537 )
+texture = ExtResource( 14 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/junk_food"]
+polygon = PoolVector2Array( 131.326, 520.578, 110.64, 513.536, 60.9056, 536.863, 63.9865, 564.591, 88.6336, 591.879, 100.517, 587.037, 126.925, 557.989 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/junk_food"]
+position = Vector2( 136.439, 54.1356 )
+polygon = PoolVector2Array( 121.643, 511.776, 107.999, 519.698, 60.9056, 536.863, 65.3068, 575.154, 91.4003, 605.518, 199.173, 605.518, 219.791, 576.034, 182.381, 513.976 )
+
+[node name="exit" parent="state_handler" instance=ExtResource( 15 )]
 room_label = "warehouse2"
 
 [node name="white" type="ColorRect" parent="state_handler"]
+editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 color = Color( 1, 1, 1, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/white"]
-anims/fadein = SubResource( 2 )
-anims/fadeout = SubResource( 3 )
+anims/fadein = SubResource( 6 )
+anims/fadeout = SubResource( 7 )
 
 [node name="click" type="Button" parent="state_handler"]
 visible = false
@@ -172,20 +287,23 @@ enabled_focus_mode = 0
 flat = true
 
 [node name="smash" type="Node" parent="state_handler"]
+editor/display_folded = true
 
 [node name="a" type="AudioStreamPlayer" parent="state_handler/smash"]
-stream = ExtResource( 12 )
+stream = ExtResource( 16 )
 volume_db = -5.0
 bus = "SFX"
 
 [node name="b" type="AudioStreamPlayer" parent="state_handler/smash"]
-stream = ExtResource( 13 )
+stream = ExtResource( 17 )
 volume_db = -5.0
 bus = "SFX"
 
 [node name="c" type="AudioStreamPlayer" parent="state_handler/smash"]
-stream = ExtResource( 14 )
+stream = ExtResource( 18 )
 volume_db = -5.0
 bus = "SFX"
 [connection signal="pressed" from="state_handler/ks_and_numa" to="state_handler/ks_and_numa" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/ks_and_numa2" to="state_handler/ks_and_numa2" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/ks_and_numa3" to="state_handler/ks_and_numa3" method="_on_char_obj_button_pressed"]
 [connection signal="pressed" from="state_handler/click" to="state_handler" method="_on_click_pressed"]

@@ -1,0 +1,28 @@
+extends 'state_handler_template.gd'
+
+var state = null
+
+func _ready():
+	state = get_node('../../../../..').state
+	set_process(true)
+	
+func update_state(state):
+	.update_state(state)
+		
+	if state.get('enter_gate'):
+		print('aaaaa')
+		$portal_audio.play()
+		$fadeout.show()
+
+func _process(delta):
+	if state.get('enter_gate'):
+		var a = $fadeout.get_modulate().a
+		if a == 1:
+			state['enter_gate'] = false
+			$white_timer.start()
+			yield($white_timer, 'timeout')
+			emit_signal('change_room', 'good_credits')
+				
+		else:
+			a = min(a + 0.2 * delta, 1)
+			$fadeout.set_modulate(Color(1, 1, 1, a))

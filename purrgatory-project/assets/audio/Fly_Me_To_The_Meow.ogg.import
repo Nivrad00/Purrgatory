@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Fly_Me_To_The_Meow.ogg-40a062e8bdd6d14e2ee3ca1b5ec1a65b.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/Fly_Me_To_The_Meow.ogg"
+dest_files=[ "res://.import/Fly_Me_To_The_Meow.ogg-40a062e8bdd6d14e2ee3ca1b5ec1a65b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

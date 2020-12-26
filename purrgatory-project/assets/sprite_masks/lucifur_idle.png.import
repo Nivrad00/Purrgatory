@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/lucifur_idle.png-78446b492d5d63888e03cf3b83d684a1.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/lucifur_idle.png"
+dest_files=[ "res://.import/lucifur_idle.png-78446b492d5d63888e03cf3b83d684a1.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

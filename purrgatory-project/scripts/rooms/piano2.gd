@@ -20,6 +20,40 @@ func update_state(state):
 	else:
 		$sean_arguing_with_tori.hide()
 	
+	if state.get('purrgatory_blues1'):
+		state['purrgatory_blues1'] = false
+		emit_signal('change_audio', '')
+		$purrgatory_blues1.play()
+		$purrgatory_blues_timer.start()
+		
+	if state.get('purrgatory_blues2'):
+		state['purrgatory_blues2'] = false
+		emit_signal('change_audio', '')
+		$purrgatory_blues1.stop()
+		$purrgatory_blues2.play()
+		$purrgatory_blues_timer.stop()
+		$purrgatory_blues_timer.start()
+		
+	if state.get('purrgatory_blues3'):
+		state['purrgatory_blues3'] = false
+		emit_signal('change_audio', '')
+		$purrgatory_blues2.stop()
+		$purrgatory_blues3.play()
+		$purrgatory_blues_timer.stop()
+		$purrgatory_blues_timer.start()
+		
+	if state.get('purrgatory_blues4'):
+		state['purrgatory_blues4'] = false
+		emit_signal('change_audio', '')
+		$purrgatory_blues3.stop()
+		$purrgatory_blues4.play()
+		$purrgatory_blues_timer.stop()
+		
+	if state.get('end_purrgatory_blues'):
+		state['end_purrgatory_blues'] = false
+		emit_signal('change_audio', default_music)
+		$purrgatory_blues4.stop()
+	
 func init_state(state):
 	.init_state(state)
 	
@@ -29,3 +63,6 @@ func init_state(state):
 	if state.get('custom_goto_piano2'):
 		state['custom_goto_piano2'] = false
 		emit_signal('set_hidden_sprite', [$sean_piano])
+
+func _on_purrgatory_blues_timer_timeout():
+	get_node('../../../../..').update_dialog(-1)

@@ -1458,9 +1458,9 @@ visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 color = Color( 1, 1, 1, 0 )
-[connection signal="pressed" from="state_handler/shelf/skip" to="state_handler/shelf/skip" method="hide"]
 [connection signal="pressed" from="state_handler/shelf/skip" to="state_handler/shelf/sure?" method="show"]
+[connection signal="pressed" from="state_handler/shelf/skip" to="state_handler/shelf/skip" method="hide"]
 [connection signal="pressed" from="state_handler/shelf/sure?/yes" to="state_handler" method="skip"]
-[connection signal="pressed" from="state_handler/shelf/sure?/no" to="state_handler/shelf/skip" method="show"]
 [connection signal="pressed" from="state_handler/shelf/sure?/no" to="state_handler/shelf/sure?" method="hide"]
+[connection signal="pressed" from="state_handler/shelf/sure?/no" to="state_handler/shelf/skip" method="show"]
 [connection signal="timeout" from="state_handler/shelf/Timer" to="state_handler/shelf/AnimationPlayer" method="play" binds= [ "come out" ]]

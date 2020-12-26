@@ -8,7 +8,7 @@ var loading_state
 var current_room = null
 var prev_room_label = null
 onready var game = get_node("../..")
-
+	
 func get_current_room():
 	return current_room.get_name()
 
@@ -39,7 +39,7 @@ func end_dialog():
 		child.end_dialog()
 	$room_mask.set_mouse_filter(Control.MOUSE_FILTER_IGNORE)
 
-func change_room(label, state, music = true, loading_file = false):
+func change_room(label, state, music = true, loading_file = false):		
 	if game.state.get('blackout'):
 		if label == 'attic':
 			game.get_node('content/dark_covers/attic').show()
@@ -57,6 +57,13 @@ func change_room(label, state, music = true, loading_file = false):
 		game.get_node('content/dark_covers/attic').hide()
 		game.get_node('content/dark_covers/wire_game').hide()
 		game.get_node('content/dark_covers/dark').hide()
+	
+	if label == 'meowseum6':
+		$rotating_cat_container.rect_scale = Vector2(1, 1)
+		$rotating_cat_container.modulate.a = 1
+	else:
+		$rotating_cat_container.rect_scale = Vector2(0.001, 0.001)
+		$rotating_cat_container.modulate.a = 0.01
 		
 	# when loading a file, you don't call init_state. in all other situations, you do.
 	if current_room:

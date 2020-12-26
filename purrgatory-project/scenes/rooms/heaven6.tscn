@@ -1,0 +1,103 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://assets/rooms/heaven6.png" type="Texture" id=3]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=4]
+[ext_resource path="res://assets/sprites/elijah_heaven.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite_masks/elijah_heaven.png" type="BitMap" id=6]
+[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=7]
+[ext_resource path="res://assets/sprites/sean_heaven_back.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite_masks/sean_heaven_back.png" type="BitMap" id=9]
+[ext_resource path="res://assets/rooms/heaven6_fg.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/sean_heaven_front.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite_masks/sean_heaven_front.png" type="BitMap" id=12]
+
+[node name="room_instance" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 1 )
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+default_music = "null"
+
+[node name="bg" type="Sprite" parent="state_handler"]
+texture = ExtResource( 3 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="exit" type="Area2D" parent="state_handler"]
+position = Vector2( 724.798, -291.001 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+room_label = "heaven7"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
+position = Vector2( -83.1024, -18.8365 )
+polygon = PoolVector2Array( 508.76, 379.826, 494.306, 374.67, 479.961, 372.129, 473.345, 763.197, 559.885, 764.408, 558.425, 759.444, 556.089, 748.932, 551.417, 734.041, 585.872, 733.165, 589.376, 595.93, 588.5, 588.63, 584.704, 584.542, 578.572, 581.331, 575.068, 575.199, 576.528, 566.731, 580.616, 565.271, 581.2, 560.307, 575.944, 532.276, 573.024, 524.101, 561.345, 521.473, 560.177, 508.041, 551.417, 503.078, 551.125, 493.442, 549.081, 488.478, 553.679, 477.528, 563.714, 470.838, 555.411, 436.203, 538.447, 403.846 )
+
+[node name="exit3" type="Area2D" parent="state_handler"]
+position = Vector2( -465.02, -291.018 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_horizontal_guides_": [  ]
+}
+room_label = "heaven5"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3"]
+polygon = PoolVector2Array( 463.738, 354.6, 459.451, 727.558, 565.914, 731.386, 565.914, 353.492, 538.542, 343.567, 493.849, 344.265 )
+
+[node name="elijah_heaven" type="TextureButton" parent="state_handler"]
+margin_left = 349.08
+margin_top = 230.881
+margin_right = 625.081
+margin_bottom = 539.881
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 5 )
+texture_click_mask = ExtResource( 6 )
+script = ExtResource( 7 )
+dialog_label = "elijah_heaven"
+
+[node name="sean_heaven2" type="TextureButton" parent="state_handler"]
+margin_left = 649.001
+margin_top = 400.572
+margin_right = 801.001
+margin_bottom = 535.573
+rect_pivot_offset = Vector2( -22.116, 47.9987 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 8 )
+texture_click_mask = ExtResource( 9 )
+script = ExtResource( 7 )
+dialog_label = "sean_heaven"
+sprite_path = [ NodePath("."), NodePath("../sean_heaven") ]
+
+[node name="heaven6_fg" type="Sprite" parent="state_handler"]
+position = Vector2( 374.53, 438.552 )
+texture = ExtResource( 10 )
+offset = Vector2( 200.725, 73.2797 )
+
+[node name="sean_heaven" type="TextureButton" parent="state_handler"]
+margin_left = 630.052
+margin_top = 323.701
+margin_right = 782.052
+margin_bottom = 458.701
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 11 )
+texture_click_mask = ExtResource( 12 )
+script = ExtResource( 7 )
+dialog_label = "sean_heaven"
+sprite_path = [ NodePath("../sean_heaven2"), NodePath(".") ]
+[connection signal="pressed" from="state_handler/elijah_heaven" to="state_handler/elijah_heaven" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/sean_heaven2" to="state_handler/sean_heaven2" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/sean_heaven" to="state_handler/sean_heaven" method="_on_char_obj_button_pressed"]

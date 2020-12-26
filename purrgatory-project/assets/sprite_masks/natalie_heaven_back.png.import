@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/natalie_heaven_back.png-617f3b78d018d34e84cda6e623b9b74e.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/natalie_heaven_back.png"
+dest_files=[ "res://.import/natalie_heaven_back.png-617f3b78d018d34e84cda6e623b9b74e.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

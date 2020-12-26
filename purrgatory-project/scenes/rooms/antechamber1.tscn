@@ -66,6 +66,7 @@ __meta__ = {
 "_edit_group_": true
 }
 dialog_label = "end_portal"
+sprite_path = [ null ]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/portal"]
 position = Vector2( 762.792, 23.327 )
@@ -76,9 +77,10 @@ position = Vector2( -285.641, 93.5109 )
 scale = Vector2( 1, 1.3 )
 
 [node name="portal_sprite2" parent="state_handler/portal/sprite" instance=ExtResource( 6 )]
+rotation = -3.79794
 
 [node name="portal_sprite" parent="state_handler/portal/sprite" instance=ExtResource( 7 )]
-rotation = -1.44227
+rotation = 1.7747
 
 [node name="fadeout" type="ColorRect" parent="state_handler"]
 visible = false
@@ -93,3 +95,7 @@ one_shot = true
 [node name="portal_audio" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 8 )
 volume_db = -6.0
+
+[editable path="state_handler/portal/sprite/portal_sprite2"]
+
+[editable path="state_handler/portal/sprite/portal_sprite"]

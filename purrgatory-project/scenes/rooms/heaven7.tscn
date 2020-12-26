@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://assets/rooms/heaven7.png" type="Texture" id=3]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=4]
+
+[node name="room_instance" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 1 )
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+default_music = "null"
+
+[node name="bg" type="Sprite" parent="state_handler"]
+texture = ExtResource( 3 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="exit" type="Area2D" parent="state_handler"]
+position = Vector2( 724.798, -291.001 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+room_label = "heaven8"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
+position = Vector2( -700.578, 322.161 )
+polygon = PoolVector2Array( 582.551, 394.872, 568.753, 374.802, 541.993, 365.186, 509.38, 363.095, 481.784, 374.802, 467.568, 395.29, 467.763, 446.308, 582.551, 444.21 )
+
+[node name="exit2" type="Area2D" parent="state_handler"]
+position = Vector2( -465.02, -291.018 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_horizontal_guides_": [  ]
+}
+room_label = "heaven6"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( 464.982, 501.631, 462.753, 918.476, 593.841, 871.617, 591.851, 596.962, 584.999, 567.043, 571.917, 540.309, 555.421, 516.988, 540.064, 502.768, 521.293, 494.236, 496.266, 491.392, 480.909, 494.805 )

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/antechamber3.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/antechamber3.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=5]
@@ -62,4 +62,3 @@ dialog_label = "bell_sign"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/bell_sign"]
 position = Vector2( 4.52954, -3.23535 )
 polygon = PoolVector2Array( 675.737, 428.595, 677.815, 432.09, 677.438, 440.025, 678.855, 441.4, 677.956, 449.368, 674.229, 455.793, 666.004, 457.464, 670.207, 496.415, 653.24, 496.192, 682.132, 527.542, 701.496, 539.529, 731.328, 495.226, 713.175, 495.27, 710.162, 411.035, 668.189, 410.562, 669.652, 419.827, 678.431, 423.241 )
-

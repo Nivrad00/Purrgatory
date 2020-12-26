@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/sean_fence.png-70e8850b38ca80f4935a92ece22572c7.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/sean_fence.png"
+dest_files=[ "res://.import/sean_fence.png-70e8850b38ca80f4935a92ece22572c7.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

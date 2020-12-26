@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/field3.gd" type="Script" id=2]
@@ -20,7 +20,9 @@
 [ext_resource path="res://assets/sprites/hoels/shovel5.png" type="Texture" id=18]
 [ext_resource path="res://scenes/hole_score.tscn" type="PackedScene" id=19]
 [ext_resource path="res://scenes/digging_sound.tscn" type="PackedScene" id=20]
-[ext_resource path="res://scenes/sprites/sean_idle.tscn" type="PackedScene" id=21]
+[ext_resource path="res://assets/sprites/sean_fence.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprite_masks/sean_fence.png" type="BitMap" id=22]
+[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=23]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -31,6 +33,7 @@ script = ExtResource( 1 )
 
 [node name="state_handler" type="Control" parent="."]
 script = ExtResource( 2 )
+default_music = "The_Garden"
 
 [node name="bg" type="Sprite" parent="state_handler"]
 texture = ExtResource( 3 )
@@ -239,11 +242,16 @@ dialog_label = "field_fence"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_fence"]
 polygon = PoolVector2Array( 90.3371, 528.368, 479.194, 521.819, 612.809, 548.542, 669.595, 541.862, 677.946, 658.775, 478.884, 623.347, 90.2631, 637.298 )
 
-[node name="sean_fence" parent="state_handler" instance=ExtResource( 21 )]
-visible = false
-margin_left = 535.999
-margin_top = 405.778
-margin_right = 687.999
-margin_bottom = 735.778
-rect_scale = Vector2( -0.8, 0.8 )
+[node name="sean_fence" type="TextureButton" parent="state_handler"]
+margin_left = 463.535
+margin_top = 402.279
+margin_right = 615.535
+margin_bottom = 732.279
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 21 )
+texture_click_mask = ExtResource( 22 )
+script = ExtResource( 23 )
 dialog_label = "sean_on_the_fence"
+blackout_label = "sean_on_the_fence"
+[connection signal="pressed" from="state_handler/sean_fence" to="state_handler/sean_fence" method="_on_char_obj_button_pressed"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Meowseum.ogg-f0b761fb2e090a3471b2edac72145fca.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/Meowseum.ogg"
+dest_files=[ "res://.import/Meowseum.ogg-f0b761fb2e090a3471b2edac72145fca.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

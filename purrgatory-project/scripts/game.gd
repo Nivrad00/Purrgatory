@@ -4,11 +4,11 @@ signal return_to_main()
 
 export var default_room = ''
 
-var _state = {
+var state = {
 	'true': true
 }
 
-var state = {
+var _state = {
 	'true': true,
 	'unlocked_commons_door': true,
 	'unlocked_meowseum_door': true,
@@ -218,7 +218,7 @@ func change_room(label):
 			$meta_ui/dropdown.toggle_items() 
 
 func start_dialog(label, blackout_label=null):
-	$meta_ui/debug/Label.text = str(format_dict)
+	$meta_ui/debug/Label.text = str(state)
 	
 	if state.get('blackout') and blackout_label:
 		label = blackout_label
@@ -297,7 +297,7 @@ func update_dialog_button_clicked():
 		update_dialog(-1)
 
 func update_dialog(b: int):
-	$meta_ui/debug/Label.text = str(format_dict)
+	$meta_ui/debug/Label.text = str(state)
 	
 	# mark the previous block as seen, and immediately write to file
 	seen_blocks.append(block['label'])
@@ -416,8 +416,8 @@ func change_audio(song, play = true):
 	if AudioServer.is_bus_mute(0):
 		AudioServer.set_bus_mute(0, false)
 	
-	if state.get('blackout'):
-		song = null
+	if state.get('blackout_music'):
+		song = 'Lights_Out'
 		
 	if song == current_audio:
 		return
@@ -427,11 +427,12 @@ func change_audio(song, play = true):
 	if song == null or song == '':
 		$main_audio.stop()
 		$main_audio.set_stream(null)
-
+	
 	else:
 		var stream = load('res://assets/audio/' + song + '.ogg')
-		$main_audio.volume_db = -10
+		$main_audio.volume_db = -5
 		$main_audio.set_stream(stream)
+		$main_audio.set_bus('Music')
 
 		if play:
 			$main_audio.play()

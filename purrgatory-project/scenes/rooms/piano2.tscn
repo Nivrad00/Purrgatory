@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/piano2.gd" type="Script" id=2]
@@ -8,6 +8,10 @@
 [ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=6]
 [ext_resource path="res://scenes/sprites/sean_piano.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/sprites/sean_arguing_with_tori.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/audio/Purrgatory_Blues_Snippet1.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/audio/Purrgatory_Blues_Snippet2.ogg" type="AudioStream" id=10]
+[ext_resource path="res://assets/audio/Purrgatory_Blues_Snippet3.ogg" type="AudioStream" id=11]
+[ext_resource path="res://assets/audio/Purrgatory_Blues_Snippet4.ogg" type="AudioStream" id=12]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -56,3 +60,24 @@ margin_top = 191.474
 margin_right = 922.549
 margin_bottom = 576.474
 blackout_label = "sean_arguing_with_tori"
+
+[node name="purrgatory_blues1" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 9 )
+bus = "Music"
+
+[node name="purrgatory_blues2" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 10 )
+bus = "Music"
+
+[node name="purrgatory_blues3" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 11 )
+bus = "Music"
+
+[node name="purrgatory_blues4" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 12 )
+bus = "Music"
+
+[node name="purrgatory_blues_timer" type="Timer" parent="state_handler"]
+wait_time = 6.19
+one_shot = true
+[connection signal="timeout" from="state_handler/purrgatory_blues_timer" to="state_handler" method="_on_purrgatory_blues_timer_timeout"]

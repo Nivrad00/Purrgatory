@@ -48,6 +48,7 @@ script = ExtResource( 1 )
 
 [node name="state_handler" type="Control" parent="."]
 script = ExtResource( 2 )
+default_music = "The_Garden"
 
 [node name="elevator" type="ColorRect" parent="state_handler"]
 editor/display_folded = true

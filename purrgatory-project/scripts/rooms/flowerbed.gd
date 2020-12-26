@@ -33,6 +33,7 @@ func _process(delta):
 		paused = false
 		
 func start_game(time_left = 0, progress = 0):
+	emit_signal('change_audio', 'Frantic_Flowers')
 	$flower_timer.show()
 	$flower_box.show()
 	$flower_progress.show()
@@ -55,6 +56,7 @@ func start_game(time_left = 0, progress = 0):
 func failure():
 	$flower_timer/AnimationPlayer.stop(false)
 	emit_signal('start_dialog', 'flowers_fail', null)
+	emit_signal('change_audio', '')
 		
 func success():
 	$success.play()
@@ -62,6 +64,7 @@ func success():
 	$flower_timer/AnimationPlayer.stop(false)
 	$flower_box.set_indicator('success')
 	emit_signal('start_dialog', 'flowers_succeed', null)
+	emit_signal('change_audio', '')
 	
 func pick_flower(id):
 	print('picked' + str(id))

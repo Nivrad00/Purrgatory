@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Welcome_To_Purrgatory.ogg-5e85076dd0b13d443131ac2f0bbf3a35.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/Welcome_To_Purrgatory.ogg"
+dest_files=[ "res://.import/Welcome_To_Purrgatory.ogg-5e85076dd0b13d443131ac2f0bbf3a35.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

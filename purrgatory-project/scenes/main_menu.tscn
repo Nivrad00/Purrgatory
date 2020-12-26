@@ -1,21 +1,49 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://scripts/resource_queue.gd" type="Script" id=2]
-[ext_resource path="res://themes/ui_theme.tres" type="Theme" id=3]
-[ext_resource path="res://assets/ui/logo2.png" type="Texture" id=4]
-[ext_resource path="res://assets/ui/logo1.png" type="Texture" id=5]
-[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=7]
-[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=8]
-[ext_resource path="res://assets/ui/menu_x.png" type="Texture" id=9]
-[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=10]
-[ext_resource path="res://scenes/cat1_idle.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/audio/slice of heaven.ogg" type="AudioStream" id=12]
-[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=13]
-[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=14]
+[ext_resource path="res://cat_01_color05.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://addons/3D Outline/Outline.material" type="Material" id=4]
+[ext_resource path="res://themes/ui_theme.tres" type="Theme" id=5]
+[ext_resource path="res://assets/ui/logo2.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/logo1.png" type="Texture" id=7]
+[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=10]
+[ext_resource path="res://assets/ui/menu_x.png" type="Texture" id=11]
+[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=12]
+[ext_resource path="res://scenes/cat1_idle.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/audio/Slice_Of_Heaven.ogg" type="AudioStream" id=14]
+[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=16]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="SpatialMaterial" id=1]
+next_pass = ExtResource( 4 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "New Anim"
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+
+[sub_resource type="Environment" id=3]
+ambient_light_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="ViewportTexture" id=4]
+viewport_path = NodePath("rotating_cat/Viewport")
+
+[sub_resource type="Animation" id=5]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:texture")
@@ -27,20 +55,20 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ), ExtResource( 4 ) ]
+"values": [ ExtResource( 7 ), ExtResource( 6 ) ]
 }
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=6]
 size = 25
-font_data = ExtResource( 6 )
+font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=7]
 size = 18
-font_data = ExtResource( 6 )
+font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=8]
 size = 25
-font_data = ExtResource( 6 )
+font_data = ExtResource( 8 )
 
 [node name="main" type="Node"]
 script = ExtResource( 1 )
@@ -51,6 +79,47 @@ script = ExtResource( 2 )
 [node name="delay_timer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="rotating_cat" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+
+[node name="Viewport" type="Viewport" parent="rotating_cat"]
+editor/display_folded = true
+size = Vector2( 1280, 720 )
+transparent_bg = true
+msaa = 3
+render_target_v_flip = true
+
+[node name="cat_01_color05" type="MeshInstance" parent="rotating_cat/Viewport"]
+transform = Transform( 0.635963, 0, -0.77172, 0, 1, 0, 0.77172, 0, 0.635963, 0, 0, 0 )
+mesh = ExtResource( 3 )
+material/0 = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="rotating_cat/Viewport/cat_01_color05"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="rotating_cat/Viewport"]
+transform = Transform( -4.37114e-008, -0.258819, -0.965926, 0, 0.965926, -0.258819, 1, -1.13133e-008, -4.2222e-008, -45, 7, 0 )
+environment = SubResource( 3 )
+current = true
+
+[node name="TextureRect" type="TextureRect" parent="rotating_cat"]
+margin_left = 8.28772
+margin_top = -71.1678
+margin_right = 1179.29
+margin_bottom = 587.832
+mouse_filter = 2
+texture = SubResource( 4 )
+expand = true
+stretch_mode = 1
+
+[node name="Timer" type="Timer" parent="rotating_cat"]
+wait_time = 0.05
+one_shot = true
+autostart = true
 
 [node name="white" type="ColorRect" parent="."]
 margin_right = 1280.0
@@ -64,7 +133,7 @@ __meta__ = {
 editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
-theme = ExtResource( 3 )
+theme = ExtResource( 5 )
 
 [node name="loading_text" type="Label" parent="loading"]
 anchor_right = 1.0
@@ -86,20 +155,19 @@ enabled_focus_mode = 0
 flat = true
 
 [node name="main_menu" type="Control" parent="."]
-editor/display_folded = true
 visible = false
 margin_top = -15.0093
 margin_right = 40.0
 margin_bottom = 24.9907
-theme = ExtResource( 3 )
+theme = ExtResource( 5 )
 
 [node name="logo" type="Sprite" parent="main_menu"]
 position = Vector2( 641.969, 166.401 )
-texture = ExtResource( 4 )
+texture = ExtResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="main_menu/logo"]
 autoplay = "New Anim"
-"anims/New Anim" = SubResource( 1 )
+"anims/New Anim" = SubResource( 5 )
 
 [node name="buttons" type="Control" parent="main_menu"]
 margin_left = 504.871
@@ -117,7 +185,7 @@ margin_right = 262.0
 margin_bottom = 69.0
 focus_mode = 0
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
@@ -128,7 +196,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/start"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 centered = false
 
 [node name="Label" type="Label" parent="main_menu/buttons/start"]
@@ -145,7 +213,7 @@ margin_right = 263.715
 margin_bottom = 141.877
 focus_mode = 0
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
@@ -156,7 +224,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/load"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 centered = false
 
 [node name="Label" type="Label" parent="main_menu/buttons/load"]
@@ -169,7 +237,7 @@ valign = 1
 [node name="x" type="Sprite" parent="main_menu/buttons/load"]
 visible = false
 position = Vector2( 125.826, 29.3703 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 
 [node name="options" type="Button" parent="main_menu/buttons"]
 margin_left = 12.1426
@@ -178,7 +246,7 @@ margin_right = 262.143
 margin_bottom = 211.734
 focus_mode = 0
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
@@ -189,7 +257,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/options"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 centered = false
 
 [node name="Label" type="Label" parent="main_menu/buttons/options"]
@@ -206,7 +274,7 @@ margin_right = 262.143
 margin_bottom = 282.734
 focus_mode = 0
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
@@ -217,7 +285,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/credits"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 centered = false
 flip_h = true
 flip_v = true
@@ -236,7 +304,7 @@ margin_right = 262.85
 margin_bottom = 355.734
 focus_mode = 0
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
@@ -247,7 +315,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/exit"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 centered = false
 flip_h = true
 flip_v = true
@@ -259,7 +327,7 @@ text = "exit"
 align = 1
 valign = 1
 
-[node name="cat1_idle" parent="main_menu" instance=ExtResource( 11 )]
+[node name="cat1_idle" parent="main_menu" instance=ExtResource( 13 )]
 margin_left = 883.779
 margin_top = 274.295
 margin_right = 1023.78
@@ -267,8 +335,8 @@ margin_bottom = 408.295
 mouse_filter = 2
 
 [node name="audio" type="AudioStreamPlayer" parent="main_menu"]
-stream = ExtResource( 12 )
-volume_db = -15.0
+stream = ExtResource( 14 )
+volume_db = -10.0
 bus = "Music"
 
 [node name="credits" type="Control" parent="."]
@@ -276,7 +344,7 @@ editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
-theme = ExtResource( 3 )
+theme = ExtResource( 5 )
 
 [node name="us!" type="Control" parent="credits"]
 margin_left = 633.131
@@ -315,7 +383,7 @@ margin_left = 22.6564
 margin_top = 645.445
 margin_right = 1236.66
 margin_bottom = 957.445
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 7 )
 text = "\"Krub\" font is copywrite 2018 The Krub Project Authors (https://github.com/cadsondemak/Krub)
 Bell sound by Daphne_in_Wonderland on freesound.org (https://freesound.org/people/Daphne_in_Wonderland/sounds/127149/)"
 autowrap = true
@@ -327,7 +395,7 @@ margin_right = 765.0
 margin_bottom = 86.701
 focus_mode = 0
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
@@ -338,7 +406,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="credits/back"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 centered = false
 
 [node name="Label" type="Label" parent="credits/back"]
@@ -348,10 +416,10 @@ text = "back"
 align = 1
 valign = 1
 
-[node name="load_menu" parent="." instance=ExtResource( 13 )]
+[node name="load_menu" parent="." instance=ExtResource( 15 )]
 visible = false
 
-[node name="options_menu" parent="." instance=ExtResource( 14 )]
+[node name="options_menu" parent="." instance=ExtResource( 16 )]
 visible = false
 
 [node name="cover" type="ColorRect" parent="."]
@@ -363,6 +431,7 @@ color = Color( 1, 1, 1, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
+[connection signal="timeout" from="rotating_cat/Timer" to="rotating_cat" method="_on_Timer_timeout"]
 [connection signal="pressed" from="loading/click_to_continue" to="." method="_on_click_to_continue_pressed"]
 [connection signal="pressed" from="main_menu/buttons/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="main_menu/buttons/load" to="load_menu" method="show_custom"]

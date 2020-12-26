@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Frantic_Flowers.ogg-c0139099bda9e76e617ba88fc85d88f1.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/Frantic_Flowers.ogg"
+dest_files=[ "res://.import/Frantic_Flowers.ogg-c0139099bda9e76e617ba88fc85d88f1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=10200.0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/elijah_wait.png-958bd89b96b0f29f38e60827def14abe.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/elijah_wait.png"
+dest_files=[ "res://.import/elijah_wait.png-958bd89b96b0f29f38e60827def14abe.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

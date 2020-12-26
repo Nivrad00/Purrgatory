@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/The_Warehouse.ogg-9199800842b1a0cfe08d2a89aa5ffeb0.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/The_Warehouse.ogg"
+dest_files=[ "res://.import/The_Warehouse.ogg-9199800842b1a0cfe08d2a89aa5ffeb0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

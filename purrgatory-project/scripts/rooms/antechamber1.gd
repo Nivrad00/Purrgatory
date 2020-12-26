@@ -6,6 +6,12 @@ func _ready():
 	state = get_node('../../../../..').state
 	$exit_dialog.set_highlight_on_hover(true)
 	
+func play_default_music(state):
+	if state.get('antechamber_portal') or state.get('postgame'):
+		emit_signal('change_audio', '')
+	else:			
+		emit_signal('change_audio', default_music)
+		
 func update_state(state):
 	.update_state(state)
 	

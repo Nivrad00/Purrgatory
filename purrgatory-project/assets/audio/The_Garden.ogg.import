@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/The_Garden.ogg-e06113951924e69344f6958ab3e79966.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/The_Garden.ogg"
+dest_files=[ "res://.import/The_Garden.ogg-e06113951924e69344f6958ab3e79966.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

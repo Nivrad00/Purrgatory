@@ -30,5 +30,4 @@ hdr = false
 [node name="Camera" parent="Viewport/player" index="1"]
 current = true
 
-
 [editable path="Viewport/player"]

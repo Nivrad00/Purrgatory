@@ -15,7 +15,7 @@ script = ExtResource( 1 )
 
 [node name="state_handler" type="Control" parent="."]
 script = ExtResource( 2 )
-default_music = "fly me to the meow"
+default_music = "Fly_Me_To_The_Meow"
 
 [node name="bg" type="Sprite" parent="state_handler"]
 position = Vector2( 1, 1 )

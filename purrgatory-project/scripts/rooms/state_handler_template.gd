@@ -17,7 +17,7 @@ signal change_audio(song)
 # another note: "_music" and some other states are handled in here, but "_inv" and
 #   "_quest" and some other states are handled in the game node... for some reason.
 
-export var default_music = 'welcome to purrgatory'
+export var default_music = 'Welcome_To_Purrgatory'
 
 func play_default_music(_state):
 	if default_music != '_pass':

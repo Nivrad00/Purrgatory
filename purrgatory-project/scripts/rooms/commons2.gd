@@ -1,5 +1,14 @@
 extends 'state_handler_template.gd'
 
+func _ready():
+	$wait_library_door.set_highlight_on_hover(true)
+	
+func play_default_music(state):
+	if state.get('called_lucifur'):
+		emit_signal('change_audio', 'Lucifur')
+	else:			
+		emit_signal('change_audio', default_music)
+		
 func update_state(state):
 	.update_state(state)
 	
@@ -13,6 +22,9 @@ func update_state(state):
 		$wait_tori.show()
 		$wait_library_door.show()
 		$library_door.hide()
+		$seans_chair.show()
+		$elijahs_chair.show()
+		$commons_chair1.hide()
 	else:
 		$wait_elijah.hide()
 		$wait_kyungsoon.hide()
@@ -23,6 +35,9 @@ func update_state(state):
 		$wait_tori.hide()
 		$wait_library_door.hide()
 		$library_door.show()
+		$seans_chair.hide()
+		$elijahs_chair.hide()
+		$commons_chair1.show()
 	
 	if state.get('elijah_interviewing'):
 		$wait_elijah.hide()
@@ -60,8 +75,3 @@ func update_state(state):
 			emit_signal('start_dialog', 'lucifur_calls_sean', [])
 		elif state['wait_amount'] >= 14:
 			emit_signal('start_dialog', 'lucifur_calls_player', [])
-	
-	if state.get('player_called'):
-		$wait_library_door.set_highlight_on_hover(true)
-	else:
-		$wait_library_door.set_highlight_on_hover(false)

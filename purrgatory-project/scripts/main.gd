@@ -17,6 +17,11 @@ func finish_loading(node):
 	add_child(node.instance())
 	$game.connect('return_to_main', self, 'return_to_main')
 	$game.hide()
+	
+	var rotating_cat = $rotating_cat
+	remove_child(rotating_cat)
+	$game/content/room/rotating_cat_container.add_child(rotating_cat)
+	
 	$loading/loading_text.set_text('ready!\r\nclick to continue')
 	loaded_flag = true
 	$options_menu.load_and_apply_options()
