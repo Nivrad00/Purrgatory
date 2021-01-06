@@ -121,7 +121,6 @@ onready var ui = get_node('content/ui')
 
 func _ready():
 	randomize() # seed random
-	room.change_room(default_room, state, false) # load default room
 	change_audio(null) # load default audio (none)
 
 	# load meowkov chain (disabled for now, don't click on any books!)
@@ -180,7 +179,7 @@ func _process(delta):
 
 			emit_signal('return_to_main')
 			$white_cover.color = Color(1, 1, 1, 0)
-			reset_state(true) # reset state and room
+			room.remove_room()
 			$meta_ui/pause_menu.hide() # hide it directly instead of using close_pause_menu()
 			# bc you're not returning to the game
 			$meta_ui/exit_confirm.hide()
@@ -591,6 +590,7 @@ func load_game_while_playing(file):
 func load_game(file):
 	var save_game = File.new()
 	if not save_game.file_exists("user://save" + str(file) + ".save"):
+		reset_state(true)
 		return
 
 	# temporarily mute audio to prevent artifacts

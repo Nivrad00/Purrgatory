@@ -14,7 +14,7 @@ script = ExtResource( 1 )
 
 [node name="state_handler" type="Control" parent="."]
 script = ExtResource( 2 )
-default_music = "null"
+default_music = "bird_chirps"
 
 [node name="bg" type="Sprite" parent="state_handler"]
 texture = ExtResource( 3 )
@@ -24,6 +24,7 @@ __meta__ = {
 }
 
 [node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+editor/display_folded = true
 position = Vector2( -915.594, -163.238 )
 room_label = "heaven2"
 

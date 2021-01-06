@@ -202,7 +202,6 @@ autoplay = "blink"
 anims/blink = SubResource( 6 )
 
 [node name="_dialog" type="Control" parent="state_handler"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
@@ -252,6 +251,46 @@ valign = 1
 [node name="2" type="TextureRect" parent="state_handler/_dialog"]
 editor/display_folded = true
 visible = false
+margin_left = 1070.66
+margin_top = 643.476
+margin_right = 1412.66
+margin_bottom = 883.476
+rect_scale = Vector2( -1, -1 )
+mouse_filter = 2
+texture = ExtResource( 12 )
+
+[node name="Label" type="Label" parent="state_handler/_dialog/2"]
+margin_left = 321.36
+margin_top = 133.935
+margin_right = 623.36
+margin_bottom = 167.935
+rect_scale = Vector2( -1, -1 )
+text = "i'm sorry i guess??"
+align = 1
+valign = 1
+
+[node name="6" type="TextureRect" parent="state_handler/_dialog/2"]
+margin_left = 472.553
+margin_top = 625.774
+margin_right = 814.553
+margin_bottom = 865.774
+rect_scale = Vector2( 1, -1 )
+mouse_filter = 2
+texture = ExtResource( 12 )
+
+[node name="Label" type="Label" parent="state_handler/_dialog/2/6"]
+margin_left = 320.0
+margin_top = 101.0
+margin_right = 622.0
+margin_bottom = 135.0
+rect_scale = Vector2( -1, 1 )
+text = "WHY ARE YOU SO HEAVY"
+align = 1
+valign = 1
+
+[node name="3" type="TextureRect" parent="state_handler/_dialog"]
+editor/display_folded = true
+visible = false
 margin_left = 706.563
 margin_top = 16.7019
 margin_right = 1048.56
@@ -260,7 +299,7 @@ rect_pivot_offset = Vector2( 15.8891, 92.0588 )
 mouse_filter = 2
 texture = ExtResource( 12 )
 
-[node name="Label" type="Label" parent="state_handler/_dialog/2"]
+[node name="Label" type="Label" parent="state_handler/_dialog/3"]
 margin_left = 17.8337
 margin_top = 82.5047
 margin_right = 321.834
@@ -272,18 +311,18 @@ align = 1
 valign = 1
 autowrap = true
 
-[node name="3" type="TextureRect" parent="state_handler/_dialog"]
+[node name="4" type="TextureRect" parent="state_handler/_dialog"]
 editor/display_folded = true
 visible = false
 margin_left = 598.111
-margin_top = 16.7019
+margin_top = 15.7019
 margin_right = 940.111
-margin_bottom = 256.702
+margin_bottom = 255.702
 rect_scale = Vector2( -1, 1 )
 mouse_filter = 2
 texture = ExtResource( 12 )
 
-[node name="Label" type="Label" parent="state_handler/_dialog/3"]
+[node name="Label" type="Label" parent="state_handler/_dialog/4"]
 margin_left = 320.0
 margin_top = 101.0
 margin_right = 622.0
@@ -293,7 +332,57 @@ text = "you okay down there??"
 align = 1
 valign = 1
 
-[node name="4" type="TextureRect" parent="state_handler/_dialog"]
+[node name="5" type="TextureRect" parent="state_handler/_dialog"]
+editor/display_folded = true
+visible = false
+margin_left = 1070.66
+margin_top = 642.476
+margin_right = 1412.66
+margin_bottom = 882.476
+rect_scale = Vector2( -1, -1 )
+mouse_filter = 2
+texture = ExtResource( 12 )
+
+[node name="Label" type="Label" parent="state_handler/_dialog/5"]
+margin_left = 320.0
+margin_top = 166.243
+margin_right = 626.0
+margin_bottom = 237.243
+rect_scale = Vector2( -1, -1 )
+text = "what sort of a "
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="state_handler/_dialog/5"]
+margin_left = 320.0
+margin_top = 140.396
+margin_right = 626.0
+margin_bottom = 211.396
+rect_scale = Vector2( -1, -1 )
+text = "question is that??"
+align = 1
+valign = 1
+
+[node name="6" type="TextureRect" parent="state_handler/_dialog/5"]
+margin_left = 472.553
+margin_top = 625.774
+margin_right = 814.553
+margin_bottom = 865.774
+rect_scale = Vector2( 1, -1 )
+mouse_filter = 2
+texture = ExtResource( 12 )
+
+[node name="Label" type="Label" parent="state_handler/_dialog/5/6"]
+margin_left = 320.0
+margin_top = 101.0
+margin_right = 622.0
+margin_bottom = 135.0
+rect_scale = Vector2( -1, 1 )
+text = "you okay down there??"
+align = 1
+valign = 1
+
+[node name="6" type="TextureRect" parent="state_handler/_dialog"]
 editor/display_folded = true
 visible = false
 margin_left = 706.563
@@ -304,7 +393,7 @@ rect_pivot_offset = Vector2( 15.8891, 92.0588 )
 mouse_filter = 2
 texture = ExtResource( 12 )
 
-[node name="Label" type="Label" parent="state_handler/_dialog/4"]
+[node name="Label" type="Label" parent="state_handler/_dialog/6"]
 margin_left = 17.8337
 margin_top = 82.5047
 margin_right = 321.834

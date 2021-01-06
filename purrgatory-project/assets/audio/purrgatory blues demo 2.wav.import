@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/purrgatory blues demo 2.wav-7da6b4c030028b00b7dc610cb0862455.sample"
+
+[deps]
+
+source_file="res://assets/audio/purrgatory blues demo 2.wav"
+dest_files=[ "res://.import/purrgatory blues demo 2.wav-7da6b4c030028b00b7dc610cb0862455.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

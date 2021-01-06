@@ -14,8 +14,8 @@ var climbing = false # climbing minigame
 var pull_speed = 500 # how fast tori pulls player up
 var base_drain_speed = 10
 var recover_amount = 4
-var dialog_timing = [-8500, -6600, -4700, -2800, -900]
-var used_dialog = [false, false, false, false, false]
+var dialog_timing = [-8500, -6600, -6100, -4700, -2800, -2300, -900]
+var used_dialog = [false, false, false, false, false, false, false]
 var creak_num = 0
 
 var lost_grip = false
@@ -87,7 +87,7 @@ func _process(delta):
 				creak_num = (creak_num + 1) % 6
 				$_pulls.get_child(creak_num).play()
 		
-		for i in range(0, 5):
+		for i in range(0, 7):
 			if $bg.position.y >= dialog_timing[i] and progress < dialog_timing[i] and not used_dialog[i]:
 				$_dialog.get_node(str(i)).show()
 				used_dialog[i] = true
@@ -115,7 +115,7 @@ func _process(delta):
 				creak_num = (creak_num + 1) % 6
 				$_pulls.get_child(creak_num).play()
 		
-		for i in range(0, 5):
+		for i in range(0, 7):
 			if $bg.position.y >= dialog_timing[i] and progress < dialog_timing[i] and not used_dialog[i]:
 				$_dialog.get_node(str(i)).show()
 				used_dialog[i] = true
@@ -173,18 +173,33 @@ func _process(delta):
 			
 		var position = $bg.position.y
 		if progress > position:
-			if progress > -1000 and position < -1000:
-				emit_signal('start_dialog', 'tori_climb1', [])
+			if progress > -900 and position < -900:
+				emit_signal('start_dialog', 'tori_climb1a', [])
 				time = 0
+			if progress > -1600 and position < -1600:
+				emit_signal('start_dialog', 'tori_climb1b', [])
+				time = 0
+			if progress > -1900 and position < -1900:
+				emit_signal('start_dialog', 'tori_climb1c', [])
+				time = 0
+			# snowglobe: about -2200
 			elif progress > -3500 and position < -3500:
-				emit_signal('start_dialog', 'tori_climb2', [])
+				emit_signal('start_dialog', 'tori_climb2a', [])
 				time = 0
-			elif progress > -7000 and position < -7000:
-				emit_signal('start_dialog', 'tori_climb3', [])
+			elif progress > -4500 and position < -4500:
+				emit_signal('start_dialog', 'tori_climb2b', [])
 				time = 0
-			elif progress > -8500 and position < -8500:
-				emit_signal('start_dialog', 'tori_climb4', [])
+			# ttt: about -5500
+			elif progress > -6200 and position < -6200:
+				emit_signal('start_dialog', 'tori_climb2c', [])
 				time = 0
+			elif progress > -7500 and position < -7500:
+				emit_signal('start_dialog', 'tori_climb3a', [])
+				time = 0
+			elif progress > -7800 and position < -7800:
+				emit_signal('start_dialog', 'tori_climb3b', [])
+				time = 0
+			# lucifur: about -9000
 			progress = position
 	
 func init_state(state):

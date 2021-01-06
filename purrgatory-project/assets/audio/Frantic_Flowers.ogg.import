@@ -12,4 +12,4 @@ dest_files=[ "res://.import/Frantic_Flowers.ogg-c0139099bda9e76e617ba88fc85d88f1
 [params]
 
 loop=true
-loop_offset=10200.0
+loop_offset=10.2

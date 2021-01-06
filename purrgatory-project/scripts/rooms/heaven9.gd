@@ -11,7 +11,7 @@ func update_state(state):
 		
 	if state.get('enter_gate'):
 		print('aaaaa')
-		$portal_audio.play()
+		$door_audio.play()
 		$fadeout.show()
 
 func _process(delta):
@@ -20,9 +20,14 @@ func _process(delta):
 		if a == 1:
 			state['enter_gate'] = false
 			$white_timer.start()
+			emit_signal('change_audio', '')
+			get_node('../../../../../main_audio').volume_db = -5
+			
 			yield($white_timer, 'timeout')
 			emit_signal('change_room', 'good_credits')
+			
 				
 		else:
-			a = min(a + 0.2 * delta, 1)
+			a = min(a + 0.4 * delta, 1)
 			$fadeout.set_modulate(Color(1, 1, 1, a))
+			get_node('../../../../../main_audio').volume_db = -5 - 75 * a

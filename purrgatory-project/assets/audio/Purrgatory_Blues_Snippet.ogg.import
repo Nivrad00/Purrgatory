@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Purrgatory_Blues_Snippet.ogg-1588c70ceadd8171d7818f1
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

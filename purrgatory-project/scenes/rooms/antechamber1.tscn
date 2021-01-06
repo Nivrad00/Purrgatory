@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/antechamber1.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scenes/portal_sprite2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/portal_sprite.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/audio/portal.ogg" type="AudioStream" id=8]
+[ext_resource path="res://assets/audio/portal_ambience.ogg" type="AudioStream" id=9]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -60,6 +61,7 @@ dialog_label = "end_leave_antechamber"
 polygon = PoolVector2Array( -112.086, 729.214, 198.914, 752.214, 198.914, 271.215, -115.086, 305.215 )
 
 [node name="portal" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( 254.806, -198.043 )
 script = ExtResource( 4 )
 __meta__ = {
@@ -94,7 +96,13 @@ one_shot = true
 
 [node name="portal_audio" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 8 )
-volume_db = -6.0
+volume_db = -8.0
+bus = "SFX"
+
+[node name="ambience" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 9 )
+volume_db = 5.0
+bus = "SFX"
 
 [editable path="state_handler/portal/sprite/portal_sprite2"]
 

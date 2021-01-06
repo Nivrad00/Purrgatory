@@ -39,6 +39,17 @@ func end_dialog():
 		child.end_dialog()
 	$room_mask.set_mouse_filter(Control.MOUSE_FILTER_IGNORE)
 
+func remove_room():
+	game.get_node('content/dark_covers/attic').hide()
+	game.get_node('content/dark_covers/wire_game').hide()
+	game.get_node('content/dark_covers/dark').hide()
+	$rotating_cat_container.rect_scale = Vector2(0.001, 0.001)
+	$rotating_cat_container.modulate.a = 0.01
+	prev_room_label = null
+	current_room = null
+	for child in $room_container.get_children():
+		child.queue_free()
+	
 func change_room(label, state, music = true, loading_file = false):		
 	if game.state.get('blackout'):
 		if label == 'attic':

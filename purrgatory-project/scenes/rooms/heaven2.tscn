@@ -25,7 +25,7 @@ margin_top = -4.78986
 margin_right = 1.79623
 margin_bottom = -4.78986
 script = ExtResource( 2 )
-default_music = "null"
+default_music = "bird_chirps"
 
 [node name="bg" type="Sprite" parent="state_handler"]
 texture = ExtResource( 3 )
