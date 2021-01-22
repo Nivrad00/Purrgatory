@@ -6,10 +6,14 @@ var anim_playing = false
 func _ready():
 	$phone.set_highlight_on_hover(false)
 	state_copy = get_node('../../../../..').state
-	if state_copy.get('numa_quest_complete'):
+	if state_copy.get('numa_quest_complete') and state_copy.get('ks_at_commons'):
 		$wait_oliver2.name = 'wait_oliver'
 		$wait_numa2.name = 'wait_numa'
 		$poof_sinners2.name = 'poof_sinners'
+	elif state_copy.get('numa_quest_complete') and not state_copy.get('ks_at_commons'):
+		$wait_oliver2.name = 'wait_oliver'
+		$wait_numa2.name = 'wait_numa'
+		$poof_sinners3.name = 'poof_sinners'
 	else:
 		$wait_oliver1.name = 'wait_oliver'
 		$wait_numa1.name = 'wait_numa'

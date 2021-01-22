@@ -50,7 +50,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=3]
 length = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
@@ -65,7 +65,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=4]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
@@ -275,8 +275,8 @@ margin_bottom = 720.0
 color = Color( 1, 1, 1, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/white"]
-anims/fadein = SubResource( 6 )
-anims/fadeout = SubResource( 7 )
+anims/fadein = SubResource( 3 )
+anims/fadeout = SubResource( 4 )
 
 [node name="click" type="Button" parent="state_handler"]
 visible = false

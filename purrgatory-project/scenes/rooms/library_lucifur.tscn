@@ -16,10 +16,18 @@ script = ExtResource( 1 )
 script = ExtResource( 2 )
 default_music = "Lucifur"
 
+[node name="ColorRect" type="ColorRect" parent="state_handler"]
+margin_right = 1280.0
+margin_bottom = 720.0
+mouse_filter = 2
+
 [node name="bg" type="Sprite" parent="state_handler"]
+position = Vector2( 248.953, 235.365 )
 texture = ExtResource( 3 )
 centered = false
+offset = Vector2( -248.953, -291.365 )
 
 [node name="lucifur_library" type="Sprite" parent="state_handler"]
-position = Vector2( 638.623, 330.132 )
+position = Vector2( 248.953, 235.365 )
 texture = ExtResource( 4 )
+offset = Vector2( 389.67, 38.7669 )

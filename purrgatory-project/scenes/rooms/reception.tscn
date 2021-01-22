@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/reception.gd" type="Script" id=2]
@@ -18,8 +18,7 @@
 [ext_resource path="res://assets/sprites/charon_walking2.png" type="Texture" id=16]
 [ext_resource path="res://assets/sprite_masks/charon_walking2.png" type="BitMap" id=17]
 [ext_resource path="res://assets/audio/portal.ogg" type="AudioStream" id=18]
-[ext_resource path="res://assets/audio/portal_ambience.ogg" type="AudioStream" id=19]
-[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=19]
 
 [sub_resource type="Animation" id=1]
 resource_name = "New Anim"
@@ -99,6 +98,7 @@ texture = ExtResource( 12 )
 centered = false
 
 [node name="receptionist_idle2" type="TextureButton" parent="state_handler"]
+editor/display_folded = true
 visible = false
 margin_left = 347.0
 margin_top = 327.0
@@ -126,12 +126,6 @@ stream = ExtResource( 18 )
 volume_db = -8.0
 bus = "SFX"
 
-[node name="ambience" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 19 )
-volume_db = 5.0
-autoplay = true
-bus = "SFX"
-
 [node name="fadeout" type="ColorRect" parent="state_handler"]
 visible = false
 modulate = Color( 1, 1, 1, 0 )
@@ -139,73 +133,74 @@ margin_top = 22.2918
 margin_right = 1280.0
 margin_bottom = 742.292
 
-[node name="object" parent="state_handler" instance=ExtResource( 20 )]
+[node name="object" parent="state_handler" instance=ExtResource( 19 )]
+editor/display_folded = true
 dialog_label = "reception_plant"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
 polygon = PoolVector2Array( 141.538, 257.221, 67.8736, 323.519, 81.3788, 394.729, 124.35, 452.432, 105.934, 473.304, 114.528, 562.929, 161.182, 573.979, 190.648, 554.335, 201.698, 478.215, 175.915, 453.66, 213.975, 392.273, 220.114, 303.876 )
 
-[node name="object2" parent="state_handler" instance=ExtResource( 20 )]
+[node name="object2" parent="state_handler" instance=ExtResource( 19 )]
 dialog_label = "filing_cabinet"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
 polygon = PoolVector2Array( 240.985, 248.627, 240.985, 565.385, 380.913, 566.421, 407.958, 544.513, 406.731, 253.538 )
 
-[node name="object3" parent="state_handler" instance=ExtResource( 20 )]
+[node name="object3" parent="state_handler" instance=ExtResource( 19 )]
 dialog_label = "reception_paper"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
 polygon = PoolVector2Array( 315.878, 216.706, 314.65, 249.855, 396.909, 253.538, 396.909, 217.934 )
 
-[node name="object4" parent="state_handler" instance=ExtResource( 20 )]
+[node name="object4" parent="state_handler" instance=ExtResource( 19 )]
 dialog_label = "reception_water"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object4"]
 polygon = PoolVector2Array( 464.434, 376.312, 465.662, 440.155, 493.9, 436.472, 492.268, 376.19 )
 
-[node name="object5" parent="state_handler" instance=ExtResource( 20 )]
+[node name="object5" parent="state_handler" instance=ExtResource( 19 )]
 dialog_label = "reception_picture"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object5"]
 polygon = PoolVector2Array( 493.9, 393.501, 547.921, 402.095, 546.693, 441.383, 495.128, 441.383 )
 
-[node name="object6" parent="state_handler" instance=ExtResource( 20 )]
+[node name="object6" parent="state_handler" instance=ExtResource( 19 )]
 dialog_label = "reception_computer"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object6"]
 polygon = PoolVector2Array( 697.706, 345.619, 702.555, 421.602, 723.508, 437.073, 776.323, 438.809, 819.252, 425.422, 816.797, 362.807, 779.964, 335.797 )
 
-[node name="object7" parent="state_handler" instance=ExtResource( 20 )]
+[node name="object7" parent="state_handler" instance=ExtResource( 19 )]
 dialog_label = "reception_keyboard"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object7"]
 polygon = PoolVector2Array( 675.57, 423.823, 678.351, 438.123, 725.623, 436.709, 703.988, 423.191 )
 
-[node name="object8" parent="state_handler" instance=ExtResource( 20 )]
+[node name="object8" parent="state_handler" instance=ExtResource( 19 )]
 dialog_label = "reception_mouse"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object8"]
 polygon = PoolVector2Array( 653.086, 421.342, 648.168, 423.8, 643.174, 429.402, 648.783, 438.554, 674.379, 437.329, 675.968, 426.207, 661.385, 421.956 )
 
-[node name="object9" parent="state_handler" instance=ExtResource( 20 )]
+[node name="object9" parent="state_handler" instance=ExtResource( 19 )]
 dialog_label = "reception_desk"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object9"]
 polygon = PoolVector2Array( 456.866, 437.323, 471.717, 598.26, 579.273, 597.486, 596.137, 570.366, 595.064, 508.627, 787.659, 511.567, 784.718, 582.136, 801.349, 603.676, 823.015, 601.355, 834.621, 440.408, 814.503, 428.027, 482.55, 424.932 )
 
-[node name="object10" parent="state_handler" instance=ExtResource( 20 )]
+[node name="object10" parent="state_handler" instance=ExtResource( 19 )]
 dialog_label = "reception_sign"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object10"]
 polygon = PoolVector2Array( 483.542, 138.557, 482.684, 218.294, 655.875, 237.156, 805.916, 220.008, 805.059, 141.987, 643.871, 153.99 )
 
-[node name="object11" parent="state_handler" instance=ExtResource( 20 )]
+[node name="object11" parent="state_handler" instance=ExtResource( 19 )]
 dialog_label = "chairon"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object11"]
 polygon = PoolVector2Array( 618.494, 508.809, 617.167, 526.058, 589.966, 538.663, 591.293, 557.902, 610.33, 556.575, 616.503, 583.776, 627.118, 585.103, 640.847, 561.219, 670.24, 579.132, 682.182, 559.229, 633.752, 521.414, 633.752, 506.819 )
 
-[node name="object12" parent="state_handler" instance=ExtResource( 20 )]
+[node name="object12" parent="state_handler" instance=ExtResource( 19 )]
 dialog_label = "click_portal"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object12"]

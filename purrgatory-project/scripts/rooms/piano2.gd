@@ -53,6 +53,25 @@ func update_state(state):
 		state['end_purrgatory_blues'] = false
 		emit_signal('change_audio', default_music)
 		$purrgatory_blues4.stop()
+		
+	if state.get('play_corner_store_music1'):
+		state['play_corner_store_music1'] = false
+		$dont_meowget_me1.play()
+		
+	if state.get('play_corner_store_music2'):
+		state['play_corner_store_music2'] = false
+		$dont_meowget_me2.play()
+		
+	if state.get('play_corner_store_music3'):
+		state['play_corner_store_music3'] = false
+		emit_signal('change_audio', '')
+		$dont_meowget_me3.play()
+		
+	if state.get('end_corner_store_music'):
+		state['end_corner_store_music'] = false
+		$dont_meowget_me1.stop()
+		$dont_meowget_me2.stop()
+		$dont_meowget_me3.stop()
 	
 func init_state(state):
 	.init_state(state)

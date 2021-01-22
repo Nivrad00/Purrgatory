@@ -81,7 +81,6 @@ polygon = PoolVector2Array( 586.346, 454.554, 605.88, 474.544, 646.663, 479.692,
 polygon = PoolVector2Array( 868.318, 469.07, 930.267, 467.741, 1022.35, 526.794, 972.119, 539.961, 862.392, 484.366 )
 
 [node name="object3" parent="state_handler" instance=ExtResource( 6 )]
-editor/display_folded = true
 dialog_label = "elijahs_bookshelf"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]

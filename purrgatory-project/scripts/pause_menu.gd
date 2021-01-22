@@ -5,7 +5,7 @@ onready var ui = get_node('../../content/ui')
 onready var game = get_node('../..')
 
 func show_custom():
-	if game.state.get('ks_quest_complete'):
+	if game.state.get('kyungsoon_quest_complete'):
 		$icons/kyungsoon1.hide()
 		$icons/kyungsoon2.show()
 	elif game.state.get('met_kyungsoon'):

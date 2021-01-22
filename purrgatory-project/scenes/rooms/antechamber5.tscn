@@ -18,7 +18,6 @@ script = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="bg" type="Sprite" parent="state_handler"]
-position = Vector2( -3.4917, 3.4917 )
 texture = ExtResource( 3 )
 centered = false
 

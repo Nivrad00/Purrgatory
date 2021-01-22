@@ -25,12 +25,17 @@ func update_state(state):
 	if state.get('tori_train_complete'):
 		$tori_idle.hide()
 	else:
-		$tori_idle.show()
-		$bg.show()
+		if state.get('natalie_completed_mural') and not state.get('natalie_working_on_nocturnal'):
+			$tori_idle.hide()
+		else:
+			$tori_idle.show()
 		state['ks_and_numa_train_override'] = true
 	
 	if state.get('ks_and_numa_train_override'):
 		$bg.show()
+		$vending_machine1.show()
+		$train_tracks1.show()
+		$train_columns1.show()
 		return # tori supercedes ks and numa
 	
 	if state.get('ks_and_numa_at_train') and state.get('broke_vending_machine'):
@@ -46,7 +51,7 @@ func update_state(state):
 		$vending_machine2.show()
 		$train_tracks2.show()
 		$train_columns2.show()
-		$junk_food.show()
+		$junk_food.hide()
 	elif state.get('ks_and_numa_at_train'):
 		$ks_and_numa.show()
 		$bg.show()

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/heaven7.png" type="Texture" id=3]
 [ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=4]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=5]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -35,6 +36,10 @@ room_label = "heaven8"
 position = Vector2( -700.578, 322.161 )
 polygon = PoolVector2Array( 582.551, 394.872, 568.753, 374.802, 541.993, 365.186, 509.38, 363.095, 481.784, 374.802, 467.568, 395.29, 467.763, 446.308, 582.551, 444.21 )
 
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/exit"]
+position = Vector2( -700.578, 322.161 )
+polygon = PoolVector2Array( 582.551, 394.872, 568.753, 374.802, 541.993, 365.186, 509.38, 363.095, 481.784, 374.802, 467.568, 395.29, 467.763, 446.308, 582.551, 444.21 )
+
 [node name="exit2" type="Area2D" parent="state_handler"]
 position = Vector2( -465.02, -291.018 )
 script = ExtResource( 4 )
@@ -46,3 +51,37 @@ room_label = "heaven6"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
 polygon = PoolVector2Array( 464.982, 501.631, 462.753, 918.476, 593.841, 871.617, 591.851, 596.962, 584.999, 567.043, 571.917, 540.309, 555.421, 516.988, 540.064, 502.768, 521.293, 494.236, 496.266, 491.392, 480.909, 494.805 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( 464.982, 501.631, 462.753, 918.476, 593.841, 871.617, 591.851, 596.962, 584.999, 567.043, 571.917, 540.309, 555.421, 516.988, 540.064, 502.768, 521.293, 494.236, 496.266, 491.392, 480.909, 494.805 )
+
+[node name="object" type="Area2D" parent="state_handler"]
+script = ExtResource( 5 )
+dialog_label = "heaven_bench2"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+polygon = PoolVector2Array( 942.835, 502.207, 934.671, 567.523, 1057.14, 610.678, 1181.94, 616.509, 1180.77, 480.047, 1016.32, 469.549, 1013.98, 501.041 )
+
+[node name="object2" type="Area2D" parent="state_handler"]
+script = ExtResource( 5 )
+dialog_label = "heaven_torch"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
+polygon = PoolVector2Array( 284.35, 327.413, 283, 404, 303, 405, 311.368, 334.437, 302.182, 319.848 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object2"]
+polygon = PoolVector2Array( 856.557, 333.549, 870.999, 401, 885.999, 401, 889.719, 331.111, 881.668, 319.324, 862.046, 321.84 )
+
+[node name="object3" type="Area2D" parent="state_handler"]
+script = ExtResource( 5 )
+dialog_label = "heaven_window"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
+polygon = PoolVector2Array( 294.079, 284.055, 295.794, 316.635, 310.828, 336.059, 312.781, 237.879, 298.116, 250.449, 309.29, 263.019 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object3"]
+position = Vector2( 4.28687, 132.893 )
+polygon = PoolVector2Array( 294.113, 273.412, 294.113, 327.989, 307.081, 329.069, 306.399, 229.988 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="state_handler/object3"]
+polygon = PoolVector2Array( 853.294, 244.164, 856.087, 458.553, 874.942, 461.347, 873.546, 283.271, 862.372, 267.209, 870.054, 246.957, 863.071, 242.767 )

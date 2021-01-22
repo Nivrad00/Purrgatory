@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/heaven9.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/heaven9.png" type="Texture" id=3]
-[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=4]
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/audio/door_open.ogg" type="AudioStream" id=6]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=7]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -25,8 +26,19 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="exit2" parent="state_handler" instance=ExtResource( 4 )]
+[node name="exit2" type="Area2D" parent="state_handler"]
+position = Vector2( -465.02, -291.018 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
 room_label = "heaven8"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( 465.026, 1011.01, 1745.01, 1011.01, 1745.02, 923.026, 465.007, 923.014 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( 465.026, 1011.01, 1745.01, 1011.01, 1745.02, 923.026, 465.007, 923.014 )
 
 [node name="object" parent="state_handler" instance=ExtResource( 5 )]
 dialog_label = "heaven_confirm"
@@ -35,8 +47,13 @@ dialog_label = "heaven_confirm"
 position = Vector2( 2.58472, 43.94 )
 polygon = PoolVector2Array( 507.583, 230.124, 486.037, 583.523, 789.414, 582.059, 765.6, 231.594, 732.521, 205.131, 690.621, 184.548, 635.303, 177.72, 589.914, 183.813, 543.603, 205.866 )
 
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object"]
+position = Vector2( 2.58472, 43.94 )
+polygon = PoolVector2Array( 507.583, 230.124, 486.037, 583.523, 789.414, 582.059, 765.6, 231.594, 732.521, 205.131, 690.621, 184.548, 635.303, 177.72, 589.914, 183.813, 543.603, 205.866 )
+
 [node name="door_audio" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 6 )
+volume_db = -5.0
 
 [node name="white_timer" type="Timer" parent="state_handler"]
 wait_time = 2.5
@@ -47,3 +64,20 @@ visible = false
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 1280.0
 margin_bottom = 720.0
+
+[node name="object2" type="Area2D" parent="state_handler"]
+script = ExtResource( 7 )
+dialog_label = "heaven_window"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
+polygon = PoolVector2Array( 118.881, 557.316, 264.942, 557.316, 356.588, 76.1733, 337.972, 53.2618, 325.084, 8.87069, 293.581, 16.0305, 276.397, 51.8298, 239.166, 70.4455 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object2"]
+polygon = PoolVector2Array( 927.944, 81.9012, 1019.59, 557.316, 1179.97, 560.18, 1041.07, 67.5815, 999.543, 60.4217, 986.655, 20.3265, 950.856, 23.1904, 949.424, 63.2856 )
+
+[node name="object3" type="Area2D" parent="state_handler"]
+script = ExtResource( 7 )
+dialog_label = "heaven_gate"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
+polygon = PoolVector2Array( 386.273, 626.928, 442.749, 146.883, 500.452, 62.1693, 567.978, 22.8817, 642.87, 14.2876, 715.306, 21.654, 781.604, 67.0802, 839.307, 139.517, 901.922, 628.156 )

@@ -11,7 +11,7 @@ func update_state(state):
 	else:
 		$house_cat.hide()
 		
-	if state.get('house_cat_pushed_glass'):
+	if state.get('house_cat_pushed_glass') and not state.get('house_cat_pushing_glass'):
 		$house_glass.hide()
 		
 	if state.get('house_cat_pushing_glass'):

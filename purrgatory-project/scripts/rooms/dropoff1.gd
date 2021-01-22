@@ -40,8 +40,24 @@ func update_state(state):
 		
 	if state.get('sean_looking_for_elijah') and not state.get('elijah_quest_complete'):
 		$elijah_dropoff.show()
+		
+		if (state.get('tori_closet_complete') and not state.get('preparing_for_climb'))\
+		or state.get('tori_dropoff_complete'):
+			$dropoff_rope.show()
+		
+		if state.get('tori_dropoff_complete'):
+			$dropoff_again.show()
+			$dropoff_again.set_highlight_on_hover(true)
+			$dropoff_dropoff.hide()
+			$bg2.show()
+
 		return
 	
+	# if tori's talking to natalie then skip 
+	
+	if state.get('natalie_completed_mural') and not state.get('natalie_working_on_nocturnal'):
+		return
+		
 	# tori's stuff
 	
 	if state.get('tori_closet_complete') and not state.get('preparing_for_climb'):

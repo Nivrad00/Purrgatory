@@ -28,7 +28,6 @@ room_label = "antechamber3"
 room_label = "bell_tower"
 
 [node name="antechamber_ttt" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 script = ExtResource( 6 )
 dialog_label = "antechamber_ttt"
 

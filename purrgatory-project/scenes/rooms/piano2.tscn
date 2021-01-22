@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/piano2.gd" type="Script" id=2]
@@ -8,10 +8,13 @@
 [ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=6]
 [ext_resource path="res://scenes/sprites/sean_piano.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/sprites/sean_arguing_with_tori.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/audio/Purrgatory_Blues_Snippet1.ogg" type="AudioStream" id=9]
-[ext_resource path="res://assets/audio/Purrgatory_Blues_Snippet2.ogg" type="AudioStream" id=10]
-[ext_resource path="res://assets/audio/Purrgatory_Blues_Snippet3.ogg" type="AudioStream" id=11]
-[ext_resource path="res://assets/audio/Purrgatory_Blues_Snippet4.ogg" type="AudioStream" id=12]
+[ext_resource path="res://assets/audio/purrgatory_blues_snippet1.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/audio/purrgatory_blues_snippet2.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/audio/purrgatory_blues_snippet3.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/audio/purrgatory_blues_snippet4.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/audio/dont_meowget_me1.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/audio/dont_meowget_me2.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/audio/dont_meowget_me3.wav" type="AudioStream" id=15]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -75,6 +78,21 @@ bus = "Music"
 
 [node name="purrgatory_blues4" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 12 )
+bus = "Music"
+
+[node name="dont_meowget_me1" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 13 )
+volume_db = 10.0
+bus = "Music"
+
+[node name="dont_meowget_me2" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 14 )
+volume_db = 10.0
+bus = "Music"
+
+[node name="dont_meowget_me3" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 15 )
+volume_db = 10.0
 bus = "Music"
 
 [node name="purrgatory_blues_timer" type="Timer" parent="state_handler"]

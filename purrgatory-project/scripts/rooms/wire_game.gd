@@ -1,6 +1,7 @@
 extends 'state_handler_template.gd'
 
 var state = null
+var goto = null
 
 func update_state(_state):
 	.update_state(_state)
@@ -29,7 +30,8 @@ func connected_node():
 		$power_delay.start()
 		yield($power_delay, "timeout")
 		
-		emit_signal('start_dialog', 'tori_wire_blackout', [])
+		goto = 'tori_wire_blackout'
+		$cover2.show()
 	
 	var solved = true
 	
@@ -46,18 +48,28 @@ func connected_node():
 		$power_on.play()
 		$cover.show()
 		$GridContainer.release_wire()
+		$shelf/Timer.stop()
 		
 		$power_delay.start()
 		yield($power_delay, "timeout")
 		
-		emit_signal('start_dialog', 'tori_wire_success', [])
-		$shelf/Timer.stop()
+		goto = 'tori_wire_success'
+		$cover2.show()
 
 func skip():
 	state['blackout'] = false
+	state['blackout_music'] = false
+	emit_signal('change_audio', '')
 	get_node('../../../../../content/dark_covers/wire_game').hide()
-	$power_down.play()
+	$power_on.play()
 	$cover.show()
 	$GridContainer.release_wire()
-	yield($power_down, "finished")
-	emit_signal('start_dialog', 'tori_wire_skip', [])
+	
+	$power_delay.start()
+	yield($power_delay, "timeout")
+		
+	goto = 'tori_wire_skip'
+	$cover2.show()
+
+func _on_cover2_pressed():
+	emit_signal('start_dialog', goto, [])

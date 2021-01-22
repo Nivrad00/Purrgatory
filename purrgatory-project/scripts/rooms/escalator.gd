@@ -5,4 +5,6 @@ func update_state(state):
 	
 	if not state.get('blackout') and not $AnimationPlayer.is_playing():
 		$AnimationPlayer.play('New Anim')
-		
+	
+	if not state.get('blackout'):
+		$hum.play()

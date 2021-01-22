@@ -4,10 +4,10 @@
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/heaven8.png" type="Texture" id=3]
 [ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=4]
-[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/sprites/tori_heaven.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprite_masks/tori_heaven.png" type="BitMap" id=7]
-[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=8]
+[ext_resource path="res://assets/sprites/tori_heaven.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite_masks/tori_heaven.png" type="BitMap" id=6]
+[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=7]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "oliver_idle"
@@ -56,8 +56,23 @@ room_label = "heaven9"
 position = Vector2( -525.891, 245.959 )
 polygon = PoolVector2Array( 580.134, 403.993, 558.775, 386.24, 523.035, 376.536, 485.544, 386.795, 467.237, 403.439, 466.277, 454.603, 581.122, 452.974 )
 
-[node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/exit"]
+position = Vector2( -525.891, 245.959 )
+polygon = PoolVector2Array( 580.134, 403.993, 558.775, 386.24, 523.035, 376.536, 485.544, 386.795, 467.237, 403.439, 466.277, 454.603, 581.122, 452.974 )
+
+[node name="exit2" type="Area2D" parent="state_handler"]
+position = Vector2( -465.02, -291.018 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
 room_label = "heaven7"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( 465.026, 1011.01, 1745.01, 1011.01, 1745.02, 923.026, 465.007, 923.014 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( 465.026, 1011.01, 1745.01, 1011.01, 1745.02, 923.026, 465.007, 923.014 )
 
 [node name="tori_heaven" type="TextureButton" parent="state_handler"]
 margin_left = 887.26
@@ -66,12 +81,36 @@ margin_right = 1029.26
 margin_bottom = 723.79
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 6 )
-texture_click_mask = ExtResource( 7 )
-script = ExtResource( 8 )
+texture_normal = ExtResource( 5 )
+texture_click_mask = ExtResource( 6 )
+script = ExtResource( 7 )
 dialog_label = "tori_heaven"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/tori_heaven"]
 autoplay = "oliver_idle"
 anims/oliver_idle = SubResource( 1 )
+
+[node name="object" type="Area2D" parent="state_handler"]
+script = ExtResource( 8 )
+dialog_label = "heaven_window"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+polygon = PoolVector2Array( 195.274, 462.716, 120.627, 463.882, 110.13, 3.17395, 132.291, -13.1549, 156.784, -2.6578, 181.278, 54.4933 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="state_handler/object"]
+position = Vector2( 970.403, 3.49905 )
+polygon = PoolVector2Array( 195.274, 462.716, 120.627, 463.882, 122.96, 57.9924, 155.618, -10.8223, 199.939, -3.82415 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object"]
+polygon = PoolVector2Array( 97.3004, 462.716, 66.9753, 466.215, 66.9753, 118.643, 84.4705, 66.1568, 57.6445, 23.0019, 64.6426, -9.6559, 93.8013, -4.99049 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="state_handler/object"]
+position = Vector2( 1126.69, -6.99808 )
+polygon = PoolVector2Array( 85.6368, 474.379, 62.3099, 469.714, 59.9053, 10.848, 78.9053, 5.14803, 88.4053, 37.448, 69.308, 76.654, 79.8052, 119.809 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="state_handler/object"]
+polygon = PoolVector2Array( 333.292, 264.271, 335.747, 449.66, 354.163, 452.115, 350.48, 232.35, 338.203, 224.984, 343.114, 245.855 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="state_handler/object"]
+polygon = PoolVector2Array( 929.972, 254.449, 927.516, 375.995, 947.16, 375.995, 949.615, 270.41 )
 [connection signal="pressed" from="state_handler/tori_heaven" to="state_handler/tori_heaven" method="_on_char_obj_button_pressed"]

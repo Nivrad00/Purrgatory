@@ -1334,7 +1334,6 @@ align = 1
 valign = 1
 
 [node name="shelf" type="Sprite" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 1058.46, 348.237 )
 texture = ExtResource( 13 )
 
@@ -1458,9 +1457,18 @@ visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 color = Color( 1, 1, 1, 0 )
-[connection signal="pressed" from="state_handler/shelf/skip" to="state_handler/shelf/sure?" method="show"]
+
+[node name="cover2" type="Button" parent="state_handler"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
 [connection signal="pressed" from="state_handler/shelf/skip" to="state_handler/shelf/skip" method="hide"]
+[connection signal="pressed" from="state_handler/shelf/skip" to="state_handler/shelf/sure?" method="show"]
 [connection signal="pressed" from="state_handler/shelf/sure?/yes" to="state_handler" method="skip"]
-[connection signal="pressed" from="state_handler/shelf/sure?/no" to="state_handler/shelf/sure?" method="hide"]
 [connection signal="pressed" from="state_handler/shelf/sure?/no" to="state_handler/shelf/skip" method="show"]
+[connection signal="pressed" from="state_handler/shelf/sure?/no" to="state_handler/shelf/sure?" method="hide"]
 [connection signal="timeout" from="state_handler/shelf/Timer" to="state_handler/shelf/AnimationPlayer" method="play" binds= [ "come out" ]]
+[connection signal="pressed" from="state_handler/cover2" to="state_handler" method="_on_cover2_pressed"]

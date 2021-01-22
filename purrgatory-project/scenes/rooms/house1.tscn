@@ -4,11 +4,11 @@
 [ext_resource path="res://scripts/rooms/house1.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/house1.png" type="Texture" id=3]
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/sprites/kyungsoon_numa_house.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprite_masks/kyungsoon_numa_house.png" type="BitMap" id=6]
-[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=7]
-[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/sprites/kyungsoon_numa_house.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite_masks/kyungsoon_numa_house.png" type="BitMap" id=7]
+[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=8]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=9]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -44,6 +44,12 @@ dialog_label = "house_carpet1"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
 polygon = PoolVector2Array( 665.382, 414.034, 693.387, 448.069, 603.486, 441.979, 630.558, 422.547, 646.17, 415.572, 656.467, 416.568 )
 
+[node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
+room_label = "house2"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( 249.499, 611.257, 246.36, 613.622, 246.089, 633.373, 206.304, 584.906, 206.918, 349.92, 249.366, 311.101 )
+
 [node name="ks_and_numa" type="TextureButton" parent="state_handler"]
 margin_left = 304.25
 margin_top = 354.4
@@ -51,17 +57,11 @@ margin_right = 856.25
 margin_bottom = 674.4
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 5 )
-texture_click_mask = ExtResource( 6 )
-script = ExtResource( 7 )
+texture_normal = ExtResource( 6 )
+texture_click_mask = ExtResource( 7 )
+script = ExtResource( 8 )
 dialog_label = "ks_and_numa_house"
 
-[node name="exit" parent="state_handler" instance=ExtResource( 8 )]
+[node name="exit" parent="state_handler" instance=ExtResource( 9 )]
 room_label = "hallway15"
-
-[node name="exit2" parent="state_handler" instance=ExtResource( 9 )]
-room_label = "house2"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
-polygon = PoolVector2Array( 249.499, 611.257, 246.36, 613.622, 246.089, 633.373, 206.304, 584.906, 206.918, 349.92, 249.366, 311.101 )
 [connection signal="pressed" from="state_handler/ks_and_numa" to="state_handler/ks_and_numa" method="_on_char_obj_button_pressed"]

@@ -35,6 +35,7 @@ blackout_label = "oliver_blackout"
 room_label = "commons2"
 
 [node name="exit2" parent="state_handler" instance=ExtResource( 6 )]
+position = Vector2( -465.041, -291.018 )
 room_label = "library3"
 
 [node name="exit3" parent="state_handler" instance=ExtResource( 7 )]

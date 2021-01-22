@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/heaven3.png" type="Texture" id=3]
-[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=4]
 [ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=6]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -24,8 +25,19 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="exit2" parent="state_handler" instance=ExtResource( 4 )]
+[node name="exit2" type="Area2D" parent="state_handler"]
+position = Vector2( -465.02, -291.018 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
 room_label = "heaven2"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( 465.026, 1011.01, 1745.01, 1011.01, 1745.02, 923.026, 465.007, 923.014 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( 465.026, 1011.01, 1745.01, 1011.01, 1745.02, 923.026, 465.007, 923.014 )
 
 [node name="exit" parent="state_handler" instance=ExtResource( 5 )]
 room_label = "heaven4"
@@ -33,5 +45,23 @@ room_label = "heaven4"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
 position = Vector2( 34.9905, 277.591 )
 polygon = PoolVector2Array( 131.223, 486.537, 130.835, 378.985, 137.877, 368.862, 148.88, 360.5, 162.084, 357.859, 175.288, 360.94, 184.971, 368.862, 192.013, 376.785, 192.084, 486.537 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/exit"]
+position = Vector2( 34.9905, 277.591 )
+polygon = PoolVector2Array( 131.223, 486.537, 130.835, 378.985, 137.877, 368.862, 148.88, 360.5, 162.084, 357.859, 175.288, 360.94, 184.971, 368.862, 192.013, 376.785, 192.084, 486.537 )
+
+[node name="object" type="Area2D" parent="state_handler"]
+script = ExtResource( 6 )
+dialog_label = "heaven_building"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+polygon = PoolVector2Array( -0.653809, 289.144, -1.51617, 598.651, 362.781, 613.797, 644.665, 617.92, 638.328, 587.156, 618.742, 586.262, 618.01, 478.093, 625.457, 467.35, 636.323, 459.414, 649.997, 456.484, 664.037, 459.78, 672.338, 466.251, 680.518, 475.774, 680.866, 586.385, 638.714, 587.027, 644.753, 618.52, 968.874, 622.661, 1282.45, 608.257, 1280.23, 271.415, 1239.81, 269.24, 1233.97, 298.398, 966.658, 288.036, 958.715, 168.933, 989.04, 138.608, 968.046, 135.109, 959.352, 114.895, 936.554, 114.115, 934.488, 132.042, 863.326, 126.898, 872.757, 98.6045, 712.615, 27.8051, 712.615, -15.3498, 588.982, -11.8508, 579.651, 31.3042, 430.358, 94.2871, 432.691, 123.446, 361.544, 122.279, 355.712, 109.45, 330.052, 108.283, 333.551, 126.945, 316.056, 124.612, 330.052, 157.27, 327.72, 292.567, 41.9639, 283.236, 36.1321, 258.742, 6.97338, 258.742 )
+
+[node name="object2" type="Area2D" parent="state_handler"]
+script = ExtResource( 6 )
+dialog_label = "heaven_birds"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
+polygon = PoolVector2Array( 1009.05, 53.2393, 1012.73, 79.0218, 1059.22, 118.449, 984.225, 142.787, 975.325, 155.916, 978.345, 172.19, 1130.68, 144.268, 1133.02, 116.276, 1050.26, 69.5789, 1038.52, 44.6452 )
 
 [editable path="state_handler/exit"]

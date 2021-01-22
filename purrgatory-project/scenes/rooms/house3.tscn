@@ -12,7 +12,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "glass_push"
-length = 1.5
+length = 1.6
 step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("house_cat/cat_house_paw:rotation_degrees")
@@ -21,10 +21,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.122423, 1.49678 ),
-"transitions": PoolRealArray( 1, 0.233259, 1 ),
+"times": PoolRealArray( 0, 0.21, 0.33, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 0.233259, 1 ),
 "update": 0,
-"values": [ 0.0, 27.0, 0.0 ]
+"values": [ 0.0, 0.0, 27.0, 0.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("house_glass:position")
@@ -33,10 +33,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.18, 0.25, 0.33, 0.493777 ),
+"times": PoolRealArray( 0, 0.31, 0.39, 0.46, 0.54, 0.71 ),
 "transitions": PoolRealArray( 1, 1, 1, 0.870551, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 631.436, 584.38 ), Vector2( 631.436, 584.38 ), Vector2( 614.336, 584.38 ), Vector2( 600.565, 597.674 ), Vector2( 583.822, 633.91 ), Vector2( 530.85, 790.64 ) ]
+"values": [ Vector2( 646.436, 584.38 ), Vector2( 646.436, 584.38 ), Vector2( 629.336, 584.38 ), Vector2( 615.565, 597.674 ), Vector2( 598.822, 633.91 ), Vector2( 545.85, 790.64 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("house_glass:rotation_degrees")
@@ -45,7 +45,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.18, 0.491734 ),
+"times": PoolRealArray( 0, 0.39, 0.7 ),
 "transitions": PoolRealArray( 1, 0.965936, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, -100.0 ]
@@ -62,7 +62,7 @@ tracks/3/keys = {
 "start_offset": 0.0,
 "stream": ExtResource( 3 )
 } ],
-"times": PoolRealArray( 0.497412 )
+"times": PoolRealArray( 0.71 )
 }
 
 [node name="room_instance" type="Control"]
@@ -76,16 +76,24 @@ script = ExtResource( 1 )
 script = ExtResource( 2 )
 default_music = "The_Warehouse"
 
+[node name="ColorRect" type="ColorRect" parent="state_handler"]
+margin_right = 1280.0
+margin_bottom = 720.0
+mouse_filter = 2
+
 [node name="glass_animation" type="AnimationPlayer" parent="state_handler"]
 anims/glass_push = SubResource( 1 )
 
 [node name="bg" type="Sprite" parent="state_handler"]
+position = Vector2( -91.7212, 303.915 )
 texture = ExtResource( 4 )
 centered = false
+offset = Vector2( 91.7212, -319.915 )
 
 [node name="house_cat" parent="state_handler" instance=ExtResource( 5 )]
-position = Vector2( -10, 0 )
+position = Vector2( 2.88776, -5.9762 )
 dialog_label = " house_cat"
+sprite_path = [ null ]
 
 [node name="cat_house" type="Sprite" parent="state_handler/house_cat"]
 position = Vector2( 723.148, 503.642 )
@@ -100,8 +108,7 @@ offset = Vector2( 7.05151, 41.8265 )
 polygon = PoolVector2Array( 658.088, 407.787, 655.244, 462.392, 658.657, 474.337, 670.033, 478.318, 664.913, 510.74, 671.739, 576.721, 663.776, 591.509, 666.051, 598.335, 689.941, 606.298, 723.5, 604.023, 790.049, 579.565, 807.113, 557.95, 789.48, 548.281, 756.49, 555.675, 714.968, 475.474, 734.876, 416.319, 700.748, 424.282, 677.996, 418.594, 660.363, 403.806 )
 
 [node name="house_glass" parent="state_handler" instance=ExtResource( 5 )]
-position = Vector2( 530.85, 790.64 )
-rotation = -1.74533
+position = Vector2( 646.436, 584.38 )
 dialog_label = "house_glass"
 
 [node name="cup" type="Sprite" parent="state_handler/house_glass"]
@@ -117,6 +124,7 @@ room_label = "house2"
 
 [node name="object" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
+position = Vector2( 0, -16 )
 dialog_label = "house_lamp"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
@@ -124,6 +132,7 @@ polygon = PoolVector2Array( 89.8021, 166.852, 90.3028, 234.194, 160.9, 239.201, 
 
 [node name="object2" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
+position = Vector2( 0, -16 )
 dialog_label = "house_stool"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
@@ -131,22 +140,16 @@ position = Vector2( -0.663422, 0 )
 polygon = PoolVector2Array( 177.243, 637.058, 189.783, 641.937, 216.984, 580.902, 234.896, 672.454, 252.145, 671.791, 269.394, 575.594, 304.555, 632.649, 312.747, 628.235, 285.016, 493.361, 293.246, 450.159, 228.266, 438.426, 176.823, 460.989, 195.801, 507.051 )
 
 [node name="object3" parent="state_handler" instance=ExtResource( 5 )]
-editor/display_folded = true
+position = Vector2( 0, -16 )
 dialog_label = "broken_glasses"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
 position = Vector2( 0, 0.949951 )
-polygon = PoolVector2Array( 367.301, 594.102, 463.252, 725.202, 376.801, 724.252, 327.401, 690.052, 280.851, 685.302, 276.101, 670.102, 304.601, 651.102, 317.901, 602.652 )
-
-[node name="object6" parent="state_handler" instance=ExtResource( 5 )]
-editor/display_folded = true
-dialog_label = "house_bin"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object6"]
-polygon = PoolVector2Array( 819.472, 683.01, 702.869, 721.592, 901.781, 723.307 )
+polygon = PoolVector2Array( 367.301, 594.102, 463.252, 725.202, 445.186, 743.733, 376.801, 724.252, 327.401, 690.052, 280.851, 685.302, 276.101, 670.102, 304.601, 651.102, 317.901, 602.652 )
 
 [node name="object7" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
+position = Vector2( 0, -16 )
 dialog_label = "toaster"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object7"]
@@ -154,6 +157,7 @@ polygon = PoolVector2Array( 472.235, 376.069, 467.948, 423.225, 501.385, 436.943
 
 [node name="object8" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
+position = Vector2( 0, -16 )
 dialog_label = "toaster"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object8"]
@@ -161,6 +165,7 @@ polygon = PoolVector2Array( 582.836, 377.784, 581.002, 412.001, 565.118, 416.086
 
 [node name="object10" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
+position = Vector2( 0, -16 )
 dialog_label = "house_sink"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object10"]
@@ -168,6 +173,7 @@ polygon = PoolVector2Array( 607.351, 413.481, 662.737, 427.328, 790.615, 417.554
 
 [node name="object12" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
+position = Vector2( 0, -16 )
 dialog_label = "house_window"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object12"]
@@ -175,6 +181,7 @@ polygon = PoolVector2Array( 1069.15, 216.182, 1072.83, 374.56, 1217.7, 391.749, 
 
 [node name="object13" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
+position = Vector2( 0, -16 )
 dialog_label = " house_cabinets"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object13"]

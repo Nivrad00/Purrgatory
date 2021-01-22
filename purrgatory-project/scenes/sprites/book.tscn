@@ -6,13 +6,13 @@
 [ext_resource path="res://assets/fonts/Krub-Medium.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/book_distort.png" type="Texture" id=5]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 21
 use_filter = true
 extra_spacing_top = -3
 font_data = ExtResource( 4 )
 
-[sub_resource type="Shader" id=4]
+[sub_resource type="Shader" id=2]
 code = "shader_type canvas_item;
 render_mode unshaded;
 
@@ -25,11 +25,11 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=5]
-shader = SubResource( 4 )
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
 shader_param/displace = ExtResource( 5 )
 
-[sub_resource type="ViewportTexture" id=6]
+[sub_resource type="ViewportTexture" id=4]
 viewport_path = NodePath("Viewport")
 
 [node name="book" type="Node2D"]
@@ -60,7 +60,7 @@ margin_top = 30.0
 margin_right = -543.0
 margin_bottom = -40.0
 rect_pivot_offset = Vector2( 235.908, 203.955 )
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = " meow meow  m eow meow meow meow m eo w    me  f fow meow meow  me ow  m ddddddd ow  meow meow meeow meow me  me  f fow meow meow  me ow  m ddw meow meow  m ow  me ow   m eow meow meow meow meow meow 
 meow meow m  me  f fow meow meow  me ow  m ddddddd ow  meow meow meeow meow meow meow meow meow meow meow   me  f fow meow meow  me ow  m ddddddd ow  meow meow meeow meow meow meow meow meow meow meow   me  f fow meow meow  me ow  m ddddddd ow  meow meoweow meow   me  f fow meow meow  me ow  m ddddddd ow  meow meow meeow meow meow meow meow meow meow meow "
@@ -75,7 +75,7 @@ margin_top = 20.0
 margin_right = -35.0
 margin_bottom = -50.0
 rect_pivot_offset = Vector2( -249.272, 200.816 )
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = " meow meow  m eow meow meow meow m eo w    me  f fow meow meow  me ow  m ddddddd ow  meow meow meeow meow me  me  f fow meow meow  me ow  m ddw meow meow  m ow  me ow   m eow meow meow meow meow meow 
 meow meow m  me  f fow meow meow  me ow  m ddddddd ow  meow meow meeow meow meow meow meow meow meow meow   me  f fow meow meow  me ow  m ddddddd ow  meow meow meeow meow meow meow meow meow meow meow   me  f fow meow meow  me ow  m ddddddd ow  meow meoweow meow   me  f fow meow meow  me ow  m ddddddd ow  meow meow meeow meow meow meow meow meow meow meow "
@@ -83,7 +83,7 @@ autowrap = true
 clip_text = true
 
 [node name="distortion" type="ColorRect" parent="Viewport"]
-material = SubResource( 5 )
+material = SubResource( 3 )
 margin_right = 980.0
 margin_bottom = 580.0
 
@@ -92,5 +92,5 @@ margin_left = -241.867
 margin_top = -151.19
 margin_right = 248.133
 margin_bottom = 138.81
-texture = SubResource( 6 )
+texture = SubResource( 4 )
 expand = true

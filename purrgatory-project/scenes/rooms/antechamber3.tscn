@@ -46,7 +46,6 @@ room_label = "antechamber4"
 polygon = PoolVector2Array( 420.916, 273.4, 420.497, 790.488, 354.074, 708.163, 354.074, 308.161 )
 
 [node name="library_sign" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 script = ExtResource( 6 )
 dialog_label = "library_sign"
 

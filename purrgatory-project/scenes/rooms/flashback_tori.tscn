@@ -153,7 +153,6 @@ scroll_active = false
 anims/Fadein = SubResource( 1 )
 
 [node name="c1" type="RichTextLabel" parent="state_handler/hc/vc"]
-editor/display_folded = true
 margin_top = 250.0
 margin_right = 800.0
 margin_bottom = 310.0
@@ -197,8 +196,8 @@ margin_right = 771.0
 margin_bottom = 50.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]friends[/u]."
-text = "friends."
+bbcode_text = "[u]friendship[/u]."
+text = "friendship."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/1"]
@@ -324,7 +323,6 @@ flat = true
 script = ExtResource( 4 )
 
 [node name="t2" type="RichTextLabel" parent="state_handler/hc/vc"]
-editor/display_folded = true
 margin_top = 330.0
 margin_right = 800.0
 margin_bottom = 390.0
@@ -361,8 +359,8 @@ margin_right = 771.0
 margin_bottom = 50.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "your remember each and every smiling face."
-text = "your remember each and every smiling face."
+bbcode_text = "your remember each and every smiling face that touched your life."
+text = "your remember each and every smiling face that touched your life."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/t2/1"]
@@ -490,6 +488,7 @@ script = ExtResource( 4 )
 anims/Fadein = SubResource( 3 )
 
 [node name="c3" type="RichTextLabel" parent="state_handler/hc/vc"]
+editor/display_folded = true
 margin_top = 410.0
 margin_right = 800.0
 margin_bottom = 470.0
@@ -680,6 +679,7 @@ anims/Fadein = SubResource( 5 )
 anims/Fadein = SubResource( 6 )
 
 [node name="next_button" type="Button" parent="state_handler"]
+editor/display_folded = true
 margin_left = 611.0
 margin_top = 571.168
 margin_right = 670.0

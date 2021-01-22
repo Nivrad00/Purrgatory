@@ -5,8 +5,8 @@
 [ext_resource path="res://assets/rooms/dropoff2.png" type="Texture" id=3]
 [ext_resource path="res://assets/rooms/dropoff2_with_rope.png" type="Texture" id=4]
 [ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=6]
-[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=7]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=6]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=7]
 [ext_resource path="res://assets/audio/hhhhhh.ogg" type="AudioStream" id=8]
 
 [node name="room_instance" type="Control"]
@@ -33,9 +33,27 @@ centered = false
 [node name="exit" parent="state_handler" instance=ExtResource( 5 )]
 room_label = " dropoff1"
 
-[node name="dropoff_transition" type="Area2D" parent="state_handler"]
-position = Vector2( -465.02, -291.018 )
+[node name="dropoff_rope1" type="Area2D" parent="state_handler"]
+visible = false
 script = ExtResource( 6 )
+dialog_label = "dropoff_rope2"
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/dropoff_rope1"]
+position = Vector2( -21.1053, 136.842 )
+polygon = PoolVector2Array( 424.001, 262.001, 401.789, 395.684, 450.21, 400.947, 457.578, 440.947, 421.789, 493.578, 519.684, 490.42, 533.368, 425.157, 514.42, 311.473, 641.789, 268.315, 633.368, 254.631 )
+
+[node name="dropoff_rope2" type="Area2D" parent="state_handler"]
+script = ExtResource( 6 )
+dialog_label = "dropoff_rope2"
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/dropoff_rope2"]
+position = Vector2( -21.1053, 136.842 )
+polygon = PoolVector2Array( 424.001, 262.001, 401.789, 395.684, 450.21, 400.947, 457.578, 440.947, 421.789, 493.578, 519.684, 490.42, 533.368, 425.157, 514.42, 311.473, 542.884, 301.829, 444.48, 303.57, 442.694, 261.343 )
+
+[node name="dropoff_transition" type="Area2D" parent="state_handler"]
+visible = false
+position = Vector2( -465.02, -291.018 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
@@ -46,8 +64,7 @@ position = Vector2( 466.02, 291.018 )
 polygon = PoolVector2Array( 424.001, 262.001, 424.68, 437.129, 812.956, 434.336, 813.163, 261.497 )
 
 [node name="dropoff_pit" type="Area2D" parent="state_handler"]
-editor/display_folded = true
-script = ExtResource( 7 )
+script = ExtResource( 6 )
 dialog_label = "dropoff_pit"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/dropoff_pit"]

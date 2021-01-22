@@ -118,10 +118,11 @@ position = Vector2( -504.054, 35.7993 )
 polygon = PoolVector2Array( 611.728, 27.1973, 611.728, 502.612, 1672.82, 499.748, 1668.52, 27.1973, 1162.6, 26.6982, 1173.43, 133.193, 1163.68, 149.754, 1137.33, 151.243, 1127.41, 134.096, 1134.49, 27.0211 )
 
 [node name="natalie_and_tori" parent="state_handler" instance=ExtResource( 13 )]
-margin_left = 256.29
+margin_left = 1022.18
 margin_top = 145.755
-margin_right = 1067.29
+margin_right = 1833.18
 margin_bottom = 713.755
+rect_scale = Vector2( -1, 1 )
 
 [node name="done_button" type="Button" parent="state_handler"]
 editor/display_folded = true

@@ -21,7 +21,10 @@ func update_state(state):
 		state['oliver_goto_park3'] = false
 		emit_signal('change_room', 'field4')
 	
-	if state.get('tori_train_complete') and not state.get('tori_park_complete') and not state.get('oliver_on_date'):
+	if state.get('natalie_completed_mural') and not state.get('natalie_working_on_nocturnal'):
+		$tori_park.hide()
+		$jacket.hide()
+	elif state.get('tori_train_complete') and not state.get('tori_park_complete') and not state.get('oliver_on_date'):
 		$tori_park.show()
 		$jacket.show()
 	else:
@@ -29,7 +32,6 @@ func update_state(state):
 		$jacket.hide()
 	
 	if state.get('start_park_game'):
-		emit_signal('change_audio', 'somewhere between draft')
 		state['start_park_game'] = false
 		state['park_game'] = true
 	

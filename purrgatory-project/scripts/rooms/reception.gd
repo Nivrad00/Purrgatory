@@ -42,4 +42,3 @@ func _process(delta):
 		else:
 			a = min(a + 0.2 * delta, 1)
 			$fadeout.set_modulate(Color(1, 1, 1, a))
-			$ambience.volume_db = 5 - 85 * a

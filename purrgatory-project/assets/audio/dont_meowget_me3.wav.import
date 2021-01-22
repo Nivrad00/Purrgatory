@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/dont_meowget_me3.wav-b54abc9a141c57b3bd3e742066d5ab3d.sample"
+
+[deps]
+
+source_file="res://assets/audio/dont_meowget_me3.wav"
+dest_files=[ "res://.import/dont_meowget_me3.wav-b54abc9a141c57b3bd3e742066d5ab3d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

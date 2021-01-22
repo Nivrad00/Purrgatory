@@ -17,10 +17,10 @@ func update_state(state):
 	
 	if state.get('antechamber_portal'):
 		$portal.show()
-		if not $ambience.playing:
-			$ambience.play()
 		$exit_dialog.show()
 		$exit.hide()
+		if not $ambience.playing:
+			$ambience.play()
 	else:
 		$portal.hide()
 		$exit_dialog.hide()

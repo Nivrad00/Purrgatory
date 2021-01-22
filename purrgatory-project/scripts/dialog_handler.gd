@@ -22,7 +22,6 @@ func _ready():
 	var true_evaluator = EvalEvaluate.new(true_tree.get_tree())
 	
 	for child in get_children():
-		print(child.name)
 		for data in child.raw_blocks:
 			var block = {}
 			

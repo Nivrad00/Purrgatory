@@ -4,6 +4,7 @@ var state = null
 
 func _ready():
 	state = get_node('../../../../..').state
+	$object.set_highlight_on_hover(true)
 	set_process(true)
 	
 func update_state(state):

@@ -152,3 +152,4 @@ dialog_label = "escalator"
 polygon = PoolVector2Array( 106.256, 582.388, 1285, 582.388, 1284.92, 119.274, 1004.22, 250.883, 842.886, 129.797, 38.4256, 523.602 )
 
 [node name="hum" parent="state_handler" instance=ExtResource( 11 )]
+autoplay = false

@@ -123,9 +123,9 @@ func _ready():
 	randomize() # seed random
 	change_audio(null) # load default audio (none)
 
-	# load meowkov chain (disabled for now, don't click on any books!)
+	# load meowkov chain
 	var f = File.new()
-	# load_meowkov_chain(f)
+	load_meowkov_chain(f)
 
 	# interrupt the default quit behavior (see _notification())
 	get_tree().set_auto_accept_quit(false)
@@ -140,7 +140,7 @@ func _ready():
 	Input.set_custom_mouse_cursor(load("res://assets/draw_cursor.png"), Input.CURSOR_HELP)
 
 func load_meowkov_chain(f):
-	f.open("res://scripts/procgen/meowkov.json", File.READ)
+	f.open("res://scripts/procgen/meowutkov.json", File.READ)
 	meowkov_json = JSON.parse(f.get_as_text())
 	f.close()
 
