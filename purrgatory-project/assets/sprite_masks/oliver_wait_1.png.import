@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/oliver_wait_1.png-a9f5198afa16d2f7d7bbd5a3c911fcb4.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/oliver_wait_1.png"
+dest_files=[ "res://.import/oliver_wait_1.png-a9f5198afa16d2f7d7bbd5a3c911fcb4.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

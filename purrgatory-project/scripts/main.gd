@@ -73,7 +73,7 @@ func _process(delta):
 			var file = fade_out
 			fade_out = null
 			$main_menu/audio.stop()
-			$main_menu/audio.volume_db = -4
+			$main_menu/audio.volume_db = -8
 			
 			$delay_timer.start()
 			yield($delay_timer, 'timeout')
@@ -88,7 +88,8 @@ func _process(delta):
 			$game.show()
 			# we have the game speak the ui, if enabled, as soon as it's shown
 			$game/content/ui.speak_ui()
-			$game/main_audio.play()
+			if $game.main_audio:
+				$game.main_audio.play()
 			
 		else:
 			a = min(a + 2 * delta, 1)

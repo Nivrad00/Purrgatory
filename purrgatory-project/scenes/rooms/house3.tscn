@@ -1,21 +1,26 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/house3.gd" type="Script" id=2]
 [ext_resource path="res://assets/audio/glass.ogg" type="AudioStream" id=3]
 [ext_resource path="res://assets/rooms/house3.png" type="Texture" id=4]
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/sprites/cat_house.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprites/cat_house_paw.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprites/cup.png" type="Texture" id=8]
-[ext_resource path="res://scenes/exit_left.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/sprites/cat_house_1.png" type="Texture" id=6]
+[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=7]
+[ext_resource path="res://assets/sprites/cat_house_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/cat_house_3.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/cat_house_paw_1.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/cat_house_paw_2.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/cat_house_paw_3.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/cup.png" type="Texture" id=13]
+[ext_resource path="res://scenes/exit_left.tscn" type="PackedScene" id=14]
 
 [sub_resource type="Animation" id=1]
 resource_name = "glass_push"
 length = 1.6
 step = 0.01
 tracks/0/type = "value"
-tracks/0/path = NodePath("house_cat/cat_house_paw:rotation_degrees")
+tracks/0/path = NodePath("house_cat/cat_house_paw:rect_rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -95,14 +100,29 @@ position = Vector2( 2.88776, -5.9762 )
 dialog_label = " house_cat"
 sprite_path = [ null ]
 
-[node name="cat_house" type="Sprite" parent="state_handler/house_cat"]
-position = Vector2( 723.148, 503.642 )
-texture = ExtResource( 6 )
+[node name="cat_house" type="TextureButton" parent="state_handler/house_cat"]
+margin_left = 645.462
+margin_top = 407.612
+margin_right = 801.462
+margin_bottom = 600.612
+mouse_filter = 2
+texture_normal = ExtResource( 6 )
+script = ExtResource( 7 )
+animation0 = ExtResource( 6 )
+animation1 = ExtResource( 8 )
+animation2 = ExtResource( 9 )
 
-[node name="cat_house_paw" type="Sprite" parent="state_handler/house_cat"]
-position = Vector2( 686.685, 520.759 )
-texture = ExtResource( 7 )
-offset = Vector2( 7.05151, 41.8265 )
+[node name="cat_house_paw" type="TextureButton" parent="state_handler/house_cat"]
+margin_left = 681.541
+margin_top = 524.172
+margin_right = 837.541
+margin_bottom = 717.172
+mouse_filter = 2
+texture_normal = ExtResource( 10 )
+script = ExtResource( 7 )
+animation0 = ExtResource( 10 )
+animation1 = ExtResource( 11 )
+animation2 = ExtResource( 12 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/house_cat"]
 polygon = PoolVector2Array( 658.088, 407.787, 655.244, 462.392, 658.657, 474.337, 670.033, 478.318, 664.913, 510.74, 671.739, 576.721, 663.776, 591.509, 666.051, 598.335, 689.941, 606.298, 723.5, 604.023, 790.049, 579.565, 807.113, 557.95, 789.48, 548.281, 756.49, 555.675, 714.968, 475.474, 734.876, 416.319, 700.748, 424.282, 677.996, 418.594, 660.363, 403.806 )
@@ -113,13 +133,13 @@ dialog_label = "house_glass"
 
 [node name="cup" type="Sprite" parent="state_handler/house_glass"]
 position = Vector2( -0.747314, 0.128662 )
-texture = ExtResource( 8 )
+texture = ExtResource( 13 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/house_glass"]
 position = Vector2( -586.875, -488.284 )
 polygon = PoolVector2Array( 565.96, 467.67, 572.217, 508.624, 584.731, 513.743, 604.07, 510.33, 604.07, 470.514, 590.419, 461.982 )
 
-[node name="exit" parent="state_handler" instance=ExtResource( 9 )]
+[node name="exit" parent="state_handler" instance=ExtResource( 14 )]
 room_label = "house2"
 
 [node name="object" parent="state_handler" instance=ExtResource( 5 )]

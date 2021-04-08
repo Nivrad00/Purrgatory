@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/tori_train_1.png-65d63a49cf310f69d0ea32460b82c932.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/tori_train_1.png"
+dest_files=[ "res://.import/tori_train_1.png-65d63a49cf310f69d0ea32460b82c932.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

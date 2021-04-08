@@ -1,6 +1,7 @@
 extends Node2D
 
 signal return_to_main()
+signal animation_tick()
 
 export var default_room = ''
 
@@ -55,12 +56,12 @@ var oliver_test_state = {
 	'oliver_questioned': true,
 	'_inv_commons_key': true,
 	'seen_study': true,
-	'_inv_chess_letter': true# ,
-	# 'tori_visited_oliver': true,
-	# 'oliver_asked_for_soda': true,
-	# 'house_cat_pushed_glass': true,
-	# 'comforted_oliver': true,
-	# 'oliver_in_study': false
+	'_inv_chess_letter': true,
+	'tori_visited_oliver': true,
+	'oliver_asked_for_soda': true,
+	'house_cat_pushed_glass': true,
+	'comforted_oliver': true,
+	'oliver_in_study': false
 }
 
 var numa_test_state = {
@@ -107,6 +108,7 @@ var action_timers = []
 var fade_out = false
 var current_audio = null
 var skip = false
+var main_audio = null
 
 # i'm nearing the end of my rope...
 # below is some state that needs to be saved, but isn't strings or numbers
@@ -118,6 +120,10 @@ var seen_blocks = []
 
 onready var room = get_node('content/room')
 onready var ui = get_node('content/ui')
+
+# this keeps track of the animation state
+var anim_time = 0
+var anim_framerate = 2
 
 func _ready():
 	randomize() # seed random
@@ -147,6 +153,9 @@ func load_meowkov_chain(f):
 func _notification(what):
 	# when the user quits...
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+		get_tree().quit()
+		# instead of doing the inane stuff below i'm just going to label the button "save and return"
+	
 		# save the changes to options
 		# (i'm doing it here as well as when they press "back" in case they quit
 		#   while on the options menu)
@@ -159,14 +168,21 @@ func _notification(what):
 		# btw there's no need to save seen_blocks here bc it's saved as soon
 		#   as it's altered
 		
-		if visible:
-			$meta_ui/options_menu.save_options()
-		else:
-			get_node('../options_menu').save_options()
+		#if visible:
+		#	$meta_ui/options_menu.save_options()
+		#else:
+		#	get_node('../options_menu').save_options()
 
-		get_tree().quit()
+		#get_tree().quit()
 
 func _process(delta):
+	# animation stuff
+	anim_time += delta
+	while anim_time > 1.0 / anim_framerate:
+		emit_signal('animation_tick')
+		anim_time -= 1.0 / anim_framerate
+	
+	# other stuff
 	if fade_out:
 		var a = $white_cover.color.a
 		if a == 1:
@@ -423,18 +439,30 @@ func change_audio(song, play = true):
 
 	current_audio = song
 
-	if song == null or song == '':
-		$main_audio.stop()
-		$main_audio.set_stream(null)
+	if song == null or song == '' or song == 'null':
+		if main_audio:
+			main_audio.fadeout()
+			main_audio = null
 	
 	else:
+		if main_audio:
+			main_audio.fadeout()
+			main_audio = null
+		
+		main_audio = load('res://scenes/FadeoutPlayer.tscn').instance()
 		var stream = load('res://assets/audio/' + song + '.ogg')
-		$main_audio.volume_db = -5
-		$main_audio.set_stream(stream)
-		$main_audio.set_bus('Music')
+		main_audio.volume_db = -8
+		main_audio.name = 'main_audio'
+		main_audio.stream = stream
+		main_audio.set_bus('Music')
+		add_child(main_audio)
 
 		if play:
-			$main_audio.play()
+			main_audio.play()
+		
+		# the reason you might not want it to play immediately is if you're loading
+		#   in from the main menu and you have to wait for the fadein to finish
+		# at that point, main_audio.play() is called from elsewhere
 
 func return_to_main():
 	$white_cover.show()
@@ -583,7 +611,8 @@ func save(file):
 
 func load_game_while_playing(file):
 	load_game(file)
-	$main_audio.play()
+	if main_audio:
+		main_audio.play()
 	$meta_ui/load_menu.hide()
 	$meta_ui/load_confirm.show()
 

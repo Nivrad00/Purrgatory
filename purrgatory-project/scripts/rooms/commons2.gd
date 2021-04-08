@@ -12,6 +12,10 @@ func play_default_music(state):
 func update_state(state):
 	.update_state(state)
 	
+	if state.get('glunk'):
+		state['glunk'] = false
+		$glunk.play()
+	
 	if state.get('waiting'):
 		$wait_elijah.show()
 		$wait_kyungsoon.show()

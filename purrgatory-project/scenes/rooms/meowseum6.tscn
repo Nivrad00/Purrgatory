@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/meowseum6.gd" type="Script" id=2]
@@ -6,9 +6,11 @@
 [ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/sprites/draw-a-paw.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprites/kyungsoon_numa_meowseum.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprite_masks/kyungsoon_numa_meowseum.png" type="BitMap" id=8]
+[ext_resource path="res://assets/sprites/kyungsoon_numa_meowseum1.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite_masks/kyungsoon_numa_meowseum1.png" type="BitMap" id=8]
 [ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=9]
+[ext_resource path="res://assets/sprites/kyungsoon_numa_meowseum2.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/kyungsoon_numa_meowseum3.png" type="Texture" id=11]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -72,14 +74,17 @@ dialog_label = "3d_cat"
 polygon = PoolVector2Array( 447.38, 524.273, 669.551, 527.067, 756.255, 484.541, 756.746, 350.715, 757.973, 118.672, 370.007, 127.266, 372.61, 349.627, 367.325, 481.927 )
 
 [node name="ks_and_numa" type="TextureButton" parent="state_handler"]
-margin_left = 120.961
-margin_top = 408.618
-margin_right = 383.961
-margin_bottom = 728.618
+margin_left = 125.872
+margin_top = 413.529
+margin_right = 388.872
+margin_bottom = 733.529
 focus_mode = 0
 enabled_focus_mode = 0
 texture_normal = ExtResource( 7 )
 texture_click_mask = ExtResource( 8 )
 script = ExtResource( 9 )
 dialog_label = "ks_and_numa_meowseum"
+animation0 = ExtResource( 7 )
+animation1 = ExtResource( 10 )
+animation2 = ExtResource( 11 )
 [connection signal="pressed" from="state_handler/ks_and_numa" to="state_handler/ks_and_numa" method="_on_char_obj_button_pressed"]

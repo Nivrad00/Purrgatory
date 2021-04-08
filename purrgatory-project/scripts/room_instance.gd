@@ -78,3 +78,4 @@ func start_action_timer(actions, callback):
 	
 func change_audio(song):
 	emit_signal('change_audio', song)
+	

@@ -4,9 +4,11 @@ const num_path = 'res://assets/sprites/numbers/'
 var number = ''
 var state = null
 
+func _ready():
+	state = get_node('../../../../..').state
+	
 func init_state(_state):
 	.init_state(_state)
-	state = _state
 	
 	$dial_tone.play()
 	

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hhhhhh2.wav-39f97d3f2817f3b91c6415640ddce5bd.sample"
+
+[deps]
+
+source_file="res://assets/audio/hhhhhh2.wav"
+dest_files=[ "res://.import/hhhhhh2.wav-39f97d3f2817f3b91c6415640ddce5bd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=true
+compress/mode=0

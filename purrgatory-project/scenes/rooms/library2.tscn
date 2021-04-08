@@ -54,7 +54,7 @@ polygon = PoolVector2Array( 636.857, 168.605, 635.596, 103.689, 640.008, 87.3024
 
 [node name="object2" parent="state_handler" instance=ExtResource( 6 )]
 editor/display_folded = true
-dialog_label = "library_books"
+dialog_label = "read_book_alt"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
 polygon = PoolVector2Array( -2.62077, 82.0377, 178.937, 84.2997, 182.034, 631.317, -0.202774, 631.83 )

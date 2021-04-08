@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/closet.gd" type="Script" id=2]
@@ -9,6 +9,10 @@
 [ext_resource path="res://assets/sprites/snowglobes/snowglobe_closet.png" type="Texture" id=7]
 [ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/sprites/tori_closet.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/sprites/tori_closet_1.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite_masks/tori_closet_1.png" type="BitMap" id=11]
+[ext_resource path="res://assets/sprites/tori_closet_2.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/tori_closet_3.png" type="Texture" id=13]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -288,9 +292,14 @@ polygon = PoolVector2Array( 226.001, 254.001, 225.001, 429.001, 335.001, 407.001
 room_label = "hallway12"
 
 [node name="tori_closet" parent="state_handler" instance=ExtResource( 9 )]
-margin_left = 491.0
-margin_top = 156.0
-margin_right = 673.0
-margin_bottom = 613.0
+margin_left = 520.632
+margin_top = 176.0
+margin_right = 702.632
+margin_bottom = 633.0
 rect_pivot_offset = Vector2( 329.125, 13.6029 )
+texture_normal = ExtResource( 10 )
+texture_click_mask = ExtResource( 11 )
 blackout_label = "tori_blackout"
+animation0 = ExtResource( 10 )
+animation1 = ExtResource( 12 )
+animation2 = ExtResource( 13 )

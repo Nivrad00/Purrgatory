@@ -1,14 +1,71 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/antechamber1.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/antechamber1.png" type="Texture" id=3]
 [ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=4]
 [ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=5]
-[ext_resource path="res://scenes/portal_sprite2.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/portal_sprite.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/audio/portal.ogg" type="AudioStream" id=8]
-[ext_resource path="res://assets/audio/portal_ambience.ogg" type="AudioStream" id=9]
+[ext_resource path="res://scenes/lucifur_standing_scene.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/portal_sprite2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/portal_sprite.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/audio/zwoop.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/audio/portal.ogg" type="AudioStream" id=10]
+[ext_resource path="res://assets/audio/portal_ambience.ogg" type="AudioStream" id=11]
+
+[sub_resource type="Animation" id=1]
+resource_name = "zwoop"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.5, 0.8 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("zwoop")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 9 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../ambience:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 12.5533, 1 ),
+"update": 0,
+"values": [ 5.0, -60.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.487676 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -56,13 +113,30 @@ __meta__ = {
 "_edit_group_": true
 }
 dialog_label = "end_leave_antechamber"
+sprite_path = [ NodePath("../lucifur") ]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit_dialog"]
 polygon = PoolVector2Array( -112.086, 729.214, 198.914, 752.214, 198.914, 271.215, -115.086, 305.215 )
 
+[node name="lucifur" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
+visible = false
+margin_left = 451.0
+margin_top = 192.0
+margin_right = 616.0
+margin_bottom = 618.0
+rect_scale = Vector2( -1, 1 )
+
+[node name="lucifur" parent="state_handler/lucifur" index="0"]
+dialog_label = "lucifur_goodbye"
+
+[node name="trident" parent="state_handler/lucifur" index="1"]
+editor/display_folded = true
+
 [node name="portal" type="Area2D" parent="state_handler"]
 editor/display_folded = true
-position = Vector2( 254.806, -198.043 )
+visible = false
+position = Vector2( 1005.95, 345.892 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
@@ -71,18 +145,25 @@ dialog_label = "end_portal"
 sprite_path = [ null ]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/portal"]
-position = Vector2( 762.792, 23.327 )
+position = Vector2( 15.9611, -520.608 )
 polygon = PoolVector2Array( -144.025, 802.17, 139.398, 818.499, 242.037, 551.405, 156.893, 292.475, -115.086, 305.215, -165.019, 449.933, -169.685, 547.906, -207.008, 546.74 )
 
 [node name="sprite" type="Node2D" parent="state_handler/portal"]
-position = Vector2( -285.641, 93.5109 )
+editor/display_folded = true
+position = Vector2( -1032.47, -450.424 )
 scale = Vector2( 1, 1.3 )
 
-[node name="portal_sprite2" parent="state_handler/portal/sprite" instance=ExtResource( 6 )]
+[node name="portal_sprite2" parent="state_handler/portal/sprite" instance=ExtResource( 7 )]
 rotation = -3.79794
 
-[node name="portal_sprite" parent="state_handler/portal/sprite" instance=ExtResource( 7 )]
+[node name="portal_sprite" parent="state_handler/portal/sprite" instance=ExtResource( 8 )]
 rotation = 1.7747
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/portal"]
+anims/zwoop = SubResource( 1 )
+
+[node name="zwoop" type="AudioStreamPlayer" parent="state_handler/portal"]
+stream = ExtResource( 9 )
 
 [node name="fadeout" type="ColorRect" parent="state_handler"]
 visible = false
@@ -95,14 +176,26 @@ wait_time = 2.5
 one_shot = true
 
 [node name="portal_audio" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 8 )
+stream = ExtResource( 10 )
 volume_db = -8.0
 bus = "SFX"
 
 [node name="ambience" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 9 )
+stream = ExtResource( 11 )
 volume_db = 5.0
 bus = "SFX"
+
+[node name="poof_cover" type="Button" parent="state_handler"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+[connection signal="animation_finished" from="state_handler/lucifur/AnimationPlayer" to="state_handler" method="animation_finished"]
+[connection signal="pressed" from="state_handler/poof_cover" to="state_handler" method="_on_poof_cover_pressed"]
+
+[editable path="state_handler/lucifur"]
 
 [editable path="state_handler/portal/sprite/portal_sprite2"]
 

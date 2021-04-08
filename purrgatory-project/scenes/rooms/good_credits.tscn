@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/ui/logo2.png" type="Texture" id=5]
 [ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=7]
-[ext_resource path="res://assets/audio/purrgatory blues demo 2.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/audio/Purrgatory_Blues.wav" type="AudioStream" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "logo"
@@ -309,11 +309,12 @@ script = ExtResource( 3 )
 default_music = "null"
 
 [node name="bg" type="ColorRect" parent="state_handler"]
-margin_right = 1280.0
+margin_left = -0.926605
+margin_right = 1279.07
 margin_bottom = 720.0
 
 [node name="1" type="Control" parent="state_handler"]
-visible = false
+editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -350,6 +351,7 @@ text = "(darvin heo)"
 align = 1
 
 [node name="2" type="Control" parent="state_handler"]
+editor/display_folded = true
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
@@ -434,17 +436,17 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Label4" type="Label" parent="state_handler/3"]
-margin_top = 104.072
+margin_top = 87.2714
 margin_right = 1279.0
-margin_bottom = 175.072
+margin_bottom = 158.271
 custom_fonts/font = SubResource( 5 )
 text = "additional art"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/3"]
-margin_top = 210.182
+margin_top = 193.381
 margin_right = 1279.0
-margin_bottom = 281.182
+margin_bottom = 264.381
 text = "tracing"
 align = 1
 
@@ -461,15 +463,15 @@ margin_left = 3.29236
 margin_top = 85.9489
 margin_right = 1279.29
 margin_bottom = 119.949
+rect_pivot_offset = Vector2( 686.538, 23.8691 )
 custom_fonts/font = SubResource( 4 )
 text = "(david wolters)"
 align = 1
 
 [node name="Label5" type="Label" parent="state_handler/3"]
-editor/display_folded = true
-margin_top = 380.084
+margin_top = 363.283
 margin_right = 1279.0
-margin_bottom = 451.084
+margin_bottom = 434.283
 text = "character design"
 align = 1
 
@@ -478,21 +480,30 @@ margin_top = 41.29
 margin_right = 1279.0
 margin_bottom = 112.29
 custom_fonts/font = SubResource( 2 )
-text = "[scott]"
+text = "scott12355 "
+align = 1
+
+[node name="Label8" type="Label" parent="state_handler/3/Label5"]
+margin_left = 3.29236
+margin_top = 87.9302
+margin_right = 1279.29
+margin_bottom = 121.93
+rect_pivot_offset = Vector2( 686.538, 23.8691 )
+custom_fonts/font = SubResource( 4 )
+text = "(scott topping)"
 align = 1
 
 [node name="Label6" type="Label" parent="state_handler/3"]
-editor/display_folded = true
-margin_top = 527.777
+margin_top = 532.946
 margin_right = 1279.0
-margin_bottom = 598.777
+margin_bottom = 603.946
 text = "backgrounds"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/3/Label6"]
-margin_top = 43.29
+margin_top = 42.29
 margin_right = 1279.0
-margin_bottom = 114.29
+margin_bottom = 113.29
 custom_fonts/font = SubResource( 2 )
 text = "rose lim"
 align = 1
@@ -517,7 +528,7 @@ margin_left = -0.0933838
 margin_top = 163.006
 margin_right = 1278.91
 margin_bottom = 234.006
-text = "written by"
+text = "mostly written by"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/4/Label2"]
@@ -574,43 +585,53 @@ align = 1
 
 [node name="Label7" type="Label" parent="state_handler/4/Label6"]
 margin_left = 525.673
-margin_top = 45.8356
+margin_top = 46.8356
 margin_right = 641.673
-margin_bottom = 153.836
+margin_bottom = 154.836
 text = "written by
 guitar"
 align = 2
 
 [node name="Label10" type="Label" parent="state_handler/4/Label6"]
 margin_left = 525.673
-margin_top = 134.895
+margin_top = 120.32
 margin_right = 641.673
-margin_bottom = 242.895
+margin_bottom = 228.32
 text = "vocals"
 align = 2
 
 [node name="Label8" type="Label" parent="state_handler/4/Label6"]
 margin_left = 662.673
-margin_top = 45.8356
+margin_top = 46.8356
 margin_right = 731.673
-margin_bottom = 153.836
+margin_bottom = 154.836
 text = "niv
 niko"
 
-[node name="Label11" type="Label" parent="state_handler/4/Label6"]
-margin_left = 662.673
-margin_top = 136.442
-margin_right = 731.673
-margin_bottom = 244.442
-text = "wiz"
-
 [node name="Label9" type="Label" parent="state_handler/4/Label6"]
-margin_left = 656.376
-margin_top = 108.008
-margin_right = 848.376
-margin_bottom = 133.008
+margin_left = 723.655
+margin_top = 89.8286
+margin_right = 915.655
+margin_bottom = 114.829
+rect_pivot_offset = Vector2( 78.3446, 14.9474 )
 custom_fonts/font = SubResource( 4 )
 text = "(jonny andino)"
+
+[node name="Label11" type="Label" parent="state_handler/4/Label6"]
+margin_left = 662.673
+margin_top = 119.867
+margin_right = 731.673
+margin_bottom = 227.867
+text = "molly"
+
+[node name="Label12" type="Label" parent="state_handler/4/Label6"]
+margin_left = 737.175
+margin_top = 125.637
+margin_right = 929.175
+margin_bottom = 150.637
+rect_pivot_offset = Vector2( 78.3446, 14.9474 )
+custom_fonts/font = SubResource( 4 )
+text = "(molly)"
 
 [node name="5" type="Control" parent="state_handler"]
 editor/display_folded = true
@@ -619,25 +640,50 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Label2" type="Label" parent="state_handler/5"]
-margin_top = 121.965
+margin_top = 124.046
 margin_right = 1279.0
-margin_bottom = 192.965
+margin_bottom = 195.046
 text = "testing"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/5/Label2"]
-margin_top = 44.29
+margin_top = 44.0
 margin_right = 1279.0
-margin_bottom = 153.29
+margin_bottom = 97.0
 custom_fonts/font = SubResource( 2 )
-text = "gnomes
-[tbd...]"
+text = "akarobin"
+align = 1
+
+[node name="Label6" type="Label" parent="state_handler/5/Label2"]
+margin_left = 3.29236
+margin_top = 91.2158
+margin_right = 1279.29
+margin_bottom = 125.216
+rect_pivot_offset = Vector2( 676.708, 14.8751 )
+custom_fonts/font = SubResource( 4 )
+text = "(robin j.)"
+align = 1
+
+[node name="Label3" type="Label" parent="state_handler/5/Label2"]
+margin_top = 114.628
+margin_right = 1279.0
+margin_bottom = 167.628
+custom_fonts/font = SubResource( 2 )
+text = "gnomes"
+align = 1
+
+[node name="Label4" type="Label" parent="state_handler/5/Label2"]
+margin_top = 170.876
+margin_right = 1279.0
+margin_bottom = 223.876
+custom_fonts/font = SubResource( 2 )
+text = "zardoru"
 align = 1
 
 [node name="Label3" type="Label" parent="state_handler/5"]
-margin_top = 360.247
+margin_top = 401.14
 margin_right = 1279.0
-margin_bottom = 431.247
+margin_bottom = 472.14
 text = "special thanks"
 align = 1
 
@@ -650,38 +696,21 @@ custom_fonts/font = SubResource( 2 )
 text = "jude m."
 align = 1
 
-[node name="Label4" type="Label" parent="state_handler/5/Label3"]
-margin_left = 1.29236
-margin_top = 98.641
-margin_right = 1280.29
-margin_bottom = 151.641
-custom_fonts/font = SubResource( 2 )
-text = "zyto"
-align = 1
-
-[node name="Label3" type="Label" parent="state_handler/5/Label3"]
-margin_left = 3.29236
-margin_top = 146.941
-margin_right = 1279.29
-margin_bottom = 180.941
-custom_fonts/font = SubResource( 4 )
-text = "(aiden beasley)"
-align = 1
-
 [node name="Label5" type="Label" parent="state_handler/5/Label3"]
 margin_left = 1.29236
-margin_top = 170.946
+margin_top = 95.946
 margin_right = 1280.29
-margin_bottom = 223.946
+margin_bottom = 148.946
 custom_fonts/font = SubResource( 2 )
 text = "uro"
 align = 1
 
-[node name="Label6" type="Label" parent="state_handler/5/Label3"]
+[node name="Label7" type="Label" parent="state_handler/5/Label3"]
 margin_left = 3.29236
-margin_top = 216.247
+margin_top = 141.247
 margin_right = 1279.29
-margin_bottom = 250.247
+margin_bottom = 175.247
+rect_pivot_offset = Vector2( 676.708, 14.8751 )
 custom_fonts/font = SubResource( 4 )
 text = "(daniel taylor)"
 align = 1
@@ -850,6 +879,8 @@ shuldyakov on turbosquid.com
 cadson demak"
 
 [node name="last" type="Control" parent="state_handler"]
+editor/display_folded = true
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 

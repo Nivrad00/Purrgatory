@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/hallway8.gd" type="Script" id=2]
@@ -7,7 +7,13 @@
 [ext_resource path="res://assets/sprites/chair.png" type="Texture" id=5]
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/sprites/elijah_idle.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/sprites/sean_idle.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/sprites/elijah_idle1.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/elijah_idle2.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/elijah_idle3.png" type="Texture" id=10]
+[ext_resource path="res://scenes/sprites/sean_idle.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/sprites/sean_idle1.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/sean_idle2.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/sean_idle3.png" type="Texture" id=14]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -106,12 +112,20 @@ margin_left = 265.817
 margin_top = 319.184
 margin_right = 423.817
 margin_bottom = 558.184
+texture_normal = ExtResource( 8 )
 expand = true
 blackout_label = "elijah_blackout"
+animation0 = ExtResource( 8 )
+animation1 = ExtResource( 9 )
+animation2 = ExtResource( 10 )
 
-[node name="sean_idle" parent="state_handler" instance=ExtResource( 8 )]
+[node name="sean_idle" parent="state_handler" instance=ExtResource( 11 )]
 margin_left = 904.317
 margin_top = 238.386
 margin_right = 1056.32
 margin_bottom = 568.386
+texture_normal = ExtResource( 12 )
 blackout_label = "sean_blackout"
+animation0 = ExtResource( 12 )
+animation1 = ExtResource( 13 )
+animation2 = ExtResource( 14 )

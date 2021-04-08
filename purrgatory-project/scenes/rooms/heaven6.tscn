@@ -1,18 +1,24 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/heaven6.png" type="Texture" id=3]
 [ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=4]
-[ext_resource path="res://assets/sprites/elijah_heaven.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprite_masks/elijah_heaven.png" type="BitMap" id=6]
+[ext_resource path="res://assets/sprites/elijah_heaven_1.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite_masks/elijah_heaven_1.png" type="BitMap" id=6]
 [ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=7]
-[ext_resource path="res://assets/sprites/sean_heaven_back.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprite_masks/sean_heaven_back.png" type="BitMap" id=9]
-[ext_resource path="res://assets/rooms/heaven6_fg.png" type="Texture" id=10]
-[ext_resource path="res://assets/sprites/sean_heaven_front.png" type="Texture" id=11]
-[ext_resource path="res://assets/sprite_masks/sean_heaven_front.png" type="BitMap" id=12]
-[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=13]
+[ext_resource path="res://assets/sprites/elijah_heaven_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/elijah_heaven_3.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/sean_heaven_back_1.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite_masks/sean_heaven_back_1.png" type="BitMap" id=11]
+[ext_resource path="res://assets/sprites/sean_heaven_back_2.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/sean_heaven_back_3.png" type="Texture" id=13]
+[ext_resource path="res://assets/rooms/heaven6_fg.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/sean_heaven_front1.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite_masks/sean_heaven_front1.png" type="BitMap" id=16]
+[ext_resource path="res://assets/sprites/sean_heaven_front2.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/sean_heaven_front3.png" type="Texture" id=18]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=19]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -64,51 +70,61 @@ polygon = PoolVector2Array( 463.738, 354.6, 459.451, 727.558, 565.914, 731.386, 
 polygon = PoolVector2Array( 463.738, 354.6, 459.451, 727.558, 565.914, 731.386, 565.914, 353.492, 538.542, 343.567, 493.849, 344.265 )
 
 [node name="elijah_heaven" type="TextureButton" parent="state_handler"]
-margin_left = 349.08
-margin_top = 230.881
-margin_right = 625.081
-margin_bottom = 539.881
+margin_left = 369.838
+margin_top = 239.004
+margin_right = 645.839
+margin_bottom = 548.004
 focus_mode = 0
 enabled_focus_mode = 0
 texture_normal = ExtResource( 5 )
 texture_click_mask = ExtResource( 6 )
 script = ExtResource( 7 )
 dialog_label = "elijah_heaven"
+animation0 = ExtResource( 5 )
+animation1 = ExtResource( 8 )
+animation2 = ExtResource( 9 )
 
 [node name="sean_heaven2" type="TextureButton" parent="state_handler"]
-margin_left = 649.001
-margin_top = 400.572
-margin_right = 801.001
-margin_bottom = 535.573
-rect_pivot_offset = Vector2( -22.116, 47.9987 )
+margin_left = 657.74
+margin_top = 408.516
+margin_right = 809.74
+margin_bottom = 543.517
+rect_pivot_offset = Vector2( 20.4054, -4.16647 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 8 )
-texture_click_mask = ExtResource( 9 )
+texture_normal = ExtResource( 10 )
+texture_click_mask = ExtResource( 11 )
 script = ExtResource( 7 )
 dialog_label = "sean_heaven"
 sprite_path = [ NodePath("."), NodePath("../sean_heaven") ]
+animation0 = ExtResource( 10 )
+animation1 = ExtResource( 12 )
+animation2 = ExtResource( 13 )
 
 [node name="heaven6_fg" type="Sprite" parent="state_handler"]
 position = Vector2( 374.53, 438.552 )
-texture = ExtResource( 10 )
+texture = ExtResource( 14 )
 offset = Vector2( 200.725, 73.2797 )
 
 [node name="sean_heaven" type="TextureButton" parent="state_handler"]
-margin_left = 630.052
-margin_top = 323.701
-margin_right = 782.052
-margin_bottom = 458.701
+margin_left = 636.832
+margin_top = 325.754
+margin_right = 788.832
+margin_bottom = 460.754
+rect_pivot_offset = Vector2( 76.7095, 42.0699 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 11 )
-texture_click_mask = ExtResource( 12 )
+texture_normal = ExtResource( 15 )
+texture_click_mask = ExtResource( 16 )
 script = ExtResource( 7 )
 dialog_label = "sean_heaven"
 sprite_path = [ NodePath("../sean_heaven2"), NodePath(".") ]
+animation0 = ExtResource( 15 )
+animation1 = ExtResource( 17 )
+animation2 = ExtResource( 18 )
 
 [node name="object" type="Area2D" parent="state_handler"]
-script = ExtResource( 13 )
+script = ExtResource( 19 )
 dialog_label = "heaven_city"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
@@ -127,7 +143,7 @@ position = Vector2( 1.32684, 0 )
 polygon = PoolVector2Array( 598.732, 277.402, 600.059, 354.359, 654.46, 351.042, 693.602, 276.739 )
 
 [node name="object2" type="Area2D" parent="state_handler"]
-script = ExtResource( 13 )
+script = ExtResource( 19 )
 dialog_label = "heaven_bridge"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
@@ -143,7 +159,7 @@ polygon = PoolVector2Array( 1117.2, 53.4726, 1169.24, 76.0214, 1204.39, 126.607,
 polygon = PoolVector2Array( -6.79936, 59.2793, 23.8942, 44.5464, 75.4593, 48.2297, 104.925, 59.2793, 104.925, 234.846, 130.708, 123.122, 160.174, 91.2006, 178.59, 143.994, 161.401, 158.726, 163.857, 193.103, 192.095, 200.47, 210.511, 369.898, 257.165, 372.353, 268.215, 227.48, 278.037, 204.153, 289.086, 204.153, 296.453, 171.004, 273.126, 157.499, 286.631, 129.261, 300.136, 164.865, 298.908, 188.192, 307.503, 198.014, 322.235, 349.026, 297.681, 358.848, 297.681, 371.126, 367.662, 376.037, 368.89, 351.482, 352.929, 350.254, 353.532, 242.781, 361.523, 202.925, 382.395, 204.153, 388.533, 173.459, 368.89, 159.954, 381.167, 126.805, 435.188, 93.6561, 501.486, 96.1116, 519.005, 123.605, 526.722, 157.043, 511.308, 158.726, 511.308, 189.42, 540.773, 199.242, 553.051, 255.718, 552.232, 381.401, 595.445, 372.536, 599.705, 253.263, 614.438, 215.203, 627.943, 212.747, 633.894, 157.9, 620.577, 153.815, 648.815, 118.211, 693.013, 98.5671, 756.856, 109.617, 802.282, 167.321, 786.507, 182.764, 792.509, 201.626, 808.421, 207.836, 809.649, 351.482, 788.777, 355.165, 793.688, 367.443, 866.125, 373.581, 851.392, 356.393, 852.62, 264.312, 872.264, 245.896, 873.491, 202.925, 880.858, 378.492, 937.334, 372.353, 943.473, 282.728, 965.572, 206.608, 982.76, 200.47, 988.899, 163.637, 972.938, 159.954, 1002.4, 91.2006, 1050.29, 130.488, 1055.2, 163.637, 1039.24, 188.192, 1044.15, 206.608, 1060.11, 217.658, 1068.7, 286.412, 1062.56, 361.304, 1041.63, 363.806, 1045.38, 376.037, 1115.36, 377.264, 1112.9, 368.67, 1097.72, 363.176, 1115.6, 206.189, 1117.08, 54.8804, 1112.9, -0.880013, -46.0871, -8.24646 )
 
 [node name="object3" type="Area2D" parent="state_handler"]
-script = ExtResource( 13 )
+script = ExtResource( 19 )
 dialog_label = "heaven_cloud"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]

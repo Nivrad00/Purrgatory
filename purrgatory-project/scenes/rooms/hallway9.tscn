@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/hallway9.gd" type="Script" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/sprites/elijah_asleep.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/sprites/elijah_asleep_1.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite_masks/elijah_asleep_1.png" type="BitMap" id=9]
+[ext_resource path="res://assets/sprites/elijah_asleep_2.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/elijah_asleep_3.png" type="Texture" id=11]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -83,9 +87,15 @@ polygon = PoolVector2Array( 841.149, 648.941, 889.782, 631.109, 849.795, 607.874
 polygon = PoolVector2Array( 909.775, 611.116, 890.322, 639.215, 942.197, 639.755, 950.302, 611.656 )
 
 [node name="elijah_asleep" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 438.026
-margin_top = 383.704
-margin_right = 764.026
-margin_bottom = 639.704
+margin_left = 447.546
+margin_top = 397.984
+margin_right = 773.546
+margin_bottom = 653.984
+rect_pivot_offset = Vector2( 135.098, 37.8977 )
+texture_normal = ExtResource( 8 )
+texture_click_mask = ExtResource( 9 )
 blackout_label = "elijah_blackout_nap"
 sprite_path = [ null ]
+animation0 = ExtResource( 8 )
+animation1 = ExtResource( 10 )
+animation2 = ExtResource( 11 )

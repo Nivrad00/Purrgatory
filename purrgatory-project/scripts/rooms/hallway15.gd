@@ -17,3 +17,10 @@ func update_state(state):
 	if state.get('ding_dong'):
 		state['ding_dong'] = false
 		$ding_dong.play()
+
+func play_default_music(state):
+	if state.get('traveling_with_natalie'):
+		state['traveling_with_natalie'] = false
+		emit_signal('change_audio', 'The_Warehouse')
+	elif default_music != '_pass':
+		emit_signal('change_audio', default_music)

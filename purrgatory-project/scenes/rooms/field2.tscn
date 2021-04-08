@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/field2.gd" type="Script" id=2]
@@ -9,15 +9,19 @@
 [ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/exit_left-overlap.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/sprites/tori_park.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scripts/digging_container.gd" type="Script" id=10]
-[ext_resource path="res://scripts/digging_button.gd" type="Script" id=11]
-[ext_resource path="res://assets/sprites/hoels/field2_1.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprites/hoels/shovel2.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprites/hoels/field2_2.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprites/hoels/shovel1.png" type="Texture" id=15]
-[ext_resource path="res://scenes/hole_score.tscn" type="PackedScene" id=16]
-[ext_resource path="res://scenes/digging_sound.tscn" type="PackedScene" id=17]
-[ext_resource path="res://scenes/surprise.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/sprites/tori_park_1.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite_masks/tori_park_1.png" type="BitMap" id=11]
+[ext_resource path="res://assets/sprites/tori_park_2.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/tori_park_3.png" type="Texture" id=13]
+[ext_resource path="res://scripts/digging_container.gd" type="Script" id=14]
+[ext_resource path="res://scripts/digging_button.gd" type="Script" id=15]
+[ext_resource path="res://assets/sprites/hoels/field2_1.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/hoels/shovel2.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/hoels/field2_2.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/hoels/shovel1.png" type="Texture" id=19]
+[ext_resource path="res://scenes/hole_score.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scenes/digging_sound.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scenes/surprise.tscn" type="PackedScene" id=22]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -175,24 +179,30 @@ dialog_label = "field_flowers"
 polygon = PoolVector2Array( 850.004, 458.683, 876.391, 475.254, 885.878, 471.038, 881.969, 436.861, 856.627, 437.044 )
 
 [node name="tori_park" parent="state_handler" instance=ExtResource( 9 )]
-margin_left = 380.0
-margin_top = 259.0
-margin_right = 492.0
-margin_bottom = 423.0
+margin_left = 381.292
+margin_top = 265.462
+margin_right = 493.292
+margin_bottom = 429.462
+rect_pivot_offset = Vector2( 36.4017, 44.0031 )
+texture_normal = ExtResource( 10 )
+texture_click_mask = ExtResource( 11 )
 dialog_label = "tori_park_intro"
+animation0 = ExtResource( 10 )
+animation1 = ExtResource( 12 )
+animation2 = ExtResource( 13 )
 
 [node name="digging" type="Node2D" parent="state_handler"]
-script = ExtResource( 10 )
+script = ExtResource( 14 )
 
 [node name="digging_button" type="Area2D" parent="state_handler/digging"]
 editor/display_folded = true
 position = Vector2( 1170.35, 568.785 )
-script = ExtResource( 11 )
+script = ExtResource( 15 )
 dialog_label = "tori_park_coin"
 
 [node name="hole" type="Sprite" parent="state_handler/digging/digging_button"]
 position = Vector2( -3.97534, -18.4992 )
-texture = ExtResource( 12 )
+texture = ExtResource( 16 )
 
 [node name="polygon" type="CollisionPolygon2D" parent="state_handler/digging/digging_button"]
 position = Vector2( -1089.42, -482.369 )
@@ -208,17 +218,17 @@ polygon = PoolVector2Array( 1171.5, 526.587, 1188.6, 483.865, 1147.09, 455.297, 
 
 [node name="shovel2" type="Sprite" parent="state_handler/digging/digging_button"]
 position = Vector2( -4.85339, -100.089 )
-texture = ExtResource( 13 )
+texture = ExtResource( 17 )
 
 [node name="digging_button2" type="Area2D" parent="state_handler/digging"]
 editor/display_folded = true
 position = Vector2( 448.263, 574.99 )
-script = ExtResource( 11 )
+script = ExtResource( 15 )
 dialog_label = "tori_park_clock"
 
 [node name="hole" type="Sprite" parent="state_handler/digging/digging_button2"]
 position = Vector2( -69.031, -2.84601 )
-texture = ExtResource( 14 )
+texture = ExtResource( 18 )
 
 [node name="polygon" type="CollisionPolygon2D" parent="state_handler/digging/digging_button2"]
 position = Vector2( -1089.42, -495.369 )
@@ -234,10 +244,10 @@ polygon = PoolVector2Array( 1234.82, 514.54, 1213.21, 476.187, 1140.26, 448.629,
 
 [node name="shovel1" type="Sprite" parent="state_handler/digging/digging_button2"]
 position = Vector2( -19.2623, -139.989 )
-texture = ExtResource( 15 )
+texture = ExtResource( 19 )
 
-[node name="score" parent="state_handler/digging" instance=ExtResource( 16 )]
+[node name="score" parent="state_handler/digging" instance=ExtResource( 20 )]
 
-[node name="sound" parent="state_handler/digging" instance=ExtResource( 17 )]
+[node name="sound" parent="state_handler/digging" instance=ExtResource( 21 )]
 
-[node name="surprise" parent="state_handler" instance=ExtResource( 18 )]
+[node name="surprise" parent="state_handler" instance=ExtResource( 22 )]

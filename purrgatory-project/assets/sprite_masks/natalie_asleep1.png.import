@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/natalie_asleep1.png-311852cf9e62f76864acdcb611f40457.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/natalie_asleep1.png"
+dest_files=[ "res://.import/natalie_asleep1.png-311852cf9e62f76864acdcb611f40457.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

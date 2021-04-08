@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/exit.gd" type="Script" id=2]
@@ -6,8 +6,16 @@
 [ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=4]
 [ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=5]
 [ext_resource path="res://scenes/sprites/tori_exit.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/sprites/tori_exit2.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/audio/door_kicking.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/sprites/tori_end1_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite_masks/tori_end1_1.png" type="BitMap" id=8]
+[ext_resource path="res://assets/sprites/tori_end1_2.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/tori_end1_3.png" type="Texture" id=10]
+[ext_resource path="res://scenes/sprites/tori_exit2.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/sprites/tori_end2_1.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite_masks/tori_end2_1.png" type="BitMap" id=13]
+[ext_resource path="res://assets/sprites/tori_end2_2.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/tori_end2_3.png" type="Texture" id=15]
+[ext_resource path="res://assets/audio/door_kicking.wav" type="AudioStream" id=16]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -57,20 +65,30 @@ dialog_label = "exit_painting"
 polygon = PoolVector2Array( 674.711, 316.982, 673.578, 386.938, 779.223, 398.204, 779.423, 313.051 )
 
 [node name="tori_exit1" parent="state_handler" instance=ExtResource( 6 )]
-margin_left = 756.366
+margin_left = 792.165
 margin_top = 228.249
-margin_right = 1056.37
+margin_right = 1092.17
 margin_bottom = 709.249
+texture_normal = ExtResource( 7 )
+texture_click_mask = ExtResource( 8 )
 dialog_label = "tori_end"
+animation0 = ExtResource( 7 )
+animation1 = ExtResource( 9 )
+animation2 = ExtResource( 10 )
 
-[node name="tori_exit2" parent="state_handler" instance=ExtResource( 7 )]
-margin_left = 327.822
-margin_top = 340.649
-margin_right = 502.822
-margin_bottom = 578.649
+[node name="tori_exit2" parent="state_handler" instance=ExtResource( 11 )]
+margin_left = 349.302
+margin_top = 349.241
+margin_right = 524.302
+margin_bottom = 587.241
+texture_normal = ExtResource( 12 )
+texture_click_mask = ExtResource( 13 )
 sprite_path = [ null ]
+animation0 = ExtResource( 12 )
+animation1 = ExtResource( 14 )
+animation2 = ExtResource( 15 )
 
 [node name="thud" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 8 )
+stream = ExtResource( 16 )
 volume_db = -5.0
 bus = "SFX"

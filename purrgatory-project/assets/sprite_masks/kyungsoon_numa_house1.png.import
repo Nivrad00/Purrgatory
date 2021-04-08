@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/kyungsoon_numa_house1.png-6dfb3cc6f8d0289a44457e8b8c80ea48.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/kyungsoon_numa_house1.png"
+dest_files=[ "res://.import/kyungsoon_numa_house1.png-6dfb3cc6f8d0289a44457e8b8c80ea48.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

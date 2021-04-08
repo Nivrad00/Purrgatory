@@ -1,16 +1,20 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/heaven2.png" type="Texture" id=3]
 [ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=4]
-[ext_resource path="res://assets/sprites/kyungsoon_heaven.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprite_masks/kyungsoon_heaven.png" type="BitMap" id=6]
+[ext_resource path="res://assets/sprites/kyungsoon_heaven_1.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprite_masks/kyungsoon_heaven_1.png" type="BitMap" id=6]
 [ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=7]
-[ext_resource path="res://assets/sprites/numa_heaven.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprite_masks/numa_heaven.png" type="BitMap" id=9]
-[ext_resource path="res://assets/rooms/heaven2_fg.png" type="Texture" id=10]
-[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=11]
+[ext_resource path="res://assets/sprites/kyungsoon_heaven_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/kyungsoon_heaven_3.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/numa_heaven_1.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite_masks/numa_heaven_1.png" type="BitMap" id=11]
+[ext_resource path="res://assets/sprites/numa_heaven_2.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/numa_heaven_3.png" type="Texture" id=13]
+[ext_resource path="res://assets/rooms/heaven2_fg.png" type="Texture" id=14]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=15]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -80,36 +84,42 @@ polygon = PoolVector2Array( 1092.08, 789.531, 613.874, 789.531, 611.541, 357.981
 polygon = PoolVector2Array( 1490.97, 467.618, 1485.14, 426.796, 1542.29, 405.802, 1548.12, 359.148, 1584.28, 356.815, 1613.44, 402.303, 1656.59, 392.972, 1670.59, 341.652, 1682.25, 383.641, 1704.41, 387.14, 1733.57, 415.132, 1749.9, 380.142, 1794.22, 388.306, 1831.54, 321.825, 1910.85, 362.647, 1902.69, 787.198, 1492.13, 788.364, 1494.47, 752.207, 1551.62, 706.72, 1683.42, 691.557, 1721.91, 732.38, 1782.56, 709.052, 1773.23, 674.062, 1720.74, 621.576, 1590.11, 552.762, 1543.45, 549.263, 1537.62, 486.28 )
 
 [node name="kyungsoon_heaven" type="TextureButton" parent="state_handler"]
-margin_left = 279.742
-margin_top = 309.824
-margin_right = 542.742
-margin_bottom = 629.824
+margin_left = 295.25
+margin_top = 326.625
+margin_right = 558.25
+margin_bottom = 646.625
 focus_mode = 0
 enabled_focus_mode = 0
 texture_normal = ExtResource( 5 )
 texture_click_mask = ExtResource( 6 )
 script = ExtResource( 7 )
 dialog_label = "kyungsoon_heaven"
+animation0 = ExtResource( 5 )
+animation1 = ExtResource( 8 )
+animation2 = ExtResource( 9 )
 
 [node name="numa_heaven" type="TextureButton" parent="state_handler"]
-margin_left = 956.378
-margin_top = 318.702
-margin_right = 1223.37
-margin_bottom = 530.702
+margin_left = 958.963
+margin_top = 343.257
+margin_right = 1225.95
+margin_bottom = 555.257
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 8 )
-texture_click_mask = ExtResource( 9 )
+texture_normal = ExtResource( 10 )
+texture_click_mask = ExtResource( 11 )
 script = ExtResource( 7 )
 dialog_label = "numa_heaven"
+animation0 = ExtResource( 10 )
+animation1 = ExtResource( 12 )
+animation2 = ExtResource( 13 )
 
 [node name="heaven2_fg" type="Sprite" parent="state_handler"]
 position = Vector2( 341.294, 604.935 )
-texture = ExtResource( 10 )
+texture = ExtResource( 14 )
 
 [node name="exit" type="Area2D" parent="state_handler"]
 position = Vector2( -850.278, -166.737 )
-script = ExtResource( 11 )
+script = ExtResource( 15 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_horizontal_guides_": [  ]
@@ -126,7 +136,7 @@ polygon = PoolVector2Array( 1464.92, 540.487, 1631.64, 534.302, 1630.51, 275.789
 
 [node name="exit2" type="Area2D" parent="state_handler"]
 position = Vector2( -465.02, -291.018 )
-script = ExtResource( 11 )
+script = ExtResource( 15 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }

@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/cat1.png-4249d5335119facc4ae0c496b3b2db1a.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/cat1.png"
+dest_files=[ "res://.import/cat1.png-4249d5335119facc4ae0c496b3b2db1a.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

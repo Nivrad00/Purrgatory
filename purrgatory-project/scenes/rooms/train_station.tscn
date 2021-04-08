@@ -1,23 +1,33 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/train_station.gd" type="Script" id=2]
-[ext_resource path="res://assets/rooms/trainstation.png" type="Texture" id=3]
+[ext_resource path="res://assets/rooms/train_station.png" type="Texture" id=3]
 [ext_resource path="res://assets/rooms/train_station2.png" type="Texture" id=4]
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/sprites/tori_idle.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/sprites/kyungsoon_numa_train.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprite_masks/kyungsoon_numa_train.png" type="BitMap" id=8]
-[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=9]
-[ext_resource path="res://assets/sprites/kyungsoon_numa_train2.png" type="Texture" id=10]
-[ext_resource path="res://assets/sprite_masks/kyungsoon_numa_train2.png" type="BitMap" id=11]
-[ext_resource path="res://assets/sprites/kyungsoon_numa_train3.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprite_masks/kyungsoon_numa_train3.png" type="BitMap" id=13]
-[ext_resource path="res://assets/sprites/junk_food.png" type="Texture" id=14]
-[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=15]
-[ext_resource path="res://assets/audio/smash1.wav" type="AudioStream" id=16]
-[ext_resource path="res://assets/audio/smash2.wav" type="AudioStream" id=17]
-[ext_resource path="res://assets/audio/smash3.wav" type="AudioStream" id=18]
+[ext_resource path="res://assets/sprites/tori_train_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite_masks/tori_train_1.png" type="BitMap" id=8]
+[ext_resource path="res://assets/sprites/tori_train_2.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/tori_train_3.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/kyungsoon_numa_train1_1.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite_masks/kyungsoon_numa_train1_1.png" type="BitMap" id=12]
+[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=13]
+[ext_resource path="res://assets/sprites/kyungsoon_numa_train1_2.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/kyungsoon_numa_train1_3.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/kyungsoon_numa_train2_1.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite_masks/kyungsoon_numa_train2_1.png" type="BitMap" id=17]
+[ext_resource path="res://assets/sprites/kyungsoon_numa_train2_2.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/kyungsoon_numa_train2_3.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/kyungsoon_numa_train3_1.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprite_masks/kyungsoon_numa_train3_1.png" type="BitMap" id=21]
+[ext_resource path="res://assets/sprites/kyungsoon_numa_train3_2.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/kyungsoon_numa_train3_3.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/junk_food.png" type="Texture" id=24]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=25]
+[ext_resource path="res://assets/audio/smash1.wav" type="AudioStream" id=26]
+[ext_resource path="res://assets/audio/smash2.wav" type="AudioStream" id=27]
+[ext_resource path="res://assets/audio/smash3.wav" type="AudioStream" id=28]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fadein"
@@ -200,62 +210,75 @@ polygon = PoolVector2Array( 140.119, 39.451, 142.84, 586.323, 228.543, 582.242, 
 polygon = PoolVector2Array( 988.995, 51.6944, 985.498, 466.618, 1099.19, 472.051, 1104.63, 38.0906, 1017.56, 35.3698 )
 
 [node name="tori_idle" parent="state_handler" instance=ExtResource( 6 )]
-margin_left = 577.0
-margin_top = 184.0
-margin_right = 719.0
-margin_bottom = 605.0
+margin_left = 589.83
+margin_top = 194.497
+margin_right = 731.83
+margin_bottom = 615.497
 rect_pivot_offset = Vector2( -356.253, -65.4905 )
+texture_normal = ExtResource( 7 )
+texture_click_mask = ExtResource( 8 )
+animation0 = ExtResource( 7 )
+animation1 = ExtResource( 9 )
+animation2 = ExtResource( 10 )
 
 [node name="ks_and_numa" type="TextureButton" parent="state_handler"]
-visible = false
-margin_left = 13.5056
-margin_top = 396.56
-margin_right = 494.506
-margin_bottom = 716.56
+margin_left = 4.48058
+margin_top = 378.631
+margin_right = 494.481
+margin_bottom = 698.631
 rect_pivot_offset = Vector2( 276.144, 136.139 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 7 )
-texture_click_mask = ExtResource( 8 )
-script = ExtResource( 9 )
+texture_normal = ExtResource( 11 )
+texture_click_mask = ExtResource( 12 )
+script = ExtResource( 13 )
 dialog_label = "ks_and_numa_train"
+animation0 = ExtResource( 11 )
+animation1 = ExtResource( 14 )
+animation2 = ExtResource( 15 )
 
 [node name="ks_and_numa2" type="TextureButton" parent="state_handler"]
 visible = false
-margin_left = 10.9209
-margin_top = 235.016
-margin_right = 552.921
-margin_bottom = 698.016
+margin_left = 3.60059
+margin_top = 246.541
+margin_right = 552.601
+margin_bottom = 709.541
 rect_pivot_offset = Vector2( 373.825, 189.558 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 10 )
-texture_click_mask = ExtResource( 11 )
-script = ExtResource( 9 )
+texture_normal = ExtResource( 16 )
+texture_click_mask = ExtResource( 17 )
+script = ExtResource( 13 )
 dialog_label = "ks_and_numa_train"
+animation0 = ExtResource( 16 )
+animation1 = ExtResource( 18 )
+animation2 = ExtResource( 19 )
 
 [node name="ks_and_numa3" type="TextureButton" parent="state_handler"]
-margin_left = 7.5056
-margin_top = 378.56
-margin_right = 497.506
-margin_bottom = 698.56
+visible = false
+margin_left = 3.72308
+margin_top = 376.399
+margin_right = 493.724
+margin_bottom = 696.399
 rect_pivot_offset = Vector2( 213.242, -260.05 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 12 )
-texture_click_mask = ExtResource( 13 )
-script = ExtResource( 9 )
+texture_normal = ExtResource( 20 )
+texture_click_mask = ExtResource( 21 )
+script = ExtResource( 13 )
 dialog_label = "ks_and_numa_train"
+animation0 = ExtResource( 20 )
+animation1 = ExtResource( 22 )
+animation2 = ExtResource( 23 )
 
 [node name="junk_food" parent="state_handler" instance=ExtResource( 5 )]
-editor/display_folded = true
 position = Vector2( 0, -28 )
 dialog_label = "junk_food"
 sprite_path = [ null ]
 
 [node name="junk_food" type="Sprite" parent="state_handler/junk_food"]
 position = Vector2( 202.909, 587.537 )
-texture = ExtResource( 14 )
+texture = ExtResource( 24 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/junk_food"]
 polygon = PoolVector2Array( 131.326, 520.578, 110.64, 513.536, 60.9056, 536.863, 63.9865, 564.591, 88.6336, 591.879, 100.517, 587.037, 126.925, 557.989 )
@@ -264,7 +287,7 @@ polygon = PoolVector2Array( 131.326, 520.578, 110.64, 513.536, 60.9056, 536.863,
 position = Vector2( 136.439, 54.1356 )
 polygon = PoolVector2Array( 121.643, 511.776, 107.999, 519.698, 60.9056, 536.863, 65.3068, 575.154, 91.4003, 605.518, 199.173, 605.518, 219.791, 576.034, 182.381, 513.976 )
 
-[node name="exit" parent="state_handler" instance=ExtResource( 15 )]
+[node name="exit" parent="state_handler" instance=ExtResource( 25 )]
 room_label = "warehouse2"
 
 [node name="white" type="ColorRect" parent="state_handler"]
@@ -290,17 +313,17 @@ flat = true
 editor/display_folded = true
 
 [node name="a" type="AudioStreamPlayer" parent="state_handler/smash"]
-stream = ExtResource( 16 )
+stream = ExtResource( 26 )
 volume_db = -5.0
 bus = "SFX"
 
 [node name="b" type="AudioStreamPlayer" parent="state_handler/smash"]
-stream = ExtResource( 17 )
+stream = ExtResource( 27 )
 volume_db = -5.0
 bus = "SFX"
 
 [node name="c" type="AudioStreamPlayer" parent="state_handler/smash"]
-stream = ExtResource( 18 )
+stream = ExtResource( 28 )
 volume_db = -5.0
 bus = "SFX"
 [connection signal="pressed" from="state_handler/ks_and_numa" to="state_handler/ks_and_numa" method="_on_char_obj_button_pressed"]

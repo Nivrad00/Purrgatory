@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/natalie_nocturnal1.png-539bc039bfec7e19e0482dfdb9f6d764.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/natalie_nocturnal1.png"
+dest_files=[ "res://.import/natalie_nocturnal1.png-539bc039bfec7e19e0482dfdb9f6d764.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

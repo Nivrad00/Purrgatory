@@ -1,25 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/sprites/natalie_and_tori.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprite_masks/natalie_and_tori.png" type="BitMap" id=2]
 [ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=3]
-
-[sub_resource type="Animation" id=1]
-resource_name = "oliver_idle"
-length = 1.5
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:texture_normal")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"update": 1,
-"values": [  ]
-}
 
 [node name="natalie_and_tori" type="TextureButton"]
 focus_mode = 0
@@ -28,8 +11,4 @@ texture_normal = ExtResource( 1 )
 texture_click_mask = ExtResource( 2 )
 script = ExtResource( 3 )
 dialog_label = "natalie_and_tori"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "oliver_idle"
-anims/oliver_idle = SubResource( 1 )
 [connection signal="pressed" from="." to="." method="_on_char_obj_button_pressed"]

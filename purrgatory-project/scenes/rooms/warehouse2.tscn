@@ -51,7 +51,6 @@ position = Vector2( 27.7137, -22.464 )
 polygon = PoolVector2Array( -175.167, 550.301, -175.302, 573.85, -162.361, 574.949, -162.471, 545.454, -166.658, 543.787 )
 
 [node name="exit3" parent="state_handler" instance=ExtResource( 5 )]
-editor/display_folded = true
 room_label = "train_station"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3"]

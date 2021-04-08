@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/The_Interview.ogg-c0b4e3107e7ac4a9b89559ebfc4a9ece.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/The_Interview.ogg"
+dest_files=[ "res://.import/The_Interview.ogg-c0b4e3107e7ac4a9b89559ebfc4a9ece.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

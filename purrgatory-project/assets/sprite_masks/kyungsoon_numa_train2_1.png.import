@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/kyungsoon_numa_train2_1.png-2d9499243a8a1f417ea99aebd0b122ab.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/kyungsoon_numa_train2_1.png"
+dest_files=[ "res://.import/kyungsoon_numa_train2_1.png-2d9499243a8a1f417ea99aebd0b122ab.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

@@ -66,7 +66,6 @@ margin_bottom = 239.25
 rect_scale = Vector2( 0.7, 0.7 )
 
 [node name="buttons" type="Control" parent="state_handler"]
-editor/display_folded = true
 margin_left = 570.0
 margin_top = 343.0
 margin_right = 934.0
@@ -381,7 +380,7 @@ bus = "Phone"
 
 [node name="dial_tone" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 37 )
-volume_db = -5.0
+volume_db = -10.0
 bus = "Phone"
 
 [node name="ringtone" type="AudioStreamPlayer" parent="state_handler"]

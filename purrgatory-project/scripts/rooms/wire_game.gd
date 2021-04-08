@@ -3,6 +3,9 @@ extends 'state_handler_template.gd'
 var state = null
 var goto = null
 
+func ready():
+	state = get_node('../../../../..').state
+	
 func update_state(_state):
 	.update_state(_state)
 	state = _state

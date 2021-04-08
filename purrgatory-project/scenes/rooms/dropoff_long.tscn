@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/dropoff_long.gd" type="Script" id=2]
@@ -7,29 +7,36 @@
 [ext_resource path="res://assets/rooms/dropoff_long.png" type="Texture" id=5]
 [ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=6]
 [ext_resource path="res://assets/sprites/snowglobes/snowglobe_dropoff.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprites/tori_dropoff2.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprites/tori_dropoff3.png" type="Texture" id=9]
-[ext_resource path="res://assets/ui/climb_ui_box.png" type="Texture" id=10]
-[ext_resource path="res://themes/ui_theme.tres" type="Theme" id=11]
-[ext_resource path="res://assets/ui/climb_dialog.png" type="Texture" id=12]
-[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=13]
-[ext_resource path="res://assets/audio/hhhhhh.ogg" type="AudioStream" id=14]
-[ext_resource path="res://assets/audio/wood_creak1.wav" type="AudioStream" id=15]
-[ext_resource path="res://assets/audio/wood_creak2.wav" type="AudioStream" id=16]
-[ext_resource path="res://assets/audio/wood_creak3.wav" type="AudioStream" id=17]
-[ext_resource path="res://assets/audio/wood_creak4.wav" type="AudioStream" id=18]
-[ext_resource path="res://assets/audio/wood_creak5.wav" type="AudioStream" id=19]
-[ext_resource path="res://assets/audio/wood_creak6.wav" type="AudioStream" id=20]
-[ext_resource path="res://assets/audio/wood_crack1.wav" type="AudioStream" id=21]
-[ext_resource path="res://assets/audio/wood_crack2.wav" type="AudioStream" id=22]
-[ext_resource path="res://assets/audio/rope_creak6.wav" type="AudioStream" id=23]
-[ext_resource path="res://assets/audio/rope_creak5.wav" type="AudioStream" id=24]
-[ext_resource path="res://assets/audio/rope_creak4.wav" type="AudioStream" id=25]
-[ext_resource path="res://assets/audio/rope_creak3.wav" type="AudioStream" id=26]
-[ext_resource path="res://assets/audio/rope_creak2.wav" type="AudioStream" id=27]
-[ext_resource path="res://assets/audio/rope_creak1.wav" type="AudioStream" id=28]
-[ext_resource path="res://assets/audio/falling.wav" type="AudioStream" id=29]
-[ext_resource path="res://assets/audio/rope_hit.wav" type="AudioStream" id=30]
+[ext_resource path="res://assets/sprites/tori_dropoff2_1.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite_masks/tori_dropoff2_1.png" type="BitMap" id=9]
+[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=10]
+[ext_resource path="res://assets/sprites/tori_dropoff2_2.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/tori_dropoff2_3.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/tori_dropoff3_1.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite_masks/tori_dropoff3_1.png" type="BitMap" id=14]
+[ext_resource path="res://assets/sprites/tori_dropoff3_2.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/tori_dropoff3_3.png" type="Texture" id=16]
+[ext_resource path="res://assets/ui/climb_ui_box.png" type="Texture" id=17]
+[ext_resource path="res://themes/ui_theme.tres" type="Theme" id=18]
+[ext_resource path="res://assets/ui/climb_dialog.png" type="Texture" id=19]
+[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=20]
+[ext_resource path="res://assets/audio/wood_creak1.wav" type="AudioStream" id=21]
+[ext_resource path="res://assets/audio/wood_creak2.wav" type="AudioStream" id=22]
+[ext_resource path="res://assets/audio/wood_creak3.wav" type="AudioStream" id=23]
+[ext_resource path="res://assets/audio/wood_creak4.wav" type="AudioStream" id=24]
+[ext_resource path="res://assets/audio/wood_creak5.wav" type="AudioStream" id=25]
+[ext_resource path="res://assets/audio/wood_creak6.wav" type="AudioStream" id=26]
+[ext_resource path="res://assets/audio/wood_crack1.wav" type="AudioStream" id=27]
+[ext_resource path="res://assets/audio/wood_crack2.wav" type="AudioStream" id=28]
+[ext_resource path="res://assets/audio/rope_creak6.wav" type="AudioStream" id=29]
+[ext_resource path="res://assets/audio/rope_creak5.wav" type="AudioStream" id=30]
+[ext_resource path="res://assets/audio/rope_creak4.wav" type="AudioStream" id=31]
+[ext_resource path="res://assets/audio/rope_creak3.wav" type="AudioStream" id=32]
+[ext_resource path="res://assets/audio/rope_creak2.wav" type="AudioStream" id=33]
+[ext_resource path="res://assets/audio/rope_creak1.wav" type="AudioStream" id=34]
+[ext_resource path="res://assets/audio/falling.wav" type="AudioStream" id=35]
+[ext_resource path="res://assets/audio/rope_hit.wav" type="AudioStream" id=36]
+[ext_resource path="res://assets/audio/hhhhhh2.wav" type="AudioStream" id=37]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -69,7 +76,7 @@ tracks/0/keys = {
 [sub_resource type="DynamicFont" id=7]
 size = 22
 use_filter = true
-font_data = ExtResource( 13 )
+font_data = ExtResource( 20 )
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -149,16 +156,31 @@ dialog_label = "tori_climb_lucifur"
 position = Vector2( -4.82532, 2812.56 )
 polygon = PoolVector2Array( 391.8, 6888.11, 428.802, 7040.63, 574.104, 7042.44, 537.102, 6882.69 )
 
-[node name="tori_before" type="Sprite" parent="state_handler"]
-position = Vector2( 790.984, 276.987 )
-texture = ExtResource( 8 )
-offset = Vector2( 6.45355, -119.797 )
+[node name="tori_before" type="TextureButton" parent="state_handler"]
+margin_left = 711.082
+margin_top = -2.25116
+margin_right = 876.082
+margin_bottom = 303.749
+rect_pivot_offset = Vector2( 117.993, 106.794 )
+texture_normal = ExtResource( 8 )
+texture_click_mask = ExtResource( 9 )
+script = ExtResource( 10 )
+animation0 = ExtResource( 8 )
+animation1 = ExtResource( 11 )
+animation2 = ExtResource( 12 )
 
-[node name="tori_after" type="Sprite" parent="state_handler"]
+[node name="tori_after" type="TextureButton" parent="state_handler"]
 visible = false
-position = Vector2( 521.96, -334.063 )
-texture = ExtResource( 9 )
-offset = Vector2( 0, 500 )
+margin_left = 307.556
+margin_top = 0.0579834
+margin_right = 738.556
+margin_bottom = 317.058
+texture_normal = ExtResource( 13 )
+texture_click_mask = ExtResource( 14 )
+script = ExtResource( 10 )
+animation0 = ExtResource( 13 )
+animation1 = ExtResource( 15 )
+animation2 = ExtResource( 16 )
 
 [node name="_game" type="Control" parent="state_handler"]
 editor/display_folded = true
@@ -174,7 +196,7 @@ margin_left = 368.9
 margin_top = -16.0001
 margin_right = -368.1
 margin_bottom = 18.9999
-texture = ExtResource( 10 )
+texture = ExtResource( 17 )
 
 [node name="ProgressBar" type="ProgressBar" parent="state_handler/_game"]
 anchor_right = 1.0
@@ -192,7 +214,7 @@ percent_visible = false
 margin_top = 12.75
 margin_right = 1280.0
 margin_bottom = 48.75
-theme = ExtResource( 11 )
+theme = ExtResource( 18 )
 text = "press up repeatedly to hold on!!"
 align = 1
 valign = 1
@@ -205,7 +227,7 @@ anims/blink = SubResource( 6 )
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
-theme = ExtResource( 11 )
+theme = ExtResource( 18 )
 
 [node name="0" type="TextureRect" parent="state_handler/_dialog"]
 editor/display_folded = true
@@ -216,7 +238,7 @@ margin_right = 1048.56
 margin_bottom = 256.702
 rect_pivot_offset = Vector2( 15.8891, 92.0588 )
 mouse_filter = 2
-texture = ExtResource( 12 )
+texture = ExtResource( 19 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/0"]
 margin_left = 18.0
@@ -236,7 +258,7 @@ margin_right = 940.111
 margin_bottom = 256.702
 rect_scale = Vector2( -1, 1 )
 mouse_filter = 2
-texture = ExtResource( 12 )
+texture = ExtResource( 19 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/1"]
 margin_left = 320.0
@@ -257,7 +279,7 @@ margin_right = 1412.66
 margin_bottom = 883.476
 rect_scale = Vector2( -1, -1 )
 mouse_filter = 2
-texture = ExtResource( 12 )
+texture = ExtResource( 19 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/2"]
 margin_left = 321.36
@@ -276,7 +298,7 @@ margin_right = 814.553
 margin_bottom = 865.774
 rect_scale = Vector2( 1, -1 )
 mouse_filter = 2
-texture = ExtResource( 12 )
+texture = ExtResource( 19 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/2/6"]
 margin_left = 320.0
@@ -297,7 +319,7 @@ margin_right = 1048.56
 margin_bottom = 256.702
 rect_pivot_offset = Vector2( 15.8891, 92.0588 )
 mouse_filter = 2
-texture = ExtResource( 12 )
+texture = ExtResource( 19 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/3"]
 margin_left = 17.8337
@@ -320,7 +342,7 @@ margin_right = 940.111
 margin_bottom = 255.702
 rect_scale = Vector2( -1, 1 )
 mouse_filter = 2
-texture = ExtResource( 12 )
+texture = ExtResource( 19 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/4"]
 margin_left = 320.0
@@ -341,7 +363,7 @@ margin_right = 1412.66
 margin_bottom = 882.476
 rect_scale = Vector2( -1, -1 )
 mouse_filter = 2
-texture = ExtResource( 12 )
+texture = ExtResource( 19 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/5"]
 margin_left = 320.0
@@ -370,7 +392,7 @@ margin_right = 814.553
 margin_bottom = 865.774
 rect_scale = Vector2( 1, -1 )
 mouse_filter = 2
-texture = ExtResource( 12 )
+texture = ExtResource( 19 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/5/6"]
 margin_left = 320.0
@@ -391,7 +413,7 @@ margin_right = 1048.56
 margin_bottom = 256.702
 rect_pivot_offset = Vector2( 15.8891, 92.0588 )
 mouse_filter = 2
-texture = ExtResource( 12 )
+texture = ExtResource( 19 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/6"]
 margin_left = 17.8337
@@ -404,40 +426,35 @@ align = 1
 valign = 1
 autowrap = true
 
-[node name="_hhhhhh" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 14 )
-autoplay = true
-bus = "SFX"
-
 [node name="_creaks" type="Node" parent="state_handler"]
 
 [node name="0" type="AudioStreamPlayer" parent="state_handler/_creaks"]
-stream = ExtResource( 15 )
+stream = ExtResource( 21 )
 volume_db = -30.0
 bus = "SFX"
 
 [node name="1" type="AudioStreamPlayer" parent="state_handler/_creaks"]
-stream = ExtResource( 16 )
+stream = ExtResource( 22 )
 volume_db = -30.0
 bus = "SFX"
 
 [node name="2" type="AudioStreamPlayer" parent="state_handler/_creaks"]
-stream = ExtResource( 17 )
+stream = ExtResource( 23 )
 volume_db = -30.0
 bus = "SFX"
 
 [node name="3" type="AudioStreamPlayer" parent="state_handler/_creaks"]
-stream = ExtResource( 18 )
+stream = ExtResource( 24 )
 volume_db = -30.0
 bus = "SFX"
 
 [node name="4" type="AudioStreamPlayer" parent="state_handler/_creaks"]
-stream = ExtResource( 19 )
+stream = ExtResource( 25 )
 volume_db = -30.0
 bus = "SFX"
 
 [node name="5" type="AudioStreamPlayer" parent="state_handler/_creaks"]
-stream = ExtResource( 20 )
+stream = ExtResource( 26 )
 volume_db = -30.0
 bus = "SFX"
 
@@ -445,54 +462,59 @@ bus = "SFX"
 editor/display_folded = true
 
 [node name="a" type="AudioStreamPlayer" parent="state_handler/_cracks"]
-stream = ExtResource( 21 )
+stream = ExtResource( 27 )
 bus = "SFX"
 
 [node name="b" type="AudioStreamPlayer" parent="state_handler/_cracks"]
-stream = ExtResource( 22 )
+stream = ExtResource( 28 )
 bus = "SFX"
 
 [node name="_pulls" type="Node" parent="state_handler"]
 
 [node name="5" type="AudioStreamPlayer" parent="state_handler/_pulls"]
-stream = ExtResource( 23 )
+stream = ExtResource( 29 )
 volume_db = -15.0
 bus = "SFX"
 
 [node name="4" type="AudioStreamPlayer" parent="state_handler/_pulls"]
-stream = ExtResource( 24 )
+stream = ExtResource( 30 )
 volume_db = -15.0
 bus = "SFX"
 
 [node name="3" type="AudioStreamPlayer" parent="state_handler/_pulls"]
-stream = ExtResource( 25 )
+stream = ExtResource( 31 )
 volume_db = -15.0
 bus = "SFX"
 
 [node name="2" type="AudioStreamPlayer" parent="state_handler/_pulls"]
-stream = ExtResource( 26 )
+stream = ExtResource( 32 )
 volume_db = -15.0
 bus = "SFX"
 
 [node name="1" type="AudioStreamPlayer" parent="state_handler/_pulls"]
-stream = ExtResource( 27 )
+stream = ExtResource( 33 )
 volume_db = -15.0
 bus = "SFX"
 
 [node name="0" type="AudioStreamPlayer" parent="state_handler/_pulls"]
-stream = ExtResource( 28 )
+stream = ExtResource( 34 )
 volume_db = -15.0
 bus = "SFX"
 
 [node name="_falling" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 29 )
+stream = ExtResource( 35 )
 bus = "SFX"
 
 [node name="_stop" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 30 )
+stream = ExtResource( 36 )
 volume_db = 10.0
 bus = "SFX"
 
 [node name="_crack_delay" type="Timer" parent="state_handler"]
 wait_time = 0.4
 one_shot = true
+
+[node name="hhhhh" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 37 )
+volume_db = -35.0
+autoplay = true

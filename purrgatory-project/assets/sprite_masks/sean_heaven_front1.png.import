@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/sean_heaven_front1.png-3c791200a515df7f61c0e2f341264664.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/sean_heaven_front1.png"
+dest_files=[ "res://.import/sean_heaven_front1.png-3c791200a515df7f61c0e2f341264664.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

@@ -5,6 +5,9 @@ func update_state(state):
 	if state.get('oliver_goto_ttt'):
 		state['oliver_goto_ttt'] = false
 		emit_signal('change_room', 'ttt')
+	
+	if state.get('oliver_queue_silence'):
+		emit_signal('change_audio', null)
 		
 	if state.get('oliver_sleeping_timer'):
 		state['oliver_sleeping_timer'] = false

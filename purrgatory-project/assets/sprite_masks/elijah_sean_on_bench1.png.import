@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/elijah_sean_on_bench1.png-fff955a21298e4e9c1d0dde3559c425a.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/elijah_sean_on_bench1.png"
+dest_files=[ "res://.import/elijah_sean_on_bench1.png-fff955a21298e4e9c1d0dde3559c425a.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

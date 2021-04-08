@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/oliver1.png-427c7249f571dc10c39ac21435269c73.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/oliver1.png"
+dest_files=[ "res://.import/oliver1.png-427c7249f571dc10c39ac21435269c73.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

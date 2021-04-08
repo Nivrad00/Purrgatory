@@ -332,7 +332,6 @@ bbcode_enabled = true
 scroll_active = false
 
 [node name="0" type="RichTextLabel" parent="state_handler/hc/vc/t2"]
-editor/display_folded = true
 visible = false
 margin_right = 597.2
 margin_bottom = 50.0
@@ -342,18 +341,7 @@ bbcode_text = "you remember many sleepless nights spent studying."
 text = "you remember many sleepless nights spent studying."
 scroll_active = false
 
-[node name="Button" type="Button" parent="state_handler/hc/vc/t2/0"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
-focus_mode = 0
-enabled_focus_mode = 0
-flat = true
-script = ExtResource( 4 )
-
 [node name="1" type="RichTextLabel" parent="state_handler/hc/vc/t2"]
-editor/display_folded = true
 visible = false
 margin_right = 771.0
 margin_bottom = 50.0
@@ -363,19 +351,7 @@ bbcode_text = "your remember each and every smiling face that touched your life.
 text = "your remember each and every smiling face that touched your life."
 scroll_active = false
 
-[node name="Button" type="Button" parent="state_handler/hc/vc/t2/1"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 4.0
-margin_right = 80.0
-margin_bottom = 15.0
-focus_mode = 0
-enabled_focus_mode = 0
-flat = true
-script = ExtResource( 4 )
-
 [node name="2" type="RichTextLabel" parent="state_handler/hc/vc/t2"]
-editor/display_folded = true
 visible = false
 margin_right = 788.0
 margin_bottom = 50.0
@@ -385,19 +361,7 @@ bbcode_text = "you remember exploring bustling cities and soaring mountains."
 text = "you remember exploring bustling cities and soaring mountains."
 scroll_active = false
 
-[node name="Button" type="Button" parent="state_handler/hc/vc/t2/2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
-focus_mode = 0
-enabled_focus_mode = 0
-flat = true
-script = ExtResource( 4 )
-
 [node name="3" type="RichTextLabel" parent="state_handler/hc/vc/t2"]
-editor/display_folded = true
 visible = false
 margin_right = 788.0
 margin_bottom = 50.0
@@ -407,19 +371,7 @@ bbcode_text = "you remember years and years of arduous practice."
 text = "you remember years and years of arduous practice."
 scroll_active = false
 
-[node name="Button" type="Button" parent="state_handler/hc/vc/t2/3"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
-focus_mode = 0
-enabled_focus_mode = 0
-flat = true
-script = ExtResource( 4 )
-
 [node name="4" type="RichTextLabel" parent="state_handler/hc/vc/t2"]
-editor/display_folded = true
 visible = false
 margin_right = 788.0
 margin_bottom = 50.0
@@ -429,19 +381,7 @@ bbcode_text = "you remember dreaming of a better life as you laid in bed."
 text = "you remember dreaming of a better life as you laid in bed."
 scroll_active = false
 
-[node name="Button" type="Button" parent="state_handler/hc/vc/t2/4"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
-focus_mode = 0
-enabled_focus_mode = 0
-flat = true
-script = ExtResource( 4 )
-
 [node name="5" type="RichTextLabel" parent="state_handler/hc/vc/t2"]
-editor/display_folded = true
 visible = false
 margin_right = 788.0
 margin_bottom = 50.0
@@ -451,19 +391,7 @@ bbcode_text = "you remember wanting to be somewhere, anywhere but here."
 text = "you remember wanting to be somewhere, anywhere but here."
 scroll_active = false
 
-[node name="Button" type="Button" parent="state_handler/hc/vc/t2/5"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
-focus_mode = 0
-enabled_focus_mode = 0
-flat = true
-script = ExtResource( 4 )
-
 [node name="6" type="RichTextLabel" parent="state_handler/hc/vc/t2"]
-editor/display_folded = true
 visible = false
 margin_right = 788.0
 margin_bottom = 50.0
@@ -473,22 +401,10 @@ bbcode_text = "you remember thinking your loved ones would be with you forever."
 text = "you remember thinking your loved ones would be with you forever."
 scroll_active = false
 
-[node name="Button" type="Button" parent="state_handler/hc/vc/t2/6"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
-focus_mode = 0
-enabled_focus_mode = 0
-flat = true
-script = ExtResource( 4 )
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/hc/vc/t2"]
 anims/Fadein = SubResource( 3 )
 
 [node name="c3" type="RichTextLabel" parent="state_handler/hc/vc"]
-editor/display_folded = true
 margin_top = 410.0
 margin_right = 800.0
 margin_bottom = 470.0
@@ -739,27 +655,6 @@ flat = true
 [connection signal="mouse_entered" from="state_handler/hc/vc/c1/choice_container/6/Button" to="state_handler/hc/vc/c1/choice_container/6/Button" method="highlight_text" binds= [ true ]]
 [connection signal="mouse_exited" from="state_handler/hc/vc/c1/choice_container/6/Button" to="state_handler/hc/vc/c1/choice_container/6/Button" method="highlight_text" binds= [ false ]]
 [connection signal="pressed" from="state_handler/hc/vc/c1/choice_container/6/Button" to="state_handler" method="cycle_choice"]
-[connection signal="mouse_entered" from="state_handler/hc/vc/t2/0/Button" to="state_handler/hc/vc/t2/0/Button" method="highlight_text" binds= [ true ]]
-[connection signal="mouse_exited" from="state_handler/hc/vc/t2/0/Button" to="state_handler/hc/vc/t2/0/Button" method="highlight_text" binds= [ false ]]
-[connection signal="pressed" from="state_handler/hc/vc/t2/0/Button" to="state_handler" method="cycle_choice"]
-[connection signal="mouse_entered" from="state_handler/hc/vc/t2/1/Button" to="state_handler/hc/vc/t2/1/Button" method="highlight_text" binds= [ true ]]
-[connection signal="mouse_exited" from="state_handler/hc/vc/t2/1/Button" to="state_handler/hc/vc/t2/1/Button" method="highlight_text" binds= [ false ]]
-[connection signal="pressed" from="state_handler/hc/vc/t2/1/Button" to="state_handler" method="cycle_choice"]
-[connection signal="mouse_entered" from="state_handler/hc/vc/t2/2/Button" to="state_handler/hc/vc/t2/2/Button" method="highlight_text" binds= [ true ]]
-[connection signal="mouse_exited" from="state_handler/hc/vc/t2/2/Button" to="state_handler/hc/vc/t2/2/Button" method="highlight_text" binds= [ false ]]
-[connection signal="pressed" from="state_handler/hc/vc/t2/2/Button" to="state_handler" method="cycle_choice"]
-[connection signal="mouse_entered" from="state_handler/hc/vc/t2/3/Button" to="state_handler/hc/vc/t2/3/Button" method="highlight_text" binds= [ true ]]
-[connection signal="mouse_exited" from="state_handler/hc/vc/t2/3/Button" to="state_handler/hc/vc/t2/3/Button" method="highlight_text" binds= [ false ]]
-[connection signal="pressed" from="state_handler/hc/vc/t2/3/Button" to="state_handler" method="cycle_choice"]
-[connection signal="mouse_entered" from="state_handler/hc/vc/t2/4/Button" to="state_handler/hc/vc/t2/4/Button" method="highlight_text" binds= [ true ]]
-[connection signal="mouse_exited" from="state_handler/hc/vc/t2/4/Button" to="state_handler/hc/vc/t2/4/Button" method="highlight_text" binds= [ false ]]
-[connection signal="pressed" from="state_handler/hc/vc/t2/4/Button" to="state_handler" method="cycle_choice"]
-[connection signal="mouse_entered" from="state_handler/hc/vc/t2/5/Button" to="state_handler/hc/vc/t2/5/Button" method="highlight_text" binds= [ true ]]
-[connection signal="mouse_exited" from="state_handler/hc/vc/t2/5/Button" to="state_handler/hc/vc/t2/5/Button" method="highlight_text" binds= [ false ]]
-[connection signal="pressed" from="state_handler/hc/vc/t2/5/Button" to="state_handler" method="cycle_choice"]
-[connection signal="mouse_entered" from="state_handler/hc/vc/t2/6/Button" to="state_handler/hc/vc/t2/6/Button" method="highlight_text" binds= [ true ]]
-[connection signal="mouse_exited" from="state_handler/hc/vc/t2/6/Button" to="state_handler/hc/vc/t2/6/Button" method="highlight_text" binds= [ false ]]
-[connection signal="pressed" from="state_handler/hc/vc/t2/6/Button" to="state_handler" method="cycle_choice"]
 [connection signal="mouse_entered" from="state_handler/hc/vc/c3/choice_container/0/Button" to="state_handler/hc/vc/c3/choice_container/0/Button" method="highlight_text" binds= [ true ]]
 [connection signal="mouse_exited" from="state_handler/hc/vc/c3/choice_container/0/Button" to="state_handler/hc/vc/c3/choice_container/0/Button" method="highlight_text" binds= [ false ]]
 [connection signal="pressed" from="state_handler/hc/vc/c3/choice_container/0/Button" to="state_handler" method="cycle_choice"]

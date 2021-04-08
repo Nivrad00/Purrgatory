@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/rooms/hallway14.png" type="Texture" id=3]
 [ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/hum.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/audio/hum.ogg" type="AudioStream" id=6]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -46,5 +46,8 @@ dialog_label = "fake_door"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
 polygon = PoolVector2Array( 805.306, 216.176, 804.793, 351.698, 859.207, 405.599, 860.747, 209.502 )
 
-[node name="hum" parent="state_handler" instance=ExtResource( 6 )]
+[node name="hum" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 6 )
 volume_db = -10.0
+autoplay = true
+bus = "SFX"

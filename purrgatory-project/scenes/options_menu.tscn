@@ -54,10 +54,8 @@ visible = false
 position = Vector2( 398.949, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
-texture_mode = -256
 
 [node name="back" type="Button" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 506.0
@@ -86,7 +84,7 @@ margin_right = 249.0
 margin_bottom = 58.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "back"
+text = "save and return"
 align = 1
 valign = 1
 

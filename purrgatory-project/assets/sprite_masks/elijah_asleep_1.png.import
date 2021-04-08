@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/elijah_asleep_1.png-34a4d63b9a90ff5d1d6c6f3f37dcc32a.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/elijah_asleep_1.png"
+dest_files=[ "res://.import/elijah_asleep_1.png-34a4d63b9a90ff5d1d6c6f3f37dcc32a.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

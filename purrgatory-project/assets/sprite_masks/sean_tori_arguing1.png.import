@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/sean_tori_arguing1.png-56b372e7a742af2280c034d80d61636b.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/sean_tori_arguing1.png"
+dest_files=[ "res://.import/sean_tori_arguing1.png-56b372e7a742af2280c034d80d61636b.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

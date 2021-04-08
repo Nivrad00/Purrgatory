@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/sean_wait_1.png-00e68a872299d9205e68e960c541c1d0.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/sean_wait_1.png"
+dest_files=[ "res://.import/sean_wait_1.png-00e68a872299d9205e68e960c541c1d0.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

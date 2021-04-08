@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/sean_piano_1.png-4c81691acbfb0f86052b18d1871e89ef.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/sean_piano_1.png"
+dest_files=[ "res://.import/sean_piano_1.png-4c81691acbfb0f86052b18d1871e89ef.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=2]
+[gd_scene load_steps=90 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ss.tscn" type="PackedScene" id=2]
@@ -65,6 +65,7 @@
 [ext_resource path="res://scripts/history.gd" type="Script" id=63]
 [ext_resource path="res://assets/ui/history.png" type="Texture" id=64]
 [ext_resource path="res://scripts/debug.gd" type="Script" id=65]
+[ext_resource path="res://scripts/negative_cover.gd" type="Script" id=66]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("ss")
@@ -372,6 +373,7 @@ one_shot = true
 script = ExtResource( 3 )
 
 [node name="dialog_handler" type="Node" parent="."]
+editor/display_folded = true
 script = ExtResource( 4 )
 
 [node name="objects" type="Node" parent="dialog_handler"]
@@ -438,6 +440,7 @@ __meta__ = {
 }
 
 [node name="room" type="Control" parent="content"]
+editor/display_folded = true
 script = ExtResource( 23 )
 
 [node name="room_container" type="Control" parent="content/room"]
@@ -486,6 +489,7 @@ mouse_filter = 2
 texture = ExtResource( 26 )
 
 [node name="ui" type="Control" parent="content"]
+editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 theme = ExtResource( 27 )
@@ -1108,6 +1112,7 @@ align = 1
 valign = 1
 
 [node name="pause_menu" type="Control" parent="meta_ui"]
+editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -1637,7 +1642,7 @@ theme = ExtResource( 27 )
 columns = 2
 
 [node name="debug" type="Control" parent="meta_ui"]
-visible = false
+editor/display_folded = true
 margin_top = 23.2134
 margin_right = 40.0
 margin_bottom = 63.2134
@@ -1655,7 +1660,7 @@ margin_left = 508.376
 margin_top = 54.6
 margin_right = 608.376
 margin_bottom = 94.6
-text = "add"
+text = "state"
 
 [node name="Button2" type="Button" parent="meta_ui/debug"]
 margin_left = 621.236
@@ -1675,11 +1680,24 @@ margin_left = 508.376
 margin_top = 110.6
 margin_right = 608.376
 margin_bottom = 150.6
-text = "go"
+text = "room"
+
+[node name="LineEdit3" type="LineEdit" parent="meta_ui/debug"]
+margin_left = 36.0
+margin_top = 164.387
+margin_right = 496.0
+margin_bottom = 208.387
+
+[node name="Button4" type="Button" parent="meta_ui/debug"]
+margin_left = 508.376
+margin_top = 165.987
+margin_right = 608.376
+margin_bottom = 205.987
+text = "block"
 
 [node name="Label" type="Label" parent="meta_ui/debug"]
 margin_left = 36.0
-margin_top = 168.0
+margin_top = 227.0
 margin_right = 612.0
 margin_bottom = 973.0
 custom_styles/normal = SubResource( 21 )
@@ -1709,18 +1727,22 @@ anchor_bottom = 1.0
 margin_right = 1280.0
 margin_bottom = 720.0
 mouse_filter = 2
+script = ExtResource( 66 )
 
-[node name="main_audio" type="AudioStreamPlayer" parent="."]
-volume_db = -5.0
-bus = "Music"
+[node name="negative_cover2" type="ColorRect" parent="."]
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
 [connection signal="timeout" from="skip_timer" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="content/ui/name_input/pronouns/custom" to="content/ui/name_input/custom_pronouns" method="show"]
 [connection signal="pressed" from="content/ui/name_input/ok_button" to="." method="set_player_name"]
 [connection signal="pressed" from="content/ui/name_input/custom_pronouns/back" to="content/ui/name_input/custom_pronouns" method="hide"]
 [connection signal="pressed" from="content/ui/text_box" to="." method="update_dialog_button_clicked"]
 [connection signal="pressed" from="content/ui/skip_button" to="." method="toggle_skip"]
-[connection signal="pressed" from="content/ui/history_button" to="." method="turn_off_skip"]
 [connection signal="pressed" from="content/ui/history_button" to="meta_ui/history" method="show_custom"]
+[connection signal="pressed" from="content/ui/history_button" to="." method="turn_off_skip"]
 [connection signal="mouse_entered" from="meta_ui/menu_button" to="content/room" method="stop_all_hovering"]
 [connection signal="pressed" from="meta_ui/menu_button" to="." method="turn_off_skip"]
 [connection signal="pressed" from="meta_ui/menu_button" to="." method="open_pause_menu"]
@@ -1732,16 +1754,16 @@ bus = "Music"
 [connection signal="mouse_entered" from="meta_ui/items_button" to="content/room" method="stop_all_hovering"]
 [connection signal="pressed" from="meta_ui/items_button" to="meta_ui/dropdown" method="toggle_items"]
 [connection signal="mouse_entered" from="meta_ui/history_button2" to="content/room" method="stop_all_hovering"]
-[connection signal="pressed" from="meta_ui/history_button2" to="." method="turn_off_skip"]
 [connection signal="pressed" from="meta_ui/history_button2" to="meta_ui/history" method="show_custom"]
+[connection signal="pressed" from="meta_ui/history_button2" to="." method="turn_off_skip"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/save" to="meta_ui/save_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/load" to="meta_ui/load_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/options" to="meta_ui/options_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/exit" to="meta_ui/exit_confirm" method="show"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/back" to="." method="close_pause_menu"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/dropdown" method="format_quests"]
-[connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
+[connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
 [connection signal="pressed" from="meta_ui/exit_confirm/yes" to="." method="return_to_main"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
 [connection signal="pressed" from="meta_ui/save_confirm/yes" to="." method="save_confirmed"]
@@ -1754,4 +1776,5 @@ bus = "Music"
 [connection signal="pressed" from="meta_ui/debug/Button" to="meta_ui/debug" method="_on_Button_pressed"]
 [connection signal="pressed" from="meta_ui/debug/Button2" to="meta_ui/debug" method="_on_Button2_pressed"]
 [connection signal="pressed" from="meta_ui/debug/Button3" to="meta_ui/debug" method="_on_Button3_pressed"]
+[connection signal="pressed" from="meta_ui/debug/Button4" to="meta_ui/debug" method="_on_Button4_pressed"]
 [connection signal="pressed" from="meta_ui/Button" to="meta_ui/debug" method="toggle_visibility"]
