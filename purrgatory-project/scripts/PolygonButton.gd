@@ -7,7 +7,7 @@ var input
 var visible_polygons = []
 var hovering = 0 # number of polygons that are being hovered over
 var holding_click = false
-var blocked = false
+var blocked = 0
 # "blocked" is handled by room_handler, see that for more details
 
 signal pressed()
@@ -75,13 +75,14 @@ func input_event(viewport, event, shape_idx):
 	and event.pressed:
 		mouse_clicked_on_button()
 	
-	if event is InputEventMouseMotion and blocked:
-		blocked = false
+	# old way of unblocking... now obsolete, hopefully
+	#if event is InputEventMouseMotion and blocked:
+		#blocked = false
 	
 func _process(delta):
 	# print(str(hovering) + ' ' + str(blocked))
 	if highlight_on_hover:
-		if (holding_click or hovering > 0) and not blocked:
+		if (holding_click or hovering > 0) and blocked == 0:
 			for child in visible_polygons:
 				child.show()
 		else:
@@ -93,3 +94,4 @@ func _process(delta):
 		
 func set_highlight_on_hover(value):
 	highlight_on_hover = value
+	

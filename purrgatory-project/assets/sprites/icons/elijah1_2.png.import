@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/attic_candles_on.png-23b2c178574f16c863e942052465c9b6.stex"
+path="res://.import/elijah1_2.png-56f5c79e3b96110381fc2642df18fac0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/rooms/attic_candles_on.png"
-dest_files=[ "res://.import/attic_candles_on.png-23b2c178574f16c863e942052465c9b6.stex" ]
+source_file="res://assets/sprites/icons/elijah1_2.png"
+dest_files=[ "res://.import/elijah1_2.png-56f5c79e3b96110381fc2642df18fac0.stex" ]
 
 [params]
 

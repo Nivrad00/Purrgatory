@@ -1,16 +1,510 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/antechamber1.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/antechamber1.png" type="Texture" id=3]
 [ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=4]
 [ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=5]
-[ext_resource path="res://scenes/lucifur_standing_scene.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/portal_sprite2.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/portal_sprite.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/audio/zwoop.wav" type="AudioStream" id=9]
-[ext_resource path="res://assets/audio/portal.ogg" type="AudioStream" id=10]
-[ext_resource path="res://assets/audio/portal_ambience.ogg" type="AudioStream" id=11]
+[ext_resource path="res://assets/sprites/lucifur_idle_1.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite_masks/lucifur_idle_1.png" type="BitMap" id=7]
+[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=8]
+[ext_resource path="res://assets/sprites/lucifur_idle2.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/lucifur_idle_3.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/trident.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/poof/poof1.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/poof/poof2.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/poof/poof3.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/poof/poof4.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/poof/poof5.png" type="Texture" id=16]
+[ext_resource path="res://assets/audio/poof.ogg" type="AudioStream" id=17]
+[ext_resource path="res://scenes/portal_sprite2.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/portal_sprite.tscn" type="PackedScene" id=19]
+[ext_resource path="res://assets/audio/zwoop.wav" type="AudioStream" id=20]
+[ext_resource path="res://assets/audio/portal.ogg" type="AudioStream" id=21]
+[ext_resource path="res://assets/audio/portal_ambience.ogg" type="AudioStream" id=22]
+
+[sub_resource type="Animation" id=2]
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 145, 180 ), Vector2( 145, 200 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 1.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.366022, 1 ),
+"update": 0,
+"values": [ 0.0, 100.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.34151, 1 ),
+"update": 0,
+"values": [ Vector2( 120.943, 127.265 ), Vector2( 171.634, 74.2749 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.353553, 1 ),
+"update": 0,
+"values": [ Vector2( 19.6439, 85.9417 ), Vector2( -66.951, 31.927 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite3:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.366021, 1 ),
+"update": 0,
+"values": [ 0.0, 113.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite3:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Sprite4:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.353554, 1 ),
+"update": 0,
+"values": [ 0.0, 78.1 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Sprite4:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.353553, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.4, 1.4 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Sprite4:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Sprite2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.34151, 1 ),
+"update": 0,
+"values": [ Vector2( 14.9278, 311.653 ), Vector2( -49.9841, 296.341 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Sprite2:rotation_degrees")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.353553, 1 ),
+"update": 0,
+"values": [ 0.0, 104.1 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Sprite2:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Sprite5:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.34151, 1 ),
+"update": 0,
+"values": [ Vector2( 96.9913, 362.183 ), Vector2( 184.526, 363.291 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Sprite5:rotation_degrees")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.353554, 1 ),
+"update": 0,
+"values": [ 0.0, 130.1 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Sprite5:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath(".:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("../cat1_idle:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/17/type = "audio"
+tracks/17/path = NodePath("poof_audio")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+} ],
+"times": PoolRealArray( 0.5 )
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("trident:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("../lucifur:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "lucifur_unpoof"
+length = 1.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5 ),
+"transitions": PoolRealArray( 0, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.366022, 1 ),
+"update": 0,
+"values": [ 0.0, 100.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.34151, 1 ),
+"update": 0,
+"values": [ Vector2( 120.943, 127.265 ), Vector2( 171.634, 74.2749 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.353553, 1 ),
+"update": 0,
+"values": [ Vector2( 19.6439, 85.9417 ), Vector2( -66.951, 31.927 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite3:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.366021, 1 ),
+"update": 0,
+"values": [ 0.0, 113.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite3:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5 ),
+"transitions": PoolRealArray( 0, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Sprite4:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.353554, 1 ),
+"update": 0,
+"values": [ 0.0, 78.1 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Sprite4:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.353553, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.4, 1.4 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Sprite4:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5 ),
+"transitions": PoolRealArray( 0, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Sprite2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.34151, 1 ),
+"update": 0,
+"values": [ Vector2( 14.9278, 311.653 ), Vector2( -49.9841, 296.341 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Sprite2:rotation_degrees")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.353553, 1 ),
+"update": 0,
+"values": [ 0.0, 104.1 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Sprite2:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5 ),
+"transitions": PoolRealArray( 0, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Sprite5:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.34151, 1 ),
+"update": 0,
+"values": [ Vector2( 96.9913, 362.183 ), Vector2( 184.526, 363.291 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Sprite5:rotation_degrees")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.353554, 1 ),
+"update": 0,
+"values": [ 0.0, 130.1 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Sprite5:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5 ),
+"transitions": PoolRealArray( 0, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("../lucifur:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/16/type = "audio"
+tracks/16/path = NodePath("poof_audio")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+} ],
+"times": PoolRealArray( 0.5 )
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("trident:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "zwoop"
@@ -38,7 +532,7 @@ tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 9 )
+"stream": ExtResource( 20 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -113,12 +607,27 @@ __meta__ = {
 "_edit_group_": true
 }
 dialog_label = "end_leave_antechamber"
-sprite_path = [ NodePath("../lucifur") ]
+sprite_path = [ NodePath("../lucifur"), NodePath("../lucifur_extra") ]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit_dialog"]
 polygon = PoolVector2Array( -112.086, 729.214, 198.914, 752.214, 198.914, 271.215, -115.086, 305.215 )
 
-[node name="lucifur" parent="state_handler" instance=ExtResource( 6 )]
+[node name="lucifur" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 357.386
+margin_top = 212.0
+margin_right = 509.386
+margin_bottom = 619.0
+texture_normal = ExtResource( 6 )
+texture_click_mask = ExtResource( 7 )
+script = ExtResource( 8 )
+dialog_label = "lucifur_goodbye"
+sprite_path = [ NodePath("."), NodePath("../lucifur_extra") ]
+animation0 = ExtResource( 6 )
+animation1 = ExtResource( 9 )
+animation2 = ExtResource( 10 )
+
+[node name="lucifur_extra" type="Control" parent="state_handler"]
 editor/display_folded = true
 visible = false
 margin_left = 451.0
@@ -126,12 +635,55 @@ margin_top = 192.0
 margin_right = 616.0
 margin_bottom = 618.0
 rect_scale = Vector2( -1, 1 )
+mouse_filter = 2
 
-[node name="lucifur" parent="state_handler/lucifur" index="0"]
-dialog_label = "lucifur_goodbye"
-
-[node name="trident" parent="state_handler/lucifur" index="1"]
+[node name="trident" type="Sprite" parent="state_handler/lucifur_extra"]
 editor/display_folded = true
+position = Vector2( 145, 183.222 )
+texture = ExtResource( 11 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/lucifur_extra/trident"]
+autoplay = "floaty"
+anims/floaty = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/lucifur_extra"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 171.634, 74.2749 )
+rotation = 1.74533
+texture = ExtResource( 12 )
+
+[node name="Sprite2" type="Sprite" parent="state_handler/lucifur_extra"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -49.9841, 296.341 )
+rotation = 1.81689
+texture = ExtResource( 13 )
+
+[node name="Sprite3" type="Sprite" parent="state_handler/lucifur_extra"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -66.951, 31.927 )
+rotation = 1.97222
+texture = ExtResource( 14 )
+
+[node name="Sprite4" type="Sprite" parent="state_handler/lucifur_extra"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 79.803, 233.27 )
+rotation = 1.3631
+scale = Vector2( 1.4, 1.4 )
+texture = ExtResource( 15 )
+
+[node name="Sprite5" type="Sprite" parent="state_handler/lucifur_extra"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 184.526, 363.291 )
+rotation = 2.27067
+texture = ExtResource( 16 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/lucifur_extra"]
+anims/lucifur_poof = SubResource( 3 )
+anims/lucifur_unpoof = SubResource( 4 )
+
+[node name="poof_audio" type="AudioStreamPlayer" parent="state_handler/lucifur_extra"]
+stream = ExtResource( 17 )
+volume_db = 5.0
 
 [node name="portal" type="Area2D" parent="state_handler"]
 editor/display_folded = true
@@ -153,17 +705,17 @@ editor/display_folded = true
 position = Vector2( -1032.47, -450.424 )
 scale = Vector2( 1, 1.3 )
 
-[node name="portal_sprite2" parent="state_handler/portal/sprite" instance=ExtResource( 7 )]
+[node name="portal_sprite2" parent="state_handler/portal/sprite" instance=ExtResource( 18 )]
 rotation = -3.79794
 
-[node name="portal_sprite" parent="state_handler/portal/sprite" instance=ExtResource( 8 )]
+[node name="portal_sprite" parent="state_handler/portal/sprite" instance=ExtResource( 19 )]
 rotation = 1.7747
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/portal"]
 anims/zwoop = SubResource( 1 )
 
 [node name="zwoop" type="AudioStreamPlayer" parent="state_handler/portal"]
-stream = ExtResource( 9 )
+stream = ExtResource( 20 )
 
 [node name="fadeout" type="ColorRect" parent="state_handler"]
 visible = false
@@ -176,12 +728,12 @@ wait_time = 2.5
 one_shot = true
 
 [node name="portal_audio" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 10 )
+stream = ExtResource( 21 )
 volume_db = -8.0
 bus = "SFX"
 
 [node name="ambience" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 11 )
+stream = ExtResource( 22 )
 volume_db = 5.0
 bus = "SFX"
 
@@ -192,10 +744,9 @@ margin_bottom = 720.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
-[connection signal="animation_finished" from="state_handler/lucifur/AnimationPlayer" to="state_handler" method="animation_finished"]
+[connection signal="pressed" from="state_handler/lucifur" to="state_handler/lucifur" method="_on_char_obj_button_pressed"]
+[connection signal="animation_finished" from="state_handler/lucifur_extra/AnimationPlayer" to="state_handler" method="animation_finished"]
 [connection signal="pressed" from="state_handler/poof_cover" to="state_handler" method="_on_poof_cover_pressed"]
-
-[editable path="state_handler/lucifur"]
 
 [editable path="state_handler/portal/sprite/portal_sprite2"]
 

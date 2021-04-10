@@ -62,9 +62,12 @@ func speak_ui(all = true):
 
 	if choices.size() > 0:
 		var i = 1
+		var spoken_text = ''
 		for choice in choices:
-			tts_node.speak(str(i) + ', ' + choice)
+			spoken_text += str(i) + ', ' + choice + '. '
 			i += 1
+		print(spoken_text)
+		tts_node.speak(spoken_text)
 
 func set_speaker(speaker):
 	$text_box/speaker.text = speaker

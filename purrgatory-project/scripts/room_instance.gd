@@ -11,21 +11,26 @@ var dialog_ongoing = false
 func _ready():
 	var children = $state_handler.get_children()
 	children.append($state_handler)
-	for child in children:
-		var signal_list = child.get_signal_list()
+	
+	# connect all children, recursively
+	for node in children:
+		var signal_list = node.get_signal_list()
 		for sig in signal_list:
 			if sig['name'] == "start_dialog":
-				child.connect("start_dialog", self, "start_dialog")
+				node.connect("start_dialog", self, "start_dialog")
 			if sig['name'] == "change_room":
-				child.connect("change_room", self, "change_room")
+				node.connect("change_room", self, "change_room")
 			if sig['name'] == "set_hidden_sprite":
-				child.connect("set_hidden_sprite", self, "set_hidden_sprite")
+				node.connect("set_hidden_sprite", self, "set_hidden_sprite")
 			if sig['name'] == "start_action_timer":
-				child.connect("start_action_timer", self, "start_action_timer")
+				node.connect("start_action_timer", self, "start_action_timer")
 			if sig['name'] == "change_audio":
-				child.connect("change_audio", self, "change_audio")
+				node.connect("change_audio", self, "change_audio")
 			if sig['name'] == "stop_all_hovering":
-				child.connect("stop_all_hovering", get_parent().get_parent(), "stop_all_hovering")
+				node.connect("stop_all_hovering", get_parent().get_parent(), "stop_all_hovering")
+			if sig['name'] == "start_all_hovering":
+				node.connect("start_all_hovering", get_parent().get_parent(), "start_all_hovering")
+
 	
 func set_hidden_sprite(sprites):
 	if hidden_sprites != null:

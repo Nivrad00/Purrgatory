@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/attic.gd" type="Script" id=2]
@@ -6,25 +6,28 @@
 [ext_resource path="res://assets/rooms/attic_without_books.png" type="Texture" id=4]
 [ext_resource path="res://assets/rooms/attic_with_extra_art.png" type="Texture" id=5]
 [ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=6]
-[ext_resource path="res://assets/rooms/attic_candles_on.png" type="Texture" id=7]
-[ext_resource path="res://scenes/sprites/natalie_idle.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/sprites/natalie_asleep1.png" type="Texture" id=9]
-[ext_resource path="res://assets/sprite_masks/natalie_asleep1.png" type="BitMap" id=10]
-[ext_resource path="res://assets/sprites/natalie_asleep2.png" type="Texture" id=11]
-[ext_resource path="res://assets/sprites/natalie_asleep3.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprites/natalie_idle1.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprite_masks/natalie_idle1.png" type="BitMap" id=14]
-[ext_resource path="res://assets/sprites/natalie_idle2.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprites/natalie_idle3.png" type="Texture" id=16]
-[ext_resource path="res://assets/sprites/natalie_draw_a_paw1.png" type="Texture" id=17]
-[ext_resource path="res://assets/sprite_masks/natalie_draw_a_paw1.png" type="BitMap" id=18]
-[ext_resource path="res://assets/sprites/natalie_draw_a_paw2.png" type="Texture" id=19]
-[ext_resource path="res://assets/sprites/natalie_draw_a_paw3.png" type="Texture" id=20]
-[ext_resource path="res://assets/sprites/natalie_nocturnal1.png" type="Texture" id=21]
-[ext_resource path="res://assets/sprite_masks/natalie_nocturnal1.png" type="BitMap" id=22]
-[ext_resource path="res://assets/sprites/natalie_nocturnal2.png" type="Texture" id=23]
-[ext_resource path="res://assets/sprites/natalie_nocturnal3.png" type="Texture" id=24]
-[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=25]
+[ext_resource path="res://assets/rooms/attic_candles_on1.png" type="Texture" id=7]
+[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=8]
+[ext_resource path="res://assets/rooms/attic_candles_on2.png" type="Texture" id=9]
+[ext_resource path="res://assets/rooms/attic_candles_on3.png" type="Texture" id=10]
+[ext_resource path="res://scenes/sprites/natalie_idle.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/sprites/natalie_asleep1.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite_masks/natalie_asleep1.png" type="BitMap" id=13]
+[ext_resource path="res://assets/sprites/natalie_asleep2.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/natalie_asleep3.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/natalie_idle1.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprite_masks/natalie_idle1.png" type="BitMap" id=17]
+[ext_resource path="res://assets/sprites/natalie_idle2.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/natalie_idle3.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/natalie_draw_a_paw1.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprite_masks/natalie_draw_a_paw1.png" type="BitMap" id=21]
+[ext_resource path="res://assets/sprites/natalie_draw_a_paw2.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/natalie_draw_a_paw3.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/natalie_nocturnal1.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprite_masks/natalie_nocturnal1.png" type="BitMap" id=25]
+[ext_resource path="res://assets/sprites/natalie_nocturnal2.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprites/natalie_nocturnal3.png" type="Texture" id=27]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=28]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -363,15 +366,22 @@ position = Vector2( -243.022, 251.922 )
 polygon = PoolVector2Array( 382.245, 546.599, 407.904, 566.985, 441.353, 567.822, 463.201, 546.599, 462.708, 518.315, 449.444, 511.504, 434.953, 523.666, 425.784, 523.334, 411.445, 509.712, 410.728, 485.335, 398.587, 477.55, 385.275, 485.335 )
 
 [node name="attic_candles_on" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 672.858, -222.579 )
 script = ExtResource( 6 )
 dialog_label = "attic_candles"
 sprite_path = [ null ]
 
-[node name="Sprite" type="Sprite" parent="state_handler/attic_candles_on"]
-position = Vector2( 106.1, 680.481 )
-texture = ExtResource( 7 )
+[node name="TextureButton" type="TextureButton" parent="state_handler/attic_candles_on"]
+margin_left = -17.1871
+margin_top = 528.527
+margin_right = 227.813
+margin_bottom = 831.527
+mouse_filter = 2
+texture_normal = ExtResource( 7 )
+script = ExtResource( 8 )
+animation0 = ExtResource( 7 )
+animation1 = ExtResource( 9 )
+animation2 = ExtResource( 10 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_candles_on"]
 position = Vector2( -243.022, 251.922 )
@@ -460,59 +470,59 @@ dialog_label = "attic_crate"
 position = Vector2( -243.022, 251.922 )
 polygon = PoolVector2Array( 444.302, 524.545, 597.215, 524.886, 596.874, 405.008, 508.669, 375.719, 393.218, 375.379, 392.691, 469.523 )
 
-[node name="natalie_sleeping" parent="state_handler" instance=ExtResource( 8 )]
+[node name="natalie_sleeping" parent="state_handler" instance=ExtResource( 11 )]
 margin_left = 188.906
 margin_top = 340.725
 margin_right = 561.906
 margin_bottom = 471.725
-texture_normal = ExtResource( 9 )
-texture_click_mask = ExtResource( 10 )
+texture_normal = ExtResource( 12 )
+texture_click_mask = ExtResource( 13 )
 dialog_label = "natalie_intro"
 blackout_label = "natalie_intro"
 sprite_path = [ null ]
-animation0 = ExtResource( 9 )
-animation1 = ExtResource( 11 )
-animation2 = ExtResource( 12 )
+animation0 = ExtResource( 12 )
+animation1 = ExtResource( 14 )
+animation2 = ExtResource( 15 )
 
-[node name="natalie_idle" parent="state_handler" instance=ExtResource( 8 )]
+[node name="natalie_idle" parent="state_handler" instance=ExtResource( 11 )]
 margin_left = 472.5
 margin_top = 194.1
 margin_right = 681.5
 margin_bottom = 532.1
-texture_normal = ExtResource( 13 )
-texture_click_mask = ExtResource( 14 )
+texture_normal = ExtResource( 16 )
+texture_click_mask = ExtResource( 17 )
 dialog_label = "natalie_default"
 blackout_label = "natalie_blackout"
-animation0 = ExtResource( 13 )
-animation1 = ExtResource( 15 )
-animation2 = ExtResource( 16 )
+animation0 = ExtResource( 16 )
+animation1 = ExtResource( 18 )
+animation2 = ExtResource( 19 )
 
-[node name="natalie_draw_a_paw" parent="state_handler" instance=ExtResource( 8 )]
+[node name="natalie_draw_a_paw" parent="state_handler" instance=ExtResource( 11 )]
 margin_left = 488.02
 margin_top = 202.563
 margin_right = 680.02
 margin_bottom = 524.563
-texture_normal = ExtResource( 17 )
-texture_click_mask = ExtResource( 18 )
+texture_normal = ExtResource( 20 )
+texture_click_mask = ExtResource( 21 )
 dialog_label = "natalie_default"
 blackout_label = "natalie_blackout"
-animation0 = ExtResource( 17 )
-animation1 = ExtResource( 19 )
-animation2 = ExtResource( 20 )
+animation0 = ExtResource( 20 )
+animation1 = ExtResource( 22 )
+animation2 = ExtResource( 23 )
 
-[node name="natalie_nocturnal" parent="state_handler" instance=ExtResource( 8 )]
+[node name="natalie_nocturnal" parent="state_handler" instance=ExtResource( 11 )]
 margin_left = 821.714
 margin_top = 359.564
 margin_right = 1056.71
 margin_bottom = 658.564
 rect_scale = Vector2( -1, 1 )
-texture_normal = ExtResource( 21 )
-texture_click_mask = ExtResource( 22 )
+texture_normal = ExtResource( 24 )
+texture_click_mask = ExtResource( 25 )
 dialog_label = "natalie_post"
 blackout_label = "natalie_blackout"
-animation0 = ExtResource( 21 )
-animation1 = ExtResource( 23 )
-animation2 = ExtResource( 24 )
+animation0 = ExtResource( 24 )
+animation1 = ExtResource( 26 )
+animation2 = ExtResource( 27 )
 
-[node name="exit" parent="state_handler" instance=ExtResource( 25 )]
+[node name="exit" parent="state_handler" instance=ExtResource( 28 )]
 room_label = "house5"

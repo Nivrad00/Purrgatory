@@ -93,7 +93,6 @@ room_label = "garden2"
 polygon = PoolVector2Array( 465.033, 291.01, 465.026, 1011.01, 555.174, 1011.01, 555.195, 291.021 )
 
 [node name="exit_dialog" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 visible = false
 script = ExtResource( 15 )
 dialog_label = "numa_leave"

@@ -22,7 +22,8 @@ func update_state(state):
 	
 	if state.get('lucifur_disappears'):
 		$lucifur.show()
-		$lucifur/AnimationPlayer.play('lucifur_unpoof')
+		$lucifur_extra.show()
+		$lucifur_extra/AnimationPlayer.play('lucifur_unpoof')
 		$poof_cover.show()
 		anim_playing = true
 		
@@ -41,6 +42,7 @@ func update_state(state):
 	
 	if state.get('lucifur_in_antechamber'):
 		$lucifur.show()
+		$lucifur_extra.show()
 		
 	if state.get('end_fade_out_trigger') and $portal.visible:
 		print('aaaaa')

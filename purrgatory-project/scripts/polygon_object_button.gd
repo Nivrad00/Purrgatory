@@ -6,7 +6,6 @@ export var sprite_path = []
 signal start_dialog(label, sprite)
 
 func _ready():
-	.set_highlight_on_hover(false)
 	connect("pressed", self, "on_pressed")
 	
 func on_pressed():

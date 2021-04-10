@@ -184,6 +184,7 @@ func add_quest(quest):
 	label.set_size(Vector2($quest_container.get_size().x, 0))
 	label.set_custom_minimum_size(Vector2($quest_container.get_size().x, 0))
 	label.set_bbcode(quests[quest])
+	label.set_mouse_filter(Control.MOUSE_FILTER_IGNORE)
 	
 	# if there's a placeholder, remove it
 	# also remember not to do this if the thing you just added was the placeholder
@@ -250,6 +251,12 @@ func load_quest_log(list):
 	
 	for _name in list:
 		add_quest(_name)
+		
+	yield(get_tree(), 'idle_frame') 
+	
+	# if there are no quests, add a placeholder
+	if $quest_container/vbox.get_children().size() == 0:
+		add_quest('nothing')
 
 func toggle_quest_log(on):
 	notes_enabled = on

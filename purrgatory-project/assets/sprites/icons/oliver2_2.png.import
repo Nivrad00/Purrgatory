@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tori2.png-3e3399d7d20fc635b20b0a300dec1856.stex"
+path="res://.import/oliver2_2.png-fb28b9bab6bb640430a7a550d6d3a7de.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/icons/tori2.png"
-dest_files=[ "res://.import/tori2.png-3e3399d7d20fc635b20b0a300dec1856.stex" ]
+source_file="res://assets/sprites/icons/oliver2_2.png"
+dest_files=[ "res://.import/oliver2_2.png-fb28b9bab6bb640430a7a550d6d3a7de.stex" ]
 
 [params]
 

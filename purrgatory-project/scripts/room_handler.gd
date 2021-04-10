@@ -120,16 +120,23 @@ func update_state(state, end = false):
 # (i can't find a better way of doing it)
 
 # this means that EVERY CONTROL that could ever block a PolygonButton needs to
-#   call stop_all_hovering() when appropriate
+#   call stop_all_hovering() and start_all_hovering() when appropriate
 
 # this includes:
-#   TextureButton-derived sprites like characters and the cat (char_obj_button.gd calls stop_all_hovering())
-#   menu, notes, items, and history buttons (each button is connected to stop_all_hovering() separately)
-#   the UI itself (game.gd calls stop_all_hovering when a) dialog starts or b) the game loads with the ui visible)
+#   TextureButton-derived sprites like characters and the cat (char_obj_button.gd is connected when mouse enters, mouse exits, and the button disappears)
+#   menu, notes, items, and history ui (each element is connected separately)
+#   the dialog ui itself calls the functions when dialog starts and ends
 
 func stop_all_hovering():
 	if not current_room:
 		return
 	for node in current_room.get_node('state_handler').get_children():
 		if node is PolygonButton:
-			node.blocked = true
+			node.blocked += 1
+			
+func start_all_hovering():
+	if not current_room:
+		return
+	for node in current_room.get_node('state_handler').get_children():
+		if node is PolygonButton:
+			node.blocked = max(0, node.blocked - 1)

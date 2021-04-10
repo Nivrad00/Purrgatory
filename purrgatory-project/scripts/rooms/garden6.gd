@@ -1,9 +1,12 @@
 extends 'state_handler_template.gd'
 
+func _ready():
+	print('please')
+	$exit_dialog.set_highlight_on_hover(true)
+	
 func init_state(state):
 	.init_state(state)
 	
-	$exit_dialog.set_highlight_on_hover(true)
 	if state.get('flowers_goto_garden'):
 		emit_signal('set_hidden_sprite', [$numa])
 		state['flowers_goto_garden'] = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=2]
+[gd_scene load_steps=119 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ss.tscn" type="PackedScene" id=2]
@@ -46,26 +46,55 @@
 [ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=44]
 [ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=45]
 [ext_resource path="res://assets/sprites/icons/numa1.png" type="Texture" id=46]
-[ext_resource path="res://assets/sprites/icons/numa2.png" type="Texture" id=47]
-[ext_resource path="res://assets/sprites/icons/tori1.png" type="Texture" id=48]
-[ext_resource path="res://assets/sprites/icons/tori2.png" type="Texture" id=49]
-[ext_resource path="res://assets/sprites/icons/oliver1.png" type="Texture" id=50]
-[ext_resource path="res://assets/sprites/icons/oliver2.png" type="Texture" id=51]
-[ext_resource path="res://assets/sprites/icons/natalie1.png" type="Texture" id=52]
-[ext_resource path="res://assets/sprites/icons/natalie2.png" type="Texture" id=53]
-[ext_resource path="res://assets/sprites/icons/kyungsoon1.png" type="Texture" id=54]
-[ext_resource path="res://assets/sprites/icons/kyungsoon2.png" type="Texture" id=55]
-[ext_resource path="res://assets/sprites/icons/elijah1.png" type="Texture" id=56]
-[ext_resource path="res://assets/sprites/icons/elijah2.png" type="Texture" id=57]
-[ext_resource path="res://assets/sprites/icons/sean1.png" type="Texture" id=58]
-[ext_resource path="res://assets/sprites/icons/sean2.png" type="Texture" id=59]
-[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=60]
-[ext_resource path="res://scenes/save_menu.tscn" type="PackedScene" id=61]
-[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=62]
-[ext_resource path="res://scripts/history.gd" type="Script" id=63]
-[ext_resource path="res://assets/ui/history.png" type="Texture" id=64]
-[ext_resource path="res://scripts/debug.gd" type="Script" id=65]
-[ext_resource path="res://scripts/negative_cover.gd" type="Script" id=66]
+[ext_resource path="res://scripts/menu_icons.gd" type="Script" id=47]
+[ext_resource path="res://assets/sprites/icons/numa1_2.png" type="Texture" id=48]
+[ext_resource path="res://assets/sprites/icons/numa1_3.png" type="Texture" id=49]
+[ext_resource path="res://assets/sprites/icons/numa2.png" type="Texture" id=50]
+[ext_resource path="res://assets/sprites/icons/numa2_2.png" type="Texture" id=51]
+[ext_resource path="res://assets/sprites/icons/numa2_3.png" type="Texture" id=52]
+[ext_resource path="res://assets/sprites/icons/tori1_1.png" type="Texture" id=53]
+[ext_resource path="res://assets/sprites/icons/tori1_2.png" type="Texture" id=54]
+[ext_resource path="res://assets/sprites/icons/tori1_3.png" type="Texture" id=55]
+[ext_resource path="res://assets/sprites/icons/tori2_1.png" type="Texture" id=56]
+[ext_resource path="res://assets/sprites/icons/tori2_2.png" type="Texture" id=57]
+[ext_resource path="res://assets/sprites/icons/tori2_3.png" type="Texture" id=58]
+[ext_resource path="res://assets/sprites/icons/oliver1.png" type="Texture" id=59]
+[ext_resource path="res://assets/sprites/icons/oliver1_2.png" type="Texture" id=60]
+[ext_resource path="res://assets/sprites/icons/oliver1_3.png" type="Texture" id=61]
+[ext_resource path="res://assets/sprites/icons/oliver2.png" type="Texture" id=62]
+[ext_resource path="res://assets/sprites/icons/oliver2_2.png" type="Texture" id=63]
+[ext_resource path="res://assets/sprites/icons/oliver2_3.png" type="Texture" id=64]
+[ext_resource path="res://assets/sprites/icons/natalie1.png" type="Texture" id=65]
+[ext_resource path="res://assets/sprites/icons/natalie1_2.png" type="Texture" id=66]
+[ext_resource path="res://assets/sprites/icons/natalie1_3.png" type="Texture" id=67]
+[ext_resource path="res://assets/sprites/icons/natalie2.png" type="Texture" id=68]
+[ext_resource path="res://assets/sprites/icons/natalie2_2.png" type="Texture" id=69]
+[ext_resource path="res://assets/sprites/icons/natalie2_3.png" type="Texture" id=70]
+[ext_resource path="res://assets/sprites/icons/kyungsoon1.png" type="Texture" id=71]
+[ext_resource path="res://assets/sprites/icons/kyungsoon1_2.png" type="Texture" id=72]
+[ext_resource path="res://assets/sprites/icons/kyungsoon1_3.png" type="Texture" id=73]
+[ext_resource path="res://assets/sprites/icons/kyungsoon2.png" type="Texture" id=74]
+[ext_resource path="res://assets/sprites/icons/kyungsoon2_2.png" type="Texture" id=75]
+[ext_resource path="res://assets/sprites/icons/kyungsoon2_3.png" type="Texture" id=76]
+[ext_resource path="res://assets/sprites/icons/elijah1.png" type="Texture" id=77]
+[ext_resource path="res://assets/sprites/icons/elijah1_2.png" type="Texture" id=78]
+[ext_resource path="res://assets/sprites/icons/elijah1_3.png" type="Texture" id=79]
+[ext_resource path="res://assets/sprites/icons/elijah2.png" type="Texture" id=80]
+[ext_resource path="res://assets/sprites/icons/elijah2_2.png" type="Texture" id=81]
+[ext_resource path="res://assets/sprites/icons/elijah2_3.png" type="Texture" id=82]
+[ext_resource path="res://assets/sprites/icons/sean1.png" type="Texture" id=83]
+[ext_resource path="res://assets/sprites/icons/sean1_2.png" type="Texture" id=84]
+[ext_resource path="res://assets/sprites/icons/sean1_3.png" type="Texture" id=85]
+[ext_resource path="res://assets/sprites/icons/sean2.png" type="Texture" id=86]
+[ext_resource path="res://assets/sprites/icons/sean2_2.png" type="Texture" id=87]
+[ext_resource path="res://assets/sprites/icons/sean2_3.png" type="Texture" id=88]
+[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=89]
+[ext_resource path="res://scenes/save_menu.tscn" type="PackedScene" id=90]
+[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=91]
+[ext_resource path="res://scripts/history.gd" type="Script" id=92]
+[ext_resource path="res://assets/ui/history.png" type="Texture" id=93]
+[ext_resource path="res://scripts/debug.gd" type="Script" id=94]
+[ext_resource path="res://scripts/negative_cover.gd" type="Script" id=95]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("ss")
@@ -431,7 +460,6 @@ script = ExtResource( 21 )
 script = ExtResource( 22 )
 
 [node name="content" type="Control" parent="."]
-editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 mouse_filter = 2
@@ -489,7 +517,6 @@ mouse_filter = 2
 texture = ExtResource( 26 )
 
 [node name="ui" type="Control" parent="content"]
-editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 theme = ExtResource( 27 )
@@ -958,7 +985,6 @@ align = 1
 valign = 1
 
 [node name="dropdown" type="Control" parent="meta_ui"]
-editor/display_folded = true
 margin_left = 163.458
 margin_top = -284.152
 margin_right = 1280.46
@@ -977,11 +1003,11 @@ margin_right = 1093.0
 margin_bottom = 262.0
 
 [node name="quest_container" type="ScrollContainer" parent="meta_ui/dropdown"]
-editor/display_folded = true
 margin_left = 35.0
 margin_top = 55.0
 margin_right = 1060.0
 margin_bottom = 259.0
+mouse_filter = 2
 theme = ExtResource( 27 )
 scroll_horizontal_enabled = false
 
@@ -989,6 +1015,7 @@ scroll_horizontal_enabled = false
 margin_right = 1025.0
 margin_bottom = 203.0
 rect_min_size = Vector2( 1025, 203 )
+mouse_filter = 2
 alignment = 2
 
 [node name="quest_debug" type="LineEdit" parent="meta_ui/dropdown"]
@@ -1296,6 +1323,7 @@ align = 1
 valign = 1
 
 [node name="icons" type="HBoxContainer" parent="meta_ui/pause_menu"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 121.0
@@ -1309,86 +1337,142 @@ margin_left = 12.0
 margin_right = 98.0
 margin_bottom = 100.0
 texture = ExtResource( 46 )
+script = ExtResource( 47 )
+animation0 = ExtResource( 46 )
+animation1 = ExtResource( 48 )
+animation2 = ExtResource( 49 )
 
 [node name="numa2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 102.0
 margin_right = 188.0
 margin_bottom = 100.0
-texture = ExtResource( 47 )
+texture = ExtResource( 50 )
+script = ExtResource( 47 )
+animation0 = ExtResource( 50 )
+animation1 = ExtResource( 51 )
+animation2 = ExtResource( 52 )
 
 [node name="tori1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 192.0
 margin_right = 278.0
 margin_bottom = 100.0
-texture = ExtResource( 48 )
+texture = ExtResource( 53 )
+script = ExtResource( 47 )
+animation0 = ExtResource( 53 )
+animation1 = ExtResource( 54 )
+animation2 = ExtResource( 55 )
 
 [node name="tori2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 282.0
 margin_right = 368.0
 margin_bottom = 100.0
-texture = ExtResource( 49 )
+texture = ExtResource( 56 )
+script = ExtResource( 47 )
+animation0 = ExtResource( 56 )
+animation1 = ExtResource( 57 )
+animation2 = ExtResource( 58 )
 
 [node name="oliver1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 372.0
 margin_right = 458.0
 margin_bottom = 100.0
-texture = ExtResource( 50 )
+texture = ExtResource( 59 )
+script = ExtResource( 47 )
+animation0 = ExtResource( 59 )
+animation1 = ExtResource( 60 )
+animation2 = ExtResource( 61 )
 
 [node name="oliver2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 462.0
 margin_right = 548.0
 margin_bottom = 100.0
-texture = ExtResource( 51 )
+texture = ExtResource( 62 )
+script = ExtResource( 47 )
+animation0 = ExtResource( 62 )
+animation1 = ExtResource( 63 )
+animation2 = ExtResource( 64 )
 
 [node name="natalie1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 552.0
 margin_right = 638.0
 margin_bottom = 100.0
-texture = ExtResource( 52 )
+texture = ExtResource( 65 )
+script = ExtResource( 47 )
+animation0 = ExtResource( 65 )
+animation1 = ExtResource( 66 )
+animation2 = ExtResource( 67 )
 
 [node name="natalie2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 642.0
 margin_right = 728.0
 margin_bottom = 100.0
-texture = ExtResource( 53 )
+texture = ExtResource( 68 )
+script = ExtResource( 47 )
+animation0 = ExtResource( 68 )
+animation1 = ExtResource( 69 )
+animation2 = ExtResource( 70 )
 
 [node name="kyungsoon1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 732.0
 margin_right = 818.0
 margin_bottom = 100.0
-texture = ExtResource( 54 )
+texture = ExtResource( 71 )
+script = ExtResource( 47 )
+animation0 = ExtResource( 71 )
+animation1 = ExtResource( 72 )
+animation2 = ExtResource( 73 )
 
 [node name="kyungsoon2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 822.0
 margin_right = 908.0
 margin_bottom = 100.0
-texture = ExtResource( 55 )
+texture = ExtResource( 74 )
+script = ExtResource( 47 )
+animation0 = ExtResource( 74 )
+animation1 = ExtResource( 75 )
+animation2 = ExtResource( 76 )
 
 [node name="elijah1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 912.0
 margin_right = 998.0
 margin_bottom = 100.0
-texture = ExtResource( 56 )
+texture = ExtResource( 77 )
+script = ExtResource( 47 )
+animation0 = ExtResource( 77 )
+animation1 = ExtResource( 78 )
+animation2 = ExtResource( 79 )
 
 [node name="elijah2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 1002.0
 margin_right = 1088.0
 margin_bottom = 100.0
-texture = ExtResource( 57 )
+texture = ExtResource( 80 )
+script = ExtResource( 47 )
+animation0 = ExtResource( 80 )
+animation1 = ExtResource( 81 )
+animation2 = ExtResource( 82 )
 
 [node name="sean1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 1092.0
 margin_right = 1178.0
 margin_bottom = 100.0
-texture = ExtResource( 58 )
+texture = ExtResource( 83 )
+script = ExtResource( 47 )
+animation0 = ExtResource( 83 )
+animation1 = ExtResource( 84 )
+animation2 = ExtResource( 85 )
 
 [node name="sean2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 1182.0
 margin_right = 1268.0
 margin_bottom = 100.0
-texture = ExtResource( 59 )
+texture = ExtResource( 86 )
+script = ExtResource( 47 )
+animation0 = ExtResource( 86 )
+animation1 = ExtResource( 87 )
+animation2 = ExtResource( 88 )
 
-[node name="options_menu" parent="meta_ui" instance=ExtResource( 60 )]
+[node name="options_menu" parent="meta_ui" instance=ExtResource( 89 )]
 visible = false
 
 [node name="exit_confirm" type="Control" parent="meta_ui"]
@@ -1524,7 +1608,7 @@ text = "back"
 align = 1
 valign = 1
 
-[node name="save_menu" parent="meta_ui" instance=ExtResource( 61 )]
+[node name="save_menu" parent="meta_ui" instance=ExtResource( 90 )]
 visible = false
 margin_left = -0.418121
 margin_top = -0.418091
@@ -1581,7 +1665,7 @@ text = "continue"
 align = 1
 valign = 1
 
-[node name="load_menu" parent="meta_ui" instance=ExtResource( 62 )]
+[node name="load_menu" parent="meta_ui" instance=ExtResource( 91 )]
 visible = false
 
 [node name="history" type="Control" parent="meta_ui"]
@@ -1590,10 +1674,10 @@ visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 rect_pivot_offset = Vector2( -460, 150 )
-script = ExtResource( 63 )
+script = ExtResource( 92 )
 
 [node name="bg" type="Sprite" parent="meta_ui/history"]
-texture = ExtResource( 64 )
+texture = ExtResource( 93 )
 centered = false
 
 [node name="back" type="Button" parent="meta_ui/history"]
@@ -1643,11 +1727,12 @@ columns = 2
 
 [node name="debug" type="Control" parent="meta_ui"]
 editor/display_folded = true
+visible = false
 margin_top = 23.2134
 margin_right = 40.0
 margin_bottom = 63.2134
 rect_scale = Vector2( 0.7, 0.7 )
-script = ExtResource( 65 )
+script = ExtResource( 94 )
 
 [node name="LineEdit" type="LineEdit" parent="meta_ui/debug"]
 margin_left = 36.0
@@ -1727,7 +1812,7 @@ anchor_bottom = 1.0
 margin_right = 1280.0
 margin_bottom = 720.0
 mouse_filter = 2
-script = ExtResource( 66 )
+script = ExtResource( 95 )
 
 [node name="negative_cover2" type="ColorRect" parent="."]
 visible = false
@@ -1741,29 +1826,35 @@ color = Color( 0, 0, 0, 1 )
 [connection signal="pressed" from="content/ui/name_input/custom_pronouns/back" to="content/ui/name_input/custom_pronouns" method="hide"]
 [connection signal="pressed" from="content/ui/text_box" to="." method="update_dialog_button_clicked"]
 [connection signal="pressed" from="content/ui/skip_button" to="." method="toggle_skip"]
-[connection signal="pressed" from="content/ui/history_button" to="meta_ui/history" method="show_custom"]
 [connection signal="pressed" from="content/ui/history_button" to="." method="turn_off_skip"]
+[connection signal="pressed" from="content/ui/history_button" to="meta_ui/history" method="show_custom"]
 [connection signal="mouse_entered" from="meta_ui/menu_button" to="content/room" method="stop_all_hovering"]
-[connection signal="pressed" from="meta_ui/menu_button" to="." method="turn_off_skip"]
+[connection signal="mouse_exited" from="meta_ui/menu_button" to="content/room" method="start_all_hovering"]
 [connection signal="pressed" from="meta_ui/menu_button" to="." method="open_pause_menu"]
+[connection signal="pressed" from="meta_ui/menu_button" to="." method="turn_off_skip"]
 [connection signal="examine_item" from="meta_ui/dropdown" to="." method="examine_item"]
+[connection signal="mouse_entered" from="meta_ui/dropdown" to="content/room" method="stop_all_hovering"]
+[connection signal="mouse_exited" from="meta_ui/dropdown" to="content/room" method="start_all_hovering"]
 [connection signal="pressed" from="meta_ui/dropdown/add_quest" to="." method="test_add_quest"]
 [connection signal="pressed" from="meta_ui/dropdown/remove_quest" to="." method="test_remove_quest"]
 [connection signal="mouse_entered" from="meta_ui/notes_button" to="content/room" method="stop_all_hovering"]
+[connection signal="mouse_exited" from="meta_ui/notes_button" to="content/room" method="start_all_hovering"]
 [connection signal="pressed" from="meta_ui/notes_button" to="meta_ui/dropdown" method="toggle_notes"]
 [connection signal="mouse_entered" from="meta_ui/items_button" to="content/room" method="stop_all_hovering"]
+[connection signal="mouse_exited" from="meta_ui/items_button" to="content/room" method="start_all_hovering"]
 [connection signal="pressed" from="meta_ui/items_button" to="meta_ui/dropdown" method="toggle_items"]
 [connection signal="mouse_entered" from="meta_ui/history_button2" to="content/room" method="stop_all_hovering"]
-[connection signal="pressed" from="meta_ui/history_button2" to="meta_ui/history" method="show_custom"]
+[connection signal="mouse_exited" from="meta_ui/history_button2" to="content/room" method="start_all_hovering"]
 [connection signal="pressed" from="meta_ui/history_button2" to="." method="turn_off_skip"]
+[connection signal="pressed" from="meta_ui/history_button2" to="meta_ui/history" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/save" to="meta_ui/save_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/load" to="meta_ui/load_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/options" to="meta_ui/options_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/exit" to="meta_ui/exit_confirm" method="show"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/back" to="." method="close_pause_menu"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/dropdown" method="format_quests"]
-[connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
+[connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
 [connection signal="pressed" from="meta_ui/exit_confirm/yes" to="." method="return_to_main"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
 [connection signal="pressed" from="meta_ui/save_confirm/yes" to="." method="save_confirmed"]

@@ -140,8 +140,10 @@ func _ready():
 	if f.file_exists("user://seen_blocks.save"):
 		f.open("user://seen_blocks.save", File.READ)
 		seen_blocks = parse_json(f.get_line())
+		if !seen_blocks:
+			seen_blocks = []
 		f.close()
-	
+		
 	# cursor
 	Input.set_custom_mouse_cursor(load("res://assets/draw_cursor.png"), Input.CURSOR_HELP)
 
@@ -224,13 +226,18 @@ func change_room(label):
 	if label == '_prev':
 		room.change_room(room.prev_room_label, state)
 	elif label == room.get_current_room():
-		pass
+		return
 	else:
 		room.change_room(label, state)
 		
 		# a little hack: going into the draw-a-paw minigame should close the inventory
 		if label == "draw_a_paw" and $meta_ui/dropdown.items_shown:
 			$meta_ui/dropdown.toggle_items() 
+	
+	# deal with PolygonButton hovering nonsense if you changed rooms during dialog
+	yield(get_tree(), "idle_frame")
+	if ui.visible:
+		room.stop_all_hovering()
 
 func start_dialog(label, blackout_label=null):
 	$meta_ui/debug/Label.text = str(state)
@@ -295,6 +302,7 @@ func end_dialog():
 	ui.hide_ui()
 	$meta_ui/history_button2.show()
 	room.end_dialog()
+	room.start_all_hovering()
 	block = null
 
 # block = {
@@ -675,10 +683,6 @@ func load_game(file):
 	yield(get_tree(), 'idle_frame')
 	$meta_ui/history.load_history(save_dict["history"])
 	
-	if ui.visible:
-		# wait again to make sure that stop_all_hovering takes place AFTER any hovering
-		yield(get_tree(), "idle_frame")
-		room.stop_all_hovering()
 	
 	yield(get_tree(), "idle_frame")
 	AudioServer.set_bus_mute(0, false)

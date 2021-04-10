@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=2]
+[gd_scene load_steps=92 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/commons1.gd" type="Script" id=2]
@@ -9,82 +9,88 @@
 [ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=7]
 [ext_resource path="res://assets/sprites/oliver_wait_2.png" type="Texture" id=8]
 [ext_resource path="res://assets/sprites/oliver_wait_3.png" type="Texture" id=9]
-[ext_resource path="res://assets/sprites/numa_wait_1.png" type="Texture" id=10]
-[ext_resource path="res://assets/sprite_masks/numa_wait_1.png" type="BitMap" id=11]
-[ext_resource path="res://assets/sprites/numa_wait_2.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprites/numa_wait_3.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprites/numa_with_ks1.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprite_masks/numa_with_ks1.png" type="BitMap" id=15]
-[ext_resource path="res://assets/sprites/numa_with_ks2.png" type="Texture" id=16]
-[ext_resource path="res://assets/sprites/numa_with_ks3.png" type="Texture" id=17]
-[ext_resource path="res://assets/sprites/kyungsoon_idle1.png" type="Texture" id=18]
-[ext_resource path="res://assets/sprite_masks/kyungsoon_idle1.png" type="BitMap" id=19]
-[ext_resource path="res://assets/sprites/kyungsoon_idle3.png" type="Texture" id=20]
-[ext_resource path="res://assets/sprites/tori_wait_1.png" type="Texture" id=21]
-[ext_resource path="res://assets/sprites/elijah_wait_1.png" type="Texture" id=22]
-[ext_resource path="res://assets/sprites/sean_wait_1.png" type="Texture" id=23]
-[ext_resource path="res://assets/sprites/natalie_wait_1.png" type="Texture" id=24]
-[ext_resource path="res://scenes/sprites/numa_at_commons.tscn" type="PackedScene" id=25]
-[ext_resource path="res://scenes/sprites/kyungsoon_idle.tscn" type="PackedScene" id=26]
-[ext_resource path="res://assets/sprites/kyungsoon_idle2.png" type="Texture" id=27]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=28]
-[ext_resource path="res://assets/sprites/basket-flower-and-card.png" type="Texture" id=29]
-[ext_resource path="res://assets/sprite_masks/basket-flower-and-card.png" type="BitMap" id=30]
-[ext_resource path="res://scenes/sprites/oliver_huh.tscn" type="PackedScene" id=31]
-[ext_resource path="res://assets/sprites/oliver_confused1.png" type="Texture" id=32]
-[ext_resource path="res://assets/sprites/oliver_confused2.png" type="Texture" id=33]
-[ext_resource path="res://assets/sprites/oliver_confused3.png" type="Texture" id=34]
-[ext_resource path="res://scenes/cat1_idle.tscn" type="PackedScene" id=35]
-[ext_resource path="res://assets/sprite_masks/cat1.png" type="BitMap" id=36]
-[ext_resource path="res://assets/sprites/cat1.png" type="Texture" id=37]
-[ext_resource path="res://assets/sprites/cat2.png" type="Texture" id=38]
-[ext_resource path="res://assets/sprites/cat3.png" type="Texture" id=39]
-[ext_resource path="res://assets/sprites/coin1.png" type="Texture" id=40]
-[ext_resource path="res://assets/sprites/coin2.png" type="Texture" id=41]
-[ext_resource path="res://assets/audio/coin_flip.wav" type="AudioStream" id=42]
-[ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=43]
-[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=44]
-[ext_resource path="res://assets/sprites/lamp.png" type="Texture" id=45]
-[ext_resource path="res://assets/sprites/frog_1.png" type="Texture" id=46]
-[ext_resource path="res://assets/sprite_masks/frog_1.png" type="BitMap" id=47]
-[ext_resource path="res://assets/sprites/frog_2.png" type="Texture" id=48]
-[ext_resource path="res://assets/sprites/frog_3.png" type="Texture" id=49]
-[ext_resource path="res://assets/sprites/poof/poof3.png" type="Texture" id=50]
-[ext_resource path="res://assets/sprites/poof/poof5.png" type="Texture" id=51]
-[ext_resource path="res://assets/audio/fart.ogg" type="AudioStream" id=52]
-[ext_resource path="res://assets/sprites/oliver_poof_1.png" type="Texture" id=53]
-[ext_resource path="res://assets/sprites/oliver_poof_2.png" type="Texture" id=54]
-[ext_resource path="res://assets/sprites/oliver_poof_3.png" type="Texture" id=55]
-[ext_resource path="res://assets/sprites/elijah_poof_1.png" type="Texture" id=56]
-[ext_resource path="res://assets/sprites/elijah_poof_2.png" type="Texture" id=57]
-[ext_resource path="res://assets/sprites/elijah_poof_3.png" type="Texture" id=58]
-[ext_resource path="res://assets/sprites/sean_poof_1.png" type="Texture" id=59]
-[ext_resource path="res://assets/sprites/sean_poof_2.png" type="Texture" id=60]
-[ext_resource path="res://assets/sprites/sean_poof_3.png" type="Texture" id=61]
-[ext_resource path="res://assets/sprites/numa_poof_1.png" type="Texture" id=62]
-[ext_resource path="res://assets/sprites/numa_poof_2.png" type="Texture" id=63]
-[ext_resource path="res://assets/sprites/numa_poof_3.png" type="Texture" id=64]
-[ext_resource path="res://assets/sprites/tori_poof_1.png" type="Texture" id=65]
-[ext_resource path="res://assets/sprites/tori_poof_2.png" type="Texture" id=66]
-[ext_resource path="res://assets/sprites/tori_poof_3.png" type="Texture" id=67]
-[ext_resource path="res://assets/sprites/natalie_poof_1.png" type="Texture" id=68]
-[ext_resource path="res://assets/sprites/natalie_poof_2.png" type="Texture" id=69]
-[ext_resource path="res://assets/sprites/natalie_poof_3.png" type="Texture" id=70]
-[ext_resource path="res://assets/audio/poof.ogg" type="AudioStream" id=71]
-[ext_resource path="res://assets/sprites/poof/poof1.png" type="Texture" id=72]
-[ext_resource path="res://assets/sprites/poof/poof2.png" type="Texture" id=73]
-[ext_resource path="res://assets/sprites/poof/poof4.png" type="Texture" id=74]
-[ext_resource path="res://scenes/lucifur_standing_scene.tscn" type="PackedScene" id=75]
+[ext_resource path="res://assets/sprites/wait_books.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/numa_wait_1.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprite_masks/numa_wait_1.png" type="BitMap" id=12]
+[ext_resource path="res://assets/sprites/numa_wait_2.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/numa_wait_3.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/numa_with_ks1.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprite_masks/numa_with_ks1.png" type="BitMap" id=16]
+[ext_resource path="res://assets/sprites/numa_with_ks2.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/numa_with_ks3.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/kyungsoon_idle1.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprite_masks/kyungsoon_idle1.png" type="BitMap" id=20]
+[ext_resource path="res://assets/sprites/kyungsoon_idle3.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/tori_wait_1.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/elijah_wait_1.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/sean_wait_1.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/natalie_wait_1.png" type="Texture" id=25]
+[ext_resource path="res://scenes/sprites/numa_at_commons.tscn" type="PackedScene" id=26]
+[ext_resource path="res://scenes/sprites/kyungsoon_idle.tscn" type="PackedScene" id=27]
+[ext_resource path="res://assets/sprites/kyungsoon_idle2.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprites/gift_books.png" type="Texture" id=29]
+[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=30]
+[ext_resource path="res://assets/sprites/basket-flower-and-card.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprite_masks/basket-flower-and-card.png" type="BitMap" id=32]
+[ext_resource path="res://scenes/sprites/oliver_huh.tscn" type="PackedScene" id=33]
+[ext_resource path="res://assets/sprites/oliver_confused1.png" type="Texture" id=34]
+[ext_resource path="res://assets/sprites/oliver_confused2.png" type="Texture" id=35]
+[ext_resource path="res://assets/sprites/oliver_confused3.png" type="Texture" id=36]
+[ext_resource path="res://scenes/cat1_idle.tscn" type="PackedScene" id=37]
+[ext_resource path="res://assets/sprite_masks/cat1.png" type="BitMap" id=38]
+[ext_resource path="res://assets/sprites/cat1.png" type="Texture" id=39]
+[ext_resource path="res://assets/sprites/cat2.png" type="Texture" id=40]
+[ext_resource path="res://assets/sprites/cat3.png" type="Texture" id=41]
+[ext_resource path="res://assets/sprites/coin1.png" type="Texture" id=42]
+[ext_resource path="res://assets/sprites/coin2.png" type="Texture" id=43]
+[ext_resource path="res://assets/audio/coin_flip.wav" type="AudioStream" id=44]
+[ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=45]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=46]
+[ext_resource path="res://assets/sprites/lamp.png" type="Texture" id=47]
+[ext_resource path="res://assets/sprites/frog_1.png" type="Texture" id=48]
+[ext_resource path="res://assets/sprite_masks/frog_1.png" type="BitMap" id=49]
+[ext_resource path="res://assets/sprites/frog_2.png" type="Texture" id=50]
+[ext_resource path="res://assets/sprites/frog_3.png" type="Texture" id=51]
+[ext_resource path="res://assets/sprites/poof/poof3.png" type="Texture" id=52]
+[ext_resource path="res://assets/sprites/poof/poof5.png" type="Texture" id=53]
+[ext_resource path="res://assets/audio/fart.ogg" type="AudioStream" id=54]
+[ext_resource path="res://assets/sprites/oliver_poof_1.png" type="Texture" id=55]
+[ext_resource path="res://assets/sprites/oliver_poof_2.png" type="Texture" id=56]
+[ext_resource path="res://assets/sprites/oliver_poof_3.png" type="Texture" id=57]
+[ext_resource path="res://assets/sprites/elijah_poof_1.png" type="Texture" id=58]
+[ext_resource path="res://assets/sprites/elijah_poof_2.png" type="Texture" id=59]
+[ext_resource path="res://assets/sprites/elijah_poof_3.png" type="Texture" id=60]
+[ext_resource path="res://assets/sprites/sean_poof_1.png" type="Texture" id=61]
+[ext_resource path="res://assets/sprites/sean_poof_2.png" type="Texture" id=62]
+[ext_resource path="res://assets/sprites/sean_poof_3.png" type="Texture" id=63]
+[ext_resource path="res://assets/sprites/numa_poof_1.png" type="Texture" id=64]
+[ext_resource path="res://assets/sprites/numa_poof_2.png" type="Texture" id=65]
+[ext_resource path="res://assets/sprites/numa_poof_3.png" type="Texture" id=66]
+[ext_resource path="res://assets/sprites/tori_poof_1.png" type="Texture" id=67]
+[ext_resource path="res://assets/sprites/tori_poof_2.png" type="Texture" id=68]
+[ext_resource path="res://assets/sprites/tori_poof_3.png" type="Texture" id=69]
+[ext_resource path="res://assets/sprites/natalie_poof_1.png" type="Texture" id=70]
+[ext_resource path="res://assets/sprites/natalie_poof_2.png" type="Texture" id=71]
+[ext_resource path="res://assets/sprites/natalie_poof_3.png" type="Texture" id=72]
+[ext_resource path="res://assets/audio/poof.ogg" type="AudioStream" id=73]
+[ext_resource path="res://assets/sprites/poof/poof1.png" type="Texture" id=74]
+[ext_resource path="res://assets/sprites/poof/poof2.png" type="Texture" id=75]
+[ext_resource path="res://assets/sprites/poof/poof4.png" type="Texture" id=76]
+[ext_resource path="res://assets/sprites/lucifur_idle_1.png" type="Texture" id=77]
+[ext_resource path="res://assets/sprite_masks/lucifur_idle_1.png" type="BitMap" id=78]
+[ext_resource path="res://assets/sprites/lucifur_idle2.png" type="Texture" id=79]
+[ext_resource path="res://assets/sprites/lucifur_idle_3.png" type="Texture" id=80]
+[ext_resource path="res://assets/sprites/trident.png" type="Texture" id=81]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 40 ), ExtResource( 41 ) ],
+"frames": [ ExtResource( 42 ), ExtResource( 43 ) ],
 "loop": true,
 "name": "default",
 "speed": 15.0
 } ]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=5]
 length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -120,12 +126,12 @@ tracks/2/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 42 )
+"stream": ExtResource( 44 )
 } ],
 "times": PoolRealArray( 0.2 )
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=6]
 length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -161,12 +167,12 @@ tracks/2/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 42 )
+"stream": ExtResource( 44 )
 } ],
 "times": PoolRealArray( 0.2 )
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=7]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite3:position")
@@ -286,12 +292,12 @@ tracks/9/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 52 )
+"stream": ExtResource( 54 )
 } ],
 "times": PoolRealArray( 0.5 )
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=8]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:visible")
@@ -543,12 +549,12 @@ tracks/20/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 71 )
+"stream": ExtResource( 73 )
 } ],
 "times": PoolRealArray( 0.5 )
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=9]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:visible")
@@ -812,12 +818,12 @@ tracks/21/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 71 )
+"stream": ExtResource( 73 )
 } ],
 "times": PoolRealArray( 0.5 )
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=10]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:visible")
@@ -1057,9 +1063,492 @@ tracks/19/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 71 )
+"stream": ExtResource( 73 )
 } ],
 "times": PoolRealArray( 0.5 )
+}
+
+[sub_resource type="Animation" id=1]
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 145, 180 ), Vector2( 145, 200 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 1.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.366022, 1 ),
+"update": 0,
+"values": [ 0.0, 100.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.34151, 1 ),
+"update": 0,
+"values": [ Vector2( 120.943, 127.265 ), Vector2( 171.634, 74.2749 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.353553, 1 ),
+"update": 0,
+"values": [ Vector2( 19.6439, 85.9417 ), Vector2( -66.951, 31.927 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite3:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.366021, 1 ),
+"update": 0,
+"values": [ 0.0, 113.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite3:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Sprite4:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.353554, 1 ),
+"update": 0,
+"values": [ 0.0, 78.1 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Sprite4:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.353553, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.4, 1.4 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Sprite4:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Sprite2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.34151, 1 ),
+"update": 0,
+"values": [ Vector2( 14.9278, 311.653 ), Vector2( -49.9841, 296.341 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Sprite2:rotation_degrees")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.353553, 1 ),
+"update": 0,
+"values": [ 0.0, 104.1 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Sprite2:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Sprite5:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.34151, 1 ),
+"update": 0,
+"values": [ Vector2( 96.9913, 362.183 ), Vector2( 184.526, 363.291 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Sprite5:rotation_degrees")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.353554, 1 ),
+"update": 0,
+"values": [ 0.0, 130.1 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Sprite5:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath(".:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("../cat1_idle:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/17/type = "audio"
+tracks/17/path = NodePath("poof_audio")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 73 )
+} ],
+"times": PoolRealArray( 0.5 )
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("trident:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("../lucifur:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "lucifur_unpoof"
+length = 1.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5 ),
+"transitions": PoolRealArray( 0, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.366022, 1 ),
+"update": 0,
+"values": [ 0.0, 100.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.34151, 1 ),
+"update": 0,
+"values": [ Vector2( 120.943, 127.265 ), Vector2( 171.634, 74.2749 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.353553, 1 ),
+"update": 0,
+"values": [ Vector2( 19.6439, 85.9417 ), Vector2( -66.951, 31.927 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite3:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.366021, 1 ),
+"update": 0,
+"values": [ 0.0, 113.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite3:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5 ),
+"transitions": PoolRealArray( 0, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Sprite4:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.353554, 1 ),
+"update": 0,
+"values": [ 0.0, 78.1 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Sprite4:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.353553, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.4, 1.4 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Sprite4:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5 ),
+"transitions": PoolRealArray( 0, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Sprite2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.34151, 1 ),
+"update": 0,
+"values": [ Vector2( 14.9278, 311.653 ), Vector2( -49.9841, 296.341 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Sprite2:rotation_degrees")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.353553, 1 ),
+"update": 0,
+"values": [ 0.0, 104.1 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Sprite2:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5 ),
+"transitions": PoolRealArray( 0, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Sprite5:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.34151, 1 ),
+"update": 0,
+"values": [ Vector2( 96.9913, 362.183 ), Vector2( 184.526, 363.291 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Sprite5:rotation_degrees")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 0.353554, 1 ),
+"update": 0,
+"values": [ 0.0, 130.1 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Sprite5:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5 ),
+"transitions": PoolRealArray( 0, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("../lucifur:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/16/type = "audio"
+tracks/16/path = NodePath("poof_audio")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 73 )
+} ],
+"times": PoolRealArray( 0.5 )
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("trident:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [node name="room_template" type="Control"]
@@ -1103,6 +1592,23 @@ animation0 = ExtResource( 5 )
 animation1 = ExtResource( 8 )
 animation2 = ExtResource( 9 )
 
+[node name="wait_books1" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+visible = false
+position = Vector2( 648.357, 472.402 )
+script = ExtResource( 4 )
+dialog_label = "wait_books"
+sprite_path = [ null ]
+
+[node name="Sprite3" type="Sprite" parent="state_handler/wait_books1"]
+position = Vector2( -10.1326, -22.1578 )
+texture = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/wait_books1"]
+position = Vector2( 0.498962, -30.0486 )
+scale = Vector2( 1, 1.70232 )
+polygon = PoolVector2Array( -58.8255, -27.8157, -58.4048, -0.443634, -52.4796, 21.5897, -55.2601, 32.5565, -22.7548, 44.5431, 31.8207, 35.2355, 27.3102, 19.6327, 18.6169, 11.7079, 32.5132, 11.5677, 8.9342, -27.0737, -9.1109, -25.2639, -9.99115, -31.7275 )
+
 [node name="wait_oliver2" type="TextureButton" parent="state_handler"]
 visible = false
 margin_left = 749.183
@@ -1121,6 +1627,24 @@ animation0 = ExtResource( 5 )
 animation1 = ExtResource( 8 )
 animation2 = ExtResource( 9 )
 
+[node name="wait_books2" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+visible = false
+position = Vector2( 1138.88, 502.928 )
+scale = Vector2( 1.05, 1.05 )
+script = ExtResource( 4 )
+dialog_label = "wait_books"
+sprite_path = [ null ]
+
+[node name="Sprite3" type="Sprite" parent="state_handler/wait_books2"]
+position = Vector2( -10.1326, -22.1578 )
+texture = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/wait_books2"]
+position = Vector2( 0.498962, -30.0486 )
+scale = Vector2( 1, 1.70232 )
+polygon = PoolVector2Array( -58.8255, -27.8157, -58.4048, -0.443634, -52.4796, 21.5897, -55.2601, 32.5565, -22.7548, 44.5431, 31.8207, 35.2355, 27.3102, 19.6327, 18.6169, 11.7079, 32.5132, 11.5677, 8.9342, -27.0737, -9.1109, -25.2639, -9.99115, -31.7275 )
+
 [node name="wait_numa1" type="TextureButton" parent="state_handler"]
 visible = false
 margin_left = 1045.38
@@ -1129,13 +1653,13 @@ margin_right = 1312.38
 margin_bottom = 600.042
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 10 )
-texture_click_mask = ExtResource( 11 )
+texture_normal = ExtResource( 11 )
+texture_click_mask = ExtResource( 12 )
 script = ExtResource( 7 )
 dialog_label = "wait_numa"
-animation0 = ExtResource( 10 )
-animation1 = ExtResource( 12 )
-animation2 = ExtResource( 13 )
+animation0 = ExtResource( 11 )
+animation1 = ExtResource( 13 )
+animation2 = ExtResource( 14 )
 
 [node name="wait_numa2" type="TextureButton" parent="state_handler"]
 visible = false
@@ -1145,13 +1669,13 @@ margin_right = 626.733
 margin_bottom = 542.617
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 14 )
-texture_click_mask = ExtResource( 15 )
+texture_normal = ExtResource( 15 )
+texture_click_mask = ExtResource( 16 )
 script = ExtResource( 7 )
 dialog_label = "wait_numa"
-animation0 = ExtResource( 14 )
-animation1 = ExtResource( 16 )
-animation2 = ExtResource( 17 )
+animation0 = ExtResource( 15 )
+animation1 = ExtResource( 17 )
+animation2 = ExtResource( 18 )
 
 [node name="wait_kyungsoon" type="TextureButton" parent="state_handler"]
 visible = false
@@ -1161,13 +1685,13 @@ margin_right = 567.629
 margin_bottom = 647.683
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 18 )
-texture_click_mask = ExtResource( 19 )
+texture_normal = ExtResource( 19 )
+texture_click_mask = ExtResource( 20 )
 script = ExtResource( 7 )
 dialog_label = "wait_kyungsoon"
-animation0 = ExtResource( 18 )
-animation1 = ExtResource( 18 )
-animation2 = ExtResource( 20 )
+animation0 = ExtResource( 19 )
+animation1 = ExtResource( 19 )
+animation2 = ExtResource( 21 )
 
 [node name="wait_tori" type="TextureButton" parent="state_handler"]
 visible = false
@@ -1177,7 +1701,7 @@ margin_right = -26.6759
 margin_bottom = 595.715
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 21 )
+texture_normal = ExtResource( 22 )
 script = ExtResource( 7 )
 dialog_label = "wait_TORI"
 
@@ -1189,7 +1713,7 @@ margin_right = -97.1871
 margin_bottom = 393.815
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 22 )
+texture_normal = ExtResource( 23 )
 script = ExtResource( 7 )
 
 [node name="wait_sean" type="TextureButton" parent="state_handler"]
@@ -1200,7 +1724,7 @@ margin_right = -108.294
 margin_bottom = 466.802
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 23 )
+texture_normal = ExtResource( 24 )
 script = ExtResource( 7 )
 
 [node name="wait_natalie" type="TextureButton" parent="state_handler"]
@@ -1211,89 +1735,109 @@ margin_right = -106.707
 margin_bottom = 531.856
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 24 )
+texture_normal = ExtResource( 25 )
 script = ExtResource( 7 )
 
-[node name="numa_at_commons" parent="state_handler" instance=ExtResource( 25 )]
+[node name="numa_at_commons" parent="state_handler" instance=ExtResource( 26 )]
 visible = false
 margin_left = 405.733
 margin_top = 313.617
 margin_right = 626.733
 margin_bottom = 542.617
-texture_normal = ExtResource( 14 )
+texture_normal = ExtResource( 15 )
 dialog_label = "ks_and_numa_commons"
 blackout_label = "numa_blackout"
-animation0 = ExtResource( 14 )
-animation1 = ExtResource( 16 )
-animation2 = ExtResource( 17 )
+animation0 = ExtResource( 15 )
+animation1 = ExtResource( 17 )
+animation2 = ExtResource( 18 )
 
-[node name="kyungsoon_idle" parent="state_handler" instance=ExtResource( 26 )]
+[node name="kyungsoon_idle" parent="state_handler" instance=ExtResource( 27 )]
 margin_left = 304.629
 margin_top = 327.683
 margin_right = 567.629
 margin_bottom = 647.683
 blackout_label = "kyungsoon_blackout"
-animation0 = ExtResource( 18 )
-animation1 = ExtResource( 27 )
-animation2 = ExtResource( 20 )
+animation0 = ExtResource( 19 )
+animation1 = ExtResource( 28 )
+animation2 = ExtResource( 21 )
 
-[node name="flowers_etc" parent="state_handler" instance=ExtResource( 28 )]
+[node name="gift_books" type="Area2D" parent="state_handler"]
+position = Vector2( 167.376, 609.991 )
+scale = Vector2( 0.95, 0.95 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+dialog_label = "gift_books"
+sprite_path = [ null ]
+
+[node name="Sprite3" type="Sprite" parent="state_handler/gift_books"]
+position = Vector2( 86.8829, -39.0502 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 29 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/gift_books"]
+polygon = PoolVector2Array( -4.61125, -67.0885, -20.1187, 12.583, 86.3317, 17.9866, 97.1389, 0.154785, 185.187, -4.22144, 182.793, -53.9164, 178.601, -76.6683, 160.041, -91.6367, 91.7849, -88.0443, 33.109, -95.2291 )
+
+[node name="flowers_etc" parent="state_handler" instance=ExtResource( 30 )]
 visible = false
 modulate = Color( 1, 1, 1, 1 )
 margin_left = 604.51
 margin_top = 537.918
 margin_right = 805.51
 margin_bottom = 686.918
-texture_normal = ExtResource( 29 )
-texture_click_mask = ExtResource( 30 )
+texture_normal = ExtResource( 31 )
+texture_click_mask = ExtResource( 32 )
 expand = false
 dialog_label = "flowers_etc"
+sprite_path = [ null ]
 
-[node name="oliver_huh" parent="state_handler" instance=ExtResource( 31 )]
+[node name="oliver_huh" parent="state_handler" instance=ExtResource( 33 )]
 visible = false
 margin_left = 1019.18
 margin_top = 201.466
 margin_right = 1171.18
 margin_bottom = 533.466
-texture_normal = ExtResource( 32 )
+texture_normal = ExtResource( 34 )
 dialog_label = "talk_to_oliver_about_numa"
 blackout_label = "oliver_blackout"
-animation0 = ExtResource( 32 )
-animation1 = ExtResource( 33 )
-animation2 = ExtResource( 34 )
+animation0 = ExtResource( 34 )
+animation1 = ExtResource( 35 )
+animation2 = ExtResource( 36 )
 
-[node name="cat1_idle" parent="state_handler" instance=ExtResource( 35 )]
+[node name="cat1_idle" parent="state_handler" instance=ExtResource( 37 )]
+visible = false
 margin_left = 806.166
 margin_top = 469.264
 margin_right = 946.165
 margin_bottom = 603.264
-texture_click_mask = ExtResource( 36 )
-animation0 = ExtResource( 37 )
-animation1 = ExtResource( 38 )
-animation2 = ExtResource( 39 )
+texture_click_mask = ExtResource( 38 )
+animation0 = ExtResource( 39 )
+animation1 = ExtResource( 40 )
+animation2 = ExtResource( 41 )
 
 [node name="coin" type="AnimatedSprite" parent="state_handler"]
 editor/display_folded = true
 visible = false
 position = Vector2( 640, 800 )
-frames = SubResource( 1 )
+frames = SubResource( 4 )
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/coin"]
-anims/paraola = SubResource( 2 )
-"anims/paraola (copy)" = SubResource( 3 )
+anims/paraola = SubResource( 5 )
+"anims/paraola (copy)" = SubResource( 6 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="state_handler/coin"]
-stream = ExtResource( 42 )
+stream = ExtResource( 44 )
 bus = "SFX"
 
-[node name="exit" parent="state_handler" instance=ExtResource( 43 )]
+[node name="exit" parent="state_handler" instance=ExtResource( 45 )]
 room_label = "commons2"
 
 [node name="phone" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 position = Vector2( 724.798, -291.001 )
-script = ExtResource( 44 )
+script = ExtResource( 46 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
@@ -1317,7 +1861,7 @@ polygon = PoolVector2Array( 355.202, 531.001, 347.202, 648.001, 383.202, 650.001
 [node name="exit2" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 position = Vector2( 456.517, -226.127 )
-script = ExtResource( 44 )
+script = ExtResource( 46 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1343,7 +1887,7 @@ polygon = PoolVector2Array( -459.085, 322.215, -455.713, 875.844, -322.6, 822.85
 editor/display_folded = true
 visible = false
 position = Vector2( 456.517, -192.127 )
-script = ExtResource( 44 )
+script = ExtResource( 46 )
 room_label = "commons3"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_door_exit"]
@@ -1361,8 +1905,6 @@ position = Vector2( 1.13867, 14.5051 )
 polygon = PoolVector2Array( 865.429, 508.608, 1021.99, 533.956, 1020.8, 205.639, 866.26, 208.881 )
 
 [node name="commons_lamp" type="Area2D" parent="state_handler"]
-editor/display_folded = true
-visible = false
 position = Vector2( 0.431946, -59.9116 )
 script = ExtResource( 4 )
 dialog_label = "commons_lamp"
@@ -1370,13 +1912,14 @@ sprite_path = [ null ]
 
 [node name="Sprite" type="Sprite" parent="state_handler/commons_lamp"]
 position = Vector2( 390.541, 287.778 )
-texture = ExtResource( 45 )
+texture = ExtResource( 47 )
 offset = Vector2( 348.493, 101.286 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_lamp"]
-polygon = PoolVector2Array( 778.808, 373.277, 777.445, 349.097, 794.304, 338.323, 767.218, 286.476, 741.382, 286.084, 732.468, 293.262, 708.023, 340.249, 735.135, 352.675, 744.218, 352.215, 744.45, 510.333, 735.521, 511.956, 717.848, 486.118, 709.169, 485.363, 676.961, 505.674, 688.08, 520.499, 716.716, 520.457, 731.81, 531.4, 745.532, 536.847, 763.388, 536.847, 774.481, 532.112, 780.298, 526.025, 777.728, 516.285, 769.881, 511.28, 760.295, 511.35, 761.846, 390.644 )
+polygon = PoolVector2Array( 778.808, 373.277, 777.445, 349.097, 794.304, 338.323, 767.218, 286.476, 741.382, 286.084, 732.468, 293.262, 708.023, 340.249, 735.135, 352.675, 744.218, 352.215, 744.45, 510.333, 735.521, 511.956, 717.848, 486.118, 709.169, 485.363, 686.091, 502.758, 691.469, 518.889, 716.716, 520.457, 731.81, 531.4, 745.532, 536.847, 763.388, 536.847, 774.481, 532.112, 780.298, 526.025, 777.728, 516.285, 769.881, 511.28, 760.295, 511.35, 761.846, 390.644 )
 
 [node name="frog" type="Area2D" parent="state_handler"]
+visible = false
 position = Vector2( 755.46, 465.694 )
 script = ExtResource( 4 )
 dialog_label = "frog"
@@ -1393,31 +1936,30 @@ margin_bottom = 17.0
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 46 )
-texture_click_mask = ExtResource( 47 )
+texture_normal = ExtResource( 48 )
+texture_click_mask = ExtResource( 49 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 46 )
-animation1 = ExtResource( 48 )
-animation2 = ExtResource( 49 )
+animation0 = ExtResource( 48 )
+animation1 = ExtResource( 50 )
+animation2 = ExtResource( 51 )
 
 [node name="Sprite3" type="Sprite" parent="state_handler/frog"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 26.2277, -128.059 )
 rotation = 1.97222
-texture = ExtResource( 50 )
+texture = ExtResource( 52 )
 
 [node name="Sprite5" type="Sprite" parent="state_handler/frog"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -63.3644, 22.222 )
 rotation = 2.27067
-texture = ExtResource( 51 )
+texture = ExtResource( 53 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/frog"]
-anims/lucifur_poof = SubResource( 4 )
+anims/lucifur_poof = SubResource( 7 )
 
 [node name="commons_outlet" type="Area2D" parent="state_handler"]
 editor/display_folded = true
-visible = false
 position = Vector2( 0.431946, -59.9116 )
 script = ExtResource( 4 )
 dialog_label = "commons_outlet"
@@ -1439,11 +1981,11 @@ margin_left = -91.3015
 margin_top = -16.8974
 margin_right = 85.6985
 margin_bottom = 297.103
-texture_normal = ExtResource( 53 )
+texture_normal = ExtResource( 55 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 53 )
-animation1 = ExtResource( 54 )
-animation2 = ExtResource( 55 )
+animation0 = ExtResource( 55 )
+animation1 = ExtResource( 56 )
+animation2 = ExtResource( 57 )
 
 [node name="elijah_poof" type="TextureButton" parent="state_handler/poof_sinners1"]
 margin_left = -165.726
@@ -1451,11 +1993,11 @@ margin_top = -28.4125
 margin_right = -3.72632
 margin_bottom = 341.588
 rect_pivot_offset = Vector2( -35.5508, 98.8175 )
-texture_normal = ExtResource( 56 )
+texture_normal = ExtResource( 58 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 56 )
-animation1 = ExtResource( 57 )
-animation2 = ExtResource( 58 )
+animation0 = ExtResource( 58 )
+animation1 = ExtResource( 59 )
+animation2 = ExtResource( 60 )
 
 [node name="kyungsoon_idle1" type="TextureButton" parent="state_handler/poof_sinners1"]
 margin_left = -305.009
@@ -1463,96 +2005,96 @@ margin_top = 130.173
 margin_right = -42.0088
 margin_bottom = 450.173
 rect_pivot_offset = Vector2( 197.612, 187.702 )
-texture_normal = ExtResource( 18 )
+texture_normal = ExtResource( 19 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 18 )
-animation1 = ExtResource( 27 )
-animation2 = ExtResource( 20 )
+animation0 = ExtResource( 19 )
+animation1 = ExtResource( 28 )
+animation2 = ExtResource( 21 )
 
 [node name="sean_poof" type="TextureButton" parent="state_handler/poof_sinners1"]
 margin_left = 336.2
 margin_top = -9.89078
 margin_right = 494.2
 margin_bottom = 343.109
-texture_normal = ExtResource( 59 )
+texture_normal = ExtResource( 61 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 59 )
-animation1 = ExtResource( 60 )
-animation2 = ExtResource( 61 )
+animation0 = ExtResource( 61 )
+animation1 = ExtResource( 62 )
+animation2 = ExtResource( 63 )
 
 [node name="numa_poof" type="TextureButton" parent="state_handler/poof_sinners1"]
 margin_left = 408.718
 margin_top = 48.9333
 margin_right = 632.718
 margin_bottom = 411.933
-texture_normal = ExtResource( 62 )
+texture_normal = ExtResource( 64 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 62 )
-animation1 = ExtResource( 63 )
-animation2 = ExtResource( 64 )
+animation0 = ExtResource( 64 )
+animation1 = ExtResource( 65 )
+animation2 = ExtResource( 66 )
 
 [node name="tori_poof" type="TextureButton" parent="state_handler/poof_sinners1"]
 margin_left = -385.835
 margin_top = -14.1489
 margin_right = -242.835
 margin_bottom = 436.851
-texture_normal = ExtResource( 65 )
+texture_normal = ExtResource( 67 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 65 )
-animation1 = ExtResource( 66 )
-animation2 = ExtResource( 67 )
+animation0 = ExtResource( 67 )
+animation1 = ExtResource( 68 )
+animation2 = ExtResource( 69 )
 
 [node name="natalie_poof" type="TextureButton" parent="state_handler/poof_sinners1"]
 margin_left = -9.02533
 margin_top = 124.484
 margin_right = 229.975
 margin_bottom = 391.484
-texture_normal = ExtResource( 68 )
+texture_normal = ExtResource( 70 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 68 )
-animation1 = ExtResource( 69 )
-animation2 = ExtResource( 70 )
+animation0 = ExtResource( 70 )
+animation1 = ExtResource( 71 )
+animation2 = ExtResource( 72 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/poof_sinners1"]
-anims/poof = SubResource( 5 )
+anims/poof = SubResource( 8 )
 
 [node name="Sprite7" type="Sprite" parent="state_handler/poof_sinners1"]
 modulate = Color( 1, 1, 1, 0.9 )
 position = Vector2( -311.353, 108.436 )
 rotation = 0.468216
-texture = ExtResource( 72 )
+texture = ExtResource( 74 )
 
 [node name="Sprite6" type="Sprite" parent="state_handler/poof_sinners1"]
 modulate = Color( 1, 1, 1, 0.9 )
 position = Vector2( 504.538, 321.812 )
 rotation = 0.496756
-texture = ExtResource( 73 )
+texture = ExtResource( 75 )
 
 [node name="Sprite10" type="Sprite" parent="state_handler/poof_sinners1"]
 modulate = Color( 1, 1, 1, 0.9 )
 position = Vector2( 455.435, 77.8746 )
 rotation = 0.436557
-texture = ExtResource( 50 )
+texture = ExtResource( 52 )
 
 [node name="Sprite8" type="Sprite" parent="state_handler/poof_sinners1"]
 modulate = Color( 1, 1, 1, 0.9 )
 position = Vector2( 229.562, 179.686 )
 rotation = 0.468216
 scale = Vector2( 1.50308, 1.50308 )
-texture = ExtResource( 74 )
+texture = ExtResource( 76 )
 
 [node name="Sprite11" type="Sprite" parent="state_handler/poof_sinners1"]
 modulate = Color( 1, 1, 1, 0.9 )
 position = Vector2( -84.4323, 229.792 )
 rotation = 2.2851
 scale = Vector2( 1.30308, 1.30308 )
-texture = ExtResource( 74 )
+texture = ExtResource( 76 )
 
 [node name="Sprite9" type="Sprite" parent="state_handler/poof_sinners1"]
 modulate = Color( 1, 1, 1, 0.9 )
 position = Vector2( -271.794, 339.561 )
 rotation = 0.181689
-texture = ExtResource( 51 )
+texture = ExtResource( 53 )
 
 [node name="poof_sinners2" type="Control" parent="state_handler"]
 editor/display_folded = true
@@ -1567,11 +2109,11 @@ margin_left = -91.3015
 margin_top = -16.8974
 margin_right = 85.6985
 margin_bottom = 297.103
-texture_normal = ExtResource( 53 )
+texture_normal = ExtResource( 55 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 53 )
-animation1 = ExtResource( 54 )
-animation2 = ExtResource( 55 )
+animation0 = ExtResource( 55 )
+animation1 = ExtResource( 56 )
+animation2 = ExtResource( 57 )
 
 [node name="numa_with_ks1" type="TextureButton" parent="state_handler/poof_sinners2"]
 margin_left = -204.029
@@ -1579,12 +2121,12 @@ margin_top = 117.333
 margin_right = 19.9707
 margin_bottom = 480.333
 rect_pivot_offset = Vector2( 109.196, 65.7232 )
-texture_normal = ExtResource( 14 )
-texture_click_mask = ExtResource( 15 )
+texture_normal = ExtResource( 15 )
+texture_click_mask = ExtResource( 16 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 14 )
-animation1 = ExtResource( 16 )
-animation2 = ExtResource( 17 )
+animation0 = ExtResource( 15 )
+animation1 = ExtResource( 17 )
+animation2 = ExtResource( 18 )
 
 [node name="kyungsoon_idle1" type="TextureButton" parent="state_handler/poof_sinners2"]
 margin_left = -305.009
@@ -1592,44 +2134,44 @@ margin_top = 130.173
 margin_right = -42.0088
 margin_bottom = 450.173
 rect_pivot_offset = Vector2( 197.612, 187.702 )
-texture_normal = ExtResource( 18 )
+texture_normal = ExtResource( 19 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 18 )
-animation1 = ExtResource( 27 )
-animation2 = ExtResource( 20 )
+animation0 = ExtResource( 19 )
+animation1 = ExtResource( 28 )
+animation2 = ExtResource( 21 )
 
 [node name="sean_poof" type="TextureButton" parent="state_handler/poof_sinners2"]
 margin_left = 336.2
 margin_top = -9.89078
 margin_right = 494.2
 margin_bottom = 343.109
-texture_normal = ExtResource( 59 )
+texture_normal = ExtResource( 61 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 59 )
-animation1 = ExtResource( 60 )
-animation2 = ExtResource( 61 )
+animation0 = ExtResource( 61 )
+animation1 = ExtResource( 62 )
+animation2 = ExtResource( 63 )
 
 [node name="tori_poof" type="TextureButton" parent="state_handler/poof_sinners2"]
 margin_left = -385.835
 margin_top = -14.1489
 margin_right = -242.835
 margin_bottom = 436.851
-texture_normal = ExtResource( 65 )
+texture_normal = ExtResource( 67 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 65 )
-animation1 = ExtResource( 66 )
-animation2 = ExtResource( 67 )
+animation0 = ExtResource( 67 )
+animation1 = ExtResource( 68 )
+animation2 = ExtResource( 69 )
 
 [node name="natalie_poof" type="TextureButton" parent="state_handler/poof_sinners2"]
 margin_left = -9.02533
 margin_top = 124.484
 margin_right = 229.975
 margin_bottom = 391.484
-texture_normal = ExtResource( 68 )
+texture_normal = ExtResource( 70 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 68 )
-animation1 = ExtResource( 69 )
-animation2 = ExtResource( 70 )
+animation0 = ExtResource( 70 )
+animation1 = ExtResource( 71 )
+animation2 = ExtResource( 72 )
 
 [node name="elijah_poof" type="TextureButton" parent="state_handler/poof_sinners2"]
 margin_left = 3107.0
@@ -1638,52 +2180,52 @@ margin_right = 3269.0
 margin_bottom = 380.596
 rect_scale = Vector2( -1.1, 1.1 )
 rect_pivot_offset = Vector2( -1184.06, 82.9063 )
-texture_normal = ExtResource( 56 )
+texture_normal = ExtResource( 58 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 56 )
-animation1 = ExtResource( 57 )
-animation2 = ExtResource( 58 )
+animation0 = ExtResource( 58 )
+animation1 = ExtResource( 59 )
+animation2 = ExtResource( 60 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/poof_sinners2"]
-anims/poof = SubResource( 6 )
+anims/poof = SubResource( 9 )
 
 [node name="Sprite7" type="Sprite" parent="state_handler/poof_sinners2"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -369.013, 31.1464 )
 rotation = 1.81689
-texture = ExtResource( 72 )
+texture = ExtResource( 74 )
 
 [node name="Sprite6" type="Sprite" parent="state_handler/poof_sinners2"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 562.808, 347.847 )
 rotation = 1.81689
-texture = ExtResource( 73 )
+texture = ExtResource( 75 )
 
 [node name="Sprite10" type="Sprite" parent="state_handler/poof_sinners2"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 514.944, 40.6813 )
 rotation = 1.74533
-texture = ExtResource( 50 )
+texture = ExtResource( 52 )
 
 [node name="Sprite8" type="Sprite" parent="state_handler/poof_sinners2"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 229.562, 179.686 )
 rotation = 1.81689
 scale = Vector2( 1.8, 1.8 )
-texture = ExtResource( 74 )
+texture = ExtResource( 76 )
 
 [node name="Sprite11" type="Sprite" parent="state_handler/poof_sinners2"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -84.4323, 229.792 )
 rotation = 3.63378
 scale = Vector2( 1.6, 1.6 )
-texture = ExtResource( 74 )
+texture = ExtResource( 76 )
 
 [node name="Sprite9" type="Sprite" parent="state_handler/poof_sinners2"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -333.503, 341.144 )
 rotation = 1.81689
-texture = ExtResource( 51 )
+texture = ExtResource( 53 )
 
 [node name="poof_sinners3" type="Control" parent="state_handler"]
 editor/display_folded = true
@@ -1698,11 +2240,11 @@ margin_left = -91.3015
 margin_top = -16.8974
 margin_right = 85.6985
 margin_bottom = 297.103
-texture_normal = ExtResource( 53 )
+texture_normal = ExtResource( 55 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 53 )
-animation1 = ExtResource( 54 )
-animation2 = ExtResource( 55 )
+animation0 = ExtResource( 55 )
+animation1 = ExtResource( 56 )
+animation2 = ExtResource( 57 )
 
 [node name="numa_with_ks1" type="TextureButton" parent="state_handler/poof_sinners3"]
 margin_left = -204.029
@@ -1710,12 +2252,12 @@ margin_top = 117.333
 margin_right = 19.9707
 margin_bottom = 480.333
 rect_pivot_offset = Vector2( 109.196, 65.7232 )
-texture_normal = ExtResource( 14 )
-texture_click_mask = ExtResource( 15 )
+texture_normal = ExtResource( 15 )
+texture_click_mask = ExtResource( 16 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 14 )
-animation1 = ExtResource( 16 )
-animation2 = ExtResource( 17 )
+animation0 = ExtResource( 15 )
+animation1 = ExtResource( 17 )
+animation2 = ExtResource( 18 )
 
 [node name="kyungsoon_idle1" type="TextureButton" parent="state_handler/poof_sinners3"]
 margin_left = -305.009
@@ -1723,44 +2265,44 @@ margin_top = 130.173
 margin_right = -42.0088
 margin_bottom = 450.173
 rect_pivot_offset = Vector2( 197.612, 187.702 )
-texture_normal = ExtResource( 18 )
+texture_normal = ExtResource( 19 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 18 )
-animation1 = ExtResource( 27 )
-animation2 = ExtResource( 20 )
+animation0 = ExtResource( 19 )
+animation1 = ExtResource( 28 )
+animation2 = ExtResource( 21 )
 
 [node name="sean_poof" type="TextureButton" parent="state_handler/poof_sinners3"]
 margin_left = 336.2
 margin_top = -9.89078
 margin_right = 494.2
 margin_bottom = 343.109
-texture_normal = ExtResource( 59 )
+texture_normal = ExtResource( 61 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 59 )
-animation1 = ExtResource( 60 )
-animation2 = ExtResource( 61 )
+animation0 = ExtResource( 61 )
+animation1 = ExtResource( 62 )
+animation2 = ExtResource( 63 )
 
 [node name="tori_poof" type="TextureButton" parent="state_handler/poof_sinners3"]
 margin_left = -385.835
 margin_top = -14.1489
 margin_right = -242.835
 margin_bottom = 436.851
-texture_normal = ExtResource( 65 )
+texture_normal = ExtResource( 67 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 65 )
-animation1 = ExtResource( 66 )
-animation2 = ExtResource( 67 )
+animation0 = ExtResource( 67 )
+animation1 = ExtResource( 68 )
+animation2 = ExtResource( 69 )
 
 [node name="natalie_poof" type="TextureButton" parent="state_handler/poof_sinners3"]
 margin_left = -9.02533
 margin_top = 124.484
 margin_right = 229.975
 margin_bottom = 391.484
-texture_normal = ExtResource( 68 )
+texture_normal = ExtResource( 70 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 68 )
-animation1 = ExtResource( 69 )
-animation2 = ExtResource( 70 )
+animation0 = ExtResource( 70 )
+animation1 = ExtResource( 71 )
+animation2 = ExtResource( 72 )
 
 [node name="elijah_poof" type="TextureButton" parent="state_handler/poof_sinners3"]
 margin_left = 3107.0
@@ -1769,78 +2311,119 @@ margin_right = 3269.0
 margin_bottom = 380.596
 rect_scale = Vector2( -1.1, 1.1 )
 rect_pivot_offset = Vector2( -1184.06, 82.9063 )
-texture_normal = ExtResource( 56 )
+texture_normal = ExtResource( 58 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 56 )
-animation1 = ExtResource( 57 )
-animation2 = ExtResource( 58 )
+animation0 = ExtResource( 58 )
+animation1 = ExtResource( 59 )
+animation2 = ExtResource( 60 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/poof_sinners3"]
-anims/poof = SubResource( 7 )
+anims/poof = SubResource( 10 )
 
 [node name="Sprite7" type="Sprite" parent="state_handler/poof_sinners3"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -369.013, 31.1464 )
 rotation = 1.81689
-texture = ExtResource( 72 )
+texture = ExtResource( 74 )
 
 [node name="Sprite6" type="Sprite" parent="state_handler/poof_sinners3"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 562.808, 347.847 )
 rotation = 1.81689
-texture = ExtResource( 73 )
+texture = ExtResource( 75 )
 
 [node name="Sprite10" type="Sprite" parent="state_handler/poof_sinners3"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 514.944, 40.6813 )
 rotation = 1.74533
-texture = ExtResource( 50 )
+texture = ExtResource( 52 )
 
 [node name="Sprite8" type="Sprite" parent="state_handler/poof_sinners3"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 229.562, 179.686 )
 rotation = 1.81689
 scale = Vector2( 1.8, 1.8 )
-texture = ExtResource( 74 )
+texture = ExtResource( 76 )
 
 [node name="Sprite11" type="Sprite" parent="state_handler/poof_sinners3"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -84.4323, 229.792 )
 rotation = 3.63378
 scale = Vector2( 1.6, 1.6 )
-texture = ExtResource( 74 )
+texture = ExtResource( 76 )
 
 [node name="Sprite9" type="Sprite" parent="state_handler/poof_sinners3"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -333.503, 341.144 )
 rotation = 1.81689
-texture = ExtResource( 51 )
+texture = ExtResource( 53 )
 
-[node name="lucifur" parent="state_handler" instance=ExtResource( 75 )]
-visible = false
+[node name="lucifur" type="TextureButton" parent="state_handler"]
+margin_left = 804.736
+margin_top = 190.234
+margin_right = 956.736
+margin_bottom = 597.234
+texture_normal = ExtResource( 77 )
+texture_click_mask = ExtResource( 78 )
+script = ExtResource( 7 )
+animation0 = ExtResource( 77 )
+animation1 = ExtResource( 79 )
+animation2 = ExtResource( 80 )
 
-[node name="trident" parent="state_handler/lucifur" index="1"]
+[node name="lucifur_extra" type="Control" parent="state_handler"]
+margin_left = 804.736
+margin_top = 170.234
+margin_right = 975.736
+margin_bottom = 595.234
+mouse_filter = 2
+
+[node name="trident" type="Sprite" parent="state_handler/lucifur_extra"]
 editor/display_folded = true
+position = Vector2( 145, 183.222 )
+texture = ExtResource( 81 )
 
-[node name="Sprite" parent="state_handler/lucifur" index="2"]
-position = Vector2( 134.4, 113.198 )
-rotation = 0.436556
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/lucifur_extra/trident"]
+autoplay = "floaty"
+anims/floaty = SubResource( 1 )
 
-[node name="Sprite2" parent="state_handler/lucifur" index="3"]
-position = Vector2( -2.30385, 307.588 )
-rotation = 0.468216
+[node name="Sprite" type="Sprite" parent="state_handler/lucifur_extra"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 171.634, 74.2749 )
+rotation = 1.74533
+texture = ExtResource( 74 )
 
-[node name="Sprite3" parent="state_handler/lucifur" index="4"]
-position = Vector2( -2.6718, 72.022 )
-rotation = 0.49331
+[node name="Sprite2" type="Sprite" parent="state_handler/lucifur_extra"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -49.9841, 296.341 )
+rotation = 1.81689
+texture = ExtResource( 75 )
 
-[node name="Sprite4" parent="state_handler/lucifur" index="5"]
-rotation = 0.351274
-scale = Vector2( 1.10308, 1.10308 )
+[node name="Sprite3" type="Sprite" parent="state_handler/lucifur_extra"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -66.951, 31.927 )
+rotation = 1.97222
+texture = ExtResource( 52 )
 
-[node name="Sprite5" parent="state_handler/lucifur" index="6"]
-position = Vector2( 120.228, 362.477 )
-rotation = 0.585156
+[node name="Sprite4" type="Sprite" parent="state_handler/lucifur_extra"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 79.803, 233.27 )
+rotation = 1.3631
+scale = Vector2( 1.4, 1.4 )
+texture = ExtResource( 76 )
+
+[node name="Sprite5" type="Sprite" parent="state_handler/lucifur_extra"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 184.526, 363.291 )
+rotation = 2.27067
+texture = ExtResource( 53 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/lucifur_extra"]
+anims/lucifur_poof = SubResource( 2 )
+anims/lucifur_unpoof = SubResource( 3 )
+
+[node name="poof_audio" type="AudioStreamPlayer" parent="state_handler/lucifur_extra"]
+stream = ExtResource( 73 )
+volume_db = 5.0
 
 [node name="poof_cover" type="Button" parent="state_handler"]
 visible = false
@@ -1851,12 +2434,12 @@ enabled_focus_mode = 0
 flat = true
 
 [node name="poof_audio" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 71 )
+stream = ExtResource( 73 )
 volume_db = 5.0
 bus = "SFX"
 
 [node name="poof_audio2" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 52 )
+stream = ExtResource( 54 )
 volume_db = -10.0
 bus = "SFX"
 [connection signal="pressed" from="state_handler/wait_oliver1" to="state_handler/wait_oliver1" method="_on_char_obj_button_pressed"]
@@ -1872,7 +2455,6 @@ bus = "SFX"
 [connection signal="animation_finished" from="state_handler/poof_sinners1/AnimationPlayer" to="state_handler" method="animation_finished"]
 [connection signal="animation_finished" from="state_handler/poof_sinners2/AnimationPlayer" to="state_handler" method="animation_finished"]
 [connection signal="animation_finished" from="state_handler/poof_sinners3/AnimationPlayer" to="state_handler" method="animation_finished"]
-[connection signal="animation_finished" from="state_handler/lucifur/AnimationPlayer" to="state_handler" method="animation_finished"]
+[connection signal="pressed" from="state_handler/lucifur" to="state_handler/lucifur" method="_on_char_obj_button_pressed"]
+[connection signal="animation_finished" from="state_handler/lucifur_extra/AnimationPlayer" to="state_handler" method="animation_finished"]
 [connection signal="pressed" from="state_handler/poof_cover" to="state_handler" method="_on_poof_cover_pressed"]
-
-[editable path="state_handler/lucifur"]

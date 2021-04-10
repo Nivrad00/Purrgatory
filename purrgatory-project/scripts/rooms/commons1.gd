@@ -8,14 +8,17 @@ func _ready():
 	state_copy = get_node('../../../../..').state
 	if state_copy.get('numa_quest_complete') and state_copy.get('ks_at_commons'):
 		$wait_oliver2.name = 'wait_oliver'
+		$wait_books2.name = 'wait_books'
 		$wait_numa2.name = 'wait_numa'
 		$poof_sinners2.name = 'poof_sinners'
 	elif state_copy.get('numa_quest_complete') and not state_copy.get('ks_at_commons'):
 		$wait_oliver2.name = 'wait_oliver'
+		$wait_books2.name = 'wait_books'
 		$wait_numa2.name = 'wait_numa'
 		$poof_sinners3.name = 'poof_sinners'
 	else:
 		$wait_oliver1.name = 'wait_oliver'
+		$wait_books1.name = 'wait_books'
 		$wait_numa1.name = 'wait_numa'
 		$poof_sinners1.name = 'poof_sinners'
 	
@@ -117,7 +120,7 @@ func update_state(state):
 	if state.get('lucifur_appears'):
 		state['no_cat'] = true
 		state['lucifur_in_commons'] = true
-		$lucifur/AnimationPlayer.play('lucifur_poof')
+		$lucifur_extra/AnimationPlayer.play('lucifur_poof')
 		$poof_cover.show()
 		anim_playing = true
 	
@@ -145,8 +148,10 @@ func update_state(state):
 		
 	if state.get('lucifur_in_commons'):
 		$lucifur.show()
+		$lucifur_extra.show()
 	else:
 		$lucifur.hide()
+		$lucifur_extra.hide()
 		
 	if state.get('poofing'):
 		# things that are also handled elsewhere -- we're just overriding it
@@ -230,6 +235,18 @@ func update_state(state):
 		$numa_at_commons.hide()
 		$kyungsoon_idle.hide()
 		$oliver_huh.hide()
+	
+	# show oliver's dropped books during and after waiting
+	if state.get('waited'):
+		$wait_books.show()
+	else:
+		$wait_books.hide()
+		
+	# the books that oliver gives ks at the end of his quest
+	if state.get('gifted_books'):
+		$gift_books.show()
+	else:
+		$gift_books.hide()
 
 func animation_finished(anim_name):
 	anim_playing = false

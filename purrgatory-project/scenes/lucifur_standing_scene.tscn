@@ -262,16 +262,16 @@ tracks/18/keys = {
 "values": [ true ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("lucifur:visible")
+tracks/19/path = NodePath("../lucifur:visible")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/imported = false
 tracks/19/enabled = true
 tracks/19/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -458,7 +458,7 @@ tracks/14/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("lucifur:visible")
+tracks/15/path = NodePath("../lucifur:visible")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false

@@ -11,10 +11,16 @@ export var animation2: Texture = null
 var anim_frame = 0
 var anim_textures = []
 
+var mouse_on = false
+
 signal start_dialog(label, blackout_label, sprite)
 signal stop_all_hovering()
+signal start_all_hovering()
 
 # this script/scene should now only be used for texture buttons (sprites), and not polygon buttons
+# update: this script is now used for any in-game texture that needs a wobbly animation, for consistency,
+#   even the ones that aren't interactible
+# i probably should have made a new script for non-interactible wobbly sprites but whatevs
 
 func _ready():
 	for texture in [animation0, animation1, animation2]:
@@ -22,10 +28,28 @@ func _ready():
 			anim_textures.append(texture)
 	if anim_textures.size() > 1:
 		get_tree().get_root().get_node('main/game').connect('animation_tick', self, '_on_animation_tick')
+		
+	connect('mouse_entered', self, '_on_mouse_entered')
+	connect('mouse_exited', self, '_on_mouse_exited')
+	connect('visibility_changed', self, '_on_visibility_changed')
+
+func _on_mouse_entered():
+	emit_signal("stop_all_hovering")
+	mouse_on = true
+	print('mouse entered button')
 	
-func _gui_input(event):
-	if event is InputEventMouseMotion:
-		emit_signal("stop_all_hovering")
+func _on_mouse_exited():
+	emit_signal("start_all_hovering")
+	mouse_on = false
+	print('mouse exited from button')
+
+func _on_visibility_changed():
+	if not visible and mouse_on:
+		print('mouse exited from button')
+		emit_signal("start_all_hovering")
+		mouse_on = false
+		
+	
 	
 func _on_char_obj_button_pressed():
 	if sprite_path.size() == 0:

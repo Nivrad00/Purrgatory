@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tori1.png-3cdc0ad9cb35484933367706ea2bbc94.stex"
+path="res://.import/natalie1_3.png-88da1dee6f40955b4f6d3368813d643f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/icons/tori1.png"
-dest_files=[ "res://.import/tori1.png-3cdc0ad9cb35484933367706ea2bbc94.stex" ]
+source_file="res://assets/sprites/icons/natalie1_3.png"
+dest_files=[ "res://.import/natalie1_3.png-88da1dee6f40955b4f6d3368813d643f.stex" ]
 
 [params]
 
