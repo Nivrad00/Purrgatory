@@ -2,7 +2,7 @@ extends 'state_handler_template.gd'
 
 var time = 0 # time elapsed
 var progress = 0 # distance down the hole
-var climb_speed = 150 # how fast player climbs down
+var climb_speed = 1500 # how fast player climbs down
 
 var fall_time = 0 # used when the post cracks - how long player falls for
 var rise_time = 0 # the bounce back from falling
@@ -20,6 +20,7 @@ var creak_num = 0
 
 var lost_grip = false
 var key_down = false
+var tried = false
 
 func _ready():
 	set_process(true)
@@ -28,6 +29,7 @@ func _input(event):
 	if climbing and not key_down and event is InputEventKey and event.pressed and event.get_scancode() == KEY_UP:
 		$_game/ProgressBar.value += recover_amount
 		key_down = true
+		tried = true
 		
 	elif climbing and key_down and event is InputEventKey and not event.pressed and event.get_scancode() == KEY_UP:
 		key_down = false
@@ -137,7 +139,10 @@ func _process(delta):
 			lost_grip = true
 			climbing = false
 			$_game.hide()
-			emit_signal('start_dialog', 'tori_climb_fall', [])
+			if tried:
+				emit_signal('start_dialog', 'tori_climb_fall', [])
+			else:
+				emit_signal('start_dialog', 'tori_climb_fall_alt', [])
 			emit_signal('change_audio', '')
 			$_falling.play()
 			time = 0
@@ -150,7 +155,11 @@ func _process(delta):
 			if int(time * 10) % 12 < 8:
 				for node in get_children():
 					if node.name.substr(0, 1) != '_':
-						node.position.y -= delta * climb_speed
+						if node is Control:
+							node.rect_position.y -= delta * climb_speed
+						elif node is Node2D:
+							node.position.y -= delta * climb_speed
+							
 						
 				if int(prev_time * 10) % 12 >= 8 or prev_time == 0:
 					creak_num = (creak_num + 1) % 6
@@ -163,7 +172,10 @@ func _process(delta):
 			if int(time * 10) % 12 < 8:
 				for node in get_children():
 					if node.name.substr(0, 1) != '_':
-						node.position.y += delta * climb_speed
+						if node is Control:
+							node.rect_position.y += delta * climb_speed
+						elif node is Node2D:
+							node.position.y += delta * climb_speed
 						
 				if int(prev_time * 10) % 12 >= 8 or prev_time == 0:
 					creak_num = (creak_num + 1) % 6

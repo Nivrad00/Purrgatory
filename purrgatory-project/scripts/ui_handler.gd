@@ -16,9 +16,17 @@ var choice_y = {
 
 onready var game = get_node("../..")
 onready var tts_node = game.get_node('tts_node')
+var book_singleton
 
 func _ready():
 	hide_ui()
+	# hide the book in the corner
+	book_singleton = load('res://scenes/sprites/book.tscn').instance()
+	book_singleton.set_name('book')
+	book_singleton.scale = Vector2(0.001, 0.001)
+	book_singleton.modulate.a = 0.01
+	book_singleton.position = Vector2(0, 0)
+	$sprites.add_child(book_singleton)
 
 func show_ui():
 	show()
@@ -66,7 +74,6 @@ func speak_ui(all = true):
 		for choice in choices:
 			spoken_text += str(i) + ', ' + choice + '. '
 			i += 1
-		print(spoken_text)
 		tts_node.speak(spoken_text)
 
 func set_speaker(speaker):
@@ -74,21 +81,38 @@ func set_speaker(speaker):
 
 func set_sprites(sprites):
 	for child in $sprites.get_children():
-		child.queue_free()
+		if child.name != 'book':
+			child.name += '_deleted'
+			child.queue_free()
 
 	# wait for an idle frame so the new sprites will have the correct name
-	yield(get_tree(), "idle_frame")
+	# yield(get_tree(), "idle_frame")
+	# nvm - we're just renaming the old sprites
 	
 	var num = sprites.size()
 	for i in range(num):
+		if sprites[i] == 'book' and book_singleton:
+			book_singleton.scale = Vector2(1, 1)
+			book_singleton.modulate.a = 1
+			book_singleton.position = Vector2(sprite_x[num][i], sprite_y)
+			continue
+		
 		var sprite = load('res://scenes/sprites/' + sprites[i] + '.tscn')
 		if sprite:
 			sprite = sprite.instance()
 		else:
 			continue
+			
 		sprite.set_name(sprites[i])
 		sprite.position = Vector2(sprite_x[num][i], sprite_y)
 		$sprites.add_child(sprite)
+	
+	if not sprites.has('book') and book_singleton:
+		book_singleton.load_meows() # refresh meows when it's hidden for next time
+		book_singleton.scale = Vector2(0.001, 0.001)
+		book_singleton.modulate.a = 0.01
+		book_singleton.position = Vector2(0, 0)
+		
 
 func set_text(text):
 	$text_box/text.text = text
@@ -117,7 +141,11 @@ func get_speaker():
 func get_sprites():
 	var sprite_names = []
 	for sprite in $sprites.get_children():
-		sprite_names.append(sprite.name)
+		if sprite.name == 'book':
+			if sprite.scale.x == 1:
+				sprite_names.append(sprite.name)
+		else:
+			sprite_names.append(sprite.name)
 	return sprite_names
 
 func get_text():

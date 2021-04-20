@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Eternity's_Not_So_Bad.ogg-fe3bc5525847e3696d0b98a2c1
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

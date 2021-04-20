@@ -87,7 +87,7 @@ func _process(delta):
 			yield(get_tree(), 'idle_frame')
 			$game.show()
 			# we have the game speak the ui, if enabled, as soon as it's shown
-			$game/content/ui.speak_ui()
+			# $game/content/ui.speak_ui() # i guess it's not needed?
 			if $game.main_audio:
 				$game.main_audio.play()
 			

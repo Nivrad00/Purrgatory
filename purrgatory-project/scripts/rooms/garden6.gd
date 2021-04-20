@@ -1,7 +1,6 @@
 extends 'state_handler_template.gd'
 
 func _ready():
-	print('please')
 	$exit_dialog.set_highlight_on_hover(true)
 	
 func init_state(state):

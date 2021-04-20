@@ -46,4 +46,3 @@ dialog_label = "spiderweb1"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
 polygon = PoolVector2Array( 467.212, 445.527, 431.422, 459.212, 435.633, 530.791, 485.106, 525.528, 508.264, 504.475, 491.422, 458.159 )
-

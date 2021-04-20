@@ -90,5 +90,5 @@ func show_custom():
 	show()
 
 func hide_custom():
-	ui.speak_ui()
+	#ui.speak_ui()
 	hide()

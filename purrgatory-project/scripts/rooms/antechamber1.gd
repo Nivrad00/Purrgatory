@@ -48,6 +48,11 @@ func update_state(state):
 		print('aaaaa')
 		$portal_audio.play()
 		$fadeout.show()
+		
+	if state.get('gave_cat_toy'):
+		$lucifur/cat_toy.show()
+	else:
+		$lucifur/cat_toy.hide()
 
 func _process(delta):
 	if state.get('end_fade_out_trigger'):
@@ -55,7 +60,8 @@ func _process(delta):
 		if a == 1:
 			state['end_fade_out_trigger'] = false
 			$white_timer.start()
-			
+			get_node('../../../../..').disable_ui()
+				
 			yield($white_timer, 'timeout')
 			if state.get('oliver_quest_complete'):
 				emit_signal('change_room', 'heaven1')

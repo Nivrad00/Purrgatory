@@ -131,8 +131,23 @@ func add_to_inv(_name, loading = false):
 		toggle_items()
 		# items_button.flash()
 
-# snowglobes can't be removed using this function btw
 func remove_from_inv(_name, flash = true):
+	# exception for snowglobes
+	if _name == 'snowglobes':
+		# remove from inventory box
+		for item in $inv_container.get_children():
+			if item.name.substr(0, 9) == 'snowglobe':
+				item.queue_free()
+		# remove from internal list
+		snowglobes = []
+		# remove from state
+		var state = get_tree().get_root().get_node('main/game').state
+		for key in state:
+			if key.substr(0, 14) == '_inv_snowglobe' and state[key]:
+				state[key] = false
+		return
+		
+	# everything else
 	var found = false
 	for item in $inv_container.get_children():
 		if item.name == _name:

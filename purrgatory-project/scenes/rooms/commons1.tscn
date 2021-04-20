@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=2]
+[gd_scene load_steps=95 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/commons1.gd" type="Script" id=2]
@@ -41,56 +41,59 @@
 [ext_resource path="res://assets/sprites/cat1.png" type="Texture" id=39]
 [ext_resource path="res://assets/sprites/cat2.png" type="Texture" id=40]
 [ext_resource path="res://assets/sprites/cat3.png" type="Texture" id=41]
-[ext_resource path="res://assets/sprites/coin1.png" type="Texture" id=42]
-[ext_resource path="res://assets/sprites/coin2.png" type="Texture" id=43]
-[ext_resource path="res://assets/audio/coin_flip.wav" type="AudioStream" id=44]
-[ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=45]
-[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=46]
-[ext_resource path="res://assets/sprites/lamp.png" type="Texture" id=47]
-[ext_resource path="res://assets/sprites/frog_1.png" type="Texture" id=48]
-[ext_resource path="res://assets/sprite_masks/frog_1.png" type="BitMap" id=49]
-[ext_resource path="res://assets/sprites/frog_2.png" type="Texture" id=50]
-[ext_resource path="res://assets/sprites/frog_3.png" type="Texture" id=51]
-[ext_resource path="res://assets/sprites/poof/poof3.png" type="Texture" id=52]
-[ext_resource path="res://assets/sprites/poof/poof5.png" type="Texture" id=53]
-[ext_resource path="res://assets/audio/fart.ogg" type="AudioStream" id=54]
-[ext_resource path="res://assets/sprites/oliver_poof_1.png" type="Texture" id=55]
-[ext_resource path="res://assets/sprites/oliver_poof_2.png" type="Texture" id=56]
-[ext_resource path="res://assets/sprites/oliver_poof_3.png" type="Texture" id=57]
-[ext_resource path="res://assets/sprites/elijah_poof_1.png" type="Texture" id=58]
-[ext_resource path="res://assets/sprites/elijah_poof_2.png" type="Texture" id=59]
-[ext_resource path="res://assets/sprites/elijah_poof_3.png" type="Texture" id=60]
-[ext_resource path="res://assets/sprites/sean_poof_1.png" type="Texture" id=61]
-[ext_resource path="res://assets/sprites/sean_poof_2.png" type="Texture" id=62]
-[ext_resource path="res://assets/sprites/sean_poof_3.png" type="Texture" id=63]
-[ext_resource path="res://assets/sprites/numa_poof_1.png" type="Texture" id=64]
-[ext_resource path="res://assets/sprites/numa_poof_2.png" type="Texture" id=65]
-[ext_resource path="res://assets/sprites/numa_poof_3.png" type="Texture" id=66]
-[ext_resource path="res://assets/sprites/tori_poof_1.png" type="Texture" id=67]
-[ext_resource path="res://assets/sprites/tori_poof_2.png" type="Texture" id=68]
-[ext_resource path="res://assets/sprites/tori_poof_3.png" type="Texture" id=69]
-[ext_resource path="res://assets/sprites/natalie_poof_1.png" type="Texture" id=70]
-[ext_resource path="res://assets/sprites/natalie_poof_2.png" type="Texture" id=71]
-[ext_resource path="res://assets/sprites/natalie_poof_3.png" type="Texture" id=72]
-[ext_resource path="res://assets/audio/poof.ogg" type="AudioStream" id=73]
-[ext_resource path="res://assets/sprites/poof/poof1.png" type="Texture" id=74]
-[ext_resource path="res://assets/sprites/poof/poof2.png" type="Texture" id=75]
-[ext_resource path="res://assets/sprites/poof/poof4.png" type="Texture" id=76]
-[ext_resource path="res://assets/sprites/lucifur_idle_1.png" type="Texture" id=77]
-[ext_resource path="res://assets/sprite_masks/lucifur_idle_1.png" type="BitMap" id=78]
-[ext_resource path="res://assets/sprites/lucifur_idle2.png" type="Texture" id=79]
-[ext_resource path="res://assets/sprites/lucifur_idle_3.png" type="Texture" id=80]
-[ext_resource path="res://assets/sprites/trident.png" type="Texture" id=81]
+[ext_resource path="res://assets/sprites/cat_toy_on_cat.png" type="Texture" id=42]
+[ext_resource path="res://assets/sprites/cat_toy_stick.png" type="Texture" id=43]
+[ext_resource path="res://assets/sprites/coin1.png" type="Texture" id=44]
+[ext_resource path="res://assets/sprites/coin2.png" type="Texture" id=45]
+[ext_resource path="res://assets/audio/coin_flip.wav" type="AudioStream" id=46]
+[ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=47]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=48]
+[ext_resource path="res://assets/sprites/lamp.png" type="Texture" id=49]
+[ext_resource path="res://assets/sprites/frog_1.png" type="Texture" id=50]
+[ext_resource path="res://assets/sprite_masks/frog_1.png" type="BitMap" id=51]
+[ext_resource path="res://assets/sprites/frog_2.png" type="Texture" id=52]
+[ext_resource path="res://assets/sprites/frog_3.png" type="Texture" id=53]
+[ext_resource path="res://assets/sprites/poof/poof3.png" type="Texture" id=54]
+[ext_resource path="res://assets/sprites/poof/poof5.png" type="Texture" id=55]
+[ext_resource path="res://assets/audio/fart.ogg" type="AudioStream" id=56]
+[ext_resource path="res://assets/sprites/oliver_poof_1.png" type="Texture" id=57]
+[ext_resource path="res://assets/sprites/oliver_poof_2.png" type="Texture" id=58]
+[ext_resource path="res://assets/sprites/oliver_poof_3.png" type="Texture" id=59]
+[ext_resource path="res://assets/sprites/elijah_poof_1.png" type="Texture" id=60]
+[ext_resource path="res://assets/sprites/elijah_poof_2.png" type="Texture" id=61]
+[ext_resource path="res://assets/sprites/elijah_poof_3.png" type="Texture" id=62]
+[ext_resource path="res://assets/sprites/sean_poof_1.png" type="Texture" id=63]
+[ext_resource path="res://assets/sprites/sean_poof_2.png" type="Texture" id=64]
+[ext_resource path="res://assets/sprites/sean_poof_3.png" type="Texture" id=65]
+[ext_resource path="res://assets/sprites/numa_poof_1.png" type="Texture" id=66]
+[ext_resource path="res://assets/sprites/numa_poof_2.png" type="Texture" id=67]
+[ext_resource path="res://assets/sprites/numa_poof_3.png" type="Texture" id=68]
+[ext_resource path="res://assets/sprites/tori_poof_1.png" type="Texture" id=69]
+[ext_resource path="res://assets/sprites/tori_poof_2.png" type="Texture" id=70]
+[ext_resource path="res://assets/sprites/tori_poof_3.png" type="Texture" id=71]
+[ext_resource path="res://assets/sprites/natalie_poof_1.png" type="Texture" id=72]
+[ext_resource path="res://assets/sprites/natalie_poof_2.png" type="Texture" id=73]
+[ext_resource path="res://assets/sprites/natalie_poof_3.png" type="Texture" id=74]
+[ext_resource path="res://assets/audio/poof.ogg" type="AudioStream" id=75]
+[ext_resource path="res://assets/sprites/poof/poof1.png" type="Texture" id=76]
+[ext_resource path="res://assets/sprites/poof/poof2.png" type="Texture" id=77]
+[ext_resource path="res://assets/sprites/poof/poof4.png" type="Texture" id=78]
+[ext_resource path="res://assets/sprites/lucifur_idle_1.png" type="Texture" id=79]
+[ext_resource path="res://assets/sprite_masks/lucifur_idle_1.png" type="BitMap" id=80]
+[ext_resource path="res://assets/sprites/lucifur_idle2.png" type="Texture" id=81]
+[ext_resource path="res://assets/sprites/lucifur_idle_3.png" type="Texture" id=82]
+[ext_resource path="res://assets/sprites/cat_toy_on_lucifur_idle.png" type="Texture" id=83]
+[ext_resource path="res://assets/sprites/trident.png" type="Texture" id=84]
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 42 ), ExtResource( 43 ) ],
+"frames": [ ExtResource( 44 ), ExtResource( 45 ) ],
 "loop": true,
 "name": "default",
 "speed": 15.0
 } ]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -126,12 +129,12 @@ tracks/2/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 44 )
+"stream": ExtResource( 46 )
 } ],
 "times": PoolRealArray( 0.2 )
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=3]
 length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -167,12 +170,12 @@ tracks/2/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 44 )
+"stream": ExtResource( 46 )
 } ],
 "times": PoolRealArray( 0.2 )
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=4]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite3:position")
@@ -292,12 +295,12 @@ tracks/9/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 54 )
+"stream": ExtResource( 56 )
 } ],
 "times": PoolRealArray( 0.5 )
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=5]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:visible")
@@ -549,12 +552,12 @@ tracks/20/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 73 )
+"stream": ExtResource( 75 )
 } ],
 "times": PoolRealArray( 0.5 )
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=6]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:visible")
@@ -818,12 +821,12 @@ tracks/21/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 73 )
+"stream": ExtResource( 75 )
 } ],
 "times": PoolRealArray( 0.5 )
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=7]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:visible")
@@ -1063,12 +1066,12 @@ tracks/19/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 73 )
+"stream": ExtResource( 75 )
 } ],
 "times": PoolRealArray( 0.5 )
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=8]
 length = 3.0
 loop = true
 tracks/0/type = "value"
@@ -1084,7 +1087,7 @@ tracks/0/keys = {
 "values": [ Vector2( 145, 180 ), Vector2( 145, 200 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=9]
 length = 1.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:modulate")
@@ -1300,7 +1303,7 @@ tracks/17/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 73 )
+"stream": ExtResource( 75 )
 } ],
 "times": PoolRealArray( 0.5 )
 }
@@ -1329,8 +1332,7 @@ tracks/19/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "lucifur_unpoof"
+[sub_resource type="Animation" id=10]
 length = 1.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:modulate")
@@ -1534,7 +1536,7 @@ tracks/16/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 73 )
+"stream": ExtResource( 75 )
 } ],
 "times": PoolRealArray( 0.5 )
 }
@@ -1762,6 +1764,7 @@ animation1 = ExtResource( 28 )
 animation2 = ExtResource( 21 )
 
 [node name="gift_books" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( 167.376, 609.991 )
 scale = Vector2( 0.95, 0.95 )
 script = ExtResource( 4 )
@@ -1806,7 +1809,6 @@ animation1 = ExtResource( 35 )
 animation2 = ExtResource( 36 )
 
 [node name="cat1_idle" parent="state_handler" instance=ExtResource( 37 )]
-visible = false
 margin_left = 806.166
 margin_top = 469.264
 margin_right = 946.165
@@ -1816,28 +1818,50 @@ animation0 = ExtResource( 39 )
 animation1 = ExtResource( 40 )
 animation2 = ExtResource( 41 )
 
+[node name="cat_toy" type="Sprite" parent="state_handler/cat1_idle"]
+position = Vector2( 64.3513, 59.7073 )
+texture = ExtResource( 42 )
+
+[node name="cat_toy_stick" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 544.554, -39.8075 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+dialog_label = "cat_toy_stick"
+sprite_path = [ null ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/cat_toy_stick"]
+position = Vector2( 2.45557, 9.8219 )
+polygon = PoolVector2Array( 443.329, 553.692, 344.648, 608.36, 358.084, 625.501, 458.154, 568.98 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/cat_toy_stick"]
+position = Vector2( 407.006, 602.771 )
+texture = ExtResource( 43 )
+
 [node name="coin" type="AnimatedSprite" parent="state_handler"]
 editor/display_folded = true
 visible = false
 position = Vector2( 640, 800 )
-frames = SubResource( 4 )
+frames = SubResource( 1 )
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/coin"]
-anims/paraola = SubResource( 5 )
-"anims/paraola (copy)" = SubResource( 6 )
+anims/paraola = SubResource( 2 )
+"anims/paraola (copy)" = SubResource( 3 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="state_handler/coin"]
-stream = ExtResource( 44 )
+stream = ExtResource( 46 )
 bus = "SFX"
 
-[node name="exit" parent="state_handler" instance=ExtResource( 45 )]
+[node name="exit" parent="state_handler" instance=ExtResource( 47 )]
 room_label = "commons2"
 
 [node name="phone" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 position = Vector2( 724.798, -291.001 )
-script = ExtResource( 46 )
+script = ExtResource( 48 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
@@ -1861,7 +1885,7 @@ polygon = PoolVector2Array( 355.202, 531.001, 347.202, 648.001, 383.202, 650.001
 [node name="exit2" type="Area2D" parent="state_handler"]
 editor/display_folded = true
 position = Vector2( 456.517, -226.127 )
-script = ExtResource( 46 )
+script = ExtResource( 48 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -1887,7 +1911,7 @@ polygon = PoolVector2Array( -459.085, 322.215, -455.713, 875.844, -322.6, 822.85
 editor/display_folded = true
 visible = false
 position = Vector2( 456.517, -192.127 )
-script = ExtResource( 46 )
+script = ExtResource( 48 )
 room_label = "commons3"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_door_exit"]
@@ -1905,6 +1929,7 @@ position = Vector2( 1.13867, 14.5051 )
 polygon = PoolVector2Array( 865.429, 508.608, 1021.99, 533.956, 1020.8, 205.639, 866.26, 208.881 )
 
 [node name="commons_lamp" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( 0.431946, -59.9116 )
 script = ExtResource( 4 )
 dialog_label = "commons_lamp"
@@ -1912,13 +1937,14 @@ sprite_path = [ null ]
 
 [node name="Sprite" type="Sprite" parent="state_handler/commons_lamp"]
 position = Vector2( 390.541, 287.778 )
-texture = ExtResource( 47 )
+texture = ExtResource( 49 )
 offset = Vector2( 348.493, 101.286 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_lamp"]
 polygon = PoolVector2Array( 778.808, 373.277, 777.445, 349.097, 794.304, 338.323, 767.218, 286.476, 741.382, 286.084, 732.468, 293.262, 708.023, 340.249, 735.135, 352.675, 744.218, 352.215, 744.45, 510.333, 735.521, 511.956, 717.848, 486.118, 709.169, 485.363, 686.091, 502.758, 691.469, 518.889, 716.716, 520.457, 731.81, 531.4, 745.532, 536.847, 763.388, 536.847, 774.481, 532.112, 780.298, 526.025, 777.728, 516.285, 769.881, 511.28, 760.295, 511.35, 761.846, 390.644 )
 
 [node name="frog" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 visible = false
 position = Vector2( 755.46, 465.694 )
 script = ExtResource( 4 )
@@ -1936,27 +1962,27 @@ margin_bottom = 17.0
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 48 )
-texture_click_mask = ExtResource( 49 )
+texture_normal = ExtResource( 50 )
+texture_click_mask = ExtResource( 51 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 48 )
-animation1 = ExtResource( 50 )
-animation2 = ExtResource( 51 )
+animation0 = ExtResource( 50 )
+animation1 = ExtResource( 52 )
+animation2 = ExtResource( 53 )
 
 [node name="Sprite3" type="Sprite" parent="state_handler/frog"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 26.2277, -128.059 )
 rotation = 1.97222
-texture = ExtResource( 52 )
+texture = ExtResource( 54 )
 
 [node name="Sprite5" type="Sprite" parent="state_handler/frog"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -63.3644, 22.222 )
 rotation = 2.27067
-texture = ExtResource( 53 )
+texture = ExtResource( 55 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/frog"]
-anims/lucifur_poof = SubResource( 7 )
+anims/lucifur_poof = SubResource( 4 )
 
 [node name="commons_outlet" type="Area2D" parent="state_handler"]
 editor/display_folded = true
@@ -1981,11 +2007,11 @@ margin_left = -91.3015
 margin_top = -16.8974
 margin_right = 85.6985
 margin_bottom = 297.103
-texture_normal = ExtResource( 55 )
+texture_normal = ExtResource( 57 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 55 )
-animation1 = ExtResource( 56 )
-animation2 = ExtResource( 57 )
+animation0 = ExtResource( 57 )
+animation1 = ExtResource( 58 )
+animation2 = ExtResource( 59 )
 
 [node name="elijah_poof" type="TextureButton" parent="state_handler/poof_sinners1"]
 margin_left = -165.726
@@ -1993,11 +2019,11 @@ margin_top = -28.4125
 margin_right = -3.72632
 margin_bottom = 341.588
 rect_pivot_offset = Vector2( -35.5508, 98.8175 )
-texture_normal = ExtResource( 58 )
+texture_normal = ExtResource( 60 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 58 )
-animation1 = ExtResource( 59 )
-animation2 = ExtResource( 60 )
+animation0 = ExtResource( 60 )
+animation1 = ExtResource( 61 )
+animation2 = ExtResource( 62 )
 
 [node name="kyungsoon_idle1" type="TextureButton" parent="state_handler/poof_sinners1"]
 margin_left = -305.009
@@ -2016,85 +2042,85 @@ margin_left = 336.2
 margin_top = -9.89078
 margin_right = 494.2
 margin_bottom = 343.109
-texture_normal = ExtResource( 61 )
+texture_normal = ExtResource( 63 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 61 )
-animation1 = ExtResource( 62 )
-animation2 = ExtResource( 63 )
+animation0 = ExtResource( 63 )
+animation1 = ExtResource( 64 )
+animation2 = ExtResource( 65 )
 
 [node name="numa_poof" type="TextureButton" parent="state_handler/poof_sinners1"]
 margin_left = 408.718
 margin_top = 48.9333
 margin_right = 632.718
 margin_bottom = 411.933
-texture_normal = ExtResource( 64 )
+texture_normal = ExtResource( 66 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 64 )
-animation1 = ExtResource( 65 )
-animation2 = ExtResource( 66 )
+animation0 = ExtResource( 66 )
+animation1 = ExtResource( 67 )
+animation2 = ExtResource( 68 )
 
 [node name="tori_poof" type="TextureButton" parent="state_handler/poof_sinners1"]
 margin_left = -385.835
 margin_top = -14.1489
 margin_right = -242.835
 margin_bottom = 436.851
-texture_normal = ExtResource( 67 )
+texture_normal = ExtResource( 69 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 67 )
-animation1 = ExtResource( 68 )
-animation2 = ExtResource( 69 )
+animation0 = ExtResource( 69 )
+animation1 = ExtResource( 70 )
+animation2 = ExtResource( 71 )
 
 [node name="natalie_poof" type="TextureButton" parent="state_handler/poof_sinners1"]
 margin_left = -9.02533
 margin_top = 124.484
 margin_right = 229.975
 margin_bottom = 391.484
-texture_normal = ExtResource( 70 )
+texture_normal = ExtResource( 72 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 70 )
-animation1 = ExtResource( 71 )
-animation2 = ExtResource( 72 )
+animation0 = ExtResource( 72 )
+animation1 = ExtResource( 73 )
+animation2 = ExtResource( 74 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/poof_sinners1"]
-anims/poof = SubResource( 8 )
+anims/poof = SubResource( 5 )
 
 [node name="Sprite7" type="Sprite" parent="state_handler/poof_sinners1"]
 modulate = Color( 1, 1, 1, 0.9 )
 position = Vector2( -311.353, 108.436 )
 rotation = 0.468216
-texture = ExtResource( 74 )
+texture = ExtResource( 76 )
 
 [node name="Sprite6" type="Sprite" parent="state_handler/poof_sinners1"]
 modulate = Color( 1, 1, 1, 0.9 )
 position = Vector2( 504.538, 321.812 )
 rotation = 0.496756
-texture = ExtResource( 75 )
+texture = ExtResource( 77 )
 
 [node name="Sprite10" type="Sprite" parent="state_handler/poof_sinners1"]
 modulate = Color( 1, 1, 1, 0.9 )
 position = Vector2( 455.435, 77.8746 )
 rotation = 0.436557
-texture = ExtResource( 52 )
+texture = ExtResource( 54 )
 
 [node name="Sprite8" type="Sprite" parent="state_handler/poof_sinners1"]
 modulate = Color( 1, 1, 1, 0.9 )
 position = Vector2( 229.562, 179.686 )
 rotation = 0.468216
 scale = Vector2( 1.50308, 1.50308 )
-texture = ExtResource( 76 )
+texture = ExtResource( 78 )
 
 [node name="Sprite11" type="Sprite" parent="state_handler/poof_sinners1"]
 modulate = Color( 1, 1, 1, 0.9 )
 position = Vector2( -84.4323, 229.792 )
 rotation = 2.2851
 scale = Vector2( 1.30308, 1.30308 )
-texture = ExtResource( 76 )
+texture = ExtResource( 78 )
 
 [node name="Sprite9" type="Sprite" parent="state_handler/poof_sinners1"]
 modulate = Color( 1, 1, 1, 0.9 )
 position = Vector2( -271.794, 339.561 )
 rotation = 0.181689
-texture = ExtResource( 53 )
+texture = ExtResource( 55 )
 
 [node name="poof_sinners2" type="Control" parent="state_handler"]
 editor/display_folded = true
@@ -2109,11 +2135,11 @@ margin_left = -91.3015
 margin_top = -16.8974
 margin_right = 85.6985
 margin_bottom = 297.103
-texture_normal = ExtResource( 55 )
+texture_normal = ExtResource( 57 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 55 )
-animation1 = ExtResource( 56 )
-animation2 = ExtResource( 57 )
+animation0 = ExtResource( 57 )
+animation1 = ExtResource( 58 )
+animation2 = ExtResource( 59 )
 
 [node name="numa_with_ks1" type="TextureButton" parent="state_handler/poof_sinners2"]
 margin_left = -204.029
@@ -2145,33 +2171,33 @@ margin_left = 336.2
 margin_top = -9.89078
 margin_right = 494.2
 margin_bottom = 343.109
-texture_normal = ExtResource( 61 )
+texture_normal = ExtResource( 63 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 61 )
-animation1 = ExtResource( 62 )
-animation2 = ExtResource( 63 )
+animation0 = ExtResource( 63 )
+animation1 = ExtResource( 64 )
+animation2 = ExtResource( 65 )
 
 [node name="tori_poof" type="TextureButton" parent="state_handler/poof_sinners2"]
 margin_left = -385.835
 margin_top = -14.1489
 margin_right = -242.835
 margin_bottom = 436.851
-texture_normal = ExtResource( 67 )
+texture_normal = ExtResource( 69 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 67 )
-animation1 = ExtResource( 68 )
-animation2 = ExtResource( 69 )
+animation0 = ExtResource( 69 )
+animation1 = ExtResource( 70 )
+animation2 = ExtResource( 71 )
 
 [node name="natalie_poof" type="TextureButton" parent="state_handler/poof_sinners2"]
 margin_left = -9.02533
 margin_top = 124.484
 margin_right = 229.975
 margin_bottom = 391.484
-texture_normal = ExtResource( 70 )
+texture_normal = ExtResource( 72 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 70 )
-animation1 = ExtResource( 71 )
-animation2 = ExtResource( 72 )
+animation0 = ExtResource( 72 )
+animation1 = ExtResource( 73 )
+animation2 = ExtResource( 74 )
 
 [node name="elijah_poof" type="TextureButton" parent="state_handler/poof_sinners2"]
 margin_left = 3107.0
@@ -2180,52 +2206,52 @@ margin_right = 3269.0
 margin_bottom = 380.596
 rect_scale = Vector2( -1.1, 1.1 )
 rect_pivot_offset = Vector2( -1184.06, 82.9063 )
-texture_normal = ExtResource( 58 )
+texture_normal = ExtResource( 60 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 58 )
-animation1 = ExtResource( 59 )
-animation2 = ExtResource( 60 )
+animation0 = ExtResource( 60 )
+animation1 = ExtResource( 61 )
+animation2 = ExtResource( 62 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/poof_sinners2"]
-anims/poof = SubResource( 9 )
+anims/poof = SubResource( 6 )
 
 [node name="Sprite7" type="Sprite" parent="state_handler/poof_sinners2"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -369.013, 31.1464 )
 rotation = 1.81689
-texture = ExtResource( 74 )
+texture = ExtResource( 76 )
 
 [node name="Sprite6" type="Sprite" parent="state_handler/poof_sinners2"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 562.808, 347.847 )
 rotation = 1.81689
-texture = ExtResource( 75 )
+texture = ExtResource( 77 )
 
 [node name="Sprite10" type="Sprite" parent="state_handler/poof_sinners2"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 514.944, 40.6813 )
 rotation = 1.74533
-texture = ExtResource( 52 )
+texture = ExtResource( 54 )
 
 [node name="Sprite8" type="Sprite" parent="state_handler/poof_sinners2"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 229.562, 179.686 )
 rotation = 1.81689
 scale = Vector2( 1.8, 1.8 )
-texture = ExtResource( 76 )
+texture = ExtResource( 78 )
 
 [node name="Sprite11" type="Sprite" parent="state_handler/poof_sinners2"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -84.4323, 229.792 )
 rotation = 3.63378
 scale = Vector2( 1.6, 1.6 )
-texture = ExtResource( 76 )
+texture = ExtResource( 78 )
 
 [node name="Sprite9" type="Sprite" parent="state_handler/poof_sinners2"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -333.503, 341.144 )
 rotation = 1.81689
-texture = ExtResource( 53 )
+texture = ExtResource( 55 )
 
 [node name="poof_sinners3" type="Control" parent="state_handler"]
 editor/display_folded = true
@@ -2240,11 +2266,11 @@ margin_left = -91.3015
 margin_top = -16.8974
 margin_right = 85.6985
 margin_bottom = 297.103
-texture_normal = ExtResource( 55 )
+texture_normal = ExtResource( 57 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 55 )
-animation1 = ExtResource( 56 )
-animation2 = ExtResource( 57 )
+animation0 = ExtResource( 57 )
+animation1 = ExtResource( 58 )
+animation2 = ExtResource( 59 )
 
 [node name="numa_with_ks1" type="TextureButton" parent="state_handler/poof_sinners3"]
 margin_left = -204.029
@@ -2276,33 +2302,33 @@ margin_left = 336.2
 margin_top = -9.89078
 margin_right = 494.2
 margin_bottom = 343.109
-texture_normal = ExtResource( 61 )
+texture_normal = ExtResource( 63 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 61 )
-animation1 = ExtResource( 62 )
-animation2 = ExtResource( 63 )
+animation0 = ExtResource( 63 )
+animation1 = ExtResource( 64 )
+animation2 = ExtResource( 65 )
 
 [node name="tori_poof" type="TextureButton" parent="state_handler/poof_sinners3"]
 margin_left = -385.835
 margin_top = -14.1489
 margin_right = -242.835
 margin_bottom = 436.851
-texture_normal = ExtResource( 67 )
+texture_normal = ExtResource( 69 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 67 )
-animation1 = ExtResource( 68 )
-animation2 = ExtResource( 69 )
+animation0 = ExtResource( 69 )
+animation1 = ExtResource( 70 )
+animation2 = ExtResource( 71 )
 
 [node name="natalie_poof" type="TextureButton" parent="state_handler/poof_sinners3"]
 margin_left = -9.02533
 margin_top = 124.484
 margin_right = 229.975
 margin_bottom = 391.484
-texture_normal = ExtResource( 70 )
+texture_normal = ExtResource( 72 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 70 )
-animation1 = ExtResource( 71 )
-animation2 = ExtResource( 72 )
+animation0 = ExtResource( 72 )
+animation1 = ExtResource( 73 )
+animation2 = ExtResource( 74 )
 
 [node name="elijah_poof" type="TextureButton" parent="state_handler/poof_sinners3"]
 margin_left = 3107.0
@@ -2311,66 +2337,72 @@ margin_right = 3269.0
 margin_bottom = 380.596
 rect_scale = Vector2( -1.1, 1.1 )
 rect_pivot_offset = Vector2( -1184.06, 82.9063 )
-texture_normal = ExtResource( 58 )
+texture_normal = ExtResource( 60 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 58 )
-animation1 = ExtResource( 59 )
-animation2 = ExtResource( 60 )
+animation0 = ExtResource( 60 )
+animation1 = ExtResource( 61 )
+animation2 = ExtResource( 62 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/poof_sinners3"]
-anims/poof = SubResource( 10 )
+anims/poof = SubResource( 7 )
 
 [node name="Sprite7" type="Sprite" parent="state_handler/poof_sinners3"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -369.013, 31.1464 )
 rotation = 1.81689
-texture = ExtResource( 74 )
+texture = ExtResource( 76 )
 
 [node name="Sprite6" type="Sprite" parent="state_handler/poof_sinners3"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 562.808, 347.847 )
 rotation = 1.81689
-texture = ExtResource( 75 )
+texture = ExtResource( 77 )
 
 [node name="Sprite10" type="Sprite" parent="state_handler/poof_sinners3"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 514.944, 40.6813 )
 rotation = 1.74533
-texture = ExtResource( 52 )
+texture = ExtResource( 54 )
 
 [node name="Sprite8" type="Sprite" parent="state_handler/poof_sinners3"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 229.562, 179.686 )
 rotation = 1.81689
 scale = Vector2( 1.8, 1.8 )
-texture = ExtResource( 76 )
+texture = ExtResource( 78 )
 
 [node name="Sprite11" type="Sprite" parent="state_handler/poof_sinners3"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -84.4323, 229.792 )
 rotation = 3.63378
 scale = Vector2( 1.6, 1.6 )
-texture = ExtResource( 76 )
+texture = ExtResource( 78 )
 
 [node name="Sprite9" type="Sprite" parent="state_handler/poof_sinners3"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -333.503, 341.144 )
 rotation = 1.81689
-texture = ExtResource( 53 )
+texture = ExtResource( 55 )
 
 [node name="lucifur" type="TextureButton" parent="state_handler"]
 margin_left = 804.736
 margin_top = 190.234
 margin_right = 956.736
 margin_bottom = 597.234
-texture_normal = ExtResource( 77 )
-texture_click_mask = ExtResource( 78 )
+texture_normal = ExtResource( 79 )
+texture_click_mask = ExtResource( 80 )
 script = ExtResource( 7 )
-animation0 = ExtResource( 77 )
-animation1 = ExtResource( 79 )
-animation2 = ExtResource( 80 )
+animation0 = ExtResource( 79 )
+animation1 = ExtResource( 81 )
+animation2 = ExtResource( 82 )
+
+[node name="cat_toy" type="Sprite" parent="state_handler/lucifur"]
+position = Vector2( 54.4013, 101.938 )
+texture = ExtResource( 83 )
 
 [node name="lucifur_extra" type="Control" parent="state_handler"]
+editor/display_folded = true
+visible = false
 margin_left = 804.736
 margin_top = 170.234
 margin_right = 975.736
@@ -2380,49 +2412,49 @@ mouse_filter = 2
 [node name="trident" type="Sprite" parent="state_handler/lucifur_extra"]
 editor/display_folded = true
 position = Vector2( 145, 183.222 )
-texture = ExtResource( 81 )
+texture = ExtResource( 84 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/lucifur_extra/trident"]
 autoplay = "floaty"
-anims/floaty = SubResource( 1 )
+anims/floaty = SubResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="state_handler/lucifur_extra"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 171.634, 74.2749 )
 rotation = 1.74533
-texture = ExtResource( 74 )
+texture = ExtResource( 76 )
 
 [node name="Sprite2" type="Sprite" parent="state_handler/lucifur_extra"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -49.9841, 296.341 )
 rotation = 1.81689
-texture = ExtResource( 75 )
+texture = ExtResource( 77 )
 
 [node name="Sprite3" type="Sprite" parent="state_handler/lucifur_extra"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -66.951, 31.927 )
 rotation = 1.97222
-texture = ExtResource( 52 )
+texture = ExtResource( 54 )
 
 [node name="Sprite4" type="Sprite" parent="state_handler/lucifur_extra"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 79.803, 233.27 )
 rotation = 1.3631
 scale = Vector2( 1.4, 1.4 )
-texture = ExtResource( 76 )
+texture = ExtResource( 78 )
 
 [node name="Sprite5" type="Sprite" parent="state_handler/lucifur_extra"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 184.526, 363.291 )
 rotation = 2.27067
-texture = ExtResource( 53 )
+texture = ExtResource( 55 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/lucifur_extra"]
-anims/lucifur_poof = SubResource( 2 )
-anims/lucifur_unpoof = SubResource( 3 )
+anims/lucifur_poof = SubResource( 9 )
+anims/lucifur_unpoof = SubResource( 10 )
 
 [node name="poof_audio" type="AudioStreamPlayer" parent="state_handler/lucifur_extra"]
-stream = ExtResource( 73 )
+stream = ExtResource( 75 )
 volume_db = 5.0
 
 [node name="poof_cover" type="Button" parent="state_handler"]
@@ -2434,12 +2466,12 @@ enabled_focus_mode = 0
 flat = true
 
 [node name="poof_audio" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 73 )
+stream = ExtResource( 75 )
 volume_db = 5.0
 bus = "SFX"
 
 [node name="poof_audio2" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 54 )
+stream = ExtResource( 56 )
 volume_db = -10.0
 bus = "SFX"
 [connection signal="pressed" from="state_handler/wait_oliver1" to="state_handler/wait_oliver1" method="_on_char_obj_button_pressed"]
@@ -2458,3 +2490,4 @@ bus = "SFX"
 [connection signal="pressed" from="state_handler/lucifur" to="state_handler/lucifur" method="_on_char_obj_button_pressed"]
 [connection signal="animation_finished" from="state_handler/lucifur_extra/AnimationPlayer" to="state_handler" method="animation_finished"]
 [connection signal="pressed" from="state_handler/poof_cover" to="state_handler" method="_on_poof_cover_pressed"]
+[connection signal="visibility_changed" from="state_handler/poof_cover" to="state_handler/poof_cover" method="_on_visibility_changed"]

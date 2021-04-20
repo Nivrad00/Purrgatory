@@ -17,3 +17,12 @@ func update_state(state):
 	else:
 		$exit2_end.hide()
 		$exit2.show()
+	
+func exit_pressed():
+	$white_cover.show()
+	$white_cover.get_node('AnimationPlayer').play('Fade In')
+	get_node('../../../../..').disable_ui()
+	yield($white_cover/AnimationPlayer, 'animation_finished')
+	emit_signal('change_room', 'bad_credits')
+	
+	

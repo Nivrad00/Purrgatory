@@ -1,0 +1,104 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/snowglobe3.gd" type="Script" id=2]
+[ext_resource path="res://assets/rooms/snowglobe3.png" type="Texture" id=3]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=5]
+[ext_resource path="res://assets/sprites/kyungsoon_snowglobe1.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprite_masks/kyungsoon_snowglobe1.png" type="BitMap" id=7]
+[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=8]
+[ext_resource path="res://assets/sprites/kyungsoon_snowglobe2.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/kyungsoon_snowglobe3.png" type="Texture" id=10]
+
+[node name="room_instance" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+default_music = "null"
+
+[node name="bg" type="Sprite" parent="state_handler"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+position = Vector2( -464.988, -291.018 )
+room_label = "snowglobe2"
+
+[node name="object" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 111.255, 314.151 )
+script = ExtResource( 5 )
+dialog_label = "snowglobe_debris1"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+position = Vector2( -82.2257, 56.0277 )
+polygon = PoolVector2Array( 168.491, 197.727, 171.012, 209.702, 228.995, 221.046, 254.835, 239.953, 285.717, 227.979, 364.498, 229.239, 372.061, 214.113, 355.675, 172.517, 321.011, 166.845, 284.457, 185.752, 216.39, 175.038 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object"]
+polygon = PoolVector2Array( 11.2104, 270.084, -1.3597, 285.447, 39.1438, 307.096, 76.854, 289.637, 41.7778, 273.655 )
+
+[node name="object2" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 180.605, 211.551 )
+script = ExtResource( 5 )
+dialog_label = "snowglobe_debris2"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
+position = Vector2( -82.2257, 56.0277 )
+polygon = PoolVector2Array( 308.802, 164.046, 304.73, 186.852, 347.084, 203.957, 413.873, 210.473, 422.018, 181.965, 494.164, 193.791, 513.671, 184.551, 487.179, 153.458, 412.244, 159.159, 354.208, 139.958, 334.866, 166.49 )
+
+[node name="object3" type="Area2D" parent="state_handler"]
+position = Vector2( 180.605, 211.551 )
+script = ExtResource( 5 )
+dialog_label = "snowglobe_debris3"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
+position = Vector2( -82.2257, 56.0277 )
+polygon = PoolVector2Array( 796.298, 140.856, 772.775, 157.763, 747.899, 155.406, 732.345, 218.775, 811.735, 226.126, 857.114, 244.008, 917.618, 244.008, 896.819, 290.016, 964.886, 289.386, 962.995, 254.092, 980.012, 239.596, 1015.31, 312.705, 1049.34, 305.142, 1020.98, 218.798, 985.054, 221.949, 982.533, 191.067, 952.872, 159.968 )
+
+[node name="object4" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 180.605, 211.551 )
+script = ExtResource( 5 )
+dialog_label = "snowglobe_pole"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object4"]
+position = Vector2( -82.2257, 54.8613 )
+polygon = PoolVector2Array( 737.434, 204.035, 736.66, -229.281, 694.102, -228.507, 694.513, 204.767 )
+
+[node name="object5" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 180.605, 211.551 )
+script = ExtResource( 5 )
+dialog_label = "snowglobe_poster"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object5"]
+position = Vector2( -82.2257, 56.0277 )
+polygon = PoolVector2Array( 843.933, 38.8463, 844.532, -39.5882, 787.054, -39.5882, 787.42, 25.5208 )
+
+[node name="kyungsoon_snowglobe" type="TextureButton" parent="state_handler"]
+margin_left = 253.551
+margin_top = 344.816
+margin_right = 534.551
+margin_bottom = 591.816
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 6 )
+texture_click_mask = ExtResource( 7 )
+script = ExtResource( 8 )
+dialog_label = "kyungsoon_snowglobe"
+blackout_label = "kyungsoon_snowglobe"
+sprite_path = [ null ]
+animation0 = ExtResource( 6 )
+animation1 = ExtResource( 9 )
+animation2 = ExtResource( 10 )
+[connection signal="pressed" from="state_handler/kyungsoon_snowglobe" to="state_handler/kyungsoon_snowglobe" method="_on_char_obj_button_pressed"]

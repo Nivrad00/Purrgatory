@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://assets/rooms/snowglobe2.png" type="Texture" id=3]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=5]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=6]
+
+[node name="room_instance" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+default_music = "null"
+
+[node name="bg" type="Sprite" parent="state_handler"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+position = Vector2( -464.988, -291.018 )
+room_label = "snowglobe1"
+
+[node name="exit3" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( -280.934, -192.644 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+room_label = "snowglobe3"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3"]
+polygon = PoolVector2Array( 871.52, 558.418, 938.56, 558.186, 936.025, 460.624, 871.498, 459.907 )
+
+[node name="object" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 180.605, 211.551 )
+script = ExtResource( 6 )
+dialog_label = "snowglobe_woo"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+position = Vector2( -82.2257, 56.0277 )
+polygon = PoolVector2Array( 161.56, 180.718, 167.878, 236.673, 287.91, 207.793, 278.885, 138.301 )
+
+[node name="object2" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 180.605, 211.551 )
+script = ExtResource( 6 )
+dialog_label = "snowglobe_cat"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
+position = Vector2( -82.2257, 56.0277 )
+polygon = PoolVector2Array( 304.52, 70.7875, 288.836, 108.233, 305.6, 130.985, 340.06, 126.816, 356.367, 97.9653, 347.512, 71.1117 )
+
+[node name="object3" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 180.605, 211.551 )
+script = ExtResource( 6 )
+dialog_label = "snowglobe_salvation"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
+position = Vector2( -82.2257, 56.0277 )
+polygon = PoolVector2Array( 744.17, 43.871, 746.07, 152.171, 823.97, 263.321, 994.97, 310.821, 1026.32, 140.771, 976.92, 36.271, 849.62, 13.471 )

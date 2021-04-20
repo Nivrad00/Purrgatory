@@ -204,7 +204,6 @@ room_label = "hallway5"
 polygon = PoolVector2Array( 465.026, 1011.01, 1745.01, 1011.01, 1745.02, 923.026, 465.007, 923.014 )
 
 [node name="coin" parent="state_handler" instance=ExtResource( 21 )]
-frame = 0
 
 [node name="hhhhh" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 22 )

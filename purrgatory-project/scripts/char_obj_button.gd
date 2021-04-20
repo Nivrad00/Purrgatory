@@ -36,16 +36,13 @@ func _ready():
 func _on_mouse_entered():
 	emit_signal("stop_all_hovering")
 	mouse_on = true
-	print('mouse entered button')
 	
 func _on_mouse_exited():
 	emit_signal("start_all_hovering")
 	mouse_on = false
-	print('mouse exited from button')
 
 func _on_visibility_changed():
 	if not visible and mouse_on:
-		print('mouse exited from button')
 		emit_signal("start_all_hovering")
 		mouse_on = false
 		

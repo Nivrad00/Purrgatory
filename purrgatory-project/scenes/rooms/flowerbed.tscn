@@ -76,7 +76,6 @@ __meta__ = {
 
 [node name="state_handler" type="Control" parent="."]
 script = ExtResource( 2 )
-default_music = "The_Garden"
 
 [node name="bg2" type="ColorRect" parent="state_handler"]
 margin_right = 1280.0

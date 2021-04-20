@@ -12,7 +12,6 @@ func _ready():
 	var children = $state_handler.get_children()
 	children.append($state_handler)
 	
-	# connect all children, recursively
 	for node in children:
 		var signal_list = node.get_signal_list()
 		for sig in signal_list:

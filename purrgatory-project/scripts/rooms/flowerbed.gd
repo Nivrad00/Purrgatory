@@ -116,7 +116,10 @@ func generate_flowers(ids):
 func init_state(state):
 	.init_state(state)
 	
+	#var start = OS.get_ticks_usec()
 	setup_game()
+	#var end = OS.get_ticks_usec()
+	#print('algo 1: ' + str((end-start)/1000000.0))
 
 func setup_game():
 	for i in range(num_targets):

@@ -148,7 +148,7 @@ func _ready():
 	Input.set_custom_mouse_cursor(load("res://assets/draw_cursor.png"), Input.CURSOR_HELP)
 
 func load_meowkov_chain(f):
-	f.open("res://scripts/procgen/meowutkov.json", File.READ)
+	f.open("res://scripts/procgen/meowutkov_edited.json", File.READ)
 	meowkov_json = JSON.parse(f.get_as_text())
 	f.close()
 
@@ -196,6 +196,7 @@ func _process(delta):
 			yield($delay_timer, 'timeout')
 
 			emit_signal('return_to_main')
+			$meta_ui.show() # bc it might have been disabled by the credits
 			$white_cover.color = Color(1, 1, 1, 0)
 			room.remove_room()
 			$meta_ui/pause_menu.hide() # hide it directly instead of using close_pause_menu()
@@ -203,6 +204,7 @@ func _process(delta):
 			$meta_ui/exit_confirm.hide()
 			$white_cover.hide()
 			set_process(false)
+			
 		else:
 			a = min(a + 2 * delta, 1)
 			AudioServer.set_bus_volume_db(0, AudioServer.get_bus_volume_db(0) - 40 * delta)
@@ -222,6 +224,11 @@ func increment_action_timers():
 	action_timers = new_list
 
 func change_room(label):
+	var stop_hovering = false
+	# deal with PolygonButton hovering nonsense if you're changing rooms DURING dialog
+	if ui.visible:
+		stop_hovering = true
+		
 	increment_action_timers()
 	if label == '_prev':
 		room.change_room(room.prev_room_label, state)
@@ -234,9 +241,7 @@ func change_room(label):
 		if label == "draw_a_paw" and $meta_ui/dropdown.items_shown:
 			$meta_ui/dropdown.toggle_items() 
 	
-	# deal with PolygonButton hovering nonsense if you changed rooms during dialog
-	yield(get_tree(), "idle_frame")
-	if ui.visible:
+	if stop_hovering:
 		room.stop_all_hovering()
 
 func start_dialog(label, blackout_label=null):
@@ -295,7 +300,6 @@ func start_dialog(label, blackout_label=null):
 	for pair in block['states']:
 		check_special_states(pair)
 		
-	yield(get_tree(), "idle_frame")
 	room.stop_all_hovering()
 
 func end_dialog():
@@ -674,7 +678,6 @@ func load_game(file):
 		$meta_ui/history_button2.hide()
 		room.start_dialog()
 		ui.update_ui(save_dict["speaker"], save_dict["sprites"], save_dict["text"], save_dict["choices"], false)
-		print(save_dict["sprites"])
 
 	$meta_ui/dropdown.load_inv(save_dict["inventory"])
 	$meta_ui/dropdown.load_quest_log(save_dict["quest_log"])
@@ -749,8 +752,8 @@ func open_pause_menu():
 	$meta_ui/pause_menu.show_custom()
 
 func close_pause_menu():
-	if ui.is_visible():
-		ui.speak_ui()
+	#if ui.is_visible():
+		#ui.speak_ui()
 	$meta_ui/pause_menu.hide()
 
 func options_changed():
@@ -786,11 +789,9 @@ func turn_on_skip():
 
 func enable_skip():
 	ui.get_node('skip_button/x').hide()
-	ui.get_node('skip_button').mouse_default_cursor_shape = Input.CURSOR_POINTING_HAND	
 
 func disable_skip():
 	ui.get_node('skip_button/x').show()
-	ui.get_node('skip_button').mouse_default_cursor_shape = Input.CURSOR_ARROW
 
 func skip():
 	if block['choices'].size() == 0 and (block['states'].size() == 0 or block['states'][0][0] != 'no_skip'):
@@ -836,3 +837,7 @@ func test_remove_quest():
 # just so that we can delete seen_blocks
 func deleted_data():
 	seen_blocks = []
+
+# only used during the credits as of now
+func disable_ui():
+	$meta_ui.hide()

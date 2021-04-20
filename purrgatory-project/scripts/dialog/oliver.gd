@@ -1033,5 +1033,22 @@ var raw_blocks = [
 ["","oliver","","as of right now now, 15,182.","","","","","",""],
 ["","you","","...i'm starting to see why finding a typo was so exciting for you","","","","","",""],
 ["","oliver","","...","","","","","",""],
-["","","","yeah...","","","null","","",""]
+["","","","yeah...","","","null","","",""],
+["oliver_ladder","_none","oliver_neutral","oliver looks up as you walk past.","","","","","",""],
+["","oliver","","{player}?","","","","","",""],
+["","you","","oh, hey oliver!","","","","","",""],
+["","","","what's up?","","","","","",""],
+["","oliver","","uh, not much!","","","","","",""],
+["","","","i was just wondering...","","","","","",""],
+["","","","you know...","","","","","",""],
+["","you","","i know what?","","","","","",""],
+["","_none","","he gestures at you.","","","","","",""],
+["","oliver","","why are you carrying a ladder?","","","","","",""],
+["","you","","oh!","","","","","",""],
+["","","","uh, just thought it might come in handy","","","","","",""],
+["","","","sorry","","","","","",""],
+["","oliver","","ah, i see","","","","","",""],
+["","you","","do you want me to put it back?","","","","","",""],
+["","oliver","","no, no, i... suppose you can have it if you want!","","","","","",""],
+["","you","","alright, thanks!","","","null","","",""]
 ]

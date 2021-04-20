@@ -4,6 +4,14 @@ signal options_changed()
 signal toggle_notes(on)
 signal toggle_voicing(on)
 
+var resolutions = [
+	'854 x 480',
+	'1024 x 576',
+	'1280 x 720',
+	'1600 x 900',
+	'1920 x 1080'
+]
+
 var quips = [
 	['cat', 'meow meow, meow meow meow :3'],
 	['oliver', 'to meow, or not to meow, that is the question!'],
@@ -19,17 +27,18 @@ var default_options = {
 	"sfx_volume": 0.6,
 	"text_size": 24,
 	"notes_enabled": true,
-	"voicing_enabled": false
+	"voicing_enabled": false,
+	"resolution": "1280 x 720"
 }
 
+func _ready():
+	for res in resolutions:
+		$window_size/option_button.add_item(res)
+		
 func save_options():
 	# saves options to file
 	# (the options are applied as soon as the values are changed or the game starts, so no need to apply anything here)
-	# this method is called when the options menu closes, and when the game closes
-	
-	# unfortunately the changes you made to your options won't save if the game crashes
-	# or, you somehow force quit the game so that it doesn't get a quit notification
-	# but whatever
+	# this method is called when the options menu closes
 	
 	var options_dict = {
 		"fullscreen": $fullscreen/fullscreen.pressed,
@@ -37,7 +46,8 @@ func save_options():
 		"sfx_volume": $audio/sfx.value,
 		"text_size": $text_size/slider.value,
 		"notes_enabled": $enable_notes/enable_notes.pressed,
-		"voicing_enabled": $voicing/enable_voicing.pressed 
+		"voicing_enabled": $voicing/enable_voicing.pressed,
+		"resolution": resolutions[$window_size/option_button.selected]
 	}
 	var options_save = File.new()
 	options_save.open("user://options.save", File.WRITE)
@@ -65,6 +75,7 @@ func load_options():
 	$text_size/slider.value = options_dict['text_size']
 	$enable_notes/enable_notes.pressed = options_dict['notes_enabled']
 	$voicing/enable_voicing.pressed = options_dict['voicing_enabled']
+	$window_size/option_button.selected = resolutions.find(options_dict['resolution'])
 	
 	# also, connect the "enabled_notes" and "enabled_tts" option to the notes menu if not done already
 	# and this absolute path is disgusting but find_node isn't working so whatever
@@ -93,6 +104,7 @@ func load_and_apply_options():
 	_on_text_size_value_changed(options_dict['text_size'])
 	_on_enable_notes_toggled(options_dict['notes_enabled'])
 	_on_enable_voicing_toggled(options_dict['voicing_enabled'])
+	_on_window_size_selected(resolutions.find(options_dict['resolution']))
 
 func show_custom():
 	var state = get_node('/root/main/game').state
@@ -134,6 +146,11 @@ func _on_sfx_value_changed(value):
 	
 func _on_fullscreen_toggled(on):
 	OS.window_fullscreen = on
+	if not on:
+		var res_id = $window_size/option_button.selected
+		var res_string = resolutions[res_id]
+		var res = res_string.split(' x ')
+		OS.window_size = Vector2(int(res[0]), int(res[1]))
 	
 func _on_text_size_value_changed(value):
 	$text_size/preview_b.get_font('normal_font').set_size(value)
@@ -147,3 +164,8 @@ func _on_enable_notes_toggled(button_pressed):
 		
 func _on_enable_voicing_toggled(button_pressed):
 	emit_signal('toggle_voicing', button_pressed)
+
+func _on_window_size_selected(ID):
+	var res_string = resolutions[ID]
+	var res = res_string.split(' x ')
+	OS.window_size = Vector2(int(res[0]), int(res[1]))

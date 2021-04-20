@@ -42,11 +42,6 @@ func _ready():
 func set_tile(label):
 	tile = label
 	texture = images[label]
-	
-	if label in get_parent().clickable:
-		cursor_shape = Input.CURSOR_ARROW # originally i had this as CURSOR_POINTING_HAND
-	else:
-		cursor_shape = Input.CURSOR_ARROW
 
 func mouse_entered():
 	get_parent().mouse_entered(self)

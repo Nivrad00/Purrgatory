@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/options_menu.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/ui/slider.png" type="Texture" id=8]
 [ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=9]
 [ext_resource path="res://assets/ui/font_preview.png" type="Texture" id=10]
+[ext_resource path="res://themes/dropdown_menu_theme.tres" type="Theme" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -41,13 +42,16 @@ script = ExtResource( 2 )
 [node name="white" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -0.418091
+margin_top = 1.25436
+margin_right = -0.418091
+margin_bottom = 1.25439
 
 [node name="Line2D" type="Line2D" parent="."]
 visible = false
 position = Vector2( 369.758, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
-texture_mode = -8175694
 
 [node name="Line2D2" type="Line2D" parent="."]
 visible = false
@@ -56,6 +60,7 @@ points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
 
 [node name="back" type="Button" parent="."]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 506.0
@@ -64,7 +69,7 @@ margin_right = -524.0
 margin_bottom = -53.0197
 rect_pivot_offset = Vector2( 311.063, -221.429 )
 focus_mode = 0
-mouse_default_cursor_shape = 2
+mouse_default_cursor_shape = 0
 enabled_focus_mode = 0
 flat = true
 __meta__ = {
@@ -89,7 +94,6 @@ align = 1
 valign = 1
 
 [node name="reset" type="Button" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1117.8
@@ -98,7 +102,7 @@ margin_right = -12.1976
 margin_bottom = -12.9712
 rect_pivot_offset = Vector2( 311.063, -221.429 )
 focus_mode = 0
-mouse_default_cursor_shape = 2
+mouse_default_cursor_shape = 0
 enabled_focus_mode = 0
 flat = true
 __meta__ = {
@@ -125,9 +129,9 @@ valign = 1
 
 [node name="text_size" type="Control" parent="."]
 editor/display_folded = true
-margin_left = 314.0
+margin_left = 279.106
 margin_top = 95.0708
-margin_right = 354.0
+margin_right = 319.106
 margin_bottom = 135.071
 __meta__ = {
 "_edit_group_": true
@@ -148,7 +152,7 @@ margin_top = -8.0
 margin_right = 439.0
 margin_bottom = -6.0
 focus_mode = 0
-mouse_default_cursor_shape = 2
+mouse_default_cursor_shape = 0
 custom_icons/tick = ExtResource( 6 )
 custom_icons/grabber_highlight = ExtResource( 7 )
 custom_icons/grabber = ExtResource( 7 )
@@ -197,9 +201,9 @@ align = 2
 
 [node name="audio" type="Control" parent="."]
 editor/display_folded = true
-margin_left = 314.0
+margin_left = 279.106
 margin_top = 421.585
-margin_right = 354.0
+margin_right = 319.106
 margin_bottom = 461.585
 __meta__ = {
 "_edit_group_": true
@@ -220,7 +224,7 @@ margin_top = -8.0
 margin_right = 439.0
 margin_bottom = -6.0
 focus_mode = 0
-mouse_default_cursor_shape = 2
+mouse_default_cursor_shape = 0
 custom_icons/tick = ExtResource( 6 )
 custom_icons/grabber_highlight = ExtResource( 7 )
 custom_icons/grabber = ExtResource( 7 )
@@ -248,7 +252,7 @@ margin_top = 52.8001
 margin_right = 439.0
 margin_bottom = 54.8001
 focus_mode = 0
-mouse_default_cursor_shape = 2
+mouse_default_cursor_shape = 0
 custom_icons/tick = ExtResource( 6 )
 custom_icons/grabber_highlight = ExtResource( 7 )
 custom_icons/grabber = ExtResource( 7 )
@@ -261,12 +265,36 @@ scrollable = false
 ticks_on_borders = true
 focus_mode = 0
 
+[node name="window_size" type="Control" parent="."]
+margin_left = -9.04639
+margin_top = 1.29234
+margin_right = 30.9536
+margin_bottom = 41.2923
+
+[node name="Label" type="Label" parent="window_size"]
+margin_left = 843.432
+margin_top = 91.1451
+margin_right = 984.432
+margin_bottom = 125.145
+text = "window size"
+
+[node name="option_button" type="OptionButton" parent="window_size"]
+margin_left = 1014.0
+margin_top = 88.0
+margin_right = 1200.0
+margin_bottom = 130.0
+focus_mode = 0
+theme = ExtResource( 11 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "420 x 69"
+
 [node name="fullscreen" type="Control" parent="."]
 editor/display_folded = true
-margin_left = 1126.26
-margin_top = 107.298
-margin_right = 1166.26
-margin_bottom = 147.299
+margin_left = 1134.01
+margin_top = 175.433
+margin_right = 1174.01
+margin_bottom = 215.434
 
 [node name="fs_label" type="Label" parent="fullscreen"]
 margin_left = -191.6
@@ -284,15 +312,15 @@ margin_top = -27.7207
 margin_right = 5.45755
 margin_bottom = 0.279274
 focus_mode = 0
-mouse_default_cursor_shape = 2
+mouse_default_cursor_shape = 0
 enabled_focus_mode = 0
 
 [node name="enable_notes" type="Control" parent="."]
 editor/display_folded = true
-margin_left = 1126.26
-margin_top = 241.299
-margin_right = 1166.26
-margin_bottom = 281.299
+margin_left = 1134.01
+margin_top = 309.713
+margin_right = 1174.01
+margin_bottom = 349.713
 
 [node name="label" type="Label" parent="enable_notes"]
 margin_left = -251.0
@@ -321,16 +349,16 @@ margin_top = -27.7207
 margin_right = 5.45755
 margin_bottom = 0.279274
 focus_mode = 0
-mouse_default_cursor_shape = 2
+mouse_default_cursor_shape = 0
 pressed = true
 enabled_focus_mode = 0
 
 [node name="voicing" type="Control" parent="."]
 editor/display_folded = true
-margin_left = 1126.26
-margin_top = 175.299
-margin_right = 1166.26
-margin_bottom = 215.299
+margin_left = 1134.01
+margin_top = 243.713
+margin_right = 1174.01
+margin_bottom = 283.713
 
 [node name="label" type="Label" parent="voicing"]
 margin_left = -386.0
@@ -348,7 +376,7 @@ margin_top = -27.7207
 margin_right = 5.45755
 margin_bottom = 0.279274
 focus_mode = 0
-mouse_default_cursor_shape = 2
+mouse_default_cursor_shape = 0
 enabled_focus_mode = 0
 [connection signal="pressed" from="back" to="." method="hide"]
 [connection signal="pressed" from="back" to="." method="save_options"]
@@ -356,6 +384,7 @@ enabled_focus_mode = 0
 [connection signal="value_changed" from="text_size/slider" to="." method="_on_text_size_value_changed"]
 [connection signal="value_changed" from="audio/music" to="." method="_on_music_value_changed"]
 [connection signal="value_changed" from="audio/sfx" to="." method="_on_sfx_value_changed"]
+[connection signal="item_selected" from="window_size/option_button" to="." method="_on_window_size_selected"]
 [connection signal="toggled" from="fullscreen/fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="toggled" from="enable_notes/enable_notes" to="." method="_on_enable_notes_toggled"]
 [connection signal="toggled" from="voicing/enable_voicing" to="." method="_on_enable_voicing_toggled"]

@@ -26,6 +26,7 @@ func _ready():
 	
 	for child in children:
 		if child is Polygon2D:
+			child.hide()
 			child.set_modulate(Color(0, 0, 0, 0.15))
 			visible_polygons.append(child)
 			visible_exists = true

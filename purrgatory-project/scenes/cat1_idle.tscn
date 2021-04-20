@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/sprites/cat1.png" type="Texture" id=1]
-[ext_resource path="res://assets/sprite_masks/cat.png" type="BitMap" id=2]
-[ext_resource path="res://scenes/cat1_idle.gd" type="Script" id=3]
-[ext_resource path="res://assets/audio/meow.ogg" type="AudioStream" id=4]
+[ext_resource path="res://scenes/cat1_idle.gd" type="Script" id=2]
+[ext_resource path="res://assets/audio/meow.ogg" type="AudioStream" id=3]
 
 [node name="cat1_idle" type="TextureButton"]
 margin_right = 140.0
@@ -11,11 +10,10 @@ margin_bottom = 134.0
 focus_mode = 0
 enabled_focus_mode = 0
 texture_normal = ExtResource( 1 )
-texture_click_mask = ExtResource( 2 )
-script = ExtResource( 3 )
+script = ExtResource( 2 )
 
 [node name="audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
+stream = ExtResource( 3 )
 pitch_scale = 2.0
 bus = "SFX"
-[connection signal="button_down" from="." to="audio" method="play"]
+[connection signal="button_down" from="." to="." method="_on_cat1_idle_button_down"]

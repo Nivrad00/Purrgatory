@@ -20,5 +20,8 @@ var raw_blocks = [
 ["examine_snowglobe6","_none","_none","half a dozen cool snowglobes.","","","null","","",""],
 ["examine_snowglobe7","_none","_none","more cool snowglobes than in your wildest dreams.","","","null","","",""],
 ["examine_business_card","_none","business_card","it's a business card for lucifur.","","","","","",""],
-["","","","huh, it has a phone number...","_quest_call_lucifur","","null","","",""]
+["","","","huh, it has a phone number...","_quest_call_lucifur","","null","","",""],
+["examine_ladder","_none","_none","a ladder.","","","","","",""],
+["","","","it's pretty awkward to carry around...","","","null","","",""],
+["examine_cat_toy","_none","_none","a cat toy shaped like a fish.","","","null","","",""]
 ]

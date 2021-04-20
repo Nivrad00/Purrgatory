@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/commons2.gd" type="Script" id=2]
@@ -19,17 +19,15 @@
 [ext_resource path="res://assets/sprite_masks/natalie_wait_1.png" type="BitMap" id=17]
 [ext_resource path="res://assets/sprites/natalie_wait_2.png" type="Texture" id=18]
 [ext_resource path="res://assets/sprites/natalie_wait_3.png" type="Texture" id=19]
-[ext_resource path="res://assets/sprites/natalie_nocturnal.png" type="Texture" id=20]
-[ext_resource path="res://assets/sprite_masks/natalie_nocturnal.png" type="BitMap" id=21]
-[ext_resource path="res://scenes/exit_left.tscn" type="PackedScene" id=22]
-[ext_resource path="res://assets/sprites/commons2_fg.png" type="Texture" id=23]
-[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=24]
-[ext_resource path="res://assets/sprites/commons2_chairs.png" type="Texture" id=25]
-[ext_resource path="res://assets/sprites/tori_wait_1.png" type="Texture" id=26]
-[ext_resource path="res://assets/sprite_masks/tori_wait_1.png" type="BitMap" id=27]
-[ext_resource path="res://assets/sprites/tori_wait_2.png" type="Texture" id=28]
-[ext_resource path="res://assets/sprites/tori_wait_3.png" type="Texture" id=29]
-[ext_resource path="res://assets/audio/glunk.wav" type="AudioStream" id=30]
+[ext_resource path="res://scenes/exit_left.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/sprites/commons2_fg.png" type="Texture" id=21]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=22]
+[ext_resource path="res://assets/sprites/commons2_chairs.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/tori_wait_1.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprite_masks/tori_wait_1.png" type="BitMap" id=25]
+[ext_resource path="res://assets/sprites/tori_wait_2.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprites/tori_wait_3.png" type="Texture" id=27]
+[ext_resource path="res://assets/audio/glunk.wav" type="AudioStream" id=28]
 
 [node name="room_template" type="Control"]
 anchor_right = 1.0
@@ -134,8 +132,6 @@ margin_bottom = 329.187
 rect_scale = Vector2( -0.9, 0.9 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 20 )
-texture_click_mask = ExtResource( 21 )
 script = ExtResource( 9 )
 
 [node name="wait_numa" type="TextureButton" parent="state_handler"]
@@ -147,8 +143,6 @@ margin_bottom = 368.638
 rect_scale = Vector2( -0.9, 0.9 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 20 )
-texture_click_mask = ExtResource( 21 )
 script = ExtResource( 9 )
 
 [node name="wait_kyungsoon" type="TextureButton" parent="state_handler"]
@@ -160,20 +154,18 @@ margin_bottom = 417.612
 rect_scale = Vector2( -0.9, 0.9 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 20 )
-texture_click_mask = ExtResource( 21 )
 script = ExtResource( 9 )
 
-[node name="exit" parent="state_handler" instance=ExtResource( 22 )]
+[node name="exit" parent="state_handler" instance=ExtResource( 20 )]
 room_label = "commons1"
 
 [node name="commons2_fg" type="Sprite" parent="state_handler"]
 position = Vector2( 921.796, 374.146 )
-texture = ExtResource( 23 )
+texture = ExtResource( 21 )
 
 [node name="library_door" type="Area2D" parent="state_handler"]
 position = Vector2( 451.61, -212.952 )
-script = ExtResource( 24 )
+script = ExtResource( 22 )
 room_label = "library"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/library_door"]
@@ -208,7 +200,7 @@ dialog_label = "commons_chair1"
 
 [node name="commons2_chairs" type="Sprite" parent="state_handler/commons_chair1"]
 position = Vector2( 314.816, 537.668 )
-texture = ExtResource( 25 )
+texture = ExtResource( 23 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_chair1"]
 position = Vector2( 0, -0.463257 )
@@ -268,16 +260,16 @@ margin_right = 601.281
 margin_bottom = 787.629
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 26 )
-texture_click_mask = ExtResource( 27 )
+texture_normal = ExtResource( 24 )
+texture_click_mask = ExtResource( 25 )
 script = ExtResource( 9 )
 dialog_label = "wait_tori"
-animation0 = ExtResource( 26 )
-animation1 = ExtResource( 28 )
-animation2 = ExtResource( 29 )
+animation0 = ExtResource( 24 )
+animation1 = ExtResource( 26 )
+animation2 = ExtResource( 27 )
 
 [node name="glunk" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 30 )
+stream = ExtResource( 28 )
 [connection signal="pressed" from="state_handler/wait_sean" to="state_handler/wait_sean" method="_on_char_obj_button_pressed"]
 [connection signal="pressed" from="state_handler/wait_elijah" to="state_handler/wait_elijah" method="_on_char_obj_button_pressed"]
 [connection signal="pressed" from="state_handler/wait_natalie" to="state_handler/wait_natalie" method="_on_char_obj_button_pressed"]

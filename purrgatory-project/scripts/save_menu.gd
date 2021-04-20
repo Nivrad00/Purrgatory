@@ -13,10 +13,8 @@ func load_save_files():
 			var texture = ImageTexture.new()
 			texture.create_from_image(image)
 			get_node("files/file" + str(i)).set_button_icon(texture)
-			get_node("files/file" + str(i)).mouse_default_cursor_shape = Input.CURSOR_POINTING_HAND
 		else:
 			get_node("files/file" + str(i)).set_button_icon(null)
-			get_node("files/file" + str(i)).mouse_default_cursor_shape = Input.CURSOR_POINTING_HAND
 			
 		if f.file_exists('user://save' + str(i) + '.save'):
 			f.open("user://save" + str(i) + ".save", File.READ)

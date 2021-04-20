@@ -156,7 +156,10 @@ dialog_label = "tori_climb_lucifur"
 position = Vector2( -4.82532, 2812.56 )
 polygon = PoolVector2Array( 391.8, 6888.11, 428.802, 7040.63, 574.104, 7042.44, 537.102, 6882.69 )
 
-[node name="tori_before" type="TextureButton" parent="state_handler"]
+[node name="tori_before" type="Node2D" parent="state_handler"]
+editor/display_folded = true
+
+[node name="tori_before" type="TextureButton" parent="state_handler/tori_before"]
 margin_left = 711.082
 margin_top = -2.25116
 margin_right = 876.082
@@ -169,7 +172,10 @@ animation0 = ExtResource( 8 )
 animation1 = ExtResource( 11 )
 animation2 = ExtResource( 12 )
 
-[node name="tori_after" type="TextureButton" parent="state_handler"]
+[node name="tori_after" type="Node2D" parent="state_handler"]
+editor/display_folded = true
+
+[node name="tori_after" type="TextureButton" parent="state_handler/tori_after"]
 visible = false
 margin_left = 307.556
 margin_top = 0.0579834
@@ -224,6 +230,7 @@ autoplay = "blink"
 anims/blink = SubResource( 6 )
 
 [node name="_dialog" type="Control" parent="state_handler"]
+editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
@@ -427,6 +434,7 @@ valign = 1
 autowrap = true
 
 [node name="_creaks" type="Node" parent="state_handler"]
+editor/display_folded = true
 
 [node name="0" type="AudioStreamPlayer" parent="state_handler/_creaks"]
 stream = ExtResource( 21 )
@@ -470,6 +478,7 @@ stream = ExtResource( 28 )
 bus = "SFX"
 
 [node name="_pulls" type="Node" parent="state_handler"]
+editor/display_folded = true
 
 [node name="5" type="AudioStreamPlayer" parent="state_handler/_pulls"]
 stream = ExtResource( 29 )
@@ -514,7 +523,7 @@ bus = "SFX"
 wait_time = 0.4
 one_shot = true
 
-[node name="hhhhh" type="AudioStreamPlayer" parent="state_handler"]
+[node name="_hhhhh" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 37 )
 volume_db = -35.0
 autoplay = true

@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/kyungsoon_snowglobe1.png-6ba739c8087865db1b0b804aa93974f5.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/kyungsoon_snowglobe1.png"
+dest_files=[ "res://.import/kyungsoon_snowglobe1.png-6ba739c8087865db1b0b804aa93974f5.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

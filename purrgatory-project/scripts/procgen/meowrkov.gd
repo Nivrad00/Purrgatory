@@ -5,7 +5,7 @@ const seeds = ["Me", "me"]
 func _ready():
 	return
 	var f = File.new()
-	f.open("res://scripts/procgen/meowutkov.json", File.READ)
+	f.open("res://scripts/procgen/meowutkov_edited.json", File.READ)
 	var json = JSON.parse(f.get_as_text())
 	print(generate_text(json.result, 100))
 

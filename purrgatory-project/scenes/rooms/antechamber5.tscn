@@ -1,11 +1,28 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/antechamber5.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/antechamber5.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=5]
-[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=6]
+[ext_resource path="res://scripts/rooms/antechamber5_exit2_end.gd" type="Script" id=6]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Fade In"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 0.406126, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -39,17 +56,16 @@ polygon = PoolVector2Array( 1198.45, 622.368, 1240.13, 720.585, 1240.2, 385.505,
 [node name="exit2_end" type="Area2D" parent="state_handler"]
 visible = false
 position = Vector2( -461.02, -291.018 )
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
-room_label = "bad_credits"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2_end"]
 polygon = PoolVector2Array( 1198.45, 622.368, 1240.13, 720.585, 1240.2, 385.505, 1198.31, 412.638 )
 
 [node name="antechamber_rubble" type="Area2D" parent="state_handler"]
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 dialog_label = "antechamber_rubble"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/antechamber_rubble"]
@@ -63,8 +79,17 @@ polygon = PoolVector2Array( 779.67, 503.835, 796.313, 486.36, 796.313, 476.651, 
 
 [node name="antechamber_ceiling" type="Area2D" parent="state_handler"]
 position = Vector2( -218.109, -419.888 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 dialog_label = "antechamber_ceiling"
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="state_handler/antechamber_ceiling"]
 polygon = PoolVector2Array( 680.549, 516.654, 742.484, 516.167, 761.991, 494.221, 815.636, 486.906, 860.502, 511.29, 947.024, 504.317, 961.52, 487.93, 940.092, 475.325, 909.757, 476.665, 912.991, 446.964, 956.478, 421.754, 530.428, 422.384 )
+
+[node name="white_cover" type="ColorRect" parent="state_handler"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 1, 1, 1, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/white_cover"]
+"anims/Fade In" = SubResource( 1 )

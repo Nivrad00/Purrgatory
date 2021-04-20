@@ -42,7 +42,6 @@ margin_top = 616.676
 margin_right = 766.0
 margin_bottom = 674.676
 focus_mode = 0
-mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
@@ -79,60 +78,60 @@ margin_right = 675.839
 margin_bottom = 366.69
 
 [node name="file0" type="Button" parent="files"]
-margin_left = -479.065
-margin_top = -175.763
-margin_right = 812.935
-margin_bottom = 550.237
+margin_left = -488.0
+margin_top = -176.0
+margin_right = 895.0
+margin_bottom = 550.0
 rect_scale = Vector2( 0.21, 0.21 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 
 [node name="file1" type="Button" parent="files"]
-margin_left = -136.038
-margin_top = -173.372
-margin_right = 1143.96
-margin_bottom = 546.628
+margin_left = -146.0
+margin_top = -173.0
+margin_right = 1238.0
+margin_bottom = 547.0
 rect_scale = Vector2( 0.21, 0.208 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 
 [node name="file2" type="Button" parent="files"]
-margin_left = 207.246
-margin_top = -175.177
-margin_right = 1487.25
-margin_bottom = 544.823
+margin_left = 196.0
+margin_top = -175.0
+margin_right = 1575.0
+margin_bottom = 545.0
 rect_scale = Vector2( 0.21, 0.208 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 
 [node name="file3" type="Button" parent="files"]
-margin_left = -477.598
-margin_top = 53.2896
-margin_right = 802.402
-margin_bottom = 773.289
+margin_left = -485.0
+margin_top = 53.0
+margin_right = 881.0
+margin_bottom = 773.0
 rect_scale = Vector2( 0.21, 0.205 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 
 [node name="file4" type="Button" parent="files"]
-margin_left = -134.93
-margin_top = 52.387
-margin_right = 1145.07
-margin_bottom = 772.387
+margin_left = -145.0
+margin_top = 52.0
+margin_right = 1239.0
+margin_bottom = 772.0
 rect_scale = Vector2( 0.21, 0.21 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 
 [node name="file5" type="Button" parent="files"]
-margin_left = 207.041
-margin_top = 49.7562
-margin_right = 1487.04
-margin_bottom = 769.756
+margin_left = 195.0
+margin_top = 50.0
+margin_right = 1575.0
+margin_bottom = 770.0
 rect_scale = Vector2( 0.21, 0.207 )
 focus_mode = 0
 enabled_focus_mode = 0
@@ -211,7 +210,6 @@ margin_right = -12.1976
 margin_bottom = -12.9712
 rect_pivot_offset = Vector2( 311.063, -221.429 )
 focus_mode = 0
-mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 flat = true
 __meta__ = {
@@ -266,7 +264,6 @@ margin_top = 329.0
 margin_right = -514.0
 margin_bottom = -333.0
 focus_mode = 0
-mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
@@ -295,7 +292,6 @@ margin_top = 405.0
 margin_right = 766.0
 margin_bottom = 463.0
 focus_mode = 0
-mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
@@ -343,7 +339,6 @@ margin_top = 366.0
 margin_right = 766.0
 margin_bottom = 424.0
 focus_mode = 0
-mouse_default_cursor_shape = 2
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
@@ -372,8 +367,8 @@ valign = 1
 [connection signal="pressed" from="files/file4" to="." method="save_file" binds= [ 4 ]]
 [connection signal="pressed" from="files/file5" to="." method="save_file" binds= [ 5 ]]
 [connection signal="pressed" from="delete_data" to="delete_confirm" method="show"]
-[connection signal="pressed" from="delete_confirm/yes" to="delete_confirm" method="hide"]
-[connection signal="pressed" from="delete_confirm/yes" to="delete_after" method="show"]
 [connection signal="pressed" from="delete_confirm/yes" to="." method="delete_data"]
+[connection signal="pressed" from="delete_confirm/yes" to="delete_after" method="show"]
+[connection signal="pressed" from="delete_confirm/yes" to="delete_confirm" method="hide"]
 [connection signal="pressed" from="delete_confirm/no" to="delete_confirm" method="hide"]
 [connection signal="pressed" from="delete_after/back" to="delete_after" method="hide"]

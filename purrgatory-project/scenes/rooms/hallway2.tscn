@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/hallway2.gd" type="Script" id=2]
 [ext_resource path="res://scripts/draw.gd" type="Script" id=3]
-[ext_resource path="res://scenes/rooms/ttt_draw.gd" type="Script" id=4]
+[ext_resource path="res://scripts/ttt_draw.gd" type="Script" id=4]
 [ext_resource path="res://assets/rooms/hallway2.png" type="Texture" id=5]
 [ext_resource path="res://assets/sprites/lightbulb.png" type="Texture" id=6]
 [ext_resource path="res://assets/sprites/mural_cat.png" type="Texture" id=7]
@@ -43,7 +43,6 @@ mouse_filter = 1
 script = ExtResource( 3 )
 
 [node name="draw_viewport" type="Viewport" parent="state_handler/draw"]
-editor/display_folded = true
 size = Vector2( 1280, 720 )
 transparent_bg = true
 usage = 0
@@ -142,7 +141,6 @@ margin_top = 593.948
 margin_right = 736.977
 margin_bottom = 664.948
 focus_mode = 0
-mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 flat = true
 __meta__ = {

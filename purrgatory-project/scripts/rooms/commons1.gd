@@ -247,6 +247,16 @@ func update_state(state):
 		$gift_books.show()
 	else:
 		$gift_books.hide()
+	
+	# cat toy easter egg
+	if state.get('gave_cat_toy'):
+		$cat1_idle/cat_toy.show()
+		$lucifur/cat_toy.show()
+		$cat_toy_stick.show()
+	else:
+		$cat1_idle/cat_toy.hide()
+		$lucifur/cat_toy.hide()
+		$cat_toy_stick.hide()
 
 func animation_finished(anim_name):
 	anim_playing = false

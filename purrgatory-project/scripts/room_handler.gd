@@ -1,13 +1,29 @@
 extends Control
 
+# we tried preloading all the rooms but it was totally not worth it
+const preloaded = false
+
 var room_path = 'res://scenes/rooms/'
 var loader
 var loading_path
 var loading_state
 
+var preloaded_rooms = {}
+
 var current_room = null
 var prev_room_label = null
 onready var game = get_node("../..")
+
+func _ready():
+	if preloaded:
+		var dir = Directory.new()
+		if dir.open(room_path) == OK:
+			dir.list_dir_begin()
+			var file_name = dir.get_next()
+			while file_name != "":
+				if not dir.current_is_dir() and file_name.right(file_name.length() - 5) == '.tscn':
+					preloaded_rooms[file_name.left(file_name.length() - 5)] = load(room_path + file_name)
+				file_name = dir.get_next()
 	
 func get_current_room():
 	return current_room.get_name()
@@ -80,21 +96,37 @@ func change_room(label, state, music = true, loading_file = false):
 	if current_room:
 		prev_room_label = current_room.get_name()
 	
-	var new_room = load(room_path + label + '.tscn')
-	if new_room == null:
-		game.start_dialog("room_placeholder")
-		return
-	new_room = new_room.instance()
+	#var start = OS.get_ticks_usec()
+		
+	var new_room
+	if preloaded:
+		if label in preloaded_rooms:
+			new_room = preloaded_rooms[label]
+		else:
+			game.start_dialog("room_placeholder")
+			return
+		new_room = new_room.instance()
+	else:
+		new_room = load(room_path + label + '.tscn')
+		if not new_room:
+			game.start_dialog("room_placeholder")
+			return
+		new_room = new_room.instance()	
 	current_room = new_room
+	
+	#var end = OS.get_ticks_usec()
+	#print('preloaded = ' + str(preloaded) + ', time = ' + str((end-start)/1000000.0) + ', room = ' + label)
 	
 	new_room.connect('start_dialog', game, 'start_dialog')
 	new_room.connect('change_room', game, 'change_room')
 	new_room.connect('start_action_timer', game, 'start_action_timer')
 	new_room.connect('change_audio', game, 'change_audio')
 	
+	# change name to prevent name clashes with new room, then queue for deletion
 	for child in $room_container.get_children():
+		child.name += '_deleted'
 		child.queue_free()
-		yield(get_tree(), 'idle_frame')
+		
 	$room_container.add_child(new_room)
 	new_room.set_name(label)
 	
@@ -126,6 +158,9 @@ func update_state(state, end = false):
 #   TextureButton-derived sprites like characters and the cat (char_obj_button.gd is connected when mouse enters, mouse exits, and the button disappears)
 #   menu, notes, items, and history ui (each element is connected separately)
 #   the dialog ui itself calls the functions when dialog starts and ends
+
+# note: there's still an outstanding bug with "cover" buttons that cover the whole screen
+# for example, while lucifur poofs in the commons door can get highlighted
 
 func stop_all_hovering():
 	if not current_room:
