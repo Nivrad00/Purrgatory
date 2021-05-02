@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=2]
@@ -6,9 +6,46 @@
 [ext_resource path="res://assets/ui/logo1.png" type="Texture" id=4]
 [ext_resource path="res://assets/ui/logo2.png" type="Texture" id=5]
 [ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=7]
-[ext_resource path="res://assets/audio/Eternity's_Not_So_Bad.ogg" type="AudioStream" id=8]
-[ext_resource path="res://assets/audio/Purrgatory_Blues.wav" type="AudioStream" id=9]
+[ext_resource path="res://scripts/credits/oliver1.png" type="Texture" id=7]
+[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=8]
+[ext_resource path="res://scripts/credits/oliver2.png" type="Texture" id=9]
+[ext_resource path="res://scripts/credits/oliver3.png" type="Texture" id=10]
+[ext_resource path="res://scripts/credits/oliver4.png" type="Texture" id=11]
+[ext_resource path="res://scripts/credits/oliver5.png" type="Texture" id=12]
+[ext_resource path="res://scripts/credits/oliver6.png" type="Texture" id=13]
+[ext_resource path="res://scripts/credits/natalie1.png" type="Texture" id=14]
+[ext_resource path="res://scripts/credits/natalie2.png" type="Texture" id=15]
+[ext_resource path="res://scripts/credits/natalie3.png" type="Texture" id=16]
+[ext_resource path="res://scripts/credits/natalie4.png" type="Texture" id=17]
+[ext_resource path="res://scripts/credits/natalie5.png" type="Texture" id=18]
+[ext_resource path="res://scripts/credits/natalie6.png" type="Texture" id=19]
+[ext_resource path="res://scripts/credits/sean1.png" type="Texture" id=20]
+[ext_resource path="res://scripts/credits/sean2.png" type="Texture" id=21]
+[ext_resource path="res://scripts/credits/sean3.png" type="Texture" id=22]
+[ext_resource path="res://scripts/credits/sean4.png" type="Texture" id=23]
+[ext_resource path="res://scripts/credits/sean5.png" type="Texture" id=24]
+[ext_resource path="res://scripts/credits/sean6.png" type="Texture" id=25]
+[ext_resource path="res://scripts/credits/kyungsoon_numa1.png" type="Texture" id=26]
+[ext_resource path="res://scripts/credits/kyungsoon_numa2.png" type="Texture" id=27]
+[ext_resource path="res://scripts/credits/kyungsoon_numa3.png" type="Texture" id=28]
+[ext_resource path="res://scripts/credits/kyungsoon_numa4.png" type="Texture" id=29]
+[ext_resource path="res://scripts/credits/kyungsoon_numa5.png" type="Texture" id=30]
+[ext_resource path="res://scripts/credits/kyungsoon_numa6.png" type="Texture" id=31]
+[ext_resource path="res://scripts/credits/oliver_tori1.png" type="Texture" id=32]
+[ext_resource path="res://scripts/credits/oliver_tori2.png" type="Texture" id=33]
+[ext_resource path="res://scripts/credits/oliver_tori3.png" type="Texture" id=34]
+[ext_resource path="res://scripts/credits/oliver_tori4.png" type="Texture" id=35]
+[ext_resource path="res://scripts/credits/oliver_tori5.png" type="Texture" id=36]
+[ext_resource path="res://scripts/credits/oliver_tori6.png" type="Texture" id=37]
+[ext_resource path="res://scripts/credits/elijah_sean1.png" type="Texture" id=38]
+[ext_resource path="res://scripts/credits/elijah_sean2.png" type="Texture" id=39]
+[ext_resource path="res://scripts/credits/elijah_sean3.png" type="Texture" id=40]
+[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=41]
+[ext_resource path="res://scripts/credits/cat1.png" type="Texture" id=42]
+[ext_resource path="res://scripts/credits/cat2.png" type="Texture" id=43]
+[ext_resource path="res://scripts/credits/cat3.png" type="Texture" id=44]
+[ext_resource path="res://assets/audio/Purrgatory_Blues.wav" type="AudioStream" id=45]
+[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=46]
 
 [sub_resource type="Animation" id=1]
 resource_name = "logo"
@@ -43,17 +80,14 @@ size = 40
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=6]
-size = 40
-font_data = ExtResource( 6 )
-
-[sub_resource type="DynamicFont" id=7]
 size = 18
 font_data = ExtResource( 6 )
 
-[sub_resource type="Theme" id=8]
-default_font = SubResource( 7 )
+[sub_resource type="Theme" id=7]
+default_font = SubResource( 6 )
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=8]
+resource_name = "Good Credits"
 length = 102.0
 step = 0.01
 tracks/0/type = "audio"
@@ -66,7 +100,868 @@ tracks/0/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 8 )
+"stream": ExtResource( 45 )
+} ],
+"times": PoolRealArray( 1.05 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4.17, 15.83 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("1/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 10.41 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 16.63, 28.14 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("2/oliver1:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 21.16, 22.81 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("2/oliver2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 21.16, 22.81 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("3:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 29, 40.65 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("3/natalie1:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 35.17 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("3/natalie2:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 35.17 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("4:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 41.43, 53.08 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("4/sean1:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 41.43, 42.18, 42.97, 43.72, 44.52, 45.28, 46.1, 46.85, 47.64, 48.39, 49.19, 49.95, 50.71, 51.48, 52.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("4/sean2:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 41.43, 42.18, 42.97, 43.72, 44.52, 45.28, 46.1, 46.85, 47.64, 48.39, 49.19, 49.95, 50.71, 51.48, 52.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("5:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 53.81, 64.99 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("5/kyungsoon_numa1:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 59.71 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("5/kyungsoon_numa2:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 59.71 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("6:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 65.69, 76.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("6/oliver_tori1:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 71.64 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("6/oliver_tori2:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 71.64 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("7:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0, 77.56, 87.97 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("8:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0, 89.45, 98.66 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("last:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0, 100.72 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/21/type = "method"
+tracks/21/path = NodePath(".")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0.04, 77.56, 87.97 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "disable_ui"
+}, {
+"args": [  ],
+"method": "show_rotating_cat"
+}, {
+"args": [  ],
+"method": "hide_rotating_cat"
+} ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("skip:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0, 4.17, 100.72 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "New Anim"
+
+[sub_resource type="Animation" id=10]
+length = 102.0
+step = 0.01
+tracks/0/type = "audio"
+tracks/0/path = NodePath("AnimationPlayer/AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 45 )
+} ],
+"times": PoolRealArray( 1.05 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4.17, 15.83 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 16.63, 28.14 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("3:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 29, 40.65 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("4:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 41.43, 53.03 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("scrolly/5:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 53.81, 64.26 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("scrolly/6:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 65.56, 76.06 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("scrolly/7:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 77.44, 87.92 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("1/Label:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 7.31 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("2/Label3:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 19.68 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("2/Label4:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 22.87 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("3/Label2:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 32.04 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("3/Label5:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 35.14 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("3/Label6:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 38.29 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("4/Label2:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 39.86 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("4/Label6:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 44.56 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("4/Label5:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 47.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("scrolly/5/Label3:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 56.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("last:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0, 98.86 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("last/back:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0, 100.37 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/20/type = "method"
+tracks/20/path = NodePath(".")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0.04 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "disable_ui"
+} ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("skip:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 1.61, 100.36 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("1/Label/Label2:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0, 4.27 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 102.0
+step = 0.01
+tracks/0/type = "audio"
+tracks/0/path = NodePath("AnimationPlayer/AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 45 )
+} ],
+"times": PoolRealArray( 1.05 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4.17, 15.83 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 16.63, 28.14 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("3:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 29, 40.65 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("4:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 41.43, 53.03 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("scrolly/5:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 53.81, 64.26 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("scrolly/6:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 65.56, 76.06 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("scrolly/7:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 77.44, 87.92 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("1/Label:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 7.31 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("2/Label3:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 19.68 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("2/Label4:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 22.87 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("3/Label2:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 32.04 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("3/Label5:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 35.14 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("3/Label6:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 38.29 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("4/Label2:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 39.86 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("4/Label6:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 44.56 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("4/Label5:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 47.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("scrolly/5/Label3:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 56.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("last:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0, 98.86 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("last/back:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0, 100.37 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/20/type = "method"
+tracks/20/path = NodePath(".")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0.04 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "disable_ui"
+} ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("skip:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 1.61, 100.36 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("1/Label/Label2:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0, 4.27 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=12]
+length = 102.0
+step = 0.01
+tracks/0/type = "audio"
+tracks/0/path = NodePath("AnimationPlayer/AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 45 )
 } ],
 "times": PoolRealArray( 0.99 )
 }
@@ -239,97 +1134,96 @@ tracks/14/keys = {
 "values": [ false, true ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("5/Label3:visible")
+tracks/15/path = NodePath("7:visible")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
 tracks/15/enabled = true
 tracks/15/keys = {
-"times": PoolRealArray( 0, 59.48 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/16/type = "value"
-tracks/16/path = NodePath("6:visible")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/keys = {
 "times": PoolRealArray( 0, 65.68, 77.33 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
 }
-tracks/17/type = "value"
-tracks/17/path = NodePath("7:visible")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/keys = {
+tracks/16/type = "value"
+tracks/16/path = NodePath("8:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
 "times": PoolRealArray( 0, 78.14, 89.73 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
 }
-tracks/18/type = "value"
-tracks/18/path = NodePath("last:visible")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/keys = {
+tracks/17/type = "value"
+tracks/17/path = NodePath("last:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
 "times": PoolRealArray( 0, 90.52 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
-tracks/19/type = "value"
-tracks/19/path = NodePath("last/back:visible")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/keys = {
+tracks/18/type = "value"
+tracks/18/path = NodePath("last/back:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
 "times": PoolRealArray( 0, 99.82 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
-tracks/20/type = "value"
-tracks/20/path = NodePath("4/Label6:visible")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/keys = {
+tracks/19/type = "value"
+tracks/19/path = NodePath("4/Label6:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
 "times": PoolRealArray( 0, 50.17 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
-tracks/21/type = "value"
-tracks/21/path = NodePath("3/Label2:visible")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/keys = {
+tracks/20/type = "value"
+tracks/20/path = NodePath("3/Label2:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
 "times": PoolRealArray( 0, 31.57 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
 
+[sub_resource type="DynamicFont" id=13]
+size = 10
+
+[sub_resource type="DynamicFont" id=14]
+size = 18
+font_data = ExtResource( 6 )
+
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="state_handler" type="Control" parent="."]
-editor/display_folded = true
 theme = ExtResource( 2 )
 script = ExtResource( 3 )
 default_music = "null"
@@ -341,7 +1235,6 @@ margin_bottom = 720.0
 
 [node name="1" type="Control" parent="state_handler"]
 editor/display_folded = true
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -355,6 +1248,7 @@ autoplay = "logo"
 anims/logo = SubResource( 1 )
 
 [node name="Label" type="Label" parent="state_handler/1"]
+editor/display_folded = true
 margin_top = 410.645
 margin_right = 1279.0
 margin_bottom = 481.645
@@ -362,53 +1256,58 @@ text = "a game by"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/1/Label"]
-margin_top = 39.2964
+margin_top = 39.296
 margin_right = 1279.0
 margin_bottom = 110.296
 custom_fonts/font = SubResource( 2 )
 text = "niv"
 align = 1
 
-[node name="Label3" type="Label" parent="state_handler/1/Label"]
-margin_top = 85.7534
-margin_right = 1279.0
-margin_bottom = 156.753
-custom_fonts/font = SubResource( 3 )
-text = "(darvin heo)"
-align = 1
-
 [node name="2" type="Control" parent="state_handler"]
 editor/display_folded = true
 visible = false
-margin_right = 40.0
+margin_left = 22.1109
+margin_right = 62.1109
 margin_bottom = 40.0
 
 [node name="Label2" type="Label" parent="state_handler/2"]
-margin_top = 112.134
-margin_right = 1279.0
-margin_bottom = 183.134
+editor/display_folded = true
+margin_left = 127.741
+margin_top = 96.134
+margin_right = 627.741
+margin_bottom = 167.134
 text = "story, art, and code"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/2/Label2"]
-margin_top = 43.29
-margin_right = 1279.0
-margin_bottom = 114.29
+margin_top = 42.29
+margin_right = 500.0
+margin_bottom = 113.29
 custom_fonts/font = SubResource( 2 )
 text = "niv"
 align = 1
 
+[node name="Label5" type="Label" parent="state_handler/2/Label2"]
+margin_top = 85.8512
+margin_right = 500.0
+margin_bottom = 156.851
+custom_fonts/font = SubResource( 3 )
+text = "(darvin heo)"
+align = 1
+
 [node name="Label3" type="Label" parent="state_handler/2"]
-margin_top = 270.532
-margin_right = 1279.0
-margin_bottom = 341.532
+editor/display_folded = true
+margin_left = 127.741
+margin_top = 277.532
+margin_right = 627.741
+margin_bottom = 348.532
 text = "with story help from"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/2/Label3"]
 margin_left = 1.29236
 margin_top = 44.29
-margin_right = 1280.29
+margin_right = 501.292
 margin_bottom = 115.29
 custom_fonts/font = SubResource( 2 )
 text = "zardoru"
@@ -417,7 +1316,7 @@ align = 1
 [node name="Label3" type="Label" parent="state_handler/2/Label3"]
 margin_left = 3.29236
 margin_top = 92.0
-margin_right = 1279.29
+margin_right = 503.292
 margin_bottom = 126.0
 custom_fonts/font = SubResource( 4 )
 text = "(diego ahumada)"
@@ -426,7 +1325,7 @@ align = 1
 [node name="Label5" type="Label" parent="state_handler/2/Label3"]
 margin_left = 3.29236
 margin_top = 165.976
-margin_right = 1279.29
+margin_right = 503.292
 margin_bottom = 199.976
 custom_fonts/font = SubResource( 4 )
 text = "(zach stevens)"
@@ -435,51 +1334,89 @@ align = 1
 [node name="Label4" type="Label" parent="state_handler/2/Label3"]
 margin_left = 1.29236
 margin_top = 119.136
-margin_right = 1280.29
+margin_right = 501.292
 margin_bottom = 172.136
 custom_fonts/font = SubResource( 2 )
 text = "gnomes"
 align = 1
 
 [node name="Label4" type="Label" parent="state_handler/2"]
-margin_top = 532.26
-margin_right = 1279.0
-margin_bottom = 603.26
+editor/display_folded = true
+margin_left = 127.741
+margin_top = 541.26
+margin_right = 627.741
+margin_bottom = 612.26
 text = "additional code"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/2/Label4"]
 margin_top = 41.29
-margin_right = 1279.0
+margin_right = 500.0
 margin_bottom = 112.29
 custom_fonts/font = SubResource( 2 )
 text = "zardoru"
 align = 1
 
+[node name="oliver1" type="TextureButton" parent="state_handler/2"]
+margin_left = 677.91
+margin_top = 203.079
+margin_right = 1025.91
+margin_bottom = 492.079
+focus_mode = 0
+mouse_filter = 2
+enabled_focus_mode = 0
+texture_normal = ExtResource( 7 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 8 )
+animation0 = ExtResource( 7 )
+animation1 = ExtResource( 9 )
+animation2 = ExtResource( 10 )
+
+[node name="oliver2" type="TextureButton" parent="state_handler/2"]
+visible = false
+margin_left = 677.91
+margin_top = 203.079
+margin_right = 1025.91
+margin_bottom = 492.079
+focus_mode = 0
+mouse_filter = 2
+enabled_focus_mode = 0
+texture_normal = ExtResource( 11 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 8 )
+animation0 = ExtResource( 11 )
+animation1 = ExtResource( 12 )
+animation2 = ExtResource( 13 )
+
 [node name="3" type="Control" parent="state_handler"]
 editor/display_folded = true
 visible = false
-margin_right = 40.0
+margin_left = -15.4296
+margin_right = 24.5704
 margin_bottom = 40.0
 
 [node name="Label4" type="Label" parent="state_handler/3"]
+margin_left = 714.267
 margin_top = 87.2714
-margin_right = 1279.0
+margin_right = 1214.27
 margin_bottom = 158.271
 custom_fonts/font = SubResource( 5 )
 text = "additional art"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/3"]
+margin_left = 714.267
 margin_top = 193.381
-margin_right = 1279.0
+margin_right = 1214.27
 margin_bottom = 264.381
 text = "tracing"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/3/Label2"]
 margin_top = 40.29
-margin_right = 1279.0
+margin_right = 500.0
 margin_bottom = 111.29
 custom_fonts/font = SubResource( 2 )
 text = "chronocide"
@@ -488,7 +1425,7 @@ align = 1
 [node name="Label7" type="Label" parent="state_handler/3/Label2"]
 margin_left = 3.29236
 margin_top = 85.9489
-margin_right = 1279.29
+margin_right = 503.292
 margin_bottom = 119.949
 rect_pivot_offset = Vector2( 686.538, 23.8691 )
 custom_fonts/font = SubResource( 4 )
@@ -496,15 +1433,16 @@ text = "(david wolters)"
 align = 1
 
 [node name="Label5" type="Label" parent="state_handler/3"]
+margin_left = 714.267
 margin_top = 363.283
-margin_right = 1279.0
+margin_right = 1214.27
 margin_bottom = 434.283
 text = "character design"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/3/Label5"]
 margin_top = 41.29
-margin_right = 1279.0
+margin_right = 500.0
 margin_bottom = 112.29
 custom_fonts/font = SubResource( 2 )
 text = "scott12355 "
@@ -512,84 +1450,169 @@ align = 1
 
 [node name="Label8" type="Label" parent="state_handler/3/Label5"]
 margin_left = 3.29236
-margin_top = 87.9302
-margin_right = 1279.29
-margin_bottom = 121.93
+margin_top = 88.9302
+margin_right = 503.292
+margin_bottom = 122.93
 rect_pivot_offset = Vector2( 686.538, 23.8691 )
 custom_fonts/font = SubResource( 4 )
 text = "(scott topping)"
 align = 1
 
 [node name="Label6" type="Label" parent="state_handler/3"]
+margin_left = 714.267
 margin_top = 532.946
-margin_right = 1279.0
+margin_right = 1214.27
 margin_bottom = 603.946
 text = "backgrounds"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/3/Label6"]
-margin_top = 42.29
-margin_right = 1279.0
-margin_bottom = 113.29
+margin_top = 40.29
+margin_right = 500.0
+margin_bottom = 111.29
 custom_fonts/font = SubResource( 2 )
 text = "rose lim"
 align = 1
 
+[node name="natalie1" type="TextureButton" parent="state_handler/3"]
+margin_left = 233.971
+margin_top = 203.079
+margin_right = 581.971
+margin_bottom = 492.079
+focus_mode = 0
+mouse_filter = 2
+enabled_focus_mode = 0
+texture_normal = ExtResource( 14 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 8 )
+animation0 = ExtResource( 14 )
+animation1 = ExtResource( 15 )
+animation2 = ExtResource( 16 )
+
+[node name="natalie2" type="TextureButton" parent="state_handler/3"]
+visible = false
+margin_left = 234.407
+margin_top = 208.549
+margin_right = 582.407
+margin_bottom = 497.549
+focus_mode = 0
+mouse_filter = 2
+enabled_focus_mode = 0
+texture_normal = ExtResource( 17 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 8 )
+animation0 = ExtResource( 17 )
+animation1 = ExtResource( 18 )
+animation2 = ExtResource( 19 )
+
 [node name="4" type="Control" parent="state_handler"]
 editor/display_folded = true
-margin_right = 40.0
+visible = false
+margin_left = -2.0
+margin_right = 38.0
 margin_bottom = 40.0
 
-[node name="Label7" type="Label" parent="state_handler/4"]
-margin_left = -1.0
-margin_top = 63.1428
-margin_right = 1278.0
-margin_bottom = 134.143
-custom_fonts/font = SubResource( 6 )
-text = "music"
-align = 1
-
 [node name="Label2" type="Label" parent="state_handler/4"]
-margin_left = -0.0933838
-margin_top = 163.006
-margin_right = 1278.91
-margin_bottom = 234.006
-text = "mostly written by"
+margin_left = -257.375
+margin_top = 110.209
+margin_right = 1021.63
+margin_bottom = 181.209
+text = "music"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/4/Label2"]
 margin_left = -2.49268
-margin_top = 39.2492
+margin_top = 40.2492
 margin_right = 1276.51
-margin_bottom = 110.249
+margin_bottom = 111.249
 custom_fonts/font = SubResource( 2 )
 text = "niv"
 align = 1
 
 [node name="Label3" type="Label" parent="state_handler/4/Label2"]
 margin_left = -2.49268
-margin_top = 87.0207
+margin_top = 88.0207
 margin_right = 1276.51
-margin_bottom = 158.021
+margin_bottom = 159.021
 custom_fonts/font = SubResource( 2 )
 text = "wiz"
 align = 1
 
 [node name="Label8" type="Label" parent="state_handler/4/Label2"]
 margin_left = 3.38574
-margin_top = 131.846
+margin_top = 132.846
 margin_right = 1279.38
-margin_bottom = 165.847
+margin_bottom = 166.847
 custom_fonts/font = SubResource( 4 )
 text = "(brandon warren)"
 align = 1
 
-[node name="Label5" type="Label" parent="state_handler/4"]
+[node name="Label6" type="Label" parent="state_handler/4"]
 editor/display_folded = true
-margin_left = -2.0
-margin_top = 580.072
-margin_right = 1281.0
-margin_bottom = 651.072
+margin_left = -258.282
+margin_top = 319.935
+margin_right = 1021.72
+margin_bottom = 390.935
+text = "\"purrgatory blues\""
+align = 1
+
+[node name="Label7" type="Label" parent="state_handler/4/Label6"]
+margin_left = 514.508
+margin_top = 48.8356
+margin_right = 630.508
+margin_bottom = 156.836
+text = "written by
+guitar"
+align = 2
+
+[node name="Label10" type="Label" parent="state_handler/4/Label6"]
+margin_left = 514.508
+margin_top = 122.32
+margin_right = 630.508
+margin_bottom = 230.32
+text = "vocals"
+align = 2
+
+[node name="Label8" type="Label" parent="state_handler/4/Label6"]
+margin_left = 651.508
+margin_top = 48.8356
+margin_right = 720.508
+margin_bottom = 156.836
+text = "niv
+niko"
+
+[node name="Label9" type="Label" parent="state_handler/4/Label6"]
+margin_left = 712.491
+margin_top = 91.8286
+margin_right = 904.491
+margin_bottom = 116.829
+rect_pivot_offset = Vector2( 78.3446, 14.9474 )
+custom_fonts/font = SubResource( 4 )
+text = "(jonny andino)"
+
+[node name="Label11" type="Label" parent="state_handler/4/Label6"]
+margin_left = 651.508
+margin_top = 121.867
+margin_right = 720.508
+margin_bottom = 229.867
+text = "molly"
+
+[node name="Label12" type="Label" parent="state_handler/4/Label6"]
+margin_left = 726.01
+margin_top = 128.637
+margin_right = 918.01
+margin_bottom = 153.637
+rect_pivot_offset = Vector2( 78.3446, 14.9474 )
+custom_fonts/font = SubResource( 4 )
+text = "(molly)"
+
+[node name="Label5" type="Label" parent="state_handler/4"]
+margin_left = -259.282
+margin_top = 528.275
+margin_right = 1023.72
+margin_bottom = 599.275
 text = "\"fly me to the meow\""
 align = 1
 
@@ -598,78 +1621,55 @@ margin_left = 1.0
 margin_top = 44.0
 margin_right = 1283.0
 margin_bottom = 115.0
-text = "by zardoru"
+text = "zardoru"
 align = 1
 
-[node name="Label6" type="Label" parent="state_handler/4"]
+[node name="sean1" type="TextureButton" parent="state_handler/4"]
+margin_left = 673.044
+margin_top = 209.079
+margin_right = 1021.04
+margin_bottom = 498.079
+focus_mode = 0
+mouse_filter = 2
+enabled_focus_mode = 0
+texture_normal = ExtResource( 20 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 8 )
+animation0 = ExtResource( 20 )
+animation1 = ExtResource( 21 )
+animation2 = ExtResource( 22 )
+
+[node name="sean2" type="TextureButton" parent="state_handler/4"]
 visible = false
-margin_left = -1.0
-margin_top = 365.732
-margin_right = 1279.0
-margin_bottom = 436.732
-text = "\"purrgatory blues\""
-align = 1
-
-[node name="Label7" type="Label" parent="state_handler/4/Label6"]
-margin_left = 525.673
-margin_top = 46.8356
-margin_right = 641.673
-margin_bottom = 154.836
-text = "written by
-guitar"
-align = 2
-
-[node name="Label10" type="Label" parent="state_handler/4/Label6"]
-margin_left = 525.673
-margin_top = 120.32
-margin_right = 641.673
-margin_bottom = 228.32
-text = "vocals"
-align = 2
-
-[node name="Label8" type="Label" parent="state_handler/4/Label6"]
-margin_left = 662.673
-margin_top = 46.8356
-margin_right = 731.673
-margin_bottom = 154.836
-text = "niv
-niko"
-
-[node name="Label9" type="Label" parent="state_handler/4/Label6"]
-margin_left = 723.655
-margin_top = 89.8286
-margin_right = 915.655
-margin_bottom = 114.829
-rect_pivot_offset = Vector2( 78.3446, 14.9474 )
-custom_fonts/font = SubResource( 4 )
-text = "(jonny andino)"
-
-[node name="Label11" type="Label" parent="state_handler/4/Label6"]
-margin_left = 662.673
-margin_top = 119.867
-margin_right = 731.673
-margin_bottom = 227.867
-text = "molly"
-
-[node name="Label12" type="Label" parent="state_handler/4/Label6"]
-margin_left = 737.175
-margin_top = 125.637
-margin_right = 929.175
-margin_bottom = 150.637
-rect_pivot_offset = Vector2( 78.3446, 14.9474 )
-custom_fonts/font = SubResource( 4 )
-text = "(molly)"
+margin_left = 672.821
+margin_top = 208.549
+margin_right = 1020.82
+margin_bottom = 497.549
+focus_mode = 0
+mouse_filter = 2
+enabled_focus_mode = 0
+texture_normal = ExtResource( 23 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 8 )
+animation0 = ExtResource( 23 )
+animation1 = ExtResource( 24 )
+animation2 = ExtResource( 25 )
 
 [node name="5" type="Control" parent="state_handler"]
 editor/display_folded = true
 visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 1.87463
+margin_top = 1.87469
+margin_right = 41.8746
+margin_bottom = 41.8747
 
 [node name="Label2" type="Label" parent="state_handler/5"]
-margin_top = 124.046
-margin_right = 1279.0
-margin_bottom = 195.046
+margin_left = 307.03
+margin_top = 229.593
+margin_right = 1586.03
+margin_bottom = 300.593
 text = "testing"
 align = 1
 
@@ -700,56 +1700,134 @@ text = "gnomes"
 align = 1
 
 [node name="Label4" type="Label" parent="state_handler/5/Label2"]
-margin_top = 170.876
+margin_top = 172.876
 margin_right = 1279.0
-margin_bottom = 223.876
+margin_bottom = 225.876
 custom_fonts/font = SubResource( 2 )
 text = "zardoru"
 align = 1
 
-[node name="Label3" type="Label" parent="state_handler/5"]
+[node name="kyungsoon_numa1" type="TextureButton" parent="state_handler/5"]
+margin_left = 226.861
+margin_top = 209.079
+margin_right = 574.861
+margin_bottom = 498.079
+focus_mode = 0
+mouse_filter = 2
+enabled_focus_mode = 0
+texture_normal = ExtResource( 26 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 8 )
+animation0 = ExtResource( 26 )
+animation1 = ExtResource( 27 )
+animation2 = ExtResource( 28 )
+
+[node name="kyungsoon_numa2" type="TextureButton" parent="state_handler/5"]
 visible = false
-margin_top = 401.14
-margin_right = 1279.0
-margin_bottom = 472.14
+margin_left = 227.357
+margin_top = 208.549
+margin_right = 575.357
+margin_bottom = 497.549
+focus_mode = 0
+mouse_filter = 2
+enabled_focus_mode = 0
+texture_normal = ExtResource( 29 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 8 )
+animation0 = ExtResource( 29 )
+animation1 = ExtResource( 30 )
+animation2 = ExtResource( 31 )
+
+[node name="6" type="Control" parent="state_handler"]
+editor/display_folded = true
+visible = false
+margin_left = 16.7737
+margin_right = 56.7737
+margin_bottom = 40.0
+
+[node name="Label3" type="Label" parent="state_handler/6"]
+margin_left = -337.642
+margin_top = 263.906
+margin_right = 941.354
+margin_bottom = 334.906
 text = "special thanks"
 align = 1
 
-[node name="Label2" type="Label" parent="state_handler/5/Label3"]
+[node name="Label2" type="Label" parent="state_handler/6/Label3"]
 margin_left = 1.29236
-margin_top = 44.29
+margin_top = 45.29
 margin_right = 1280.29
-margin_bottom = 115.29
+margin_bottom = 116.29
 custom_fonts/font = SubResource( 2 )
 text = "jude m."
 align = 1
 
-[node name="Label5" type="Label" parent="state_handler/5/Label3"]
+[node name="Label5" type="Label" parent="state_handler/6/Label3"]
 margin_left = 1.29236
-margin_top = 95.946
+margin_top = 96.946
 margin_right = 1280.29
-margin_bottom = 148.946
+margin_bottom = 149.946
 custom_fonts/font = SubResource( 2 )
 text = "uro"
 align = 1
 
-[node name="Label7" type="Label" parent="state_handler/5/Label3"]
+[node name="Label7" type="Label" parent="state_handler/6/Label3"]
 margin_left = 3.29236
-margin_top = 141.247
+margin_top = 142.247
 margin_right = 1279.29
-margin_bottom = 175.247
+margin_bottom = 176.247
 rect_pivot_offset = Vector2( 676.708, 14.8751 )
 custom_fonts/font = SubResource( 4 )
 text = "(daniel taylor)"
 align = 1
 
-[node name="6" type="Control" parent="state_handler"]
+[node name="oliver_tori1" type="TextureButton" parent="state_handler/6"]
+margin_left = 652.422
+margin_top = 210.954
+margin_right = 1000.42
+margin_bottom = 499.954
+focus_mode = 0
+mouse_filter = 2
+enabled_focus_mode = 0
+texture_normal = ExtResource( 32 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 8 )
+animation0 = ExtResource( 32 )
+animation1 = ExtResource( 33 )
+animation2 = ExtResource( 34 )
+
+[node name="oliver_tori2" type="TextureButton" parent="state_handler/6"]
+visible = false
+margin_left = 651.509
+margin_top = 211.423
+margin_right = 999.509
+margin_bottom = 500.423
+focus_mode = 0
+mouse_filter = 2
+enabled_focus_mode = 0
+texture_normal = ExtResource( 35 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 8 )
+animation0 = ExtResource( 35 )
+animation1 = ExtResource( 36 )
+animation2 = ExtResource( 37 )
+
+[node name="7" type="Control" parent="state_handler"]
 editor/display_folded = true
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="Label8" type="Label" parent="state_handler/6"]
+[node name="ColorRect" type="ColorRect" parent="state_handler/7"]
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 1, 1, 1, 0.760784 )
+
+[node name="Label8" type="Label" parent="state_handler/7"]
 margin_left = -1.0
 margin_top = 40.6922
 margin_right = 1278.0
@@ -758,134 +1836,156 @@ custom_fonts/font = SubResource( 2 )
 text = "sound effects"
 align = 1
 
-[node name="Label9" type="Label" parent="state_handler/6"]
+[node name="Label9" type="Label" parent="state_handler/7"]
 margin_top = 113.0
 margin_right = 1279.0
 margin_bottom = 184.0
 text = "freesound.org"
 align = 1
 
-[node name="Label11" type="Label" parent="state_handler/6"]
+[node name="Label11" type="Label" parent="state_handler/7"]
 margin_top = 600.0
 margin_right = 1279.0
 margin_bottom = 634.0
 text = "SoundEffectsFactory"
 align = 1
 
-[node name="Label3" type="Label" parent="state_handler/6"]
+[node name="Label3" type="Control" parent="state_handler/7"]
+editor/display_folded = true
 margin_left = 231.83
 margin_top = 158.0
 margin_right = 374.83
 margin_bottom = 575.0
-theme = SubResource( 8 )
-text = "bell
-river
-glass shatter
-escalator hum
-power down
-coin flip
+theme = SubResource( 7 )
+
+[node name="Label7" type="Label" parent="state_handler/7/Label3"]
+margin_left = -139.66
+margin_right = 43.3401
+margin_bottom = 417.0
+theme = SubResource( 7 )
+text = "                    bell
+             river
+        glass shatter
+    escalator hum
+  power down
+ coin flip
 digging
 wood crack
 wood creak
-wind
-rope pull
-rope creak
-fluorescent hum
-zap
-button"
+ wind
+  rope pull
+    rope creak
+        fluorescent hum
+             zap
+                    button"
 align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label4" type="Label" parent="state_handler/6/Label3"]
-margin_left = 167.0
-margin_right = 378.0
-margin_bottom = 417.0
-text = "Daphne_in_Wonderland
-Pfannkuchn
-C_Rogers
-Adam Wayne Gistarb
-themfish
-one666138
+[node name="Label4" type="Label" parent="state_handler/7/Label3"]
+margin_left = 78.9733
+margin_right = 389.973
+margin_bottom = 552.0
+text = "                    Daphne_in_Wonderland
+             Pfannkuchn
+        C_Rogers
+    Adam Wayne Gistarb
+  themfish
+ one666138
 YemiMoses
 dheming
 Mr_KeybOred
-Fission9
-dansotak
-bahaish
-kyles
-michael_grinnell
-sjnewton"
+ Fission9
+  dansotak
+    bahaish
+        kyles
+             michael_grinnell
+                    sjnewton"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label5" type="Label" parent="state_handler/6/Label3"]
-margin_left = 458.0
+[node name="Label5" type="Label" parent="state_handler/7/Label3"]
+margin_left = 384.036
 margin_top = 1.0
-margin_right = 622.0
-margin_bottom = 418.0
+margin_right = 627.036
+margin_bottom = 553.0
 text = "elevator door
-vending machine 1
-vending machine 2
-vending machine 3
-phone hang up
-poof
-door creak
-portal whir
-bird chirps
-scribbling
-page turn
-more page turns
-squeaky footsteps
-library ambience
+       vending machine 1
+            vending machine 2
+                vending machine 3
+                  phone hang up
+                   poof
+                    door creak
+                    portal whir
+                    bird chirps
+                   scribbling
+                  page turn
+                more page turns
+            squeaky footsteps
+       library ambience
 echoey footsteps"
 align = 2
 
-[node name="Label6" type="Label" parent="state_handler/6/Label3"]
-margin_left = 646.0
+[node name="Label6" type="Label" parent="state_handler/7/Label3"]
+margin_left = 669.759
 margin_top = 2.0
-margin_right = 801.0
-margin_bottom = 419.0
+margin_right = 894.759
+margin_bottom = 554.0
 text = "DisasterServices
-TheSoundcatcher
-pfranzen
-JoelAudio
-coldwellw
-dpren
-rambler52
-ahill86
-hargissssound
-paulmessier
-mmaruska
-Rainkiljoy
-tmkappelt
-Wihan98
+       TheSoundcatcher
+            pfranzen
+                JoelAudio
+                  coldwellw
+                   dpren
+                    rambler52
+                    ahill86
+                    hargissssound
+                   paulmessier
+                  mmaruska
+                Rainkiljoy
+            tmkappelt
+       Wihan98
 boedie"
 
-[node name="Label11" type="Label" parent="state_handler/6/Label3"]
+[node name="Label11" type="Label" parent="state_handler/7/Label3"]
 margin_left = -229.742
 margin_top = 482.0
 margin_right = 1049.26
-margin_bottom = 515.0
+margin_bottom = 516.0
 text = "phone ring"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="7" type="Control" parent="state_handler"]
+[node name="8" type="Control" parent="state_handler"]
 editor/display_folded = true
 visible = false
+margin_top = 3.21468
 margin_right = 40.0
-margin_bottom = 40.0
+margin_bottom = 43.2147
 
-[node name="Label8" type="Label" parent="state_handler/7"]
-margin_left = -1.0
-margin_top = 202.541
-margin_right = 1278.0
-margin_bottom = 273.541
+[node name="Label8" type="Label" parent="state_handler/8"]
+margin_left = 34.5209
+margin_top = 63.5053
+margin_right = 1313.52
+margin_bottom = 134.505
+rect_scale = Vector2( 0.95, 0.95 )
 custom_fonts/font = SubResource( 2 )
 text = "additional assets"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label3" type="Label" parent="state_handler/7"]
-margin_left = 185.384
-margin_top = 294.031
-margin_right = 459.384
-margin_bottom = 513.031
+[node name="Label3" type="Label" parent="state_handler/8"]
+margin_left = 220.905
+margin_top = 154.995
+margin_right = 494.905
+margin_bottom = 373.995
+rect_scale = Vector2( 0.95, 0.95 )
 text = "text-to-speech module
 resource queue module
 
@@ -894,11 +1994,12 @@ resource queue module
 krub font"
 align = 2
 
-[node name="Label4" type="Label" parent="state_handler/7"]
-margin_left = 492.004
-margin_top = 294.031
-margin_right = 1113.0
-margin_bottom = 513.031
+[node name="Label4" type="Label" parent="state_handler/8"]
+margin_left = 527.525
+margin_top = 154.995
+margin_right = 1148.52
+margin_bottom = 373.995
+rect_scale = Vector2( 0.95, 0.95 )
 text = "bruvzg
 juan linietsky, ariel manzur, and the godot community
 edited by michael bethencourt
@@ -906,14 +2007,28 @@ reisdev
 shuldyakov on turbosquid.com
 cadson demak"
 
+[node name="elijah_sean" type="TextureButton" parent="state_handler/8"]
+margin_left = 471.164
+margin_top = 383.202
+margin_right = 819.164
+margin_bottom = 672.202
+focus_mode = 0
+mouse_filter = 2
+enabled_focus_mode = 0
+texture_normal = ExtResource( 38 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 8 )
+animation0 = ExtResource( 38 )
+animation1 = ExtResource( 39 )
+animation2 = ExtResource( 40 )
+
 [node name="last" type="Control" parent="state_handler"]
-editor/display_folded = true
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="back" type="Button" parent="state_handler/last"]
-visible = false
 margin_left = 516.402
 margin_top = 582.877
 margin_right = 764.402
@@ -924,7 +2039,7 @@ flat = true
 
 [node name="Sprite" type="Sprite" parent="state_handler/last/back"]
 position = Vector2( 124.799, 30.3251 )
-texture = ExtResource( 7 )
+texture = ExtResource( 41 )
 
 [node name="Label" type="Label" parent="state_handler/last/back"]
 margin_top = 1.0
@@ -935,16 +2050,63 @@ align = 1
 valign = 1
 
 [node name="Label2" type="Label" parent="state_handler/last"]
-margin_top = 303.593
+margin_top = 215.731
 margin_right = 1280.0
-margin_bottom = 380.593
-text = "thanks for playing :)"
+margin_bottom = 292.731
+text = "thanks for playing!"
 align = 1
 valign = 1
 
+[node name="cat" type="TextureButton" parent="state_handler/last"]
+margin_left = 464.635
+margin_top = 211.497
+margin_right = 812.635
+margin_bottom = 500.497
+focus_mode = 0
+mouse_filter = 2
+enabled_focus_mode = 0
+texture_normal = ExtResource( 42 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 8 )
+animation0 = ExtResource( 42 )
+animation1 = ExtResource( 43 )
+animation2 = ExtResource( 44 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler"]
-anims/credits = SubResource( 9 )
+autoplay = "Good Credits"
+"anims/Good Credits" = SubResource( 8 )
+"anims/New Anim" = SubResource( 9 )
+anims/bad_credits_anim = SubResource( 10 )
+"anims/bad_credits_anim (copy)" = SubResource( 11 )
+anims/credits = SubResource( 12 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="state_handler/AnimationPlayer"]
-stream = ExtResource( 9 )
+stream = ExtResource( 45 )
+volume_db = -3.0
+bus = "Music"
+
+[node name="skip" type="Button" parent="state_handler"]
+margin_left = 1182.0
+margin_top = 680.0
+margin_right = 1259.0
+margin_bottom = 708.0
+focus_mode = 0
+custom_fonts/font = SubResource( 13 )
+enabled_focus_mode = 0
+flat = true
+
+[node name="Sprite" type="Sprite" parent="state_handler/skip"]
+position = Vector2( 38.3624, 13.8851 )
+texture = ExtResource( 46 )
+
+[node name="Label" type="Label" parent="state_handler/skip"]
+margin_top = 1.0
+margin_right = 79.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 14 )
+text = "skip"
+align = 1
+valign = 1
 [connection signal="pressed" from="state_handler/last/back" to="state_handler" method="_on_back_pressed"]
+[connection signal="pressed" from="state_handler/skip" to="state_handler" method="skip_good_credits"]

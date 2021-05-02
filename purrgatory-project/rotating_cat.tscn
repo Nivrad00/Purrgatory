@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://cat_01_color05.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://addons/3D Outline/Outline.material" type="Material" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+next_pass = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "New Anim"
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+
+[sub_resource type="Environment" id=3]
+ambient_light_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="ViewportTexture" id=4]
+viewport_path = NodePath("rotating_cat/Viewport")
+
+[node name="rotating_cat" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+
+[node name="Viewport" type="Viewport" parent="."]
+editor/display_folded = true
+size = Vector2( 1280, 720 )
+transparent_bg = true
+msaa = 3
+render_target_v_flip = true
+
+[node name="cat_01_color05" type="MeshInstance" parent="Viewport"]
+transform = Transform( 1, 0, 1.74846e-007, 0, 1, 0, -1.74846e-007, 0, 1, 0, 0, 0 )
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Viewport/cat_01_color05"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="Viewport"]
+transform = Transform( -4.37114e-008, -0.258819, -0.965926, 0, 0.965926, -0.258819, 1, -1.13133e-008, -4.2222e-008, -45, 7, 0 )
+environment = SubResource( 3 )
+current = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 8.28772
+margin_top = -71.1678
+margin_right = 1179.29
+margin_bottom = 587.832
+mouse_filter = 2
+texture = SubResource( 4 )
+expand = true
+stretch_mode = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
