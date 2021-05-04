@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=2]
@@ -77,6 +77,14 @@ font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 40
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 40
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 18
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=6]
@@ -1277,7 +1285,7 @@ margin_left = 127.741
 margin_top = 96.134
 margin_right = 627.741
 margin_bottom = 167.134
-text = "story, art, and code"
+text = "story, art, music, and code"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/2/Label2"]
@@ -1297,7 +1305,6 @@ text = "(darvin heo)"
 align = 1
 
 [node name="Label3" type="Label" parent="state_handler/2"]
-editor/display_folded = true
 margin_left = 127.741
 margin_top = 277.532
 margin_right = 627.741
@@ -1509,52 +1516,70 @@ animation1 = ExtResource( 18 )
 animation2 = ExtResource( 19 )
 
 [node name="4" type="Control" parent="state_handler"]
-editor/display_folded = true
 visible = false
-margin_left = -2.0
-margin_right = 38.0
+margin_left = -10.0
+margin_right = 30.0
 margin_bottom = 40.0
 
 [node name="Label2" type="Label" parent="state_handler/4"]
 margin_left = -257.375
-margin_top = 110.209
+margin_top = 117.568
 margin_right = 1021.63
-margin_bottom = 181.209
-text = "music"
-align = 1
-
-[node name="Label2" type="Label" parent="state_handler/4/Label2"]
-margin_left = -2.49268
-margin_top = 40.2492
-margin_right = 1276.51
-margin_bottom = 111.249
-custom_fonts/font = SubResource( 2 )
-text = "niv"
+margin_bottom = 188.568
+text = "additional music"
 align = 1
 
 [node name="Label3" type="Label" parent="state_handler/4/Label2"]
 margin_left = -2.49268
-margin_top = 88.0207
+margin_top = 38.3057
 margin_right = 1276.51
-margin_bottom = 159.021
-custom_fonts/font = SubResource( 2 )
+margin_bottom = 109.306
+custom_fonts/font = SubResource( 16 )
 text = "wiz"
 align = 1
 
 [node name="Label8" type="Label" parent="state_handler/4/Label2"]
-margin_left = 3.38574
-margin_top = 132.846
-margin_right = 1279.38
-margin_bottom = 166.847
-custom_fonts/font = SubResource( 4 )
+margin_left = 2.38574
+margin_top = 83.1312
+margin_right = 1278.38
+margin_bottom = 117.132
+custom_fonts/font = SubResource( 17 )
 text = "(brandon warren)"
 align = 1
 
+[node name="Label5" type="Label" parent="state_handler/4"]
+editor/display_folded = true
+margin_left = -258.16
+margin_top = 297.112
+margin_right = 1024.84
+margin_bottom = 368.112
+text = "\"fly me to the meow\""
+align = 1
+
+[node name="Label4" type="Label" parent="state_handler/4/Label5"]
+margin_left = -1.70764
+margin_top = 36.9685
+margin_right = 1277.3
+margin_bottom = 107.969
+custom_fonts/font = SubResource( 16 )
+text = "zardoru"
+align = 1
+
+[node name="Label8" type="Label" parent="state_handler/4/Label5"]
+visible = false
+margin_left = 1.0
+margin_top = 44.0
+margin_right = 1283.0
+margin_bottom = 115.0
+text = "zardoru"
+align = 1
+
 [node name="Label6" type="Label" parent="state_handler/4"]
+editor/display_folded = true
 margin_left = -258.282
-margin_top = 319.935
+margin_top = 444.143
 margin_right = 1021.72
-margin_bottom = 390.935
+margin_bottom = 515.143
 text = "\"purrgatory blues\""
 align = 1
 
@@ -1569,9 +1594,9 @@ align = 2
 
 [node name="Label10" type="Label" parent="state_handler/4/Label6"]
 margin_left = 514.508
-margin_top = 122.32
+margin_top = 119.32
 margin_right = 630.508
-margin_bottom = 230.32
+margin_bottom = 227.32
 text = "vocals"
 align = 2
 
@@ -1584,45 +1609,29 @@ text = "niv
 niko"
 
 [node name="Label9" type="Label" parent="state_handler/4/Label6"]
-margin_left = 712.128
+margin_left = 708.128
 margin_top = 88.5603
-margin_right = 904.128
+margin_right = 900.128
 margin_bottom = 113.561
 rect_pivot_offset = Vector2( 78.3446, 14.9474 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 17 )
 text = "(jonny andino)"
 
 [node name="Label11" type="Label" parent="state_handler/4/Label6"]
 margin_left = 651.508
-margin_top = 121.867
+margin_top = 118.867
 margin_right = 720.508
-margin_bottom = 229.867
+margin_bottom = 226.867
 text = "molly"
 
 [node name="Label12" type="Label" parent="state_handler/4/Label6"]
-margin_left = 722.889
-margin_top = 127.465
-margin_right = 914.889
-margin_bottom = 152.465
+margin_left = 718.889
+margin_top = 125.465
+margin_right = 910.889
+margin_bottom = 150.465
 rect_pivot_offset = Vector2( 78.3446, 14.9474 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 17 )
 text = "(molly)"
-
-[node name="Label5" type="Label" parent="state_handler/4"]
-margin_left = -258.16
-margin_top = 528.275
-margin_right = 1024.84
-margin_bottom = 599.275
-text = "\"fly me to the meow\""
-align = 1
-
-[node name="Label8" type="Label" parent="state_handler/4/Label5"]
-margin_left = 1.0
-margin_top = 44.0
-margin_right = 1283.0
-margin_bottom = 115.0
-text = "zardoru"
-align = 1
 
 [node name="sean1" type="TextureButton" parent="state_handler/4"]
 margin_left = 673.044
@@ -1658,7 +1667,6 @@ animation1 = ExtResource( 24 )
 animation2 = ExtResource( 25 )
 
 [node name="5" type="Control" parent="state_handler"]
-editor/display_folded = true
 visible = false
 margin_left = 1.87463
 margin_top = 1.87469
@@ -1817,8 +1825,6 @@ animation1 = ExtResource( 36 )
 animation2 = ExtResource( 37 )
 
 [node name="7" type="Control" parent="state_handler"]
-editor/display_folded = true
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -1851,7 +1857,6 @@ text = "SoundEffectsFactory"
 align = 1
 
 [node name="Label3" type="Control" parent="state_handler/7"]
-editor/display_folded = true
 margin_left = 231.83
 margin_top = 158.0
 margin_right = 374.83
