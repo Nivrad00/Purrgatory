@@ -199,7 +199,7 @@ func _process(delta):
 			$meta_ui.show() # bc it might have been disabled by the credits
 			$white_cover.color = Color(1, 1, 1, 0)
 			room.remove_room()
-			$meta_ui/pause_menu.hide() # hide it directly instead of using close_pause_menu()
+			$meta_ui/pause_menu.hide_custom() # hide it directly instead of using close_pause_menu()
 			# bc you're not returning to the game
 			$meta_ui/exit_confirm.hide()
 			$white_cover.hide()
@@ -290,6 +290,9 @@ func start_dialog(label, blackout_label=null):
 				speaker_format_dict[key] = '???'
 				
 		speaker = speaker.format(speaker_format_dict)
+		
+		if speaker == 'you' and format_dict['player']:
+			speaker = format_dict['player']
 
 	ui.update_ui(speaker, block['sprites'], text, choices_text)
 	
@@ -387,6 +390,9 @@ func update_dialog(b: int):
 					speaker_format_dict[key] = '???'
 					
 			speaker = speaker.format(speaker_format_dict)
+			
+			if speaker == 'you' and format_dict['player']:
+				speaker = format_dict['player']
 	
 		ui.update_ui(speaker, block['sprites'], text, choices_text)
 		
@@ -747,6 +753,13 @@ func reset_state(reset_room):
 	$meta_ui/dropdown.load_quest_log([])
 	$meta_ui/history.load_history([])
 
+
+func toggle_pause_menu():
+	if $meta_ui/pause_menu.visible:
+		close_pause_menu()
+	else:
+		open_pause_menu()
+	
 func open_pause_menu():
 	$tts_node.stop()
 	$meta_ui/pause_menu.show_custom()
@@ -754,7 +767,7 @@ func open_pause_menu():
 func close_pause_menu():
 	#if ui.is_visible():
 		#ui.speak_ui()
-	$meta_ui/pause_menu.hide()
+	$meta_ui/pause_menu.hide_custom()
 
 func options_changed():
 	var state_handler = room.find_node('state_handler', true, false)
@@ -841,3 +854,4 @@ func deleted_data():
 # only used during the credits as of now
 func disable_ui():
 	$meta_ui.hide()
+

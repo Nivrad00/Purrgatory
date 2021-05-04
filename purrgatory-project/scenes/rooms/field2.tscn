@@ -80,6 +80,7 @@ polygon = PoolVector2Array( 234.004, 366.827, 234.531, 409.781, 263.782, 408.463
 room_label = "field1"
 
 [node name="exit2" parent="state_handler" instance=ExtResource( 8 )]
+position = Vector2( -466.02, -291.018 )
 
 [node name="field_tree" type="Area2D" parent="state_handler"]
 editor/display_folded = true

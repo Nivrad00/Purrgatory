@@ -1229,12 +1229,13 @@ script = ExtResource( 3 )
 default_music = "null"
 
 [node name="bg" type="ColorRect" parent="state_handler"]
-margin_left = -0.926605
-margin_right = 1279.07
+margin_left = -0.563446
+margin_right = 1279.43
 margin_bottom = 720.0
 
 [node name="1" type="Control" parent="state_handler"]
 editor/display_folded = true
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -1550,7 +1551,6 @@ text = "(brandon warren)"
 align = 1
 
 [node name="Label6" type="Label" parent="state_handler/4"]
-editor/display_folded = true
 margin_left = -258.282
 margin_top = 319.935
 margin_right = 1021.72
@@ -1584,10 +1584,10 @@ text = "niv
 niko"
 
 [node name="Label9" type="Label" parent="state_handler/4/Label6"]
-margin_left = 712.491
-margin_top = 91.8286
-margin_right = 904.491
-margin_bottom = 116.829
+margin_left = 712.128
+margin_top = 88.5603
+margin_right = 904.128
+margin_bottom = 113.561
 rect_pivot_offset = Vector2( 78.3446, 14.9474 )
 custom_fonts/font = SubResource( 4 )
 text = "(jonny andino)"
@@ -1600,18 +1600,18 @@ margin_bottom = 229.867
 text = "molly"
 
 [node name="Label12" type="Label" parent="state_handler/4/Label6"]
-margin_left = 726.01
-margin_top = 128.637
-margin_right = 918.01
-margin_bottom = 153.637
+margin_left = 722.889
+margin_top = 127.465
+margin_right = 914.889
+margin_bottom = 152.465
 rect_pivot_offset = Vector2( 78.3446, 14.9474 )
 custom_fonts/font = SubResource( 4 )
 text = "(molly)"
 
 [node name="Label5" type="Label" parent="state_handler/4"]
-margin_left = -259.282
+margin_left = -258.16
 margin_top = 528.275
-margin_right = 1023.72
+margin_right = 1024.84
 margin_bottom = 599.275
 text = "\"fly me to the meow\""
 align = 1
@@ -1961,7 +1961,6 @@ __meta__ = {
 }
 
 [node name="8" type="Control" parent="state_handler"]
-editor/display_folded = true
 visible = false
 margin_top = 3.21468
 margin_right = 40.0
@@ -1991,7 +1990,7 @@ resource queue module
 
 3d outline shader
 3d cat model
-krub font"
+source sans pro font"
 align = 2
 
 [node name="Label4" type="Label" parent="state_handler/8"]
@@ -2005,12 +2004,12 @@ juan linietsky, ariel manzur, and the godot community
 edited by michael bethencourt
 reisdev
 shuldyakov on turbosquid.com
-cadson demak"
+paul d. hunt"
 
 [node name="elijah_sean" type="TextureButton" parent="state_handler/8"]
-margin_left = 471.164
+margin_left = 484.256
 margin_top = 383.202
-margin_right = 819.164
+margin_right = 832.256
 margin_bottom = 672.202
 focus_mode = 0
 mouse_filter = 2

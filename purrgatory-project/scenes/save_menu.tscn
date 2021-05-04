@@ -13,11 +13,11 @@
 size = 25
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 25
+[sub_resource type="DynamicFont" id=4]
+size = 21
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=5]
 size = 25
 font_data = ExtResource( 3 )
 
@@ -67,75 +67,76 @@ valign = 1
 position = Vector2( 647.503, 70.4409 )
 texture = ExtResource( 5 )
 
-[node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 635.839, 384.69 )
-texture = ExtResource( 6 )
-
 [node name="files" type="Control" parent="."]
+editor/display_folded = true
 margin_left = 635.839
 margin_top = 326.69
 margin_right = 675.839
 margin_bottom = 366.69
 
 [node name="file0" type="Button" parent="files"]
-margin_left = -488.0
-margin_top = -176.0
-margin_right = 895.0
-margin_bottom = 550.0
+margin_left = -476.336
+margin_top = -167.835
+margin_right = 803.664
+margin_bottom = 558.165
 rect_scale = Vector2( 0.21, 0.21 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 
 [node name="file1" type="Button" parent="files"]
-margin_left = -146.0
-margin_top = -173.0
-margin_right = 1238.0
-margin_bottom = 547.0
-rect_scale = Vector2( 0.21, 0.208 )
+margin_left = -134.336
+margin_top = -164.835
+margin_right = 1145.66
+margin_bottom = 555.165
+rect_scale = Vector2( 0.21, 0.21 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 
 [node name="file2" type="Button" parent="files"]
-margin_left = 196.0
-margin_top = -175.0
-margin_right = 1575.0
-margin_bottom = 545.0
-rect_scale = Vector2( 0.21, 0.208 )
+margin_left = 207.664
+margin_top = -166.835
+margin_right = 1487.66
+margin_bottom = 553.165
+rect_scale = Vector2( 0.21, 0.21 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 
 [node name="file3" type="Button" parent="files"]
-margin_left = -485.0
-margin_top = 53.0
-margin_right = 881.0
-margin_bottom = 773.0
-rect_scale = Vector2( 0.21, 0.205 )
+margin_left = -474.502
+margin_top = 58.8318
+margin_right = 805.498
+margin_bottom = 778.832
+rect_scale = Vector2( 0.21, 0.21 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 
 [node name="file4" type="Button" parent="files"]
-margin_left = -145.0
-margin_top = 52.0
-margin_right = 1239.0
-margin_bottom = 772.0
+margin_left = -134.502
+margin_top = 57.8318
+margin_right = 1145.5
+margin_bottom = 777.832
 rect_scale = Vector2( 0.21, 0.21 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 
 [node name="file5" type="Button" parent="files"]
-margin_left = 195.0
-margin_top = 50.0
-margin_right = 1575.0
-margin_bottom = 770.0
-rect_scale = Vector2( 0.21, 0.207 )
+margin_left = 205.497
+margin_top = 55.8317
+margin_right = 1485.5
+margin_bottom = 775.832
+rect_scale = Vector2( 0.21, 0.21 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 635.839, 347.367 )
+texture = ExtResource( 6 )
 
 [node name="dates" type="Control" parent="."]
 editor/display_folded = true
@@ -147,9 +148,9 @@ theme = ExtResource( 1 )
 
 [node name="date0" type="Label" parent="dates"]
 margin_left = -507.0
-margin_top = -18.0
+margin_top = -11.0019
 margin_right = -183.0
-margin_bottom = 45.0
+margin_bottom = 51.9981
 rect_scale = Vector2( 0.8, 0.8 )
 custom_constants/line_spacing = -5
 align = 1
@@ -157,51 +158,50 @@ autowrap = true
 
 [node name="date1" type="Label" parent="dates"]
 margin_left = -166.0
-margin_top = -18.0
+margin_top = -11.0019
 margin_right = 165.0
-margin_bottom = 45.0
+margin_bottom = 51.9981
 rect_scale = Vector2( 0.8, 0.8 )
 custom_constants/line_spacing = -5
 align = 1
 
 [node name="date2" type="Label" parent="dates"]
 margin_left = 177.0
-margin_top = -18.0
+margin_top = -11.0019
 margin_right = 504.0
-margin_bottom = 45.0
+margin_bottom = 51.9981
 rect_scale = Vector2( 0.8, 0.8 )
 custom_constants/line_spacing = -5
 align = 1
 
 [node name="date3" type="Label" parent="dates"]
 margin_left = -504.0
-margin_top = 208.0
+margin_top = 214.998
 margin_right = -182.0
-margin_bottom = 271.0
+margin_bottom = 277.998
 rect_scale = Vector2( 0.8, 0.8 )
 custom_constants/line_spacing = -5
 align = 1
 
 [node name="date4" type="Label" parent="dates"]
 margin_left = -164.0
-margin_top = 208.0
+margin_top = 214.998
 margin_right = 165.0
-margin_bottom = 271.0
+margin_bottom = 277.998
 rect_scale = Vector2( 0.8, 0.8 )
 custom_constants/line_spacing = -5
 align = 1
 
 [node name="date5" type="Label" parent="dates"]
 margin_left = 175.0
-margin_top = 205.0
+margin_top = 211.998
 margin_right = 504.0
-margin_bottom = 268.0
+margin_bottom = 274.998
 rect_scale = Vector2( 0.8, 0.8 )
 custom_constants/line_spacing = -5
 align = 1
 
 [node name="delete_data" type="Button" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1117.8
@@ -225,10 +225,9 @@ offset = Vector2( -8.3689, -6.12292 )
 [node name="Label" type="Label" parent="delete_data"]
 margin_left = 1.0
 margin_top = 2.0
-margin_right = 186.0
-margin_bottom = 60.0
-rect_scale = Vector2( 0.8, 0.8 )
-custom_fonts/font = SubResource( 2 )
+margin_right = 149.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "delete data"
 align = 1
@@ -264,7 +263,7 @@ margin_top = 329.0
 margin_right = -514.0
 margin_bottom = -333.0
 focus_mode = 0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
@@ -292,7 +291,7 @@ margin_top = 405.0
 margin_right = 766.0
 margin_bottom = 463.0
 focus_mode = 0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
@@ -339,7 +338,7 @@ margin_top = 366.0
 margin_right = 766.0
 margin_bottom = 424.0
 focus_mode = 0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
@@ -359,7 +358,7 @@ margin_bottom = 59.0
 text = "back"
 align = 1
 valign = 1
-[connection signal="pressed" from="back" to="." method="hide"]
+[connection signal="pressed" from="back" to="." method="hide_custom"]
 [connection signal="pressed" from="files/file0" to="." method="save_file" binds= [ 0 ]]
 [connection signal="pressed" from="files/file1" to="." method="save_file" binds= [ 1 ]]
 [connection signal="pressed" from="files/file2" to="." method="save_file" binds= [ 2 ]]

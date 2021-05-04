@@ -14,9 +14,17 @@ func _ready():
 
 func show_custom():
 	set_position(Vector2(0, 0))
+	$'../menu_button'.disabled = true
 
 func hide_custom():
 	set_position(Vector2(0, 1600))
+	$'../menu_button'.disabled = false
+
+func toggle():
+	if rect_position.y > 0:
+		show_custom()
+	else:
+		hide_custom()
 	
 # stuff is added to history when
 # a) the text is updated (in the update_ui function of the ui node), or 
@@ -128,3 +136,4 @@ func load_history(_history):
 	
 	yield(get_tree(), 'idle_frame')
 	format_history()
+

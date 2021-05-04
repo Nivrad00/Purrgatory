@@ -1,7 +1,7 @@
 extends 'state_handler_template.gd'
 
 var state = null
-var out_of_batteries = false
+var alt_power_button = 'res://assets/sprites/keyboard/power_button_on_no_battery.png'
 
 func return_to_dialog(label):
 	emit_signal('start_dialog', label, [])
@@ -24,9 +24,7 @@ func _ready():
 	update_volume($options/volume.rect_rotation)
 	
 	if state.get('sean_out_of_batteries') and not state.get('sean_replaced_batteries'):
-		out_of_batteries = true
-		AudioServer.set_bus_mute(AudioServer.get_bus_index('Keyboard'), true)
-		emit_signal('start_dialog', 'out_of_batteries')
+		$options/power.add_icon_override('checked', load(alt_power_button))
 	
 func update_state(s):
 	.update_state(s)
@@ -64,8 +62,6 @@ func update_volume(volume):
 
 func update_mute(on):
 	state['piano_power'] = on
-	if not out_of_batteries:
-		AudioServer.set_bus_mute(AudioServer.get_bus_index('Keyboard'), !on)
 		
 func math(value):
 	if value == 0:
@@ -74,3 +70,4 @@ func math(value):
 
 func run_out_of_batteries():
 	state['sean_out_of_batteries'] = true
+	$options/power.add_icon_override('checked', load(alt_power_button))

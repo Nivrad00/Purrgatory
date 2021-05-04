@@ -35,7 +35,7 @@ polygon = PoolVector2Array( 418.556, 272.175, 418.669, 802.038, 487.917, 711.532
 
 [node name="exit3" type="Area2D" parent="state_handler"]
 editor/display_folded = true
-position = Vector2( 484.52, -187.407 )
+position = Vector2( 486.52, -187.407 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true

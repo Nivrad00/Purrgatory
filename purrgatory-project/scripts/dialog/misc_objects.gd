@@ -511,6 +511,7 @@ var raw_blocks = [
 ["see_padlock","_none","_none","the door is locked with a padlock.",[["_quest_meowseum_door", true], ["tried_meowseum_door", true]],"","null","","",""],
 ["warehouse_door","_none","_none","solid metal.","","","null","","",""],
 ["elevator_door","_none","_none","an elevator.","","","null","","",""],
+["elevator_inside_door","_none","_none","door.","","","null","","",""],
 ["house_door","_none","_none","looks like it's locked from the inside.","","","null","","",""],
 ["study_door","_none","_none","seems to be jammed or something.","","","null","","",""],
 ["hallway_ladder","_none","_none","a ladder.","","","","","",""],

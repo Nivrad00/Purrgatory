@@ -1,7 +1,7 @@
 extends Node
 
 var raw_blocks = [
-["piano_intro","_none","_none","sean plugs in the batteries.",[['_inv_battery1', false], ['_inv_battery2', false], ['_goto_keyboard', true], ['_delay_setup_piano', true]],"","","","",""],
+["piano_intro","_none","_none","sean plugs in the batteries.",[['_inv_battery1', false], ['_inv_battery2', false], ['_goto_keyboard', true], ['setup_piano', true]],"","","","",""],
 ["","sean","","we're green, baby!!","_piano_lick1","","","","",""],
 ["","you","","we are?","disable_exit","","","","",""],
 ["","sean","","you know, like","sean_jammed","","","","",""],
@@ -10,12 +10,12 @@ var raw_blocks = [
 ["","","","","","","","",['i\'m not sure if that\'s necessarily true', 'let\'s roll and rock baby face!'],['piano_intro1', 'piano_intro2']],
 ["piano_intro1","you","","i'm not sure if that's necessarily true?","","","","","",""],
 ["","sean","","who needs truth when u have groove??","_delay__piano_lick3","","null","","",""],
-["piano_intro2","you","","let's rock and roll baby face!","","","","","",""],
+["piano_intro2","you","","let's roll and rock baby face!","","","","","",""],
 ["","sean","","that's the spirit!!","_delay__piano_lick3","","null","","",""],
 ["piano_intro3","sean","","also please keep your expectations low i am bad at piano","","","","","",""],
-["","","","my partner was teaching me before i died, but i was a slooow learner","","","","","",""],
 ["","you","","lol, it's okay","","","","","",""],
-["","","","do you know any songs?","","","","","",""],
+["","sean","","my partner was teaching me before i died, but i was a slooow learner","","","","","",""],
+["","you","","do you know any songs?","","","","","",""],
 ["","sean","","yeah, check this out!","_delay__piano_fur_elise1","","null","","",""],
 ["piano_intro3a","sean","","fuck","_delay__piano_fur_elise2","","null","","",""],
 ["piano_intro3b","sean","","wait just, give me a second","","","","","",""],
@@ -80,7 +80,7 @@ var raw_blocks = [
 ["","","","","","","","",['one more time?', 'whatever let\'s do it!'],['piano_heart4', 'piano_heart5']],
 ["piano_heart4","you","","one more time, if you don't mind?","","","","","",""],
 ["","sean","","yeah, no problem","_delay__piano_heart_tutorial","","null","","",""],
-["piano_heart5","you","","whatever let\'s do it!","","","","","",""],
+["piano_heart5","you","","whatever let\'s do ielevat!","","","","","",""],
 ["","sean","","alright!!","","","piano_heart1b","","",""],
 ["piano_heart6","sean","","hey that wasn't bad!","","","","","",""],
 ["","","","","","","","",['it was kind of bad', 'yeah!'],['piano_heart7', 'piano_heart8']],

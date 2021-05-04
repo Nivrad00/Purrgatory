@@ -3,6 +3,7 @@ extends Control
 signal options_changed()
 signal toggle_notes(on)
 signal toggle_voicing(on)
+signal hiding()
 
 var resolutions = [
 	'854 x 480',
@@ -169,3 +170,8 @@ func _on_window_size_selected(ID):
 	var res_string = resolutions[ID]
 	var res = res_string.split(' x ')
 	OS.window_size = Vector2(int(res[0]), int(res[1]))
+
+
+func hide_custom():
+	hide()
+	emit_signal('hiding')

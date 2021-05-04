@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=2]
+[gd_scene load_steps=131 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ss.tscn" type="PackedScene" id=2]
@@ -139,10 +139,22 @@ shortcut = SubResource( 11 )
 size = 10
 font_data = ExtResource( 30 )
 
+[sub_resource type="InputEventAction" id=30]
+action = "ui_skip"
+
+[sub_resource type="ShortCut" id=31]
+shortcut = SubResource( 30 )
+
 [sub_resource type="DynamicFont" id=14]
 size = 18
 use_filter = true
 font_data = ExtResource( 30 )
+
+[sub_resource type="InputEventAction" id=32]
+action = "ui_history"
+
+[sub_resource type="ShortCut" id=33]
+shortcut = SubResource( 32 )
 
 [sub_resource type="Animation" id=15]
 length = 0.1
@@ -365,10 +377,34 @@ tracks/1/keys = {
 "values": [ 806.201, -856.32 ]
 }
 
-[sub_resource type="StyleBoxFlat" id=21]
+[sub_resource type="InputEventAction" id=21]
+action = "ui_cancel"
+
+[sub_resource type="ShortCut" id=22]
+shortcut = SubResource( 21 )
+
+[sub_resource type="InputEventAction" id=23]
+action = "ui_notes"
+
+[sub_resource type="ShortCut" id=24]
+shortcut = SubResource( 23 )
+
+[sub_resource type="InputEventAction" id=28]
+action = "ui_inventory"
+
+[sub_resource type="ShortCut" id=29]
+shortcut = SubResource( 28 )
+
+[sub_resource type="InputEventAction" id=34]
+action = "ui_history"
+
+[sub_resource type="ShortCut" id=35]
+shortcut = SubResource( 34 )
+
+[sub_resource type="StyleBoxFlat" id=25]
 bg_color = Color( 1, 1, 1, 0.619608 )
 
-[sub_resource type="Shader" id=22]
+[sub_resource type="Shader" id=26]
 code = "shader_type canvas_item;
 
 void fragment() {
@@ -377,8 +413,8 @@ void fragment() {
 	COLOR.rgb = c;
 }"
 
-[sub_resource type="ShaderMaterial" id=23]
-shader = SubResource( 22 )
+[sub_resource type="ShaderMaterial" id=27]
+shader = SubResource( 26 )
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
@@ -468,6 +504,7 @@ __meta__ = {
 }
 
 [node name="room" type="Control" parent="content"]
+editor/display_folded = true
 script = ExtResource( 23 )
 
 [node name="room_container" type="Control" parent="content/room"]
@@ -516,7 +553,6 @@ mouse_filter = 2
 texture = ExtResource( 26 )
 
 [node name="ui" type="Control" parent="content"]
-editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 theme = ExtResource( 27 )
@@ -881,6 +917,7 @@ focus_mode = 0
 custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 enabled_focus_mode = 0
+shortcut = SubResource( 31 )
 flat = true
 
 [node name="box2" type="Sprite" parent="content/ui/skip_button"]
@@ -915,6 +952,7 @@ focus_mode = 0
 custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 enabled_focus_mode = 0
+shortcut = SubResource( 33 )
 flat = true
 
 [node name="box2" type="Sprite" parent="content/ui/history_button"]
@@ -959,7 +997,9 @@ margin_bottom = 40.3017
 focus_mode = 0
 custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+shortcut_in_tooltip = false
 enabled_focus_mode = 0
+shortcut = SubResource( 22 )
 flat = true
 __meta__ = {
 "_edit_group_": true
@@ -1000,6 +1040,7 @@ margin_right = 1093.0
 margin_bottom = 262.0
 
 [node name="quest_container" type="ScrollContainer" parent="meta_ui/dropdown"]
+editor/display_folded = true
 margin_left = 35.0
 margin_top = 55.0
 margin_right = 1060.0
@@ -1045,7 +1086,9 @@ margin_bottom = 41.5417
 focus_mode = 0
 custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+shortcut_in_tooltip = false
 enabled_focus_mode = 0
+shortcut = SubResource( 24 )
 flat = true
 __meta__ = {
 "_edit_group_": true
@@ -1075,7 +1118,9 @@ margin_bottom = 41.5417
 focus_mode = 0
 custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+shortcut_in_tooltip = false
 enabled_focus_mode = 0
+shortcut = SubResource( 29 )
 flat = true
 script = ExtResource( 42 )
 __meta__ = {
@@ -1111,7 +1156,9 @@ focus_mode = 0
 mouse_filter = 1
 custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+shortcut_in_tooltip = false
 enabled_focus_mode = 0
+shortcut = SubResource( 35 )
 flat = true
 __meta__ = {
 "_edit_group_": true
@@ -1133,7 +1180,6 @@ align = 1
 valign = 1
 
 [node name="pause_menu" type="Control" parent="meta_ui"]
-editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -1288,6 +1334,7 @@ margin_right = -515.0
 margin_bottom = -129.495
 rect_pivot_offset = Vector2( -682.782, -285.656 )
 focus_mode = 0
+shortcut_in_tooltip = false
 enabled_focus_mode = 0
 flat = true
 __meta__ = {
@@ -1488,6 +1535,7 @@ text = "are you sure? unsaved progress will be lost."
 scroll_active = false
 
 [node name="yes" type="Button" parent="meta_ui/exit_confirm"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
@@ -1517,6 +1565,7 @@ align = 1
 valign = 1
 
 [node name="no" type="Button" parent="meta_ui/exit_confirm"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
@@ -1573,6 +1622,7 @@ margin_top = 365.72
 margin_right = -515.0
 margin_bottom = -295.28
 focus_mode = 0
+shortcut_in_tooltip = false
 enabled_focus_mode = 0
 flat = true
 __meta__ = {
@@ -1629,6 +1679,7 @@ margin_top = 365.72
 margin_right = -515.0
 margin_bottom = -295.28
 focus_mode = 0
+shortcut_in_tooltip = false
 enabled_focus_mode = 0
 flat = true
 __meta__ = {
@@ -1666,14 +1717,16 @@ texture = ExtResource( 93 )
 centered = false
 
 [node name="back" type="Button" parent="meta_ui/history"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
 margin_top = 618.0
 margin_right = -515.0
-margin_bottom = -43.0
+margin_bottom = -46.0
 rect_pivot_offset = Vector2( 311.063, -221.429 )
 focus_mode = 0
+shortcut_in_tooltip = false
 enabled_focus_mode = 0
 flat = true
 __meta__ = {
@@ -1769,10 +1822,11 @@ margin_left = 36.0
 margin_top = 227.0
 margin_right = 612.0
 margin_bottom = 973.0
-custom_styles/normal = SubResource( 21 )
+custom_styles/normal = SubResource( 25 )
 autowrap = true
 
 [node name="Button" type="Button" parent="meta_ui"]
+visible = false
 margin_left = 110.488
 margin_top = 17.4169
 margin_right = 261.488
@@ -1790,7 +1844,7 @@ color = Color( 1, 1, 1, 0 )
 
 [node name="negative_cover" type="ColorRect" parent="."]
 visible = false
-material = SubResource( 23 )
+material = SubResource( 27 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1280.0
@@ -1810,12 +1864,12 @@ color = Color( 0, 0, 0, 1 )
 [connection signal="pressed" from="content/ui/name_input/custom_pronouns/back" to="content/ui/name_input/custom_pronouns" method="hide"]
 [connection signal="pressed" from="content/ui/text_box" to="." method="update_dialog_button_clicked"]
 [connection signal="pressed" from="content/ui/skip_button" to="." method="toggle_skip"]
+[connection signal="pressed" from="content/ui/history_button" to="meta_ui/history" method="toggle"]
 [connection signal="pressed" from="content/ui/history_button" to="." method="turn_off_skip"]
-[connection signal="pressed" from="content/ui/history_button" to="meta_ui/history" method="show_custom"]
 [connection signal="mouse_entered" from="meta_ui/menu_button" to="content/room" method="stop_all_hovering"]
 [connection signal="mouse_exited" from="meta_ui/menu_button" to="content/room" method="start_all_hovering"]
+[connection signal="pressed" from="meta_ui/menu_button" to="." method="toggle_pause_menu"]
 [connection signal="pressed" from="meta_ui/menu_button" to="." method="turn_off_skip"]
-[connection signal="pressed" from="meta_ui/menu_button" to="." method="open_pause_menu"]
 [connection signal="examine_item" from="meta_ui/dropdown" to="." method="examine_item"]
 [connection signal="mouse_entered" from="meta_ui/dropdown" to="content/room" method="stop_all_hovering"]
 [connection signal="mouse_exited" from="meta_ui/dropdown" to="content/room" method="start_all_hovering"]
@@ -1829,23 +1883,33 @@ color = Color( 0, 0, 0, 1 )
 [connection signal="pressed" from="meta_ui/items_button" to="meta_ui/dropdown" method="toggle_items"]
 [connection signal="mouse_entered" from="meta_ui/history_button2" to="content/room" method="stop_all_hovering"]
 [connection signal="mouse_exited" from="meta_ui/history_button2" to="content/room" method="start_all_hovering"]
+[connection signal="pressed" from="meta_ui/history_button2" to="meta_ui/history" method="toggle"]
 [connection signal="pressed" from="meta_ui/history_button2" to="." method="turn_off_skip"]
-[connection signal="pressed" from="meta_ui/history_button2" to="meta_ui/history" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/save" to="meta_ui/save_menu" method="show_custom"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/save" to="meta_ui/menu_button" method="set_disabled" binds= [ true ]]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/load" to="meta_ui/load_menu" method="show_custom"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/load" to="meta_ui/menu_button" method="set_disabled" binds= [ true ]]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/options" to="meta_ui/options_menu" method="show_custom"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/options" to="meta_ui/menu_button" method="set_disabled" binds= [ true ]]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/exit" to="meta_ui/exit_confirm" method="show"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/exit" to="meta_ui/menu_button" method="set_disabled" binds= [ true ]]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/back" to="." method="close_pause_menu"]
-[connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
-[connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
+[connection signal="hiding" from="meta_ui/options_menu" to="meta_ui/menu_button" method="set_disabled" binds= [ false ]]
 [connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/dropdown" method="format_quests"]
+[connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
+[connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
 [connection signal="pressed" from="meta_ui/exit_confirm/yes" to="." method="return_to_main"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
+[connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/menu_button" method="set_disabled" binds= [ false ]]
+[connection signal="pressed" from="meta_ui/save_confirm/yes" to="meta_ui/menu_button" method="set_disabled" binds= [ false ]]
 [connection signal="pressed" from="meta_ui/save_confirm/yes" to="." method="save_confirmed"]
 [connection signal="deleted_data" from="meta_ui/save_menu" to="." method="deleted_data"]
+[connection signal="hiding" from="meta_ui/save_menu" to="meta_ui/menu_button" method="set_disabled" binds= [ false ]]
 [connection signal="save_file" from="meta_ui/save_menu" to="." method="save"]
+[connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/menu_button" method="set_disabled" binds= [ false ]]
 [connection signal="pressed" from="meta_ui/load_confirm/yes" to="." method="load_confirmed"]
 [connection signal="deleted_data" from="meta_ui/load_menu" to="." method="deleted_data"]
+[connection signal="hiding" from="meta_ui/load_menu" to="meta_ui/menu_button" method="set_disabled" binds= [ false ]]
 [connection signal="load_file" from="meta_ui/load_menu" to="." method="load_game_while_playing"]
 [connection signal="pressed" from="meta_ui/history/back" to="meta_ui/history" method="hide_custom"]
 [connection signal="pressed" from="meta_ui/debug/Button" to="meta_ui/debug" method="_on_Button_pressed"]

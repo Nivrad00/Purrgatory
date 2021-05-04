@@ -1,10 +1,43 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/elevator.gd" type="Script" id=2]
-[ext_resource path="res://assets/rooms/elevator.png" type="Texture" id=3]
-[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=4]
-[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=5]
+[ext_resource path="res://assets/rooms/elevator_back.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/elevator_door.png" type="Texture" id=4]
+[ext_resource path="res://assets/rooms/elevator.png" type="Texture" id=5]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=6]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=7]
+[ext_resource path="res://scripts/elevator_button.gd" type="Script" id=8]
+[ext_resource path="res://assets/audio/button.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/audio/elevator_door.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/audio/elevator_door_end.wav" type="AudioStream" id=11]
+
+[sub_resource type="Animation" id=1]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 365.067, 144.627 ), Vector2( 188.948, 153.958 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../elevator_door2:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 598.337, 148.126 ), Vector2( 777.954, 151.625 ) ]
+}
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -17,40 +50,94 @@ script = ExtResource( 1 )
 script = ExtResource( 2 )
 default_music = "Fly_Me_To_The_Meow"
 
-[node name="bg" type="Sprite" parent="state_handler"]
+[node name="bg2" type="Sprite" parent="state_handler"]
 position = Vector2( 1, 1 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="exit" type="Area2D" parent="state_handler"]
+[node name="elevator_door2" type="TextureRect" parent="state_handler"]
+margin_left = 598.337
+margin_top = 148.126
+margin_right = 854.338
+margin_bottom = 588.127
+mouse_filter = 2
+texture = ExtResource( 4 )
+
+[node name="elevator_door1" type="TextureRect" parent="state_handler"]
+margin_left = 365.067
+margin_top = 144.627
+margin_right = 621.068
+margin_bottom = 584.627
+mouse_filter = 2
+texture = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/elevator_door1"]
+anims/open = SubResource( 1 )
+
+[node name="bg" type="Sprite" parent="state_handler"]
+position = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="exit2" type="Area2D" parent="state_handler"]
 editor/display_folded = true
+visible = false
 position = Vector2( 453.085, -178.215 )
-script = ExtResource( 4 )
+script = ExtResource( 6 )
 room_label = "hallway7"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+position = Vector2( -453.085, 178.215 )
+polygon = PoolVector2Array( 455.001, 573.001, 770.002, 574.001, 771.002, 177, 452.001, 176 )
+
+[node name="door_dialog" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 453.085, -178.215 )
+script = ExtResource( 7 )
+dialog_label = "elevator_inside_door"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/door_dialog"]
 position = Vector2( -453.085, 178.215 )
 polygon = PoolVector2Array( 455.001, 573.001, 770.002, 574.001, 771.002, 177, 452.001, 176 )
 
 [node name="elevator_button" type="Area2D" parent="state_handler"]
-editor/display_folded = true
-script = ExtResource( 5 )
+position = Vector2( 0, -25.0872 )
+script = ExtResource( 7 )
 dialog_label = "elevator_button"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/elevator_button"]
 polygon = PoolVector2Array( 828.872, 385.49, 835.955, 379.694, 847.975, 383.129, 850.765, 393.002, 848.404, 402.017, 838.101, 402.661, 828.013, 397.724 )
 
-[node name="elevator_panel" type="Area2D" parent="state_handler"]
-editor/display_folded = true
-script = ExtResource( 5 )
-dialog_label = "elevator_panel"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/elevator_panel"]
-polygon = PoolVector2Array( 816.36, 267.635, 818.565, 414.653, 896.485, 413.918, 898.691, 267.635 )
-
 [node name="elevator_railing" type="Area2D" parent="state_handler"]
-script = ExtResource( 5 )
+script = ExtResource( 7 )
 dialog_label = "elevator_railing"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/elevator_railing"]
 polygon = PoolVector2Array( 307.932, 418.667, 338.071, 417.932, 360.66, 437.997, 20.6001, 552.301, -4.09995, 550.401, -3.9794, 504.295 )
+
+[node name="object" type="Button" parent="state_handler"]
+margin_left = 828.0
+margin_top = 381.0
+margin_right = 850.0
+margin_bottom = 403.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 8 )
+
+[node name="button" type="AudioStreamPlayer" parent="state_handler/object"]
+stream = ExtResource( 9 )
+volume_db = -5.0
+bus = "SFX"
+
+[node name="door" type="AudioStreamPlayer" parent="state_handler/object"]
+stream = ExtResource( 10 )
+volume_db = -25.0
+bus = "SFX"
+
+[node name="door_end" type="AudioStreamPlayer" parent="state_handler/object"]
+stream = ExtResource( 11 )
+volume_db = -27.0
+bus = "SFX"
+[connection signal="animation_finished" from="state_handler/elevator_door1/AnimationPlayer" to="state_handler/object" method="door_finished"]
+[connection signal="pressed" from="state_handler/object" to="state_handler/object" method="_on_object_pressed"]

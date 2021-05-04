@@ -86,9 +86,13 @@ func show_custom():
 	else:
 		$buttons.rect_position.y = 0
 		
-		
+	$'../history_button2'.disabled = true
+	$'../../content/ui/history_button'.disabled = true
+	
 	show()
 
 func hide_custom():
 	#ui.speak_ui()
+	$'../history_button2'.disabled = false
+	$'../../content/ui/history_button'.disabled = false
 	hide()

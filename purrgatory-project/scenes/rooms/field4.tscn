@@ -42,6 +42,7 @@ centered = false
 room_label = "field3"
 
 [node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
+position = Vector2( -466.02, -291.018 )
 room_label = "field6"
 
 [node name="exit3" parent="state_handler" instance=ExtResource( 5 )]

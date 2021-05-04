@@ -39,5 +39,7 @@ func mouse_released():
 	emit_signal("key_up", self)
 	
 func play_note():
-	if (not get_node('../..').state.get('sean_out_of_batteries')) or get_node('../..').state.get('sean_replaced_batteries'):
-		$sound.play()
+	var state = get_node('../..').state
+	if state.get('piano_power'):
+		if (not state.get('sean_out_of_batteries')) or state.get('sean_replaced_batteries'):
+			$sound.play()

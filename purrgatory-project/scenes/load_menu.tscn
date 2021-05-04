@@ -13,8 +13,8 @@
 size = 25
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 25
+[sub_resource type="DynamicFont" id=4]
+size = 21
 font_data = ExtResource( 3 )
 
 [node name="load_menu" type="Control"]
@@ -63,90 +63,91 @@ valign = 1
 position = Vector2( 635.839, 70.342 )
 texture = ExtResource( 5 )
 
-[node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 635.839, 384.69 )
-texture = ExtResource( 6 )
-
 [node name="files" type="Control" parent="."]
+editor/display_folded = true
 margin_left = 635.839
-margin_top = 327.69
+margin_top = 319.528
 margin_right = 675.839
-margin_bottom = 367.69
+margin_bottom = 359.528
 theme = ExtResource( 1 )
 
 [node name="file0" type="Button" parent="files"]
-margin_left = -486.0
-margin_top = -176.0
-margin_right = 881.0
-margin_bottom = 550.0
+margin_left = -474.95
+margin_top = -161.267
+margin_right = 805.05
+margin_bottom = 564.733
 rect_scale = Vector2( 0.21, 0.21 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 
 [node name="file1" type="Button" parent="files"]
-margin_left = -147.0
-margin_top = -173.0
-margin_right = 1238.0
-margin_bottom = 547.0
-rect_scale = Vector2( 0.21, 0.208 )
+margin_left = -135.95
+margin_top = -158.267
+margin_right = 1144.05
+margin_bottom = 561.733
+rect_scale = Vector2( 0.21, 0.21 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 
 [node name="file2" type="Button" parent="files"]
-margin_left = 196.0
-margin_top = -175.0
-margin_right = 1576.0
-margin_bottom = 545.0
-rect_scale = Vector2( 0.21, 0.208 )
+margin_left = 207.05
+margin_top = -160.267
+margin_right = 1487.05
+margin_bottom = 559.733
+rect_scale = Vector2( 0.21, 0.21 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 
 [node name="file3" type="Button" parent="files"]
-margin_left = -486.0
-margin_top = 52.0
-margin_right = 879.0
-margin_bottom = 772.0
-rect_scale = Vector2( 0.21, 0.205 )
+margin_left = -476.178
+margin_top = 65.5054
+margin_right = 803.822
+margin_bottom = 785.505
+rect_scale = Vector2( 0.21, 0.21 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 
 [node name="file4" type="Button" parent="files"]
-margin_left = -146.0
-margin_top = 51.0
-margin_right = 1239.0
-margin_bottom = 771.0
+margin_left = -136.178
+margin_top = 64.5054
+margin_right = 1143.82
+margin_bottom = 784.505
 rect_scale = Vector2( 0.21, 0.21 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 
 [node name="file5" type="Button" parent="files"]
-margin_left = 196.0
-margin_top = 49.0
-margin_right = 1576.0
-margin_bottom = 769.0
-rect_scale = Vector2( 0.21, 0.207 )
+margin_left = 205.822
+margin_top = 62.5054
+margin_right = 1485.82
+margin_bottom = 782.505
+rect_scale = Vector2( 0.21, 0.21 )
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 635.839, 347.29 )
+texture = ExtResource( 6 )
+
 [node name="dates" type="Control" parent="."]
 editor/display_folded = true
 margin_left = 667.839
-margin_top = 327.69
+margin_top = 319.528
 margin_right = 707.839
-margin_bottom = 367.69
+margin_bottom = 359.528
 theme = ExtResource( 1 )
 
 [node name="date0" type="Label" parent="dates"]
 margin_left = -507.0
-margin_top = -18.0
+margin_top = -0.679047
 margin_right = -183.0
-margin_bottom = 45.0
+margin_bottom = 62.321
 rect_scale = Vector2( 0.8, 0.8 )
 custom_constants/line_spacing = -5
 align = 1
@@ -154,51 +155,50 @@ autowrap = true
 
 [node name="date1" type="Label" parent="dates"]
 margin_left = -166.0
-margin_top = -18.0
+margin_top = -0.679047
 margin_right = 165.0
-margin_bottom = 45.0
+margin_bottom = 62.321
 rect_scale = Vector2( 0.8, 0.8 )
 custom_constants/line_spacing = -5
 align = 1
 
 [node name="date2" type="Label" parent="dates"]
 margin_left = 177.0
-margin_top = -18.0
+margin_top = -0.679047
 margin_right = 504.0
-margin_bottom = 45.0
+margin_bottom = 62.321
 rect_scale = Vector2( 0.8, 0.8 )
 custom_constants/line_spacing = -5
 align = 1
 
 [node name="date3" type="Label" parent="dates"]
 margin_left = -504.0
-margin_top = 208.0
+margin_top = 220.41
 margin_right = -182.0
-margin_bottom = 271.0
+margin_bottom = 283.41
 rect_scale = Vector2( 0.8, 0.8 )
 custom_constants/line_spacing = -5
 align = 1
 
 [node name="date4" type="Label" parent="dates"]
 margin_left = -164.0
-margin_top = 208.0
+margin_top = 220.41
 margin_right = 165.0
-margin_bottom = 271.0
+margin_bottom = 283.41
 rect_scale = Vector2( 0.8, 0.8 )
 custom_constants/line_spacing = -5
 align = 1
 
 [node name="date5" type="Label" parent="dates"]
 margin_left = 175.0
-margin_top = 205.0
+margin_top = 217.41
 margin_right = 504.0
-margin_bottom = 268.0
+margin_bottom = 280.41
 rect_scale = Vector2( 0.8, 0.8 )
 custom_constants/line_spacing = -5
 align = 1
 
 [node name="delete_data" type="Button" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1117.8
@@ -222,10 +222,9 @@ offset = Vector2( -8.3689, -6.12292 )
 [node name="Label" type="Label" parent="delete_data"]
 margin_left = 1.0
 margin_top = 2.0
-margin_right = 186.0
-margin_bottom = 60.0
-rect_scale = Vector2( 0.8, 0.8 )
-custom_fonts/font = SubResource( 2 )
+margin_right = 148.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "delete data"
 align = 1
@@ -353,7 +352,7 @@ margin_bottom = 59.0
 text = "back"
 align = 1
 valign = 1
-[connection signal="pressed" from="back" to="." method="hide"]
+[connection signal="pressed" from="back" to="." method="hide_custom"]
 [connection signal="pressed" from="files/file0" to="." method="load_file" binds= [ 0 ]]
 [connection signal="pressed" from="files/file1" to="." method="load_file" binds= [ 1 ]]
 [connection signal="pressed" from="files/file2" to="." method="load_file" binds= [ 2 ]]
@@ -361,8 +360,8 @@ valign = 1
 [connection signal="pressed" from="files/file4" to="." method="load_file" binds= [ 4 ]]
 [connection signal="pressed" from="files/file5" to="." method="load_file" binds= [ 5 ]]
 [connection signal="pressed" from="delete_data" to="delete_confirm" method="show"]
-[connection signal="pressed" from="delete_confirm/yes" to="delete_confirm" method="hide"]
 [connection signal="pressed" from="delete_confirm/yes" to="delete_after" method="show"]
+[connection signal="pressed" from="delete_confirm/yes" to="delete_confirm" method="hide"]
 [connection signal="pressed" from="delete_confirm/yes" to="." method="delete_data"]
 [connection signal="pressed" from="delete_confirm/no" to="delete_confirm" method="hide"]
 [connection signal="pressed" from="delete_after/back" to="delete_after" method="hide"]

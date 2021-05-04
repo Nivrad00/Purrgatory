@@ -2,6 +2,7 @@ extends Control
 
 signal load_file(file)
 signal deleted_data()
+signal hiding()
 
 func load_save_files():
 	var f = File.new()
@@ -53,3 +54,8 @@ func delete_data():
 	load_save_files()
 
 	emit_signal('deleted_data')
+	
+	
+func hide_custom():
+	hide()
+	emit_signal('hiding')

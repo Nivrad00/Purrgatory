@@ -106,7 +106,6 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="keyboard_handler" type="Node2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 1.19745, -0.598724 )
 script = ExtResource( 4 )
 
@@ -607,6 +606,7 @@ texture = ExtResource( 37 )
 centered = false
 
 [node name="keyboard_handler2" type="Node2D" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( 1.19745, -0.598724 )
 
 [node name="c#1" parent="state_handler/keyboard_handler2" instance=ExtResource( 5 )]
@@ -1047,7 +1047,6 @@ pitch_scale = 7.13
 bus = "Keyboard"
 
 [node name="options" type="Control" parent="state_handler"]
-editor/display_folded = true
 margin_left = 1.19745
 margin_top = -0.598724
 margin_right = 41.1974

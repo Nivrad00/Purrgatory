@@ -56,7 +56,6 @@ dialog_label = "3d_cat_sign"
 polygon = PoolVector2Array( 436.557, 584.425, 522.286, 591.099, 545.386, 564.405, 463.764, 561.838 )
 
 [node name="draw_a_paw" parent="state_handler" instance=ExtResource( 5 )]
-editor/display_folded = true
 position = Vector2( 542.89, -17.1884 )
 dialog_label = "draw_a_paw"
 

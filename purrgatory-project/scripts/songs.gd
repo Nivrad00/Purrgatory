@@ -10,8 +10,8 @@ var songs = {
 	
 	'lick-1': {
 		'tempo': 0.5,
-		'left': 'vcdefgabr[g^dvb]rr[a^ecv][g^dvb]2',
-		'right': 'cdefgabr[g^dvb]rr[f^cva][g^dvb]2',
+		'left': 'vcdefgar[g^dvb]r[a^ecv][g^dvb]2',
+		'right': 'cdefgar[g^dvb]r[f^cva][g^dvb]2',
 		'return': 'sean_jam0_2'
 	},
 	

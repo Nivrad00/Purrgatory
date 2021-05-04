@@ -17,7 +17,7 @@ size = 25
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 25
+size = 21
 font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxTexture" id=3]
@@ -52,12 +52,14 @@ visible = false
 position = Vector2( 369.758, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
+texture_mode = -741343603
 
 [node name="Line2D2" type="Line2D" parent="."]
 visible = false
 position = Vector2( 398.949, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
+texture_mode = 0
 
 [node name="back" type="Button" parent="."]
 editor/display_folded = true
@@ -69,7 +71,6 @@ margin_right = -524.0
 margin_bottom = -53.0197
 rect_pivot_offset = Vector2( 311.063, -221.429 )
 focus_mode = 0
-mouse_default_cursor_shape = 0
 enabled_focus_mode = 0
 flat = true
 __meta__ = {
@@ -96,13 +97,12 @@ valign = 1
 [node name="reset" type="Button" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1117.8
-margin_top = 658.029
-margin_right = -12.1976
-margin_bottom = -12.9712
+margin_left = 1118.0
+margin_top = 658.0
+margin_right = -14.0
+margin_bottom = -16.0
 rect_pivot_offset = Vector2( 311.063, -221.429 )
 focus_mode = 0
-mouse_default_cursor_shape = 0
 enabled_focus_mode = 0
 flat = true
 __meta__ = {
@@ -116,11 +116,10 @@ centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
 [node name="Label" type="Label" parent="reset"]
-margin_left = 1.0
+margin_left = 2.0
 margin_top = 2.0
-margin_right = 186.0
-margin_bottom = 60.0
-rect_scale = Vector2( 0.8, 0.8 )
+margin_right = 148.0
+margin_bottom = 47.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "reset settings"
@@ -152,7 +151,6 @@ margin_top = -8.0
 margin_right = 439.0
 margin_bottom = -6.0
 focus_mode = 0
-mouse_default_cursor_shape = 0
 custom_icons/tick = ExtResource( 6 )
 custom_icons/grabber_highlight = ExtResource( 7 )
 custom_icons/grabber = ExtResource( 7 )
@@ -224,7 +222,6 @@ margin_top = -8.0
 margin_right = 439.0
 margin_bottom = -6.0
 focus_mode = 0
-mouse_default_cursor_shape = 0
 custom_icons/tick = ExtResource( 6 )
 custom_icons/grabber_highlight = ExtResource( 7 )
 custom_icons/grabber = ExtResource( 7 )
@@ -252,7 +249,6 @@ margin_top = 52.8001
 margin_right = 439.0
 margin_bottom = 54.8001
 focus_mode = 0
-mouse_default_cursor_shape = 0
 custom_icons/tick = ExtResource( 6 )
 custom_icons/grabber_highlight = ExtResource( 7 )
 custom_icons/grabber = ExtResource( 7 )
@@ -312,7 +308,6 @@ margin_top = -27.7207
 margin_right = 5.45755
 margin_bottom = 0.279274
 focus_mode = 0
-mouse_default_cursor_shape = 0
 enabled_focus_mode = 0
 
 [node name="enable_notes" type="Control" parent="."]
@@ -349,7 +344,6 @@ margin_top = -27.7207
 margin_right = 5.45755
 margin_bottom = 0.279274
 focus_mode = 0
-mouse_default_cursor_shape = 0
 pressed = true
 enabled_focus_mode = 0
 
@@ -376,10 +370,9 @@ margin_top = -27.7207
 margin_right = 5.45755
 margin_bottom = 0.279274
 focus_mode = 0
-mouse_default_cursor_shape = 0
 enabled_focus_mode = 0
-[connection signal="pressed" from="back" to="." method="hide"]
 [connection signal="pressed" from="back" to="." method="save_options"]
+[connection signal="pressed" from="back" to="." method="hide_custom"]
 [connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]
 [connection signal="value_changed" from="text_size/slider" to="." method="_on_text_size_value_changed"]
 [connection signal="value_changed" from="audio/music" to="." method="_on_music_value_changed"]

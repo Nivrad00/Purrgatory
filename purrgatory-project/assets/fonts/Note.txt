@@ -1,0 +1,1 @@
+The font is Source Sans Pro, not Krub -- I just named it Krub as a workaround because I'm bad at game development. -Niv

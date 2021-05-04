@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/sprites/elevator_door.png" type="Texture" id=1]
+
+[node name="elevator_door2" type="TextureRect"]
+margin_left = 752.295
+margin_top = 110.803
+margin_right = 1008.29
+margin_bottom = 550.803
+mouse_filter = 2
+texture = ExtResource( 1 )
