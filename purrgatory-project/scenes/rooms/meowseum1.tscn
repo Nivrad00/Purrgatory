@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/meowseum1.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/rooms/meowseum1_ttt.png" type="Texture" id=7]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -100,24 +101,28 @@ polygon = PoolVector2Array( 1123.66, 427.535, 1124.85, 467.651, 1170.96, 473.638
 polygon = PoolVector2Array( 1093.72, 220.971, 1096.12, 284.437, 1160.78, 274.857, 1161.98, 210.792 )
 
 [node name="object4" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
 dialog_label = "donations_jar"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object4"]
 polygon = PoolVector2Array( 690.107, 361.557, 686.513, 380.551, 696.324, 397.311, 725.014, 398.005, 738.124, 380.406, 731.363, 362.272 )
 
 [node name="object3" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
 dialog_label = "donations_text"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
 polygon = PoolVector2Array( 655.199, 393.898, 656.226, 495.027, 770.188, 495.027, 770.188, 394.925 )
 
 [node name="object5" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
 dialog_label = "lobby_bench"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object5"]
 polygon = PoolVector2Array( 222.922, 477.391, 224.636, 504.827, 253.93, 508.541, 313.089, 487.964, 394.397, 497.968, 394.397, 464.53, 360.102, 462.815 )
 
 [node name="object6" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
 dialog_label = "lobby_infinity"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object6"]
@@ -127,7 +132,20 @@ polygon = PoolVector2Array( -0.999832, 279.001, 144.001, 305.001, 137.001, 252.0
 polygon = PoolVector2Array( 1198, 289.001, 1285, 267.001, 1283, 198.001, 1246, 196.001, 1204, 224.001, 1194, 256.001 )
 
 [node name="object7" parent="state_handler" instance=ExtResource( 6 )]
+editor/display_folded = true
 dialog_label = " standing_cat_sign"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object7"]
 polygon = PoolVector2Array( 482.474, 540.08, 482.474, 554.3, 516.034, 563.401, 516.603, 543.493 )
+
+[node name="ttt" parent="state_handler" instance=ExtResource( 6 )]
+dialog_label = "oliver_ttt"
+sprite_path = [ null ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/ttt"]
+position = Vector2( -196.54, -159.399 )
+polygon = PoolVector2Array( 482.474, 540.08, 472.878, 579.661, 480.338, 603.563, 377.162, 609.774, 377.162, 638.811, 513.565, 621.257, 513.028, 543.812 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/ttt"]
+position = Vector2( 251.479, 428.675 )
+texture = ExtResource( 7 )

@@ -26,3 +26,11 @@ func update_state(state):
 	if state.get('start_kicking_sounds'):
 		state['start_kicking_sounds'] = false
 		$thud.play()
+		
+	if state.get('single_kick'):
+		state['single_kick'] = false
+		$single_thud.play()
+		
+	if state.get('door_knock'):
+		state['door_knock'] = false
+		$knock.play()

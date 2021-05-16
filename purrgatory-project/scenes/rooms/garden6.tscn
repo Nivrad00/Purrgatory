@@ -45,7 +45,6 @@ animation1 = ExtResource( 6 )
 animation2 = ExtResource( 7 )
 
 [node name="numa2" parent="state_handler" instance=ExtResource( 4 )]
-visible = false
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 749.048
 margin_top = 387.124

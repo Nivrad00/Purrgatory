@@ -124,13 +124,14 @@ func show_custom():
 
 func change_volume(bus, volume):
 	var db = math(volume)
+	print(db)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus), db)
 	AudioServer.set_bus_mute(AudioServer.get_bus_index(bus), db == -80)
 	
 func math(value):
 	if value == 0:
 		return -80
-	return 27 * log(value)/log(10)
+	return 27 * log(value)/log(10) - 3 # max is -3 db
 
 func _on_reset_pressed():
 	var dir = Directory.new()

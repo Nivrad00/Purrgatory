@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/hallway5.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/hallway5.png" type="Texture" id=3]
-[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/rooms/hallway5_alt.png" type="Texture" id=4]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=7]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -21,16 +22,20 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+[node name="bg_alt" type="Sprite" parent="state_handler"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="exit" parent="state_handler" instance=ExtResource( 5 )]
 room_label = "hallway4"
 
-[node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
+[node name="exit2" parent="state_handler" instance=ExtResource( 6 )]
 room_label = "dropoff1"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
 polygon = PoolVector2Array( 153.118, 604.881, 246.083, 605.788, 246.449, 455.865, 243.885, 453.668, 232.653, 423.635, 191.754, 423.635, 189.679, 463.069, 187.359, 464.045, 180.522, 455.255, 178.813, 454.889, 166.646, 483.982, 166.646, 489.961, 162.826, 497.601, 160.667, 516.369, 157.918, 503.962, 156.186, 572.542 )
 
-[node name="object" parent="state_handler" instance=ExtResource( 6 )]
+[node name="object" parent="state_handler" instance=ExtResource( 7 )]
 dialog_label = "more_cave_stuff"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]

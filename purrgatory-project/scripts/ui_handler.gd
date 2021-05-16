@@ -14,6 +14,16 @@ var choice_y = {
 	4: [45, 115, 185, 255]
 }
 
+# i was thinking about color-coding the names but i changed my mind
+var speaker_colors = {
+	'numa': Color('#a13431'),
+	'tori': Color('#ac4e0c'),
+	'oliver': Color('#786c00'),
+	'natalie': Color('#0d9393'),
+	'kyungsoon': Color('#5539ab'),
+	'elijah': Color('#8331a2')
+}
+
 onready var game = get_node("../..")
 onready var tts_node = game.get_node('tts_node')
 var book_singleton
@@ -77,7 +87,25 @@ func speak_ui(all = true):
 		tts_node.speak(spoken_text)
 
 func set_speaker(speaker):
+	speaker = speaker.strip_edges()
 	$text_box/speaker.text = speaker
+	
+	#if speaker in speaker_colors:
+	#	$text_box/speaker.add_color_override("font_color", speaker_colors[speaker])
+	#else:
+	#	$text_box/speaker.add_color_override("font_color", Color(0, 0, 0))
+		
+	if speaker.length() == 0:
+		$text_box/speech_box.hide()
+		$text_box/speaker.hide()
+		$text_box/narration_box.show()
+		$text_box/text.rect_position.y = 36
+	else:
+		$text_box/speech_box.show()
+		$text_box/speaker.show()
+		$text_box/narration_box.hide()
+		$text_box/text.rect_position.y = 84
+		
 
 func set_sprites(sprites):
 	for child in $sprites.get_children():

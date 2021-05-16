@@ -198,7 +198,6 @@ text = "preview"
 align = 2
 
 [node name="audio" type="Control" parent="."]
-editor/display_folded = true
 margin_left = 279.106
 margin_top = 421.585
 margin_right = 319.106
@@ -371,8 +370,8 @@ margin_right = 5.45755
 margin_bottom = 0.279274
 focus_mode = 0
 enabled_focus_mode = 0
-[connection signal="pressed" from="back" to="." method="save_options"]
 [connection signal="pressed" from="back" to="." method="hide_custom"]
+[connection signal="pressed" from="back" to="." method="save_options"]
 [connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]
 [connection signal="value_changed" from="text_size/slider" to="." method="_on_text_size_value_changed"]
 [connection signal="value_changed" from="audio/music" to="." method="_on_music_value_changed"]

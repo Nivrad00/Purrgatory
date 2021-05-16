@@ -15,6 +15,9 @@ func generate_text(jdic, threshold_length):
 	while output.length() < threshold_length:
 		var key = output.substr(output.length() - 2, 2)
 		var sum = 0
+		if not key in jdic:
+			break
+			
 		for item in jdic[key]: # for every pair of letters
 			sum += int(jdic[key][item]) # sum its count
 

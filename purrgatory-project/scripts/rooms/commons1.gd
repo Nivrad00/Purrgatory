@@ -28,6 +28,8 @@ func _ready():
 func play_default_music(state):
 	if state.get('on_hold'):
 		emit_signal('change_audio', 'Fly_Me_To_The_Meow')
+	elif state.get('player_interviewed'):
+		emit_signal('change_audio', 'The_Interview')
 	elif state.get('called_lucifur'):
 		emit_signal('change_audio', 'Lucifur')
 	else:			

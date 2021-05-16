@@ -88,7 +88,7 @@ centered = false
 
 [node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/1"]
 stream = ExtResource( 6 )
-volume_db = -15.0
+volume_db = -20.0
 bus = "Phone"
 
 [node name="2" type="Button" parent="state_handler/buttons"]
@@ -108,7 +108,7 @@ centered = false
 
 [node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/2"]
 stream = ExtResource( 8 )
-volume_db = -15.0
+volume_db = -20.0
 bus = "Phone"
 
 [node name="3" type="Button" parent="state_handler/buttons"]
@@ -128,7 +128,7 @@ centered = false
 
 [node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/3"]
 stream = ExtResource( 10 )
-volume_db = -15.0
+volume_db = -20.0
 bus = "Phone"
 
 [node name="4" type="Button" parent="state_handler/buttons"]
@@ -148,7 +148,7 @@ centered = false
 
 [node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/4"]
 stream = ExtResource( 12 )
-volume_db = -15.0
+volume_db = -20.0
 bus = "Phone"
 
 [node name="5" type="Button" parent="state_handler/buttons"]
@@ -168,7 +168,7 @@ centered = false
 
 [node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/5"]
 stream = ExtResource( 14 )
-volume_db = -15.0
+volume_db = -20.0
 bus = "Phone"
 
 [node name="6" type="Button" parent="state_handler/buttons"]
@@ -188,7 +188,7 @@ centered = false
 
 [node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/6"]
 stream = ExtResource( 16 )
-volume_db = -15.0
+volume_db = -20.0
 bus = "Phone"
 
 [node name="7" type="Button" parent="state_handler/buttons"]
@@ -208,7 +208,7 @@ centered = false
 
 [node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/7"]
 stream = ExtResource( 18 )
-volume_db = -15.0
+volume_db = -20.0
 bus = "Phone"
 
 [node name="8" type="Button" parent="state_handler/buttons"]
@@ -228,7 +228,7 @@ centered = false
 
 [node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/8"]
 stream = ExtResource( 20 )
-volume_db = -15.0
+volume_db = -20.0
 bus = "Phone"
 
 [node name="9" type="Button" parent="state_handler/buttons"]
@@ -248,7 +248,7 @@ centered = false
 
 [node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/9"]
 stream = ExtResource( 22 )
-volume_db = -15.0
+volume_db = -20.0
 bus = "Phone"
 
 [node name="0" type="Button" parent="state_handler/buttons"]
@@ -268,7 +268,7 @@ centered = false
 
 [node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/0"]
 stream = ExtResource( 24 )
-volume_db = -15.0
+volume_db = -20.0
 bus = "Phone"
 
 [node name="*" type="Button" parent="state_handler/buttons"]
@@ -288,7 +288,7 @@ centered = false
 
 [node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/*"]
 stream = ExtResource( 26 )
-volume_db = -15.0
+volume_db = -20.0
 bus = "Phone"
 
 [node name="#" type="Button" parent="state_handler/buttons"]
@@ -308,7 +308,7 @@ centered = false
 
 [node name="beep" type="AudioStreamPlayer" parent="state_handler/buttons/#"]
 stream = ExtResource( 28 )
-volume_db = -15.0
+volume_db = -20.0
 bus = "Phone"
 
 [node name="dial" type="Button" parent="state_handler/buttons"]

@@ -13,3 +13,8 @@ func update_state(state):
 		state['oliver_sleeping_timer'] = false
 		emit_signal('start_action_timer', 50, ['oliver_sleeping', false])
 		emit_signal('start_action_timer', 50, ['oliver_in_study', false])
+	
+	if state.get('played_ttt') and state.get('oliver_chose_meowseum'):
+		$ttt.show()
+	else:
+		$ttt.hide()

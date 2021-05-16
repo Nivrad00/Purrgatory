@@ -45,17 +45,17 @@ position = Vector2( 1046.29, 675.912 )
 texture = ExtResource( 6 )
 
 [node name="snowglobe_closet" type="Area2D" parent="state_handler"]
-position = Vector2( -71.2958, -512.472 )
+position = Vector2( 60.6042, -512.472 )
 script = ExtResource( 5 )
 dialog_label = "snowglobe_closet"
 
+[node name="Sprite" type="Sprite" parent="state_handler/snowglobe_closet"]
+position = Vector2( 1059.68, 670.656 )
+texture = ExtResource( 7 )
+
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/snowglobe_closet"]
 position = Vector2( 54.4467, 189.494 )
-polygon = PoolVector2Array( 971.946, 472.419, 970.999, 499.557, 1013.13, 498.926, 1008.23, 473.208, 998.61, 461.217, 982.832, 461.217 )
-
-[node name="Sprite" type="Sprite" parent="state_handler/snowglobe_closet"]
-position = Vector2( 1045.41, 670.656 )
-texture = ExtResource( 7 )
+polygon = PoolVector2Array( 991.658, 499.388, 1015.33, 498.577, 1010.06, 470.574, 1000.18, 460.564, 990.711, 458.399 )
 
 [node name="closet_blanket" type="Area2D" parent="state_handler"]
 position = Vector2( -21, -66 )
@@ -105,22 +105,21 @@ dialog_label = "cleaner"
 polygon = PoolVector2Array( 808.706, 522.105, 780.019, 524.089, 779.521, 533.556, 785.049, 551.402, 784.499, 586.896, 795.535, 594.046, 809.703, 594.158, 818.674, 591.167, 821.807, 575.646, 814.833, 545.787, 819.386, 529.368 )
 
 [node name="fertilizer_bag" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 78.1535, -158.898 )
 script = ExtResource( 5 )
 dialog_label = "fertilizer_bag"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/fertilizer_bag"]
-position = Vector2( 0.291992, 0 )
+position = Vector2( -3.70801, 0 )
 polygon = PoolVector2Array( 964.586, 437.136, 941.81, 503.417, 942.261, 517.551, 1000.79, 531.698, 1023.81, 532.253, 1042.95, 519.216, 1060.71, 495.083, 1069.03, 470.395, 1070.06, 431.798, 1076.13, 410.857, 984.149, 412.025 )
 
 [node name="closet_soap" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -7.0002, -124.804 )
 script = ExtResource( 5 )
 dialog_label = "closet_soap"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_soap"]
+position = Vector2( -4, 0 )
 polygon = PoolVector2Array( 956.085, 471.344, 955.814, 496.776, 967.138, 502.595, 1031, 502.227, 1031.16, 474.997, 1008.17, 471.75 )
 
 [node name="closet_paper_towels" type="Area2D" parent="state_handler"]
@@ -135,12 +134,12 @@ polygon = PoolVector2Array( 1005.62, 454.978, 980.363, 455.631, 965.957, 461.081
 polygon = PoolVector2Array( 1188.73, 528.313, 1189.51, 470.819, 1172.32, 463.088, 1146.03, 462.791, 1130.91, 470.168, 1130.91, 533.853, 1140.02, 537.784 )
 
 [node name="closet_boxes" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -16.8491, -322.978 )
 script = ExtResource( 5 )
 dialog_label = "closet_boxes"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/closet_boxes"]
+position = Vector2( -5, 0 )
 polygon = PoolVector2Array( 981.948, 498.65, 1128.2, 498.597, 1129.74, 427.29, 1079.94, 428.212, 1079.33, 422.372, 1026.01, 428.303, 982.204, 447.575 )
 
 [node name="closet_rope" type="Area2D" parent="state_handler"]

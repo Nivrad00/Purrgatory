@@ -63,6 +63,8 @@ func button_pressed(value):
 			
 		if number == '5555824387':
 			emit_signal('start_dialog', 'phone_call', [])
+		elif number == '911':
+			emit_signal('start_dialog', 'phone_call_911', [])
 		else:
 			$busy_tone.play()
 		for n in $numbers.get_children():

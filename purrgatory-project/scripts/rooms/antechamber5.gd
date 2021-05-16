@@ -4,7 +4,7 @@ func play_default_music(state):
 	if state.get('postgame'):
 		emit_signal('change_audio', '')
 	elif state.get('called_lucifur'):
-		emit_signal('change_audio', 'Lucifur')
+		emit_signal('change_audio', 'The_Interview')
 	else:			
 		emit_signal('change_audio', default_music)
 		

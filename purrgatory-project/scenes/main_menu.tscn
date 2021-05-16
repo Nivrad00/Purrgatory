@@ -64,7 +64,7 @@ tracks/0/keys = {
 size = 25
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=7]
 size = 45
 font_data = ExtResource( 8 )
 
@@ -361,7 +361,7 @@ theme = ExtResource( 16 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="credits/ScrollContainer"]
 margin_right = 1174.0
-margin_bottom = 1156.0
+margin_bottom = 1258.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
@@ -380,7 +380,7 @@ margin_right = 1153.0
 margin_bottom = 58.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 7 )
 text = "purrgatory"
 align = 1
 autowrap = true

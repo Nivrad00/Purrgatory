@@ -62,6 +62,11 @@ func update_state(state):
 		state['hole_count'] += 1
 		$digging/score.text = str(state['hole_count']) + '/16'
 		
+	if state.get('played_ttt') and state.get('oliver_chose_park'):
+		$ttt.show()
+	else:
+		$ttt.hide()
+		
 func play_default_music(state):
 	if default_music != '_pass':
 		if state.get('park_game'):

@@ -219,7 +219,7 @@ var raw_blocks = [
 ["field_rocks","_none","_none","a rock.","","","null","","",""],
 ["field_river","_none","_none","the river is full of milk. yuck.","","","null","","",""],
 ["weeds","_none","_none","weeds, or flowers. it's hard to tell.","","","null","","",""],
-["wheelbarrow","_none","_none","a wheelbarrow full of a weeds.","","","","","",""],
+["wheelbarrow","_none","_none","a wheelbarrow full of weeds.","","","","","",""],
 ["","","","a weedbarrow!","","","null","","",""],
 ["field_grave1","_none","_none","\"he was a proud father of 16 cats.\"","","","null","","",""],
 ["field_grave2","_none","_none","\"she died like she lived: unremarkably.\"","","","null","","",""],
@@ -592,5 +592,6 @@ var raw_blocks = [
 ["snowglobe_poster","_none","_none","some sort of poster.","","","null","","",""],
 ["snowglobe_pole","_none","_none","a pole or something.","","","","","",""],
 ["","","","this room is very disa-[i]pole[/i]-ting.","","","","","",""],
-["","","","...even that pun was disappointing.","","","null","","",""]
+["","","","...even that pun was disappointing.","","","null","","",""],
+["oliver_ttt","_none","_none","this is where you and oliver played tic tac toe.","","","null","","",""]
 ]

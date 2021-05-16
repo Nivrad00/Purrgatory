@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/field4.gd" type="Script" id=2]
@@ -6,22 +6,23 @@
 [ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/exit_left-overlap.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=6]
-[ext_resource path="res://scenes/river.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/sprites/elijah_and_sean_bench.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/sprites/elijah_sean_on_bench1.png" type="Texture" id=9]
-[ext_resource path="res://assets/sprite_masks/elijah_sean_on_bench1.png" type="BitMap" id=10]
-[ext_resource path="res://assets/sprites/elijah_sean_on_bench2.png" type="Texture" id=11]
-[ext_resource path="res://assets/sprites/elijah_sean_on_bench3.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprites/field_bench_armrest.png" type="Texture" id=13]
-[ext_resource path="res://scenes/surprise.tscn" type="PackedScene" id=14]
-[ext_resource path="res://scripts/digging_container.gd" type="Script" id=15]
-[ext_resource path="res://scripts/digging_button.gd" type="Script" id=16]
-[ext_resource path="res://assets/sprites/hoels/field4_2.png" type="Texture" id=17]
-[ext_resource path="res://assets/sprites/hoels/shovel6.png" type="Texture" id=18]
-[ext_resource path="res://assets/sprites/hoels/field4_1.png" type="Texture" id=19]
-[ext_resource path="res://assets/sprites/hoels/shovel5.png" type="Texture" id=20]
-[ext_resource path="res://scenes/hole_score.tscn" type="PackedScene" id=21]
-[ext_resource path="res://scenes/digging_sound.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/rooms/field4_ttt.png" type="Texture" id=7]
+[ext_resource path="res://scenes/river.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/sprites/elijah_and_sean_bench.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/sprites/elijah_sean_on_bench1.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprite_masks/elijah_sean_on_bench1.png" type="BitMap" id=11]
+[ext_resource path="res://assets/sprites/elijah_sean_on_bench2.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/elijah_sean_on_bench3.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/field_bench_armrest.png" type="Texture" id=14]
+[ext_resource path="res://scenes/surprise.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scripts/digging_container.gd" type="Script" id=16]
+[ext_resource path="res://scripts/digging_button.gd" type="Script" id=17]
+[ext_resource path="res://assets/sprites/hoels/field4_2.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/hoels/shovel6.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/hoels/field4_1.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/hoels/shovel5.png" type="Texture" id=21]
+[ext_resource path="res://scenes/hole_score.tscn" type="PackedScene" id=22]
+[ext_resource path="res://scenes/digging_sound.tscn" type="PackedScene" id=23]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -50,6 +51,7 @@ position = Vector2( 724.982, -290.858 )
 room_label = "field2"
 
 [node name="field_bench" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 script = ExtResource( 6 )
 dialog_label = "field_bench"
 
@@ -57,11 +59,24 @@ dialog_label = "field_bench"
 polygon = PoolVector2Array( 353.792, 330.229, 359.939, 373.567, 361.476, 394.16, 391.451, 406.363, 396.958, 380.649, 434.074, 372.079, 436.471, 381.865, 467.207, 384.939, 469.973, 357.891, 465.115, 344.281, 443.803, 335.942, 436.164, 316.398 )
 
 [node name="field_sign" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 script = ExtResource( 6 )
 dialog_label = "field_sign"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_sign"]
 polygon = PoolVector2Array( 296.998, 360.405, 297.416, 419.36, 309.311, 418.29, 319.159, 389.422, 331.898, 408.024, 337.137, 402.635, 337.137, 343.68 )
+
+[node name="ttt" type="Area2D" parent="state_handler"]
+script = ExtResource( 6 )
+dialog_label = "oliver_ttt"
+sprite_path = [ null ]
+
+[node name="Sprite" type="Sprite" parent="state_handler/ttt"]
+position = Vector2( 480.916, 347.345 )
+texture = ExtResource( 7 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/ttt"]
+polygon = PoolVector2Array( 445.424, 324.629, 444.912, 336.305, 465.484, 344.161, 470.425, 357.363, 469.696, 363.681, 521.063, 370.408, 528.947, 352.596, 498.872, 329.821 )
 
 [node name="field_bush" type="Area2D" parent="state_handler"]
 editor/display_folded = true
@@ -75,6 +90,7 @@ polygon = PoolVector2Array( 137.031, 481.594, 174.499, 501.142, 202.192, 478.336
 polygon = PoolVector2Array( 699.042, 451.457, 701.486, 488.925, 732.437, 508.473, 758.501, 508.473, 781.308, 493.812, 785.38, 462.86, 760.13, 432.724, 725.107, 434.353 )
 
 [node name="horseshoe" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 script = ExtResource( 6 )
 dialog_label = "horseshoe"
 
@@ -82,6 +98,7 @@ dialog_label = "horseshoe"
 polygon = PoolVector2Array( 971.538, 479.418, 982.371, 541.32, 1024.93, 576.14, 1074.45, 580.783, 1096.89, 533.582, 1093.02, 477.87 )
 
 [node name="x" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( 37.1414, -86.6634 )
 script = ExtResource( 6 )
 dialog_label = "field_x"
@@ -90,45 +107,47 @@ dialog_label = "field_x"
 polygon = PoolVector2Array( 989.058, 496.43, 990.647, 532.577, 1093.53, 538.535, 1086.77, 490.075 )
 
 [node name="field_path" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 script = ExtResource( 6 )
 dialog_label = "field_path"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_path"]
 polygon = PoolVector2Array( 90.24, 490.841, 166.481, 504.18, 296.211, 511.519, 418.966, 510.401, 586.633, 476.529, 723.096, 442.704, 826.279, 431.39, 922.543, 410.046, 1000.69, 405.381, 936.962, 418.108, 878.222, 441.538, 749.923, 462.532, 635.59, 505.239, 634.454, 518.517, 710.18, 539.986, 821.07, 539.512, 888.719, 519.684, 894.107, 509.871, 968.234, 487.17, 1044.21, 480.684, 1099.06, 486.417, 1134.56, 502.922, 1160.96, 538.596, 1158.18, 566.393, 1134.56, 590.021, 1075.25, 599.287, 996.172, 601.035, 910.434, 572.155, 809.354, 597.425, 714.591, 592.912, 529.578, 555.007, 452.865, 555.91, 361.713, 577.57, 193.942, 580.462, 90.0976, 563.606 )
 
-[node name="river" parent="state_handler" instance=ExtResource( 7 )]
+[node name="river" parent="state_handler" instance=ExtResource( 8 )]
 volume_db = -35.0
 
-[node name="elijah_and_sean_bench" parent="state_handler" instance=ExtResource( 8 )]
+[node name="elijah_and_sean_bench" parent="state_handler" instance=ExtResource( 9 )]
 margin_left = 362.998
 margin_top = 290.079
 margin_right = 529.998
 margin_bottom = 546.079
-texture_normal = ExtResource( 9 )
-texture_click_mask = ExtResource( 10 )
+texture_normal = ExtResource( 10 )
+texture_click_mask = ExtResource( 11 )
 blackout_label = "elijah_sean_on_bench"
 sprite_path = [ null ]
-animation0 = ExtResource( 9 )
-animation1 = ExtResource( 11 )
-animation2 = ExtResource( 12 )
+animation0 = ExtResource( 10 )
+animation1 = ExtResource( 12 )
+animation2 = ExtResource( 13 )
 
 [node name="field_bench_armrest" type="Sprite" parent="state_handler"]
 position = Vector2( 380.318, 364.007 )
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 
-[node name="surprise" parent="state_handler" instance=ExtResource( 14 )]
+[node name="surprise" parent="state_handler" instance=ExtResource( 15 )]
 
 [node name="digging" type="Node2D" parent="state_handler"]
-script = ExtResource( 15 )
+editor/display_folded = true
+script = ExtResource( 16 )
 
 [node name="digging_button2" type="Area2D" parent="state_handler/digging"]
 position = Vector2( 1084.77, 427.662 )
-script = ExtResource( 16 )
+script = ExtResource( 17 )
 dialog_label = "tori_park_snowglobe"
 
 [node name="hole" type="Sprite" parent="state_handler/digging/digging_button2"]
 position = Vector2( -19.8112, -16.3313 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="polygon" type="CollisionPolygon2D" parent="state_handler/digging/digging_button2"]
 position = Vector2( -1098.07, -496.99 )
@@ -144,16 +163,16 @@ polygon = PoolVector2Array( 1141.08, 517.949, 1148.61, 490.704, 1120.65, 463.817
 
 [node name="shovel6" type="Sprite" parent="state_handler/digging/digging_button2"]
 position = Vector2( -3.45422, -85.7146 )
-texture = ExtResource( 18 )
+texture = ExtResource( 19 )
 
 [node name="digging_button3" type="Area2D" parent="state_handler/digging"]
 position = Vector2( 389.274, 457.768 )
-script = ExtResource( 16 )
+script = ExtResource( 17 )
 dialog_label = "tori_park_chess"
 
 [node name="hole" type="Sprite" parent="state_handler/digging/digging_button3"]
 position = Vector2( -21.7113, -5.88132 )
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 
 [node name="polygon" type="CollisionPolygon2D" parent="state_handler/digging/digging_button3"]
 position = Vector2( -1098.69, -480.08 )
@@ -169,8 +188,8 @@ polygon = PoolVector2Array( 1161.96, 518.493, 1169.74, 484.365, 1122.24, 459.533
 
 [node name="shovel5" type="Sprite" parent="state_handler/digging/digging_button3"]
 position = Vector2( -15.274, -56.768 )
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 
-[node name="score" parent="state_handler/digging" instance=ExtResource( 21 )]
+[node name="score" parent="state_handler/digging" instance=ExtResource( 22 )]
 
-[node name="sound" parent="state_handler/digging" instance=ExtResource( 22 )]
+[node name="sound" parent="state_handler/digging" instance=ExtResource( 23 )]

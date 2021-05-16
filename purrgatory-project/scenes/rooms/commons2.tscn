@@ -54,6 +54,7 @@ editor/display_folded = true
 position = Vector2( 368.232, -166.775 )
 script = ExtResource( 4 )
 dialog_label = "commons_chair1"
+sprite_path = [ null ]
 
 [node name="wait_elijahs_chair" type="Sprite" parent="state_handler/elijahs_chair"]
 position = Vector2( 228.599, 574.835 )
@@ -69,6 +70,7 @@ editor/display_folded = true
 position = Vector2( 472.107, -171.627 )
 script = ExtResource( 4 )
 dialog_label = "commons_chair1"
+sprite_path = [ null ]
 
 [node name="commons2_chairs" type="Sprite" parent="state_handler/seans_chair"]
 position = Vector2( 314.816, 537.668 )
@@ -197,6 +199,7 @@ visible = false
 position = Vector2( 368.232, -148.775 )
 script = ExtResource( 4 )
 dialog_label = "commons_chair1"
+sprite_path = [ null ]
 
 [node name="commons2_chairs" type="Sprite" parent="state_handler/commons_chair1"]
 position = Vector2( 314.816, 537.668 )
@@ -270,6 +273,8 @@ animation2 = ExtResource( 27 )
 
 [node name="glunk" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 28 )
+volume_db = -5.0
+bus = "SFX"
 [connection signal="pressed" from="state_handler/wait_sean" to="state_handler/wait_sean" method="_on_char_obj_button_pressed"]
 [connection signal="pressed" from="state_handler/wait_elijah" to="state_handler/wait_elijah" method="_on_char_obj_button_pressed"]
 [connection signal="pressed" from="state_handler/wait_natalie" to="state_handler/wait_natalie" method="_on_char_obj_button_pressed"]
