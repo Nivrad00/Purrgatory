@@ -2488,6 +2488,7 @@ bus = "SFX"
 [connection signal="pressed" from="state_handler/wait_elijah" to="state_handler/wait_elijah" method="_on_char_obj_button_pressed"]
 [connection signal="pressed" from="state_handler/wait_sean" to="state_handler/wait_sean" method="_on_char_obj_button_pressed"]
 [connection signal="pressed" from="state_handler/wait_natalie" to="state_handler/wait_natalie" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/cat1_idle" to="state_handler/cat1_idle" method="_on_cat1_idle_pressed"]
 [connection signal="mouse_down" from="state_handler/frog" to="state_handler/frog" method="_on_frog_mouse_down"]
 [connection signal="animation_finished" from="state_handler/frog/AnimationPlayer" to="state_handler" method="animation_finished"]
 [connection signal="animation_finished" from="state_handler/poof_sinners1/AnimationPlayer" to="state_handler" method="animation_finished"]

@@ -339,13 +339,13 @@ volume_db = -8.0
 bus = "Music"
 
 [node name="credits" type="Control" parent="."]
-visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 theme = ExtResource( 5 )
 
 [node name="TextureRect" type="TextureRect" parent="credits"]
-margin_right = 1920.0
+margin_left = 5.30005
+margin_right = 1925.3
 margin_bottom = 1080.0
 rect_pivot_offset = Vector2( 73.9432, 195.005 )
 mouse_filter = 2
@@ -360,24 +360,24 @@ rect_pivot_offset = Vector2( 15.9432, 138.005 )
 theme = ExtResource( 16 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="credits/ScrollContainer"]
-margin_right = 1174.0
-margin_bottom = 1258.0
+margin_right = 1153.0
+margin_bottom = 3067.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
 
 [node name="_9" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 129.0
 margin_right = 1153.0
-margin_bottom = 160.0
+margin_bottom = 31.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="purg" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
+margin_top = 51.0
 margin_right = 1153.0
-margin_bottom = 58.0
+margin_bottom = 109.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 7 )
@@ -386,9 +386,9 @@ align = 1
 autowrap = true
 
 [node name="by me" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 78.0
+margin_top = 129.0
 margin_right = 1153.0
-margin_bottom = 109.0
+margin_bottom = 160.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "a game by niv"
@@ -396,18 +396,18 @@ align = 1
 autowrap = true
 
 [node name="_" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 129.0
+margin_top = 180.0
 margin_right = 1153.0
-margin_bottom = 160.0
+margin_bottom = 211.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="hotkeys" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 180.0
+margin_top = 231.0
 margin_right = 1153.0
-margin_bottom = 211.0
+margin_bottom = 262.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "hotkeys"
@@ -416,9 +416,9 @@ autowrap = true
 uppercase = true
 
 [node name="GridContainer" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 231.0
+margin_top = 282.0
 margin_right = 1153.0
-margin_bottom = 568.0
+margin_bottom = 619.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -563,18 +563,18 @@ text = "items"
 autowrap = true
 
 [node name="_2" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 588.0
+margin_top = 639.0
 margin_right = 1153.0
-margin_bottom = 619.0
+margin_bottom = 670.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="credits" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 639.0
+margin_top = 690.0
 margin_right = 1153.0
-margin_bottom = 670.0
+margin_bottom = 721.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "credits"
@@ -583,9 +583,9 @@ autowrap = true
 uppercase = true
 
 [node name="GridContainer2" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 690.0
+margin_top = 741.0
 margin_right = 1153.0
-margin_bottom = 857.0
+margin_bottom = 908.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -651,18 +651,18 @@ text = "zardoru (diego ahumada)"
 autowrap = true
 
 [node name="_3" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 877.0
+margin_top = 928.0
 margin_right = 1153.0
-margin_bottom = 908.0
+margin_bottom = 959.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="art" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 928.0
+margin_top = 979.0
 margin_right = 1153.0
-margin_bottom = 959.0
+margin_bottom = 1010.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "art"
@@ -671,9 +671,9 @@ autowrap = true
 
 [node name="GridContainer3" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
 editor/display_folded = true
-margin_top = 979.0
+margin_top = 1030.0
 margin_right = 1153.0
-margin_bottom = 1112.0
+margin_bottom = 1163.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -738,18 +738,18 @@ text = "rose lim"
 autowrap = true
 
 [node name="_4" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1132.0
+margin_top = 1183.0
 margin_right = 1153.0
-margin_bottom = 1163.0
+margin_bottom = 1214.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="music" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1183.0
+margin_top = 1234.0
 margin_right = 1153.0
-margin_bottom = 1214.0
+margin_bottom = 1265.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "music"
@@ -758,9 +758,9 @@ autowrap = true
 
 [node name="GridContainer4" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
 editor/display_folded = true
-margin_top = 1234.0
+margin_top = 1285.0
 margin_right = 1153.0
-margin_bottom = 1316.0
+margin_bottom = 1367.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -805,18 +805,18 @@ text = "zardoru (diego ahumada)"
 autowrap = true
 
 [node name="_7" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1336.0
+margin_top = 1387.0
 margin_right = 1153.0
-margin_bottom = 1367.0
+margin_bottom = 1418.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="purrgatory blues" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1387.0
+margin_top = 1438.0
 margin_right = 1153.0
-margin_bottom = 1418.0
+margin_bottom = 1469.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "\"purrgatory blues\""
@@ -824,9 +824,9 @@ align = 1
 autowrap = true
 
 [node name="GridContainer7" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1438.0
+margin_top = 1489.0
 margin_right = 1153.0
-margin_bottom = 1571.0
+margin_bottom = 1622.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -892,18 +892,18 @@ text = "molly (molly)"
 autowrap = true
 
 [node name="_5" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1591.0
+margin_top = 1642.0
 margin_right = 1153.0
-margin_bottom = 1622.0
+margin_bottom = 1673.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="other" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1642.0
+margin_top = 1693.0
 margin_right = 1153.0
-margin_bottom = 1673.0
+margin_bottom = 1724.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "other"
@@ -912,9 +912,9 @@ autowrap = true
 
 [node name="GridContainer5" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
 editor/display_folded = true
-margin_top = 1693.0
+margin_top = 1744.0
 margin_right = 1153.0
-margin_bottom = 1877.0
+margin_bottom = 1928.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -962,18 +962,18 @@ uro (daniel taylor)"
 autowrap = true
 
 [node name="_8" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1897.0
+margin_top = 1948.0
 margin_right = 1153.0
-margin_bottom = 1928.0
+margin_bottom = 1979.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="sfx" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1948.0
+margin_top = 1999.0
 margin_right = 1153.0
-margin_bottom = 1979.0
+margin_bottom = 2030.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "sound effects"
@@ -981,9 +981,9 @@ align = 1
 autowrap = true
 
 [node name="sfx4" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1999.0
+margin_top = 2050.0
 margin_right = 1153.0
-margin_bottom = 2030.0
+margin_bottom = 2081.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "freesound.org"
@@ -991,9 +991,9 @@ align = 1
 autowrap = true
 
 [node name="GridContainer6" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2050.0
+margin_top = 2101.0
 margin_right = 1153.0
-margin_bottom = 2557.0
+margin_bottom = 2642.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1001,7 +1001,7 @@ columns = 4
 
 [node name="Label2" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer6"]
 margin_right = 262.0
-margin_bottom = 507.0
+margin_bottom = 541.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "bell
@@ -1018,14 +1018,15 @@ rope pull
 rope creak
 fluorescent hum
 zap
-button"
+button
+fart"
 align = 2
 autowrap = true
 
 [node name="Label3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer6"]
 margin_left = 297.0
 margin_right = 559.0
-margin_bottom = 507.0
+margin_bottom = 541.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "Daphne_in_Wonderland
@@ -1042,13 +1043,14 @@ dansotak
 bahaish
 kyles
 michael_grinnell
-sjnewton"
+sjnewton
+DSISStudios"
 autowrap = true
 
 [node name="Label4" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer6"]
 margin_left = 594.0
 margin_right = 856.0
-margin_bottom = 507.0
+margin_bottom = 541.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "elevator door
@@ -1065,14 +1067,15 @@ page turn
 more page turns
 squeaky footsteps
 library ambience
-echoey footsteps"
+echoey footsteps
+church bell"
 align = 2
 autowrap = true
 
 [node name="Label5" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer6"]
 margin_left = 891.0
 margin_right = 1153.0
-margin_bottom = 507.0
+margin_bottom = 541.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "DisasterServices
@@ -1089,13 +1092,14 @@ mmaruska
 Rainkiljoy
 tmkappelt
 Wihan98
-boedie"
+boedie
+sinewave1kHz"
 autowrap = true
 
 [node name="GridContainer9" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2577.0
+margin_top = 2662.0
 margin_right = 1153.0
-margin_bottom = 2608.0
+margin_bottom = 2693.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1120,18 +1124,18 @@ text = "SoundEffectsFactory"
 autowrap = true
 
 [node name="_6" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2628.0
+margin_top = 2713.0
 margin_right = 1153.0
-margin_bottom = 2659.0
+margin_bottom = 2744.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="additional assets" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2679.0
+margin_top = 2764.0
 margin_right = 1153.0
-margin_bottom = 2710.0
+margin_bottom = 2795.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "additional assets"
@@ -1139,9 +1143,9 @@ align = 1
 autowrap = true
 
 [node name="GridContainer8" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2730.0
+margin_top = 2815.0
 margin_right = 1153.0
-margin_bottom = 2931.0
+margin_bottom = 3016.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1176,9 +1180,9 @@ paul d. hunt"
 autowrap = true
 
 [node name="_10" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2628.0
+margin_top = 3036.0
 margin_right = 1153.0
-margin_bottom = 2659.0
+margin_bottom = 3067.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1

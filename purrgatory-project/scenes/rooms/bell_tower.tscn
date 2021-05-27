@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/bell_tower.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/bell_tower.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scripts/PolygonButton.gd" type="Script" id=5]
+[ext_resource path="res://scripts/bell.gd" type="Script" id=5]
 [ext_resource path="res://assets/audio/ding.ogg" type="AudioStream" id=6]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=7]
+[ext_resource path="res://assets/audio/bell.wav" type="AudioStream" id=8]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -34,4 +36,17 @@ polygon = PoolVector2Array( 398.668, 274.383, 402.714, 303.916, 429.185, 317.781
 stream = ExtResource( 6 )
 volume_db = -10.0
 bus = "SFX"
-[connection signal="mouse_down" from="state_handler/bell" to="state_handler/bell/audio" method="play"]
+
+[node name="bell_rope" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+script = ExtResource( 7 )
+dialog_label = "bell_rope"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/bell_rope"]
+polygon = PoolVector2Array( 580.388, 332.569, 573.872, 559.816, 612.743, 561.578, 612.743, 316.057, 599.511, 316.057 )
+
+[node name="ringing" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 8 )
+bus = "SFX"
+[connection signal="mouse_down" from="state_handler/bell" to="state_handler/bell" method="_on_bell_mouse_down"]
+[connection signal="pressed" from="state_handler/bell" to="state_handler/bell" method="_on_bell_pressed"]

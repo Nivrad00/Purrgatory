@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/sean_meowseum3.png-25582a319ad38b2f7c8de4387b3f4ac7.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/sean_meowseum3.png"
+dest_files=[ "res://.import/sean_meowseum3.png-25582a319ad38b2f7c8de4387b3f4ac7.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

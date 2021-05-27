@@ -5,3 +5,11 @@ func play_default_music(state):
 		emit_signal('change_audio', '')
 	else:			
 		emit_signal('change_audio', default_music)
+		
+func update_state(state):
+	.update_state(state)
+	
+	if state.get('ringing_bell'):
+		$ringing.play()
+		state['ringing_bell'] = false
+		

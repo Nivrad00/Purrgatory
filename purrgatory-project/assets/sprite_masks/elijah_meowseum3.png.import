@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/elijah_meowseum3.png-12e2fdb60b792951855b7eba3f5a9aad.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/elijah_meowseum3.png"
+dest_files=[ "res://.import/elijah_meowseum3.png-12e2fdb60b792951855b7eba3f5a9aad.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

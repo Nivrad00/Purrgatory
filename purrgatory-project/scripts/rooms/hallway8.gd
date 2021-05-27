@@ -3,6 +3,9 @@ extends 'state_handler_template.gd'
 func update_state(state):
 	.update_state(state)
 	
+	$elijah_idle.show()
+	$sean_idle.show()
+	
 	if state.get('elijah_goto_garden'):
 		emit_signal('change_room', 'garden6')
 		state['elijah_goto_garden'] = false
@@ -19,10 +22,10 @@ func update_state(state):
 		emit_signal('set_hidden_sprite', [$elijah_idle])
 		state['display_elijah'] = false
 		
-	if state.get('sean_went_to_piano'):
+	if state.get('opened_meowseum_door'):
 		$sean_idle.hide()
 	
-	if state.get('elijah_went_to_sleep') or state.get('poetry_session'):
+	if state.get('opened_meowseum_door') or state.get('poetry_session'):
 		$elijah_idle.hide()
 	
 	for key in state.keys():
