@@ -29,6 +29,7 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="closet_open_box" type="Sprite" parent="state_handler"]
+visible = false
 position = Vector2( 695.616, 224.932 )
 texture = ExtResource( 4 )
 

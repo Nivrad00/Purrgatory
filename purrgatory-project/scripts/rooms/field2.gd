@@ -31,6 +31,11 @@ func update_state(state):
 		$tori_park.hide()
 		$jacket.hide()
 	
+	# quick override during poem search, cus tori's jacket should be in the commons with tori
+	# (tori herself gets hidden by the CharacterButton override)
+	if state.get('looking_for_poem'):
+		$jacket.hide()
+	
 	if state.get('start_park_game'):
 		state['start_park_game'] = false
 		state['park_game'] = true

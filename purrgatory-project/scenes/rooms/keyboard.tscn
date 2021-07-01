@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/keyboard.gd" type="Script" id=2]
@@ -64,11 +64,12 @@
 [ext_resource path="res://assets/sprites/keyboard/volume_line.png" type="Texture" id=62]
 [ext_resource path="res://assets/sprites/keyboard/power_button_on.png" type="Texture" id=63]
 [ext_resource path="res://assets/sprites/keyboard/power_button_off.png" type="Texture" id=64]
-[ext_resource path="res://scripts/sean_player.gd" type="Script" id=65]
-[ext_resource path="res://assets/sprites/keyboard/seans_hand.png" type="Texture" id=66]
-[ext_resource path="res://assets/sprites/keyboard/seans_hand2.png" type="Texture" id=67]
-[ext_resource path="res://scripts/songs.gd" type="Script" id=68]
-[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=69]
+[ext_resource path="res://assets/audio/calculator_button1.wav" type="AudioStream" id=65]
+[ext_resource path="res://scripts/sean_player.gd" type="Script" id=66]
+[ext_resource path="res://assets/sprites/keyboard/seans_hand.png" type="Texture" id=67]
+[ext_resource path="res://assets/sprites/keyboard/seans_hand2.png" type="Texture" id=68]
+[ext_resource path="res://scripts/songs.gd" type="Script" id=69]
+[ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=70]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Shake"
@@ -106,6 +107,7 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="keyboard_handler" type="Node2D" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( 1.19745, -0.598724 )
 script = ExtResource( 4 )
 
@@ -1102,9 +1104,13 @@ custom_icons/unchecked = ExtResource( 64 )
 action_mode = 0
 enabled_focus_mode = 0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="state_handler/options/power"]
+stream = ExtResource( 65 )
+volume_db = 5.0
+
 [node name="sean_player" type="Node2D" parent="state_handler"]
 editor/display_folded = true
-script = ExtResource( 65 )
+script = ExtResource( 66 )
 
 [node name="song_timer" type="Timer" parent="state_handler/sean_player"]
 wait_time = 1.63
@@ -1121,13 +1127,13 @@ __meta__ = {
 [node name="finger" type="Sprite" parent="state_handler/sean_player/left_hand"]
 visible = false
 position = Vector2( -180.702, -109.196 )
-texture = ExtResource( 66 )
+texture = ExtResource( 67 )
 offset = Vector2( 155, 705 )
 
 [node name="claw" type="Sprite" parent="state_handler/sean_player/left_hand"]
 visible = false
 position = Vector2( -180.702, -109.196 )
-texture = ExtResource( 67 )
+texture = ExtResource( 68 )
 offset = Vector2( 180, 620 )
 
 [node name="right_hand" type="Node2D" parent="state_handler/sean_player"]
@@ -1138,21 +1144,21 @@ __meta__ = {
 [node name="finger" type="Sprite" parent="state_handler/sean_player/right_hand"]
 visible = false
 position = Vector2( -180.702, -109.196 )
-texture = ExtResource( 66 )
+texture = ExtResource( 67 )
 offset = Vector2( 344, 705 )
 flip_h = true
 
 [node name="claw" type="Sprite" parent="state_handler/sean_player/right_hand"]
 visible = false
 position = Vector2( -180.702, -109.196 )
-texture = ExtResource( 67 )
+texture = ExtResource( 68 )
 offset = Vector2( 320, 620 )
 flip_h = true
 
 [node name="songs" type="Node" parent="state_handler/sean_player"]
-script = ExtResource( 68 )
+script = ExtResource( 69 )
 
-[node name="exit4" parent="state_handler" instance=ExtResource( 69 )]
+[node name="exit4" parent="state_handler" instance=ExtResource( 70 )]
 room_label = "piano2"
 
 [node name="battery_timer" type="Timer" parent="state_handler"]
@@ -1161,6 +1167,7 @@ one_shot = true
 [connection signal="pressed" from="state_handler/options/instrument" to="state_handler/options/instrument/AnimationPlayer" method="play" binds= [ "Shake" ]]
 [connection signal="button_down" from="state_handler/options/volume" to="state_handler/options/volume" method="_on_volume_button_down"]
 [connection signal="button_up" from="state_handler/options/volume" to="state_handler/options/volume" method="_on_volume_button_up"]
+[connection signal="toggled" from="state_handler/options/power" to="state_handler/options/power/AudioStreamPlayer" method="play"]
 [connection signal="toggled" from="state_handler/options/power" to="state_handler" method="update_mute"]
 [connection signal="timeout" from="state_handler/sean_player/song_timer" to="state_handler/sean_player" method="play_note"]
 [connection signal="pressed" from="state_handler/exit4" to="state_handler/options" method="save_piano_options"]

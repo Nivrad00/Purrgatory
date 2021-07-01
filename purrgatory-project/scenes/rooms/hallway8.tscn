@@ -56,7 +56,6 @@ dialog_label = "elijahs_chair"
 polygon = PoolVector2Array( 247.405, 378.61, 252.82, 520.302, 296.37, 546.241, 368.34, 545.572, 372.021, 468.429, 337.438, 446.274, 335.816, 377.108, 296.15, 360.863 )
 
 [node name="object" parent="state_handler" instance=ExtResource( 6 )]
-editor/display_folded = true
 dialog_label = "crumpled_papers"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
@@ -91,6 +90,12 @@ dialog_label = "elijahs_bookshelf"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
 polygon = PoolVector2Array( 679.188, 188.074, 680, 470, 913.16, 467.575, 914.249, 189.505 )
+
+[node name="object7" parent="state_handler" instance=ExtResource( 6 )]
+dialog_label = "broken_lamp"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object7"]
+polygon = PoolVector2Array( 705.185, 155.556, 769.744, 130.056, 792.796, 158.641, 856.419, 160.177, 857.033, 189.157, 720.877, 188.328 )
 
 [node name="object4" parent="state_handler" instance=ExtResource( 6 )]
 editor/display_folded = true

@@ -55,3 +55,11 @@ func update_state(state):
 	if state.get('oliver_goto_dropoff1'):
 		state['oliver_goto_dropoff1'] = false
 		emit_signal('change_room', 'hallway4')
+		
+	# slam overrides everything
+	
+	if state.get('slam_in_session'):
+		$oliver_sleeping.hide()
+		$oliver_study.hide()
+		$oliver_asleep_at_desk.hide()
+		

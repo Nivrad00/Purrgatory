@@ -17,6 +17,10 @@ func update_state(state):
 	else:
 		$ks_and_numa.hide()
 		
+	if state.get('display_kyungsoon_and_numa'):
+		state['display_kyungsoon_and_numa'] = false
+		emit_signal('set_hidden_sprite', [$ks_and_numa])
+		
 	if state.get('dont_display_kyungsoon_and_numa'):
 		state['dont_display_kyungsoon_and_numa'] = false
 		emit_signal('set_hidden_sprite', [])

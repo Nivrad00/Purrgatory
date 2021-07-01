@@ -47,11 +47,6 @@ func init_state(state):
 	else:
 		$oliver_huh.hide()
 		
-	if state.get('commons_flowers'):
-		$flowers_etc.show()
-	else:
-		$flowers_etc.hide()
-		
 	if state.get('oliver_goto_commons'):
 		state['oliver_goto_commons'] = false
 		if state.get('numa_at_commons'):
@@ -78,6 +73,11 @@ func init_state(state):
 	
 func update_state(state):
 	.update_state(state)
+		
+	if state.get('commons_flowers'):
+		$flowers_etc.show()
+	else:
+		$flowers_etc.hide()
 		
 	if state.get('display_kyungsoon_and_numa'):
 		state['display_kyungsoon_and_numa'] = false

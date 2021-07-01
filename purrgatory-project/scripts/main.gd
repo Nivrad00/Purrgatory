@@ -8,6 +8,8 @@ var fade_out_loading = false
 var game_path = 'res://scenes/game.tscn'
 var loaded_flag = false
 
+signal game_ready()
+
 func _ready():
 	$loader.start()
 	$loader.queue_resource(game_path)
@@ -25,6 +27,8 @@ func finish_loading(node):
 	$loading/loading_text.set_text('ready!\r\nclick to continue')
 	loaded_flag = true
 	$options_menu.load_and_apply_options()
+	
+	emit_signal('game_ready')
 
 func return_to_main():
 	$game.hide()
@@ -73,7 +77,7 @@ func _process(delta):
 			var file = fade_out
 			fade_out = null
 			$main_menu/audio.stop()
-			$main_menu/audio.volume_db = -8
+			$main_menu/audio.volume_db = -6
 			
 			$delay_timer.start()
 			yield($delay_timer, 'timeout')

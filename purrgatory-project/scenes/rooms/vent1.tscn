@@ -34,6 +34,13 @@ dialog_label = "vent"
 position = Vector2( 453.085, -178.215 )
 polygon = PoolVector2Array( -138.96, 362.595, -137.732, 664.619, -454.489, 827.908, -453.261, 216.494 )
 
+[node name="vent_not_rn" parent="state_handler" instance=ExtResource( 5 )]
+dialog_label = "vent_not_rn"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/vent_not_rn"]
+position = Vector2( 453.085, -178.215 )
+polygon = PoolVector2Array( -138.96, 362.595, -137.732, 664.619, -454.489, 827.908, -453.261, 216.494 )
+
 [node name="exit2" parent="state_handler" instance=ExtResource( 4 )]
 editor/display_folded = true
 room_label = "hallway6"

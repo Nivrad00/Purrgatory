@@ -23,7 +23,7 @@ func _process(delta):
 			$white_timer.start()
 			emit_signal('change_audio', '')
 			if get_node('../../../../..').main_audio:
-				get_node('../../../../..').main_audio.volume_db = -8
+				get_node('../../../../..').main_audio.volume_db = -6
 			
 			yield($white_timer, 'timeout')
 			emit_signal('change_room', 'good_credits')
@@ -33,4 +33,4 @@ func _process(delta):
 			a = min(a + 0.4 * delta, 1)
 			$fadeout.set_modulate(Color(1, 1, 1, a))
 			if get_node('../../../../..').main_audio:
-				get_node('../../../../..').main_audio.volume_db = -8 - 78 * a
+				get_node('../../../../..').main_audio.volume_db = -6 - 78 * a

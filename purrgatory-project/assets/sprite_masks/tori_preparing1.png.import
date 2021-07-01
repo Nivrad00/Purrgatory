@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/tori_preparing1.png-3477c6d40f015b22de3127944f7322fe.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/tori_preparing1.png"
+dest_files=[ "res://.import/tori_preparing1.png-3477c6d40f015b22de3127944f7322fe.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

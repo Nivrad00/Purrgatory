@@ -138,3 +138,27 @@ dialog_label = "mop_water"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object14"]
 position = Vector2( -1.62897, 0 )
 polygon = PoolVector2Array( 823.071, 562.956, 813.141, 576.064, 816.716, 594.733, 765.872, 615.388, 770.361, 631.976, 1026.13, 632.049, 982.752, 592.747, 929.128, 568.517 )
+
+[node name="object15" parent="state_handler" instance=ExtResource( 7 )]
+position = Vector2( -167.369, -149.474 )
+dialog_label = "broken_lock"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object15"]
+position = Vector2( -1.62897, 0 )
+polygon = PoolVector2Array( 799.766, 649.468, 766.734, 647.796, 764.644, 688.772, 795.167, 685.427 )
+
+[node name="object17" parent="state_handler" instance=ExtResource( 7 )]
+position = Vector2( -147.25, -339.051 )
+dialog_label = "broken_lock_holder"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object17"]
+position = Vector2( -1.62897, -1 )
+polygon = PoolVector2Array( 798.827, 649.143, 775.354, 649.018, 773.998, 681.175, 799.026, 681.959 )
+
+[node name="object16" parent="state_handler" instance=ExtResource( 7 )]
+position = Vector2( -167.369, -149.474 )
+dialog_label = "meowseum_mallet"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object16"]
+position = Vector2( -30.6852, 47.1693 )
+polygon = PoolVector2Array( 824.916, 638.689, 812.406, 640.086, 762.199, 661.168, 761.367, 675.592, 775.864, 685.246, 842.655, 652.793, 861.523, 660.718, 887.221, 642.963, 865.334, 616.548, 838.882, 607.511, 828.57, 612.78 )

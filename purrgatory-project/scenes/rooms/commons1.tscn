@@ -1847,6 +1847,7 @@ editor/display_folded = true
 visible = false
 position = Vector2( 640, 800 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/coin"]
@@ -1875,8 +1876,7 @@ polygon = PoolVector2Array( 355.202, 531.001, 347.202, 648.001, 383.202, 650.001
 
 [node name="phone_blackout" type="Area2D" parent="state_handler"]
 editor/display_folded = true
-visible = false
-position = Vector2( 0.431946, -59.9116 )
+position = Vector2( 2.64789, -49.9394 )
 script = ExtResource( 4 )
 dialog_label = "phone_blackout"
 
@@ -1947,6 +1947,7 @@ offset = Vector2( 348.493, 101.286 )
 polygon = PoolVector2Array( 778.808, 373.277, 777.445, 349.097, 794.304, 338.323, 767.218, 286.476, 741.382, 286.084, 732.468, 293.262, 708.023, 340.249, 735.135, 352.675, 744.218, 352.215, 744.45, 510.333, 735.521, 511.956, 717.848, 486.118, 709.169, 485.363, 686.091, 502.758, 691.469, 518.889, 716.716, 520.457, 731.81, 531.4, 745.532, 536.847, 763.388, 536.847, 774.481, 532.112, 780.298, 526.025, 777.728, 516.285, 769.881, 511.28, 760.295, 511.35, 761.846, 390.644 )
 
 [node name="frog" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( 755.46, 465.694 )
 script = ExtResource( 50 )
 

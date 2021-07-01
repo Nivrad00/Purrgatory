@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "TextureButton",
+"class": "CharacterButton",
+"language": "GDScript",
+"path": "res://scripts/char_obj_button.gd"
+}, {
 "base": "Reference",
 "class": "EvalEvaluate",
 "language": "GDScript",
@@ -40,6 +45,7 @@ _global_script_classes=[ {
 "path": "res://scripts/PolygonButton.gd"
 } ]
 _global_script_class_icons={
+"CharacterButton": "",
 "EvalEvaluate": "",
 "EvalNode": "",
 "EvalTokenizer": "",
@@ -62,6 +68,7 @@ mix_rate=48000
 
 window/size/width=1280
 window/size/height=720
+window/size/resizable=false
 window/dpi/allow_hidpi=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
@@ -153,7 +160,7 @@ ui_inventory={
 }
 ui_notes={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":78,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":84,"unicode":0,"echo":false,"script":null)
  ]
 }
 

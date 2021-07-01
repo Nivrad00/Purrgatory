@@ -43,6 +43,10 @@ animation2 = ExtResource( 8 )
 [node name="exit" parent="state_handler" instance=ExtResource( 9 )]
 room_label = "commons2"
 
+[node name="exit_slam" parent="state_handler" instance=ExtResource( 9 )]
+visible = false
+room_label = "commons2_slam"
+
 [node name="exit2" parent="state_handler" instance=ExtResource( 10 )]
 position = Vector2( -465.041, -291.018 )
 room_label = "library3"

@@ -162,24 +162,22 @@ position = Vector2( -241.75, 249.414 )
 polygon = PoolVector2Array( 404.15, 376.962, 370.442, 377.945, 371.117, 416.928, 403.334, 417.132 )
 
 [node name="post_ref" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 901.642, -261.118 )
 script = ExtResource( 6 )
 dialog_label = "attic_ref"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/post_ref"]
 position = Vector2( -241.75, 249.414 )
-polygon = PoolVector2Array( 402.519, 381.448, 378.05, 375.943, 368.466, 385.323, 373.768, 398.169, 373.972, 437.931, 399.46, 438.542, 412.306, 441.397, 420.87, 425.085, 414.142, 391.848 )
+polygon = PoolVector2Array( 402.519, 381.448, 378.05, 375.943, 368.466, 385.323, 373.768, 398.169, 374.371, 432.302, 401.909, 432.553, 403.41, 438.311, 412.306, 441.397, 420.87, 425.085, 414.142, 391.848 )
 
 [node name="post_writing" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 784.066, -162.211 )
 script = ExtResource( 6 )
 dialog_label = "attic_writing"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/post_writing"]
 position = Vector2( -241.75, 249.414 )
-polygon = PoolVector2Array( 458.006, 376.248, 375.37, 383.117, 376.228, 428.62, 457.147, 423.04 )
+polygon = PoolVector2Array( 395.077, 378.965, 353.851, 379.323, 355.285, 430.945, 392.926, 425.209 )
 
 [node name="post_scribble" type="Area2D" parent="state_handler"]
 editor/display_folded = true
@@ -342,7 +340,6 @@ position = Vector2( -244.686, 253.111 )
 polygon = PoolVector2Array( -37.3846, 367.908, -37.0691, 300.221, -101.534, 299.218, -101.443, 366.173 )
 
 [node name="attic_moth" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 1234.64, -215.087 )
 script = ExtResource( 6 )
 dialog_label = "attic_moth"
@@ -442,7 +439,6 @@ position = Vector2( -243.022, 251.922 )
 polygon = PoolVector2Array( 469.917, 377.419, 478.015, 488.223, 485.315, 488.807, 485.315, 439.752, 490.69, 451.04, 491.023, 510.174, 516.206, 510.174, 516.66, 454.471, 602.396, 455.442, 602.51, 483.104, 612.496, 494.755, 627.475, 495.032, 627.752, 455.643, 635.797, 455.643, 636.352, 525.822, 644.119, 536.363, 661.871, 536.086, 661.871, 455.643, 666.032, 455.643, 666.345, 409.668, 604.51, 376.872 )
 
 [node name="attic_books" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 443.482, -234.481 )
 script = ExtResource( 6 )
 dialog_label = "  attic_books"
@@ -452,7 +448,6 @@ polygon = PoolVector2Array( 238.703, 761.709, 235.991, 776.625, 242.771, 788.441
 
 [node name="attic_pencil_box" type="Area2D" parent="state_handler"]
 editor/display_folded = true
-visible = false
 position = Vector2( 443.482, -234.481 )
 script = ExtResource( 6 )
 dialog_label = "  attic_pencil_box"
@@ -461,14 +456,22 @@ dialog_label = "  attic_pencil_box"
 polygon = PoolVector2Array( 238.703, 761.709, 239.087, 790.577, 282.285, 790.19, 281.704, 763.264 )
 
 [node name="attic_crate" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 672.858, -222.579 )
 script = ExtResource( 6 )
 dialog_label = "attic_crate"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_crate"]
 position = Vector2( -243.022, 251.922 )
-polygon = PoolVector2Array( 444.302, 524.545, 597.215, 524.886, 596.874, 405.008, 508.669, 375.719, 393.218, 375.379, 392.691, 469.523 )
+polygon = PoolVector2Array( 444.302, 524.545, 520.968, 524.933, 510.845, 398.617, 516.566, 391.575, 562.34, 392.895, 508.669, 375.719, 393.218, 375.379, 392.691, 469.523 )
+
+[node name="attic_meowna_lisa" type="Area2D" parent="state_handler"]
+position = Vector2( 672.858, -222.579 )
+script = ExtResource( 6 )
+dialog_label = "attic_meowna_lisa"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/attic_meowna_lisa"]
+position = Vector2( -243.022, 251.922 )
+polygon = PoolVector2Array( 520.968, 524.933, 510.845, 398.617, 516.566, 391.575, 562.34, 392.895, 630.518, 392.373, 639.48, 541.144, 521.18, 540.069 )
 
 [node name="natalie_sleeping" parent="state_handler" instance=ExtResource( 11 )]
 margin_left = 188.906

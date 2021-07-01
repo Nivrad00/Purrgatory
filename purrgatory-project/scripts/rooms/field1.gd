@@ -8,6 +8,32 @@ func init_state(state):
 func update_state(state):
 	.update_state(state)
 	
+	# oliver's stuff 
+	
+	if state.get('oliver_goto_park2'):
+		state['oliver_goto_park2'] = false
+		emit_signal('change_room', 'field2')
+	
+	# elijah's stuff
+	
+	if state.get('elijah_quest_complete'):
+		$elijah_park.show()
+		$weeds.show()
+		$wheelbarrow.show()
+	else:
+		$elijah_park.hide()
+		$weeds.hide()
+		$wheelbarrow.hide()
+	
+	# elijah should disappear if:
+	# * elijah ran after numa to get a water bottle
+	# * elijah's helping numa with her poem
+	# * you're with oliver right now
+	if state.get('elijah_why') or state.get('poetry_session') or state.get('oliver_on_date'):
+		$elijah_park.hide()
+		
+	# tori's stuff
+	
 	for button in $digging.get_children():
 		if button is Area2D:
 			var label = button.dialog_label
@@ -18,22 +44,6 @@ func update_state(state):
 		if not state.get('hole_count'):
 			state['hole_count'] = 0
 		$digging/score.text = str(state['hole_count']) + '/16'
-	
-	if state.get('oliver_goto_park2'):
-		state['oliver_goto_park2'] = false
-		emit_signal('change_room', 'field2')
-	
-	if state.get('elijah_sean_left_bench') and not state.get('oliver_on_date'):
-		$elijah_park.show()
-		$weeds.show()
-		$wheelbarrow.show()
-	else:
-		$elijah_park.hide()
-		$weeds.hide()
-		$wheelbarrow.hide()
-	
-	if state.get('elijah_why'):
-		$elijah_park.hide()
 	
 	if state.get('tori_park_complete'):
 		$digging.show()

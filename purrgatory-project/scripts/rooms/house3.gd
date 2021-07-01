@@ -6,6 +6,8 @@ onready var state_copy = get_node('../../../../..').state
 func update_state(state):
 	.update_state(state)
 	
+	# cat cutscene still happens even if the poetry search is currently happening
+	# (cus otherwise there's no reason to not grab the cup)
 	if state.get('cat_in_house'):
 		$house_cat.show()
 	else:

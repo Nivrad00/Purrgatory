@@ -53,6 +53,19 @@ room_label = "commons1"
 position = Vector2( 3.3241, 0 )
 polygon = PoolVector2Array( 1198.45, 622.368, 1240.13, 720.585, 1240.2, 385.505, 1198.31, 412.638 )
 
+[node name="exit2_slam" type="Area2D" parent="state_handler"]
+visible = false
+position = Vector2( -464.02, -291.018 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+room_label = "commons1_slam"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2_slam"]
+position = Vector2( 3.3241, 0 )
+polygon = PoolVector2Array( 1198.45, 622.368, 1240.13, 720.585, 1240.2, 385.505, 1198.31, 412.638 )
+
 [node name="exit2_end" type="Area2D" parent="state_handler"]
 visible = false
 position = Vector2( -461.02, -291.018 )

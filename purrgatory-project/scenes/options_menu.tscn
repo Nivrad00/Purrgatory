@@ -52,14 +52,13 @@ visible = false
 position = Vector2( 369.758, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
-texture_mode = -741343603
+texture_mode = 1329588434
 
 [node name="Line2D2" type="Line2D" parent="."]
 visible = false
 position = Vector2( 398.949, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
-texture_mode = 0
 
 [node name="back" type="Button" parent="."]
 editor/display_folded = true
@@ -267,10 +266,10 @@ margin_right = 30.9536
 margin_bottom = 41.2923
 
 [node name="Label" type="Label" parent="window_size"]
-margin_left = 843.432
-margin_top = 91.1451
-margin_right = 984.432
-margin_bottom = 125.145
+margin_left = 858.685
+margin_top = 90.9788
+margin_right = 999.685
+margin_bottom = 124.979
 text = "window size"
 
 [node name="option_button" type="OptionButton" parent="window_size"]
@@ -310,28 +309,27 @@ focus_mode = 0
 enabled_focus_mode = 0
 
 [node name="enable_notes" type="Control" parent="."]
-editor/display_folded = true
 margin_left = 1134.01
 margin_top = 309.713
 margin_right = 1174.01
 margin_bottom = 349.713
 
 [node name="label" type="Label" parent="enable_notes"]
-margin_left = -251.0
+margin_left = -271.0
 margin_top = -7.0
-margin_right = -31.0
+margin_right = -28.0
 margin_bottom = 27.0
-text = "objective tracker"
+text = "enable \"to do\" list"
 align = 2
 
 [node name="label2" type="Label" parent="enable_notes"]
-margin_left = -297.0
+margin_left = -237.0
 margin_top = 38.0
 margin_right = 32.0
 margin_bottom = 183.0
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
-text = "automatically keeps track of your objectives in the \"notes\" menu."
+text = "automatically keeps track of certain objectives"
 align = 2
 autowrap = true
 
@@ -347,7 +345,6 @@ pressed = true
 enabled_focus_mode = 0
 
 [node name="voicing" type="Control" parent="."]
-editor/display_folded = true
 margin_left = 1134.01
 margin_top = 243.713
 margin_right = 1174.01
@@ -355,9 +352,9 @@ margin_bottom = 283.713
 
 [node name="label" type="Label" parent="voicing"]
 margin_left = -386.0
-margin_top = -7.0
+margin_top = -8.0
 margin_right = -30.0
-margin_bottom = 27.0
+margin_bottom = 26.0
 text = "assistive self-voicing"
 align = 2
 

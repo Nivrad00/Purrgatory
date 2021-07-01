@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/sean_performing1.png-b82bb184de2b38804469c9ed9ca28520.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/sean_performing1.png"
+dest_files=[ "res://.import/sean_performing1.png-b82bb184de2b38804469c9ed9ca28520.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

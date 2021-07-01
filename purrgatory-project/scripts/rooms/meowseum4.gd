@@ -1,5 +1,10 @@
 extends 'state_handler_template.gd'
 
+func init_state(state):
+	.init_state(state)
+	if state.get('sean_went_to_piano'):
+		state['elijah_sweeping'] = true
+	
 func update_state(state):
 	.update_state(state)
 	
@@ -24,22 +29,32 @@ func update_state(state):
 	
 	$sean_meowseum.hide()
 	$sean_sus.hide()
+	$elijah_sus.hide()
 	$elijah_sweeping.hide()
 	$elijah_floor.hide()
 	$elijah_planning.hide()
 	if not state.get('opened_meowseum_door'):
 		pass
-	if not state.get('sean_broke_sculpture'):
+	elif not state.get('sean_broke_sculpture'):
 		$sean_meowseum.show()
 	elif not state.get('sean_went_to_piano'):
 		$sean_sus.show()
+		$elijah_sus.show()
+	elif not state.get('elijah_sweeping'):
+		pass
 	elif not met_everyone:
 		$elijah_sweeping.show()
-	elif not state.get('elijah_planning_slam'):
+	elif not state.get('elijah_planning_slam') and not state.get('ready_for_slam') and not state.get('did_slam'):
 		$elijah_floor.show()
 	elif not state.get('ready_for_slam') and not state.get('did_slam'):
 		$elijah_planning.show()
 	
+	# exception if elijah's helping numa with her poem
+	if state.get('poetry_session'):
+		$elijah_sweeping.hide()
+		$elijah_floor.hide()
+		$elijah_planning.hide()
+		
 	# oliver's date overrides them
 	if state.get('oliver_on_date'):
 		$sean_meowseum.hide()

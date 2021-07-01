@@ -1,0 +1,521 @@
+[gd_scene load_steps=56 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/commons2_slam.gd" type="Script" id=2]
+[ext_resource path="res://assets/rooms/commons2.png" type="Texture" id=3]
+[ext_resource path="res://assets/rooms/commons2_decor.png" type="Texture" id=4]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=5]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=6]
+[ext_resource path="res://assets/sprites/elijah_preparing1.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprite_masks/elijah_preparing1.png" type="BitMap" id=8]
+[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=9]
+[ext_resource path="res://assets/sprites/elijah_preparing2.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/elijah_preparing3.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/natalie_preparing1.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite_masks/natalie_preparing1.png" type="BitMap" id=13]
+[ext_resource path="res://assets/sprites/natalie_preparing2.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/natalie_preparing3.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/slam_planks.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/slam_planks2.png" type="Texture" id=17]
+[ext_resource path="res://assets/rooms/commons2_piano.png" type="Texture" id=18]
+[ext_resource path="res://assets/rooms/commons2_numas_stuff.png" type="Texture" id=19]
+[ext_resource path="res://assets/rooms/commons2_slam_chairs2.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/sean_performing1.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprite_masks/sean_performing1.png" type="BitMap" id=22]
+[ext_resource path="res://assets/sprites/sean_performing2.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/sean_performing3.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/natalie_audience1.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprite_masks/natalie_audience1.png" type="BitMap" id=26]
+[ext_resource path="res://assets/sprites/natalie_audience2.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprites/natalie_audience3.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprites/oliver_audience1.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprite_masks/oliver_audience1.png" type="BitMap" id=30]
+[ext_resource path="res://assets/sprites/oliver_audience2.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprites/oliver_audience3.png" type="Texture" id=32]
+[ext_resource path="res://assets/sprites/sean_preparing1.png" type="Texture" id=33]
+[ext_resource path="res://assets/sprite_masks/sean_preparing1.png" type="BitMap" id=34]
+[ext_resource path="res://assets/sprites/sean_preparing2.png" type="Texture" id=35]
+[ext_resource path="res://assets/sprites/sean_preparing3.png" type="Texture" id=36]
+[ext_resource path="res://assets/sprites/tori_preparing1.png" type="Texture" id=37]
+[ext_resource path="res://assets/sprite_masks/tori_preparing1.png" type="BitMap" id=38]
+[ext_resource path="res://assets/sprites/tori_preparing2.png" type="Texture" id=39]
+[ext_resource path="res://assets/sprites/tori_preparing3.png" type="Texture" id=40]
+[ext_resource path="res://assets/sprites/oliver_cleaning1.png" type="Texture" id=41]
+[ext_resource path="res://assets/sprite_masks/oliver_cleaning1.png" type="BitMap" id=42]
+[ext_resource path="res://assets/sprites/oliver_cleaning2.png" type="Texture" id=43]
+[ext_resource path="res://assets/sprites/oliver_cleaning3.png" type="Texture" id=44]
+[ext_resource path="res://assets/rooms/commons2_slam_chairs1.png" type="Texture" id=45]
+[ext_resource path="res://assets/sprites/numa_audience1.png" type="Texture" id=46]
+[ext_resource path="res://assets/sprite_masks/numa_audience1.png" type="BitMap" id=47]
+[ext_resource path="res://assets/sprites/numa_audience2.png" type="Texture" id=48]
+[ext_resource path="res://assets/sprites/numa_audience3.png" type="Texture" id=49]
+[ext_resource path="res://assets/sprites/tori_audience1.png" type="Texture" id=50]
+[ext_resource path="res://assets/sprite_masks/tori_audience1.png" type="BitMap" id=51]
+[ext_resource path="res://assets/sprites/tori_audience2.png" type="Texture" id=52]
+[ext_resource path="res://assets/sprites/tori_audience3.png" type="Texture" id=53]
+[ext_resource path="res://assets/audio/calculator_button1.wav" type="AudioStream" id=54]
+[ext_resource path="res://assets/audio/purrgatory_blues_loop.ogg" type="AudioStream" id=55]
+
+[node name="room_template" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 1 )
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+
+[node name="white" type="ColorRect" parent="state_handler"]
+margin_right = 1280.0
+margin_bottom = 720.0
+mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bg" type="Sprite" parent="state_handler"]
+position = Vector2( 0, -18 )
+texture = ExtResource( 3 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="decor" type="Sprite" parent="state_handler"]
+position = Vector2( 0, -18 )
+texture = ExtResource( 4 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="slam_rocket" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 451.61, -212.952 )
+script = ExtResource( 5 )
+dialog_label = "slam_rocket"
+sprite_path = [ null ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_rocket"]
+position = Vector2( 2.72073, 19.0453 )
+polygon = PoolVector2Array( 26.1637, 487.969, 28.2718, 538.564, 102.32, 530.131, 101.266, 482.698 )
+
+[node name="slam_swirl" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 451.61, -212.952 )
+script = ExtResource( 5 )
+dialog_label = "slam_swirl"
+sprite_path = [ null ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_swirl"]
+position = Vector2( 40.1401, -69.7599 )
+polygon = PoolVector2Array( 26.1637, 487.969, 30.907, 546.469, 93.097, 539.091, 90.1983, 484.279 )
+
+[node name="slam_lab" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 451.61, -212.952 )
+script = ExtResource( 5 )
+dialog_label = "slam_lab"
+sprite_path = [ null ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_lab"]
+position = Vector2( 135.27, -29.9688 )
+polygon = PoolVector2Array( 26.1637, 487.969, 25.3732, 541.99, 79.3942, 536.456, 77.286, 487.705 )
+
+[node name="slam_pug" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 451.61, -212.952 )
+script = ExtResource( 5 )
+dialog_label = "slam_pug"
+sprite_path = [ null ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_pug"]
+position = Vector2( 198.777, -32.604 )
+polygon = PoolVector2Array( 26.1637, 487.969, 28.5354, 539.354, 79.3942, 536.456, 77.286, 487.705 )
+
+[node name="slam_dane" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 451.61, -212.952 )
+script = ExtResource( 5 )
+dialog_label = "slam_dane"
+sprite_path = [ null ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_dane"]
+position = Vector2( 260.704, -34.1851 )
+polygon = PoolVector2Array( 26.1637, 487.969, 27.2177, 537.51, 77.8129, 534.611, 77.286, 487.705 )
+
+[node name="slam_streamers" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 451.61, -212.952 )
+script = ExtResource( 5 )
+dialog_label = "slam_streamers"
+sprite_path = [ null ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_streamers"]
+position = Vector2( -20.1753, -171.916 )
+polygon = PoolVector2Array( 26.1637, 487.969, 23.577, 499.95, 45.7396, 523.805, 108.752, 554.871, 192.143, 567.38, 262.563, 560.431, 315.377, 542.363, 379.664, 509.403, 381.554, 496.168, 280.716, 527.05, 176.855, 537.267, 124.416, 532.722, 70.8451, 515.076 )
+
+[node name="slam_sleepy" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 833.363, -120.898 )
+script = ExtResource( 5 )
+dialog_label = "slam_sleepy"
+sprite_path = [ null ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_sleepy"]
+polygon = PoolVector2Array( 2.23541, 314.687, 1.51843, 360.931, 48.838, 364.516, 49.5549, 310.027 )
+
+[node name="slam_shapes" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 841.25, -60.3147 )
+script = ExtResource( 5 )
+dialog_label = "slam_shapes"
+sprite_path = [ null ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_shapes"]
+polygon = PoolVector2Array( 2.59393, 313.253, 0.443054, 365.592, 45.9702, 376.346, 50.272, 318.272 )
+
+[node name="slam_poster" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 916.878, -175.085 )
+script = ExtResource( 5 )
+dialog_label = "slam_poster"
+sprite_path = [ null ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_poster"]
+polygon = PoolVector2Array( 2.59393, 313.253, -9.43536, 476.869, 295.734, 518.664, 290.427, 492.128, 291.09, 293.768, 257.256, 273.202 )
+
+[node name="slam_city" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 916.878, -175.085 )
+script = ExtResource( 5 )
+dialog_label = "slam_city"
+sprite_path = [ null ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_city"]
+position = Vector2( 314.457, 25.8731 )
+polygon = PoolVector2Array( 2.59393, 313.253, -3.4646, 400.577, 50.9352, 399.25, 49.6084, 309.689 )
+
+[node name="slam_bagel" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 916.878, -175.085 )
+script = ExtResource( 5 )
+dialog_label = "slam_bagel"
+sprite_path = [ null ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_bagel"]
+position = Vector2( 323.082, 138.653 )
+polygon = PoolVector2Array( 2.59393, 313.253, 1.48767, 406.707, 43.0679, 416.973, 41.0145, 315.333 )
+
+[node name="library_door" type="Area2D" parent="state_handler"]
+position = Vector2( 451.61, -212.952 )
+script = ExtResource( 6 )
+room_label = "library"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/library_door"]
+position = Vector2( 1.72073, 19.0453 )
+polygon = PoolVector2Array( -336.115, 293.819, -337.617, 714.368, -277.4, 705.181, -105.015, 677.947, -106.429, 671.387, -111.441, 590.682, -110.413, 584, -106.944, 579.373, -100.261, 572.434, -91.9078, 570.12, -83.1691, 571.02, -73.9163, 573.333, -67.8763, 576.674, -62.6074, 583.228, -55.9248, 594.666, -51.5554, 661.62, -21.9812, 657.507, -21.0875, 318.127 )
+
+[node name="slam_elijah" type="TextureButton" parent="state_handler"]
+margin_left = 725.936
+margin_top = 97.2986
+margin_right = 883.936
+margin_bottom = 454.299
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 7 )
+texture_click_mask = ExtResource( 8 )
+script = ExtResource( 9 )
+dialog_label = "slam_elijah"
+animation0 = ExtResource( 7 )
+animation1 = ExtResource( 10 )
+animation2 = ExtResource( 11 )
+
+[node name="slam_natalie" type="TextureButton" parent="state_handler"]
+margin_left = 493.815
+margin_top = 163.477
+margin_right = 640.815
+margin_bottom = 503.477
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 12 )
+texture_click_mask = ExtResource( 13 )
+script = ExtResource( 9 )
+dialog_label = "slam_natalie"
+animation0 = ExtResource( 12 )
+animation1 = ExtResource( 14 )
+animation2 = ExtResource( 15 )
+
+[node name="slam_planks" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 451.61, -212.952 )
+script = ExtResource( 5 )
+dialog_label = "slam_planks"
+sprite_path = [ null ]
+
+[node name="Sprite" type="Sprite" parent="state_handler/slam_planks"]
+position = Vector2( 714.964, 786.111 )
+texture = ExtResource( 16 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_planks"]
+position = Vector2( 2.72073, 19.0453 )
+polygon = PoolVector2Array( 602.354, 750.329, 602.354, 782.452, 678.472, 805.497, 718.277, 798.513, 730.847, 819.463, 825.82, 791.53, 778.333, 714.714, 721.769, 730.776, 700.12, 720.999 )
+
+[node name="slam_planks2" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 451.61, -212.952 )
+script = ExtResource( 5 )
+dialog_label = "slam_planks2"
+sprite_path = [ null ]
+
+[node name="Sprite" type="Sprite" parent="state_handler/slam_planks2"]
+position = Vector2( 710.299, 784.944 )
+texture = ExtResource( 17 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_planks2"]
+position = Vector2( 2.72073, 19.0453 )
+polygon = PoolVector2Array( 583.5, 709.826, 584.198, 737.759, 568.835, 767.787, 641.461, 818.067, 670.791, 803.402, 721.07, 813.877, 765.763, 807.592, 834.898, 834.827, 834.898, 797.815, 819.535, 783.849, 799.283, 748.234, 781.825, 742.647, 738.528, 700.049, 673.584, 702.144, 640.762, 688.876 )
+
+[node name="slam_piano" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 451.61, -204.952 )
+script = ExtResource( 5 )
+dialog_label = "slam_piano"
+sprite_path = [ null ]
+
+[node name="piano" type="Sprite" parent="state_handler/slam_piano"]
+position = Vector2( -438.78, 205.449 )
+texture = ExtResource( 18 )
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_piano"]
+position = Vector2( -485.544, -167.291 )
+polygon = PoolVector2Array( 725.527, 779.066, 756.661, 770.684, 806.954, 834.149, 708.763, 879.652, 742.89, 897.016, 829.192, 866.515, 876.581, 898.154, 894.052, 911.419, 910.409, 948.952, 909.218, 960.471, 948.255, 975.449, 991.962, 942.519, 894.968, 844.926, 961.427, 819.779, 1029.68, 780.263, 1029.68, 756.913, 795.579, 701.83, 713.553, 720.989, 713.553, 752.123, 722.534, 758.11 )
+
+[node name="numas_stuff" type="Sprite" parent="state_handler"]
+position = Vector2( 0.0333405, 415.297 )
+texture = ExtResource( 19 )
+centered = false
+
+[node name="chairs2" type="Sprite" parent="state_handler"]
+position = Vector2( 7.40427, 0.661377 )
+texture = ExtResource( 20 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="slam_sean_shh" type="TextureButton" parent="state_handler"]
+margin_left = 738.145
+margin_top = 151.251
+margin_right = 1051.14
+margin_bottom = 580.251
+rect_pivot_offset = Vector2( -530.216, 19.9975 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 21 )
+texture_click_mask = ExtResource( 22 )
+script = ExtResource( 9 )
+dialog_label = "slam_sean_shh"
+sprite_path = [ null ]
+animation0 = ExtResource( 21 )
+animation1 = ExtResource( 23 )
+animation2 = ExtResource( 24 )
+
+[node name="slam_natalie_shh" type="TextureButton" parent="state_handler"]
+margin_left = 357.012
+margin_top = 246.721
+margin_right = 670.013
+margin_bottom = 675.721
+rect_pivot_offset = Vector2( -530.216, 19.9975 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 25 )
+texture_click_mask = ExtResource( 26 )
+script = ExtResource( 9 )
+dialog_label = "slam_natalie_shh"
+animation0 = ExtResource( 25 )
+animation1 = ExtResource( 27 )
+animation2 = ExtResource( 28 )
+
+[node name="slam_oliver_shh" type="TextureButton" parent="state_handler"]
+margin_left = 485.158
+margin_top = 341.527
+margin_right = 798.158
+margin_bottom = 770.527
+rect_pivot_offset = Vector2( -530.216, 19.9975 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 29 )
+texture_click_mask = ExtResource( 30 )
+script = ExtResource( 9 )
+dialog_label = "slam_oliver_shh"
+animation0 = ExtResource( 29 )
+animation1 = ExtResource( 31 )
+animation2 = ExtResource( 32 )
+
+[node name="slam_sean" type="TextureButton" parent="state_handler"]
+margin_left = 448.739
+margin_top = 340.007
+margin_right = 718.739
+margin_bottom = 692.007
+rect_pivot_offset = Vector2( -282.372, -25.6783 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 33 )
+texture_click_mask = ExtResource( 34 )
+script = ExtResource( 9 )
+dialog_label = "slam_sean"
+animation0 = ExtResource( 33 )
+animation1 = ExtResource( 35 )
+animation2 = ExtResource( 36 )
+
+[node name="slam_tori" type="TextureButton" parent="state_handler"]
+margin_left = 909.245
+margin_top = 434.056
+margin_right = 1179.24
+margin_bottom = 786.056
+rect_pivot_offset = Vector2( 213.84, 298.306 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 37 )
+texture_click_mask = ExtResource( 38 )
+script = ExtResource( 9 )
+dialog_label = "slam_tori"
+animation0 = ExtResource( 37 )
+animation1 = ExtResource( 39 )
+animation2 = ExtResource( 40 )
+
+[node name="slam_oliver_after" type="TextureButton" parent="state_handler"]
+margin_left = 741.594
+margin_top = 331.758
+margin_right = 1011.59
+margin_bottom = 720.758
+rect_pivot_offset = Vector2( 213.84, 298.306 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 41 )
+texture_click_mask = ExtResource( 42 )
+script = ExtResource( 9 )
+dialog_label = "slam_oliver_after"
+animation0 = ExtResource( 41 )
+animation1 = ExtResource( 43 )
+animation2 = ExtResource( 44 )
+
+[node name="chairs1" type="Sprite" parent="state_handler"]
+position = Vector2( 7.40427, 0.661377 )
+texture = ExtResource( 45 )
+centered = false
+
+[node name="slam_numa_shh" type="TextureButton" parent="state_handler"]
+margin_left = 78.7677
+margin_top = 306.876
+margin_right = 391.768
+margin_bottom = 735.876
+rect_pivot_offset = Vector2( -530.216, 19.9975 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 46 )
+texture_click_mask = ExtResource( 47 )
+script = ExtResource( 9 )
+dialog_label = "slam_numa_shh"
+animation0 = ExtResource( 46 )
+animation1 = ExtResource( 48 )
+animation2 = ExtResource( 49 )
+
+[node name="slam_tori_shh" type="TextureButton" parent="state_handler"]
+margin_left = 252.815
+margin_top = 376.066
+margin_right = 565.815
+margin_bottom = 805.065
+rect_pivot_offset = Vector2( -530.216, 19.9975 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 50 )
+texture_click_mask = ExtResource( 51 )
+script = ExtResource( 9 )
+dialog_label = "slam_tori_shh"
+animation0 = ExtResource( 50 )
+animation1 = ExtResource( 52 )
+animation2 = ExtResource( 53 )
+
+[node name="slam_chairs" type="Area2D" parent="state_handler"]
+position = Vector2( 451.61, -212.952 )
+script = ExtResource( 5 )
+dialog_label = "slam_chairs"
+sprite_path = [ null ]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/slam_chairs"]
+position = Vector2( 1.72073, 19.0453 )
+polygon = PoolVector2Array( 33.3575, 787.354, 19.459, 727.126, -0.462311, 762.799, -33.1317, 748.575, -42.0911, 778.711, -29.8737, 790.114, -26.8696, 858.236, 25.0184, 872.598, 16.6792, 924.023, -185.026, 917.635, -187.409, 841.769, -182.643, 785.762, -162.825, 760.471, -108.189, 755.774, -105.015, 677.947, -106.429, 671.387, -111.441, 590.682, -110.413, 584, -106.944, 579.373, -100.261, 572.434, -91.9078, 570.12, -83.1691, 571.02, -73.9163, 573.333, -67.8763, 576.674, -62.6074, 583.228, -55.9248, 594.666, -51.5554, 661.62, -21.9812, 657.507, -7.41159, 653.464, 41.2334, 678.945, 43.5498, 661.34, 56.5218, 653.927, 80.6126, 650.221, 121.845, 662.73, 140.84, 682.651, 143.62, 730.833, 214.039, 745.195, 214.965, 761.409, 207.09, 876.304, 192.728, 876.304, 166.42, 816.993, 144.546, 912.441, 122.772, 915.684, 88.4885, 854.53, 57.4484, 887.886, 35.674, 880.474 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_chairs"]
+polygon = PoolVector2Array( 264.755, 750.362, 266.302, 941.484, 441.085, 933.619, 441.879, 837.097, 446.591, 803.753, 419.143, 793.656, 417.646, 766.298, 408.322, 744.334, 390.877, 730.945, 382.832, 725.825, 359.016, 717.615, 310.316, 717.274, 280.505, 727.638 )
+
+[node name="slam_stool" type="Area2D" parent="state_handler"]
+position = Vector2( 451.61, -212.952 )
+script = ExtResource( 5 )
+dialog_label = "slam_stool"
+sprite_path = [ null ]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/slam_stool"]
+position = Vector2( 1.72073, 19.0453 )
+polygon = PoolVector2Array( -196.659, 875.905, -221.868, 838.754, -243.761, 843.398, -249.732, 897.797, -281.213, 895.763, -299.488, 828.139, -334.028, 855.92, -352.559, 847.117, -331.995, 769.096, -346.59, 756.491, -345.263, 723.984, -288.873, 712.706, -241.107, 710.052, -169.459, 744.549, -162.955, 758.577, -182.694, 783.549, -189.115, 843.956, -187.688, 872.495 )
+
+[node name="gray" type="ColorRect" parent="state_handler"]
+margin_top = -50.0
+margin_right = 1280.0
+mouse_filter = 2
+color = Color( 0.278431, 0.278431, 0.278431, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="gray2" type="ColorRect" parent="state_handler"]
+margin_top = 720.0
+margin_right = 1280.0
+margin_bottom = 770.0
+mouse_filter = 2
+color = Color( 0.278431, 0.278431, 0.278431, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="exit" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( -465.02, -291.018 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_horizontal_guides_": [  ]
+}
+room_label = "commons1_slam"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
+polygon = PoolVector2Array( 464, 291.01, 464, 1011.01, 556, 1011.01, 556, 291.021 )
+
+[node name="button" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 54 )
+volume_db = 5.0
+bus = "SFX"
+
+[node name="blues" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 55 )
+volume_db = -6.0
+bus = "Music"
+
+[node name="blues_timer" type="Timer" parent="state_handler"]
+wait_time = 6.21
+one_shot = true
+[connection signal="pressed" from="state_handler/slam_elijah" to="state_handler/slam_elijah" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/slam_natalie" to="state_handler/slam_natalie" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/slam_sean_shh" to="state_handler/slam_sean_shh" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/slam_natalie_shh" to="state_handler/slam_natalie_shh" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/slam_oliver_shh" to="state_handler/slam_oliver_shh" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/slam_sean" to="state_handler/slam_sean" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/slam_tori" to="state_handler/slam_tori" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/slam_oliver_after" to="state_handler/slam_oliver_after" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/slam_numa_shh" to="state_handler/slam_numa_shh" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/slam_tori_shh" to="state_handler/slam_tori_shh" method="_on_char_obj_button_pressed"]
+[connection signal="timeout" from="state_handler/blues_timer" to="state_handler" method="_on_blues_timer_timeout"]

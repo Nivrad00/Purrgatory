@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/numa_audience1.png-3b83fed0b76f59eb1f80f98d08b06128.res"
+
+[deps]
+
+source_file="res://assets/sprite_masks/numa_audience1.png"
+dest_files=[ "res://.import/numa_audience1.png-3b83fed0b76f59eb1f80f98d08b06128.res" ]
+
+[params]
+
+create_from=1
+threshold=0.5

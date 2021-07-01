@@ -78,6 +78,14 @@ func update_state(state):
 				emit_signal('set_hidden_sprite', sprites)
 			else:
 				print(key.substr(6, len(key)-6) + ' not found, buffering it for later')
+		
+		# if you're looking for the poem during the slam, hide ALL CHARACTERS
+		if key == 'looking_for_poem' and state[key]:
+			for child in get_children():
+				if child.is_class('CharacterButton')\
+				and not get_parent().name in ['commons1_slam', 'commons2_slam', 'snowglobe3', 'house1']:
+					# just yeet them instead of hiding or deleting them so the references don't break
+					child.rect_position.x = 1000000
 			
 		
 		

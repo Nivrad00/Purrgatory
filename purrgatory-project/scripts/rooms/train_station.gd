@@ -64,6 +64,15 @@ func update_state(state):
 		$train_tracks1.show()
 		$train_columns1.show()
 	
+	if state.get('display_kyungsoon_and_numa'):
+		state['display_kyungsoon_and_numa'] = false
+		if $ks_and_numa.visible:
+			emit_signal('set_hidden_sprite', [$ks_and_numa])
+		elif $ks_and_numa2.visible:
+			emit_signal('set_hidden_sprite', [$ks_and_numa2])
+		elif $ks_and_numa3.visible:
+			emit_signal('set_hidden_sprite', [$ks_and_numa3])
+		
 	if state.get('dont_display_kyungsoon_and_numa'):
 		state['dont_display_kyungsoon_and_numa'] = false
 		emit_signal('set_hidden_sprite', [])

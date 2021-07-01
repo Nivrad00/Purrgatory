@@ -51,7 +51,7 @@ func _input(event):
 
 func _process(delta):
 	if left_pressed and not right_pressed:
-		print(rect_rotation)
+		# print(rect_rotation)
 		var old = rect_rotation
 		rect_rotation -= AUTO_ROTATION * delta
 		emit_signal("rotated", rect_rotation - old)

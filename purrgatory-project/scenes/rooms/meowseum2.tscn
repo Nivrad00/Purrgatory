@@ -111,18 +111,18 @@ dialog_label = "screm_sign"
 polygon = PoolVector2Array( 519.581, 312.503, 522.148, 338.027, 549.349, 336.7, 548.211, 312.503 )
 
 [node name="object11" parent="state_handler" instance=ExtResource( 5 )]
-editor/display_folded = true
 dialog_label = "missing_painting"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object11"]
-polygon = PoolVector2Array( 712.983, 289.541, 713.718, 351.289, 746.062, 347.613, 746.797, 298.362 )
+position = Vector2( -19.4582, 1.85315 )
+polygon = PoolVector2Array( 711.002, 289.088, 712.855, 352.096, 748.529, 349.316, 748.065, 295.574 )
 
 [node name="object12" parent="state_handler" instance=ExtResource( 5 )]
-editor/display_folded = true
 dialog_label = "missing_painting_sign"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object12"]
-polygon = PoolVector2Array( 684.511, 322.925, 684.511, 348.174, 709.308, 344.673, 707.102, 321.885 )
+position = Vector2( 49.5721, -18.5316 )
+polygon = PoolVector2Array( 684.511, 322.925, 684.594, 343.757, 705.443, 343.757, 704.979, 323.835 )
 
 [node name="object13" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
@@ -146,7 +146,6 @@ dialog_label = "battle_of_cattysburg"
 polygon = PoolVector2Array( 1159.84, 266.902, 1159.84, 368.375, 1282.31, 412.697, 1281.14, 226.08 )
 
 [node name="object16" parent="state_handler" instance=ExtResource( 5 )]
-editor/display_folded = true
 dialog_label = "cattysburg_sign"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object16"]

@@ -23,6 +23,7 @@ func update_state(state):
 	$bg2.hide()
 	
 	# oliver's stuff, which supercedes elijah and tori's
+	# (not used anymore)
 	
 	if state.get('oliver_goto_ttt'):
 		state['oliver_goto_ttt'] = false
@@ -37,6 +38,7 @@ func update_state(state):
 		return
 	
 	# elijah's stuff, which supercedes tori's
+	# (also not used anymore)
 		
 	if state.get('sean_looking_for_elijah') and not state.get('elijah_quest_complete'):
 		$elijah_dropoff.show()

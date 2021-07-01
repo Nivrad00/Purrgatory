@@ -1,4 +1,9 @@
+class_name CharacterButton
 extends TextureButton
+
+# need to override these fuctions so state_handler_template.gd recognizes CharacterButton as a class
+func is_class(type): return type == "CharacterButton" or .is_class(type)
+func get_class():    return "CharacterButton"
 
 export var dialog_label = ''
 # if blank, the character does not have special dialog during the blackout
@@ -17,7 +22,7 @@ signal start_dialog(label, blackout_label, sprite)
 signal stop_all_hovering()
 signal start_all_hovering()
 
-# this script/scene should now only be used for texture buttons (sprites), and not polygon buttons
+# this script/scene should now only be used for texture buttons ("sprites"), and not polygon buttons
 # update: this script is now used for any in-game texture that needs a wobbly animation, for consistency,
 #   even the ones that aren't interactible
 # i probably should have made a new script for non-interactible wobbly sprites but whatevs
@@ -26,8 +31,13 @@ func _ready():
 	for texture in [animation0, animation1, animation2]:
 		if texture:
 			anim_textures.append(texture)
+	
+	# wait for the game to be loaded in, if it's not already
+	if not get_tree().get_root().get_node('main/game'):
+		yield(get_tree().get_root().get_node('main'), 'game_ready')
+		
 	if anim_textures.size() > 1:
-		get_tree().get_root().get_node('main/game').connect('animation_tick', self, '_on_animation_tick')
+		print(get_tree().get_root().get_node('main/game').connect('animation_tick', self, '_on_animation_tick'))
 		
 	connect('mouse_entered', self, '_on_mouse_entered')
 	connect('mouse_exited', self, '_on_mouse_exited')

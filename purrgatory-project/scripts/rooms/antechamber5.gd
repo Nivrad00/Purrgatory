@@ -11,11 +11,14 @@ func play_default_music(state):
 func update_state(state):
 	.update_state(state)
 	
+	$exit2.hide()
+	$exit2_end.hide()
+	$exit2_slam.hide()
 	if state.get('postgame'):
 		$exit2_end.show()
-		$exit2.hide()
+	elif state.get('slam_in_session'):
+		$exit2_slam.show()
 	else:
-		$exit2_end.hide()
 		$exit2.show()
 	
 func exit_pressed():

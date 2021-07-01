@@ -1,28 +1,24 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/piano2.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/piano2.png" type="Texture" id=3]
-[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=6]
-[ext_resource path="res://scenes/sprites/sean_piano.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/sprites/sean_piano_1.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprite_masks/sean_piano_1.png" type="BitMap" id=9]
-[ext_resource path="res://assets/sprites/sean_piano_2.png" type="Texture" id=10]
-[ext_resource path="res://assets/sprites/sean_piano_3.png" type="Texture" id=11]
-[ext_resource path="res://scenes/sprites/sean_arguing_with_tori.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/sprites/sean_tori_arguing1.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprite_masks/sean_tori_arguing1.png" type="BitMap" id=14]
-[ext_resource path="res://assets/sprites/sean_tori_arguing2.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprites/sean_tori_arguing3.png" type="Texture" id=16]
-[ext_resource path="res://assets/audio/purrgatory_blues_snippet1.wav" type="AudioStream" id=17]
-[ext_resource path="res://assets/audio/purrgatory_blues_snippet2.wav" type="AudioStream" id=18]
-[ext_resource path="res://assets/audio/purrgatory_blues_snippet3.wav" type="AudioStream" id=19]
-[ext_resource path="res://assets/audio/purrgatory_blues_snippet4.wav" type="AudioStream" id=20]
-[ext_resource path="res://assets/audio/dont_meowget_me1.wav" type="AudioStream" id=21]
-[ext_resource path="res://assets/audio/dont_meowget_me2.wav" type="AudioStream" id=22]
-[ext_resource path="res://assets/audio/dont_meowget_me3.wav" type="AudioStream" id=23]
+[ext_resource path="res://assets/sprites/piano.png" type="Texture" id=4]
+[ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=7]
+[ext_resource path="res://scenes/sprites/sean_piano.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/sprites/sean_piano_1.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprite_masks/sean_piano_1.png" type="BitMap" id=10]
+[ext_resource path="res://assets/sprites/sean_piano_2.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/sean_piano_3.png" type="Texture" id=12]
+[ext_resource path="res://scenes/sprites/sean_arguing_with_tori.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/sprites/sean_tori_arguing1.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprite_masks/sean_tori_arguing1.png" type="BitMap" id=15]
+[ext_resource path="res://assets/sprites/sean_tori_arguing2.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/sean_tori_arguing3.png" type="Texture" id=17]
+[ext_resource path="res://assets/audio/dont_meowget_me1.wav" type="AudioStream" id=18]
+[ext_resource path="res://assets/audio/dont_meowget_me2.wav" type="AudioStream" id=19]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -38,78 +34,85 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="exit" parent="state_handler" instance=ExtResource( 4 )]
+[node name="piano" type="Sprite" parent="state_handler"]
+position = Vector2( 740, 380 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="exit" parent="state_handler" instance=ExtResource( 5 )]
 room_label = "piano1"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
 polygon = PoolVector2Array( -338.834, 219.915, -341.023, 755.34, -455.921, 813.927, -455.685, 171.465 )
 
-[node name="exit2" parent="state_handler" instance=ExtResource( 4 )]
+[node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
 room_label = "piano4"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+[node name="1" type="CollisionPolygon2D" parent="state_handler/exit2"]
 polygon = PoolVector2Array( 104.041, 332.61, 106.507, 615.867, 322.178, 615.955, 300.47, 597.644, 300.459, 576.973, 328.177, 576.256, 329.67, 333.87 )
 
-[node name="exit3" parent="state_handler" instance=ExtResource( 5 )]
-script = ExtResource( 6 )
+[node name="exit2_copy" parent="state_handler" instance=ExtResource( 5 )]
+visible = false
+room_label = "piano4"
+
+[node name="2" type="CollisionPolygon2D" parent="state_handler/exit2_copy"]
+polygon = PoolVector2Array( 104.041, 332.61, 106.507, 615.867, 328.312, 615.897, 329.67, 333.87 )
+
+[node name="exit3" parent="state_handler" instance=ExtResource( 6 )]
+script = ExtResource( 7 )
 room_label = "keyboard"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3"]
 position = Vector2( 213.372, 21.3727 )
 polygon = PoolVector2Array( 540.033, 377.366, 540.321, 398.203, 622.94, 467.55, 573.093, 515.839, 618.218, 550.134, 705.027, 508.314, 793.304, 548.329, 821.281, 535.694, 754.733, 471.242, 836.208, 420.096, 836.208, 393.402, 789.37, 372.464 )
 
-[node name="sean_piano" parent="state_handler" instance=ExtResource( 7 )]
+[node name="sean_piano" parent="state_handler" instance=ExtResource( 8 )]
 margin_left = 876.018
 margin_top = 236.3
 margin_right = 1058.02
 margin_bottom = 622.3
-texture_normal = ExtResource( 8 )
-texture_click_mask = ExtResource( 9 )
+texture_normal = ExtResource( 9 )
+texture_click_mask = ExtResource( 10 )
+dialog_label = "talk_to_sean_piano"
 blackout_label = "sean_blackout"
-animation0 = ExtResource( 8 )
-animation1 = ExtResource( 10 )
-animation2 = ExtResource( 11 )
+animation0 = ExtResource( 9 )
+animation1 = ExtResource( 11 )
+animation2 = ExtResource( 12 )
 
-[node name="sean_arguing_with_tori" parent="state_handler" instance=ExtResource( 12 )]
+[node name="sean_arguing_with_tori" parent="state_handler" instance=ExtResource( 13 )]
 margin_left = 495.549
 margin_top = 191.474
 margin_right = 922.549
 margin_bottom = 576.474
-texture_normal = ExtResource( 13 )
-texture_click_mask = ExtResource( 14 )
+texture_normal = ExtResource( 14 )
+texture_click_mask = ExtResource( 15 )
 blackout_label = "sean_arguing_with_tori"
-animation0 = ExtResource( 13 )
-animation1 = ExtResource( 15 )
-animation2 = ExtResource( 16 )
+animation0 = ExtResource( 14 )
+animation1 = ExtResource( 16 )
+animation2 = ExtResource( 17 )
 
-[node name="purrgatory_blues1" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 17 )
-bus = "Music"
-
-[node name="purrgatory_blues2" type="AudioStreamPlayer" parent="state_handler"]
+[node name="chord" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 18 )
+volume_db = 10.0
 bus = "Music"
 
-[node name="purrgatory_blues3" type="AudioStreamPlayer" parent="state_handler"]
+[node name="snippet1" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 18 )
+volume_db = 10.0
+bus = "Music"
+
+[node name="snippet2" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 18 )
+volume_db = 10.0
+bus = "Music"
+
+[node name="snippet3" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 18 )
+volume_db = 10.0
+bus = "Music"
+
+[node name="mary_had_a_little_lamb" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 19 )
-bus = "Music"
-
-[node name="purrgatory_blues4" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 20 )
-bus = "Music"
-
-[node name="dont_meowget_me1" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 21 )
-volume_db = 10.0
-bus = "Music"
-
-[node name="dont_meowget_me2" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 22 )
-volume_db = 10.0
-bus = "Music"
-
-[node name="dont_meowget_me3" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 23 )
 volume_db = 10.0
 bus = "Music"
 

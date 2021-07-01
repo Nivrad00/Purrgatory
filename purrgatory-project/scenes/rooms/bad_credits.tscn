@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=2]
@@ -6,56 +6,35 @@
 [ext_resource path="res://assets/sprites/charon_walking1.png" type="Texture" id=4]
 [ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=5]
 [ext_resource path="res://assets/sprites/charon_walking2.png" type="Texture" id=6]
-[ext_resource path="res://assets/ui/logo1.png" type="Texture" id=7]
-[ext_resource path="res://assets/ui/logo2.png" type="Texture" id=8]
-[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=9]
-[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=10]
-[ext_resource path="res://assets/audio/Eternity's_Not_So_Bad.ogg" type="AudioStream" id=11]
-[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=12]
-
-[sub_resource type="Animation" id=1]
-resource_name = "logo"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 7 ), ExtResource( 8 ) ]
-}
+[ext_resource path="res://scenes/logo.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=9]
+[ext_resource path="res://assets/audio/Eternity's_Not_So_Bad.ogg" type="AudioStream" id=10]
+[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=2]
 size = 40
-font_data = ExtResource( 9 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 18
-font_data = ExtResource( 9 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 18
-font_data = ExtResource( 9 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 40
-font_data = ExtResource( 9 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 40
-font_data = ExtResource( 9 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 18
-font_data = ExtResource( 9 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=8]
 size = 18
-font_data = ExtResource( 9 )
+font_data = ExtResource( 8 )
 
 [sub_resource type="Theme" id=9]
 default_font = SubResource( 8 )
@@ -73,7 +52,7 @@ tracks/0/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 11 )
+"stream": ExtResource( 10 )
 } ],
 "times": PoolRealArray( 1.61 )
 }
@@ -108,7 +87,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 23.03, 32.33 ),
+"times": PoolRealArray( 0, 23.03, 33.67 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
@@ -369,7 +348,7 @@ tracks/0/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 11 )
+"stream": ExtResource( 10 )
 } ],
 "times": PoolRealArray( 1.61 )
 }
@@ -609,7 +588,7 @@ size = 10
 
 [sub_resource type="DynamicFont" id=13]
 size = 18
-font_data = ExtResource( 9 )
+font_data = ExtResource( 8 )
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -629,9 +608,9 @@ margin_right = 1279.07
 margin_bottom = 720.0
 
 [node name="TextureRect" type="TextureButton" parent="state_handler"]
-margin_left = 520.965
+margin_left = 1276.96
 margin_top = 420.0
-margin_right = 720.969
+margin_right = 1476.97
 margin_bottom = 720.0
 rect_scale = Vector2( 0.75, 0.75 )
 texture_normal = ExtResource( 4 )
@@ -640,21 +619,16 @@ animation0 = ExtResource( 4 )
 animation1 = ExtResource( 6 )
 
 [node name="1" type="Control" parent="state_handler"]
-editor/display_folded = true
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="logo1" type="Sprite" parent="state_handler/1"]
-editor/display_folded = true
-position = Vector2( 640, 297.041 )
-texture = ExtResource( 7 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/1/logo1"]
-autoplay = "logo"
-anims/logo = SubResource( 1 )
+[node name="logo" parent="state_handler/1" instance=ExtResource( 7 )]
+margin_top = 174.0
+margin_bottom = 424.0
 
 [node name="Label" type="Label" parent="state_handler/1"]
+visible = false
 margin_top = 410.645
 margin_right = 1279.0
 margin_bottom = 481.645
@@ -662,6 +636,7 @@ text = "a game by"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/1"]
+visible = false
 margin_top = 449.941
 margin_right = 1279.0
 margin_bottom = 520.941
@@ -701,6 +676,7 @@ align = 1
 
 [node name="Label3" type="Label" parent="state_handler/2"]
 editor/display_folded = true
+visible = false
 margin_top = 277.532
 margin_right = 1279.0
 margin_bottom = 348.532
@@ -745,6 +721,7 @@ align = 1
 
 [node name="Label4" type="Label" parent="state_handler/2"]
 editor/display_folded = true
+visible = false
 margin_top = 541.26
 margin_right = 1279.0
 margin_bottom = 612.26
@@ -760,23 +737,16 @@ text = "zardoru"
 align = 1
 
 [node name="3" type="Control" parent="state_handler"]
-editor/display_folded = true
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="Label4" type="Label" parent="state_handler/3"]
-margin_top = 87.2714
-margin_right = 1279.0
-margin_bottom = 158.271
-custom_fonts/font = SubResource( 5 )
-text = "additional art"
-align = 1
-
 [node name="Label2" type="Label" parent="state_handler/3"]
-margin_top = 193.381
+editor/display_folded = true
+visible = false
+margin_top = 149.226
 margin_right = 1279.0
-margin_bottom = 264.381
+margin_bottom = 220.226
 text = "tracing"
 align = 1
 
@@ -799,10 +769,12 @@ text = "(david wolters)"
 align = 1
 
 [node name="Label5" type="Label" parent="state_handler/3"]
-margin_top = 363.283
+editor/display_folded = true
+visible = false
+margin_top = 319.128
 margin_right = 1279.0
-margin_bottom = 434.283
-text = "character design"
+margin_bottom = 390.128
+text = "character design help"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/3/Label5"]
@@ -824,10 +796,12 @@ text = "(scott topping)"
 align = 1
 
 [node name="Label6" type="Label" parent="state_handler/3"]
-margin_top = 532.946
+editor/display_folded = true
+visible = false
+margin_top = 488.791
 margin_right = 1279.0
-margin_bottom = 603.946
-text = "backgrounds"
+margin_bottom = 559.791
+text = "background help"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/3/Label6"]
@@ -846,6 +820,7 @@ margin_right = 73.366
 margin_bottom = 40.0
 
 [node name="Label6" type="Label" parent="state_handler/4"]
+visible = false
 margin_left = -257.375
 margin_top = 122.899
 margin_right = 1021.63
@@ -872,6 +847,7 @@ text = "(brandon warren)"
 align = 1
 
 [node name="Label5" type="Label" parent="state_handler/4"]
+visible = false
 margin_left = -258.16
 margin_top = 297.174
 margin_right = 1024.84
@@ -889,6 +865,7 @@ text = "zardoru"
 align = 1
 
 [node name="Label1" type="Label" parent="state_handler/4"]
+visible = false
 margin_left = -258.282
 margin_top = 444.205
 margin_right = 1021.72
@@ -995,6 +972,7 @@ text = "zardoru"
 align = 1
 
 [node name="Label3" type="Label" parent="state_handler/5"]
+visible = false
 margin_left = 217.274
 margin_top = 151.423
 margin_right = 1496.27
@@ -1031,6 +1009,8 @@ text = "(daniel taylor)"
 align = 1
 
 [node name="6" type="Control" parent="state_handler"]
+editor/display_folded = true
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -1218,7 +1198,7 @@ flat = true
 
 [node name="Sprite" type="Sprite" parent="state_handler/last/back"]
 position = Vector2( 124.799, 30.3251 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="state_handler/last/back"]
 margin_top = 1.0
@@ -1242,12 +1222,13 @@ anims/credits = SubResource( 10 )
 "anims/credits (copy)" = SubResource( 11 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="state_handler/AnimationPlayer"]
-stream = ExtResource( 11 )
+stream = ExtResource( 10 )
 volume_db = -8.0
 bus = "Music"
 
 [node name="skip" type="Button" parent="state_handler"]
 editor/display_folded = true
+visible = false
 margin_left = 1182.0
 margin_top = 680.0
 margin_right = 1259.0
@@ -1259,7 +1240,7 @@ flat = true
 
 [node name="Sprite" type="Sprite" parent="state_handler/skip"]
 position = Vector2( 38.3624, 13.8851 )
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 
 [node name="Label" type="Label" parent="state_handler/skip"]
 margin_top = 1.0

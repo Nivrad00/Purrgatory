@@ -8,7 +8,7 @@ func init_state(state):
 	if state.get('_inv_ladder') and not state.get('oliver_asked_about_ladder'):
 		state['oliver_asked_about_ladder'] = true
 		# if oliver's here and you've met him...
-		if not (state.get('oliver_why') or state.get('drama_ongoing') or state.get('oliver_in_study'))\
+		if not (state.get('oliver_why') or state.get('drama_ongoing') or state.get('oliver_in_study') or state.get('slam_in_session'))\
 		and state.get('met_oliver'):
 			emit_signal('start_dialog', 'oliver_ladder', [$oliver_idle])
 	
@@ -25,3 +25,11 @@ func update_state(state):
 	if state.get('display_oliver'):
 		emit_signal('set_hidden_sprite', [$oliver_idle])
 		state['display_oliver'] = false
+
+	$exit.hide()
+	$exit_slam.hide()
+	if state.get('slam_in_session'):
+		$exit_slam.show()
+		$oliver_idle.hide()
+	else:
+		$exit.show()

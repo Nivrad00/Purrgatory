@@ -6,7 +6,8 @@ func init_state(state):
 		state['house_natalie_heard_glass'] = false
 		state['cat_in_house'] = false
 		
-		if state.get('met_natalie'):
+		# natalie shows up if you've met her AND if she's not at the slam
+		if state.get('met_natalie') and not state.get('looking_for_poem'):
 			emit_signal('start_dialog', 'natalie_glass', [])
 
 func update_state(state):

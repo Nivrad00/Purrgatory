@@ -1,95 +1,78 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=2]
 [ext_resource path="res://scripts/rooms/bad_credits.gd" type="Script" id=3]
-[ext_resource path="res://assets/ui/logo1.png" type="Texture" id=4]
-[ext_resource path="res://assets/ui/logo2.png" type="Texture" id=5]
-[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://scripts/credits/oliver1.png" type="Texture" id=7]
-[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=8]
-[ext_resource path="res://scripts/credits/oliver2.png" type="Texture" id=9]
-[ext_resource path="res://scripts/credits/oliver3.png" type="Texture" id=10]
-[ext_resource path="res://scripts/credits/oliver4.png" type="Texture" id=11]
-[ext_resource path="res://scripts/credits/oliver5.png" type="Texture" id=12]
-[ext_resource path="res://scripts/credits/oliver6.png" type="Texture" id=13]
-[ext_resource path="res://scripts/credits/natalie1.png" type="Texture" id=14]
-[ext_resource path="res://scripts/credits/natalie2.png" type="Texture" id=15]
-[ext_resource path="res://scripts/credits/natalie3.png" type="Texture" id=16]
-[ext_resource path="res://scripts/credits/natalie4.png" type="Texture" id=17]
-[ext_resource path="res://scripts/credits/natalie5.png" type="Texture" id=18]
-[ext_resource path="res://scripts/credits/natalie6.png" type="Texture" id=19]
-[ext_resource path="res://scripts/credits/sean1.png" type="Texture" id=20]
-[ext_resource path="res://scripts/credits/sean2.png" type="Texture" id=21]
-[ext_resource path="res://scripts/credits/sean3.png" type="Texture" id=22]
-[ext_resource path="res://scripts/credits/sean4.png" type="Texture" id=23]
-[ext_resource path="res://scripts/credits/sean5.png" type="Texture" id=24]
-[ext_resource path="res://scripts/credits/sean6.png" type="Texture" id=25]
-[ext_resource path="res://scripts/credits/kyungsoon_numa1.png" type="Texture" id=26]
-[ext_resource path="res://scripts/credits/kyungsoon_numa2.png" type="Texture" id=27]
-[ext_resource path="res://scripts/credits/kyungsoon_numa3.png" type="Texture" id=28]
-[ext_resource path="res://scripts/credits/kyungsoon_numa4.png" type="Texture" id=29]
-[ext_resource path="res://scripts/credits/kyungsoon_numa5.png" type="Texture" id=30]
-[ext_resource path="res://scripts/credits/kyungsoon_numa6.png" type="Texture" id=31]
-[ext_resource path="res://scripts/credits/oliver_tori1.png" type="Texture" id=32]
-[ext_resource path="res://scripts/credits/oliver_tori2.png" type="Texture" id=33]
-[ext_resource path="res://scripts/credits/oliver_tori3.png" type="Texture" id=34]
-[ext_resource path="res://scripts/credits/oliver_tori4.png" type="Texture" id=35]
-[ext_resource path="res://scripts/credits/oliver_tori5.png" type="Texture" id=36]
-[ext_resource path="res://scripts/credits/oliver_tori6.png" type="Texture" id=37]
-[ext_resource path="res://scripts/credits/elijah_sean1.png" type="Texture" id=38]
-[ext_resource path="res://scripts/credits/elijah_sean2.png" type="Texture" id=39]
-[ext_resource path="res://scripts/credits/elijah_sean3.png" type="Texture" id=40]
-[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=41]
-[ext_resource path="res://scripts/credits/cat1.png" type="Texture" id=42]
-[ext_resource path="res://scripts/credits/cat2.png" type="Texture" id=43]
-[ext_resource path="res://scripts/credits/cat3.png" type="Texture" id=44]
-[ext_resource path="res://assets/audio/Purrgatory_Blues.wav" type="AudioStream" id=45]
-[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=46]
-
-[sub_resource type="Animation" id=1]
-resource_name = "logo"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 4 ), ExtResource( 5 ) ]
-}
+[ext_resource path="res://scenes/logo.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://scripts/credits/oliver1.png" type="Texture" id=6]
+[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=7]
+[ext_resource path="res://scripts/credits/oliver2.png" type="Texture" id=8]
+[ext_resource path="res://scripts/credits/oliver3.png" type="Texture" id=9]
+[ext_resource path="res://scripts/credits/oliver4.png" type="Texture" id=10]
+[ext_resource path="res://scripts/credits/oliver5.png" type="Texture" id=11]
+[ext_resource path="res://scripts/credits/oliver6.png" type="Texture" id=12]
+[ext_resource path="res://scripts/credits/natalie1.png" type="Texture" id=13]
+[ext_resource path="res://scripts/credits/natalie2.png" type="Texture" id=14]
+[ext_resource path="res://scripts/credits/natalie3.png" type="Texture" id=15]
+[ext_resource path="res://scripts/credits/natalie4.png" type="Texture" id=16]
+[ext_resource path="res://scripts/credits/natalie5.png" type="Texture" id=17]
+[ext_resource path="res://scripts/credits/natalie6.png" type="Texture" id=18]
+[ext_resource path="res://scripts/credits/sean1.png" type="Texture" id=19]
+[ext_resource path="res://scripts/credits/sean2.png" type="Texture" id=20]
+[ext_resource path="res://scripts/credits/sean3.png" type="Texture" id=21]
+[ext_resource path="res://scripts/credits/sean4.png" type="Texture" id=22]
+[ext_resource path="res://scripts/credits/sean5.png" type="Texture" id=23]
+[ext_resource path="res://scripts/credits/sean6.png" type="Texture" id=24]
+[ext_resource path="res://scripts/credits/kyungsoon_numa1.png" type="Texture" id=25]
+[ext_resource path="res://scripts/credits/kyungsoon_numa2.png" type="Texture" id=26]
+[ext_resource path="res://scripts/credits/kyungsoon_numa3.png" type="Texture" id=27]
+[ext_resource path="res://scripts/credits/kyungsoon_numa4.png" type="Texture" id=28]
+[ext_resource path="res://scripts/credits/kyungsoon_numa5.png" type="Texture" id=29]
+[ext_resource path="res://scripts/credits/kyungsoon_numa6.png" type="Texture" id=30]
+[ext_resource path="res://scripts/credits/oliver_tori1.png" type="Texture" id=31]
+[ext_resource path="res://scripts/credits/oliver_tori2.png" type="Texture" id=32]
+[ext_resource path="res://scripts/credits/oliver_tori3.png" type="Texture" id=33]
+[ext_resource path="res://scripts/credits/oliver_tori4.png" type="Texture" id=34]
+[ext_resource path="res://scripts/credits/oliver_tori5.png" type="Texture" id=35]
+[ext_resource path="res://scripts/credits/oliver_tori6.png" type="Texture" id=36]
+[ext_resource path="res://scripts/credits/elijah_sean1.png" type="Texture" id=37]
+[ext_resource path="res://scripts/credits/elijah_sean2.png" type="Texture" id=38]
+[ext_resource path="res://scripts/credits/elijah_sean3.png" type="Texture" id=39]
+[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=40]
+[ext_resource path="res://scripts/credits/cat1.png" type="Texture" id=41]
+[ext_resource path="res://scripts/credits/cat2.png" type="Texture" id=42]
+[ext_resource path="res://scripts/credits/cat3.png" type="Texture" id=43]
+[ext_resource path="res://assets/audio/Purrgatory_Blues.wav" type="AudioStream" id=44]
+[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=45]
 
 [sub_resource type="DynamicFont" id=2]
 size = 40
-font_data = ExtResource( 6 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 18
-font_data = ExtResource( 6 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 18
-font_data = ExtResource( 6 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 40
-font_data = ExtResource( 6 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 40
-font_data = ExtResource( 6 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 18
-font_data = ExtResource( 6 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=8]
 size = 18
-font_data = ExtResource( 6 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="Theme" id=9]
 default_font = SubResource( 8 )
@@ -107,7 +90,7 @@ tracks/0/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 45 )
+"stream": ExtResource( 44 )
 } ],
 "times": PoolRealArray( 1.05 )
 }
@@ -399,7 +382,7 @@ tracks/0/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 45 )
+"stream": ExtResource( 44 )
 } ],
 "times": PoolRealArray( 1.05 )
 }
@@ -683,7 +666,7 @@ tracks/0/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 45 )
+"stream": ExtResource( 44 )
 } ],
 "times": PoolRealArray( 1.05 )
 }
@@ -967,7 +950,7 @@ tracks/0/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 45 )
+"stream": ExtResource( 44 )
 } ],
 "times": PoolRealArray( 0.99 )
 }
@@ -1217,7 +1200,7 @@ size = 10
 
 [sub_resource type="DynamicFont" id=16]
 size = 18
-font_data = ExtResource( 6 )
+font_data = ExtResource( 5 )
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -1245,17 +1228,13 @@ visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="logo1" type="Sprite" parent="state_handler/1"]
-editor/display_folded = true
-position = Vector2( 640, 297.041 )
-texture = ExtResource( 4 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/1/logo1"]
-autoplay = "logo"
-anims/logo = SubResource( 1 )
+[node name="logo" parent="state_handler/1" instance=ExtResource( 4 )]
+margin_top = 174.0
+margin_bottom = 424.0
 
 [node name="Label" type="Label" parent="state_handler/1"]
 editor/display_folded = true
+visible = false
 margin_top = 410.645
 margin_right = 1279.0
 margin_bottom = 481.645
@@ -1371,13 +1350,13 @@ margin_bottom = 492.079
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 7 )
+texture_normal = ExtResource( 6 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 8 )
-animation0 = ExtResource( 7 )
-animation1 = ExtResource( 9 )
-animation2 = ExtResource( 10 )
+script = ExtResource( 7 )
+animation0 = ExtResource( 6 )
+animation1 = ExtResource( 8 )
+animation2 = ExtResource( 9 )
 
 [node name="oliver2" type="TextureButton" parent="state_handler/2"]
 visible = false
@@ -1388,22 +1367,22 @@ margin_bottom = 492.079
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 11 )
+texture_normal = ExtResource( 10 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 8 )
-animation0 = ExtResource( 11 )
-animation1 = ExtResource( 12 )
-animation2 = ExtResource( 13 )
+script = ExtResource( 7 )
+animation0 = ExtResource( 10 )
+animation1 = ExtResource( 11 )
+animation2 = ExtResource( 12 )
 
 [node name="3" type="Control" parent="state_handler"]
-editor/display_folded = true
 visible = false
 margin_left = -15.4296
 margin_right = 24.5704
 margin_bottom = 40.0
 
 [node name="Label4" type="Label" parent="state_handler/3"]
+visible = false
 margin_left = 714.267
 margin_top = 87.2714
 margin_right = 1214.27
@@ -1413,10 +1392,11 @@ text = "additional art"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/3"]
+editor/display_folded = true
 margin_left = 714.267
-margin_top = 193.381
+margin_top = 140.926
 margin_right = 1214.27
-margin_bottom = 264.381
+margin_bottom = 211.926
 text = "tracing"
 align = 1
 
@@ -1439,11 +1419,12 @@ text = "(david wolters)"
 align = 1
 
 [node name="Label5" type="Label" parent="state_handler/3"]
+editor/display_folded = true
 margin_left = 714.267
-margin_top = 363.283
+margin_top = 310.828
 margin_right = 1214.27
-margin_bottom = 434.283
-text = "character design"
+margin_bottom = 381.828
+text = "character design help"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/3/Label5"]
@@ -1465,11 +1446,12 @@ text = "(scott topping)"
 align = 1
 
 [node name="Label6" type="Label" parent="state_handler/3"]
+editor/display_folded = true
 margin_left = 714.267
-margin_top = 532.946
+margin_top = 480.491
 margin_right = 1214.27
-margin_bottom = 603.946
-text = "backgrounds"
+margin_bottom = 551.491
+text = "background help"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/3/Label6"]
@@ -1488,13 +1470,13 @@ margin_bottom = 492.079
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 14 )
+texture_normal = ExtResource( 13 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 8 )
-animation0 = ExtResource( 14 )
-animation1 = ExtResource( 15 )
-animation2 = ExtResource( 16 )
+script = ExtResource( 7 )
+animation0 = ExtResource( 13 )
+animation1 = ExtResource( 14 )
+animation2 = ExtResource( 15 )
 
 [node name="natalie2" type="TextureButton" parent="state_handler/3"]
 visible = false
@@ -1505,15 +1487,16 @@ margin_bottom = 497.549
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 17 )
+texture_normal = ExtResource( 16 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 8 )
-animation0 = ExtResource( 17 )
-animation1 = ExtResource( 18 )
-animation2 = ExtResource( 19 )
+script = ExtResource( 7 )
+animation0 = ExtResource( 16 )
+animation1 = ExtResource( 17 )
+animation2 = ExtResource( 18 )
 
 [node name="4" type="Control" parent="state_handler"]
+editor/display_folded = true
 visible = false
 margin_left = -10.0
 margin_right = 30.0
@@ -1639,13 +1622,13 @@ margin_bottom = 498.079
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 20 )
+texture_normal = ExtResource( 19 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 8 )
-animation0 = ExtResource( 20 )
-animation1 = ExtResource( 21 )
-animation2 = ExtResource( 22 )
+script = ExtResource( 7 )
+animation0 = ExtResource( 19 )
+animation1 = ExtResource( 20 )
+animation2 = ExtResource( 21 )
 
 [node name="sean2" type="TextureButton" parent="state_handler/4"]
 visible = false
@@ -1656,15 +1639,16 @@ margin_bottom = 497.549
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 23 )
+texture_normal = ExtResource( 22 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 8 )
-animation0 = ExtResource( 23 )
-animation1 = ExtResource( 24 )
-animation2 = ExtResource( 25 )
+script = ExtResource( 7 )
+animation0 = ExtResource( 22 )
+animation1 = ExtResource( 23 )
+animation2 = ExtResource( 24 )
 
 [node name="5" type="Control" parent="state_handler"]
+editor/display_folded = true
 visible = false
 margin_left = 1.87463
 margin_top = 1.87469
@@ -1721,13 +1705,13 @@ margin_bottom = 498.079
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 26 )
+texture_normal = ExtResource( 25 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 8 )
-animation0 = ExtResource( 26 )
-animation1 = ExtResource( 27 )
-animation2 = ExtResource( 28 )
+script = ExtResource( 7 )
+animation0 = ExtResource( 25 )
+animation1 = ExtResource( 26 )
+animation2 = ExtResource( 27 )
 
 [node name="kyungsoon_numa2" type="TextureButton" parent="state_handler/5"]
 visible = false
@@ -1738,13 +1722,13 @@ margin_bottom = 497.549
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 29 )
+texture_normal = ExtResource( 28 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 8 )
-animation0 = ExtResource( 29 )
-animation1 = ExtResource( 30 )
-animation2 = ExtResource( 31 )
+script = ExtResource( 7 )
+animation0 = ExtResource( 28 )
+animation1 = ExtResource( 29 )
+animation2 = ExtResource( 30 )
 
 [node name="6" type="Control" parent="state_handler"]
 editor/display_folded = true
@@ -1797,13 +1781,13 @@ margin_bottom = 499.954
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 32 )
+texture_normal = ExtResource( 31 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 8 )
-animation0 = ExtResource( 32 )
-animation1 = ExtResource( 33 )
-animation2 = ExtResource( 34 )
+script = ExtResource( 7 )
+animation0 = ExtResource( 31 )
+animation1 = ExtResource( 32 )
+animation2 = ExtResource( 33 )
 
 [node name="oliver_tori2" type="TextureButton" parent="state_handler/6"]
 visible = false
@@ -1814,15 +1798,17 @@ margin_bottom = 500.423
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 35 )
+texture_normal = ExtResource( 34 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 8 )
-animation0 = ExtResource( 35 )
-animation1 = ExtResource( 36 )
-animation2 = ExtResource( 37 )
+script = ExtResource( 7 )
+animation0 = ExtResource( 34 )
+animation1 = ExtResource( 35 )
+animation2 = ExtResource( 36 )
 
 [node name="7" type="Control" parent="state_handler"]
+editor/display_folded = true
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -2021,13 +2007,13 @@ margin_bottom = 672.202
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 38 )
+texture_normal = ExtResource( 37 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 8 )
-animation0 = ExtResource( 38 )
-animation1 = ExtResource( 39 )
-animation2 = ExtResource( 40 )
+script = ExtResource( 7 )
+animation0 = ExtResource( 37 )
+animation1 = ExtResource( 38 )
+animation2 = ExtResource( 39 )
 
 [node name="last" type="Control" parent="state_handler"]
 visible = false
@@ -2045,7 +2031,7 @@ flat = true
 
 [node name="Sprite" type="Sprite" parent="state_handler/last/back"]
 position = Vector2( 124.799, 30.3251 )
-texture = ExtResource( 41 )
+texture = ExtResource( 40 )
 
 [node name="Label" type="Label" parent="state_handler/last/back"]
 margin_top = 1.0
@@ -2071,13 +2057,13 @@ margin_bottom = 500.497
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 42 )
+texture_normal = ExtResource( 41 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 8 )
-animation0 = ExtResource( 42 )
-animation1 = ExtResource( 43 )
-animation2 = ExtResource( 44 )
+script = ExtResource( 7 )
+animation0 = ExtResource( 41 )
+animation1 = ExtResource( 42 )
+animation2 = ExtResource( 43 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler"]
 autoplay = "Good Credits"
@@ -2088,11 +2074,12 @@ anims/bad_credits_anim = SubResource( 12 )
 anims/credits = SubResource( 14 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="state_handler/AnimationPlayer"]
-stream = ExtResource( 45 )
+stream = ExtResource( 44 )
 volume_db = -3.0
 bus = "Music"
 
 [node name="skip" type="Button" parent="state_handler"]
+visible = false
 margin_left = 1182.0
 margin_top = 680.0
 margin_right = 1259.0
@@ -2104,7 +2091,7 @@ flat = true
 
 [node name="Sprite" type="Sprite" parent="state_handler/skip"]
 position = Vector2( 38.3624, 13.8851 )
-texture = ExtResource( 46 )
+texture = ExtResource( 45 )
 
 [node name="Label" type="Label" parent="state_handler/skip"]
 margin_top = 1.0

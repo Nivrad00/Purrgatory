@@ -1,0 +1,405 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
+[ext_resource path="res://scripts/rooms/commons1_slam.gd" type="Script" id=2]
+[ext_resource path="res://assets/rooms/commons1.png" type="Texture" id=3]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=4]
+[ext_resource path="res://assets/sprites/lamp.png" type="Texture" id=5]
+[ext_resource path="res://assets/rooms/commons1_decor.png" type="Texture" id=6]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=7]
+[ext_resource path="res://assets/sprites/kyungsoon_idle1.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprite_masks/kyungsoon_idle1.png" type="BitMap" id=9]
+[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=10]
+[ext_resource path="res://assets/sprites/kyungsoon_idle2.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/kyungsoon_idle3.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/oliver_preparing1.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite_masks/oliver_preparing1.png" type="BitMap" id=14]
+[ext_resource path="res://assets/sprites/oliver_preparing2.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/oliver_preparing3.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/numa_preparing3.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprite_masks/numa_preparing1.png" type="BitMap" id=18]
+[ext_resource path="res://assets/sprites/numa_preparing1.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/numa_preparing2.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/gift_books.png" type="Texture" id=21]
+[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/sprites/basket-flower-and-card.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprite_masks/basket-flower-and-card.png" type="BitMap" id=24]
+[ext_resource path="res://scenes/cat1_idle.tscn" type="PackedScene" id=25]
+[ext_resource path="res://assets/sprite_masks/cat1.png" type="BitMap" id=26]
+[ext_resource path="res://assets/sprites/cat1.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprites/cat2.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprites/cat3.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprites/cat_toy_on_cat.png" type="Texture" id=30]
+[ext_resource path="res://assets/sprites/cat_toy_stick.png" type="Texture" id=31]
+[ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=32]
+
+[node name="room_template" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1280.0
+margin_bottom = -720.0
+script = ExtResource( 1 )
+
+[node name="state_handler" type="Control" parent="."]
+script = ExtResource( 2 )
+
+[node name="bg" type="Sprite" parent="state_handler"]
+position = Vector2( -0.603211, -0.767334 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="commons_lamp" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 0.431946, -59.9116 )
+script = ExtResource( 4 )
+dialog_label = "commons_lamp"
+sprite_path = [ null ]
+
+[node name="Sprite" type="Sprite" parent="state_handler/commons_lamp"]
+position = Vector2( 390.541, 287.778 )
+texture = ExtResource( 5 )
+offset = Vector2( 348.493, 101.286 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_lamp"]
+polygon = PoolVector2Array( 778.808, 373.277, 777.445, 349.097, 794.304, 338.323, 767.218, 286.476, 741.382, 286.084, 732.468, 293.262, 708.023, 340.249, 735.135, 352.675, 744.218, 352.215, 744.45, 510.333, 735.521, 511.956, 717.848, 486.118, 709.169, 485.363, 686.091, 502.758, 691.469, 518.889, 716.716, 520.457, 731.81, 531.4, 745.532, 536.847, 763.388, 536.847, 774.481, 532.112, 780.298, 526.025, 777.728, 516.285, 769.881, 511.28, 760.295, 511.35, 761.846, 390.644 )
+
+[node name="fg" type="Sprite" parent="state_handler"]
+position = Vector2( 272.998, 77.9988 )
+texture = ExtResource( 6 )
+centered = false
+offset = Vector2( -272.998, -77.9988 )
+
+[node name="exit3" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 456.517, -226.127 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+room_label = "commons3"
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/exit3"]
+position = Vector2( -457.402, 178.988 )
+polygon = PoolVector2Array( 865.429, 508.608, 1021.99, 533.956, 1020.8, 205.639, 866.26, 208.881 )
+
+[node name="slam_exit" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 0.431946, -46.9116 )
+script = ExtResource( 4 )
+dialog_label = "slam_exit"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_exit"]
+position = Vector2( -1.31677, -0.227722 )
+polygon = PoolVector2Array( 865.429, 508.608, 1021.99, 533.956, 1020.8, 205.639, 866.26, 208.881 )
+
+[node name="slam_kyungsoon" type="TextureButton" parent="state_handler"]
+margin_left = 308.629
+margin_top = 327.683
+margin_right = 571.629
+margin_bottom = 647.683
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 8 )
+texture_click_mask = ExtResource( 9 )
+script = ExtResource( 10 )
+dialog_label = "slam_kyungsoon"
+animation0 = ExtResource( 8 )
+animation1 = ExtResource( 11 )
+animation2 = ExtResource( 12 )
+
+[node name="slam_oliver" type="TextureButton" parent="state_handler"]
+margin_left = 590.62
+margin_top = 292.656
+margin_right = 736.62
+margin_bottom = 512.656
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 13 )
+texture_click_mask = ExtResource( 14 )
+script = ExtResource( 10 )
+dialog_label = "slam_oliver"
+animation0 = ExtResource( 13 )
+animation1 = ExtResource( 15 )
+animation2 = ExtResource( 16 )
+
+[node name="slam_numa" type="TextureButton" parent="state_handler"]
+margin_left = 818.933
+margin_top = 356.129
+margin_right = 1022.94
+margin_bottom = 581.129
+rect_pivot_offset = Vector2( 193.914, 141.953 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 17 )
+texture_click_mask = ExtResource( 18 )
+script = ExtResource( 10 )
+dialog_label = "slam_numa"
+animation0 = ExtResource( 19 )
+animation1 = ExtResource( 20 )
+animation2 = ExtResource( 17 )
+
+[node name="slam_elijah_after" type="TextureButton" parent="state_handler"]
+margin_left = 620.384
+margin_top = -29.2361
+margin_right = 865.384
+margin_bottom = 220.764
+rect_pivot_offset = Vector2( 193.914, 141.953 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 19 )
+texture_click_mask = ExtResource( 18 )
+script = ExtResource( 10 )
+dialog_label = "slam_elijah_after"
+animation0 = ExtResource( 19 )
+animation1 = ExtResource( 20 )
+animation2 = ExtResource( 17 )
+
+[node name="gift_books" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 167.376, 609.991 )
+scale = Vector2( 0.95, 0.95 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+dialog_label = "gift_books"
+sprite_path = [ null ]
+
+[node name="Sprite3" type="Sprite" parent="state_handler/gift_books"]
+position = Vector2( 86.8829, -39.0502 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 21 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/gift_books"]
+polygon = PoolVector2Array( -4.61125, -67.0885, -20.1187, 12.583, 86.3317, 17.9866, 97.1389, 0.154785, 185.187, -4.22144, 182.793, -53.9164, 178.601, -76.6683, 160.041, -91.6367, 91.7849, -88.0443, 33.109, -95.2291 )
+
+[node name="flowers_etc" parent="state_handler" instance=ExtResource( 22 )]
+modulate = Color( 1, 1, 1, 1 )
+margin_left = 561.51
+margin_top = 537.918
+margin_right = 762.51
+margin_bottom = 686.918
+texture_normal = ExtResource( 23 )
+texture_click_mask = ExtResource( 24 )
+expand = false
+dialog_label = "flowers_etc"
+sprite_path = [ null ]
+
+[node name="cat1_idle" parent="state_handler" instance=ExtResource( 25 )]
+editor/display_folded = true
+margin_left = 842.662
+margin_top = 491.228
+margin_right = 982.661
+margin_bottom = 625.228
+rect_scale = Vector2( -1, 1 )
+texture_click_mask = ExtResource( 26 )
+animation0 = ExtResource( 27 )
+animation1 = ExtResource( 28 )
+animation2 = ExtResource( 29 )
+
+[node name="cat_toy" type="Sprite" parent="state_handler/cat1_idle"]
+position = Vector2( 64.3513, 59.7073 )
+texture = ExtResource( 30 )
+
+[node name="cat_toy_stick" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 418.098, 4.39074 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+dialog_label = "cat_toy_stick"
+sprite_path = [ null ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/cat_toy_stick"]
+position = Vector2( 2.45557, 9.8219 )
+polygon = PoolVector2Array( 443.329, 553.692, 344.648, 608.36, 358.084, 625.501, 458.154, 568.98 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/cat_toy_stick"]
+position = Vector2( 407.006, 602.771 )
+texture = ExtResource( 31 )
+
+[node name="exit" parent="state_handler" instance=ExtResource( 32 )]
+room_label = "commons2_slam"
+
+[node name="exit2" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 456.517, -226.127 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+room_label = "antechamber5"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
+polygon = PoolVector2Array( -459.085, 322.215, -455.713, 875.844, -322.6, 822.858, -323.376, 337.436 )
+
+[node name="slam_phone" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 0.431946, -46.4066 )
+script = ExtResource( 4 )
+dialog_label = "slam_phone"
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/slam_phone"]
+position = Vector2( 724.366, -231.089 )
+polygon = PoolVector2Array( 355.202, 531.001, 347.202, 648.001, 378.806, 629.291, 395.202, 623.001, 432.202, 610.001, 434.202, 535.001 )
+
+[node name="commons_outlet" type="Area2D" parent="state_handler"]
+position = Vector2( 0.431946, -59.9116 )
+script = ExtResource( 4 )
+dialog_label = "commons_outlet"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_outlet"]
+position = Vector2( 0, 11.0496 )
+polygon = PoolVector2Array( 729.776, 434.396, 698.735, 435.323, 700.588, 471.923, 728.849, 476.092 )
+
+[node name="slam_kyungsoon_art" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 0.431946, -59.9116 )
+script = ExtResource( 4 )
+dialog_label = "slam_kyungsoon_art"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_kyungsoon_art"]
+position = Vector2( -441.549, -97.2493 )
+polygon = PoolVector2Array( 793.102, 429.17, 698.735, 435.323, 697.571, 547.921, 792.439, 530.009 )
+
+[node name="slam_doggers" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 0.431946, -59.9116 )
+script = ExtResource( 4 )
+dialog_label = "slam_doggers"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_doggers"]
+position = Vector2( -329.536, -151.27 )
+polygon = PoolVector2Array( 772.071, 436.418, 698.735, 435.323, 698.587, 512.285, 771.277, 504.738 )
+
+[node name="slam_s" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 4.40405, 43.3631 )
+script = ExtResource( 4 )
+dialog_label = "slam_s"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_s"]
+position = Vector2( -329.536, -151.27 )
+polygon = PoolVector2Array( 768.068, 425.483, 698.735, 435.323, 697.913, 509.601, 768.749, 493.935 )
+
+[node name="slam_building" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 4.40405, 43.3631 )
+script = ExtResource( 4 )
+dialog_label = "slam_building"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_building"]
+position = Vector2( -72.0817, -224.315 )
+polygon = PoolVector2Array( 768.068, 425.483, 699.394, 421.752, 699.641, 441.68, 732.029, 439.472, 739.688, 480.149, 766.843, 484.237 )
+
+[node name="slam_research_poster" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 3.40405, 43.3631 )
+script = ExtResource( 4 )
+dialog_label = "slam_research_poster"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_research_poster"]
+position = Vector2( -72.0817, -224.315 )
+polygon = PoolVector2Array( 531.375, 672.737, 564.204, 459.157, 638.846, 445.62, 699.641, 441.68, 732.029, 439.472, 739.688, 480.149, 772.286, 657.843, 755.603, 661.021, 700.788, 639.571, 686.174, 575.029, 609.732, 589.391, 600.61, 645.468, 579.242, 659.034, 594.336, 688.428 )
+
+[node name="slam_books" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 4.40405, 43.3631 )
+script = ExtResource( 4 )
+dialog_label = "slam_books"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_books"]
+polygon = PoolVector2Array( 508.008, 434.675, 529.292, 421.485, 543.082, 419.986, 555.972, 441.12, 614.129, 440.221, 628.219, 466.152, 624.471, 480.541, 590.746, 499.577, 535.138, 488.485, 533.639, 471.998, 525.395, 469.3 )
+
+[node name="slam_saturn" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 4.40405, 43.3631 )
+script = ExtResource( 4 )
+dialog_label = "slam_saturn"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_saturn"]
+position = Vector2( 285.617, -236.036 )
+polygon = PoolVector2Array( 508.008, 434.675, 541.597, 436.32, 540.627, 471.585, 506.332, 470.29 )
+
+[node name="slam_earth" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 4.40405, 89.3044 )
+script = ExtResource( 4 )
+dialog_label = "slam_earth"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_earth"]
+position = Vector2( 285.617, -236.036 )
+polygon = PoolVector2Array( 507.127, 437.094, 539.653, 437.993, 539.503, 472.767, 507.277, 469.919 )
+
+[node name="slam_donut" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 4.40405, 89.3044 )
+script = ExtResource( 4 )
+dialog_label = "slam_donut"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_donut"]
+position = Vector2( 285.617, -190.619 )
+polygon = PoolVector2Array( 507.127, 437.094, 539.653, 437.993, 539.503, 472.767, 507.277, 469.919 )
+
+[node name="slam_streamers" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 4.40405, 89.3044 )
+script = ExtResource( 4 )
+dialog_label = "slam_streamers"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_streamers"]
+position = Vector2( 285.617, -190.619 )
+polygon = PoolVector2Array( -130.522, 203.063, -131.472, 186.913, -13.7041, 232.227, 87.7982, 264.734, 187.31, 274.685, 300.773, 258.162, 344.473, 286.662, 421.422, 297.112, 506.921, 276.212, 555.505, 259.427, 555.505, 281.32, 492.481, 312.5, 390.315, 323.778, 334.588, 303.876, 298.764, 276.676, 264.266, 291.271, 177.359, 310.51, 64.5787, 297.905, -26.9733, 264.812 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/slam_streamers"]
+polygon = PoolVector2Array( 1035.85, 75.6289, 1033.86, 81.587, 1067.9, 107.341, 1117.95, 128.319, 1183.43, 147.369, 1184.75, 116.91, 1098.61, 103.434 )
+
+[node name="slam_potted_plant1" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 4.40405, 89.3044 )
+script = ExtResource( 4 )
+dialog_label = "slam_potted_plant1"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_potted_plant1"]
+polygon = PoolVector2Array( 967.061, 427.911, 992.542, 524.738, 1013.29, 532.341, 1048.07, 532.604, 1066.67, 527.054, 1078.76, 469.186, 1079.64, 456.634, 1072.23, 421.425, 1048.14, 409.379, 1001.81, 405.673 )
+
+[node name="slam_potted_plant2" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 88.7223, 29.0772 )
+script = ExtResource( 4 )
+dialog_label = "slam_potted_plant2"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_potted_plant2"]
+polygon = PoolVector2Array( 959.185, 412.622, 965.671, 446.905, 989.762, 481.189, 996.248, 518.715, 995.375, 525.634, 1037.16, 535.218, 1060.89, 524.647, 1067.62, 513.832, 1069.88, 504.767, 1077.32, 464.51, 1089.83, 450.148, 1086.59, 416.792, 1094.46, 402.43, 1097.71, 353.321, 1074.08, 322.281, 1026.36, 318.575, 984.666, 341.276, 962.891, 367.22 )
+
+[node name="slam_tools" type="Area2D" parent="state_handler"]
+position = Vector2( 88.7223, 29.0772 )
+script = ExtResource( 4 )
+dialog_label = "slam_tools"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_tools"]
+polygon = PoolVector2Array( 993.794, 539.601, 989.841, 573.858, 1014.95, 578.294, 1041.62, 595.203, 1076.76, 597.406, 1096.22, 580.741, 1088.17, 560.953, 1082.79, 553.283, 1075.99, 547.913, 1060.3, 553.244, 1043.92, 549.883 )
+
+[node name="slam_seeds" type="Area2D" parent="state_handler"]
+position = Vector2( 88.7223, 29.0772 )
+script = ExtResource( 4 )
+dialog_label = "slam_seeds"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_seeds"]
+polygon = PoolVector2Array( 1058.4, 528.597, 1037.97, 543.295, 1044.87, 549.549, 1060.12, 553.064, 1075.92, 547.474, 1074.11, 538.466 )
+
+[node name="slam_carrots" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 88.7223, 29.0772 )
+script = ExtResource( 4 )
+dialog_label = "slam_carrots"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_carrots"]
+position = Vector2( 22.6333, -26.5303 )
+polygon = PoolVector2Array( 1048.18, 531.846, 1045.79, 539.339, 1038.89, 551.02, 1049.12, 563.232, 1051.96, 564.31, 1053.65, 574.078, 1060.23, 579.257, 1066.62, 588.13, 1068.28, 591.95, 1076.26, 590.289, 1076.26, 585.307, 1073.6, 575.674, 1078.27, 568.852, 1078.12, 533.15, 1063.5, 524.917 )
+[connection signal="pressed" from="state_handler/slam_kyungsoon" to="state_handler/slam_kyungsoon" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/slam_oliver" to="state_handler/slam_oliver" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/slam_numa" to="state_handler/slam_numa" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/slam_elijah_after" to="state_handler/slam_elijah_after" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/cat1_idle" to="state_handler/cat1_idle" method="_on_cat1_idle_pressed"]

@@ -17,4 +17,4 @@ func wake_up():
 	set_format_dict('partner', replacements[choice_log[1]])
 	set_format_dict('partner_about', choice_text[3])
 	
-	emit_signal('change_room', 'garden4')
+	emit_signal('change_room', 'hallway1')

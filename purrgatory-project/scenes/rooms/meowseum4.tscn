@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/meowseum4.gd" type="Script" id=2]
@@ -17,18 +17,22 @@
 [ext_resource path="res://assets/sprite_masks/sean_sus1.png" type="BitMap" id=15]
 [ext_resource path="res://assets/sprites/sean_sus2.png" type="Texture" id=16]
 [ext_resource path="res://assets/sprites/sean_sus3.png" type="Texture" id=17]
-[ext_resource path="res://assets/sprites/elijah_sweeping1.png" type="Texture" id=18]
-[ext_resource path="res://assets/sprite_masks/elijah_sweeping3.png" type="BitMap" id=19]
-[ext_resource path="res://assets/sprites/elijah_sweeping2.png" type="Texture" id=20]
-[ext_resource path="res://assets/sprites/elijah_sweeping3.png" type="Texture" id=21]
-[ext_resource path="res://assets/sprites/elijah_floor1.png" type="Texture" id=22]
-[ext_resource path="res://assets/sprite_masks/elijah_floor3.png" type="BitMap" id=23]
-[ext_resource path="res://assets/sprites/elijah_floor2.png" type="Texture" id=24]
-[ext_resource path="res://assets/sprites/elijah_floor3.png" type="Texture" id=25]
-[ext_resource path="res://assets/sprites/elijah_planning1.png" type="Texture" id=26]
-[ext_resource path="res://assets/sprite_masks/elijah_planning1.png" type="BitMap" id=27]
-[ext_resource path="res://assets/sprites/elijah_planning2.png" type="Texture" id=28]
-[ext_resource path="res://assets/sprites/elijah_planning3.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprites/elijah_sus1.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprite_masks/elijah_sus1.png" type="BitMap" id=19]
+[ext_resource path="res://assets/sprites/elijah_sus2.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/elijah_sus3.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/elijah_sweeping1.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprite_masks/elijah_sweeping3.png" type="BitMap" id=23]
+[ext_resource path="res://assets/sprites/elijah_sweeping2.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/elijah_sweeping3.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprites/elijah_floor1.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprite_masks/elijah_floor3.png" type="BitMap" id=27]
+[ext_resource path="res://assets/sprites/elijah_floor2.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprites/elijah_floor3.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprites/elijah_planning1.png" type="Texture" id=30]
+[ext_resource path="res://assets/sprite_masks/elijah_planning1.png" type="BitMap" id=31]
+[ext_resource path="res://assets/sprites/elijah_planning2.png" type="Texture" id=32]
+[ext_resource path="res://assets/sprites/elijah_planning3.png" type="Texture" id=33]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -66,8 +70,9 @@ room_label = "meowseum5"
 polygon = PoolVector2Array( -454.4, 343.163, -295.229, 376.238, -293.195, 736.315, -457.723, 814.599 )
 
 [node name="maine_coon_broken" parent="state_handler" instance=ExtResource( 5 )]
-editor/display_folded = true
-position = Vector2( -7, 0 )
+visible = false
+position = Vector2( 951, -3 )
+scale = Vector2( -1, 1 )
 dialog_label = "maine_coon_broken"
 sprite_path = [ null ]
 
@@ -76,7 +81,7 @@ position = Vector2( 383.352, 556.738 )
 texture = ExtResource( 6 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/maine_coon_broken"]
-polygon = PoolVector2Array( 372.144, 489.253, 367.354, 525.177, 333.226, 513.801, 289.518, 547.331, 241.473, 563.553, 256.906, 590.132, 286.914, 589.274, 317.06, 650.912, 366.157, 640.734, 374.539, 618.58, 411.062, 620.975, 434.998, 648.327, 484.108, 644.925, 527.837, 590.132, 475.127, 524.579, 467.942, 486.858, 415.521, 463.24 )
+polygon = PoolVector2Array( 372.144, 489.253, 367.354, 525.177, 337.268, 520.504, 313.412, 532.709, 289.518, 547.331, 241.473, 563.553, 256.906, 590.132, 286.914, 589.274, 317.06, 650.912, 366.157, 640.734, 374.539, 618.58, 411.062, 620.975, 434.998, 648.327, 484.108, 644.925, 527.837, 590.132, 475.127, 524.579, 467.942, 486.858, 415.521, 463.24 )
 
 [node name="maine_coon" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
@@ -93,7 +98,8 @@ polygon = PoolVector2Array( 451.982, 276.902, 433.12, 322.343, 439.979, 371.213,
 
 [node name="meowseum_broom" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
-position = Vector2( -9.33081, -4.66541 )
+visible = false
+position = Vector2( 388.968, -4.66541 )
 dialog_label = "meowseum_broom"
 sprite_path = [ null ]
 
@@ -106,18 +112,21 @@ position = Vector2( 617, 394.227 )
 texture = ExtResource( 8 )
 
 [node name="object2" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "maine_coon_sign"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
 polygon = PoolVector2Array( 419.323, 430.43, 422.11, 486.117, 524.288, 485.382, 526.867, 429.732 )
 
 [node name="object3" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "schrodingers"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
 polygon = PoolVector2Array( 752.43, 348.026, 755.843, 413.342, 838.173, 413.342, 839.722, 347.328 )
 
 [node name="object4" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 dialog_label = "schrodingers_sign"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object4"]
@@ -133,11 +142,11 @@ polygon = PoolVector2Array( 279.351, 473.451, 292.651, 520.951, 339.201, 522.851
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object5"]
 position = Vector2( 317.301, 5.70001 )
-polygon = PoolVector2Array( 279.351, 473.451, 292.651, 520.951, 339.201, 522.851, 361.051, 469.651, 318.301, 448.751 )
+polygon = PoolVector2Array( 279.351, 473.451, 286.722, 507.92, 339.201, 522.851, 361.051, 469.651, 318.301, 448.751 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="state_handler/object5"]
 position = Vector2( 635.552, 3.79999 )
-polygon = PoolVector2Array( 279.351, 473.451, 292.651, 520.951, 339.201, 522.851, 361.051, 469.651, 318.301, 448.751 )
+polygon = PoolVector2Array( 279.351, 473.451, 292.651, 520.951, 339.201, 522.851, 344.218, 507.556, 332.202, 505.87, 344.753, 461.683, 318.301, 448.751 )
 
 [node name="object6" parent="state_handler" instance=ExtResource( 5 )]
 editor/display_folded = true
@@ -147,7 +156,6 @@ dialog_label = "airplane"
 polygon = PoolVector2Array( 175.351, 631.367, 217.135, 655.354, 255.05, 617.439, 184.636, 615.892 )
 
 [node name="sean_meowseum" type="TextureButton" parent="state_handler"]
-visible = false
 margin_left = 519.299
 margin_top = 255.535
 margin_right = 826.299
@@ -164,55 +172,76 @@ animation1 = ExtResource( 12 )
 animation2 = ExtResource( 13 )
 
 [node name="sean_sus" type="TextureButton" parent="state_handler"]
-margin_left = 546.0
+visible = false
+margin_left = 399.7
 margin_top = 240.0
-margin_right = 696.0
+margin_right = 549.7
 margin_bottom = 589.0
+rect_scale = Vector2( -1, 1 )
 focus_mode = 0
 enabled_focus_mode = 0
 texture_normal = ExtResource( 14 )
 texture_click_mask = ExtResource( 15 )
 script = ExtResource( 11 )
 dialog_label = "sean_broken_cat"
+sprite_path = [ NodePath("."), NodePath("../elijah_sus") ]
 animation0 = ExtResource( 14 )
 animation1 = ExtResource( 16 )
 animation2 = ExtResource( 17 )
 
-[node name="elijah_sweeping" type="TextureButton" parent="state_handler"]
+[node name="elijah_sus" type="TextureButton" parent="state_handler"]
 visible = false
-margin_left = 360.921
-margin_top = 242.029
-margin_right = 718.921
-margin_bottom = 617.029
+margin_left = 818.423
+margin_top = 207.691
+margin_right = 1020.42
+margin_bottom = 602.691
 focus_mode = 0
 enabled_focus_mode = 0
 texture_normal = ExtResource( 18 )
 texture_click_mask = ExtResource( 19 )
 script = ExtResource( 11 )
-dialog_label = "elijah_sweeping"
-blackout_label = "elijah_blackout"
+dialog_label = "sean_broken_cat"
+sprite_path = [ NodePath("../sean_sus"), NodePath(".") ]
 animation0 = ExtResource( 18 )
 animation1 = ExtResource( 20 )
 animation2 = ExtResource( 21 )
 
-[node name="elijah_floor" type="TextureButton" parent="state_handler"]
-margin_left = 574.725
-margin_top = 445.834
-margin_right = 973.725
-margin_bottom = 790.834
-rect_pivot_offset = Vector2( -668.897, -441.004 )
+[node name="elijah_sweeping" type="TextureButton" parent="state_handler"]
+margin_left = 556.39
+margin_top = 242.029
+margin_right = 914.39
+margin_bottom = 617.029
 focus_mode = 0
 enabled_focus_mode = 0
 texture_normal = ExtResource( 22 )
 texture_click_mask = ExtResource( 23 )
 script = ExtResource( 11 )
-dialog_label = "elijah_floor"
+dialog_label = "elijah_sweeping"
 blackout_label = "elijah_blackout"
 animation0 = ExtResource( 22 )
 animation1 = ExtResource( 24 )
 animation2 = ExtResource( 25 )
 
+[node name="elijah_floor" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 738.07
+margin_top = 445.834
+margin_right = 1137.07
+margin_bottom = 790.834
+rect_pivot_offset = Vector2( -668.897, -441.004 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 26 )
+texture_click_mask = ExtResource( 27 )
+script = ExtResource( 11 )
+dialog_label = "elijah_floor"
+blackout_label = "elijah_blackout"
+animation0 = ExtResource( 26 )
+animation1 = ExtResource( 28 )
+animation2 = ExtResource( 29 )
+
 [node name="elijah_planning" type="TextureButton" parent="state_handler"]
+visible = false
 margin_left = 816.828
 margin_top = 236.726
 margin_right = 1215.83
@@ -220,16 +249,17 @@ margin_bottom = 581.725
 rect_pivot_offset = Vector2( -751.34, 343.113 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 26 )
-texture_click_mask = ExtResource( 27 )
+texture_normal = ExtResource( 30 )
+texture_click_mask = ExtResource( 31 )
 script = ExtResource( 11 )
 dialog_label = "elijah_planning"
 blackout_label = "elijah_blackout"
-animation0 = ExtResource( 26 )
-animation1 = ExtResource( 28 )
-animation2 = ExtResource( 29 )
+animation0 = ExtResource( 30 )
+animation1 = ExtResource( 32 )
+animation2 = ExtResource( 33 )
 [connection signal="pressed" from="state_handler/sean_meowseum" to="state_handler/sean_meowseum" method="_on_char_obj_button_pressed"]
 [connection signal="pressed" from="state_handler/sean_sus" to="state_handler/sean_sus" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/elijah_sus" to="state_handler/elijah_sus" method="_on_char_obj_button_pressed"]
 [connection signal="pressed" from="state_handler/elijah_sweeping" to="state_handler/elijah_sweeping" method="_on_char_obj_button_pressed"]
 [connection signal="pressed" from="state_handler/elijah_floor" to="state_handler/elijah_floor" method="_on_char_obj_button_pressed"]
 [connection signal="pressed" from="state_handler/elijah_planning" to="state_handler/elijah_planning" method="_on_char_obj_button_pressed"]

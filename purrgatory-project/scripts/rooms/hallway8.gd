@@ -28,6 +28,7 @@ func update_state(state):
 	if state.get('opened_meowseum_door') or state.get('poetry_session'):
 		$elijah_idle.hide()
 	
+	# pretty sure this isn't used since elijah's question was rewritten
 	for key in state.keys():
 		# template: _madlib1_orange
 		if key.substr(0, 7) == '_madlib' and state[key]:

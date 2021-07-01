@@ -36,7 +36,7 @@ var raw_blocks = [
 ["","you","numa_neutral","so, the flowers are settled now?","flowers_goto_garden","","","","",""],
 ["","numa","","yeah, i think so!","","","","","",""],
 ["","","","i'll start arranging them asap","","","","","",""],
-["","","","they're going to look so beautiful in a boquet!!","","","","","",""],
+["","","","they're going to look so beautiful in a bouquet!!","","","","","",""],
 ["","you","","great!","","","","","",""],
 ["","numa","","unless...","","","","","",""],
 ["","","","what if kyungsoon doesn't like flowers?","","","","","",""],

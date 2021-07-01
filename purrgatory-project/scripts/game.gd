@@ -203,7 +203,6 @@ func _process(delta):
 			# bc you're not returning to the game
 			$meta_ui/exit_confirm.hide()
 			$white_cover.hide()
-			set_process(false)
 			
 		else:
 			a = min(a + 2 * delta, 1)
@@ -449,9 +448,12 @@ func change_audio(song, play = true):
 	if AudioServer.is_bus_mute(0):
 		AudioServer.set_bus_mute(0, false)
 	
+	# two exceptions that override every other source of music
 	if state.get('blackout_music'):
 		song = 'Lights_Out'
-		
+	elif state.get('purrgatory_blues_loop'):
+		song = 'purrgatory_blues_loop'
+
 	if song == current_audio:
 		return
 
@@ -469,7 +471,7 @@ func change_audio(song, play = true):
 		
 		main_audio = load('res://scenes/FadeoutPlayer.tscn').instance()
 		var stream = load('res://assets/audio/' + song + '.ogg')
-		main_audio.volume_db = -8
+		main_audio.volume_db = -6
 		main_audio.name = 'main_audio'
 		main_audio.stream = stream
 		main_audio.set_bus('Music')
@@ -484,7 +486,6 @@ func change_audio(song, play = true):
 
 func return_to_main():
 	$white_cover.show()
-	set_process(true)
 	fade_out = true
 
 func save(file):

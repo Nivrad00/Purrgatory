@@ -15,7 +15,8 @@ func update_state(state):
 		
 	# you actually can't go to the dropoff with oliver anymore
 	# so this is the only actually useful part of this script lol
-	if state.get('tori_closet_complete') and not state.get('preparing_for_climb'):
+	if state.get('tori_closet_complete') and not state.get('preparing_for_climb')\
+	and not state.get('looking_for_poem'):
 		$bg_alt.show()
 		$bg.hide()
 	else:

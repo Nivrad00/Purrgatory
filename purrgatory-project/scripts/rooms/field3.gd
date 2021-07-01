@@ -4,7 +4,7 @@ func init_state(state):
 	.init_state(state)
 	
 	var r = rand_range(0, 100)
-	if state.get('met_sean') and floor(r) == 0:
+	if state.get('met_sean') and not state.get('looking_for_poem') and floor(r) == 0:
 		$sean_fence.show()
 	else:
 		$sean_fence.hide()

@@ -1,23 +1,25 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://scripts/resource_queue.gd" type="Script" id=2]
 [ext_resource path="res://cat_01_color05.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://addons/3D Outline/Outline.material" type="Material" id=4]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=5]
-[ext_resource path="res://assets/ui/logo2.png" type="Texture" id=6]
-[ext_resource path="res://assets/ui/logo1.png" type="Texture" id=7]
-[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=9]
-[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=10]
-[ext_resource path="res://assets/ui/menu_x.png" type="Texture" id=11]
-[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=12]
-[ext_resource path="res://scenes/cat1_idle.tscn" type="PackedScene" id=13]
-[ext_resource path="res://assets/audio/Slice_Of_Heaven.ogg" type="AudioStream" id=14]
-[ext_resource path="res://assets/ui/credits_box.png" type="Texture" id=15]
-[ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=16]
-[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=17]
-[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/logo.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/menu_x.png" type="Texture" id=10]
+[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=11]
+[ext_resource path="res://scenes/cat1_idle.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/sprites/cat1.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/cat2.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/cat3.png" type="Texture" id=15]
+[ext_resource path="res://assets/audio/Slice_Of_Heaven.ogg" type="AudioStream" id=16]
+[ext_resource path="res://assets/ui/credits_box.png" type="Texture" id=17]
+[ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=18]
+[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=20]
 
 [sub_resource type="SpatialMaterial" id=1]
 next_pass = ExtResource( 4 )
@@ -45,32 +47,17 @@ ambient_light_color = Color( 1, 1, 1, 1 )
 [sub_resource type="ViewportTexture" id=4]
 viewport_path = NodePath("rotating_cat/Viewport")
 
-[sub_resource type="Animation" id=5]
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 7 ), ExtResource( 6 ) ]
-}
+[sub_resource type="DynamicFont" id=5]
+size = 25
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=6]
-size = 25
-font_data = ExtResource( 8 )
+size = 45
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=7]
-size = 45
-font_data = ExtResource( 8 )
-
-[sub_resource type="DynamicFont" id=8]
 size = 25
-font_data = ExtResource( 8 )
+font_data = ExtResource( 7 )
 
 [node name="main" type="Node"]
 script = ExtResource( 1 )
@@ -83,6 +70,7 @@ wait_time = 0.5
 one_shot = true
 
 [node name="rotating_cat" type="Control" parent="."]
+editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
@@ -157,23 +145,16 @@ enabled_focus_mode = 0
 flat = true
 
 [node name="main_menu" type="Control" parent="."]
-editor/display_folded = true
 visible = false
 margin_top = -15.0093
 margin_right = 40.0
 margin_bottom = 24.9907
 theme = ExtResource( 5 )
 
-[node name="logo" type="Sprite" parent="main_menu"]
-editor/display_folded = true
-position = Vector2( 641.969, 166.401 )
-texture = ExtResource( 6 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="main_menu/logo"]
-autoplay = "New Anim"
-"anims/New Anim" = SubResource( 5 )
+[node name="logo" parent="main_menu" instance=ExtResource( 6 )]
 
 [node name="buttons" type="Control" parent="main_menu"]
+editor/display_folded = true
 margin_left = 504.871
 margin_top = 284.323
 margin_right = 782.871
@@ -188,7 +169,7 @@ margin_top = 11.0
 margin_right = 262.0
 margin_bottom = 69.0
 focus_mode = 0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
@@ -199,7 +180,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/start"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 centered = false
 
 [node name="Label" type="Label" parent="main_menu/buttons/start"]
@@ -215,7 +196,7 @@ margin_top = 83.877
 margin_right = 263.715
 margin_bottom = 141.877
 focus_mode = 0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
@@ -226,7 +207,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/load"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 centered = false
 
 [node name="Label" type="Label" parent="main_menu/buttons/load"]
@@ -239,7 +220,7 @@ valign = 1
 [node name="x" type="Sprite" parent="main_menu/buttons/load"]
 visible = false
 position = Vector2( 125.826, 29.3703 )
-texture = ExtResource( 11 )
+texture = ExtResource( 10 )
 
 [node name="options" type="Button" parent="main_menu/buttons"]
 margin_left = 12.1426
@@ -247,7 +228,7 @@ margin_top = 153.735
 margin_right = 262.143
 margin_bottom = 211.734
 focus_mode = 0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
@@ -258,7 +239,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/options"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 centered = false
 
 [node name="Label" type="Label" parent="main_menu/buttons/options"]
@@ -274,7 +255,7 @@ margin_top = 224.735
 margin_right = 262.143
 margin_bottom = 282.734
 focus_mode = 0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
@@ -285,7 +266,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/credits"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 centered = false
 flip_h = true
 flip_v = true
@@ -303,7 +284,7 @@ margin_top = 297.734
 margin_right = 262.85
 margin_bottom = 355.734
 focus_mode = 0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
@@ -314,7 +295,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/exit"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 centered = false
 flip_h = true
 flip_v = true
@@ -326,19 +307,23 @@ text = "exit"
 align = 1
 valign = 1
 
-[node name="cat1_idle" parent="main_menu" instance=ExtResource( 13 )]
+[node name="cat1_idle" parent="main_menu" instance=ExtResource( 12 )]
 margin_left = 883.779
 margin_top = 274.295
 margin_right = 1023.78
 margin_bottom = 408.295
 mouse_filter = 2
+animation0 = ExtResource( 13 )
+animation1 = ExtResource( 14 )
+animation2 = ExtResource( 15 )
 
 [node name="audio" type="AudioStreamPlayer" parent="main_menu"]
-stream = ExtResource( 14 )
-volume_db = -8.0
+stream = ExtResource( 16 )
+volume_db = -6.0
 bus = "Music"
 
 [node name="credits" type="Control" parent="."]
+visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 theme = ExtResource( 5 )
@@ -349,7 +334,7 @@ margin_right = 1925.3
 margin_bottom = 1080.0
 rect_pivot_offset = Vector2( 73.9432, 195.005 )
 mouse_filter = 2
-texture = ExtResource( 15 )
+texture = ExtResource( 17 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="credits"]
 margin_left = 58.0
@@ -357,11 +342,11 @@ margin_top = 57.0
 margin_right = 1232.0
 margin_bottom = 577.0
 rect_pivot_offset = Vector2( 15.9432, 138.005 )
-theme = ExtResource( 16 )
+theme = ExtResource( 18 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="credits/ScrollContainer"]
-margin_right = 1153.0
-margin_bottom = 3067.0
+margin_right = 1174.0
+margin_bottom = 1340.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
@@ -374,21 +359,27 @@ size_flags_vertical = 1
 align = 1
 autowrap = true
 
-[node name="purg" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 51.0
+[node name="logo" parent="credits/ScrollContainer/VBoxContainer" instance=ExtResource( 6 )]
 margin_right = 1153.0
-margin_bottom = 109.0
+margin_bottom = 191.0
+rect_min_size = Vector2( 0, 140 )
+
+[node name="purg" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
+visible = false
+margin_top = 191.0
+margin_right = 1153.0
+margin_bottom = 249.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 text = "purrgatory"
 align = 1
 autowrap = true
 
 [node name="by me" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 129.0
+margin_top = 211.0
 margin_right = 1153.0
-margin_bottom = 160.0
+margin_bottom = 242.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "a game by niv"
@@ -396,18 +387,18 @@ align = 1
 autowrap = true
 
 [node name="_" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 180.0
+margin_top = 262.0
 margin_right = 1153.0
-margin_bottom = 211.0
+margin_bottom = 293.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="hotkeys" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 231.0
+margin_top = 313.0
 margin_right = 1153.0
-margin_bottom = 262.0
+margin_bottom = 344.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "hotkeys"
@@ -416,9 +407,9 @@ autowrap = true
 uppercase = true
 
 [node name="GridContainer" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 282.0
+margin_top = 364.0
 margin_right = 1153.0
-margin_bottom = 619.0
+margin_bottom = 701.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -528,7 +519,7 @@ margin_right = 559.0
 margin_bottom = 286.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "n"
+text = "t"
 align = 2
 autowrap = true
 
@@ -539,7 +530,7 @@ margin_right = 1153.0
 margin_bottom = 286.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "notes"
+text = "to do"
 autowrap = true
 
 [node name="Label12" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
@@ -563,18 +554,18 @@ text = "items"
 autowrap = true
 
 [node name="_2" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 639.0
+margin_top = 721.0
 margin_right = 1153.0
-margin_bottom = 670.0
+margin_bottom = 752.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="credits" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 690.0
+margin_top = 772.0
 margin_right = 1153.0
-margin_bottom = 721.0
+margin_bottom = 803.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "credits"
@@ -583,9 +574,9 @@ autowrap = true
 uppercase = true
 
 [node name="GridContainer2" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 741.0
+margin_top = 823.0
 margin_right = 1153.0
-margin_bottom = 908.0
+margin_bottom = 990.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -651,18 +642,18 @@ text = "zardoru (diego ahumada)"
 autowrap = true
 
 [node name="_3" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 928.0
+margin_top = 1010.0
 margin_right = 1153.0
-margin_bottom = 959.0
+margin_bottom = 1041.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="art" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 979.0
+margin_top = 1061.0
 margin_right = 1153.0
-margin_bottom = 1010.0
+margin_bottom = 1092.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "art"
@@ -670,10 +661,9 @@ align = 1
 autowrap = true
 
 [node name="GridContainer3" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-editor/display_folded = true
-margin_top = 1030.0
+margin_top = 1112.0
 margin_right = 1153.0
-margin_bottom = 1163.0
+margin_bottom = 1245.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -703,7 +693,7 @@ margin_right = 559.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "character design"
+text = "character design help"
 align = 2
 autowrap = true
 
@@ -723,7 +713,7 @@ margin_right = 559.0
 margin_bottom = 133.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "backgrounds"
+text = "background help"
 align = 2
 autowrap = true
 
@@ -738,18 +728,18 @@ text = "rose lim"
 autowrap = true
 
 [node name="_4" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1183.0
+margin_top = 1265.0
 margin_right = 1153.0
-margin_bottom = 1214.0
+margin_bottom = 1296.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="music" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1234.0
+margin_top = 1316.0
 margin_right = 1153.0
-margin_bottom = 1265.0
+margin_bottom = 1347.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "music"
@@ -758,9 +748,9 @@ autowrap = true
 
 [node name="GridContainer4" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
 editor/display_folded = true
-margin_top = 1285.0
+margin_top = 1367.0
 margin_right = 1153.0
-margin_bottom = 1367.0
+margin_bottom = 1449.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -805,18 +795,18 @@ text = "zardoru (diego ahumada)"
 autowrap = true
 
 [node name="_7" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1387.0
+margin_top = 1469.0
 margin_right = 1153.0
-margin_bottom = 1418.0
+margin_bottom = 1500.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="purrgatory blues" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1438.0
+margin_top = 1520.0
 margin_right = 1153.0
-margin_bottom = 1469.0
+margin_bottom = 1551.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "\"purrgatory blues\""
@@ -824,9 +814,9 @@ align = 1
 autowrap = true
 
 [node name="GridContainer7" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1489.0
+margin_top = 1571.0
 margin_right = 1153.0
-margin_bottom = 1622.0
+margin_bottom = 1704.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -892,18 +882,18 @@ text = "molly (molly)"
 autowrap = true
 
 [node name="_5" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1642.0
+margin_top = 1724.0
 margin_right = 1153.0
-margin_bottom = 1673.0
+margin_bottom = 1755.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="other" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1693.0
+margin_top = 1775.0
 margin_right = 1153.0
-margin_bottom = 1724.0
+margin_bottom = 1806.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "other"
@@ -912,9 +902,9 @@ autowrap = true
 
 [node name="GridContainer5" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
 editor/display_folded = true
-margin_top = 1744.0
+margin_top = 1826.0
 margin_right = 1153.0
-margin_bottom = 1928.0
+margin_bottom = 2010.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -962,18 +952,18 @@ uro (daniel taylor)"
 autowrap = true
 
 [node name="_8" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1948.0
+margin_top = 2030.0
 margin_right = 1153.0
-margin_bottom = 1979.0
+margin_bottom = 2061.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="sfx" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1999.0
+margin_top = 2081.0
 margin_right = 1153.0
-margin_bottom = 2030.0
+margin_bottom = 2112.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "sound effects"
@@ -981,9 +971,9 @@ align = 1
 autowrap = true
 
 [node name="sfx4" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2050.0
+margin_top = 2132.0
 margin_right = 1153.0
-margin_bottom = 2081.0
+margin_bottom = 2163.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "freesound.org"
@@ -991,9 +981,9 @@ align = 1
 autowrap = true
 
 [node name="GridContainer6" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2101.0
+margin_top = 2183.0
 margin_right = 1153.0
-margin_bottom = 2642.0
+margin_bottom = 2724.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1097,9 +1087,9 @@ sinewave1kHz"
 autowrap = true
 
 [node name="GridContainer9" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2662.0
+margin_top = 2744.0
 margin_right = 1153.0
-margin_bottom = 2693.0
+margin_bottom = 2775.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1124,18 +1114,18 @@ text = "SoundEffectsFactory"
 autowrap = true
 
 [node name="_6" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2713.0
+margin_top = 2795.0
 margin_right = 1153.0
-margin_bottom = 2744.0
+margin_bottom = 2826.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="additional assets" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2764.0
+margin_top = 2846.0
 margin_right = 1153.0
-margin_bottom = 2795.0
+margin_bottom = 2877.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "additional assets"
@@ -1143,9 +1133,9 @@ align = 1
 autowrap = true
 
 [node name="GridContainer8" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2815.0
+margin_top = 2897.0
 margin_right = 1153.0
-margin_bottom = 3016.0
+margin_bottom = 3098.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1180,9 +1170,9 @@ paul d. hunt"
 autowrap = true
 
 [node name="_10" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3036.0
+margin_top = 3118.0
 margin_right = 1153.0
-margin_bottom = 3067.0
+margin_bottom = 3149.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
@@ -1195,7 +1185,7 @@ margin_top = 616.012
 margin_right = 765.0
 margin_bottom = 674.012
 focus_mode = 0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
@@ -1206,7 +1196,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="credits/back"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 centered = false
 
 [node name="Label" type="Label" parent="credits/back"]
@@ -1216,10 +1206,10 @@ text = "back"
 align = 1
 valign = 1
 
-[node name="load_menu" parent="." instance=ExtResource( 17 )]
+[node name="load_menu" parent="." instance=ExtResource( 19 )]
 visible = false
 
-[node name="options_menu" parent="." instance=ExtResource( 18 )]
+[node name="options_menu" parent="." instance=ExtResource( 20 )]
 visible = false
 
 [node name="cover" type="ColorRect" parent="."]
