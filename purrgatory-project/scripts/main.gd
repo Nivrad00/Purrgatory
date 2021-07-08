@@ -10,12 +10,30 @@ var loaded_flag = false
 
 signal game_ready()
 
+export var web_build = false
+export var version = ''
+
 func _ready():
-	$loader.start()
-	$loader.queue_resource(game_path)
 	set_process(true)
 	
-func finish_loading(node):
+	# change things for web build, if needed
+	
+	if web_build:
+		$main_menu/buttons/exit.hide()
+		$main_menu.rect_position.y = 17
+		$credits/ScrollContainer/VBoxContainer/version.text = 'version ' + version + ' web'
+	else:
+		$main_menu/buttons/exit.show()
+		$main_menu.rect_position.y = -14
+		$credits/ScrollContainer/VBoxContainer/version.text = 'version ' + version + ' downloadable'
+	
+	# if it's the web build, wait so that it shows the loading screen
+	# (the downloadable builds use the splash screen as the loading screen)
+	if web_build:
+		yield(get_tree().create_timer(0.01), 'timeout')
+		yield(get_tree(), 'idle_frame')
+	
+	var node = load(game_path)
 	add_child(node.instance())
 	$game.connect('return_to_main', self, 'return_to_main')
 	$game.hide()
@@ -23,6 +41,9 @@ func finish_loading(node):
 	var rotating_cat = $rotating_cat
 	remove_child(rotating_cat)
 	$game/content/room/rotating_cat_container.add_child(rotating_cat)
+	
+	# wait so that it doesn't immediately pass "ready" if you clicked during "loading"
+	yield(get_tree(), 'idle_frame')
 	
 	$loading/loading_text.set_text('ready!\r\nclick to continue')
 	loaded_flag = true
@@ -62,12 +83,6 @@ func _process(delta):
 		$loading/click_to_continue.show()
 		loaded_flag = false
 		
-	if has_node('loader'):
-		if $loader.is_ready(game_path):
-			var scene = $loader.get_resource(game_path)
-			finish_loading(scene)
-			$loader.queue_free()
-				
 	if fade_out != null:
 		if not $cover.visible:
 			$cover.show()

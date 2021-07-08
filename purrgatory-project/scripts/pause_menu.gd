@@ -86,13 +86,31 @@ func show_custom():
 	else:
 		$buttons.rect_position.y = 0
 		
-	$'../history_button2'.disabled = true
-	$'../../content/ui/history_button'.disabled = true
-	
+	$'../notes_button'.hide()
+	$'../items_button'.hide()
+	if $'../../content/ui'.visible:
+		$'../../content/ui/text_box'.hide()
+		$'../../content/ui/skip_button'.hide()
+		$'../../content/ui/history_button'.hide()
+		$'../../content/ui/choices'.hide()
+	else:
+		$'../history_button2'.hide()
+		
 	show()
 
 func hide_custom():
 	#ui.speak_ui()
-	$'../history_button2'.disabled = false
-	$'../../content/ui/history_button'.disabled = false
+	
+	$'../notes_button'.show()
+	$'../items_button'.show()
+	if $'../../content/ui'.visible:
+		$'../../content/ui/text_box'.show()
+		$'../../content/ui/skip_button'.show()
+		$'../../content/ui/history_button'.show()
+		$'../../content/ui/choices'.show()
+	else:
+		$'../history_button2'.show()
+	
+	# also reenable the menu button in case a sub-menu disabled it
+	$'../menu_button'.show()
 	hide()

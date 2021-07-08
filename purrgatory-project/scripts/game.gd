@@ -190,9 +190,15 @@ func _process(delta):
 		if a == 1:
 			fade_out = false
 			$delay_timer.start()
-			change_audio(null)
 
+			# turn off these two states in case they are currently overriding the audio
+			# (else the audio system won't register the "null" command)
+			state['blackout_music'] = false
+			state['purrgatory_blues_loop'] = false
+			# then turn off the audio
+			change_audio(null)
 			AudioServer.set_bus_mute(0, true)
+			
 			yield($delay_timer, 'timeout')
 
 			emit_signal('return_to_main')
@@ -200,7 +206,8 @@ func _process(delta):
 			$white_cover.color = Color(1, 1, 1, 0)
 			room.remove_room()
 			$meta_ui/pause_menu.hide_custom() # hide it directly instead of using close_pause_menu()
-			# bc you're not returning to the game
+			# bc you're not returning to the game			
+			
 			$meta_ui/exit_confirm.hide()
 			$white_cover.hide()
 			
@@ -597,6 +604,16 @@ func save(file):
 	$content.remove_child(room)
 	$content.remove_child(dark_covers)
 	$content.remove_child(ui)
+	
+	# some ui elements get hidden when you're in the pause menu
+	# thankfully, the only elements we really need to be present are the text box and choices
+	# so we'll temporarily show them
+	var ui_visible = true
+	if not ui.get_node('text_box').visible:
+		ui_visible = false
+		ui.get_node('text_box').show()
+		ui.get_node('choices').show()
+	
 	$ss.add_child(room)
 	$ss.add_child(dark_covers)
 	$ss.add_child(ui)
@@ -623,6 +640,10 @@ func save(file):
 	$content.add_child(dark_covers)
 	$content.add_child(ui)
 	$ss_tex.hide()
+	
+	if not ui_visible:
+		ui.get_node('text_box').hide()
+		ui.get_node('choices').hide()
 
 	# ok done
 	$meta_ui/save_menu.hide()

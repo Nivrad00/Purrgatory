@@ -1,7 +1,9 @@
 extends Control
 
-# we tried preloading all the rooms but it was totally not worth it
-const preloaded = false
+# our original tests suggested that preloading isn't worth it, cus it causes the initial load screen to be long
+# but i just tested it again and it lags really bad without preloading
+# so, leaving it on
+const preloaded = true
 
 var room_path = 'res://scenes/rooms/'
 var loader

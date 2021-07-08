@@ -1,0 +1,130 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/ui/new_logo2.png" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/sprites/cat1.png" type="Texture" id=3]
+[ext_resource path="res://assets/badge.svg" type="Texture" id=4]
+[ext_resource path="res://assets/ui/new_logo1.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/cat2.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/cat3.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Woosh"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 3.4, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("logo:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("cat1_idle:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 6 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 0.287175, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 40.0951 ), Vector2( 0, 0 ) ]
+}
+
+[node name="Control" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[node name="fader" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 640, 360 )
+
+[node name="logo" type="TextureRect" parent="fader"]
+margin_top = 269.063
+margin_right = 1280.0
+margin_bottom = 519.063
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="RichTextLabel" type="Label" parent="fader"]
+visible = false
+margin_top = 408.628
+margin_right = 1280.0
+margin_bottom = 508.629
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Trailer"
+align = 1
+valign = 1
+
+[node name="cat1_idle" type="TextureRect" parent="fader"]
+margin_left = -1.43201
+margin_top = 192.802
+margin_right = 1278.57
+margin_bottom = 326.802
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 4
+
+[node name="badge" type="TextureRect" parent="fader"]
+visible = false
+modulate = Color( 1, 1, 1, 0.823529 )
+margin_left = -1.0
+margin_top = 637.574
+margin_right = 1281.0
+margin_bottom = 680.574
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fader"]
+anims/Woosh = SubResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+margin_right = 1288.0
+margin_bottom = 727.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+[connection signal="pressed" from="Button" to="fader/AnimationPlayer" method="play" binds= [ "Woosh" ]]

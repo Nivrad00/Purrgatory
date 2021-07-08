@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
-[ext_resource path="res://scripts/rooms/state_handler_template.gd" type="Script" id=2]
+[ext_resource path="res://scripts/rooms/library3.gd" type="Script" id=2]
 [ext_resource path="res://assets/rooms/library3.png" type="Texture" id=3]
 [ext_resource path="res://scenes/exit_back.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=7]
+[ext_resource path="res://assets/sprites/research_poster.png" type="Texture" id=8]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -83,9 +85,23 @@ polygon = PoolVector2Array( 452.057, 196.887, 486.606, 198.357, 487.341, 13.1132
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="state_handler/object5"]
 polygon = PoolVector2Array( 586.512, 41.1359, 630.495, 40.3214, 630.902, -7.0495, 585.302, -7.99951 )
 
-[node name="object" parent="state_handler" instance=ExtResource( 6 )]
-editor/display_folded = true
+[node name="research_poster" type="Area2D" parent="state_handler"]
+position = Vector2( -73.6643, -6.46179 )
+script = ExtResource( 7 )
+dialog_label = "slam_research_poster_after"
+sprite_path = [ null ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/research_poster"]
+polygon = PoolVector2Array( 776.859, 357.868, 737.763, 592.445, 762.562, 601.25, 820.545, 573.519, 824.327, 515.537, 918.864, 527.511, 910.438, 620.139, 941, 627, 999.536, 606.292, 960.123, 383.117 )
+
+[node name="research_poster" type="Sprite" parent="state_handler/research_poster"]
+position = Vector2( 865.468, 495.376 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+texture = ExtResource( 8 )
+
+[node name="books" parent="state_handler" instance=ExtResource( 6 )]
 dialog_label = "read_book_alt"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]
+[node name="before" type="CollisionPolygon2D" parent="state_handler/books"]
 polygon = PoolVector2Array( 1230.64, 105.785, 1112.28, 145.236, 935.435, 145.236, 651.116, 262.228, 651.302, 293.092, 579.453, 311.37, 517.799, 312.562, 442.001, 341.031, 353.709, 341.438, 34.8651, 84.0189, 33.8714, 500.945, 175.677, 444.143, 268.85, 445.879, 354.554, 398.266, 385.104, 398.1, 384.804, 366.772, 415.382, 366.922, 415.532, 398.399, 438.915, 400.048, 523.241, 428.195, 577.656, 425.474, 650.672, 448.764, 652.477, 474.447, 927.273, 577.836, 1113.64, 575.115, 1225.2, 610.485 )

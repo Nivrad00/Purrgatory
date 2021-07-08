@@ -97,7 +97,7 @@ bus = "SFX"
 
 [node name="single_thud" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 17 )
-volume_db = -5.0
+pitch_scale = 1.2
 bus = "SFX"
 
 [node name="knock" type="AudioStreamPlayer" parent="state_handler"]

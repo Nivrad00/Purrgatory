@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/meowseum7.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=6]
 [ext_resource path="res://scenes/polygon_object_button_template.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/sprites/snowglobes/snowglobe_meowseum.png" type="Texture" id=8]
+[ext_resource path="res://assets/audio/ceramic_shatter.wav" type="AudioStream" id=9]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -29,12 +30,14 @@ centered = false
 room_label = "meowseum6"
 
 [node name="exit2" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 room_label = "hallway14"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
 polygon = PoolVector2Array( 196.739, 345.51, 197.905, 645.263, 389.187, 646.43, 386.854, 343.177 )
 
 [node name="exit2_dialog" parent="state_handler" instance=ExtResource( 5 )]
+editor/display_folded = true
 visible = false
 script = ExtResource( 6 )
 dialog_label = "meowseum_exit"
@@ -69,6 +72,7 @@ position = Vector2( -0.540344, 2.16144 )
 polygon = PoolVector2Array( 391.064, 304.528, 406.97, 319.046, 417.237, 319.586, 422.1, 312.561, 407.971, 293.502, 396.163, 293.108 )
 
 [node name="snowglobe_meowseum" parent="state_handler" instance=ExtResource( 7 )]
+editor/display_folded = true
 position = Vector2( 0.751038, 4.00549 )
 dialog_label = "snowglobe_meowseum"
 
@@ -87,6 +91,7 @@ dialog_label = "meowseum_cards"
 polygon = PoolVector2Array( 437.146, 355.136, 427.392, 368.483, 450.033, 374.788, 475.133, 377.724, 487.453, 364.377, 462.414, 357.765 )
 
 [node name="object7" parent="state_handler" instance=ExtResource( 7 )]
+editor/display_folded = true
 dialog_label = "exit_sign"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object7"]
@@ -121,18 +126,21 @@ dialog_label = "flat_box"
 polygon = PoolVector2Array( 236.71, 444.34, 236.046, 535.229, 266.564, 610.859, 313.003, 551.814, 287.13, 412.495 )
 
 [node name="object12" parent="state_handler" instance=ExtResource( 7 )]
+editor/display_folded = true
 dialog_label = "mop_bucket"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object12"]
 polygon = PoolVector2Array( 830.182, 492.762, 825.117, 570.472, 836.397, 583.123, 847.546, 611.313, 878.955, 604.652, 907.69, 614.904, 913.528, 607.072, 913.25, 599.249, 952.727, 523.529, 959.243, 448.594, 933.179, 446.965, 931.55, 490.949, 914.329, 498.624, 891.253, 483.781 )
 
 [node name="object13" parent="state_handler" instance=ExtResource( 7 )]
+editor/display_folded = true
 dialog_label = "mop"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object13"]
 polygon = PoolVector2Array( 1067.13, 257.213, 984.105, 585.418, 995.045, 614.432, 1008.9, 632.029, 897.941, 631.985, 918.225, 599.196, 918.726, 590.183, 930.492, 577.917, 949.768, 574.912, 1029.46, 249.359 )
 
 [node name="object14" parent="state_handler" instance=ExtResource( 7 )]
+editor/display_folded = true
 dialog_label = "mop_water"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object14"]
@@ -140,6 +148,7 @@ position = Vector2( -1.62897, 0 )
 polygon = PoolVector2Array( 823.071, 562.956, 813.141, 576.064, 816.716, 594.733, 765.872, 615.388, 770.361, 631.976, 1026.13, 632.049, 982.752, 592.747, 929.128, 568.517 )
 
 [node name="object15" parent="state_handler" instance=ExtResource( 7 )]
+editor/display_folded = true
 position = Vector2( -167.369, -149.474 )
 dialog_label = "broken_lock"
 
@@ -148,6 +157,7 @@ position = Vector2( -1.62897, 0 )
 polygon = PoolVector2Array( 799.766, 649.468, 766.734, 647.796, 764.644, 688.772, 795.167, 685.427 )
 
 [node name="object17" parent="state_handler" instance=ExtResource( 7 )]
+editor/display_folded = true
 position = Vector2( -147.25, -339.051 )
 dialog_label = "broken_lock_holder"
 
@@ -156,9 +166,14 @@ position = Vector2( -1.62897, -1 )
 polygon = PoolVector2Array( 798.827, 649.143, 775.354, 649.018, 773.998, 681.175, 799.026, 681.959 )
 
 [node name="object16" parent="state_handler" instance=ExtResource( 7 )]
+editor/display_folded = true
 position = Vector2( -167.369, -149.474 )
 dialog_label = "meowseum_mallet"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object16"]
 position = Vector2( -30.6852, 47.1693 )
 polygon = PoolVector2Array( 824.916, 638.689, 812.406, 640.086, 762.199, 661.168, 761.367, 675.592, 775.864, 685.246, 842.655, 652.793, 861.523, 660.718, 887.221, 642.963, 865.334, 616.548, 838.882, 607.511, 828.57, 612.78 )
+
+[node name="smash" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 9 )
+volume_db = -25.0

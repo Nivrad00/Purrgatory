@@ -11,7 +11,7 @@ func update_state(state):
 	.update_state(state)
 		
 	if state.get('enter_gate'):
-		print('aaaaa')
+		# print('aaaaa')
 		$door_audio.play()
 		$fadeout.show()
 

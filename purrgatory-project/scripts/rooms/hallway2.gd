@@ -88,12 +88,12 @@ func store_image():
 	get_node("../../../../..").mural_drawing = final_img
 	
 func start_audio(_a, _b):
-	print('starting audio')
+	# print('starting audio')
 	if not $asmr.playing:
 		$asmr.play(audio_pos)
 	$audio_delay.start()
 
 func stop_audio():
-	print('stopping audio')
+	# print('stopping audio')
 	audio_pos = $asmr.get_playback_position()
 	$asmr.stop()

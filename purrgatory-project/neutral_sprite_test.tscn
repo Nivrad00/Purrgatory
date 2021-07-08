@@ -1,0 +1,45 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/sprites/elijah_neutral.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/sprites/kyungsoon_neutral.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/sprites/lucifur_neutral.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/sprites/natalie_neutral.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/sprites/numa_neutral.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/sprites/oliver_neutral.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/sprites/receptionist_neutral.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/sprites/sean_neutral.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/sprites/tori_neutral.tscn" type="PackedScene" id=9]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 144.704, 182.387 )
+
+[node name="kyungsoon_neutral" parent="." instance=ExtResource( 2 )]
+position = Vector2( 425.068, 173.343 )
+
+[node name="Node2D2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 642.124, 191.431 )
+
+[node name="natalie_neutral" parent="." instance=ExtResource( 4 )]
+position = Vector2( 889.327, 168.821 )
+
+[node name="numa_neutral" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1139.54, 159.777 )
+
+[node name="Node2D3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 283.379, 497.42 )
+
+[node name="Node2D4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 535.104, 494.406 )
+
+[node name="Node2D5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 791.351, 500.435 )
+
+[node name="Node2D6" parent="." instance=ExtResource( 9 )]
+editor/display_folded = true
+position = Vector2( 1049.1, 497.42 )
+
+[editable path="Node2D6"]

@@ -55,5 +55,4 @@ polygon = PoolVector2Array( 805.306, 216.176, 804.793, 351.698, 859.207, 405.599
 [node name="hum" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 7 )
 volume_db = -10.0
-autoplay = true
 bus = "SFX"

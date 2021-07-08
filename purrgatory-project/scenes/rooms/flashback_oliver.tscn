@@ -57,21 +57,25 @@ tracks/0/keys = {
 [sub_resource type="DynamicFont" id=4]
 size = 22
 use_filter = true
+extra_spacing_space = 1
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 22
 use_filter = true
+extra_spacing_space = 1
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 22
 use_filter = true
+extra_spacing_space = 1
 font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 22
 use_filter = true
+extra_spacing_space = 1
 font_data = ExtResource( 8 )
 
 [sub_resource type="StyleBoxEmpty" id=8]
@@ -542,6 +546,8 @@ text = "you finished in just under 3 hours."
 scroll_active = false
 
 [node name="e3" type="RichTextLabel" parent="state_handler/hc/vc/t3"]
+editor/display_folded = true
+visible = false
 margin_right = 1280.0
 margin_bottom = 52.0
 mouse_filter = 1

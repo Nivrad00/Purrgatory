@@ -52,6 +52,7 @@ position = Vector2( -465.041, -291.018 )
 room_label = "library3"
 
 [node name="exit3" parent="state_handler" instance=ExtResource( 11 )]
+editor/display_folded = true
 room_label = "library2"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3"]
@@ -59,6 +60,7 @@ position = Vector2( -56.0134, 108.328 )
 polygon = PoolVector2Array( 257.541, 69.2997, 260.716, 453.315, 418.187, 452.863, 418.187, 66.5922 )
 
 [node name="object" parent="state_handler" instance=ExtResource( 12 )]
+editor/display_folded = true
 dialog_label = "read_book"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object"]

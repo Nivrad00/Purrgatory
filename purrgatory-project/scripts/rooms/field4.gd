@@ -29,10 +29,10 @@ func update_state(state):
 	if state.get('oliver_queue_silence'):
 		emit_signal('change_audio', null)
 		
-	if state.get('elijah_quest_complete') and not state.get('elijah_sean_left_bench') and not state.get('oliver_on_date'):
-		$elijah_and_sean_bench.show()
-	else:
-		$elijah_and_sean_bench.hide()
+#	if state.get('elijah_quest_complete') and not state.get('elijah_sean_left_bench') and not state.get('oliver_on_date'):
+#		$elijah_and_sean_bench.show()
+#	else:
+#		$elijah_and_sean_bench.hide()
 		
 	if state.get('tori_park_complete'):
 		$digging.show()

@@ -365,6 +365,7 @@ text = "you remember years and years of arduous practice."
 scroll_active = false
 
 [node name="4" type="RichTextLabel" parent="state_handler/hc/vc/t2"]
+visible = false
 margin_right = 788.0
 margin_bottom = 50.0
 mouse_filter = 1

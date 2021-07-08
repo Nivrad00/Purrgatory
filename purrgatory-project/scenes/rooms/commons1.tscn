@@ -1785,12 +1785,11 @@ texture = ExtResource( 29 )
 polygon = PoolVector2Array( -4.61125, -67.0885, -20.1187, 12.583, 86.3317, 17.9866, 97.1389, 0.154785, 185.187, -4.22144, 182.793, -53.9164, 178.601, -76.6683, 160.041, -91.6367, 91.7849, -88.0443, 33.109, -95.2291 )
 
 [node name="flowers_etc" parent="state_handler" instance=ExtResource( 30 )]
-visible = false
 modulate = Color( 1, 1, 1, 1 )
-margin_left = 604.51
-margin_top = 537.918
-margin_right = 805.51
-margin_bottom = 686.918
+margin_left = 511.0
+margin_top = 534.0
+margin_right = 776.0
+margin_bottom = 737.0
 texture_normal = ExtResource( 31 )
 texture_click_mask = ExtResource( 32 )
 expand = false
@@ -1821,11 +1820,13 @@ animation1 = ExtResource( 40 )
 animation2 = ExtResource( 41 )
 
 [node name="cat_toy" type="Sprite" parent="state_handler/cat1_idle"]
+visible = false
 position = Vector2( 64.3513, 59.7073 )
 texture = ExtResource( 42 )
 
 [node name="cat_toy_stick" type="Area2D" parent="state_handler"]
 editor/display_folded = true
+visible = false
 position = Vector2( 544.554, -39.8075 )
 script = ExtResource( 4 )
 __meta__ = {
@@ -1932,7 +1933,6 @@ polygon = PoolVector2Array( 865.429, 508.608, 1021.99, 533.956, 1020.8, 205.639,
 
 [node name="commons_lamp" type="Area2D" parent="state_handler"]
 editor/display_folded = true
-visible = false
 position = Vector2( 0.431946, -59.9116 )
 script = ExtResource( 4 )
 dialog_label = "commons_lamp"
@@ -1948,6 +1948,7 @@ polygon = PoolVector2Array( 778.808, 373.277, 777.445, 349.097, 794.304, 338.323
 
 [node name="frog" type="Area2D" parent="state_handler"]
 editor/display_folded = true
+visible = false
 position = Vector2( 755.46, 465.694 )
 script = ExtResource( 50 )
 
@@ -2478,7 +2479,7 @@ bus = "SFX"
 
 [node name="poof_audio2" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 57 )
-volume_db = -10.0
+volume_db = -5.0
 bus = "SFX"
 [connection signal="pressed" from="state_handler/wait_oliver1" to="state_handler/wait_oliver1" method="_on_char_obj_button_pressed"]
 [connection signal="pressed" from="state_handler/wait_oliver2" to="state_handler/wait_oliver2" method="_on_char_obj_button_pressed"]

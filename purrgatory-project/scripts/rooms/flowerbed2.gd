@@ -74,7 +74,7 @@ func success():
 	emit_signal('change_audio', '')
 	
 func pick_flower(id):			
-	print('picked' + str(id))
+	# print('picked' + str(id))
 	if !target_ids.empty():
 		if id == target_ids[0]:
 			target_ids.pop_front()
@@ -131,7 +131,7 @@ func init_state(state):
 	var start = OS.get_ticks_usec()
 	setup_game()
 	var end = OS.get_ticks_usec()
-	print('algo 2: ' + str((end-start)/1000000.0))
+	# print('algo 2: ' + str((end-start)/1000000.0))
 
 func setup_game():
 	

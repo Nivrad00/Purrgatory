@@ -156,6 +156,7 @@ dialog_label = "airplane"
 polygon = PoolVector2Array( 175.351, 631.367, 217.135, 655.354, 255.05, 617.439, 184.636, 615.892 )
 
 [node name="sean_meowseum" type="TextureButton" parent="state_handler"]
+visible = false
 margin_left = 519.299
 margin_top = 255.535
 margin_right = 826.299
@@ -207,6 +208,7 @@ animation1 = ExtResource( 20 )
 animation2 = ExtResource( 21 )
 
 [node name="elijah_sweeping" type="TextureButton" parent="state_handler"]
+visible = false
 margin_left = 556.39
 margin_top = 242.029
 margin_right = 914.39
@@ -242,11 +244,11 @@ animation2 = ExtResource( 29 )
 
 [node name="elijah_planning" type="TextureButton" parent="state_handler"]
 visible = false
-margin_left = 816.828
-margin_top = 236.726
-margin_right = 1215.83
-margin_bottom = 581.725
-rect_pivot_offset = Vector2( -751.34, 343.113 )
+margin_left = 441.595
+margin_top = 240.789
+margin_right = 607.595
+margin_bottom = 585.789
+rect_scale = Vector2( -1, 1 )
 focus_mode = 0
 enabled_focus_mode = 0
 texture_normal = ExtResource( 30 )

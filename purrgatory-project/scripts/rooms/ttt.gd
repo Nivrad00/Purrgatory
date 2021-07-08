@@ -103,8 +103,8 @@ func load_ttt(slot):
 	
 	dialog_queue = ttt_state['dialog_queue']
 	prev_score = ttt_state['prev_score']
-	game_num = ttt_state['game_num']
-	move_num = ttt_state['move_num']
+	game_num = int(ttt_state['game_num'])
+	move_num = int(ttt_state['move_num'])
 	current_board = ttt_state['current_board']
 	draw_freq = ttt_state['draw_freq']
 	audio_pos = ttt_state['audio_pos']
@@ -113,10 +113,11 @@ func load_ttt(slot):
 	$loaded_drawing.texture = ImageTexture.new()
 	$loaded_drawing.texture.create_from_image(ttt_drawing)
 	
-	for i in range(9):
-		if current_board[i] == 1:
-			$shapes.get_node(str(i)).frame = 5
-			$shapes.get_node(str(i)).playing = false
+	if current_board:
+		for i in range(9):
+			if current_board[i] == 1:
+				$shapes.get_node(str(i)).frame = 5
+				$shapes.get_node(str(i)).playing = false
 			
 	if whose_turn == 'oliver':
 		$turn_delay.start()
@@ -166,12 +167,9 @@ func start_game():
 	set_process(true)
 
 	game_num += 1
-	move_num = 1 # it should start at 0 but oliver's first move is predetermined
+	move_num = 0
 	
 	current_board = [0, 0, 0, 0, 0, 0, 0, 0, 0] # 0 = empty, 1 = oliver, 2 = player
-	
-	var first_move = [0, 2, 6, 8][randi() % 4]
-	current_board[first_move] = 1
 	
 	for draw in $draw_container.get_children():
 		draw.queue_free()
@@ -180,8 +178,15 @@ func start_game():
 		shape.frame = 0
 		shape.playing = false
 	prev_score = 0
-	$shapes.get_child(first_move).play()
-	$asmr.play(audio_pos)
+		
+	if game_num % 2 == 1: # oliver goes first
+		var first_move = [0, 2, 6, 8][randi() % 4]
+		current_board[first_move] = 1
+		move_num = 1
+		$shapes.get_child(first_move).play()
+		$asmr.play(audio_pos)
+	else:
+		start_players_turn()
 
 # the player uses this method, but not oliver
 func start_audio(_a, _b):
@@ -212,10 +217,10 @@ func end_olivers_turn():
 	$audio_delay.start()
 
 func end_olivers_turn2():
-	if check_for_stalemate(current_board):
-		end_game('stalemate')
-	elif evaluate(current_board) == 10:
+	if evaluate(current_board) == 10:
 		end_game('loss')
+	elif check_for_stalemate(current_board):
+		end_game('stalemate')
 	else:
 		var i = 'game' + str(game_num)
 		var j = 'move' + str(move_num)
@@ -246,23 +251,27 @@ func end_players_turn():
 	var x = detect_players_move()
 	current_board[x] = 2
 
-	# note: it's not actually possible for the game to end after the player's turn
-	var i = 'game' + str(game_num)
-	var j = 'move' + str(move_num)
+	if evaluate(current_board) == 10:
+		end_game('loss')
+	elif check_for_stalemate(current_board):
+		end_game('stalemate')
+	else:
+		var i = 'game' + str(game_num)
+		var j = 'move' + str(move_num)
+	
+		var new_score = get_best_moves(current_board)[1] # returns [[best moves], value]
+		if new_score == 10 and prev_score == 0:
+			if dialog_map[i].has('very_bad_move'):
+				dialog_queue.append(dialog_map[i]['very_bad_move'])
+		elif new_score > 0 and prev_score == 0:
+			if dialog_map[i].has('bad_move'):
+				dialog_queue.append(dialog_map[i]['bad_move'])
+	
+		elif dialog_map.has(i) and dialog_map[i].has(j):
+			dialog_queue.append(dialog_map[i][j])
+		dialog_queue.append('olivers_turn')
 
-	var new_score = get_best_moves(current_board)[1] # returns [[best moves], value]
-	if new_score == 10 and prev_score == 0:
-		if dialog_map[i].has('very_bad_move'):
-			dialog_queue.append(dialog_map[i]['very_bad_move'])
-	elif new_score > 0 and prev_score == 0:
-		if dialog_map[i].has('bad_move'):
-			dialog_queue.append(dialog_map[i]['bad_move'])
-
-	elif dialog_map.has(i) and dialog_map[i].has(j):
-		dialog_queue.append(dialog_map[i][j])
-	dialog_queue.append('olivers_turn')
-
-	continue_game()
+		continue_game()
 
 func continue_game():
 	var next = dialog_queue.pop_front()

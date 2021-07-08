@@ -67,7 +67,7 @@ func success():
 	emit_signal('change_audio', '')
 	
 func pick_flower(id):
-	print('picked' + str(id))
+	# print('picked' + str(id))
 	if !target_ids.empty():
 		if id == target_ids[0]:
 			target_ids.pop_front()

@@ -68,21 +68,25 @@ tracks/0/keys = {
 [sub_resource type="DynamicFont" id=5]
 size = 22
 use_filter = true
+extra_spacing_space = 1
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 22
 use_filter = true
+extra_spacing_space = 1
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 22
 use_filter = true
+extra_spacing_space = 1
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=8]
 size = 22
 use_filter = true
+extra_spacing_space = 1
 font_data = ExtResource( 6 )
 
 [sub_resource type="StyleBoxEmpty" id=9]

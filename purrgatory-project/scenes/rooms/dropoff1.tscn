@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/dropoff1.gd" type="Script" id=2]
@@ -7,21 +7,16 @@
 [ext_resource path="res://assets/rooms/dropoff_after_climb.png" type="Texture" id=5]
 [ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=6]
 [ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=7]
-[ext_resource path="res://scenes/sprites/elijah_dropoff.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/sprites/elijah_dropoff_1.png" type="Texture" id=9]
-[ext_resource path="res://assets/sprite_masks/elijah_dropoff_1.png" type="BitMap" id=10]
-[ext_resource path="res://assets/sprites/elijah_dropoff_2.png" type="Texture" id=11]
-[ext_resource path="res://assets/sprites/elijah_dropoff_3.png" type="Texture" id=12]
-[ext_resource path="res://scenes/sprites/tori_dropoff.tscn" type="PackedScene" id=13]
-[ext_resource path="res://assets/sprites/tori_dropoff1_1.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprites/tori_dropoff1_2.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprites/tori_dropoff1_3.png" type="Texture" id=16]
-[ext_resource path="res://assets/sprites/tori_dropoff1.5_1.png" type="Texture" id=17]
-[ext_resource path="res://assets/sprite_masks/tori_dropoff1.5_1.png" type="BitMap" id=18]
-[ext_resource path="res://assets/sprites/tori_dropoff1.5_2.png" type="Texture" id=19]
-[ext_resource path="res://assets/sprites/tori_dropoff1.5_3.png" type="Texture" id=20]
-[ext_resource path="res://scenes/coin.tscn" type="PackedScene" id=21]
-[ext_resource path="res://assets/audio/hhhhhh2.wav" type="AudioStream" id=22]
+[ext_resource path="res://scenes/sprites/tori_dropoff.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/sprites/tori_dropoff1_1.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/tori_dropoff1_2.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/tori_dropoff1_3.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/tori_dropoff1.5_1.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite_masks/tori_dropoff1.5_1.png" type="BitMap" id=13]
+[ext_resource path="res://assets/sprites/tori_dropoff1.5_2.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/tori_dropoff1.5_3.png" type="Texture" id=15]
+[ext_resource path="res://scenes/coin.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/audio/hhhhhh2.wav" type="AudioStream" id=17]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -144,41 +139,28 @@ polygon = PoolVector2Array( 290.423, 521.302, 349.218, 485.126, 547.743, 485.785
 modulate = Color( 0, 0, 0, 0.15 )
 polygon = PoolVector2Array( 197.587, 578.423, 225.396, 561.313, 549.162, 560.784, 548.82, 588.844, 196.763, 588.844 )
 
-[node name="elijah_dropoff" parent="state_handler" instance=ExtResource( 8 )]
-visible = false
-margin_left = 574.714
-margin_top = 308.142
-margin_right = 850.714
-margin_bottom = 617.142
-texture_normal = ExtResource( 9 )
-texture_click_mask = ExtResource( 10 )
-blackout_label = "elijah_dropoff"
-animation0 = ExtResource( 9 )
-animation1 = ExtResource( 11 )
-animation2 = ExtResource( 12 )
-
-[node name="tori_dropoff" parent="state_handler" instance=ExtResource( 13 )]
+[node name="tori_dropoff" parent="state_handler" instance=ExtResource( 8 )]
 visible = false
 margin_left = 287.717
 margin_top = 266.201
 margin_right = 883.717
 margin_bottom = 697.201
-texture_normal = ExtResource( 14 )
-animation0 = ExtResource( 14 )
-animation1 = ExtResource( 15 )
-animation2 = ExtResource( 16 )
+texture_normal = ExtResource( 9 )
+animation0 = ExtResource( 9 )
+animation1 = ExtResource( 10 )
+animation2 = ExtResource( 11 )
 
-[node name="tori_dropoff2" parent="state_handler" instance=ExtResource( 13 )]
+[node name="tori_dropoff2" parent="state_handler" instance=ExtResource( 8 )]
 visible = false
 margin_left = 336.555
 margin_top = 67.3854
 margin_right = 564.555
 margin_bottom = 614.385
-texture_normal = ExtResource( 17 )
-texture_click_mask = ExtResource( 18 )
-animation0 = ExtResource( 17 )
-animation1 = ExtResource( 19 )
-animation2 = ExtResource( 20 )
+texture_normal = ExtResource( 12 )
+texture_click_mask = ExtResource( 13 )
+animation0 = ExtResource( 12 )
+animation1 = ExtResource( 14 )
+animation2 = ExtResource( 15 )
 
 [node name="cant_leave" type="Area2D" parent="state_handler"]
 editor/display_folded = true
@@ -203,10 +185,9 @@ room_label = "hallway5"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
 polygon = PoolVector2Array( 465.026, 1011.01, 1745.01, 1011.01, 1745.02, 923.026, 465.007, 923.014 )
 
-[node name="coin" parent="state_handler" instance=ExtResource( 21 )]
-frame = 0
+[node name="coin" parent="state_handler" instance=ExtResource( 16 )]
 
 [node name="hhhhh" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 22 )
+stream = ExtResource( 17 )
 volume_db = -35.0
 autoplay = true

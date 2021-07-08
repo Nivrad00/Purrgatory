@@ -58,6 +58,8 @@ _global_script_class_icons={
 
 config/name="purrgatory"
 run/main_scene="res://scenes/main_menu.tscn"
+boot_splash/image="res://assets/splash_screen.png"
+boot_splash/bg_color=Color( 1, 1, 1, 1 )
 config/icon="res://assets/icon.png"
 
 [audio]
@@ -167,3 +169,4 @@ ui_notes={
 [rendering]
 
 quality/2d/use_pixel_snap=true
+2d/snapping/use_gpu_pixel_snap=true

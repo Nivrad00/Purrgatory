@@ -318,7 +318,6 @@ scroll_active = false
 anims/Fadein = SubResource( 3 )
 
 [node name="c3" type="RichTextLabel" parent="state_handler/hc/vc"]
-editor/display_folded = true
 margin_top = 450.0
 margin_right = 800.0
 margin_bottom = 510.0

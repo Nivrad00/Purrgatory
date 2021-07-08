@@ -130,7 +130,6 @@ polygon = PoolVector2Array( 211.948, 350.054, 212.384, 378.414, 251.208, 381.326
 script = ExtResource( 10 )
 
 [node name="digging_button" type="Area2D" parent="state_handler/digging"]
-editor/display_folded = true
 position = Vector2( 564.133, 497.878 )
 script = ExtResource( 11 )
 dialog_label = "tori_park_can"
@@ -152,6 +151,7 @@ position = Vector2( -1082.59, -501.221 )
 polygon = PoolVector2Array( 1143.19, 512.541, 1145.47, 487.514, 1123.28, 471.588, 1068.11, 466.469, 1033.41, 479.551, 1030.57, 507.422, 1060.71, 521.642, 1108.8, 528.008 )
 
 [node name="shovel6" type="Sprite" parent="state_handler/digging/digging_button"]
+visible = false
 position = Vector2( 6.29688, -80.4622 )
 texture = ExtResource( 13 )
 
@@ -178,6 +178,7 @@ texture = ExtResource( 14 )
 offset = Vector2( 11.9536, 12.3545 )
 
 [node name="shovel6" type="Sprite" parent="state_handler/digging/digging_button2"]
+visible = false
 position = Vector2( -20.6726, -51.5476 )
 texture = ExtResource( 13 )
 
@@ -203,11 +204,11 @@ position = Vector2( -1089.42, -495.369 )
 polygon = PoolVector2Array( 1187.4, 539.487, 1192.52, 483.176, 1137.91, 448.479, 1049.18, 449.048, 1010.48, 469.397, 993.438, 507.065, 1019.03, 540.624, 1104.92, 558.257 )
 
 [node name="shovel2" type="Sprite" parent="state_handler/digging/digging_button3"]
+visible = false
 position = Vector2( 4.12878, -108.025 )
 texture = ExtResource( 16 )
 
 [node name="digging_button4" type="Area2D" parent="state_handler/digging"]
-editor/display_folded = true
 position = Vector2( 774.787, 528.895 )
 script = ExtResource( 11 )
 dialog_label = "tori_park_diamond"
@@ -229,6 +230,7 @@ position = Vector2( -1089.42, -495.369 )
 polygon = PoolVector2Array( 1146.98, 507.525, 1149.25, 487.617, 1122.24, 459.533, 1054.72, 459.533, 1022.98, 477.947, 1021.84, 508.663, 1034.43, 522.685, 1117.4, 527.433 )
 
 [node name="shovel5" type="Sprite" parent="state_handler/digging/digging_button4"]
+visible = false
 position = Vector2( -1.76276, -80.5529 )
 texture = ExtResource( 18 )
 

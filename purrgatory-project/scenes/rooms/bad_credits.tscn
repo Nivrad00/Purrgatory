@@ -12,8 +12,12 @@
 [ext_resource path="res://assets/audio/Eternity's_Not_So_Bad.ogg" type="AudioStream" id=10]
 [ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=11]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 40
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
 font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -21,25 +25,21 @@ size = 18
 font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=5]
 size = 18
 font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=6]
-size = 40
-font_data = ExtResource( 8 )
-
-[sub_resource type="DynamicFont" id=7]
 size = 18
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=8]
-size = 18
-font_data = ExtResource( 8 )
+[sub_resource type="Theme" id=7]
+default_font = SubResource( 6 )
 
-[sub_resource type="Theme" id=9]
-default_font = SubResource( 8 )
-
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=8]
 length = 91.0
 step = 0.01
 tracks/0/type = "audio"
@@ -335,7 +335,7 @@ tracks/23/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=9]
 length = 91.0
 step = 0.01
 tracks/0/type = "audio"
@@ -583,10 +583,10 @@ tracks/19/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=10]
 size = 10
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=11]
 size = 18
 font_data = ExtResource( 8 )
 
@@ -640,7 +640,7 @@ visible = false
 margin_top = 449.941
 margin_right = 1279.0
 margin_bottom = 520.941
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "niv"
 align = 1
 
@@ -662,7 +662,7 @@ align = 1
 margin_top = 42.29
 margin_right = 1279.0
 margin_bottom = 113.29
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "niv"
 align = 1
 
@@ -670,7 +670,7 @@ align = 1
 margin_top = 85.8512
 margin_right = 1279.0
 margin_bottom = 156.851
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "(darvin heo)"
 align = 1
 
@@ -688,7 +688,7 @@ margin_left = 1.29236
 margin_top = 44.29
 margin_right = 1280.29
 margin_bottom = 115.29
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "zardoru"
 align = 1
 
@@ -697,7 +697,7 @@ margin_left = 3.29236
 margin_top = 92.0
 margin_right = 1279.29
 margin_bottom = 126.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "(diego ahumada)"
 align = 1
 
@@ -706,7 +706,7 @@ margin_left = 3.29236
 margin_top = 165.976
 margin_right = 1279.29
 margin_bottom = 199.976
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "(zach stevens)"
 align = 1
 
@@ -715,7 +715,7 @@ margin_left = 1.29236
 margin_top = 119.136
 margin_right = 1280.29
 margin_bottom = 172.136
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "gnomes"
 align = 1
 
@@ -732,7 +732,7 @@ align = 1
 margin_top = 41.29
 margin_right = 1279.0
 margin_bottom = 112.29
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "zardoru"
 align = 1
 
@@ -754,7 +754,7 @@ align = 1
 margin_top = 40.29
 margin_right = 1279.0
 margin_bottom = 111.29
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "chronocide"
 align = 1
 
@@ -764,7 +764,7 @@ margin_top = 85.9489
 margin_right = 1279.29
 margin_bottom = 119.949
 rect_pivot_offset = Vector2( 686.538, 23.8691 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "(david wolters)"
 align = 1
 
@@ -781,7 +781,7 @@ align = 1
 margin_top = 41.29
 margin_right = 1279.0
 margin_bottom = 112.29
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "scott12355 "
 align = 1
 
@@ -791,7 +791,7 @@ margin_top = 88.9302
 margin_right = 1279.29
 margin_bottom = 122.93
 rect_pivot_offset = Vector2( 686.538, 23.8691 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "(scott topping)"
 align = 1
 
@@ -808,7 +808,7 @@ align = 1
 margin_top = 42.29
 margin_right = 1279.0
 margin_bottom = 113.29
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "rose lim"
 align = 1
 
@@ -833,7 +833,7 @@ margin_left = -2.49268
 margin_top = 36.2649
 margin_right = 1276.51
 margin_bottom = 107.265
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 4 )
 text = "wiz"
 align = 1
 
@@ -842,7 +842,7 @@ margin_left = 2.38574
 margin_top = 81.0904
 margin_right = 1278.38
 margin_bottom = 115.091
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 5 )
 text = "(brandon warren)"
 align = 1
 
@@ -860,7 +860,7 @@ margin_left = -1.70764
 margin_top = 36.9685
 margin_right = 1277.3
 margin_bottom = 107.969
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 4 )
 text = "zardoru"
 align = 1
 
@@ -904,7 +904,7 @@ margin_top = 88.5603
 margin_right = 900.128
 margin_bottom = 113.561
 rect_pivot_offset = Vector2( 78.3446, 14.9474 )
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 5 )
 text = "(jonny andino)"
 
 [node name="Label11" type="Label" parent="state_handler/4/Label1"]
@@ -920,7 +920,7 @@ margin_top = 125.465
 margin_right = 910.889
 margin_bottom = 150.465
 rect_pivot_offset = Vector2( 78.3446, 14.9474 )
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 5 )
 text = "(molly)"
 
 [node name="5" type="Control" parent="state_handler"]
@@ -941,7 +941,7 @@ align = 1
 margin_top = 44.0
 margin_right = 1279.0
 margin_bottom = 97.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "akarobin"
 align = 1
 
@@ -951,7 +951,7 @@ margin_top = 91.2158
 margin_right = 1279.29
 margin_bottom = 125.216
 rect_pivot_offset = Vector2( 676.708, 14.8751 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "(robin j.)"
 align = 1
 
@@ -959,7 +959,7 @@ align = 1
 margin_top = 114.628
 margin_right = 1279.0
 margin_bottom = 167.628
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "gnomes"
 align = 1
 
@@ -967,7 +967,7 @@ align = 1
 margin_top = 172.876
 margin_right = 1279.0
 margin_bottom = 225.876
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "zardoru"
 align = 1
 
@@ -985,7 +985,7 @@ margin_left = 1.29236
 margin_top = 45.29
 margin_right = 1280.29
 margin_bottom = 116.29
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "jude m."
 align = 1
 
@@ -994,7 +994,7 @@ margin_left = 1.29236
 margin_top = 96.946
 margin_right = 1280.29
 margin_bottom = 149.946
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "uro"
 align = 1
 
@@ -1004,15 +1004,14 @@ margin_top = 142.247
 margin_right = 1279.29
 margin_bottom = 176.247
 rect_pivot_offset = Vector2( 676.708, 14.8751 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "(daniel taylor)"
 align = 1
 
 [node name="6" type="Control" parent="state_handler"]
-editor/display_folded = true
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
+rect_pivot_offset = Vector2( 169.93, 244.072 )
 
 [node name="ColorRect" type="ColorRect" parent="state_handler/6"]
 margin_right = 1280.0
@@ -1021,33 +1020,34 @@ color = Color( 1, 1, 1, 0.760784 )
 
 [node name="Label8" type="Label" parent="state_handler/6"]
 margin_left = -1.0
-margin_top = 40.6922
+margin_top = 37.6922
 margin_right = 1278.0
-margin_bottom = 111.692
-custom_fonts/font = SubResource( 2 )
+margin_bottom = 108.692
+custom_fonts/font = SubResource( 1 )
 text = "sound effects"
 align = 1
 
 [node name="Label9" type="Label" parent="state_handler/6"]
-margin_top = 113.0
+margin_top = 110.0
 margin_right = 1279.0
-margin_bottom = 184.0
+margin_bottom = 181.0
 text = "freesound.org"
 align = 1
 
 [node name="Label11" type="Label" parent="state_handler/6"]
-margin_top = 600.0
+margin_top = 604.032
 margin_right = 1279.0
-margin_bottom = 634.0
+margin_bottom = 638.032
 text = "SoundEffectsFactory"
 align = 1
 
 [node name="Label3" type="Label" parent="state_handler/6"]
+editor/display_folded = true
 margin_left = 231.83
-margin_top = 158.0
+margin_top = 155.0
 margin_right = 374.83
-margin_bottom = 575.0
-theme = SubResource( 9 )
+margin_bottom = 594.0
+theme = SubResource( 7 )
 text = "bell
 river
 glass shatter
@@ -1063,7 +1063,8 @@ rope creak
 fluorescent hum
 zap
 button
-fart"
+fart
+ceramic smash"
 align = 2
 
 [node name="Label4" type="Label" parent="state_handler/6/Label3"]
@@ -1085,7 +1086,8 @@ bahaish
 kyles
 michael_grinnell
 sjnewton
-DSISStudios"
+DSISStudios
+geraldfiebig"
 
 [node name="Label5" type="Label" parent="state_handler/6/Label3"]
 margin_left = 458.0
@@ -1107,7 +1109,8 @@ more page turns
 squeaky footsteps
 library ambience
 echoey footsteps
-church bell"
+church bell
+"
 align = 2
 
 [node name="Label6" type="Label" parent="state_handler/6/Label3"]
@@ -1130,13 +1133,14 @@ Rainkiljoy
 tmkappelt
 Wihan98
 boedie
-sinewave1kHz"
+sinewave1kHz
+"
 
 [node name="Label11" type="Label" parent="state_handler/6/Label3"]
 margin_left = -229.742
-margin_top = 482.0
+margin_top = 489.032
 margin_right = 1049.26
-margin_bottom = 515.0
+margin_bottom = 522.032
 text = "phone ring"
 align = 1
 
@@ -1148,37 +1152,33 @@ margin_bottom = 40.0
 
 [node name="Label8" type="Label" parent="state_handler/7"]
 margin_left = -1.0
-margin_top = 202.541
+margin_top = 210.115
 margin_right = 1278.0
-margin_bottom = 273.541
-custom_fonts/font = SubResource( 2 )
+margin_bottom = 281.115
+custom_fonts/font = SubResource( 1 )
 text = "additional assets"
 align = 1
 
 [node name="Label3" type="Label" parent="state_handler/7"]
-margin_left = 185.384
-margin_top = 294.031
-margin_right = 459.384
-margin_bottom = 513.031
+margin_left = 333.023
+margin_top = 301.605
+margin_right = 607.023
+margin_bottom = 520.605
 text = "text-to-speech module
-resource queue module
-
 3d outline shader
 3d cat model
-krub font"
+source sans pro font"
 align = 2
 
 [node name="Label4" type="Label" parent="state_handler/7"]
-margin_left = 492.004
-margin_top = 294.031
-margin_right = 1113.0
-margin_bottom = 513.031
+margin_left = 654.68
+margin_top = 301.605
+margin_right = 1275.68
+margin_bottom = 520.605
 text = "bruvzg
-juan linietsky, ariel manzur, and the godot community
-edited by michael bethencourt
 reisdev
 shuldyakov on turbosquid.com
-cadson demak"
+paul d. hunt"
 
 [node name="last" type="Control" parent="state_handler"]
 visible = false
@@ -1218,8 +1218,8 @@ valign = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler"]
 autoplay = "credits"
-anims/credits = SubResource( 10 )
-"anims/credits (copy)" = SubResource( 11 )
+anims/credits = SubResource( 8 )
+"anims/credits (copy)" = SubResource( 9 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="state_handler/AnimationPlayer"]
 stream = ExtResource( 10 )
@@ -1234,7 +1234,7 @@ margin_top = 680.0
 margin_right = 1259.0
 margin_bottom = 708.0
 focus_mode = 0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 10 )
 enabled_focus_mode = 0
 flat = true
 
@@ -1246,7 +1246,7 @@ texture = ExtResource( 11 )
 margin_top = 1.0
 margin_right = 79.0
 margin_bottom = 28.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 11 )
 text = "skip"
 align = 1
 valign = 1

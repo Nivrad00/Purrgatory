@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/commons2.gd" type="Script" id=2]
@@ -21,13 +21,15 @@
 [ext_resource path="res://assets/sprites/natalie_wait_3.png" type="Texture" id=19]
 [ext_resource path="res://scenes/exit_left.tscn" type="PackedScene" id=20]
 [ext_resource path="res://assets/sprites/commons2_fg.png" type="Texture" id=21]
-[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=22]
-[ext_resource path="res://assets/sprites/commons2_chairs.png" type="Texture" id=23]
-[ext_resource path="res://assets/sprites/tori_wait_1.png" type="Texture" id=24]
-[ext_resource path="res://assets/sprite_masks/tori_wait_1.png" type="BitMap" id=25]
-[ext_resource path="res://assets/sprites/tori_wait_2.png" type="Texture" id=26]
-[ext_resource path="res://assets/sprites/tori_wait_3.png" type="Texture" id=27]
-[ext_resource path="res://assets/audio/glunk.wav" type="AudioStream" id=28]
+[ext_resource path="res://assets/sprites/everything_slam_poster.png" type="Texture" id=22]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=23]
+[ext_resource path="res://assets/sprites/mat.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/commons2_chairs.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprites/tori_wait_1.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprite_masks/tori_wait_1.png" type="BitMap" id=27]
+[ext_resource path="res://assets/sprites/tori_wait_2.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprites/tori_wait_3.png" type="Texture" id=29]
+[ext_resource path="res://assets/audio/glunk.wav" type="AudioStream" id=30]
 
 [node name="room_template" type="Control"]
 anchor_right = 1.0
@@ -51,6 +53,7 @@ centered = false
 
 [node name="elijahs_chair" type="Area2D" parent="state_handler"]
 editor/display_folded = true
+visible = false
 position = Vector2( 368.232, -166.775 )
 script = ExtResource( 4 )
 dialog_label = "commons_chair1"
@@ -67,6 +70,7 @@ polygon = PoolVector2Array( 184.863, 462.814, 185.191, 563.254, 184.863, 616.432
 
 [node name="seans_chair" type="Area2D" parent="state_handler"]
 editor/display_folded = true
+visible = false
 position = Vector2( 472.107, -171.627 )
 script = ExtResource( 4 )
 dialog_label = "commons_chair1"
@@ -81,6 +85,7 @@ position = Vector2( -20.9061, 54.7287 )
 polygon = PoolVector2Array( 337.054, 461.726, 338.894, 617.412, 372.344, 616.576, 382.379, 582.29, 445.515, 562.638, 443.843, 514.972, 423.355, 513.3, 424.609, 456.017, 394.504, 440.547, 354.974, 444.86 )
 
 [node name="wait_sean" type="TextureButton" parent="state_handler"]
+visible = false
 margin_left = 755.026
 margin_top = 265.763
 margin_right = 983.026
@@ -96,6 +101,7 @@ animation1 = ExtResource( 10 )
 animation2 = ExtResource( 11 )
 
 [node name="wait_elijah" type="TextureButton" parent="state_handler"]
+visible = false
 margin_left = 539.535
 margin_top = 254.921
 margin_right = 719.535
@@ -111,6 +117,7 @@ animation1 = ExtResource( 14 )
 animation2 = ExtResource( 15 )
 
 [node name="wait_natalie" type="TextureButton" parent="state_handler"]
+visible = false
 margin_left = 993.359
 margin_top = 372.919
 margin_right = 1310.36
@@ -162,19 +169,36 @@ script = ExtResource( 9 )
 room_label = "commons1"
 
 [node name="commons2_fg" type="Sprite" parent="state_handler"]
-position = Vector2( 921.796, 374.146 )
+position = Vector2( 635.76, 344.687 )
 texture = ExtResource( 21 )
+
+[node name="everything_slam_poster" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+visible = false
+position = Vector2( 466.367, 25.1374 )
+script = ExtResource( 4 )
+dialog_label = "slam_poster_after"
+sprite_path = [ null ]
+
+[node name="everything_slam_poster" type="Sprite" parent="state_handler/everything_slam_poster"]
+position = Vector2( 593.439, 215.134 )
+texture = ExtResource( 22 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/everything_slam_poster"]
+position = Vector2( 0, -0.463257 )
+polygon = PoolVector2Array( 445.39, 128.735, 434.613, 299.974, 751.944, 341.287, 744.759, 311.949, 746.555, 110.773, 705.841, 86.2248 )
 
 [node name="library_door" type="Area2D" parent="state_handler"]
 position = Vector2( 451.61, -212.952 )
-script = ExtResource( 22 )
+script = ExtResource( 23 )
 room_label = "library"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/library_door"]
-position = Vector2( 2.72073, 19.0453 )
+position = Vector2( 0.72073, 18.0453 )
 polygon = PoolVector2Array( -336.115, 293.819, -336.889, 714.757, -23.0817, 667.179, -20.3742, 319.715 )
 
 [node name="wait_library_door" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 visible = false
 position = Vector2( -1.47528, -16.7366 )
 script = ExtResource( 4 )
@@ -185,17 +209,22 @@ position = Vector2( 453.085, -178.215 )
 polygon = PoolVector2Array( -336.115, 293.819, -336.889, 714.757, -23.0817, 667.179, -20.3742, 319.715 )
 
 [node name="commons_mat" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( -1.47528, -34.7366 )
 script = ExtResource( 4 )
 dialog_label = "commons_mat"
+sprite_path = [ null ]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_mat"]
 position = Vector2( 1.36038, 16.3245 )
 polygon = PoolVector2Array( 173.807, 553.354, 155.429, 643.036, 454.054, 595.738, 417.122, 513.659 )
 
+[node name="mat" type="Sprite" parent="state_handler/commons_mat"]
+position = Vector2( 303.391, 592.551 )
+texture = ExtResource( 24 )
+
 [node name="commons_chair1" type="Area2D" parent="state_handler"]
 editor/display_folded = true
-visible = false
 position = Vector2( 368.232, -148.775 )
 script = ExtResource( 4 )
 dialog_label = "commons_chair1"
@@ -203,7 +232,7 @@ sprite_path = [ null ]
 
 [node name="commons2_chairs" type="Sprite" parent="state_handler/commons_chair1"]
 position = Vector2( 314.816, 537.668 )
-texture = ExtResource( 23 )
+texture = ExtResource( 25 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/commons_chair1"]
 position = Vector2( 0, -0.463257 )
@@ -214,6 +243,7 @@ position = Vector2( 0, -0.463257 )
 polygon = PoolVector2Array( 337.054, 461.726, 338.135, 597.122, 378.554, 618.372, 448.259, 605.998, 448.968, 542.594, 413.478, 523.236, 412.621, 460.708, 395.554, 444.727, 354.974, 444.86 )
 
 [node name="commons_chair2" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( 466.367, 25.1374 )
 script = ExtResource( 4 )
 dialog_label = "commons_chair2"
@@ -233,18 +263,13 @@ position = Vector2( 0, -0.463257 )
 polygon = PoolVector2Array( 537.914, 80.7565, 530.176, 180.574, 529.402, 230.87, 540.235, 298.189, 637.311, 452.152, 647.261, 453.84, 636.088, 430.096, 627.708, 395.179, 619.328, 219.896, 606.758, 164.727, 557.176, 92.1001 )
 
 [node name="commons_poem" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 441.667, 250.287 )
 script = ExtResource( 4 )
 dialog_label = "commons_poem"
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/commons_poem"]
-position = Vector2( -0.377319, -0.463257 )
-polygon = PoolVector2Array( 586.906, 299.305, 571.817, 323.969, 610.739, 328.155, 610.105, 295.021 )
-
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="state_handler/commons_poem"]
 position = Vector2( -0.377319, -0.463257 )
-polygon = PoolVector2Array( 555.638, 265.348, 585.898, 289.665, 604.27, 256.702, 586.979, 245.895 )
+polygon = PoolVector2Array( 554.185, 265.532, 586.888, 285.388, 621.926, 280.132, 590.392, 243.049 )
 
 [node name="tack" type="Area2D" parent="state_handler"]
 editor/display_folded = true
@@ -257,22 +282,23 @@ position = Vector2( -0.377319, -0.463257 )
 polygon = PoolVector2Array( 637.773, 288.043, 664.25, 301.552, 674.517, 281.559, 648.58, 271.833 )
 
 [node name="wait_tori" type="TextureButton" parent="state_handler"]
+visible = false
 margin_left = 373.281
 margin_top = 240.629
 margin_right = 601.281
 margin_bottom = 787.629
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = ExtResource( 24 )
-texture_click_mask = ExtResource( 25 )
+texture_normal = ExtResource( 26 )
+texture_click_mask = ExtResource( 27 )
 script = ExtResource( 9 )
 dialog_label = "wait_tori"
-animation0 = ExtResource( 24 )
-animation1 = ExtResource( 26 )
-animation2 = ExtResource( 27 )
+animation0 = ExtResource( 26 )
+animation1 = ExtResource( 28 )
+animation2 = ExtResource( 29 )
 
 [node name="glunk" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 28 )
+stream = ExtResource( 30 )
 volume_db = -5.0
 bus = "SFX"
 [connection signal="pressed" from="state_handler/wait_sean" to="state_handler/wait_sean" method="_on_char_obj_button_pressed"]

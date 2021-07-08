@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/chord.wav-94ee6608d85256eac7af7b94207c0456.sample"
+
+[deps]
+
+source_file="res://assets/audio/chord.wav"
+dest_files=[ "res://.import/chord.wav-94ee6608d85256eac7af7b94207c0456.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

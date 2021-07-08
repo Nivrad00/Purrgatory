@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mary_had_a_little_lamb.wav-5cd67d63e8ebee04e5be5862708ba838.sample"
+
+[deps]
+
+source_file="res://assets/audio/mary_had_a_little_lamb.wav"
+dest_files=[ "res://.import/mary_had_a_little_lamb.wav-5cd67d63e8ebee04e5be5862708ba838.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -14,11 +14,22 @@ func _ready():
 
 func show_custom():
 	set_position(Vector2(0, 0))
-	$'../menu_button'.disabled = true
+	$'../../content/ui/choices'.hide()
+	$'../../content/ui/text_box'.hide()
+	$'../../content/ui/skip_button'.hide()
+	$'../menu_button'.hide()
+	$'../notes_button'.hide()
+	$'../items_button'.hide()
 
 func hide_custom():
 	set_position(Vector2(0, 1600))
-	$'../menu_button'.disabled = false
+	$'../../content/ui/choices'.show()
+	$'../../content/ui/text_box'.show()
+	$'../../content/ui/skip_button'.show()
+	$'../menu_button'.show()
+	$'../notes_button'.show()
+	$'../items_button'.show()
+		
 
 func toggle():
 	if rect_position.y > 0:
@@ -60,6 +71,7 @@ func add_to_history(s, t):
 	speaker.set_use_bbcode(true)
 	speaker.set_mouse_filter(MOUSE_FILTER_IGNORE)
 	speaker.set_custom_minimum_size(Vector2(widths[0], 500))
+	speaker.scroll_active = false
 	grid.add_child(speaker)
 	
 	var text = RichTextLabel.new()
@@ -67,6 +79,7 @@ func add_to_history(s, t):
 	text.set_use_bbcode(true)
 	text.set_mouse_filter(MOUSE_FILTER_IGNORE)
 	text.set_custom_minimum_size(Vector2(widths[1], 500))
+	speaker.scroll_active = false
 	grid.add_child(text)
 	
 	# wait until the text is drawn

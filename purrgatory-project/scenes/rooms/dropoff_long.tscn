@@ -76,6 +76,7 @@ tracks/0/keys = {
 [sub_resource type="DynamicFont" id=7]
 size = 22
 use_filter = true
+extra_spacing_space = 1
 font_data = ExtResource( 20 )
 
 [node name="room_instance" type="Control"]
@@ -157,7 +158,6 @@ position = Vector2( -4.82532, 2812.56 )
 polygon = PoolVector2Array( 391.8, 6888.11, 428.802, 7040.63, 574.104, 7042.44, 537.102, 6882.69 )
 
 [node name="tori_before" type="Node2D" parent="state_handler"]
-editor/display_folded = true
 
 [node name="tori_before" type="TextureButton" parent="state_handler/tori_before"]
 margin_left = 711.082
@@ -173,10 +173,9 @@ animation1 = ExtResource( 11 )
 animation2 = ExtResource( 12 )
 
 [node name="tori_after" type="Node2D" parent="state_handler"]
-editor/display_folded = true
+visible = false
 
 [node name="tori_after" type="TextureButton" parent="state_handler/tori_after"]
-visible = false
 margin_left = 307.556
 margin_top = 0.0579834
 margin_right = 738.556
@@ -230,7 +229,6 @@ autoplay = "blink"
 anims/blink = SubResource( 6 )
 
 [node name="_dialog" type="Control" parent="state_handler"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
@@ -273,7 +271,7 @@ margin_top = 101.0
 margin_right = 622.0
 margin_bottom = 135.0
 rect_scale = Vector2( -1, 1 )
-text = "WHY ARE YOU SO HEAVY"
+text = "why are you so heavy??"
 align = 1
 valign = 1
 
@@ -313,7 +311,7 @@ margin_top = 101.0
 margin_right = 622.0
 margin_bottom = 135.0
 rect_scale = Vector2( -1, 1 )
-text = "WHY ARE YOU SO HEAVY"
+text = "why are you so heavy??"
 align = 1
 valign = 1
 

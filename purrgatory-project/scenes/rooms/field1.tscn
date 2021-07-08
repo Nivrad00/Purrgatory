@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/field1.gd" type="Script" id=2]
@@ -10,22 +10,26 @@
 [ext_resource path="res://assets/sprite_masks/elijah_field_1.png" type="BitMap" id=8]
 [ext_resource path="res://assets/sprites/elijah_field_2.png" type="Texture" id=9]
 [ext_resource path="res://assets/sprites/elijah_field_3.png" type="Texture" id=10]
-[ext_resource path="res://assets/sprites/weeds.png" type="Texture" id=11]
-[ext_resource path="res://assets/sprites/wheelbarrow.png" type="Texture" id=12]
-[ext_resource path="res://scenes/arrow_exit_button_template.tscn" type="PackedScene" id=13]
-[ext_resource path="res://scenes/exit_left.tscn" type="PackedScene" id=14]
-[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=15]
-[ext_resource path="res://scenes/surprise.tscn" type="PackedScene" id=16]
-[ext_resource path="res://scripts/digging_container.gd" type="Script" id=17]
-[ext_resource path="res://scripts/digging_button.gd" type="Script" id=18]
-[ext_resource path="res://assets/sprites/hoels/shovel1.png" type="Texture" id=19]
-[ext_resource path="res://assets/sprites/hoels/field1_1.png" type="Texture" id=20]
-[ext_resource path="res://assets/sprites/hoels/field1_2.png" type="Texture" id=21]
-[ext_resource path="res://assets/sprites/hoels/shovel2.png" type="Texture" id=22]
-[ext_resource path="res://assets/sprites/hoels/field1_3.png" type="Texture" id=23]
-[ext_resource path="res://assets/sprites/hoels/shovel7.png" type="Texture" id=24]
-[ext_resource path="res://scenes/hole_score.tscn" type="PackedScene" id=25]
-[ext_resource path="res://scenes/digging_sound.tscn" type="PackedScene" id=26]
+[ext_resource path="res://assets/sprites/wheelbarrow.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/weeds.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/sean_field1.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprite_masks/sean_field1.png" type="BitMap" id=14]
+[ext_resource path="res://assets/sprites/sean_field2.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/sean_field3.png" type="Texture" id=16]
+[ext_resource path="res://scenes/arrow_exit_button_template.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/exit_left.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scripts/polygon_exit_button.gd" type="Script" id=19]
+[ext_resource path="res://scenes/surprise.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scripts/digging_container.gd" type="Script" id=21]
+[ext_resource path="res://scripts/digging_button.gd" type="Script" id=22]
+[ext_resource path="res://assets/sprites/hoels/shovel1.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/hoels/field1_1.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/hoels/field1_2.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprites/hoels/shovel2.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprites/hoels/field1_3.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprites/hoels/shovel7.png" type="Texture" id=28]
+[ext_resource path="res://scenes/hole_score.tscn" type="PackedScene" id=29]
+[ext_resource path="res://scenes/digging_sound.tscn" type="PackedScene" id=30]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -83,7 +87,7 @@ polygon = PoolVector2Array( 572.136, 461.854, 720.263, 499.177, 923.208, 539.999
 
 [node name="river" parent="state_handler" instance=ExtResource( 5 )]
 
-[node name="elijah_park" parent="state_handler" instance=ExtResource( 6 )]
+[node name="elijah_field" parent="state_handler" instance=ExtResource( 6 )]
 margin_left = 394.442
 margin_top = 367.121
 margin_right = 575.442
@@ -96,11 +100,8 @@ animation0 = ExtResource( 7 )
 animation1 = ExtResource( 9 )
 animation2 = ExtResource( 10 )
 
-[node name="weeds" type="Sprite" parent="state_handler"]
-position = Vector2( 531.603, 517.329 )
-texture = ExtResource( 11 )
-
 [node name="wheelbarrow" type="Area2D" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( 38.4896, 0 )
 script = ExtResource( 4 )
 dialog_label = "wheelbarrow"
@@ -108,20 +109,52 @@ sprite_path = [ null ]
 
 [node name="wheelbarrow" type="Sprite" parent="state_handler/wheelbarrow"]
 position = Vector2( 214.316, 472.579 )
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/wheelbarrow"]
 polygon = PoolVector2Array( 110.94, 448.878, 169.949, 479.114, 190.919, 531.295, 224.081, 519.103, 264.711, 532.657, 294.289, 534.932, 320.454, 521.85, 328.443, 495.207, 314.301, 454.243, 334.172, 394.121, 287.706, 394.121, 164.097, 420.593, 157.269, 440.588, 114.841, 438.149 )
 
-[node name="exit" parent="state_handler" instance=ExtResource( 13 )]
+[node name="weeds" type="Area2D" parent="state_handler"]
+position = Vector2( 38.4896, 0 )
+script = ExtResource( 4 )
+dialog_label = "elijahs_weeds"
+sprite_path = [ null ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/weeds"]
+position = Vector2( 265.928, 89.809 )
+polygon = PoolVector2Array( 177.186, 474.181, 200.505, 474.181, 223.825, 454.013, 216.054, 417.452, 196.57, 423.086, 174.955, 418.763, 168.993, 438.887 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/weeds"]
+position = Vector2( 335.094, 40.6363 )
+polygon = PoolVector2Array( 174.732, 458.696, 181.448, 463.719, 193.419, 444.306, 185.331, 416.159, 168.83, 425.865, 165.919, 439.453 )
+
+[node name="weeds" type="Sprite" parent="state_handler/weeds"]
+position = Vector2( 493.113, 517.329 )
+texture = ExtResource( 12 )
+
+[node name="sean_field" parent="state_handler" instance=ExtResource( 6 )]
+margin_left = 82.9915
+margin_top = 357.697
+margin_right = 369.992
+margin_bottom = 613.697
+rect_pivot_offset = Vector2( 120.042, 49.7616 )
+texture_normal = ExtResource( 13 )
+texture_click_mask = ExtResource( 14 )
+dialog_label = "sean_post_quest"
+blackout_label = "sean_blackout"
+animation0 = ExtResource( 13 )
+animation1 = ExtResource( 15 )
+animation2 = ExtResource( 16 )
+
+[node name="exit" parent="state_handler" instance=ExtResource( 17 )]
 position = Vector2( -1133.8, -4.98454 )
 
-[node name="exit2" parent="state_handler" instance=ExtResource( 14 )]
+[node name="exit2" parent="state_handler" instance=ExtResource( 18 )]
 room_label = "field3"
 
 [node name="exit3" type="Area2D" parent="state_handler"]
 position = Vector2( 453.942, -177.358 )
-script = ExtResource( 15 )
+script = ExtResource( 19 )
 room_label = "garden4"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3"]
@@ -135,20 +168,24 @@ dialog_label = "tori_park_leave"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3_game"]
 polygon = PoolVector2Array( 690.095, 694.817, 690.095, 474.142, 817.192, 446.208, 815.097, 738.812 )
 
-[node name="surprise" parent="state_handler" instance=ExtResource( 16 )]
+[node name="surprise" parent="state_handler" instance=ExtResource( 20 )]
 
 [node name="digging" type="Node2D" parent="state_handler"]
-script = ExtResource( 17 )
+script = ExtResource( 21 )
 
 [node name="digging_button" type="Area2D" parent="state_handler/digging"]
-editor/display_folded = true
 position = Vector2( 337.204, 649.116 )
-script = ExtResource( 18 )
+script = ExtResource( 22 )
 dialog_label = "tori_park_rock"
 
 [node name="shovel" type="Sprite" parent="state_handler/digging/digging_button"]
+visible = false
 position = Vector2( 19.576, -170.601 )
-texture = ExtResource( 19 )
+texture = ExtResource( 23 )
+
+[node name="hole" type="Sprite" parent="state_handler/digging/digging_button"]
+position = Vector2( -23.5899, -45.7147 )
+texture = ExtResource( 24 )
 
 [node name="polygon" type="CollisionPolygon2D" parent="state_handler/digging/digging_button"]
 position = Vector2( -1089.42, -495.369 )
@@ -162,19 +199,14 @@ dialog_label = "tori_park_hole"
 position = Vector2( -1089.42, -495.369 )
 polygon = PoolVector2Array( 1237.08, 488.526, 1180.5, 459.488, 1111.99, 451, 1052.23, 454.706, 1002.19, 476.944, 1005.22, 515.723, 1050.82, 535.707, 1156.61, 534.569, 1234.77, 518.177 )
 
-[node name="hole" type="Sprite" parent="state_handler/digging/digging_button"]
-position = Vector2( -23.5899, -45.7147 )
-texture = ExtResource( 20 )
-
 [node name="digging_button2" type="Area2D" parent="state_handler/digging"]
-editor/display_folded = true
 position = Vector2( 758.317, 602.462 )
-script = ExtResource( 18 )
+script = ExtResource( 22 )
 dialog_label = "tori_park_ukulele"
 
 [node name="hole" type="Sprite" parent="state_handler/digging/digging_button2"]
 position = Vector2( -16.8931, -35.8331 )
-texture = ExtResource( 21 )
+texture = ExtResource( 25 )
 
 [node name="polygon" type="CollisionPolygon2D" parent="state_handler/digging/digging_button2"]
 position = Vector2( -1089.42, -495.369 )
@@ -189,18 +221,22 @@ position = Vector2( -1089.42, -495.369 )
 polygon = PoolVector2Array( 1133.25, 458.558, 1098.62, 430.273, 994.259, 423.933, 926.96, 443.928, 906.965, 496.109, 988.407, 523.418, 1098.62, 503.912 )
 
 [node name="shovel2" type="Sprite" parent="state_handler/digging/digging_button2"]
+visible = false
 position = Vector2( -72.1591, -138.988 )
-texture = ExtResource( 22 )
+texture = ExtResource( 26 )
 
 [node name="digging_button3" type="Area2D" parent="state_handler/digging"]
-editor/display_folded = true
 position = Vector2( 775.505, 435.49 )
-script = ExtResource( 18 )
+script = ExtResource( 22 )
 dialog_label = "tori_park_fridge"
 
 [node name="polygon" type="CollisionPolygon2D" parent="state_handler/digging/digging_button3"]
 position = Vector2( -1089.42, -495.369 )
 polygon = PoolVector2Array( 1138.22, 514.57, 1148.34, 488.603, 1106.09, 467.037, 1063.84, 465.276, 1034.35, 478.48, 1035.23, 505.328, 1062.08, 522.493, 1106.97, 522.493 )
+
+[node name="hole" type="Sprite" parent="state_handler/digging/digging_button3"]
+position = Vector2( 2.98865, -1.13129 )
+texture = ExtResource( 27 )
 
 [node name="hole_button" type="Area2D" parent="state_handler/digging/digging_button3"]
 script = ExtResource( 4 )
@@ -210,14 +246,11 @@ dialog_label = "tori_park_hole"
 position = Vector2( -1089.42, -495.369 )
 polygon = PoolVector2Array( 1138.22, 514.57, 1148.34, 488.603, 1106.09, 467.037, 1063.84, 465.276, 1034.35, 478.48, 1035.23, 505.328, 1062.08, 522.493, 1106.97, 522.493 )
 
-[node name="hole" type="Sprite" parent="state_handler/digging/digging_button3"]
-position = Vector2( 2.98865, -1.13129 )
-texture = ExtResource( 23 )
-
 [node name="shovel7" type="Sprite" parent="state_handler/digging/digging_button3"]
+visible = false
 position = Vector2( -6.505, -32.49 )
-texture = ExtResource( 24 )
+texture = ExtResource( 28 )
 
-[node name="score" parent="state_handler/digging" instance=ExtResource( 25 )]
+[node name="score" parent="state_handler/digging" instance=ExtResource( 29 )]
 
-[node name="sound" parent="state_handler/digging" instance=ExtResource( 26 )]
+[node name="sound" parent="state_handler/digging" instance=ExtResource( 30 )]

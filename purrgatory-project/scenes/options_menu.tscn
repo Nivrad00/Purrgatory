@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/options_menu.gd" type="Script" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=9]
 [ext_resource path="res://assets/ui/font_preview.png" type="Texture" id=10]
 [ext_resource path="res://themes/dropdown_menu_theme.tres" type="Theme" id=11]
+[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=12]
+[ext_resource path="res://assets/ui/short_slider.png" type="Texture" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -22,15 +24,21 @@ font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 8 )
-region_rect = Rect2( 0, 0, 479, 12 )
+region_rect = Rect2( 0, 0, 448, 12 )
 axis_stretch_horizontal = 1
 
 [sub_resource type="StyleBoxEmpty" id=4]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 size = 20
 use_filter = true
+extra_spacing_space = 1
 font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 256, 12 )
+axis_stretch_horizontal = 1
 
 [node name="options_menu" type="Control"]
 margin_right = 1280.0
@@ -38,14 +46,17 @@ margin_bottom = 720.0
 rect_pivot_offset = Vector2( -460, 150 )
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="white" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -0.418091
-margin_top = 1.25436
-margin_right = -0.418091
-margin_bottom = 1.25439
+margin_bottom = 6.10352e-005
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Line2D" type="Line2D" parent="."]
 visible = false
@@ -59,15 +70,16 @@ visible = false
 position = Vector2( 398.949, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
+texture_mode = 1329588434
 
 [node name="back" type="Button" parent="."]
 editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 506.0
-margin_top = 607.98
-margin_right = -524.0
-margin_bottom = -53.0197
+margin_left = 515.0
+margin_top = 587.98
+margin_right = -515.0
+margin_bottom = -73.0197
 rect_pivot_offset = Vector2( 311.063, -221.429 )
 focus_mode = 0
 enabled_focus_mode = 0
@@ -94,6 +106,7 @@ align = 1
 valign = 1
 
 [node name="reset" type="Button" parent="."]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1118.0
@@ -127,10 +140,10 @@ valign = 1
 
 [node name="text_size" type="Control" parent="."]
 editor/display_folded = true
-margin_left = 279.106
-margin_top = 95.0708
-margin_right = 319.106
-margin_bottom = 135.071
+margin_left = 240.087
+margin_top = 100.071
+margin_right = 719.087
+margin_bottom = 100.071
 __meta__ = {
 "_edit_group_": true
 }
@@ -138,17 +151,15 @@ __meta__ = {
 [node name="slider_label" type="Label" parent="text_size"]
 margin_left = -127.191
 margin_top = -5.21382
-margin_right = -30.1908
-margin_bottom = 28.7862
+margin_right = -46.191
+margin_bottom = 26.7862
 text = "text size"
 align = 2
 
 [node name="slider" type="HSlider" parent="text_size"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -8.0
-margin_right = 439.0
-margin_bottom = -6.0
+margin_top = 9.0
+margin_right = 448.0
+margin_bottom = 21.0
 focus_mode = 0
 custom_icons/tick = ExtResource( 6 )
 custom_icons/grabber_highlight = ExtResource( 7 )
@@ -165,50 +176,51 @@ ticks_on_borders = true
 focus_mode = 0
 
 [node name="preview_a" type="Label" parent="text_size"]
-margin_left = 26.3268
-margin_top = 65.2425
-margin_right = 452.327
-margin_bottom = 119.243
+margin_left = 26.0
+margin_top = 66.0
+margin_right = 430.0
+margin_bottom = 123.0
 theme = ExtResource( 9 )
 text = "oliver"
 valign = 1
 
 [node name="preview_b" type="RichTextLabel" parent="text_size"]
-margin_left = 27.3268
-margin_top = 129.243
-margin_right = 452.327
-margin_bottom = 219.243
+margin_left = 24.0
+margin_top = 136.0
+margin_right = 432.0
+margin_bottom = 250.0
 theme = ExtResource( 9 )
 bbcode_enabled = true
 bbcode_text = "wahoo i sure [i]love[/i] purrgatory!"
 text = "wahoo i sure love purrgatory!"
 
 [node name="preview_box" type="Sprite" parent="text_size"]
-position = Vector2( 236.327, 149 )
+position = Vector2( 227.314, 167.088 )
 texture = ExtResource( 10 )
 
 [node name="preview_label" type="Label" parent="text_size"]
-margin_left = -127.497
-margin_top = 56.9917
-margin_right = -30.497
-margin_bottom = 90.9917
+margin_left = -145.0
+margin_top = 62.0
+margin_right = -47.0
+margin_bottom = 94.0
 theme = ExtResource( 1 )
 text = "preview"
 align = 2
 
 [node name="audio" type="Control" parent="."]
-margin_left = 279.106
-margin_top = 421.585
-margin_right = 319.106
-margin_bottom = 461.585
+editor/display_folded = true
+margin_left = 240.087
+margin_top = 438.216
+margin_right = 280.087
+margin_bottom = 478.216
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="music_label" type="Label" parent="audio"]
-margin_left = -191.6
+margin_left = -205.65
 margin_top = -7.0
-margin_right = -30.6001
+margin_right = -44.6502
 margin_bottom = 27.0
 text = "music volume"
 align = 2
@@ -217,7 +229,7 @@ align = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -8.0
-margin_right = 439.0
+margin_right = 408.0
 margin_bottom = -6.0
 focus_mode = 0
 custom_icons/tick = ExtResource( 6 )
@@ -226,16 +238,16 @@ custom_icons/grabber = ExtResource( 7 )
 custom_styles/slider = SubResource( 3 )
 custom_styles/grabber_area = SubResource( 4 )
 max_value = 1.0
-step = 0.01
+step = 0.02
 value = 0.6
 scrollable = false
 ticks_on_borders = true
 focus_mode = 0
 
 [node name="sfx_label" type="Label" parent="audio"]
-margin_left = -153.742
+margin_left = -167.792
 margin_top = 53.9303
-margin_right = -30.7422
+margin_right = -44.7923
 margin_bottom = 87.9303
 text = "sfx volume"
 align = 2
@@ -243,9 +255,9 @@ align = 2
 [node name="sfx" type="HSlider" parent="audio"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 52.8001
-margin_right = 439.0
-margin_bottom = 54.8001
+margin_top = 53.0
+margin_right = 408.0
+margin_bottom = 55.0
 focus_mode = 0
 custom_icons/tick = ExtResource( 6 )
 custom_icons/grabber_highlight = ExtResource( 7 )
@@ -253,127 +265,224 @@ custom_icons/grabber = ExtResource( 7 )
 custom_styles/slider = SubResource( 3 )
 custom_styles/grabber_area = SubResource( 4 )
 max_value = 1.0
-step = 0.01
+step = 0.02
 value = 0.6
 scrollable = false
 ticks_on_borders = true
 focus_mode = 0
 
-[node name="window_size" type="Control" parent="."]
-margin_left = -9.04639
-margin_top = 1.29234
-margin_right = 30.9536
-margin_bottom = 41.2923
+[node name="right_side" type="GridContainer" parent="."]
+margin_left = 760.158
+margin_top = 74.0587
+margin_right = 1249.16
+margin_bottom = 505.059
+custom_constants/vseparation = 8
+custom_constants/hseparation = 27
+columns = 2
 
-[node name="Label" type="Label" parent="window_size"]
-margin_left = 858.685
-margin_top = 90.9788
-margin_right = 999.685
-margin_bottom = 124.979
-text = "window size"
-
-[node name="option_button" type="OptionButton" parent="window_size"]
-margin_left = 1014.0
-margin_top = 88.0
-margin_right = 1200.0
-margin_bottom = 130.0
-focus_mode = 0
-theme = ExtResource( 11 )
-shortcut_in_tooltip = false
-enabled_focus_mode = 0
-text = "420 x 69"
-
-[node name="fullscreen" type="Control" parent="."]
-editor/display_folded = true
-margin_left = 1134.01
-margin_top = 175.433
-margin_right = 1174.01
-margin_bottom = 215.434
-
-[node name="fs_label" type="Label" parent="fullscreen"]
-margin_left = -191.6
-margin_top = -7.0
-margin_right = -30.6001
-margin_bottom = 27.0
+[node name="fullscreen_label" type="Label" parent="right_side"]
+modulate = Color( 1, 1, 1, 0.301961 )
+margin_top = 21.0
+margin_right = 162.0
+margin_bottom = 53.0
 text = "fullscreen"
 align = 2
 
-[node name="fullscreen" type="CheckBox" parent="fullscreen"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -22.5424
-margin_top = -27.7207
-margin_right = 5.45755
-margin_bottom = 0.279274
+[node name="fullscreen" type="CheckBox" parent="right_side"]
+modulate = Color( 1, 1, 1, 0.3 )
+margin_left = 189.0
+margin_right = 463.0
+margin_bottom = 74.0
 focus_mode = 0
+disabled = true
 enabled_focus_mode = 0
 
-[node name="enable_notes" type="Control" parent="."]
-margin_left = 1134.01
-margin_top = 309.713
-margin_right = 1174.01
-margin_bottom = 349.713
-
-[node name="label" type="Label" parent="enable_notes"]
-margin_left = -271.0
-margin_top = -7.0
-margin_right = -28.0
-margin_bottom = 27.0
-text = "enable \"to do\" list"
+[node name="window_size_label" type="Label" parent="right_side"]
+modulate = Color( 1, 1, 1, 0.3 )
+margin_top = 87.0
+margin_right = 162.0
+margin_bottom = 119.0
+text = "window size"
 align = 2
 
-[node name="label2" type="Label" parent="enable_notes"]
-margin_left = -237.0
-margin_top = 38.0
-margin_right = 32.0
-margin_bottom = 183.0
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
-text = "automatically keeps track of certain objectives"
+[node name="window_size" type="MarginContainer" parent="right_side"]
+modulate = Color( 1, 1, 1, 0.3 )
+margin_left = 189.0
+margin_top = 82.0
+margin_right = 463.0
+margin_bottom = 125.0
+custom_constants/margin_left = 18
+
+[node name="dropdown" type="OptionButton" parent="right_side/window_size"]
+margin_left = 18.0
+margin_right = 204.0
+margin_bottom = 43.0
+rect_min_size = Vector2( 186, 43 )
+focus_mode = 0
+size_flags_horizontal = 0
+theme = ExtResource( 11 )
+disabled = true
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "1280 x 720"
+
+[node name="space1" type="Control" parent="right_side"]
+margin_top = 133.0
+margin_right = 162.0
+margin_bottom = 163.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="space2" type="Control" parent="right_side"]
+margin_left = 189.0
+margin_top = 133.0
+margin_right = 463.0
+margin_bottom = 163.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="self_voicing_label" type="Label" parent="right_side"]
+modulate = Color( 1, 1, 1, 0.3 )
+margin_top = 192.0
+margin_right = 162.0
+margin_bottom = 224.0
+text = "self-voicing"
 align = 2
+
+[node name="self_voicing" type="CheckBox" parent="right_side"]
+modulate = Color( 1, 1, 1, 0.3 )
+margin_left = 189.0
+margin_top = 171.0
+margin_right = 463.0
+margin_bottom = 245.0
+focus_mode = 0
+disabled = true
+enabled_focus_mode = 0
+
+[node name="test_voicing" type="Button" parent="right_side/self_voicing"]
+visible = false
+margin_left = 88.3215
+margin_top = 17.5637
+margin_right = 178.322
+margin_bottom = 55.5637
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+clip_text = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="right_side/self_voicing/test_voicing"]
+margin_left = 1.42529
+margin_top = 0.814514
+margin_right = 91.4253
+margin_bottom = 40.8145
+mouse_filter = 2
+texture = ExtResource( 12 )
+
+[node name="label3" type="Label" parent="right_side/self_voicing/test_voicing"]
+margin_left = 8.53992
+margin_top = 5.0
+margin_right = 85.5399
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 6 )
+text = "test"
+align = 1
+valign = 1
 autowrap = true
 
-[node name="enable_notes" type="CheckBox" parent="enable_notes"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -22.5424
-margin_top = -27.7207
-margin_right = 5.45755
-margin_bottom = 0.279274
+[node name="voice_speed_label" type="Label" parent="right_side"]
+modulate = Color( 1, 1, 1, 0.3 )
+margin_top = 253.0
+margin_right = 162.0
+margin_bottom = 285.0
+text = "voice speed"
+align = 2
+
+[node name="voice_speed" type="MarginContainer" parent="right_side"]
+modulate = Color( 1, 1, 1, 0.3 )
+margin_left = 189.0
+margin_top = 253.0
+margin_right = 463.0
+margin_bottom = 285.0
+custom_constants/margin_left = 18
+
+[node name="slider" type="HSlider" parent="right_side/voice_speed"]
+margin_left = 18.0
+margin_right = 274.0
+margin_bottom = 32.0
+focus_mode = 0
+size_flags_vertical = 1
+custom_icons/tick = ExtResource( 6 )
+custom_icons/grabber_disabled = ExtResource( 7 )
+custom_icons/grabber_highlight = ExtResource( 7 )
+custom_icons/grabber = ExtResource( 7 )
+custom_styles/slider = SubResource( 5 )
+custom_styles/grabber_area = SubResource( 4 )
+min_value = -100.0
+step = 10.0
+editable = false
+scrollable = false
+tick_count = 5
+ticks_on_borders = true
+focus_mode = 0
+
+[node name="space3" type="Control" parent="right_side"]
+margin_top = 293.0
+margin_right = 162.0
+margin_bottom = 323.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="space4" type="Control" parent="right_side"]
+margin_left = 189.0
+margin_top = 293.0
+margin_right = 463.0
+margin_bottom = 323.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="to_do_label" type="Label" parent="right_side"]
+margin_top = 352.0
+margin_right = 162.0
+margin_bottom = 384.0
+text = "enable to do list"
+align = 2
+
+[node name="label2" type="Label" parent="right_side/to_do_label"]
+margin_left = -4.0
+margin_top = 46.0
+margin_right = 394.0
+margin_bottom = 102.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+text = "automatically keeps track of certain objectives"
+autowrap = true
+
+[node name="to_do" type="CheckBox" parent="right_side"]
+margin_left = 189.0
+margin_top = 331.0
+margin_right = 463.0
+margin_bottom = 405.0
 focus_mode = 0
 pressed = true
 enabled_focus_mode = 0
 
-[node name="voicing" type="Control" parent="."]
-margin_left = 1134.01
-margin_top = 243.713
-margin_right = 1174.01
-margin_bottom = 283.713
-
-[node name="label" type="Label" parent="voicing"]
-margin_left = -386.0
-margin_top = -8.0
-margin_right = -30.0
-margin_bottom = 26.0
-text = "assistive self-voicing"
-align = 2
-
-[node name="enable_voicing" type="CheckBox" parent="voicing"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -22.5424
-margin_top = -27.7207
-margin_right = 5.45755
-margin_bottom = 0.279274
-focus_mode = 0
-enabled_focus_mode = 0
+[node name="web_disclaimer" type="Label" parent="."]
+margin_left = 19.4555
+margin_top = 681.0
+margin_right = 477.455
+margin_bottom = 737.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+text = "note: some options not available in the web build"
+autowrap = true
 [connection signal="pressed" from="back" to="." method="hide_custom"]
 [connection signal="pressed" from="back" to="." method="save_options"]
 [connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]
 [connection signal="value_changed" from="text_size/slider" to="." method="_on_text_size_value_changed"]
 [connection signal="value_changed" from="audio/music" to="." method="_on_music_value_changed"]
 [connection signal="value_changed" from="audio/sfx" to="." method="_on_sfx_value_changed"]
-[connection signal="item_selected" from="window_size/option_button" to="." method="_on_window_size_selected"]
-[connection signal="toggled" from="fullscreen/fullscreen" to="." method="_on_fullscreen_toggled"]
-[connection signal="toggled" from="enable_notes/enable_notes" to="." method="_on_enable_notes_toggled"]
-[connection signal="toggled" from="voicing/enable_voicing" to="." method="_on_enable_voicing_toggled"]
+[connection signal="toggled" from="right_side/fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="item_selected" from="right_side/window_size/dropdown" to="." method="_on_window_size_selected"]
+[connection signal="toggled" from="right_side/self_voicing" to="." method="_on_enable_voicing_toggled"]
+[connection signal="pressed" from="right_side/self_voicing/test_voicing" to="." method="_on_test_voicing_pressed"]
+[connection signal="value_changed" from="right_side/voice_speed/slider" to="." method="_on_slider_value_changed"]
+[connection signal="toggled" from="right_side/to_do" to="." method="_on_enable_notes_toggled"]

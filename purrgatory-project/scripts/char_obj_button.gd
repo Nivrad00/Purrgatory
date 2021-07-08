@@ -33,11 +33,11 @@ func _ready():
 			anim_textures.append(texture)
 	
 	# wait for the game to be loaded in, if it's not already
-	if not get_tree().get_root().get_node('main/game'):
+	if not get_tree().get_root().has_node('main/game'):
 		yield(get_tree().get_root().get_node('main'), 'game_ready')
 		
 	if anim_textures.size() > 1:
-		print(get_tree().get_root().get_node('main/game').connect('animation_tick', self, '_on_animation_tick'))
+		get_tree().get_root().get_node('main/game').connect('animation_tick', self, '_on_animation_tick')
 		
 	connect('mouse_entered', self, '_on_mouse_entered')
 	connect('mouse_exited', self, '_on_mouse_exited')

@@ -22,7 +22,7 @@ func update_state(state):
 		$receptionist_idle2.show()
 	
 	if state.get('fade_out_trigger') and $portal.visible:
-		print('aaaaa')
+		# print('aaaaa')
 		$portal_audio.play()
 		$portal.hide()
 		$fadeout.show()

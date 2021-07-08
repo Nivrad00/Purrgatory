@@ -22,3 +22,8 @@ func update_state(state):
 	else:
 		$bg_alt.hide()
 		$bg.show()
+
+	# override if she's with natalie at the mural
+	if state.get('natalie_completed_mural') and not state.get('natalie_working_on_nocturnal'):
+		$bg_alt.hide()
+		$bg.show()

@@ -69,6 +69,22 @@ animation0 = ExtResource( 10 )
 animation1 = ExtResource( 13 )
 animation2 = ExtResource( 14 )
 
+[node name="receptionist_trailer" type="TextureButton" parent="state_handler"]
+visible = false
+margin_left = 554.717
+margin_top = 295.436
+margin_right = 828.717
+margin_bottom = 617.436
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 10 )
+texture_click_mask = ExtResource( 11 )
+script = ExtResource( 12 )
+dialog_label = "trailer"
+animation0 = ExtResource( 10 )
+animation1 = ExtResource( 13 )
+animation2 = ExtResource( 14 )
+
 [node name="desk" type="Sprite" parent="state_handler"]
 position = Vector2( 443.815, 323.463 )
 texture = ExtResource( 15 )
@@ -184,4 +200,5 @@ dialog_label = "click_portal"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object12"]
 polygon = PoolVector2Array( 897.981, 192.103, 859.173, 385.239, 896.175, 585.594, 1189.49, 579.277, 1228.3, 385.239, 1189.49, 186.688 )
 [connection signal="pressed" from="state_handler/receptionist_idle" to="state_handler/receptionist_idle" method="_on_char_obj_button_pressed"]
+[connection signal="pressed" from="state_handler/receptionist_trailer" to="state_handler/receptionist_trailer" method="_on_char_obj_button_pressed"]
 [connection signal="pressed" from="state_handler/receptionist_idle2" to="state_handler/receptionist_idle2" method="_on_char_obj_button_pressed"]

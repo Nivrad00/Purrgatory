@@ -14,3 +14,8 @@ func update_state(state):
 		$exit2.show()
 	else:
 		$exit2_dialog.show()
+		
+	if state.get('smash_sfx'):
+		$smash.play()
+		state['smash_sfx'] = false
+		emit_signal('change_audio', null)

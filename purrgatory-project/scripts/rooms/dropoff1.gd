@@ -11,7 +11,7 @@ func update_state(state):
 	
 	$tori_dropoff.hide()
 	$tori_dropoff2.hide()
-	$elijah_dropoff.hide()
+	# $elijah_dropoff.hide()
 	$dropoff_rope.hide()
 	$dropoff_rope2.hide()
 	$cant_leave.hide()
@@ -24,41 +24,36 @@ func update_state(state):
 	
 	# oliver's stuff, which supercedes elijah and tori's
 	# (not used anymore)
-	
-	if state.get('oliver_goto_ttt'):
-		state['oliver_goto_ttt'] = false
-		emit_signal('change_room', 'ttt')
-	
-	if state.get('oliver_sleeping_timer'):
-		state['oliver_sleeping_timer'] = false
-		emit_signal('start_action_timer', 40, ['oliver_sleeping', false])
-		emit_signal('start_action_timer', 40, ['oliver_in_study', false])
-	
-	if state.get('oliver_override_dropoff'):
-		return
+#
+#	if state.get('oliver_goto_ttt'):
+#		state['oliver_goto_ttt'] = false
+#		emit_signal('change_room', 'ttt')
+#
+#	if state.get('oliver_sleeping_timer'):
+#		state['oliver_sleeping_timer'] = false
+#		emit_signal('start_action_timer', 40, ['oliver_sleeping', false])
+#		emit_signal('start_action_timer', 40, ['oliver_in_study', false])
+#
+#	if state.get('oliver_override_dropoff'):
+#		return
 	
 	# elijah's stuff, which supercedes tori's
 	# (also not used anymore)
 		
-	if state.get('sean_looking_for_elijah') and not state.get('elijah_quest_complete'):
-		$elijah_dropoff.show()
-		
-		if (state.get('tori_closet_complete') and not state.get('preparing_for_climb'))\
-		or state.get('tori_dropoff_complete'):
-			$dropoff_rope.show()
-		
-		if state.get('tori_dropoff_complete'):
-			$dropoff_again.show()
-			$dropoff_again.set_highlight_on_hover(true)
-			$dropoff_dropoff.hide()
-			$bg2.show()
-
-		return
-	
-	# if tori's talking to natalie then skip 
-	
-	if state.get('natalie_completed_mural') and not state.get('natalie_working_on_nocturnal'):
-		return
+#	if state.get('sean_looking_for_elijah') and not state.get('elijah_quest_complete'):
+#		$elijah_dropoff.show()
+#
+#		if (state.get('tori_closet_complete') and not state.get('preparing_for_climb'))\
+#		or state.get('tori_dropoff_complete'):
+#			$dropoff_rope.show()
+#
+#		if state.get('tori_dropoff_complete'):
+#			$dropoff_again.show()
+#			$dropoff_again.set_highlight_on_hover(true)
+#			$dropoff_dropoff.hide()
+#			$bg2.show()
+#
+#		return
 		
 	# tori's stuff
 	
@@ -90,3 +85,8 @@ func update_state(state):
 	if state.get('toss_coin'):
 		$coin/AnimationPlayer.play('paraola')
 		state['toss_coin'] = false
+	
+	# if tori's talking to natalie then override	
+	if state.get('natalie_completed_mural') and not state.get('natalie_working_on_nocturnal'):
+		$tori_dropoff.hide()
+		$tori_dropoff2.hide()

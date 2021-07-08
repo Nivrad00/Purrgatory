@@ -1167,7 +1167,7 @@ one_shot = true
 [connection signal="pressed" from="state_handler/options/instrument" to="state_handler/options/instrument/AnimationPlayer" method="play" binds= [ "Shake" ]]
 [connection signal="button_down" from="state_handler/options/volume" to="state_handler/options/volume" method="_on_volume_button_down"]
 [connection signal="button_up" from="state_handler/options/volume" to="state_handler/options/volume" method="_on_volume_button_up"]
-[connection signal="toggled" from="state_handler/options/power" to="state_handler/options/power/AudioStreamPlayer" method="play"]
+[connection signal="button_down" from="state_handler/options/power" to="state_handler/options/power/AudioStreamPlayer" method="play"]
 [connection signal="toggled" from="state_handler/options/power" to="state_handler" method="update_mute"]
 [connection signal="timeout" from="state_handler/sean_player/song_timer" to="state_handler/sean_player" method="play_note"]
 [connection signal="pressed" from="state_handler/exit4" to="state_handler/options" method="save_piano_options"]

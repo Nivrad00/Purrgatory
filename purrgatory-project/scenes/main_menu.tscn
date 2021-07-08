@@ -1,28 +1,27 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
-[ext_resource path="res://scripts/resource_queue.gd" type="Script" id=2]
-[ext_resource path="res://cat_01_color05.obj" type="ArrayMesh" id=3]
-[ext_resource path="res://addons/3D Outline/Outline.material" type="Material" id=4]
-[ext_resource path="res://themes/ui_theme.tres" type="Theme" id=5]
-[ext_resource path="res://scenes/logo.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=8]
-[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=9]
-[ext_resource path="res://assets/ui/menu_x.png" type="Texture" id=10]
-[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=11]
-[ext_resource path="res://scenes/cat1_idle.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/sprites/cat1.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprites/cat2.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprites/cat3.png" type="Texture" id=15]
-[ext_resource path="res://assets/audio/Slice_Of_Heaven.ogg" type="AudioStream" id=16]
-[ext_resource path="res://assets/ui/credits_box.png" type="Texture" id=17]
-[ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=18]
-[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=19]
-[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=20]
+[ext_resource path="res://cat_01_color05.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://addons/3D Outline/Outline.material" type="Material" id=3]
+[ext_resource path="res://themes/ui_theme.tres" type="Theme" id=4]
+[ext_resource path="res://scenes/logo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/menu_x.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=10]
+[ext_resource path="res://scenes/cat1_idle.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/sprites/cat1.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/cat2.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/cat3.png" type="Texture" id=14]
+[ext_resource path="res://assets/audio/Slice_Of_Heaven.ogg" type="AudioStream" id=15]
+[ext_resource path="res://assets/ui/credits_box.png" type="Texture" id=16]
+[ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=17]
+[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=19]
 
 [sub_resource type="SpatialMaterial" id=1]
-next_pass = ExtResource( 4 )
+next_pass = ExtResource( 3 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "New Anim"
@@ -49,28 +48,22 @@ viewport_path = NodePath("rotating_cat/Viewport")
 
 [sub_resource type="DynamicFont" id=5]
 size = 25
-font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 45
-font_data = ExtResource( 7 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 25
-font_data = ExtResource( 7 )
+font_data = ExtResource( 6 )
 
 [node name="main" type="Node"]
 script = ExtResource( 1 )
-
-[node name="loader" type="Node" parent="."]
-script = ExtResource( 2 )
+web_build = true
+version = "21-7-7"
 
 [node name="delay_timer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
 
 [node name="rotating_cat" type="Control" parent="."]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
@@ -83,8 +76,9 @@ msaa = 3
 render_target_v_flip = true
 
 [node name="cat_01_color05" type="MeshInstance" parent="rotating_cat/Viewport"]
+editor/display_folded = true
 transform = Transform( 1, 0, 1.74846e-007, 0, 1, 0, -1.74846e-007, 0, 1, 0, 0, 0 )
-mesh = ExtResource( 3 )
+mesh = ExtResource( 2 )
 material/0 = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="rotating_cat/Viewport/cat_01_color05"]
@@ -120,10 +114,9 @@ __meta__ = {
 }
 
 [node name="loading" type="Control" parent="."]
-editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
-theme = ExtResource( 5 )
+theme = ExtResource( 4 )
 
 [node name="loading_text" type="Label" parent="loading"]
 anchor_right = 1.0
@@ -145,16 +138,16 @@ enabled_focus_mode = 0
 flat = true
 
 [node name="main_menu" type="Control" parent="."]
+editor/display_folded = true
 visible = false
-margin_top = -15.0093
+margin_top = -14.0
 margin_right = 40.0
-margin_bottom = 24.9907
-theme = ExtResource( 5 )
+margin_bottom = 26.0
+theme = ExtResource( 4 )
 
-[node name="logo" parent="main_menu" instance=ExtResource( 6 )]
+[node name="logo" parent="main_menu" instance=ExtResource( 5 )]
 
 [node name="buttons" type="Control" parent="main_menu"]
-editor/display_folded = true
 margin_left = 504.871
 margin_top = 284.323
 margin_right = 782.871
@@ -164,6 +157,7 @@ __meta__ = {
 }
 
 [node name="start" type="Button" parent="main_menu/buttons"]
+editor/display_folded = true
 margin_left = 12.0
 margin_top = 11.0
 margin_right = 262.0
@@ -180,7 +174,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/start"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 centered = false
 
 [node name="Label" type="Label" parent="main_menu/buttons/start"]
@@ -191,6 +185,7 @@ align = 1
 valign = 1
 
 [node name="load" type="Button" parent="main_menu/buttons"]
+editor/display_folded = true
 margin_left = 13.7148
 margin_top = 83.877
 margin_right = 263.715
@@ -207,7 +202,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/load"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 centered = false
 
 [node name="Label" type="Label" parent="main_menu/buttons/load"]
@@ -220,9 +215,10 @@ valign = 1
 [node name="x" type="Sprite" parent="main_menu/buttons/load"]
 visible = false
 position = Vector2( 125.826, 29.3703 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 
 [node name="options" type="Button" parent="main_menu/buttons"]
+editor/display_folded = true
 margin_left = 12.1426
 margin_top = 153.735
 margin_right = 262.143
@@ -239,7 +235,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/options"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 11 )
+texture = ExtResource( 10 )
 centered = false
 
 [node name="Label" type="Label" parent="main_menu/buttons/options"]
@@ -250,6 +246,7 @@ align = 1
 valign = 1
 
 [node name="credits" type="Button" parent="main_menu/buttons"]
+editor/display_folded = true
 margin_left = 12.1426
 margin_top = 224.735
 margin_right = 262.143
@@ -266,7 +263,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/credits"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 centered = false
 flip_h = true
 flip_v = true
@@ -279,6 +276,7 @@ align = 1
 valign = 1
 
 [node name="exit" type="Button" parent="main_menu/buttons"]
+editor/display_folded = true
 margin_left = 12.8502
 margin_top = 297.734
 margin_right = 262.85
@@ -295,7 +293,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/exit"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 centered = false
 flip_h = true
 flip_v = true
@@ -307,26 +305,27 @@ text = "exit"
 align = 1
 valign = 1
 
-[node name="cat1_idle" parent="main_menu" instance=ExtResource( 12 )]
+[node name="cat1_idle" parent="main_menu" instance=ExtResource( 11 )]
 margin_left = 883.779
 margin_top = 274.295
 margin_right = 1023.78
 margin_bottom = 408.295
 mouse_filter = 2
-animation0 = ExtResource( 13 )
-animation1 = ExtResource( 14 )
-animation2 = ExtResource( 15 )
+animation0 = ExtResource( 12 )
+animation1 = ExtResource( 13 )
+animation2 = ExtResource( 14 )
 
 [node name="audio" type="AudioStreamPlayer" parent="main_menu"]
-stream = ExtResource( 16 )
+stream = ExtResource( 15 )
 volume_db = -6.0
 bus = "Music"
 
 [node name="credits" type="Control" parent="."]
+editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
-theme = ExtResource( 5 )
+theme = ExtResource( 4 )
 
 [node name="TextureRect" type="TextureRect" parent="credits"]
 margin_left = 5.30005
@@ -334,71 +333,61 @@ margin_right = 1925.3
 margin_bottom = 1080.0
 rect_pivot_offset = Vector2( 73.9432, 195.005 )
 mouse_filter = 2
-texture = ExtResource( 17 )
+texture = ExtResource( 16 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="credits"]
-margin_left = 58.0
-margin_top = 57.0
-margin_right = 1232.0
-margin_bottom = 577.0
+margin_left = 62.0
+margin_top = 55.0
+margin_right = 1238.0
+margin_bottom = 591.0
 rect_pivot_offset = Vector2( 15.9432, 138.005 )
-theme = ExtResource( 18 )
+theme = ExtResource( 17 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="credits/ScrollContainer"]
-margin_right = 1174.0
-margin_bottom = 1340.0
+margin_right = 1176.0
+margin_bottom = 1461.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
 
 [node name="_9" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_right = 1153.0
-margin_bottom = 31.0
+margin_right = 1155.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
-[node name="logo" parent="credits/ScrollContainer/VBoxContainer" instance=ExtResource( 6 )]
-margin_right = 1153.0
-margin_bottom = 191.0
+[node name="logo" parent="credits/ScrollContainer/VBoxContainer" instance=ExtResource( 5 )]
+margin_top = 70.0
+margin_right = 1155.0
+margin_bottom = 210.0
 rect_min_size = Vector2( 0, 140 )
 
-[node name="purg" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-visible = false
-margin_top = 191.0
-margin_right = 1153.0
-margin_bottom = 249.0
-size_flags_horizontal = 3
-size_flags_vertical = 1
-custom_fonts/font = SubResource( 6 )
-text = "purrgatory"
-align = 1
-autowrap = true
-
 [node name="by me" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 211.0
-margin_right = 1153.0
-margin_bottom = 242.0
+margin_top = 230.0
+margin_right = 1155.0
+margin_bottom = 261.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "a game by niv"
 align = 1
 autowrap = true
 
-[node name="_" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 262.0
-margin_right = 1153.0
-margin_bottom = 293.0
+[node name="_12" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
+margin_top = 281.0
+margin_right = 1155.0
+margin_bottom = 312.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="hotkeys" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 313.0
-margin_right = 1153.0
-margin_bottom = 344.0
+margin_top = 332.0
+margin_right = 1155.0
+margin_bottom = 363.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "hotkeys"
@@ -407,16 +396,17 @@ autowrap = true
 uppercase = true
 
 [node name="GridContainer" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 364.0
-margin_right = 1153.0
-margin_bottom = 701.0
+editor/display_folded = true
+margin_top = 383.0
+margin_right = 1155.0
+margin_bottom = 720.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
 columns = 2
 
 [node name="Label2" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
-margin_right = 559.0
+margin_right = 560.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -425,8 +415,8 @@ align = 2
 autowrap = true
 
 [node name="Label3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
-margin_left = 594.0
-margin_right = 1153.0
+margin_left = 595.0
+margin_right = 1155.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -435,7 +425,7 @@ autowrap = true
 
 [node name="Label5" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_top = 51.0
-margin_right = 559.0
+margin_right = 560.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -444,9 +434,9 @@ align = 2
 autowrap = true
 
 [node name="Label4" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
-margin_left = 594.0
+margin_left = 595.0
 margin_top = 51.0
-margin_right = 1153.0
+margin_right = 1155.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -455,7 +445,7 @@ autowrap = true
 
 [node name="Label9" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_top = 102.0
-margin_right = 559.0
+margin_right = 560.0
 margin_bottom = 133.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -464,9 +454,9 @@ align = 2
 autowrap = true
 
 [node name="Label8" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
-margin_left = 594.0
+margin_left = 595.0
 margin_top = 102.0
-margin_right = 1153.0
+margin_right = 1155.0
 margin_bottom = 133.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -475,7 +465,7 @@ autowrap = true
 
 [node name="Label7" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_top = 153.0
-margin_right = 559.0
+margin_right = 560.0
 margin_bottom = 184.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -484,9 +474,9 @@ align = 2
 autowrap = true
 
 [node name="Label6" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
-margin_left = 594.0
+margin_left = 595.0
 margin_top = 153.0
-margin_right = 1153.0
+margin_right = 1155.0
 margin_bottom = 184.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -495,7 +485,7 @@ autowrap = true
 
 [node name="Label10" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_top = 204.0
-margin_right = 559.0
+margin_right = 560.0
 margin_bottom = 235.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -504,9 +494,9 @@ align = 2
 autowrap = true
 
 [node name="Label11" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
-margin_left = 594.0
+margin_left = 595.0
 margin_top = 204.0
-margin_right = 1153.0
+margin_right = 1155.0
 margin_bottom = 235.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -515,7 +505,7 @@ autowrap = true
 
 [node name="Label14" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_top = 255.0
-margin_right = 559.0
+margin_right = 560.0
 margin_bottom = 286.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -524,9 +514,9 @@ align = 2
 autowrap = true
 
 [node name="Label15" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
-margin_left = 594.0
+margin_left = 595.0
 margin_top = 255.0
-margin_right = 1153.0
+margin_right = 1155.0
 margin_bottom = 286.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -535,7 +525,7 @@ autowrap = true
 
 [node name="Label12" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_top = 306.0
-margin_right = 559.0
+margin_right = 560.0
 margin_bottom = 337.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -544,9 +534,9 @@ align = 2
 autowrap = true
 
 [node name="Label13" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
-margin_left = 594.0
+margin_left = 595.0
 margin_top = 306.0
-margin_right = 1153.0
+margin_right = 1155.0
 margin_bottom = 337.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -554,18 +544,18 @@ text = "items"
 autowrap = true
 
 [node name="_2" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 721.0
-margin_right = 1153.0
-margin_bottom = 752.0
+margin_top = 740.0
+margin_right = 1155.0
+margin_bottom = 771.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="credits" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 772.0
-margin_right = 1153.0
-margin_bottom = 803.0
+margin_top = 791.0
+margin_right = 1155.0
+margin_bottom = 822.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "credits"
@@ -574,16 +564,16 @@ autowrap = true
 uppercase = true
 
 [node name="GridContainer2" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 823.0
-margin_right = 1153.0
-margin_bottom = 990.0
+margin_top = 842.0
+margin_right = 1155.0
+margin_bottom = 1009.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
 columns = 2
 
 [node name="Label2" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer2"]
-margin_right = 559.0
+margin_right = 560.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -592,8 +582,8 @@ align = 2
 autowrap = true
 
 [node name="Label3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer2"]
-margin_left = 594.0
-margin_right = 1153.0
+margin_left = 595.0
+margin_right = 1155.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -602,7 +592,7 @@ autowrap = true
 
 [node name="Label4" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer2"]
 margin_top = 51.0
-margin_right = 559.0
+margin_right = 560.0
 margin_bottom = 116.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -611,9 +601,9 @@ align = 2
 autowrap = true
 
 [node name="Label5" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer2"]
-margin_left = 594.0
+margin_left = 595.0
 margin_top = 51.0
-margin_right = 1153.0
+margin_right = 1155.0
 margin_bottom = 116.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -623,7 +613,7 @@ autowrap = true
 
 [node name="Label6" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer2"]
 margin_top = 136.0
-margin_right = 559.0
+margin_right = 560.0
 margin_bottom = 167.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -632,9 +622,9 @@ align = 2
 autowrap = true
 
 [node name="Label7" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer2"]
-margin_left = 594.0
+margin_left = 595.0
 margin_top = 136.0
-margin_right = 1153.0
+margin_right = 1155.0
 margin_bottom = 167.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -642,18 +632,18 @@ text = "zardoru (diego ahumada)"
 autowrap = true
 
 [node name="_3" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1010.0
-margin_right = 1153.0
-margin_bottom = 1041.0
+margin_top = 1029.0
+margin_right = 1155.0
+margin_bottom = 1060.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="art" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1061.0
-margin_right = 1153.0
-margin_bottom = 1092.0
+margin_top = 1080.0
+margin_right = 1155.0
+margin_bottom = 1111.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "art"
@@ -661,16 +651,16 @@ align = 1
 autowrap = true
 
 [node name="GridContainer3" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1112.0
-margin_right = 1153.0
-margin_bottom = 1245.0
+margin_top = 1131.0
+margin_right = 1155.0
+margin_bottom = 1264.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
 columns = 2
 
 [node name="Label2" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer3"]
-margin_right = 559.0
+margin_right = 560.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -679,8 +669,8 @@ align = 2
 autowrap = true
 
 [node name="Label3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer3"]
-margin_left = 594.0
-margin_right = 1153.0
+margin_left = 595.0
+margin_right = 1155.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -689,7 +679,7 @@ autowrap = true
 
 [node name="Label4" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer3"]
 margin_top = 51.0
-margin_right = 559.0
+margin_right = 560.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -698,9 +688,9 @@ align = 2
 autowrap = true
 
 [node name="Label5" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer3"]
-margin_left = 594.0
+margin_left = 595.0
 margin_top = 51.0
-margin_right = 1153.0
+margin_right = 1155.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -709,7 +699,7 @@ autowrap = true
 
 [node name="Label6" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer3"]
 margin_top = 102.0
-margin_right = 559.0
+margin_right = 560.0
 margin_bottom = 133.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -718,9 +708,9 @@ align = 2
 autowrap = true
 
 [node name="Label7" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer3"]
-margin_left = 594.0
+margin_left = 595.0
 margin_top = 102.0
-margin_right = 1153.0
+margin_right = 1155.0
 margin_bottom = 133.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -728,18 +718,18 @@ text = "rose lim"
 autowrap = true
 
 [node name="_4" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1265.0
-margin_right = 1153.0
-margin_bottom = 1296.0
+margin_top = 1284.0
+margin_right = 1155.0
+margin_bottom = 1315.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="music" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1316.0
-margin_right = 1153.0
-margin_bottom = 1347.0
+margin_top = 1335.0
+margin_right = 1155.0
+margin_bottom = 1366.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "music"
@@ -747,17 +737,16 @@ align = 1
 autowrap = true
 
 [node name="GridContainer4" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-editor/display_folded = true
-margin_top = 1367.0
-margin_right = 1153.0
-margin_bottom = 1449.0
+margin_top = 1386.0
+margin_right = 1155.0
+margin_bottom = 1468.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
 columns = 2
 
 [node name="music" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer4"]
-margin_right = 559.0
+margin_right = 560.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -766,8 +755,8 @@ align = 2
 autowrap = true
 
 [node name="niv, wiz" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer4"]
-margin_left = 594.0
-margin_right = 1153.0
+margin_left = 595.0
+margin_right = 1155.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -776,7 +765,7 @@ autowrap = true
 
 [node name="fly me to the meow" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer4"]
 margin_top = 51.0
-margin_right = 559.0
+margin_right = 560.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -785,9 +774,9 @@ align = 2
 autowrap = true
 
 [node name="zardoru" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer4"]
-margin_left = 594.0
+margin_left = 595.0
 margin_top = 51.0
-margin_right = 1153.0
+margin_right = 1155.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -795,18 +784,18 @@ text = "zardoru (diego ahumada)"
 autowrap = true
 
 [node name="_7" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1469.0
-margin_right = 1153.0
-margin_bottom = 1500.0
+margin_top = 1488.0
+margin_right = 1155.0
+margin_bottom = 1519.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="purrgatory blues" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1520.0
-margin_right = 1153.0
-margin_bottom = 1551.0
+margin_top = 1539.0
+margin_right = 1155.0
+margin_bottom = 1570.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "\"purrgatory blues\""
@@ -814,16 +803,16 @@ align = 1
 autowrap = true
 
 [node name="GridContainer7" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1571.0
-margin_right = 1153.0
-margin_bottom = 1704.0
+margin_top = 1590.0
+margin_right = 1155.0
+margin_bottom = 1723.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
 columns = 2
 
 [node name="Label2" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer7"]
-margin_right = 559.0
+margin_right = 560.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -832,8 +821,8 @@ align = 2
 autowrap = true
 
 [node name="Label3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer7"]
-margin_left = 594.0
-margin_right = 1153.0
+margin_left = 595.0
+margin_right = 1155.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -842,7 +831,7 @@ autowrap = true
 
 [node name="Label4" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer7"]
 margin_top = 51.0
-margin_right = 559.0
+margin_right = 560.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -851,9 +840,9 @@ align = 2
 autowrap = true
 
 [node name="Label5" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer7"]
-margin_left = 594.0
+margin_left = 595.0
 margin_top = 51.0
-margin_right = 1153.0
+margin_right = 1155.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -862,7 +851,7 @@ autowrap = true
 
 [node name="Label6" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer7"]
 margin_top = 102.0
-margin_right = 559.0
+margin_right = 560.0
 margin_bottom = 133.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -871,9 +860,9 @@ align = 2
 autowrap = true
 
 [node name="Label7" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer7"]
-margin_left = 594.0
+margin_left = 595.0
 margin_top = 102.0
-margin_right = 1153.0
+margin_right = 1155.0
 margin_bottom = 133.0
 rect_pivot_offset = Vector2( -52.3446, 28.2098 )
 size_flags_horizontal = 3
@@ -882,18 +871,18 @@ text = "molly (molly)"
 autowrap = true
 
 [node name="_5" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1724.0
-margin_right = 1153.0
-margin_bottom = 1755.0
+margin_top = 1743.0
+margin_right = 1155.0
+margin_bottom = 1774.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="other" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1775.0
-margin_right = 1153.0
-margin_bottom = 1806.0
+margin_top = 1794.0
+margin_right = 1155.0
+margin_bottom = 1825.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "other"
@@ -901,17 +890,16 @@ align = 1
 autowrap = true
 
 [node name="GridContainer5" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-editor/display_folded = true
-margin_top = 1826.0
-margin_right = 1153.0
-margin_bottom = 2010.0
+margin_top = 1845.0
+margin_right = 1155.0
+margin_bottom = 2029.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
 columns = 2
 
 [node name="1" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer5"]
-margin_right = 559.0
+margin_right = 560.0
 margin_bottom = 99.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -920,8 +908,8 @@ align = 2
 autowrap = true
 
 [node name="2" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer5"]
-margin_left = 594.0
-margin_right = 1153.0
+margin_left = 595.0
+margin_right = 1155.0
 margin_bottom = 99.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -932,7 +920,7 @@ autowrap = true
 
 [node name="3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer5"]
 margin_top = 119.0
-margin_right = 559.0
+margin_right = 560.0
 margin_bottom = 184.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -941,9 +929,9 @@ align = 2
 autowrap = true
 
 [node name="4" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer5"]
-margin_left = 594.0
+margin_left = 595.0
 margin_top = 119.0
-margin_right = 1153.0
+margin_right = 1155.0
 margin_bottom = 184.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -952,18 +940,18 @@ uro (daniel taylor)"
 autowrap = true
 
 [node name="_8" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2030.0
-margin_right = 1153.0
-margin_bottom = 2061.0
+margin_top = 2049.0
+margin_right = 1155.0
+margin_bottom = 2080.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="sfx" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2081.0
-margin_right = 1153.0
-margin_bottom = 2112.0
+margin_top = 2100.0
+margin_right = 1155.0
+margin_bottom = 2131.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "sound effects"
@@ -971,9 +959,9 @@ align = 1
 autowrap = true
 
 [node name="sfx4" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2132.0
-margin_right = 1153.0
-margin_bottom = 2163.0
+margin_top = 2151.0
+margin_right = 1155.0
+margin_bottom = 2182.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "freesound.org"
@@ -981,9 +969,9 @@ align = 1
 autowrap = true
 
 [node name="GridContainer6" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2183.0
-margin_right = 1153.0
-margin_bottom = 2724.0
+margin_top = 2202.0
+margin_right = 1155.0
+margin_bottom = 2777.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -991,7 +979,7 @@ columns = 4
 
 [node name="Label2" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer6"]
 margin_right = 262.0
-margin_bottom = 541.0
+margin_bottom = 575.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "bell
@@ -1009,14 +997,15 @@ rope creak
 fluorescent hum
 zap
 button
-fart"
+fart
+ceramic smash"
 align = 2
 autowrap = true
 
 [node name="Label3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer6"]
 margin_left = 297.0
 margin_right = 559.0
-margin_bottom = 541.0
+margin_bottom = 575.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "Daphne_in_Wonderland
@@ -1034,13 +1023,14 @@ bahaish
 kyles
 michael_grinnell
 sjnewton
-DSISStudios"
+DSISStudios
+geraldfiebig"
 autowrap = true
 
 [node name="Label4" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer6"]
 margin_left = 594.0
 margin_right = 856.0
-margin_bottom = 541.0
+margin_bottom = 575.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "elevator door
@@ -1065,7 +1055,7 @@ autowrap = true
 [node name="Label5" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer6"]
 margin_left = 891.0
 margin_right = 1153.0
-margin_bottom = 541.0
+margin_bottom = 575.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "DisasterServices
@@ -1087,16 +1077,16 @@ sinewave1kHz"
 autowrap = true
 
 [node name="GridContainer9" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2744.0
-margin_right = 1153.0
-margin_bottom = 2775.0
+margin_top = 2797.0
+margin_right = 1155.0
+margin_bottom = 2828.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
 columns = 2
 
 [node name="sfx3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer9"]
-margin_right = 559.0
+margin_right = 560.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -1105,8 +1095,8 @@ align = 2
 autowrap = true
 
 [node name="sfx2" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer9"]
-margin_left = 594.0
-margin_right = 1153.0
+margin_left = 595.0
+margin_right = 1155.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -1114,18 +1104,18 @@ text = "SoundEffectsFactory"
 autowrap = true
 
 [node name="_6" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2795.0
-margin_right = 1153.0
-margin_bottom = 2826.0
+margin_top = 2848.0
+margin_right = 1155.0
+margin_bottom = 2879.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="additional assets" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2846.0
-margin_right = 1153.0
-margin_bottom = 2877.0
+margin_top = 2899.0
+margin_right = 1155.0
+margin_bottom = 2930.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "additional assets"
@@ -1133,22 +1123,20 @@ align = 1
 autowrap = true
 
 [node name="GridContainer8" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2897.0
-margin_right = 1153.0
-margin_bottom = 3098.0
+margin_top = 2950.0
+margin_right = 1155.0
+margin_bottom = 3083.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
 columns = 2
 
 [node name="Label2" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer8"]
-margin_right = 559.0
-margin_bottom = 201.0
+margin_right = 560.0
+margin_bottom = 133.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "text-to-speech module
-resource queue module
-
 3d outline shader
 3d cat model
 source sans pro font"
@@ -1156,23 +1144,41 @@ align = 2
 autowrap = true
 
 [node name="Label3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer8"]
-margin_left = 594.0
-margin_right = 1153.0
-margin_bottom = 201.0
+margin_left = 595.0
+margin_right = 1155.0
+margin_bottom = 133.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "bruvzg
-juan linietsky, ariel manzur, and the godot community
-edited by michael bethencourt
 reisdev
 shuldyakov on turbosquid.com
 paul d. hunt"
 autowrap = true
 
 [node name="_10" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3118.0
-margin_right = 1153.0
-margin_bottom = 3149.0
+margin_top = 3103.0
+margin_right = 1155.0
+margin_bottom = 3134.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+align = 1
+autowrap = true
+
+[node name="version" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
+modulate = Color( 1, 1, 1, 0.509804 )
+margin_top = 3154.0
+margin_right = 1155.0
+margin_bottom = 3185.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "version: 21-7-7, web"
+align = 1
+autowrap = true
+
+[node name="_13" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
+margin_top = 3205.0
+margin_right = 1155.0
+margin_bottom = 3236.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
@@ -1181,9 +1187,9 @@ autowrap = true
 [node name="back" type="Button" parent="credits"]
 editor/display_folded = true
 margin_left = 515.0
-margin_top = 616.012
+margin_top = 626.351
 margin_right = 765.0
-margin_bottom = 674.012
+margin_bottom = 684.351
 focus_mode = 0
 custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -1196,7 +1202,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="credits/back"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 centered = false
 
 [node name="Label" type="Label" parent="credits/back"]
@@ -1206,10 +1212,10 @@ text = "back"
 align = 1
 valign = 1
 
-[node name="load_menu" parent="." instance=ExtResource( 19 )]
+[node name="load_menu" parent="." instance=ExtResource( 18 )]
 visible = false
 
-[node name="options_menu" parent="." instance=ExtResource( 20 )]
+[node name="options_menu" parent="." instance=ExtResource( 19 )]
 visible = false
 
 [node name="cover" type="ColorRect" parent="."]
@@ -1221,7 +1227,6 @@ color = Color( 1, 1, 1, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
-[connection signal="timeout" from="rotating_cat/Timer" to="rotating_cat" method="_on_Timer_timeout"]
 [connection signal="pressed" from="loading/click_to_continue" to="." method="_on_click_to_continue_pressed"]
 [connection signal="pressed" from="main_menu/buttons/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="main_menu/buttons/load" to="load_menu" method="show_custom"]

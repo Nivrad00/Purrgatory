@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ceramic_shatter.wav-9bbf60a3ff40644949258908e693999a.sample"
+
+[deps]
+
+source_file="res://assets/audio/ceramic_shatter.wav"
+dest_files=[ "res://.import/ceramic_shatter.wav-9bbf60a3ff40644949258908e693999a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=false
+compress/mode=0

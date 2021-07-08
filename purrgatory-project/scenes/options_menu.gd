@@ -4,6 +4,7 @@ signal options_changed()
 signal toggle_notes(on)
 signal toggle_voicing(on)
 signal hiding()
+signal change_voice_speed(value)
 
 var resolutions = [
 	'854 x 480',
@@ -19,7 +20,9 @@ var quips = [
 	['kyungsoon', 'hmmm. that\'s an options menu'],
 	['numa', 'HEY!! change the font size right now! i mean... if you want.'],
 	['sean', 'what\'s a nice player like you doing in a menu like this? (;'],
-	['elijah', '\'tis better to have meowed and lost than never to have meowed at all.']
+	['elijah', '\'tis better to have meowed and lost than never to have meowed at all.'],
+	['tori', 'what are you doing fiddling with the settings? there\'s a game to play!'],
+	['natalie', 'zzz... huh? where am i?']
 ]
 
 var default_options = {
@@ -29,12 +32,57 @@ var default_options = {
 	"text_size": 24,
 	"notes_enabled": true,
 	"voicing_enabled": false,
-	"resolution": "1280 x 720"
+	"resolution": "1280 x 720",
+	"voice_speed": 1.0
 }
 
 func _ready():
+	# handle web build
+	
+	if get_tree().get_root().get_node('main').web_build:
+		$right_side/fullscreen_label.modulate.a = 0.3
+		$right_side/fullscreen.modulate.a = 0.3
+		$right_side/fullscreen.disabled = true
+		
+		$right_side/window_size_label.modulate.a = 0.3
+		$right_side/window_size.modulate.a = 0.3
+		$right_side/window_size/dropdown.disabled = true
+		
+		$right_side/self_voicing_label.modulate.a = 0.3
+		$right_side/self_voicing.modulate.a = 0.3
+		$right_side/self_voicing.disabled = true
+		$right_side/self_voicing/test_voicing.disabled = true
+		
+		$right_side/voice_speed_label.modulate.a = 0.3
+		$right_side/voice_speed.modulate.a = 0.3
+		$right_side/voice_speed/slider.editable = false
+		
+		$web_disclaimer.show()
+	
+	else:
+		$right_side/fullscreen_label.modulate.a = 1
+		$right_side/fullscreen.modulate.a = 1
+		$right_side/fullscreen.disabled = false
+		
+		$right_side/window_size_label.modulate.a = 1
+		$right_side/window_size.modulate.a = 1
+		$right_side/window_size/dropdown.disabled = false
+		
+		$right_side/self_voicing_label.modulate.a = 1
+		$right_side/self_voicing.modulate.a = 1
+		$right_side/self_voicing.disabled = false
+		$right_side/self_voicing/test_voicing.disabled = false
+		
+		$right_side/voice_speed_label.modulate.a = 1
+		$right_side/voice_speed.modulate.a = 1
+		$right_side/voice_speed/slider.editable = true
+		
+		$web_disclaimer.hide()
+	
+	# load in resolution options
+	
 	for res in resolutions:
-		$window_size/option_button.add_item(res)
+		$right_side/window_size/dropdown.add_item(res)
 		
 func save_options():
 	# saves options to file
@@ -42,13 +90,14 @@ func save_options():
 	# this method is called when the options menu closes
 	
 	var options_dict = {
-		"fullscreen": $fullscreen/fullscreen.pressed,
+		"fullscreen": $right_side/fullscreen.pressed,
 		"music_volume": $audio/music.value,
 		"sfx_volume": $audio/sfx.value,
 		"text_size": $text_size/slider.value,
-		"notes_enabled": $enable_notes/enable_notes.pressed,
-		"voicing_enabled": $voicing/enable_voicing.pressed,
-		"resolution": resolutions[$window_size/option_button.selected]
+		"notes_enabled": $right_side/to_do.pressed,
+		"voicing_enabled": $right_side/self_voicing.pressed,
+		"resolution": resolutions[$right_side/window_size/dropdown.selected],
+		"voice_speed": $right_side/voice_speed/slider.value
 	}
 	var options_save = File.new()
 	options_save.open("user://options.save", File.WRITE)
@@ -70,15 +119,16 @@ func load_options():
 		options_dict = parse_json(options_save.get_line())
 		options_save.close()
 		
-	$fullscreen/fullscreen.pressed = options_dict['fullscreen']
+	$right_side/fullscreen.pressed = options_dict['fullscreen']
 	$audio/music.value = options_dict['music_volume']
 	$audio/sfx.value = options_dict['sfx_volume']
 	$text_size/slider.value = options_dict['text_size']
-	$enable_notes/enable_notes.pressed = options_dict['notes_enabled']
-	$voicing/enable_voicing.pressed = options_dict['voicing_enabled']
-	$window_size/option_button.selected = resolutions.find(options_dict['resolution'])
+	$right_side/to_do.pressed = options_dict['notes_enabled']
+	$right_side/self_voicing.pressed = options_dict['voicing_enabled']
+	$right_side/window_size/dropdown.selected = resolutions.find(options_dict['resolution'])
+	$right_side/voice_speed/slider.value = options_dict['voice_speed']
 	
-	# also, connect the "enabled_notes" and "enabled_tts" option to the notes menu if not done already
+	# also, connect the to-do and tts options if not done already
 	# and this absolute path is disgusting but find_node isn't working so whatever
 	if get_signal_connection_list('toggle_notes').size() == 0:
 		var dropdown = get_node('/root/main/game/meta_ui/dropdown')
@@ -93,6 +143,7 @@ func load_options():
 			print('hey boss, the options menu can\'t find the tts node to connect enabled_voicing')
 		else:
 			connect('toggle_voicing', tts_node, 'toggle_voicing')
+			connect('change_voice_speed', tts_node, 'change_voice_speed')
 	
 	return options_dict
 
@@ -106,6 +157,7 @@ func load_and_apply_options():
 	_on_enable_notes_toggled(options_dict['notes_enabled'])
 	_on_enable_voicing_toggled(options_dict['voicing_enabled'])
 	_on_window_size_selected(resolutions.find(options_dict['resolution']))
+	_on_slider_value_changed(options_dict['voice_speed'])
 
 func show_custom():
 	var state = get_node('/root/main/game').state
@@ -124,7 +176,7 @@ func show_custom():
 
 func change_volume(bus, volume):
 	var db = math(volume)
-	print(db)
+	# print(db)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus), db)
 	AudioServer.set_bus_mute(AudioServer.get_bus_index(bus), db == -80)
 	
@@ -149,7 +201,7 @@ func _on_sfx_value_changed(value):
 func _on_fullscreen_toggled(on):
 	OS.window_fullscreen = on
 	if not on:
-		var res_id = $window_size/option_button.selected
+		var res_id = $right_side/window_size/dropdown.selected
 		var res_string = resolutions[res_id]
 		var res = res_string.split(' x ')
 		OS.window_size = Vector2(int(res[0]), int(res[1]))
@@ -166,12 +218,23 @@ func _on_enable_notes_toggled(button_pressed):
 		
 func _on_enable_voicing_toggled(button_pressed):
 	emit_signal('toggle_voicing', button_pressed)
+	if button_pressed:
+		$right_side/self_voicing/test_voicing.show()
+	else:
+		$right_side/self_voicing/test_voicing.hide()
+
+func _on_test_voicing_pressed():
+	get_tree().get_root().get_node('main/game/tts_node').stop()
+	get_tree().get_root().get_node('main/game/tts_node').speak('self-voicing sample')
 
 func _on_window_size_selected(ID):
 	var res_string = resolutions[ID]
 	var res = res_string.split(' x ')
 	OS.window_size = Vector2(int(res[0]), int(res[1]))
 
+# this one is tts speed
+func _on_slider_value_changed(value):
+	emit_signal('change_voice_speed', value)
 
 func hide_custom():
 	hide()

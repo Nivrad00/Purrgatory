@@ -30,11 +30,11 @@ func init_state(state):
 func update_state_end(state):
 	for key in state.keys():
 		if key.substr(0, 14) == '_delay_remove_' and state[key]:
-			print('delay remove')
+			# print('delay remove')
 			state[key] = false
 			state[key.substr(14, len(key)-14)] = false
 		if key.substr(0, 7) == '_delay_' and state[key]:
-			print('delay')
+			# print('delay')
 			state[key] = false
 			state[key.substr(7, len(key)-7)] = true
 	
@@ -43,7 +43,7 @@ func update_state_end(state):
 func update_state(state):
 	for key in state.keys():
 		if key.substr(0, 7) == '_music_' and state[key]:
-			print('MUSIC')
+			# print('MUSIC')
 			state[key] = false
 			var music = key.substr(7, len(key)-7)
 			if music == 'null':

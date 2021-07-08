@@ -2,7 +2,7 @@ extends 'state_handler_template.gd'
 
 func show_rotating_cat():
 	get_node('../../../rotating_cat_container').rect_position = Vector2(289, 180)
-	get_node('../../../rotating_cat_container').rect_scale = Vector2(0.6, 0.6)
+	get_node('../../../rotating_cat_container').rect_scale = Vector2(0.55, 0.55)
 	get_node('../../../rotating_cat_container').modulate.a = 1
 	
 func hide_rotating_cat():

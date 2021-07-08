@@ -2,7 +2,7 @@ extends 'state_handler_template.gd'
 
 var time = 0 # time elapsed
 var progress = 0 # distance down the hole
-var climb_speed = 1500 # how fast player climbs down
+var climb_speed = 15000 # how fast player climbs down
 
 var fall_time = 0 # used when the post cracks - how long player falls for
 var rise_time = 0 # the bounce back from falling

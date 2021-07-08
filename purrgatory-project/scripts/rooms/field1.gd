@@ -17,11 +17,13 @@ func update_state(state):
 	# elijah's stuff
 	
 	if state.get('elijah_quest_complete'):
-		$elijah_park.show()
+		$elijah_field.show()
+		$sean_field.show()
 		$weeds.show()
 		$wheelbarrow.show()
 	else:
-		$elijah_park.hide()
+		$elijah_field.hide()
+		$sean_field.hide()
 		$weeds.hide()
 		$wheelbarrow.hide()
 	
@@ -30,7 +32,25 @@ func update_state(state):
 	# * elijah's helping numa with her poem
 	# * you're with oliver right now
 	if state.get('elijah_why') or state.get('poetry_session') or state.get('oliver_on_date'):
-		$elijah_park.hide()
+		$elijah_field.hide()
+		
+	# sean should disappear if you're with oliver right now
+	if state.get('oliver_on_date'):
+		$sean_field.hide()
+		
+	# helper states so that we can control sprites both here and in hallway8
+	
+	if state.get('display_elijah_and_sean'):
+		emit_signal('set_hidden_sprite', [$elijah_field, $sean_field])
+		state['display_elijah_and_sean'] = false
+		
+	if state.get('display_sean'):
+		emit_signal('set_hidden_sprite', [$sean_field])
+		state['display_sean'] = false
+		
+	if state.get('display_elijah'):
+		emit_signal('set_hidden_sprite', [$elijah_field])
+		state['display_elijah'] = false
 		
 	# tori's stuff
 	

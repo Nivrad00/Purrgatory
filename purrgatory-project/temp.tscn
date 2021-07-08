@@ -1,13 +1,15 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://scripts/credits/sean1.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/credits/sean1.png" type="Texture" id=2]
 [ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=3]
-[ext_resource path="res://scripts/credits/sean2.png" type="Texture" id=4]
-[ext_resource path="res://scripts/credits/sean3.png" type="Texture" id=5]
-[ext_resource path="res://scripts/credits/sean4.png" type="Texture" id=6]
-[ext_resource path="res://scripts/credits/sean5.png" type="Texture" id=7]
-[ext_resource path="res://scripts/credits/sean6.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/credits/sean2.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/credits/sean3.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/credits/sean4.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/credits/sean5.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/credits/sean6.png" type="Texture" id=8]
+
+
 
 [sub_resource type="DynamicFont" id=5]
 size = 40

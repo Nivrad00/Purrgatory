@@ -122,6 +122,7 @@ position = Vector2( -59.0611, -27.7241 )
 texture = ExtResource( 11 )
 
 [node name="shovel1" type="Sprite" parent="state_handler/digging/digging_button"]
+visible = false
 position = Vector2( -12.6764, -170.805 )
 texture = ExtResource( 12 )
 
@@ -147,6 +148,7 @@ position = Vector2( -3.65954, -38.8044 )
 texture = ExtResource( 13 )
 
 [node name="shovel6" type="Sprite" parent="state_handler/digging/digging_button2"]
+visible = false
 position = Vector2( -31.869, -66.1153 )
 texture = ExtResource( 14 )
 

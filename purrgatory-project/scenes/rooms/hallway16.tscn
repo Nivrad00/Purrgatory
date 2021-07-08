@@ -123,5 +123,6 @@ room_label = "escalator"
 
 [node name="hum" parent="state_handler" instance=ExtResource( 13 )]
 volume_db = -10.0
+autoplay = false
 [connection signal="animation_finished" from="state_handler/elevator_door1/AnimationPlayer" to="state_handler/object" method="door_finished"]
 [connection signal="pressed" from="state_handler/object" to="state_handler/object" method="_on_object_pressed"]

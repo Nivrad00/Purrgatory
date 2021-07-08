@@ -12,6 +12,23 @@ func play_default_music(state):
 func update_state(state):
 	.update_state(state)
 	
+	$everything_slam_poster.hide()
+	$poetry_slam_sign.hide()
+	$commons2_fg.hide()
+	$commons_chair2.hide()
+	$commons_poem.hide()
+	$tack.hide()
+	
+	if state.get('elijah_quest_complete'):
+		$everything_slam_poster.show()
+	else:
+		$poetry_slam_sign.show()
+		$commons2_fg.show()
+		$commons_chair2.show()
+		$commons_poem.show()
+		$tack.show()
+		
+	
 	if state.get('glunk'):
 		state['glunk'] = false
 		$glunk.play()

@@ -10,6 +10,11 @@ func update_state(state):
 		$tori_exit1.show()
 	elif state.get('tori_quest_complete') or state.get('queue_tori_flashback'):
 		$tori_exit2.show()
+		
+	# override if she's with natalie at the mural
+	if state.get('natalie_completed_mural') and not state.get('natalie_working_on_nocturnal'):
+		$tori_exit1.hide()
+		$tori_exit2.hide()
 	
 	$exit.hide()
 	$exit2.hide()
