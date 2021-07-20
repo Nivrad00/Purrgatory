@@ -79,7 +79,7 @@ func add_to_history(s, t):
 	text.set_use_bbcode(true)
 	text.set_mouse_filter(MOUSE_FILTER_IGNORE)
 	text.set_custom_minimum_size(Vector2(widths[1], 500))
-	speaker.scroll_active = false
+	text.scroll_active = false
 	grid.add_child(text)
 	
 	# wait until the text is drawn

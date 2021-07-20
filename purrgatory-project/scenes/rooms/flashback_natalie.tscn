@@ -138,7 +138,6 @@ scroll_active = false
 anims/Fadein = SubResource( 1 )
 
 [node name="c1" type="RichTextLabel" parent="state_handler/hc/vc"]
-editor/display_folded = true
 margin_top = 290.0
 margin_right = 800.0
 margin_bottom = 350.0
@@ -153,13 +152,13 @@ scroll_active = false
 anims/Fadein = SubResource( 2 )
 
 [node name="choice_container" type="Control" parent="state_handler/hc/vc/c1"]
-margin_right = 32.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="0" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]start a family[/u]."
@@ -167,10 +166,8 @@ text = "start a family."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/0"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
+margin_right = 804.8
+margin_bottom = 94.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -178,8 +175,8 @@ script = ExtResource( 4 )
 
 [node name="1" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 771.0
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]learn how to code[/u]."
@@ -187,11 +184,9 @@ text = "learn how to code."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/1"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 80.0
-margin_bottom = 15.0
+margin_right = 880.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -199,8 +194,8 @@ script = ExtResource( 4 )
 
 [node name="2" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 788.0
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]publish a young adult novel[/u]."
@@ -208,11 +203,9 @@ text = "publish a young adult novel."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
+margin_right = 969.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -220,8 +213,8 @@ script = ExtResource( 4 )
 
 [node name="3" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 788.0
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]get good at darts[/u]."
@@ -229,11 +222,9 @@ text = "get good at darts."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/3"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
+margin_right = 969.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -241,8 +232,8 @@ script = ExtResource( 4 )
 
 [node name="4" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 788.0
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]live in a cottage in the woods[/u]."
@@ -250,11 +241,9 @@ text = "live in a cottage in the woods."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/4"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
+margin_right = 969.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -262,8 +251,8 @@ script = ExtResource( 4 )
 
 [node name="5" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 788.0
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]go back to school[/u]."
@@ -271,11 +260,9 @@ text = "go back to school."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/5"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
+margin_right = 969.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -283,8 +270,8 @@ script = ExtResource( 4 )
 
 [node name="6" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 788.0
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]move to another country[/u]."
@@ -292,26 +279,23 @@ text = "move to another country."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/6"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
+margin_right = 969.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="t2" type="RichTextLabel" parent="state_handler/hc/vc"]
-editor/display_folded = true
 margin_top = 370.0
 margin_right = 800.0
 margin_bottom = 430.0
 rect_min_size = Vector2( 0, 60 )
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "maybe things would have gone differently if you'd known that you would die early."
-text = "maybe things would have gone differently if you'd known that you would die early."
+bbcode_text = "maybe things would have been different if you'd known how you would die."
+text = "maybe things would have been different if you'd known how you would die."
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/hc/vc/t2"]
@@ -332,14 +316,13 @@ scroll_active = false
 anims/Fadein = SubResource( 4 )
 
 [node name="choice_container" type="Control" parent="state_handler/hc/vc/c3"]
-margin_left = 366.848
-margin_right = 398.848
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="0" type="RichTextLabel" parent="state_handler/hc/vc/c3/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]rehomed your dogs[/u]."
@@ -347,10 +330,8 @@ text = "rehomed your dogs."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c3/choice_container/0"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
+margin_right = 800.0
+margin_bottom = 60.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -358,8 +339,8 @@ script = ExtResource( 4 )
 
 [node name="1" type="RichTextLabel" parent="state_handler/hc/vc/c3/choice_container"]
 visible = false
-margin_right = 771.0
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]visited your hometown[/u]."
@@ -367,11 +348,8 @@ text = "visited your hometown."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c3/choice_container/1"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 4.0
-margin_right = 80.0
-margin_bottom = 15.0
+margin_right = 800.0
+margin_bottom = 60.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -379,8 +357,8 @@ script = ExtResource( 4 )
 
 [node name="2" type="RichTextLabel" parent="state_handler/hc/vc/c3/choice_container"]
 visible = false
-margin_right = 788.0
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]said goodbye to your friends[/u]."
@@ -388,11 +366,8 @@ text = "said goodbye to your friends."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c3/choice_container/2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
+margin_right = 800.0
+margin_bottom = 60.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -400,8 +375,8 @@ script = ExtResource( 4 )
 
 [node name="3" type="RichTextLabel" parent="state_handler/hc/vc/c3/choice_container"]
 visible = false
-margin_right = 788.0
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]turned off the oven[/u]."
@@ -409,11 +384,8 @@ text = "turned off the oven."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c3/choice_container/3"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
+margin_right = 800.0
+margin_bottom = 60.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -421,8 +393,8 @@ script = ExtResource( 4 )
 
 [node name="4" type="RichTextLabel" parent="state_handler/hc/vc/c3/choice_container"]
 visible = false
-margin_right = 788.0
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]deleted some private stuff on your computer[/u]."
@@ -430,11 +402,8 @@ text = "deleted some private stuff on your computer."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c3/choice_container/4"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
+margin_right = 800.0
+margin_bottom = 60.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -442,8 +411,8 @@ script = ExtResource( 4 )
 
 [node name="5" type="RichTextLabel" parent="state_handler/hc/vc/c3/choice_container"]
 visible = false
-margin_right = 788.0
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]donated your stuffed animal collection[/u]."
@@ -451,11 +420,8 @@ text = "donated your stuffed animal collection."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c3/choice_container/5"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
+margin_right = 800.0
+margin_bottom = 60.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -463,8 +429,8 @@ script = ExtResource( 4 )
 
 [node name="6" type="RichTextLabel" parent="state_handler/hc/vc/c3/choice_container"]
 visible = false
-margin_right = 788.0
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]spent the rest of your savings on pizza[/u]."
@@ -472,11 +438,8 @@ text = "spent the rest of your savings on pizza."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c3/choice_container/6"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
+margin_right = 800.0
+margin_bottom = 60.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -498,7 +461,7 @@ flat = true
 margin_left = -12.0
 margin_top = -2.0
 margin_right = 75.0
-margin_bottom = 33.0
+margin_bottom = 66.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[center]next[/center]"

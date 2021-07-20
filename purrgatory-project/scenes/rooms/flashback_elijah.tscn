@@ -105,7 +105,6 @@ rect_min_size = Vector2( 800, 0 )
 alignment = 1
 
 [node name="t0" type="RichTextLabel" parent="state_handler/hc/vc"]
-editor/display_folded = true
 margin_top = 250.0
 margin_right = 800.0
 margin_bottom = 310.0
@@ -136,14 +135,13 @@ scroll_active = false
 anims/Fadein = SubResource( 2 )
 
 [node name="choice_container" type="Control" parent="state_handler/hc/vc/c1"]
-margin_left = 75.0929
-margin_right = 107.093
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="0" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]an estranged family member[/u]."
@@ -151,10 +149,8 @@ text = "an estranged family member."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/0"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
+margin_right = 804.8
+margin_bottom = 94.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -162,8 +158,8 @@ script = ExtResource( 4 )
 
 [node name="1" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]a childhood friend who moved away[/u]."
@@ -171,11 +167,9 @@ text = "a childhood friend who moved away."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/1"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 80.0
-margin_bottom = 15.0
+margin_right = 880.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -183,8 +177,8 @@ script = ExtResource( 4 )
 
 [node name="2" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]an artist you met online[/u]."
@@ -192,11 +186,9 @@ text = "an artist you met online."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
+margin_right = 969.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -204,8 +196,8 @@ script = ExtResource( 4 )
 
 [node name="3" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]a down-to-earth high school teacher[/u]."
@@ -213,11 +205,9 @@ text = "a down-to-earth high school teacher."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/3"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 181.0
-margin_bottom = 15.0
+margin_right = 981.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -225,8 +215,8 @@ script = ExtResource( 4 )
 
 [node name="4" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]a bassist in an obscure band[/u]."
@@ -234,11 +224,9 @@ text = "a bassist in an obscure band."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/4"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 330.0
-margin_bottom = 15.0
+margin_right = 1130.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -246,8 +234,8 @@ script = ExtResource( 4 )
 
 [node name="5" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]a character from your favorite tv show[/u]."
@@ -255,11 +243,9 @@ text = "a character from your favorite tv show."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/5"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 75.0
-margin_bottom = 15.0
+margin_right = 875.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -267,8 +253,8 @@ script = ExtResource( 4 )
 
 [node name="6" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]your closest friend[/u]."
@@ -276,18 +262,15 @@ text = "your closest friend."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/6"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 73.0
-margin_bottom = 15.0
+margin_right = 873.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="c2" type="RichTextLabel" parent="state_handler/hc/vc"]
-editor/display_folded = true
 margin_top = 410.0
 margin_right = 800.0
 margin_bottom = 470.0
@@ -303,15 +286,13 @@ anims/Fadein = SubResource( 3 )
 
 [node name="choice_container" type="Control" parent="state_handler/hc/vc/c2"]
 editor/display_folded = true
-margin_left = 313.501
-margin_right = 342.501
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="0" type="RichTextLabel" parent="state_handler/hc/vc/c2/choice_container"]
-editor/display_folded = true
 visible = false
-margin_right = 800.0
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]intelligent[/u]"
@@ -319,21 +300,18 @@ text = "intelligent"
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c2/choice_container/0"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 462.0
-margin_bottom = 15.0
+margin_right = 1262.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="1" type="RichTextLabel" parent="state_handler/hc/vc/c2/choice_container"]
-editor/display_folded = true
 visible = false
-margin_right = 800.0
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]selfless[/u]"
@@ -341,21 +319,18 @@ text = "selfless"
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c2/choice_container/1"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 381.0
-margin_bottom = 15.0
+margin_right = 1181.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="2" type="RichTextLabel" parent="state_handler/hc/vc/c2/choice_container"]
-editor/display_folded = true
 visible = false
-margin_right = 800.0
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]brave[/u]"
@@ -363,21 +338,18 @@ text = "brave"
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c2/choice_container/2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 448.0
-margin_bottom = 15.0
+margin_right = 1248.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="3" type="RichTextLabel" parent="state_handler/hc/vc/c2/choice_container"]
-editor/display_folded = true
 visible = false
-margin_right = 800.0
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]compassionate[/u]"
@@ -385,21 +357,18 @@ text = "compassionate"
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c2/choice_container/3"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 52.0
-margin_bottom = 15.0
+margin_right = 852.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="4" type="RichTextLabel" parent="state_handler/hc/vc/c2/choice_container"]
-editor/display_folded = true
 visible = false
-margin_right = 800.0
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]successful[/u]"
@@ -407,21 +376,18 @@ text = "successful"
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c2/choice_container/4"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 548.0
-margin_bottom = 15.0
+margin_right = 1348.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="5" type="RichTextLabel" parent="state_handler/hc/vc/c2/choice_container"]
-editor/display_folded = true
 visible = false
-margin_right = 800.0
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]talented[/u]"
@@ -429,21 +395,18 @@ text = "talented"
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c2/choice_container/5"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 25.0
-margin_bottom = 15.0
+margin_right = 825.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="6" type="RichTextLabel" parent="state_handler/hc/vc/c2/choice_container"]
-editor/display_folded = true
 visible = false
-margin_right = 800.0
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]wise[/u]"
@@ -451,20 +414,17 @@ text = "wise"
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c2/choice_container/6"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = -28.0
-margin_bottom = 15.0
+margin_right = 772.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="end_text" type="RichTextLabel" parent="state_handler/hc/vc/c2"]
-margin_left = 428.684
-margin_right = 595.684
-margin_bottom = 60.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 rect_min_size = Vector2( 0, 60 )
 rect_clip_content = false
 mouse_filter = 1
@@ -489,7 +449,7 @@ flat = true
 margin_left = -9.0
 margin_top = -2.0
 margin_right = 67.0
-margin_bottom = 37.0
+margin_bottom = 62.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[center]next[/center]"

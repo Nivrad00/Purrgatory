@@ -25,7 +25,7 @@ func update_state(state):
 		emit_signal('change_audio', null)
 		emit_signal('set_hidden_sprite', [$tori_closet])
 	
-	if state.get('_inv_snowglobe_closet') or state.get('spent_snowglobes'):
+	if state.get('_inv_snowglobe_closet') or state.get('placed_snowglobes'):
 		$snowglobe_closet.hide()
 		
 	if state.get('sean_replaced_batteries') or state.get('_inv_battery1'):

@@ -377,7 +377,7 @@ bus = "SFX"
 
 [node name="busy_tone" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 36 )
-volume_db = -4.0
+volume_db = -7.0
 bus = "Phone"
 
 [node name="dial_tone" type="AudioStreamPlayer" parent="state_handler"]

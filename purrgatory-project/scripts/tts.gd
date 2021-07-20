@@ -41,23 +41,26 @@ var pronunciation = [
 var enabled = false
 
 func _ready():
-	tts = TTSDriver.new()
+	if not get_tree().get_root().get_node('main').web_build:
+		tts = TTSDriver.new()
 	
 func speak(text):
-	yield(get_tree(), 'idle_frame')
-	
-	if !enabled:
-		return
-			
-	for word in pronunciation:
-		text = text.replacen(word[0], word[1])
-	
-	if text != '':
-		tts.speak(text, false)
+	if tts:
+		yield(get_tree(), 'idle_frame')
+		
+		if !enabled:
+			return
+				
+		for word in pronunciation:
+			text = text.replacen(word[0], word[1])
+		
+		if text != '':
+			tts.speak(text, false)
 
 func stop():
-	yield(get_tree(), 'idle_frame')
-	tts.stop()
+	if tts:
+		yield(get_tree(), 'idle_frame')
+		tts.stop()
 
 func toggle_voicing(_enabled):
 	enabled = _enabled
@@ -65,4 +68,5 @@ func toggle_voicing(_enabled):
 		stop()
 
 func change_voice_speed(speed):
-	tts.set_rate(int(speed))
+	if tts:
+		tts.set_rate(int(speed))

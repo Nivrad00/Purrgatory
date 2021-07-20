@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Template</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script src="$GODOT_URL"></script>
+        <script>
+            const myWasm = 'index.wasm';
+            const myPck = 'index.pck';
+            const engine = new Engine();
+            Promise.all([
+                // Load and init the engine
+                engine.init(myWasm),
+                // And the pck concurrently
+                engine.preloadFile(myPck),
+            ]).then(() => {
+                // Now start the engine.
+                return engine.start('-s ASSERTIONS=1');
+            }).then(() => {
+                console.log('Engine has started!');
+            });
+        </script>
+    </body>
+</html>
+
+

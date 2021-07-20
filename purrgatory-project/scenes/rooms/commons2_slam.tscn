@@ -217,6 +217,15 @@ room_label = "library"
 position = Vector2( 1.72073, 19.0453 )
 polygon = PoolVector2Array( -336.115, 293.819, -337.617, 714.368, -277.4, 705.181, -105.015, 677.947, -106.429, 671.387, -111.441, 590.682, -110.413, 584, -106.944, 579.373, -100.261, 572.434, -91.9078, 570.12, -83.1691, 571.02, -73.9163, 573.333, -67.8763, 576.674, -62.6074, 583.228, -55.9248, 594.666, -51.5554, 661.62, -21.9812, 657.507, -21.0875, 318.127 )
 
+[node name="Polygon2D2" type="Polygon2D" parent="state_handler/library_door"]
+visible = false
+position = Vector2( 1.72073, 19.0453 )
+polygon = PoolVector2Array( -336.115, 293.819, -337.617, 714.368, -277.4, 705.181, -105.015, 677.947, -106.429, 671.387, -111.441, 590.682, -110.413, 584, -106.944, 579.373, -100.261, 572.434, -91.9078, 570.12, -83.1691, 571.02, -73.9163, 573.333, -67.8763, 576.674, -62.6074, 583.228, -55.9248, 594.666, -51.5554, 661.62, -21.9812, 657.507, -21.0875, 318.127 )
+
+[node name="Polygon2D" type="Polygon2D" parent="state_handler/library_door"]
+visible = false
+polygon = PoolVector2Array( -94.4802, 614.147, -89.8085, 613.563, -81.6329, 615.607, -75.5012, 619.694, -72.2894, 623.49, -70.8295, 628.454, -72.2894, 630.498, -81.9249, 627.87, -89.5165, 624.95, -93.0203, 620.862, -94.7722, 617.942 )
+
 [node name="slam_elijah" type="TextureButton" parent="state_handler"]
 margin_left = 725.936
 margin_top = 97.2986
@@ -340,9 +349,9 @@ animation1 = ExtResource( 27 )
 animation2 = ExtResource( 28 )
 
 [node name="slam_oliver_shh" type="TextureButton" parent="state_handler"]
-margin_left = 485.158
+margin_left = 486.158
 margin_top = 341.527
-margin_right = 798.158
+margin_right = 799.158
 margin_bottom = 770.527
 rect_pivot_offset = Vector2( -530.216, 19.9975 )
 focus_mode = 0
@@ -425,9 +434,9 @@ animation1 = ExtResource( 48 )
 animation2 = ExtResource( 49 )
 
 [node name="slam_tori_shh" type="TextureButton" parent="state_handler"]
-margin_left = 252.815
+margin_left = 253.815
 margin_top = 376.066
-margin_right = 565.815
+margin_right = 566.815
 margin_bottom = 805.065
 rect_pivot_offset = Vector2( -530.216, 19.9975 )
 focus_mode = 0

@@ -4,6 +4,7 @@ signal return_to_main()
 signal animation_tick()
 
 export var default_room = ''
+var save_ticker = 0
 
 var state = {
 	'true': true
@@ -167,15 +168,18 @@ func _notification(what):
 		#   you'll have to redo any changes you made
 		# idk if it triggers if you force quit the game or shut off the computer
 		
-		# btw there's no need to save seen_blocks here bc it's saved as soon
-		#   as it's altered
-		
 		#if visible:
 		#	$meta_ui/options_menu.save_options()
 		#else:
 		#	get_node('../options_menu').save_options()
 
 		#get_tree().quit()
+		
+		# we still need to save the seen blocks, though
+		var f = File.new()
+		f.open("user://seen_blocks.save", File.WRITE)
+		f.store_line(to_json(seen_blocks))
+		f.close()
 
 func _process(delta):
 	# animation stuff
@@ -333,15 +337,20 @@ func update_dialog_button_clicked():
 		update_dialog(-1)
 
 func update_dialog(b: int):
-	$meta_ui/debug/Label.text = str(state)
+	# $meta_ui/debug/Label.text = str(state)
 	
-	# mark the previous block as seen, and immediately write to file
+	# mark the previous block as seen
 	seen_blocks.append(block['label'])
-
-	var f = File.new()
-	f.open("user://seen_blocks.save", File.WRITE)
-	f.store_line(to_json(seen_blocks))
-	f.close()
+	
+	# seen_blocks is saved whenever you exit
+	# however, also save it every 100 blocks just to be safe
+	# (in case the game crashes or the computer is turned off or something)
+	save_ticker += 1
+	if save_ticker % 100 == 0:
+		var f = File.new()
+		f.open("user://seen_blocks.save", File.WRITE)
+		f.store_line(to_json(seen_blocks))
+		f.close()
 		
 	# if there's no choice, get the next block directly
 	if b == -1:
@@ -444,7 +453,7 @@ func set_player_name():
 			format_dict['they'] = pronoun_inputs.get_node('they').text
 			format_dict['them'] = pronoun_inputs.get_node('them').text
 			format_dict['their'] = pronoun_inputs.get_node('their').text
-			format_dict['theirs'] = pronoun_inputs.get_node('theirs').text
+			format_dict['theirs'] = pronoun_inputs.get_node('their').text + 's' # this isn't technically correct but whatever
 			format_dict['themself'] = pronoun_inputs.get_node('them').text + 'self'
 			
 		ui.get_node('name_input').hide()
@@ -567,7 +576,7 @@ func save(file):
 		months[datetime['month'] - 1],
 		datetime['day'],
 		datetime['year'],
-		datetime['hour'] % 12,
+		((datetime['hour'] - 1) % 12) + 1,
 		datetime['minute'],
 		ampm[datetime['hour'] / 12]
 	]
@@ -756,7 +765,6 @@ func reset_state(reset_room):
 	ui.get_node('name_input/custom_pronouns/they').text = "they"
 	ui.get_node('name_input/custom_pronouns/them').text = "them"
 	ui.get_node('name_input/custom_pronouns/their').text = "their"
-	ui.get_node('name_input/custom_pronouns/theirs').text = "theirs"
 	
 	state = {
 		'true': true
@@ -787,8 +795,6 @@ func open_pause_menu():
 	$meta_ui/pause_menu.show_custom()
 
 func close_pause_menu():
-	#if ui.is_visible():
-		#ui.speak_ui()
 	$meta_ui/pause_menu.hide_custom()
 
 func options_changed():

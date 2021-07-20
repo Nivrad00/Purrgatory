@@ -54,6 +54,7 @@ func start_game(time_left = 0, progress = 0):
 		$game_timer.start(time_left)
 	
 func failure():
+	$failure.play()
 	$flower_timer/AnimationPlayer.stop(false)
 	emit_signal('start_dialog', 'flowers_fail', null)
 	emit_signal('change_audio', '')

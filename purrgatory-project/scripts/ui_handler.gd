@@ -62,9 +62,9 @@ func update_ui(speaker, sprites, text, choices, tts = true):
 
 	# do tts if tts is enabled and skip is off
 	tts_node.stop()
-	yield(get_tree(), 'idle_frame') # wait a frame for the ui to finish updating
 	if tts:
 		# only speak the speaker/text if it's changed
+		yield(get_tree(), "idle_frame")
 		speak_ui(speaker != null or text != null)
 
 func speak_ui(all = true):

@@ -8,9 +8,6 @@ func init_state(state):
 		
 func update_state(state):
 	.update_state(state)
-	
-	if state.get('_inv_draw_a_paw') or state.get('returned_draw_a_paw'):
-		$draw_a_paw.hide()
 		
 	if state.get('ks_and_numa_at_meowseum'):
 		$ks_and_numa.show()

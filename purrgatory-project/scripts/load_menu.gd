@@ -47,8 +47,11 @@ func delete_data():
 	for i in range(0, 6):
 		dir.remove("user://save" + str(i) + ".save")
 		dir.remove("user://thumb" + str(i) + ".png")
-		dir.remove("user://seen_blocks" + str(i) + ".save")
+		dir.remove("user://seen_blocks.save")
 		dir.remove("user://mural" + str(i) + ".png")
+		dir.remove("user://ttt_state" + str(i) + ".save")
+		dir.remove("user://ttt_drawing" + str(i) + ".png")
+		dir.remove("user://draw_a_paw" + str(i) + ".png")
 	
 	yield(get_tree(), "idle_frame")
 	load_save_files()

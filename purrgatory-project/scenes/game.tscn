@@ -708,7 +708,6 @@ align = 1
 valign = 1
 
 [node name="custom_pronouns" type="Control" parent="content/ui/name_input"]
-editor/display_folded = true
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
@@ -722,10 +721,11 @@ margin_bottom = -180.465
 rect_scale = Vector2( 33.8985, 19.0842 )
 
 [node name="they" type="LineEdit" parent="content/ui/name_input/custom_pronouns"]
-margin_left = 312.0
-margin_top = -127.0
-margin_right = 441.0
-margin_bottom = -80.0
+editor/display_folded = true
+margin_left = 309.0
+margin_top = -97.0
+margin_right = 438.0
+margin_bottom = -50.0
 rect_pivot_offset = Vector2( -341.701, 118.831 )
 focus_mode = 1
 custom_styles/focus = SubResource( 7 )
@@ -754,10 +754,11 @@ text = "they"
 align = 2
 
 [node name="them" type="LineEdit" parent="content/ui/name_input/custom_pronouns"]
-margin_left = 312.0
-margin_top = -66.0
-margin_right = 441.0
-margin_bottom = -19.0
+editor/display_folded = true
+margin_left = 309.0
+margin_top = -36.0
+margin_right = 438.0
+margin_bottom = 11.0
 rect_pivot_offset = Vector2( -341.701, 57.8306 )
 focus_mode = 1
 custom_styles/focus = SubResource( 9 )
@@ -787,10 +788,11 @@ align = 2
 clip_text = true
 
 [node name="their" type="LineEdit" parent="content/ui/name_input/custom_pronouns"]
-margin_left = 312.0
-margin_top = -5.0
-margin_right = 441.0
-margin_bottom = 42.0
+editor/display_folded = true
+margin_left = 309.0
+margin_top = 25.0
+margin_right = 438.0
+margin_bottom = 72.0
 rect_pivot_offset = Vector2( -341.701, -3.16943 )
 focus_mode = 1
 custom_styles/focus = SubResource( 9 )
@@ -816,39 +818,6 @@ margin_top = 7.14563
 margin_right = -25.0
 margin_bottom = 41.1456
 text = "their"
-align = 2
-clip_text = true
-
-[node name="theirs" type="LineEdit" parent="content/ui/name_input/custom_pronouns"]
-margin_left = 312.0
-margin_top = 56.0
-margin_right = 441.0
-margin_bottom = 103.0
-rect_pivot_offset = Vector2( -341.701, -64.1694 )
-focus_mode = 1
-custom_styles/focus = SubResource( 9 )
-custom_styles/normal = SubResource( 10 )
-custom_colors/cursor_color = Color( 0, 0, 0, 1 )
-text = "theirs"
-max_length = 10
-focus_mode = 1
-context_menu_enabled = false
-caret_blink = true
-
-[node name="TextureRect" type="TextureRect" parent="content/ui/name_input/custom_pronouns/theirs"]
-show_behind_parent = true
-margin_left = -19.0
-margin_top = -6.0
-margin_right = 157.0
-margin_bottom = 54.0
-texture = ExtResource( 36 )
-
-[node name="Label3" type="Label" parent="content/ui/name_input/custom_pronouns/theirs"]
-margin_left = -95.0
-margin_top = 7.0192
-margin_right = -25.0
-margin_bottom = 41.0192
-text = "theirs"
 align = 2
 clip_text = true
 
@@ -1841,7 +1810,6 @@ custom_styles/normal = SubResource( 33 )
 autowrap = true
 
 [node name="Button" type="Button" parent="meta_ui"]
-visible = false
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 110.488
 margin_top = 17.4169
@@ -1880,7 +1848,6 @@ color = Color( 0, 0, 0, 1 )
 [connection signal="focus_exited" from="content/ui/name_input/custom_pronouns/they" to="content/ui/name_input/custom_pronouns/they" method="deselect"]
 [connection signal="focus_exited" from="content/ui/name_input/custom_pronouns/them" to="content/ui/name_input/custom_pronouns/them" method="deselect"]
 [connection signal="focus_exited" from="content/ui/name_input/custom_pronouns/their" to="content/ui/name_input/custom_pronouns/their" method="deselect"]
-[connection signal="focus_exited" from="content/ui/name_input/custom_pronouns/theirs" to="content/ui/name_input/custom_pronouns/theirs" method="deselect"]
 [connection signal="pressed" from="content/ui/name_input/custom_pronouns/back" to="content/ui/name_input/custom_pronouns" method="hide"]
 [connection signal="pressed" from="content/ui/text_box" to="." method="update_dialog_button_clicked"]
 [connection signal="pressed" from="content/ui/skip_button" to="." method="toggle_skip"]
@@ -1888,8 +1855,8 @@ color = Color( 0, 0, 0, 1 )
 [connection signal="pressed" from="content/ui/history_button" to="meta_ui/history" method="toggle"]
 [connection signal="mouse_entered" from="meta_ui/menu_button" to="content/room" method="stop_all_hovering"]
 [connection signal="mouse_exited" from="meta_ui/menu_button" to="content/room" method="start_all_hovering"]
-[connection signal="pressed" from="meta_ui/menu_button" to="." method="toggle_pause_menu"]
 [connection signal="pressed" from="meta_ui/menu_button" to="." method="turn_off_skip"]
+[connection signal="pressed" from="meta_ui/menu_button" to="." method="toggle_pause_menu"]
 [connection signal="examine_item" from="meta_ui/dropdown" to="." method="examine_item"]
 [connection signal="mouse_entered" from="meta_ui/dropdown" to="content/room" method="stop_all_hovering"]
 [connection signal="mouse_exited" from="meta_ui/dropdown" to="content/room" method="start_all_hovering"]
@@ -1909,15 +1876,15 @@ color = Color( 0, 0, 0, 1 )
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/save" to="meta_ui/save_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/load" to="meta_ui/menu_button" method="hide"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/load" to="meta_ui/load_menu" method="show_custom"]
-[connection signal="pressed" from="meta_ui/pause_menu/buttons/options" to="meta_ui/options_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/options" to="meta_ui/menu_button" method="hide"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/options" to="meta_ui/options_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/exit" to="meta_ui/menu_button" method="hide"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/exit" to="meta_ui/exit_confirm" method="show"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/back" to="." method="close_pause_menu"]
 [connection signal="hiding" from="meta_ui/options_menu" to="meta_ui/menu_button" method="show"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
-[connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/dropdown" method="format_quests"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
+[connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/dropdown" method="format_quests"]
 [connection signal="pressed" from="meta_ui/exit_confirm/yes" to="." method="return_to_main"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/menu_button" method="show"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]

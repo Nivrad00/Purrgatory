@@ -99,11 +99,9 @@ func show_custom():
 	show()
 
 func hide_custom():
-	#ui.speak_ui()
-	
 	$'../notes_button'.show()
 	$'../items_button'.show()
-	if $'../../content/ui'.visible:
+	if not $'../../content/ui/text_box'.visible:
 		$'../../content/ui/text_box'.show()
 		$'../../content/ui/skip_button'.show()
 		$'../../content/ui/history_button'.show()

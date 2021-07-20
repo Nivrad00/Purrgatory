@@ -18,6 +18,16 @@ func wake_up():
 		'see the leaky roof'
 	]
 	set_format_dict('hometown', replacements[choice_log[1]])
-	set_format_dict('favorite_place', choice_text[2])
+	
+	var replacements2 = [
+		'the corner store',
+		'the creek',
+		'the bookstore',
+		'my great-aunt\'s house',
+		'the arcade', 
+		'the back of my family\'s store',
+		'the soccer field'
+	]
+	set_format_dict('favorite_place', replacements2[choice_log[2]])
 	
 	emit_signal('change_room', 'flashback_kyungsoon')

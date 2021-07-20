@@ -122,14 +122,13 @@ scroll_active = false
 anims/Fadein = SubResource( 2 )
 
 [node name="choice_container" type="Control" parent="state_handler/hc/vc/c1"]
-margin_right = 32.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="0" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
-editor/display_folded = true
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]blueberries[/u]. "
@@ -137,20 +136,17 @@ text = "blueberries. "
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/0"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
+margin_right = 804.8
+margin_bottom = 94.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="1" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
-editor/display_folded = true
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]burritos[/u]."
@@ -158,20 +154,17 @@ text = "burritos."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/1"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
+margin_right = 804.8
+margin_bottom = 94.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="2" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
-editor/display_folded = true
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]pineapple pizza[/u]."
@@ -179,20 +172,17 @@ text = "pineapple pizza."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
+margin_right = 804.8
+margin_bottom = 94.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="3" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
-editor/display_folded = true
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]adobo[/u]."
@@ -200,20 +190,17 @@ text = "adobo."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/3"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
+margin_right = 804.8
+margin_bottom = 94.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="4" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
-editor/display_folded = true
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]marshmallow cereal[/u]."
@@ -221,20 +208,17 @@ text = "marshmallow cereal."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/4"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
+margin_right = 804.8
+margin_bottom = 94.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="5" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
-editor/display_folded = true
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]pho[/u]."
@@ -242,20 +226,17 @@ text = "pho."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/5"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
+margin_right = 804.8
+margin_bottom = 94.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="6" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
-editor/display_folded = true
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]dark chocolate[/u]."
@@ -263,20 +244,17 @@ text = "dark chocolate."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/6"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
+margin_right = 804.8
+margin_bottom = 94.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="7" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
-editor/display_folded = true
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]fresh oysters[/u]."
@@ -284,20 +262,17 @@ text = "fresh oysters."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/7"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
+margin_right = 804.8
+margin_bottom = 94.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="8" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
-editor/display_folded = true
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]hot wings[/u]."
@@ -305,20 +280,17 @@ text = "hot wings."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/8"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
+margin_right = 804.8
+margin_bottom = 94.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="9" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
-editor/display_folded = true
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]chicken tikka masala[/u]."
@@ -326,20 +298,17 @@ text = "chicken tikka masala."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/9"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
+margin_right = 804.8
+margin_bottom = 94.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="10" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
-editor/display_folded = true
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]ribeye steak[/u]."
@@ -347,20 +316,17 @@ text = "ribeye steak."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/10"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
+margin_right = 804.8
+margin_bottom = 94.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="11" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
-editor/display_folded = true
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]dumplings[/u]."
@@ -368,20 +334,17 @@ text = "dumplings."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/11"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
+margin_right = 804.8
+margin_bottom = 94.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="12" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
-editor/display_folded = true
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]french fries[/u]."
@@ -389,20 +352,17 @@ text = "french fries."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/12"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
+margin_right = 804.8
+margin_bottom = 94.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="13" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
-editor/display_folded = true
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]peanut butter[/u]."
@@ -410,10 +370,8 @@ text = "peanut butter."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/13"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
+margin_right = 804.8
+margin_bottom = 94.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -436,7 +394,7 @@ anchor_right = 1.0
 margin_left = -10.0
 margin_top = -2.0
 margin_right = 10.0
-margin_bottom = 32.0
+margin_bottom = 62.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[center]next[/center]"

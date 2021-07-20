@@ -97,22 +97,22 @@ animation2 = ExtResource( 17 )
 
 [node name="chord" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 18 )
-volume_db = -15.0
+volume_db = -12.0
 bus = "SFX"
 
 [node name="snippet1" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 19 )
-volume_db = -7.0
+volume_db = -12.0
 bus = "SFX"
 
 [node name="snippet2" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 20 )
-volume_db = -7.0
+volume_db = -12.0
 bus = "SFX"
 
 [node name="snippet3" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 21 )
-volume_db = -7.0
+volume_db = -8.0
 bus = "SFX"
 
 [node name="mary_had_a_little_lamb" type="AudioStreamPlayer" parent="state_handler"]

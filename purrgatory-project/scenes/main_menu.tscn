@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://cat_01_color05.obj" type="ArrayMesh" id=2]
@@ -17,8 +17,9 @@
 [ext_resource path="res://assets/audio/Slice_Of_Heaven.ogg" type="AudioStream" id=15]
 [ext_resource path="res://assets/ui/credits_box.png" type="Texture" id=16]
 [ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=17]
-[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=18]
-[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=19]
+[ext_resource path="res://themes/dialog_font_italics.tres" type="DynamicFont" id=18]
+[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=20]
 
 [sub_resource type="SpatialMaterial" id=1]
 next_pass = ExtResource( 3 )
@@ -50,7 +51,7 @@ viewport_path = NodePath("rotating_cat/Viewport")
 size = 25
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 size = 25
 font_data = ExtResource( 6 )
 
@@ -64,6 +65,7 @@ wait_time = 0.5
 one_shot = true
 
 [node name="rotating_cat" type="Control" parent="."]
+editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
@@ -114,6 +116,7 @@ __meta__ = {
 }
 
 [node name="loading" type="Control" parent="."]
+editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 theme = ExtResource( 4 )
@@ -138,7 +141,6 @@ enabled_focus_mode = 0
 flat = true
 
 [node name="main_menu" type="Control" parent="."]
-editor/display_folded = true
 visible = false
 margin_top = -14.0
 margin_right = 40.0
@@ -246,7 +248,6 @@ align = 1
 valign = 1
 
 [node name="credits" type="Button" parent="main_menu/buttons"]
-editor/display_folded = true
 margin_left = 12.1426
 margin_top = 224.735
 margin_right = 262.143
@@ -321,7 +322,6 @@ volume_db = -6.0
 bus = "Music"
 
 [node name="credits" type="Control" parent="."]
-editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -375,6 +375,30 @@ text = "a game by niv"
 align = 1
 autowrap = true
 
+[node name="web_disclaimer1" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
+visible = false
+margin_top = 281.0
+margin_right = 1155.0
+margin_bottom = 331.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+size_flags_vertical = 1
+align = 1
+autowrap = true
+
+[node name="web_disclaimer2" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
+visible = false
+margin_top = 281.0
+margin_right = 1155.0
+margin_bottom = 346.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 18 )
+text = "note: this is the web version of purrgatory, which can perform poorly on some systems. for a smoother experience and higher quality, try one of the downloadable versions."
+align = 1
+autowrap = true
+
 [node name="_12" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
 margin_top = 281.0
 margin_right = 1155.0
@@ -396,7 +420,6 @@ autowrap = true
 uppercase = true
 
 [node name="GridContainer" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-editor/display_folded = true
 margin_top = 383.0
 margin_right = 1155.0
 margin_bottom = 720.0
@@ -1085,6 +1108,24 @@ custom_constants/vseparation = 20
 custom_constants/hseparation = 35
 columns = 2
 
+[node name="sfx5" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer9"]
+margin_right = 560.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "meow"
+align = 2
+autowrap = true
+
+[node name="sfx4" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer9"]
+margin_left = 595.0
+margin_right = 1155.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "scott12355 (scott topping)"
+autowrap = true
+
 [node name="sfx3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer9"]
 margin_right = 560.0
 margin_bottom = 31.0
@@ -1100,7 +1141,7 @@ margin_right = 1155.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "SoundEffectsFactory"
+text = "soundeffectsfactory"
 autowrap = true
 
 [node name="_6" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
@@ -1191,7 +1232,7 @@ margin_top = 626.351
 margin_right = 765.0
 margin_bottom = 684.351
 focus_mode = 0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
@@ -1212,10 +1253,10 @@ text = "back"
 align = 1
 valign = 1
 
-[node name="load_menu" parent="." instance=ExtResource( 18 )]
+[node name="load_menu" parent="." instance=ExtResource( 19 )]
 visible = false
 
-[node name="options_menu" parent="." instance=ExtResource( 19 )]
+[node name="options_menu" parent="." instance=ExtResource( 20 )]
 visible = false
 
 [node name="cover" type="ColorRect" parent="."]

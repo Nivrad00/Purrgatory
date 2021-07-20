@@ -169,13 +169,13 @@ scroll_active = false
 anims/Fadein = SubResource( 2 )
 
 [node name="choice_container" type="Control" parent="state_handler/hc/vc/c1"]
-margin_right = 32.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="0" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]you had many partners, but you never settled down[/u]."
@@ -183,10 +183,8 @@ text = "you had many partners, but you never settled down."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/0"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
+margin_right = 804.8
+margin_bottom = 94.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -194,8 +192,8 @@ script = ExtResource( 4 )
 
 [node name="1" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 771.0
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]your friends were always more important to you than romance[/u]."
@@ -203,11 +201,9 @@ text = "your friends were always more important to you than romance."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/1"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 80.0
-margin_bottom = 15.0
+margin_right = 880.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -215,8 +211,8 @@ script = ExtResource( 4 )
 
 [node name="2" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 788.0
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]your partner must have been devastated when you died[/u]."
@@ -224,17 +220,16 @@ text = "your partner must have been devastated when you died."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
+margin_right = 969.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="t2" type="RichTextLabel" parent="state_handler/hc/vc"]
+editor/display_folded = true
 margin_top = 330.0
 margin_right = 800.0
 margin_bottom = 390.0
@@ -255,8 +250,9 @@ scroll_active = false
 
 [node name="underline" type="RichTextLabel" parent="state_handler/hc/vc/t2/e0"]
 margin_left = 278.744
+margin_top = 5.0
 margin_right = 1078.74
-margin_bottom = 50.0
+margin_bottom = 55.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]                              [/u]"
@@ -267,6 +263,7 @@ scroll_active = false
 margin_left = 278.744
 margin_right = 463.744
 margin_bottom = 33.0
+rect_clip_content = true
 custom_styles/focus = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
 custom_colors/cursor_color = Color( 0, 0, 0, 1 )
@@ -286,8 +283,9 @@ scroll_active = false
 
 [node name="underline" type="RichTextLabel" parent="state_handler/hc/vc/t2/e1"]
 margin_left = 302.591
+margin_top = 5.0
 margin_right = 1102.59
-margin_bottom = 50.0
+margin_bottom = 55.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]                              [/u]"
@@ -298,6 +296,7 @@ scroll_active = false
 margin_left = 302.591
 margin_right = 487.591
 margin_bottom = 33.0
+rect_clip_content = true
 custom_styles/focus = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
 custom_colors/cursor_color = Color( 0, 0, 0, 1 )
@@ -317,8 +316,9 @@ scroll_active = false
 
 [node name="underline" type="RichTextLabel" parent="state_handler/hc/vc/t2/e2"]
 margin_left = 153.653
+margin_top = 5.0
 margin_right = 953.653
-margin_bottom = 50.0
+margin_bottom = 55.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]                              [/u]"
@@ -329,6 +329,7 @@ scroll_active = false
 margin_left = 153.653
 margin_right = 338.653
 margin_bottom = 33.0
+rect_clip_content = true
 custom_styles/focus = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
 custom_colors/cursor_color = Color( 0, 0, 0, 1 )
@@ -340,7 +341,6 @@ caret_blink = true
 anims/Fadein = SubResource( 5 )
 
 [node name="c3" type="RichTextLabel" parent="state_handler/hc/vc"]
-editor/display_folded = true
 margin_top = 410.0
 margin_right = 800.0
 margin_bottom = 470.0
@@ -370,10 +370,8 @@ text = "going for a walk after a rainstorm."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c3/choice_container/0"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
+margin_right = 602.0
+margin_bottom = 84.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -390,11 +388,9 @@ text = "making other people laugh."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c3/choice_container/1"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 80.0
-margin_bottom = 15.0
+margin_right = 851.0
+margin_bottom = 65.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -411,11 +407,9 @@ text = "finishing a good book."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c3/choice_container/2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
+margin_right = 957.0
+margin_bottom = 65.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -432,11 +426,9 @@ text = "relaxing with a drink after a day's work."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c3/choice_container/3"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
+margin_right = 957.0
+margin_bottom = 65.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -453,11 +445,9 @@ text = "people-watching at the train station."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c3/choice_container/4"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
+margin_right = 957.0
+margin_bottom = 65.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -474,11 +464,9 @@ text = "going on long road trips."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c3/choice_container/5"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
+margin_right = 957.0
+margin_bottom = 65.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -495,11 +483,9 @@ text = "sleeping in on a warm sunday morning."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c3/choice_container/6"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
+margin_right = 957.0
+margin_bottom = 65.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -537,7 +523,7 @@ anchor_right = 1.0
 margin_left = -10.0
 margin_top = -2.0
 margin_right = 10.0
-margin_bottom = 32.0
+margin_bottom = 68.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[center]next[/center]"

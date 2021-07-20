@@ -27,7 +27,10 @@ func update_state(state):
 	if state.get('post_slam'): # slam is over, people are cleaning up or left already
 		$slam_oliver_after.show()
 	elif state.get('slam_outro'): # elijah reads poem, wraps up slam
-		pass
+		$slam_oliver_shh.show()
+		$slam_natalie_shh.show()
+		$slam_numa_shh.show()
+		$slam_tori_shh.show()
 	elif state.get('looking_for_poem'): # you look-a for da poem
 		$slam_sean_shh.show()
 		$slam_oliver_shh.show()
@@ -35,7 +38,10 @@ func update_state(state):
 		$slam_numa_shh.show()
 		$slam_tori_shh.show()
 	elif state.get('slam_intro'): # elijah introduces the slam, sean sings
-		pass
+		$slam_oliver_shh.show()
+		$slam_natalie_shh.show()
+		$slam_numa_shh.show()
+		$slam_tori_shh.show()
 	else: # everyone is preparing for the slam
 		$slam_elijah.show()
 		$slam_natalie.show()

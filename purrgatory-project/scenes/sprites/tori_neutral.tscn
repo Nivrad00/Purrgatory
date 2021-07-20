@@ -10,10 +10,10 @@
 script = ExtResource( 1 )
 
 [node name="TextureButton" type="TextureButton" parent="."]
-margin_left = -98.4623
-margin_top = -164.526
-margin_right = 251.538
-margin_bottom = 285.474
+margin_left = -174.293
+margin_top = -225.654
+margin_right = 175.708
+margin_bottom = 224.346
 mouse_filter = 2
 texture_normal = ExtResource( 2 )
 script = ExtResource( 3 )

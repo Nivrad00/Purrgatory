@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/flowerbed.gd" type="Script" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://assets/audio/correct.ogg" type="AudioStream" id=29]
 [ext_resource path="res://assets/audio/wrong.ogg" type="AudioStream" id=30]
 [ext_resource path="res://assets/audio/success.wav" type="AudioStream" id=31]
+[ext_resource path="res://assets/audio/failure.wav" type="AudioStream" id=32]
 
 [sub_resource type="Animation" id=1]
 resource_name = "New Anim"
@@ -197,6 +198,11 @@ bus = "SFX"
 [node name="success" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 31 )
 volume_db = -15.0
+bus = "SFX"
+
+[node name="failure" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 32 )
+volume_db = -10.0
 bus = "SFX"
 [connection signal="timeout" from="state_handler/game_timer" to="state_handler" method="failure"]
 [connection signal="timeout" from="state_handler/indicator_timer" to="state_handler" method="reset_indicator"]

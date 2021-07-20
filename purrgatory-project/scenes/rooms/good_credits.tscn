@@ -1810,8 +1810,6 @@ animation1 = ExtResource( 35 )
 animation2 = ExtResource( 36 )
 
 [node name="7" type="Control" parent="state_handler"]
-editor/display_folded = true
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -1822,32 +1820,26 @@ color = Color( 1, 1, 1, 0.760784 )
 
 [node name="Label8" type="Label" parent="state_handler/7"]
 margin_left = -1.0
-margin_top = 40.6922
+margin_top = 31.6922
 margin_right = 1278.0
-margin_bottom = 111.692
+margin_bottom = 102.692
 custom_fonts/font = SubResource( 1 )
 text = "sound effects"
 align = 1
 
 [node name="Label9" type="Label" parent="state_handler/7"]
-margin_top = 113.0
+margin_top = 104.0
 margin_right = 1279.0
-margin_bottom = 184.0
+margin_bottom = 175.0
 text = "freesound.org"
 align = 1
 
-[node name="Label11" type="Label" parent="state_handler/7"]
-margin_top = 600.0
-margin_right = 1279.0
-margin_bottom = 634.0
-text = "SoundEffectsFactory"
-align = 1
-
 [node name="Label3" type="Control" parent="state_handler/7"]
+editor/display_folded = true
 margin_left = 231.83
-margin_top = 158.0
+margin_top = 149.0
 margin_right = 374.83
-margin_bottom = 575.0
+margin_bottom = 566.0
 theme = SubResource( 8 )
 
 [node name="Label7" type="Label" parent="state_handler/7/Label3"]
@@ -1948,18 +1940,33 @@ text = "DisasterServices
        boedie
 sinewave1kHz"
 
-[node name="Label11" type="Label" parent="state_handler/7/Label3"]
-margin_left = -229.742
-margin_top = 482.0
-margin_right = 1049.26
-margin_bottom = 516.0
-text = "phone ring"
+[node name="Control" type="Control" parent="state_handler/7"]
+editor/display_folded = true
+margin_top = -5.0
+margin_right = 40.0
+margin_bottom = 35.0
+
+[node name="Label11" type="Label" parent="state_handler/7/Control"]
+margin_left = 14.0
+margin_top = 652.0
+margin_right = 1293.0
+margin_bottom = 686.0
+text = "phone ring     soundeffectsfactory"
+align = 1
+
+[node name="Label12" type="Label" parent="state_handler/7/Control"]
+margin_left = -9.912
+margin_top = 612.0
+margin_right = 1269.09
+margin_bottom = 646.0
+text = "meow     scott12355"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="8" type="Control" parent="state_handler"]
+editor/display_folded = true
 visible = false
 margin_top = 3.21468
 margin_right = 40.0

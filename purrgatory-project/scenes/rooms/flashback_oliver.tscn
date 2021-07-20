@@ -186,13 +186,18 @@ scroll_active = false
 anims/Fadein = SubResource( 2 )
 
 [node name="choice_container" type="Control" parent="state_handler/hc/vc/c1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 103.0
-margin_right = 135.0
-margin_bottom = 40.0
+margin_right = -665.0
+margin_bottom = -20.0
 
 [node name="0" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
-margin_right = 597.2
-margin_bottom = 50.0
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 565.2
+margin_bottom = 10.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]kind to strangers[/u]."
@@ -200,10 +205,8 @@ text = "kind to strangers."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/0"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
+margin_right = 602.0
+margin_bottom = 84.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -211,8 +214,10 @@ script = ExtResource( 4 )
 
 [node name="1" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 565.2
+margin_bottom = 10.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]honest and resilient[/u]."
@@ -220,11 +225,9 @@ text = "honest and resilient."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/1"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 80.0
-margin_bottom = 15.0
+margin_right = 677.2
+margin_bottom = 65.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -232,8 +235,10 @@ script = ExtResource( 4 )
 
 [node name="2" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 565.2
+margin_bottom = 10.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]clever and well-spoken[/u]."
@@ -241,11 +246,9 @@ text = "clever and well-spoken."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
+margin_right = 766.2
+margin_bottom = 65.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -253,8 +256,10 @@ script = ExtResource( 4 )
 
 [node name="3" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 565.2
+margin_bottom = 10.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]beautiful beyond words[/u]."
@@ -262,11 +267,9 @@ text = "beautiful beyond words."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/3"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 181.0
-margin_bottom = 15.0
+margin_right = 778.2
+margin_bottom = 65.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -274,8 +277,10 @@ script = ExtResource( 4 )
 
 [node name="4" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 565.2
+margin_bottom = 10.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]always there for your friends[/u]."
@@ -283,11 +288,9 @@ text = "always there for your friends."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/4"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 330.0
-margin_bottom = 15.0
+margin_right = 927.2
+margin_bottom = 65.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -295,8 +298,10 @@ script = ExtResource( 4 )
 
 [node name="5" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 565.2
+margin_bottom = 10.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]a talented musician[/u]."
@@ -304,11 +309,9 @@ text = "a talented musician."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/5"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 75.0
-margin_bottom = 15.0
+margin_right = 672.2
+margin_bottom = 65.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -316,8 +319,10 @@ script = ExtResource( 4 )
 
 [node name="6" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 565.2
+margin_bottom = 10.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]endlessly optimistic[/u]."
@@ -325,18 +330,15 @@ text = "endlessly optimistic."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/6"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 73.0
-margin_bottom = 15.0
+margin_right = 670.2
+margin_bottom = 65.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="c2" type="RichTextLabel" parent="state_handler/hc/vc"]
-editor/display_folded = true
 margin_top = 370.0
 margin_right = 800.0
 margin_bottom = 430.0
@@ -366,11 +368,9 @@ text = "won the spelling bee in 6th grade."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c2/choice_container/0"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 462.0
-margin_bottom = 15.0
+margin_right = 1262.0
+margin_bottom = 65.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -387,11 +387,9 @@ text = "first played the guitar on stage."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c2/choice_container/1"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 381.0
-margin_bottom = 15.0
+margin_right = 1181.0
+margin_bottom = 65.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -408,11 +406,9 @@ text = "finished your first half-marathon."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c2/choice_container/2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 448.0
-margin_bottom = 15.0
+margin_right = 1248.0
+margin_bottom = 65.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -429,11 +425,9 @@ text = "had your first child."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c2/choice_container/3"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 52.0
-margin_bottom = 15.0
+margin_right = 852.0
+margin_bottom = 65.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -450,11 +444,9 @@ text = "set the world record in a video game."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c2/choice_container/4"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 548.0
-margin_bottom = 15.0
+margin_right = 1348.0
+margin_bottom = 65.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -471,11 +463,9 @@ text = "graduated college."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c2/choice_container/5"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 25.0
-margin_bottom = 15.0
+margin_right = 825.0
+margin_bottom = 65.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -492,11 +482,9 @@ text = "cut your hair off."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c2/choice_container/6"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = -28.0
-margin_bottom = 15.0
+margin_right = 772.0
+margin_bottom = 65.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -546,7 +534,6 @@ text = "you finished in just under 3 hours."
 scroll_active = false
 
 [node name="e3" type="RichTextLabel" parent="state_handler/hc/vc/t3"]
-editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 52.0
@@ -568,12 +555,12 @@ scroll_active = false
 
 [node name="LineEdit" type="LineEdit" parent="state_handler/hc/vc/t3/e3"]
 margin_right = 185.0
-margin_bottom = 33.0
+margin_bottom = 31.0
+rect_clip_content = true
 custom_styles/focus = SubResource( 8 )
 custom_styles/normal = SubResource( 9 )
 custom_colors/cursor_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = " "
 max_length = 15
 context_menu_enabled = false
 caret_blink = true
@@ -627,7 +614,7 @@ flat = true
 margin_left = -9.0
 margin_top = -2.0
 margin_right = 70.0
-margin_bottom = 34.0
+margin_bottom = 72.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[center]next[/center]"

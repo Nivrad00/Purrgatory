@@ -142,6 +142,7 @@ margin_right = 800.0
 margin_bottom = 350.0
 rect_min_size = Vector2( 0, 60 )
 mouse_filter = 1
+size_flags_horizontal = 3
 bbcode_enabled = true
 scroll_active = false
 
@@ -149,14 +150,13 @@ scroll_active = false
 anims/Fadein = SubResource( 2 )
 
 [node name="choice_container" type="Control" parent="state_handler/hc/vc/c1"]
-margin_left = 75.0929
-margin_right = 107.093
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="0" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]the mountains were always in the background[/u]."
@@ -164,10 +164,8 @@ text = "the mountains were always in the background."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/0"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
+margin_right = 804.8
+margin_bottom = 94.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -175,8 +173,8 @@ script = ExtResource( 4 )
 
 [node name="1" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]the streets were filled with chatter[/u]."
@@ -184,11 +182,9 @@ text = "the streets were filled with chatter."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/1"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 80.0
-margin_bottom = 15.0
+margin_right = 880.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -196,8 +192,8 @@ script = ExtResource( 4 )
 
 [node name="2" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]the sea pounded against the shore[/u]."
@@ -205,11 +201,9 @@ text = "the sea pounded against the shore."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
+margin_right = 969.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -217,8 +211,8 @@ script = ExtResource( 4 )
 
 [node name="3" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]the dusty roads stretched to the horizon[/u]."
@@ -226,11 +220,9 @@ text = "the dusty roads stretched to the horizon."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/3"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 181.0
-margin_bottom = 15.0
+margin_right = 981.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -238,8 +230,8 @@ script = ExtResource( 4 )
 
 [node name="4" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]the air was muggy and hot[/u]."
@@ -247,11 +239,9 @@ text = "the air was muggy and hot."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/4"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 330.0
-margin_bottom = 15.0
+margin_right = 1130.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -259,8 +249,8 @@ script = ExtResource( 4 )
 
 [node name="5" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]the lawns were carefully trimmed[/u]."
@@ -268,11 +258,9 @@ text = "the lawns were carefully trimmed."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/5"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 75.0
-margin_bottom = 15.0
+margin_right = 875.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -280,8 +268,8 @@ script = ExtResource( 4 )
 
 [node name="6" type="RichTextLabel" parent="state_handler/hc/vc/c1/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]the roof was always threatening to collapse[/u]."
@@ -289,18 +277,15 @@ text = "the roof was always threatening to collapse."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c1/choice_container/6"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 73.0
-margin_bottom = 15.0
+margin_right = 873.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 script = ExtResource( 4 )
 
 [node name="c2" type="RichTextLabel" parent="state_handler/hc/vc"]
-editor/display_folded = true
 margin_top = 370.0
 margin_right = 800.0
 margin_bottom = 430.0
@@ -315,14 +300,13 @@ scroll_active = false
 anims/Fadein = SubResource( 3 )
 
 [node name="choice_container" type="Control" parent="state_handler/hc/vc/c2"]
-margin_left = 75.0929
-margin_right = 107.093
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="0" type="RichTextLabel" parent="state_handler/hc/vc/c2/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]the corner store that smelled like soap[/u]."
@@ -330,10 +314,8 @@ text = "the corner store that smelled like soap."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c2/choice_container/0"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 4.79999
-margin_bottom = 34.0
+margin_right = 804.8
+margin_bottom = 94.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -341,8 +323,8 @@ script = ExtResource( 4 )
 
 [node name="1" type="RichTextLabel" parent="state_handler/hc/vc/c2/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]the rocky bend in the creek[/u]."
@@ -350,11 +332,9 @@ text = "the rocky bend in the creek."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c2/choice_container/1"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 80.0
-margin_bottom = 15.0
+margin_right = 880.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -362,8 +342,8 @@ script = ExtResource( 4 )
 
 [node name="2" type="RichTextLabel" parent="state_handler/hc/vc/c2/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]the bookstore down the road[/u]."
@@ -371,11 +351,9 @@ text = "the bookstore down the road."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c2/choice_container/2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 169.0
-margin_bottom = 15.0
+margin_right = 969.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -383,8 +361,8 @@ script = ExtResource( 4 )
 
 [node name="3" type="RichTextLabel" parent="state_handler/hc/vc/c2/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]your great-aunt's opulent house[/u]."
@@ -392,11 +370,9 @@ text = "your great-aunt's opulent house."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c2/choice_container/3"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 181.0
-margin_bottom = 15.0
+margin_right = 981.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -404,8 +380,8 @@ script = ExtResource( 4 )
 
 [node name="4" type="RichTextLabel" parent="state_handler/hc/vc/c2/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]the flashy arcade at the mall[/u]."
@@ -413,11 +389,9 @@ text = "the flashy arcade at the mall."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c2/choice_container/4"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 330.0
-margin_bottom = 15.0
+margin_right = 1130.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -425,8 +399,8 @@ script = ExtResource( 4 )
 
 [node name="5" type="RichTextLabel" parent="state_handler/hc/vc/c2/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]the back of your family's store[/u]."
@@ -434,11 +408,9 @@ text = "the back of your family's store."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c2/choice_container/5"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 75.0
-margin_bottom = 15.0
+margin_right = 875.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -446,8 +418,8 @@ script = ExtResource( 4 )
 
 [node name="6" type="RichTextLabel" parent="state_handler/hc/vc/c2/choice_container"]
 visible = false
-margin_right = 597.2
-margin_bottom = 50.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[u]the overgrown soccer field behind the school[/u]."
@@ -455,11 +427,9 @@ text = "the overgrown soccer field behind the school."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/hc/vc/c2/choice_container/6"]
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 4.0
-margin_right = 73.0
-margin_bottom = 15.0
+margin_right = 873.0
+margin_bottom = 75.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -478,50 +448,50 @@ scroll_active = false
 
 [node name="0" type="RichTextLabel" parent="state_handler/hc/vc/t3"]
 visible = false
-margin_right = 1280.0
-margin_bottom = 52.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 bbcode_text = "the owner always gave you free candy. "
 text = "the owner always gave you free candy. "
 
 [node name="1" type="RichTextLabel" parent="state_handler/hc/vc/t3"]
 visible = false
-margin_right = 1280.0
-margin_bottom = 52.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 bbcode_text = "you collected the prettiest stones there."
 text = "you collected the prettiest stones there."
 
 [node name="2" type="RichTextLabel" parent="state_handler/hc/vc/t3"]
 visible = false
-margin_right = 1280.0
-margin_bottom = 52.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 bbcode_text = "the books there seemed older than the stars."
 text = "the books there seemed older than the stars."
 
 [node name="3" type="RichTextLabel" parent="state_handler/hc/vc/t3"]
 visible = false
-margin_right = 1280.0
-margin_bottom = 52.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 bbcode_text = "she had twenty-three chairs and you sat on all of them."
 text = "she had twenty-three chairs and you sat on all of them."
 
 [node name="4" type="RichTextLabel" parent="state_handler/hc/vc/t3"]
 visible = false
-margin_right = 1280.0
-margin_bottom = 52.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 bbcode_text = "you spent all of your parents' quarters there."
 text = "you spent all of your parents' quarters there."
 
 [node name="5" type="RichTextLabel" parent="state_handler/hc/vc/t3"]
 visible = false
-margin_right = 1280.0
-margin_bottom = 52.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 bbcode_text = "you always got to eat the leftovers."
 text = "you always got to eat the leftovers."
 
 [node name="6" type="RichTextLabel" parent="state_handler/hc/vc/t3"]
 visible = false
-margin_right = 1280.0
-margin_bottom = 52.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 bbcode_text = "you picked up more than a couple scraped knees there."
 text = "you picked up more than a couple scraped knees there."
 
@@ -544,7 +514,7 @@ flat = true
 margin_left = -9.0
 margin_top = -2.0
 margin_right = 67.0
-margin_bottom = 37.0
+margin_bottom = 57.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "[center]next[/center]"

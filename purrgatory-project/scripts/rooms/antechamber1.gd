@@ -60,7 +60,8 @@ func _process(delta):
 		if a == 1:
 			state['end_fade_out_trigger'] = false
 			$white_timer.start()
-			get_node('../../../../..').disable_ui()
+			if not state.get('oliver_quest_complete'):
+				get_node('../../../../..').disable_ui()
 				
 			yield($white_timer, 'timeout')
 			if state.get('oliver_quest_complete'):

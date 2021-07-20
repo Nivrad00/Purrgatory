@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/commons1_slam.gd" type="Script" id=2]
@@ -25,17 +25,15 @@
 [ext_resource path="res://assets/sprites/elijah_numa_chatting2.png" type="Texture" id=23]
 [ext_resource path="res://assets/sprites/elijah_numa_chatting3.png" type="Texture" id=24]
 [ext_resource path="res://assets/sprites/gift_books.png" type="Texture" id=25]
-[ext_resource path="res://scenes/texture_object_button.tscn" type="PackedScene" id=26]
-[ext_resource path="res://assets/sprites/basket-flower-and-card.png" type="Texture" id=27]
-[ext_resource path="res://assets/sprite_masks/basket-flower-and-card.png" type="BitMap" id=28]
-[ext_resource path="res://scenes/cat1_idle.tscn" type="PackedScene" id=29]
-[ext_resource path="res://assets/sprite_masks/cat1.png" type="BitMap" id=30]
-[ext_resource path="res://assets/sprites/cat1.png" type="Texture" id=31]
-[ext_resource path="res://assets/sprites/cat2.png" type="Texture" id=32]
-[ext_resource path="res://assets/sprites/cat3.png" type="Texture" id=33]
-[ext_resource path="res://assets/sprites/cat_toy_on_cat.png" type="Texture" id=34]
-[ext_resource path="res://assets/sprites/cat_toy_stick.png" type="Texture" id=35]
-[ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=36]
+[ext_resource path="res://scenes/cat1_idle.tscn" type="PackedScene" id=26]
+[ext_resource path="res://assets/sprite_masks/cat1.png" type="BitMap" id=27]
+[ext_resource path="res://assets/sprites/cat1.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprites/cat2.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprites/cat3.png" type="Texture" id=30]
+[ext_resource path="res://assets/sprites/cat_toy_on_cat.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprites/cat_toy_stick.png" type="Texture" id=32]
+[ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=33]
+[ext_resource path="res://temp.tscn" type="PackedScene" id=34]
 
 [node name="room_template" type="Control"]
 anchor_right = 1.0
@@ -159,9 +157,7 @@ animation1 = ExtResource( 23 )
 animation2 = ExtResource( 24 )
 
 [node name="gift_books" type="Area2D" parent="state_handler"]
-editor/display_folded = true
-position = Vector2( 167.376, 609.991 )
-scale = Vector2( 0.95, 0.95 )
+position = Vector2( 164.61, 610.913 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
@@ -171,39 +167,26 @@ sprite_path = [ null ]
 
 [node name="Sprite3" type="Sprite" parent="state_handler/gift_books"]
 position = Vector2( 86.8829, -39.0502 )
-scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 25 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/gift_books"]
-polygon = PoolVector2Array( -4.61125, -67.0885, -20.1187, 12.583, 86.3317, 17.9866, 97.1389, 0.154785, 185.187, -4.22144, 182.793, -53.9164, 178.601, -76.6683, 160.041, -91.6367, 91.7849, -88.0443, 33.109, -95.2291 )
+polygon = PoolVector2Array( 6.47148, -64.824, -10.1257, 4.33081, -5.20801, 14.7809, 86.3317, 17.9866, 97.1389, 0.154785, 185.187, -4.22144, 182.793, -53.9164, 178.601, -76.6683, 160.041, -91.6367, 99.9074, -86.3389, 38.129, -91.2566 )
 
-[node name="flowers_etc" parent="state_handler" instance=ExtResource( 26 )]
-modulate = Color( 1, 1, 1, 1 )
-margin_left = 511.0
-margin_top = 534.0
-margin_right = 772.0
-margin_bottom = 728.0
-texture_normal = ExtResource( 27 )
-texture_click_mask = ExtResource( 28 )
-expand = false
-dialog_label = "flowers_etc"
-sprite_path = [ null ]
-
-[node name="cat1_idle" parent="state_handler" instance=ExtResource( 29 )]
+[node name="cat1_idle" parent="state_handler" instance=ExtResource( 26 )]
 editor/display_folded = true
 margin_left = 842.662
 margin_top = 491.228
 margin_right = 982.661
 margin_bottom = 625.228
 rect_scale = Vector2( -1, 1 )
-texture_click_mask = ExtResource( 30 )
-animation0 = ExtResource( 31 )
-animation1 = ExtResource( 32 )
-animation2 = ExtResource( 33 )
+texture_click_mask = ExtResource( 27 )
+animation0 = ExtResource( 28 )
+animation1 = ExtResource( 29 )
+animation2 = ExtResource( 30 )
 
 [node name="cat_toy" type="Sprite" parent="state_handler/cat1_idle"]
 position = Vector2( 64.3513, 59.7073 )
-texture = ExtResource( 34 )
+texture = ExtResource( 31 )
 
 [node name="cat_toy_stick" type="Area2D" parent="state_handler"]
 editor/display_folded = true
@@ -221,9 +204,9 @@ polygon = PoolVector2Array( 443.329, 553.692, 344.648, 608.36, 358.084, 625.501,
 
 [node name="Sprite" type="Sprite" parent="state_handler/cat_toy_stick"]
 position = Vector2( 407.006, 602.771 )
-texture = ExtResource( 35 )
+texture = ExtResource( 32 )
 
-[node name="exit" parent="state_handler" instance=ExtResource( 36 )]
+[node name="exit" parent="state_handler" instance=ExtResource( 33 )]
 room_label = "commons2_slam"
 
 [node name="exit2" type="Area2D" parent="state_handler"]
@@ -403,6 +386,8 @@ dialog_label = "slam_carrots"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/slam_carrots"]
 position = Vector2( 22.6333, -26.5303 )
 polygon = PoolVector2Array( 1048.18, 531.846, 1045.79, 539.339, 1038.89, 551.02, 1049.12, 563.232, 1051.96, 564.31, 1053.65, 574.078, 1060.23, 579.257, 1066.62, 588.13, 1068.28, 591.95, 1076.26, 590.289, 1076.26, 585.307, 1073.6, 575.674, 1078.27, 568.852, 1078.12, 533.15, 1063.5, 524.917 )
+
+[node name="flowers_etc" parent="state_handler" instance=ExtResource( 34 )]
 [connection signal="pressed" from="state_handler/slam_kyungsoon" to="state_handler/slam_kyungsoon" method="_on_char_obj_button_pressed"]
 [connection signal="pressed" from="state_handler/slam_oliver" to="state_handler/slam_oliver" method="_on_char_obj_button_pressed"]
 [connection signal="pressed" from="state_handler/slam_numa" to="state_handler/slam_numa" method="_on_char_obj_button_pressed"]

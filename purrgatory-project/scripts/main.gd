@@ -17,21 +17,26 @@ func _ready():
 	set_process(true)
 	
 	# change things for web build, if needed
+	# (options menu also changes based on this variable)
 	
 	if web_build:
 		$main_menu/buttons/exit.hide()
 		$main_menu.rect_position.y = 17
 		$credits/ScrollContainer/VBoxContainer/version.text = 'version ' + version + ' web'
+		$credits/ScrollContainer/VBoxContainer/web_disclaimer1.show()
+		$credits/ScrollContainer/VBoxContainer/web_disclaimer2.show()
 	else:
 		$main_menu/buttons/exit.show()
 		$main_menu.rect_position.y = -14
 		$credits/ScrollContainer/VBoxContainer/version.text = 'version ' + version + ' downloadable'
+		$credits/ScrollContainer/VBoxContainer/web_disclaimer1.hide()
+		$credits/ScrollContainer/VBoxContainer/web_disclaimer2.hide()
 	
 	# if it's the web build, wait so that it shows the loading screen
-	# (the downloadable builds use the splash screen as the loading screen)
+	# (the downloadable builds use the splash screen as the loading screen, so no need)
 	if web_build:
-		yield(get_tree().create_timer(0.01), 'timeout')
-		yield(get_tree(), 'idle_frame')
+		pass#yield(get_tree().create_timer(0.01), 'timeout')
+		#yield(get_tree(), 'idle_frame')
 	
 	var node = load(game_path)
 	add_child(node.instance())
@@ -105,8 +110,6 @@ func _process(delta):
 			
 			yield(get_tree(), 'idle_frame')
 			$game.show()
-			# we have the game speak the ui, if enabled, as soon as it's shown
-			# $game/content/ui.speak_ui() # i guess it's not needed?
 			if $game.main_audio:
 				$game.main_audio.play()
 			

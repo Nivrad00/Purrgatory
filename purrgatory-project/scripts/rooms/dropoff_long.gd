@@ -2,7 +2,7 @@ extends 'state_handler_template.gd'
 
 var time = 0 # time elapsed
 var progress = 0 # distance down the hole
-var climb_speed = 15000 # how fast player climbs down
+var climb_speed = 150 # how fast player climbs down
 
 var fall_time = 0 # used when the post cracks - how long player falls for
 var rise_time = 0 # the bounce back from falling
@@ -22,7 +22,10 @@ var lost_grip = false
 var key_down = false
 var tried = false
 
+var _state = null
+
 func _ready():
+	_state = get_node('../../../../..').state
 	set_process(true)
 
 func _input(event):
@@ -213,6 +216,12 @@ func _process(delta):
 				time = 0
 			# lucifur: about -9000
 			progress = position
+			
+		# easter egg
+		if progress < -3000 and position >= -1 and not _state.get('saw_climb_easter_egg'):
+			emit_signal('start_dialog', 'tori_climb_easter_egg', [])
+			_state['saw_climb_easter_egg'] = true
+			time = 0
 	
 func init_state(state):
 	.init_state(state)
@@ -265,7 +274,7 @@ func update_state(state):
 		$tori_before.hide()
 		time = 0
 		
-	if state.get('_inv_snowglobe_dropoff') or state.get('spent_snowglobes'):
+	if state.get('_inv_snowglobe_dropoff') or state.get('placed_snowglobes'):
 		$snowglobe_dropoff.hide()
 
 func load_in(_climbing, _lost_grip, _progress, _stamina):

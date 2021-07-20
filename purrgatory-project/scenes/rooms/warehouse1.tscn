@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/warehouse1.gd" type="Script" id=2]
@@ -7,7 +7,8 @@
 [ext_resource path="res://assets/sprites/warehouse_ladder.png" type="Texture" id=5]
 [ext_resource path="res://scenes/polygon_exit_button_template.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/sprites/crowbar.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprites/cat_toy.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/gnome.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/cat_toy.png" type="Texture" id=9]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -25,7 +26,7 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="ladder" parent="state_handler" instance=ExtResource( 4 )]
-editor/display_folded = true
+visible = false
 dialog_label = "warehouse_ladder"
 sprite_path = [ null ]
 
@@ -38,14 +39,12 @@ position = Vector2( 1.43198, 0 )
 polygon = PoolVector2Array( 570.917, 199.087, 519.39, 589.722, 606.053, 608.293, 648.611, 187.355 )
 
 [node name="exit" parent="state_handler" instance=ExtResource( 6 )]
-editor/display_folded = true
 room_label = "hallway16"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit"]
 polygon = PoolVector2Array( -391.112, 575.756, -391.112, 730.3, -284.493, 718.534, -284.66, 579.539 )
 
 [node name="exit2" parent="state_handler" instance=ExtResource( 6 )]
-editor/display_folded = true
 room_label = "warehouse2"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
@@ -53,6 +52,7 @@ position = Vector2( -0.193665, 0 )
 polygon = PoolVector2Array( 530.995, 632.144, 602.281, 635.243, 603.385, 555.69, 622.255, 555.526, 622.29, 550.516, 544.42, 551.445, 544.61, 594.054, 531.053, 595.243 )
 
 [node name="crowbar" parent="state_handler" instance=ExtResource( 4 )]
+position = Vector2( -61.0001, 8.17206 )
 dialog_label = "crowbar"
 sprite_path = [ null ]
 
@@ -65,8 +65,21 @@ polygon = PoolVector2Array( 1128.71, 657.639, 1131.97, 676.268, 1228.11, 674.237
 position = Vector2( 1178.79, 662.024 )
 texture = ExtResource( 7 )
 
+[node name="gnome" parent="state_handler" instance=ExtResource( 4 )]
+position = Vector2( 23.3027, -64.0389 )
+dialog_label = "gnome"
+sprite_path = [ null ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/gnome"]
+position = Vector2( -5.53479, 0.000305176 )
+scale = Vector2( 1.00504, 1 )
+polygon = PoolVector2Array( 1169.75, 596.964, 1148.18, 674.289, 1151.4, 717.319, 1166.53, 724.437, 1194.22, 723.466, 1207.34, 676.353, 1198.53, 639.912, 1180.7, 597.935 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/gnome"]
+position = Vector2( 1178.79, 662.024 )
+texture = ExtResource( 8 )
+
 [node name="object3" parent="state_handler" instance=ExtResource( 4 )]
-editor/display_folded = true
 dialog_label = "warehouse_wood "
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object3"]
@@ -82,27 +95,24 @@ polygon = PoolVector2Array( 314.001, 277, 312.001, 519.001, 690.002, 561.001, 98
 polygon = PoolVector2Array( 1075.5, 295.488, 1075.31, 377.723, 1056.32, 377.392, 1054.7, 524.758, 1136.79, 613.953, 1279.49, 634.801, 1281.87, 280.758 )
 
 [node name="object2" parent="state_handler" instance=ExtResource( 4 )]
-editor/display_folded = true
 dialog_label = "cat_food"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
 polygon = PoolVector2Array( 1052.88, 524.529, 1021.21, 614.932, 1062.05, 684.868, 1153.73, 662.923, 1137.45, 612.423 )
 
 [node name="object5" parent="state_handler" instance=ExtResource( 4 )]
-editor/display_folded = true
 dialog_label = " warehouse_button2"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object5"]
 polygon = PoolVector2Array( 185.435, 450.034, 186.832, 484.253, 217.559, 480.761, 216.86, 449.336 )
 
 [node name="cat_toy" parent="state_handler" instance=ExtResource( 4 )]
-editor/display_folded = true
 dialog_label = " cat_toy"
 sprite_path = [ null ]
 
 [node name="Sprite" type="Sprite" parent="state_handler/cat_toy"]
 position = Vector2( 614.529, 91.0441 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/cat_toy"]
 position = Vector2( 1.43198, 0 )

@@ -5,7 +5,7 @@ func _ready():
 	
 func update_state(state):
 	.update_state(state)
-	if state.get('_inv_snowglobe_meowseum') or state.get('spent_snowglobes'):
+	if state.get('_inv_snowglobe_meowseum') or state.get('placed_snowglobes'):
 		$snowglobe_meowseum.hide()
 	
 	$exit2.hide()

@@ -73,8 +73,8 @@ func next():
 			choice_n = 0
 			
 			# show the default choice
-			print(current)
-			print(current.get_node('choice_container').get_child(0))
+			#print(current)
+			#print(current.get_node('choice_container').get_child(0))
 			var default_choice = current.get_node('choice_container').get_child(0).show()
 			
 	else: 
@@ -94,7 +94,6 @@ func next():
 	if old and last_editable_text:
 		for child in old.get_children():
 			if child.name[0] == 'e' and child.get_node('LineEdit').text != '':
-				print(child.name)
 				var lineedit = child.get_node('LineEdit')
 				lineedit.get_parent().set_bbcode(last_editable_text % lineedit.text)
 				lineedit.get_parent().get_node('underline').hide()
@@ -212,14 +211,33 @@ func format_text():
 			# resizing buttons
 			for choice in choice_container.get_children():
 				var choice_size = font.get_string_size(choice.get_text())
-				choice.get_node('Button').set_size(choice_size)
+				choice.get_node('Button').rect_size = choice_size
 		
-		# resizing lineedits
-		# note: if there's multiple lineedits in a text, then it's going to break
-		var lineedit = text.find_node('LineEdit')
-		if lineedit:
-			var space_size = font.get_string_size(empty_space)
-			lineedit.set_size(space_size)
+		# this assumes all lineedits are nested two deep
+		# which, they are, i think
+		# it's a dumb assumption but it works
+		for option in text.get_children():
+			if option.name[0] == 'e' and option.name.length() == 2:
+				# snapping lineedit
+				var start_text
+				if last_editable_text:
+					start_text = last_editable_text.split('%s')[0]
+				else:
+					start_text = option.text.split('%s')[0]
+				var start_width = font.get_string_size(start_text).x
+				var lineedit = option.get_node('LineEdit')
+				var underline = option.get_node('underline')
+				lineedit.set_position(Vector2(start_width, 0))
+				underline.set_position(Vector2(start_width, 5))
+			
+				# resizing lineedit
+				var space_size = font.get_string_size(empty_space)
+				lineedit.set_size(space_size)
+				underline.set_size(space_size)
+				
+				# snapping end text
+				#if option.has_node('end_text'):
+					#option.get_node('end_text').set_position(Vector2(option_width + space_size.x, 0))
 			
 func set_format_dict(key, value):
 

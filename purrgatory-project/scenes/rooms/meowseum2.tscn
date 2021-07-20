@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/meowseum2.gd" type="Script" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=8]
 [ext_resource path="res://assets/sprites/elijah_meowseum2.png" type="Texture" id=9]
 [ext_resource path="res://assets/sprites/elijah_meowseum3.png" type="Texture" id=10]
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=11]
+[ext_resource path="res://assets/sprites/draw-a-paw.png" type="Texture" id=12]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -69,7 +71,6 @@ dialog_label = "yarn"
 polygon = PoolVector2Array( 494.863, 519.574, 457.86, 555.674, 456.958, 599.897, 446.128, 626.972, 376.635, 603.507, 327.9, 621.557, 348.657, 647.729, 398.295, 644.119, 475.91, 649.534, 523.743, 622.459, 561.648, 591.774, 550.818, 529.501 )
 
 [node name="object5" parent="state_handler" instance=ExtResource( 5 )]
-editor/display_folded = true
 dialog_label = "yarn_sign"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object5"]
@@ -166,4 +167,16 @@ blackout_label = "elijah_blackout"
 animation0 = ExtResource( 6 )
 animation1 = ExtResource( 9 )
 animation2 = ExtResource( 10 )
+
+[node name="draw_a_paw" type="Area2D" parent="state_handler"]
+position = Vector2( 635.847, -55.3158 )
+script = ExtResource( 11 )
+dialog_label = "draw_a_paw"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/draw_a_paw"]
+polygon = PoolVector2Array( 489.604, 590.453, 509.97, 580.763, 509.693, 566.893, 492.31, 559.981, 478.071, 560.513, 479.18, 589.917 )
+
+[node name="Sprite" type="Sprite" parent="state_handler/draw_a_paw"]
+position = Vector2( 491.393, 574.804 )
+texture = ExtResource( 12 )
 [connection signal="pressed" from="state_handler/elijah_meowseum" to="state_handler/elijah_meowseum" method="_on_char_obj_button_pressed"]

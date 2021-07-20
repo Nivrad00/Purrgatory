@@ -1020,21 +1020,24 @@ color = Color( 1, 1, 1, 0.760784 )
 
 [node name="Label8" type="Label" parent="state_handler/6"]
 margin_left = -1.0
-margin_top = 37.6922
+margin_top = 29.6922
 margin_right = 1278.0
-margin_bottom = 108.692
+margin_bottom = 100.692
+rect_pivot_offset = Vector2( -23.3271, 291.157 )
 custom_fonts/font = SubResource( 1 )
 text = "sound effects"
 align = 1
 
 [node name="Label9" type="Label" parent="state_handler/6"]
-margin_top = 110.0
+margin_top = 102.0
 margin_right = 1279.0
-margin_bottom = 181.0
+margin_bottom = 173.0
+rect_pivot_offset = Vector2( -24.3271, 218.849 )
 text = "freesound.org"
 align = 1
 
 [node name="Label11" type="Label" parent="state_handler/6"]
+visible = false
 margin_top = 604.032
 margin_right = 1279.0
 margin_bottom = 638.032
@@ -1044,9 +1047,10 @@ align = 1
 [node name="Label3" type="Label" parent="state_handler/6"]
 editor/display_folded = true
 margin_left = 231.83
-margin_top = 155.0
+margin_top = 147.0
 margin_right = 374.83
-margin_bottom = 594.0
+margin_bottom = 586.0
+rect_pivot_offset = Vector2( -256.157, 173.849 )
 theme = SubResource( 7 )
 text = "bell
 river
@@ -1137,12 +1141,39 @@ sinewave1kHz
 "
 
 [node name="Label11" type="Label" parent="state_handler/6/Label3"]
+visible = false
 margin_left = -229.742
 margin_top = 489.032
 margin_right = 1049.26
 margin_bottom = 522.032
 text = "phone ring"
 align = 1
+
+[node name="Control" type="Control" parent="state_handler/6"]
+editor/display_folded = true
+margin_top = -8.0
+margin_right = 40.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( -24.3271, 328.849 )
+
+[node name="Label11" type="Label" parent="state_handler/6/Control"]
+margin_left = 14.0
+margin_top = 652.0
+margin_right = 1293.0
+margin_bottom = 686.0
+text = "phone ring     soundeffectsfactory"
+align = 1
+
+[node name="Label12" type="Label" parent="state_handler/6/Control"]
+margin_left = -9.912
+margin_top = 612.0
+margin_right = 1269.09
+margin_bottom = 646.0
+text = "meow     scott12355"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="7" type="Control" parent="state_handler"]
 editor/display_folded = true
@@ -1212,7 +1243,7 @@ valign = 1
 margin_top = 303.593
 margin_right = 1280.0
 margin_bottom = 380.593
-text = "thanks for playing!"
+text = "the end?"
 align = 1
 valign = 1
 

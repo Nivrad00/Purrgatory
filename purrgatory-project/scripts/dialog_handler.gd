@@ -113,7 +113,7 @@ func _ready():
 func get_block(label, state):
 	if label == null:
 		return null
-	print(label)
+	# print(label)
 	
 	if !(label in blocks):
 		return placeholder_block
@@ -138,7 +138,7 @@ func get_block(label, state):
 		if next_label == null:
 			return null
 			
-		print(next_label)
+		# print(next_label)
 		block = blocks[next_label]
 		
 	var proc_block = {}
