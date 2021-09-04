@@ -96,7 +96,6 @@ margin_bottom = 720.0
 mouse_filter = 2
 
 [node name="shadow" type="Sprite" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 0, 720 )
 texture = ExtResource( 3 )
 centered = false

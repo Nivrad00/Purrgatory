@@ -20,6 +20,7 @@ func update_state(state):
 	
 	if state.get('_inv_screwdriver') or state.get('numa_snooped'):
 		$screwdriver2.hide()
+		$screwdriver.hide()
 		
 	# numa is visible by default
 	
@@ -61,7 +62,6 @@ func update_state(state):
 		state['elijah_working_with_numa_timer'] = false
 		state['poetry_session'] = true
 		emit_signal('start_action_timer', 40, ['poetry_session', false])
-		emit_signal('start_action_timer', 40, ['elijah_and_sean_together', true])
 		
 	if state.get('numa_goto_commons'):
 		emit_signal('change_room', 'hallway1')

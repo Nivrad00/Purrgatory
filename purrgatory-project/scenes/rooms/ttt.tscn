@@ -108,6 +108,7 @@ margin_bottom = 565.0
 color = Color( 0.313726, 1, 0, 0.266667 )
 
 [node name="shapes" type="Node2D" parent="state_handler"]
+editor/display_folded = true
 
 [node name="0" type="AnimatedSprite" parent="state_handler/shapes"]
 position = Vector2( 452.402, 152.873 )
@@ -163,6 +164,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="done_button" type="Button" parent="state_handler"]
+editor/display_folded = true
 visible = false
 anchor_right = 1.0
 margin_left = 532.0

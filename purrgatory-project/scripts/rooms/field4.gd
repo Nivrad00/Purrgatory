@@ -25,6 +25,7 @@ func update_state(state):
 		state['oliver_sleeping_timer'] = false
 		emit_signal('start_action_timer', 40, ['oliver_sleeping', false])
 		emit_signal('start_action_timer', 40, ['oliver_in_study', false])
+		emit_signal('start_action_timer', 40, ['oliver_woke_up', true])
 	
 	if state.get('oliver_queue_silence'):
 		state['oliver_queue_silence'] = false

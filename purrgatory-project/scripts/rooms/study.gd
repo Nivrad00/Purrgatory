@@ -7,8 +7,14 @@ func init_state(state):
 		
 func update_state(state):
 	.update_state(state)
-		
-	if state.get('oliver_sleeping'):
+	
+	if state.get('oliver_woke_up'):
+		$chair1.show()
+		$chair2.hide()
+		$oliver_study.hide()
+		$oliver_sleeping.hide()
+		$oliver_asleep_at_desk.hide()
+	elif state.get('oliver_sleeping'):
 		$oliver_asleep_at_desk.hide()
 		$oliver_study.hide()
 		$oliver_sleeping.show()

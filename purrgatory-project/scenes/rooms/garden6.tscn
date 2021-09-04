@@ -57,7 +57,6 @@ animation1 = ExtResource( 6 )
 animation2 = ExtResource( 7 )
 
 [node name="screwdriver" parent="state_handler" instance=ExtResource( 8 )]
-editor/display_folded = true
 dialog_label = "screwdriver"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/screwdriver"]
