@@ -39,7 +39,7 @@ func _ready():
 		yield(get_tree(), 'idle_frame')
 	
 	var node = load(game_path)
-	add_child(node.instance())
+	add_child_below_node($cover, node.instance())
 	$game.connect('return_to_main', self, 'return_to_main')
 	$game.hide()
 	

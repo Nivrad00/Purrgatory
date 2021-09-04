@@ -33,7 +33,8 @@ var default_options = {
 	"notes_enabled": true,
 	"voicing_enabled": false,
 	"resolution": "1280 x 720",
-	"voice_speed": 1.0
+	"voice_speed": 1.0,
+	"low_contrast": false
 }
 
 func _ready():
@@ -99,7 +100,8 @@ func save_options():
 		"notes_enabled": $right_side/to_do.pressed,
 		"voicing_enabled": $right_side/self_voicing.pressed,
 		"resolution": resolutions[$right_side/window_size/dropdown.selected],
-		"voice_speed": $right_side/voice_speed/slider.value
+		"voice_speed": $right_side/voice_speed/slider.value,
+		"low_contrast": $right_side/low_contrast.pressed
 	}
 	var options_save = File.new()
 	options_save.open("user://options.save", File.WRITE)
@@ -114,13 +116,22 @@ func load_options():
 	# (the options are applied as soon as the values are changed or the game starts, so no need to apply anything here)
 	
 	var options_save = File.new()
-	var options_dict = default_options
+	var options_dict = default_options.duplicate()
+	
+	print(options_dict)
 	
 	if options_save.file_exists("user://options.save"):
 		options_save.open("user://options.save", File.READ)
-		options_dict = parse_json(options_save.get_line())
+		var options_save_dict = parse_json(options_save.get_line())
 		options_save.close()
 		
+		print(options_save_dict)
+	
+		for key in options_save_dict:
+			options_dict[key] = options_save_dict[key]
+		
+	print(options_dict)
+	
 	$right_side/fullscreen.pressed = options_dict['fullscreen']
 	$audio/music.value = options_dict['music_volume']
 	$audio/sfx.value = options_dict['sfx_volume']
@@ -129,6 +140,7 @@ func load_options():
 	$right_side/self_voicing.pressed = options_dict['voicing_enabled']
 	$right_side/window_size/dropdown.selected = resolutions.find(options_dict['resolution'])
 	$right_side/voice_speed/slider.value = options_dict['voice_speed']
+	$right_side/low_contrast.pressed = options_dict['low_contrast']
 	
 	# also, connect the to-do and tts options if not done already
 	# and this absolute path is disgusting but find_node isn't working so whatever
@@ -160,6 +172,7 @@ func load_and_apply_options():
 	_on_enable_voicing_toggled(options_dict['voicing_enabled'])
 	_on_window_size_selected(resolutions.find(options_dict['resolution']))
 	_on_slider_value_changed(options_dict['voice_speed'])
+	_on_low_contrast_toggled(options_dict['low_contrast'])
 
 func show_custom():
 	var state = get_node('/root/main/game').state
@@ -241,3 +254,10 @@ func _on_slider_value_changed(value):
 func hide_custom():
 	hide()
 	emit_signal('hiding')
+
+func _on_low_contrast_toggled(button_pressed):
+	var filter = get_tree().get_root().get_node('main/low_contrast_filter')
+	if button_pressed:
+		filter.show()
+	else:
+		filter.hide()

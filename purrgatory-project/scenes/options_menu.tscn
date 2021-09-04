@@ -63,21 +63,23 @@ visible = false
 position = Vector2( 369.758, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
+texture_mode = 1039858427
 
 [node name="Line2D2" type="Line2D" parent="."]
 visible = false
 position = Vector2( 398.949, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
+texture_mode = 1039858427
 
 [node name="back" type="Button" parent="."]
 editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
-margin_top = 578.98
+margin_top = 599.658
 margin_right = -515.0
-margin_bottom = -82.0197
+margin_bottom = -61.3421
 rect_pivot_offset = Vector2( 311.063, -221.429 )
 focus_mode = 0
 enabled_focus_mode = 0
@@ -139,9 +141,9 @@ valign = 1
 [node name="text_size" type="Control" parent="."]
 editor/display_folded = true
 margin_left = 240.087
-margin_top = 94.9016
+margin_top = 81.9781
 margin_right = 719.087
-margin_bottom = 94.9016
+margin_bottom = 81.9781
 __meta__ = {
 "_edit_group_": true
 }
@@ -208,9 +210,9 @@ align = 2
 [node name="audio" type="Control" parent="."]
 editor/display_folded = true
 margin_left = 240.087
-margin_top = 433.047
+margin_top = 420.123
 margin_right = 280.087
-margin_bottom = 473.047
+margin_bottom = 460.123
 __meta__ = {
 "_edit_group_": true
 }
@@ -270,11 +272,10 @@ ticks_on_borders = true
 focus_mode = 0
 
 [node name="right_side" type="GridContainer" parent="."]
-editor/display_folded = true
-margin_left = 760.158
-margin_top = 68.8893
-margin_right = 1249.16
-margin_bottom = 499.89
+margin_left = 744.65
+margin_top = 55.9658
+margin_right = 1233.65
+margin_bottom = 542.966
 custom_constants/vseparation = 8
 custom_constants/hseparation = 27
 columns = 2
@@ -282,15 +283,15 @@ columns = 2
 [node name="fullscreen_label" type="Label" parent="right_side"]
 modulate = Color( 1, 1, 1, 0.301961 )
 margin_top = 21.0
-margin_right = 162.0
+margin_right = 188.0
 margin_bottom = 53.0
 text = "fullscreen"
 align = 2
 
 [node name="fullscreen" type="CheckBox" parent="right_side"]
 modulate = Color( 1, 1, 1, 0.3 )
-margin_left = 189.0
-margin_right = 463.0
+margin_left = 215.0
+margin_right = 489.0
 margin_bottom = 74.0
 focus_mode = 0
 disabled = true
@@ -299,16 +300,16 @@ enabled_focus_mode = 0
 [node name="window_size_label" type="Label" parent="right_side"]
 modulate = Color( 1, 1, 1, 0.3 )
 margin_top = 87.0
-margin_right = 162.0
+margin_right = 188.0
 margin_bottom = 119.0
 text = "window size"
 align = 2
 
 [node name="window_size" type="MarginContainer" parent="right_side"]
 modulate = Color( 1, 1, 1, 0.3 )
-margin_left = 189.0
+margin_left = 215.0
 margin_top = 82.0
-margin_right = 463.0
+margin_right = 489.0
 margin_bottom = 125.0
 custom_constants/margin_left = 18
 
@@ -327,21 +328,21 @@ text = "1280 x 720"
 
 [node name="space1" type="Control" parent="right_side"]
 margin_top = 133.0
-margin_right = 162.0
+margin_right = 188.0
 margin_bottom = 163.0
 rect_min_size = Vector2( 0, 30 )
 
 [node name="space2" type="Control" parent="right_side"]
-margin_left = 189.0
+margin_left = 215.0
 margin_top = 133.0
-margin_right = 463.0
+margin_right = 489.0
 margin_bottom = 163.0
 rect_min_size = Vector2( 0, 30 )
 
 [node name="self_voicing_label" type="Label" parent="right_side"]
 modulate = Color( 1, 1, 1, 0.3 )
 margin_top = 192.0
-margin_right = 162.0
+margin_right = 188.0
 margin_bottom = 224.0
 text = "self-voicing"
 align = 2
@@ -349,9 +350,9 @@ align = 2
 [node name="self_voicing" type="CheckBox" parent="right_side"]
 editor/display_folded = true
 modulate = Color( 1, 1, 1, 0.3 )
-margin_left = 189.0
+margin_left = 215.0
 margin_top = 171.0
-margin_right = 463.0
+margin_right = 489.0
 margin_bottom = 245.0
 focus_mode = 0
 disabled = true
@@ -393,7 +394,7 @@ autowrap = true
 [node name="voice_speed_label" type="Label" parent="right_side"]
 modulate = Color( 1, 1, 1, 0.3 )
 margin_top = 253.0
-margin_right = 162.0
+margin_right = 188.0
 margin_bottom = 285.0
 text = "voice speed"
 align = 2
@@ -401,9 +402,9 @@ align = 2
 [node name="voice_speed" type="MarginContainer" parent="right_side"]
 editor/display_folded = true
 modulate = Color( 1, 1, 1, 0.3 )
-margin_left = 189.0
+margin_left = 215.0
 margin_top = 253.0
-margin_right = 463.0
+margin_right = 489.0
 margin_bottom = 285.0
 custom_constants/margin_left = 18
 
@@ -429,22 +430,38 @@ focus_mode = 0
 
 [node name="space3" type="Control" parent="right_side"]
 margin_top = 293.0
-margin_right = 162.0
+margin_right = 188.0
 margin_bottom = 323.0
 rect_min_size = Vector2( 0, 30 )
 
 [node name="space4" type="Control" parent="right_side"]
-margin_left = 189.0
+margin_left = 215.0
 margin_top = 293.0
-margin_right = 463.0
+margin_right = 489.0
 margin_bottom = 323.0
 rect_min_size = Vector2( 0, 30 )
 
+[node name="low_contrast_label" type="Label" parent="right_side"]
+margin_top = 352.0
+margin_right = 188.0
+margin_bottom = 384.0
+text = "low contrast mode"
+align = 2
+
+[node name="low_contrast" type="CheckBox" parent="right_side"]
+margin_left = 215.0
+margin_top = 331.0
+margin_right = 489.0
+margin_bottom = 405.0
+focus_mode = 0
+pressed = true
+enabled_focus_mode = 0
+
 [node name="to_do_label" type="Label" parent="right_side"]
 editor/display_folded = true
-margin_top = 352.0
-margin_right = 162.0
-margin_bottom = 384.0
+margin_top = 434.0
+margin_right = 188.0
+margin_bottom = 466.0
 text = "enable to do list"
 align = 2
 
@@ -459,10 +476,10 @@ text = "automatically keeps track of certain objectives"
 autowrap = true
 
 [node name="to_do" type="CheckBox" parent="right_side"]
-margin_left = 189.0
-margin_top = 331.0
-margin_right = 463.0
-margin_bottom = 405.0
+margin_left = 215.0
+margin_top = 413.0
+margin_right = 489.0
+margin_bottom = 487.0
 focus_mode = 0
 pressed = true
 enabled_focus_mode = 0
@@ -498,4 +515,5 @@ autowrap = true
 [connection signal="toggled" from="right_side/self_voicing" to="." method="_on_enable_voicing_toggled"]
 [connection signal="pressed" from="right_side/self_voicing/test_voicing" to="." method="_on_test_voicing_pressed"]
 [connection signal="value_changed" from="right_side/voice_speed/slider" to="." method="_on_slider_value_changed"]
+[connection signal="toggled" from="right_side/low_contrast" to="." method="_on_low_contrast_toggled"]
 [connection signal="toggled" from="right_side/to_do" to="." method="_on_enable_notes_toggled"]
