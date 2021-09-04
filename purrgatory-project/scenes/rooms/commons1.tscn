@@ -1875,6 +1875,7 @@ polygon = PoolVector2Array( 355.202, 531.001, 347.202, 648.001, 383.202, 650.001
 
 [node name="phone_blackout" type="Area2D" parent="state_handler"]
 editor/display_folded = true
+visible = false
 position = Vector2( 2.64789, -49.9394 )
 script = ExtResource( 4 )
 dialog_label = "phone_blackout"
@@ -2191,11 +2192,11 @@ animation1 = ExtResource( 73 )
 animation2 = ExtResource( 74 )
 
 [node name="elijah_poof" type="TextureButton" parent="state_handler/poof_sinners2"]
-margin_left = 3107.0
-margin_top = 10.5958
-margin_right = 3269.0
-margin_bottom = 380.596
-rect_scale = Vector2( -1.1, 1.1 )
+margin_left = 2971.95
+margin_top = 5.68491
+margin_right = 3133.95
+margin_bottom = 375.685
+rect_scale = Vector2( -1, 1 )
 rect_pivot_offset = Vector2( -1184.06, 82.9063 )
 texture_normal = ExtResource( 60 )
 script = ExtResource( 7 )
@@ -2322,11 +2323,11 @@ animation1 = ExtResource( 73 )
 animation2 = ExtResource( 74 )
 
 [node name="elijah_poof" type="TextureButton" parent="state_handler/poof_sinners3"]
-margin_left = 3107.0
-margin_top = 10.5958
-margin_right = 3269.0
-margin_bottom = 380.596
-rect_scale = Vector2( -1.1, 1.1 )
+margin_left = 2970.27
+margin_top = 4.00913
+margin_right = 3132.27
+margin_bottom = 374.009
+rect_scale = Vector2( -1, 1 )
 rect_pivot_offset = Vector2( -1184.06, 82.9063 )
 texture_normal = ExtResource( 60 )
 script = ExtResource( 7 )

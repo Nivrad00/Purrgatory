@@ -96,6 +96,7 @@ __meta__ = {
 }
 
 [node name="GridContainer" type="GridContainer" parent="state_handler"]
+editor/display_folded = true
 margin_left = 327.578
 margin_top = 36.7615
 margin_right = 968.578
@@ -1335,6 +1336,7 @@ align = 1
 valign = 1
 
 [node name="shelf" type="Sprite" parent="state_handler"]
+editor/display_folded = true
 position = Vector2( 1058.46, 348.237 )
 texture = ExtResource( 13 )
 
@@ -1466,10 +1468,17 @@ margin_bottom = 720.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
-[connection signal="pressed" from="state_handler/shelf/skip" to="state_handler/shelf/sure?" method="show"]
+
+[node name="bg2" type="ColorRect" parent="state_handler"]
+margin_left = 0.130865
+margin_top = 718.295
+margin_right = 1280.13
+margin_bottom = 754.295
+mouse_filter = 2
 [connection signal="pressed" from="state_handler/shelf/skip" to="state_handler/shelf/skip" method="hide"]
+[connection signal="pressed" from="state_handler/shelf/skip" to="state_handler/shelf/sure?" method="show"]
 [connection signal="pressed" from="state_handler/shelf/sure?/yes" to="state_handler" method="skip"]
-[connection signal="pressed" from="state_handler/shelf/sure?/no" to="state_handler/shelf/sure?" method="hide"]
 [connection signal="pressed" from="state_handler/shelf/sure?/no" to="state_handler/shelf/skip" method="show"]
+[connection signal="pressed" from="state_handler/shelf/sure?/no" to="state_handler/shelf/sure?" method="hide"]
 [connection signal="timeout" from="state_handler/shelf/Timer" to="state_handler/shelf/AnimationPlayer" method="play" binds= [ "come out" ]]
 [connection signal="pressed" from="state_handler/cover2" to="state_handler" method="_on_cover2_pressed"]

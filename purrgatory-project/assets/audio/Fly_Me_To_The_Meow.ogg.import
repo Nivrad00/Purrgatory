@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Fly_Me_To_The_Meow.ogg-40a062e8bdd6d14e2ee3ca1b5ec1a
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

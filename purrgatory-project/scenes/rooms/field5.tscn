@@ -42,7 +42,7 @@ dialog_label = "passcode"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_poem"]
 position = Vector2( 170.526, 356.842 )
-polygon = PoolVector2Array( 754.74, 245.732, 739.31, 261.94, 742.568, 288.005, 774.334, 291.263, 793.883, 281.489, 785.737, 249.723 )
+polygon = PoolVector2Array( 755.605, 246.34, 727.916, 259.218, 743.8, 278.107, 772.347, 278.751, 796.816, 260.936, 777.498, 249.13 )
 
 [node name="bad_tree" type="Area2D" parent="state_handler"]
 editor/display_folded = true
@@ -57,7 +57,7 @@ script = ExtResource( 5 )
 dialog_label = "field_fence"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/field_fence"]
-polygon = PoolVector2Array( 775.749, 532.465, 777.378, 661.971, 886.529, 639.084, 926.188, 601.037, 957.539, 605.955, 1035.9, 630.26, 1124.25, 641.595, 1189.81, 643.864, 1189.95, 532.448, 1097.8, 522.778, 980.259, 496.022, 977.786, 488.65, 947.071, 487.512, 943.047, 497.694, 874.833, 522.209, 809.99, 535.861, 804.871, 527.897 )
+polygon = PoolVector2Array( 775.749, 532.465, 777.378, 661.971, 886.529, 639.084, 905.74, 628.51, 896.296, 615.631, 926.188, 601.037, 948.453, 604.899, 969.703, 615.202, 1035.9, 630.26, 1124.25, 641.595, 1189.81, 643.864, 1189.95, 532.448, 1097.8, 522.778, 980.259, 496.022, 977.786, 488.65, 947.071, 487.512, 943.047, 497.694, 874.833, 522.209, 809.99, 535.861, 804.871, 527.897 )
 
 [node name="field_river" type="Area2D" parent="state_handler"]
 editor/display_folded = true
@@ -85,7 +85,8 @@ position = Vector2( 25.9886, 0.868713 )
 texture = ExtResource( 10 )
 
 [node name="polygon" type="CollisionPolygon2D" parent="state_handler/digging/digging_button"]
-position = Vector2( -1091.63, -452.734 )
+position = Vector2( -1420.05, -600.103 )
+scale = Vector2( 1.3, 1.3 )
 polygon = PoolVector2Array( 1183.71, 516.144, 1194.73, 456.602, 1124.9, 428.668, 1052.86, 441.9, 1007.28, 462.483, 1003.61, 499.972, 1021.99, 538.197, 1123.43, 544.813 )
 
 [node name="hole_button" type="Area2D" parent="state_handler/digging/digging_button"]
@@ -107,7 +108,8 @@ script = ExtResource( 9 )
 dialog_label = "tori_park_kyungsoon"
 
 [node name="polygon" type="CollisionPolygon2D" parent="state_handler/digging/digging_button3"]
-position = Vector2( -1089.42, -495.369 )
+position = Vector2( -1416.79, -640.633 )
+scale = Vector2( 1.3, 1.3 )
 polygon = PoolVector2Array( 1151.95, 542.373, 1174.53, 490.525, 1147.33, 440.218, 1064.16, 429.437, 1004.62, 447.404, 982.544, 499.252, 1017.96, 535.699, 1094.97, 550.073 )
 
 [node name="hole_button" type="Area2D" parent="state_handler/digging/digging_button3"]
@@ -137,7 +139,8 @@ position = Vector2( 76.9886, -52.1312 )
 texture = ExtResource( 14 )
 
 [node name="polygon" type="CollisionPolygon2D" parent="state_handler/digging/digging_button2"]
-position = Vector2( -1006.49, -511.291 )
+position = Vector2( -1343.33, -659.712 )
+scale = Vector2( 1.3, 1.3 )
 polygon = PoolVector2Array( 1198.45, 524.495, 1215.04, 476.215, 1138.55, 446.583, 1065.81, 451.344, 1009.24, 477.191, 1014.6, 518.643, 1060.39, 542.532, 1145.51, 544.08 )
 
 [node name="hole_button" type="Area2D" parent="state_handler/digging/digging_button2"]

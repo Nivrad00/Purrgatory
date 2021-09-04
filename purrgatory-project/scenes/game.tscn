@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=2]
+[gd_scene load_steps=134 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ss.tscn" type="PackedScene" id=2]
@@ -403,10 +403,30 @@ action = "ui_history"
 [sub_resource type="ShortCut" id=32]
 shortcut = SubResource( 31 )
 
-[sub_resource type="StyleBoxFlat" id=33]
+[sub_resource type="Animation" id=33]
+resource_name = "saving.."
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "saving
+don't exit the game yet!", "saving.
+don't exit the game yet!", "saving..
+don't exit the game yet!", "saving...
+don't exit the game yet!" ]
+}
+
+[sub_resource type="StyleBoxFlat" id=34]
 bg_color = Color( 1, 1, 1, 0.619608 )
 
-[sub_resource type="Shader" id=34]
+[sub_resource type="Shader" id=35]
 code = "shader_type canvas_item;
 
 void fragment() {
@@ -415,8 +435,8 @@ void fragment() {
 	COLOR.rgb = c;
 }"
 
-[sub_resource type="ShaderMaterial" id=35]
-shader = SubResource( 34 )
+[sub_resource type="ShaderMaterial" id=36]
+shader = SubResource( 35 )
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
@@ -440,7 +460,6 @@ one_shot = true
 script = ExtResource( 3 )
 
 [node name="dialog_handler" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 4 )
 
 [node name="objects" type="Node" parent="dialog_handler"]
@@ -561,6 +580,7 @@ mouse_filter = 2
 texture = ExtResource( 28 )
 
 [node name="ui" type="Control" parent="content"]
+editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 theme = ExtResource( 29 )
@@ -1023,12 +1043,11 @@ margin_right = 1093.0
 margin_bottom = 262.0
 
 [node name="quest_container" type="ScrollContainer" parent="meta_ui/dropdown"]
-editor/display_folded = true
 margin_left = 35.0
 margin_top = 55.0
 margin_right = 1060.0
 margin_bottom = 259.0
-mouse_filter = 2
+mouse_filter = 1
 theme = ExtResource( 29 )
 scroll_horizontal_enabled = false
 
@@ -1627,6 +1646,30 @@ text = "back"
 align = 1
 valign = 1
 
+[node name="save_waiting" type="Control" parent="meta_ui"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[node name="white2" type="ColorRect" parent="meta_ui/save_waiting"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
+
+[node name="text2" type="Label" parent="meta_ui/save_waiting"]
+margin_top = 326.623
+margin_right = 1280.0
+margin_bottom = 402.623
+mouse_filter = 1
+text = "saving...
+(don't exit the game yet!)"
+align = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="meta_ui/save_waiting/text2"]
+autoplay = "saving.."
+anims/saving.. = SubResource( 33 )
+
 [node name="save_menu" parent="meta_ui" instance=ExtResource( 92 )]
 visible = false
 margin_left = -0.418121
@@ -1806,10 +1849,11 @@ margin_left = 36.0
 margin_top = 227.0
 margin_right = 612.0
 margin_bottom = 973.0
-custom_styles/normal = SubResource( 33 )
+custom_styles/normal = SubResource( 34 )
 autowrap = true
 
 [node name="Button" type="Button" parent="meta_ui"]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 110.488
 margin_top = 17.4169
@@ -1828,7 +1872,7 @@ color = Color( 1, 1, 1, 0 )
 
 [node name="negative_cover" type="ColorRect" parent="."]
 visible = false
-material = SubResource( 35 )
+material = SubResource( 36 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1280.0
@@ -1883,18 +1927,18 @@ color = Color( 0, 0, 0, 1 )
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/back" to="." method="close_pause_menu"]
 [connection signal="hiding" from="meta_ui/options_menu" to="meta_ui/menu_button" method="show"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
-[connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/dropdown" method="format_quests"]
+[connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
 [connection signal="pressed" from="meta_ui/exit_confirm/yes" to="." method="return_to_main"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/menu_button" method="show"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
-[connection signal="pressed" from="meta_ui/save_confirm/yes" to="." method="save_confirmed"]
 [connection signal="pressed" from="meta_ui/save_confirm/yes" to="meta_ui/menu_button" method="show"]
+[connection signal="pressed" from="meta_ui/save_confirm/yes" to="." method="save_confirmed"]
 [connection signal="deleted_data" from="meta_ui/save_menu" to="." method="deleted_data"]
 [connection signal="hiding" from="meta_ui/save_menu" to="meta_ui/menu_button" method="show"]
 [connection signal="save_file" from="meta_ui/save_menu" to="." method="save"]
-[connection signal="pressed" from="meta_ui/load_confirm/yes" to="." method="load_confirmed"]
 [connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/menu_button" method="show"]
+[connection signal="pressed" from="meta_ui/load_confirm/yes" to="." method="load_confirmed"]
 [connection signal="deleted_data" from="meta_ui/load_menu" to="." method="deleted_data"]
 [connection signal="hiding" from="meta_ui/load_menu" to="meta_ui/menu_button" method="show"]
 [connection signal="load_file" from="meta_ui/load_menu" to="." method="load_game_while_playing"]

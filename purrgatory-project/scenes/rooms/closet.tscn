@@ -188,7 +188,6 @@ dialog_label = "electric_box"
 polygon = PoolVector2Array( 640.704, 425.508, 634.494, 446.146, 633.586, 656.188, 641.027, 662.335, 785, 661.364, 783.487, 424.978 )
 
 [node name="closet_wires" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -109.251, -568.87 )
 script = ExtResource( 5 )
 dialog_label = "closet_wires"

@@ -34,9 +34,9 @@ func _ready():
 	
 	# if it's the web build, wait so that it shows the loading screen
 	# (the downloadable builds use the splash screen as the loading screen, so no need)
-	if web_build:
-		pass#yield(get_tree().create_timer(0.01), 'timeout')
-		#yield(get_tree(), 'idle_frame')
+	if web_build or true: # nvm just do it always, who knows how other OS's display it
+		yield(get_tree().create_timer(0.01), 'timeout')
+		yield(get_tree(), 'idle_frame')
 	
 	var node = load(game_path)
 	add_child(node.instance())

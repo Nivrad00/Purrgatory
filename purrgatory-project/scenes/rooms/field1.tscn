@@ -188,7 +188,8 @@ position = Vector2( -23.5899, -45.7147 )
 texture = ExtResource( 24 )
 
 [node name="polygon" type="CollisionPolygon2D" parent="state_handler/digging/digging_button"]
-position = Vector2( -1089.42, -495.369 )
+position = Vector2( -1427.96, -643.704 )
+scale = Vector2( 1.3, 1.3 )
 polygon = PoolVector2Array( 1237.08, 488.526, 1180.5, 459.488, 1111.99, 451, 1052.23, 454.706, 1002.19, 476.944, 1005.22, 515.723, 1050.82, 535.707, 1156.61, 534.569, 1234.77, 518.177 )
 
 [node name="hole_button" type="Area2D" parent="state_handler/digging/digging_button"]
@@ -209,7 +210,8 @@ position = Vector2( -16.8931, -35.8331 )
 texture = ExtResource( 25 )
 
 [node name="polygon" type="CollisionPolygon2D" parent="state_handler/digging/digging_button2"]
-position = Vector2( -1089.42, -495.369 )
+position = Vector2( -1394.47, -635.256 )
+scale = Vector2( 1.3, 1.3 )
 polygon = PoolVector2Array( 1133.25, 458.558, 1098.62, 430.273, 994.259, 423.933, 926.96, 443.928, 906.965, 496.109, 988.407, 523.418, 1098.62, 503.912 )
 
 [node name="hole_button" type="Area2D" parent="state_handler/digging/digging_button2"]
@@ -231,7 +233,8 @@ script = ExtResource( 22 )
 dialog_label = "tori_park_fridge"
 
 [node name="polygon" type="CollisionPolygon2D" parent="state_handler/digging/digging_button3"]
-position = Vector2( -1089.42, -495.369 )
+position = Vector2( -1417.27, -645.01 )
+scale = Vector2( 1.3, 1.3 )
 polygon = PoolVector2Array( 1138.22, 514.57, 1148.34, 488.603, 1106.09, 467.037, 1063.84, 465.276, 1034.35, 478.48, 1035.23, 505.328, 1062.08, 522.493, 1106.97, 522.493 )
 
 [node name="hole" type="Sprite" parent="state_handler/digging/digging_button3"]

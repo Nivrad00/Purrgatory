@@ -504,7 +504,7 @@ func return_to_main():
 	$white_cover.show()
 	fade_out = true
 
-func save(file):
+func save(file):		
 	# save the drawings separately, if they exist
 	# if the player is in the middle of drawing when they save, we have to retrieve the
 	#   image first
@@ -546,7 +546,7 @@ func save(file):
 	
 	if room.get_current_room() == 'flowerbed' and state.get('flower_ongoing'):
 		var state_handler = room.current_room.get_node('state_handler')
-		state['flower_progress'] = state_handler.get_node('flower_progress').i
+		state['flower_progress'] = state_handler.get_node('flower_progress').i - 1
 		state['flower_time_left'] = state_handler.get_node('game_timer').time_left
 	else:
 		state['flower_progress'] = null
@@ -654,8 +654,14 @@ func save(file):
 		ui.get_node('text_box').hide()
 		ui.get_node('choices').hide()
 
+	if get_tree().get_root().get_node('main').web_build:
+		$meta_ui/save_menu.hide()
+		$meta_ui/save_waiting.show()
+		yield(get_tree().create_timer(8.0), 'timeout')
+		
 	# ok done
 	$meta_ui/save_menu.hide()
+	$meta_ui/save_waiting.hide()
 	$meta_ui/save_confirm.show()
 
 func load_game_while_playing(file):
@@ -775,6 +781,7 @@ func reset_state(reset_room):
 	}
 	
 	action_timers = []
+	block = null
 	if reset_room:
 		room.change_room(default_room, state, false)
 	change_audio(null)
@@ -782,6 +789,9 @@ func reset_state(reset_room):
 	$meta_ui/dropdown.load_inv([])
 	$meta_ui/dropdown.load_quest_log([])
 	$meta_ui/history.load_history([])
+	
+	mural_drawing = null
+	draw_a_paw_drawing = null
 
 
 func toggle_pause_menu():

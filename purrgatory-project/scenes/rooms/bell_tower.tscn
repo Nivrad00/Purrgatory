@@ -38,12 +38,11 @@ volume_db = -10.0
 bus = "SFX"
 
 [node name="bell_rope" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 script = ExtResource( 7 )
 dialog_label = "bell_rope"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/bell_rope"]
-polygon = PoolVector2Array( 580.388, 332.569, 573.872, 559.816, 612.743, 561.578, 612.743, 316.057, 599.511, 316.057 )
+polygon = PoolVector2Array( 577.511, 332.988, 569.297, 546.539, 614.471, 548.592, 616.011, 315.535, 599.511, 316.057 )
 
 [node name="ringing" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 8 )

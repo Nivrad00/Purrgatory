@@ -27,6 +27,7 @@ func update_state(state):
 		emit_signal('start_action_timer', 40, ['oliver_in_study', false])
 	
 	if state.get('oliver_queue_silence'):
+		state['oliver_queue_silence'] = false
 		emit_signal('change_audio', null)
 		
 #	if state.get('elijah_quest_complete') and not state.get('elijah_sean_left_bench') and not state.get('oliver_on_date'):

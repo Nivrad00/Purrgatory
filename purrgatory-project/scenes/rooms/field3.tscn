@@ -139,7 +139,8 @@ position = Vector2( 4.32446, -9.93024 )
 texture = ExtResource( 12 )
 
 [node name="polygon" type="CollisionPolygon2D" parent="state_handler/digging/digging_button"]
-position = Vector2( -1082.59, -501.221 )
+position = Vector2( -1414.85, -651.18 )
+scale = Vector2( 1.3, 1.3 )
 polygon = PoolVector2Array( 1143.19, 512.541, 1145.47, 487.514, 1123.28, 471.588, 1068.11, 466.469, 1033.41, 479.551, 1030.57, 507.422, 1060.71, 521.642, 1108.8, 528.008 )
 
 [node name="hole_button" type="Area2D" parent="state_handler/digging/digging_button"]
@@ -161,7 +162,8 @@ script = ExtResource( 11 )
 dialog_label = "tori_park_robot"
 
 [node name="polygon" type="CollisionPolygon2D" parent="state_handler/digging/digging_button2"]
-position = Vector2( -1108.24, -474.098 )
+position = Vector2( -1436.93, -622.839 )
+scale = Vector2( 1.3, 1.3 )
 polygon = PoolVector2Array( 1155.96, 513.927, 1161.06, 480.57, 1122.24, 459.533, 1054.72, 459.533, 1018.37, 472.694, 1010.48, 505.321, 1032.73, 526.899, 1122.44, 528.073 )
 
 [node name="hole_button" type="Area2D" parent="state_handler/digging/digging_button2"]
@@ -200,8 +202,9 @@ position = Vector2( -1089.42, -495.369 )
 polygon = PoolVector2Array( 1187.4, 539.487, 1192.52, 483.176, 1137.91, 448.479, 1049.18, 449.048, 1010.48, 469.397, 993.438, 507.065, 1019.03, 540.624, 1104.92, 558.257 )
 
 [node name="polygon" type="CollisionPolygon2D" parent="state_handler/digging/digging_button3"]
-position = Vector2( -1089.42, -495.369 )
-polygon = PoolVector2Array( 1187.4, 539.487, 1192.52, 483.176, 1137.91, 448.479, 1049.18, 449.048, 1010.48, 469.397, 993.438, 507.065, 1019.03, 540.624, 1104.92, 558.257 )
+position = Vector2( -1420.21, -643.123 )
+scale = Vector2( 1.3, 1.3 )
+polygon = PoolVector2Array( 1185.02, 540.649, 1184.55, 478.705, 1137.91, 448.479, 1049.18, 449.048, 1010.48, 469.397, 993.438, 507.065, 1019.03, 540.624, 1104.92, 558.257 )
 
 [node name="shovel2" type="Sprite" parent="state_handler/digging/digging_button3"]
 visible = false
@@ -218,7 +221,8 @@ position = Vector2( 12.172, -11.4213 )
 texture = ExtResource( 17 )
 
 [node name="polygon" type="CollisionPolygon2D" parent="state_handler/digging/digging_button4"]
-position = Vector2( -1089.42, -495.369 )
+position = Vector2( -1417.81, -643.312 )
+scale = Vector2( 1.3, 1.3 )
 polygon = PoolVector2Array( 1146.98, 507.525, 1149.25, 487.617, 1122.24, 459.533, 1054.72, 459.533, 1022.98, 477.947, 1021.84, 508.663, 1034.43, 522.685, 1117.4, 527.433 )
 
 [node name="hole_button" type="Area2D" parent="state_handler/digging/digging_button4"]

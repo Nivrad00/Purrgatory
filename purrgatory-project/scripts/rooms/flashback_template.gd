@@ -248,6 +248,9 @@ func set_format_dict(key, value):
 	]
 	for pair in formatter:
 		value = value.replacen(pair[0], pair[1])
+	
+	# the formatter fucks up "young adult novel" lmao
+	value = value.replacen("ing adult", "young adult")
 		
 	game.format_dict['bio.' + key] = value
 	

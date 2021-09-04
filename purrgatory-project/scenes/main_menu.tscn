@@ -57,8 +57,7 @@ font_data = ExtResource( 6 )
 
 [node name="main" type="Node"]
 script = ExtResource( 1 )
-web_build = true
-version = "21-7-7"
+version = "21-8-2"
 
 [node name="delay_timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -159,7 +158,6 @@ __meta__ = {
 }
 
 [node name="start" type="Button" parent="main_menu/buttons"]
-editor/display_folded = true
 margin_left = 12.0
 margin_top = 11.0
 margin_right = 262.0
@@ -187,7 +185,6 @@ align = 1
 valign = 1
 
 [node name="load" type="Button" parent="main_menu/buttons"]
-editor/display_folded = true
 margin_left = 13.7148
 margin_top = 83.877
 margin_right = 263.715
@@ -388,14 +385,15 @@ autowrap = true
 
 [node name="web_disclaimer2" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
 visible = false
-margin_top = 281.0
+margin_top = 351.0
 margin_right = 1155.0
-margin_bottom = 346.0
+margin_bottom = 416.0
 rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 18 )
-text = "note: this is the web version of purrgatory, which can perform poorly on some systems. for a smoother experience and higher quality, try one of the downloadable versions."
+text = "note: this is the web version of purrgatory. 
+for higher quality and smoother gameplay, try the windows version!"
 align = 1
 autowrap = true
 
@@ -915,7 +913,7 @@ autowrap = true
 [node name="GridContainer5" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
 margin_top = 1845.0
 margin_right = 1155.0
-margin_bottom = 2029.0
+margin_bottom = 2063.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -923,7 +921,7 @@ columns = 2
 
 [node name="1" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer5"]
 margin_right = 560.0
-margin_bottom = 99.0
+margin_bottom = 133.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "testing"
@@ -933,18 +931,19 @@ autowrap = true
 [node name="2" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer5"]
 margin_left = 595.0
 margin_right = 1155.0
-margin_bottom = 99.0
+margin_bottom = 133.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "akarobin (robin j.)
 gnomes (zach stevens)
-zardoru (diego ahumada)"
+zardoru (diego ahumada)
+ivee (nicky van der reijden)"
 autowrap = true
 
 [node name="3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer5"]
-margin_top = 119.0
+margin_top = 153.0
 margin_right = 560.0
-margin_bottom = 184.0
+margin_bottom = 218.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "special thanks"
@@ -953,9 +952,9 @@ autowrap = true
 
 [node name="4" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer5"]
 margin_left = 595.0
-margin_top = 119.0
+margin_top = 153.0
 margin_right = 1155.0
-margin_bottom = 184.0
+margin_bottom = 218.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "jude m.
@@ -963,18 +962,18 @@ uro (daniel taylor)"
 autowrap = true
 
 [node name="_8" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2049.0
+margin_top = 2083.0
 margin_right = 1155.0
-margin_bottom = 2080.0
+margin_bottom = 2114.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="sfx" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2100.0
+margin_top = 2134.0
 margin_right = 1155.0
-margin_bottom = 2131.0
+margin_bottom = 2165.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "sound effects"
@@ -982,9 +981,9 @@ align = 1
 autowrap = true
 
 [node name="sfx4" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2151.0
+margin_top = 2185.0
 margin_right = 1155.0
-margin_bottom = 2182.0
+margin_bottom = 2216.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "freesound.org"
@@ -992,9 +991,9 @@ align = 1
 autowrap = true
 
 [node name="GridContainer6" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2202.0
+margin_top = 2236.0
 margin_right = 1155.0
-margin_bottom = 2777.0
+margin_bottom = 2811.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1100,9 +1099,9 @@ sinewave1kHz"
 autowrap = true
 
 [node name="GridContainer9" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2797.0
+margin_top = 2831.0
 margin_right = 1155.0
-margin_bottom = 2828.0
+margin_bottom = 2913.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1127,8 +1126,9 @@ text = "scott12355 (scott topping)"
 autowrap = true
 
 [node name="sfx3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer9"]
+margin_top = 51.0
 margin_right = 560.0
-margin_bottom = 31.0
+margin_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "phone ring"
@@ -1137,26 +1137,27 @@ autowrap = true
 
 [node name="sfx2" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer9"]
 margin_left = 595.0
+margin_top = 51.0
 margin_right = 1155.0
-margin_bottom = 31.0
+margin_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "soundeffectsfactory"
 autowrap = true
 
 [node name="_6" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2848.0
+margin_top = 2933.0
 margin_right = 1155.0
-margin_bottom = 2879.0
+margin_bottom = 2964.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="additional assets" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2899.0
+margin_top = 2984.0
 margin_right = 1155.0
-margin_bottom = 2930.0
+margin_bottom = 3015.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "additional assets"
@@ -1164,9 +1165,9 @@ align = 1
 autowrap = true
 
 [node name="GridContainer8" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2950.0
+margin_top = 3035.0
 margin_right = 1155.0
-margin_bottom = 3083.0
+margin_bottom = 3168.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1197,9 +1198,9 @@ paul d. hunt"
 autowrap = true
 
 [node name="_10" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3103.0
+margin_top = 3188.0
 margin_right = 1155.0
-margin_bottom = 3134.0
+margin_bottom = 3219.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
@@ -1207,9 +1208,9 @@ autowrap = true
 
 [node name="version" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
 modulate = Color( 1, 1, 1, 0.509804 )
-margin_top = 3154.0
+margin_top = 3239.0
 margin_right = 1155.0
-margin_bottom = 3185.0
+margin_bottom = 3270.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "version: 21-7-7, web"
@@ -1217,9 +1218,9 @@ align = 1
 autowrap = true
 
 [node name="_13" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3205.0
+margin_top = 3290.0
 margin_right = 1155.0
-margin_bottom = 3236.0
+margin_bottom = 3321.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1

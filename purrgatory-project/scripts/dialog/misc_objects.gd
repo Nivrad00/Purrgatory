@@ -67,7 +67,7 @@ var raw_blocks = [
 ["piano_chair","_none","_none","yet another chair.","","","null","","",""],
 ["fake_door","_none","_none","this isn't a door, just a drawing of a door on the wall.","","","null","","",""],
 ["puddle","_none","_none","a puddle of something.","","","null","","",""],
-["escalator","_none","_none","this escalator only goes down...","","","null","","",""],
+["escalator","_none","_none","this escalator only goes down. you guess you could still run up it, though.","","","null","","",""],
 ["caution_sign","_none","_none","\"caution.\"","","","null","","",""],
 ["meowseum_ttt","_none","_none","X wins!","","","","","",""],
 ["","","","just kidding. it's a draw.","","","null","","",""],
@@ -77,7 +77,7 @@ var raw_blocks = [
 ["exit_sign","_none","_none","you have a feeling this is an exit out of the meowseum, not purrgatory.","","","null","","",""],
 ["meowseum_lamp","_none","_none","a lamp.","","","null","","",""],
 ["tile","_none","_none","someone has pulled a tile off the floor. it's cement underneath.","","","null","","",""],
-["spiderweb2","_none","_none","oh god more spiders","","","null","","",""],
+["spiderweb2","_none","_none","oh god spiders","","","null","","",""],
 ["chair_picture","_none","_none","why would anyone frame a picture of a chair...?","","","null","","",""],
 ["down_button","_none","_none","this button opens the door.","","","null","","",""],
 ["elevator_panel","_none","_none","_pass","","","","","",""],
@@ -201,6 +201,7 @@ var raw_blocks = [
 ["electric_box2","_none","_none","some sort of electrical box?","","","null","","",""],
 ["closet_tile","_none","_none","a displaced ceiling tile.","","","null","","",""],
 ["closet_wires","_none","_none","you're no expert, but that really doesn't look safe.","","","null","","",""],
+["ceiling_tile","_none","_none","a displaced ceiling tile.","","","null","","",""],
 ["closet_pipe","_none","_none","an exposed pipe.","","","","","",""],
 ["","","","maybe getting out of here is a [i]pipe[/i] dream.","","","","","",""],
 ["","","","...did you make that joke already?","","","null","","",""],
@@ -285,7 +286,7 @@ var raw_blocks = [
 ["elijahs_bookshelf","_none","_none","a mostly empty bookshelf.","","","null","","",""],
 ["elijahs_desk","_none","_none","a desk, also covered in papers.","","","null","","",""],
 ["odontophorous","_none","_none","odonto-what now?","","","null","","",""],
-["spiderweb3","_none","_none","MORE SPIDERS","","","null","","",""],
+["spiderweb3","_none","_none","AAA SPIDERS","","","null","","",""],
 ["meowseum_lamp","_none","_none","cool lamps.","","","null","","",""],
 ["meowseum_poster","_none","_none","an advertisement for an exhibit called \"discover the cat.\"","","","null","","",""],
 ["meowseum_bench","_none","_none","a bench.","","","null","","",""],
@@ -630,5 +631,6 @@ var raw_blocks = [
 ["","","","turns out there's a good reason why indoor baseball's not a thing!","","","null","","",""],
 ["elijahs_weeds","_none","_none","weeds.","","","null","","",""],
 ["gnome","_none","_none","a garden gnome.","","","","","",""],
-["","","","for some reason, you feel an overpowering urge to pick it up and carry it around.","","","null","","",""]
+["","","","you feel like this is a reference to something, but you're only half sure.","","","null","","",""],
+["flew_to_the_meow","_none","_none","you must really like this song, huh?","","","null","","",""]
 ]

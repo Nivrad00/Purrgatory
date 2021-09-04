@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/polygon_object_button.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/basket-flower-and-card.png" type="Texture" id=2]
+
+[node name="flowers_etc" type="Area2D"]
+editor/display_folded = true
+visible = false
+position = Vector2( 0.431946, -59.9116 )
+script = ExtResource( 1 )
+dialog_label = "flowers_etc"
+sprite_path = [ null ]
+
+[node name="flowers_etc" type="Sprite" parent="."]
+position = Vector2( 632.623, 674.729 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 541.405, 659.325, 501.405, 705.64, 509.826, 756.166, 566.667, 770.903, 688.771, 763.534, 705.613, 717.219, 755.086, 708.798, 762.454, 676.167, 714.034, 610.905, 646.666, 609.852, 629.825, 646.694, 632.982, 680.377, 604.562, 642.483 )

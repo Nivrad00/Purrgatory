@@ -3,7 +3,7 @@ extends Node
 var raw_blocks = [
 ["talk_to_receptionist","you","receptionist_neutral","hello?",[['recep_main0', true], ['recep_main1', true]],"","","","",""],
 ["","receptionist","","hello, hello. be a dear and fill out this form.","","","","","",""],
-["","you","","i... i don’t remember how i got here...","","","","","",""],
+["","you","","um, i don’t remember how i got here...","","","","","",""],
 ["","receptionist","","i'm sorry to hear that. i need you to sign on this dotted line here.","","","","","",""],
 ["","_none","registration","the receptionist hands you a pen and a clipboard.","","","","","",""],
 ["recep_main","","","","","","",['recep_main0', 'recep_main1', 'true'],['purgatory is spelled wrong', 'what if i don\'t sign?', '(sign your name)'],['recep_spelling', 'recep_dont', 'recep_ok']],

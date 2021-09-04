@@ -29,13 +29,13 @@ axis_stretch_horizontal = 1
 
 [sub_resource type="StyleBoxEmpty" id=4]
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=5]
 size = 20
 use_filter = true
 extra_spacing_space = 1
 font_data = ExtResource( 4 )
 
-[sub_resource type="StyleBoxTexture" id=5]
+[sub_resource type="StyleBoxTexture" id=6]
 texture = ExtResource( 13 )
 region_rect = Rect2( 0, 0, 256, 12 )
 axis_stretch_horizontal = 1
@@ -63,23 +63,21 @@ visible = false
 position = Vector2( 369.758, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
-texture_mode = 1329588434
 
 [node name="Line2D2" type="Line2D" parent="."]
 visible = false
 position = Vector2( 398.949, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
-texture_mode = 1329588434
 
 [node name="back" type="Button" parent="."]
 editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
-margin_top = 587.98
+margin_top = 578.98
 margin_right = -515.0
-margin_bottom = -73.0197
+margin_bottom = -82.0197
 rect_pivot_offset = Vector2( 311.063, -221.429 )
 focus_mode = 0
 enabled_focus_mode = 0
@@ -141,9 +139,9 @@ valign = 1
 [node name="text_size" type="Control" parent="."]
 editor/display_folded = true
 margin_left = 240.087
-margin_top = 100.071
+margin_top = 94.9016
 margin_right = 719.087
-margin_bottom = 100.071
+margin_bottom = 94.9016
 __meta__ = {
 "_edit_group_": true
 }
@@ -210,9 +208,9 @@ align = 2
 [node name="audio" type="Control" parent="."]
 editor/display_folded = true
 margin_left = 240.087
-margin_top = 438.216
+margin_top = 433.047
 margin_right = 280.087
-margin_bottom = 478.216
+margin_bottom = 473.047
 __meta__ = {
 "_edit_group_": true
 }
@@ -272,10 +270,11 @@ ticks_on_borders = true
 focus_mode = 0
 
 [node name="right_side" type="GridContainer" parent="."]
+editor/display_folded = true
 margin_left = 760.158
-margin_top = 74.0587
+margin_top = 68.8893
 margin_right = 1249.16
-margin_bottom = 505.059
+margin_bottom = 499.89
 custom_constants/vseparation = 8
 custom_constants/hseparation = 27
 columns = 2
@@ -348,6 +347,7 @@ text = "self-voicing"
 align = 2
 
 [node name="self_voicing" type="CheckBox" parent="right_side"]
+editor/display_folded = true
 modulate = Color( 1, 1, 1, 0.3 )
 margin_left = 189.0
 margin_top = 171.0
@@ -384,7 +384,7 @@ margin_left = 8.53992
 margin_top = 5.0
 margin_right = 85.5399
 margin_bottom = 31.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 text = "test"
 align = 1
 valign = 1
@@ -399,6 +399,7 @@ text = "voice speed"
 align = 2
 
 [node name="voice_speed" type="MarginContainer" parent="right_side"]
+editor/display_folded = true
 modulate = Color( 1, 1, 1, 0.3 )
 margin_left = 189.0
 margin_top = 253.0
@@ -416,7 +417,7 @@ custom_icons/tick = ExtResource( 6 )
 custom_icons/grabber_disabled = ExtResource( 7 )
 custom_icons/grabber_highlight = ExtResource( 7 )
 custom_icons/grabber = ExtResource( 7 )
-custom_styles/slider = SubResource( 5 )
+custom_styles/slider = SubResource( 6 )
 custom_styles/grabber_area = SubResource( 4 )
 min_value = -100.0
 step = 10.0
@@ -440,6 +441,7 @@ margin_bottom = 323.0
 rect_min_size = Vector2( 0, 30 )
 
 [node name="to_do_label" type="Label" parent="right_side"]
+editor/display_folded = true
 margin_top = 352.0
 margin_right = 162.0
 margin_bottom = 384.0
@@ -451,7 +453,7 @@ margin_left = -4.0
 margin_top = 46.0
 margin_right = 394.0
 margin_bottom = 102.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
 text = "automatically keeps track of certain objectives"
 autowrap = true
@@ -467,12 +469,23 @@ enabled_focus_mode = 0
 
 [node name="web_disclaimer" type="Label" parent="."]
 margin_left = 19.4555
-margin_top = 681.0
+margin_top = 681.323
 margin_right = 477.455
-margin_bottom = 737.0
-custom_fonts/font = SubResource( 6 )
+margin_bottom = 737.323
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
 text = "note: some options not available in the web build"
+autowrap = true
+
+[node name="download_disclaimer" type="Label" parent="."]
+visible = false
+margin_left = 19.0
+margin_top = 681.0
+margin_right = 740.0
+margin_bottom = 737.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+text = "note: purrgatory looks best at its original resolution, 1280 x 720!"
 autowrap = true
 [connection signal="pressed" from="back" to="." method="hide_custom"]
 [connection signal="pressed" from="back" to="." method="save_options"]

@@ -177,7 +177,7 @@ var raw_blocks = [
 ["","kyungsoon","","hmm","","","","","",""],
 ["","you","","i mean, if [i]you're[/i] interested, and [i]she's[/i] interested, then why not shoot your shot?","","","","","",""],
 ["","kyungsoon","","...","","","ks_numa_options","","",""],
-["ks_numa_god","you","","oh my god, just give it a chance already!","","","","","",""],
+["ks_numa_god","you","","jeez, just give it a chance already!","","","","","",""],
 ["","kyungsoon","","?","","","","","",""],
 ["","you","","seriously, this is starting to get old","","","","","",""],
 ["","","","both of you need to get over yourselves and just","","","","","",""],

@@ -16,6 +16,7 @@ func update_state(state):
 		emit_signal('start_action_timer', 50, ['oliver_in_study', false])
 	
 	if state.get('oliver_queue_silence'):
+		state['oliver_queue_silence'] = false
 		emit_signal('change_audio', null)
 	
 	if state.get('played_ttt') and state.get('oliver_chose_meowseum'):

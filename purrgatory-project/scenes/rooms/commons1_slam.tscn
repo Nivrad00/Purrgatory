@@ -33,7 +33,7 @@
 [ext_resource path="res://assets/sprites/cat_toy_on_cat.png" type="Texture" id=31]
 [ext_resource path="res://assets/sprites/cat_toy_stick.png" type="Texture" id=32]
 [ext_resource path="res://scenes/exit_right.tscn" type="PackedScene" id=33]
-[ext_resource path="res://temp.tscn" type="PackedScene" id=34]
+[ext_resource path="res://assets/sprites/basket-flower-and-card.png" type="Texture" id=34]
 
 [node name="room_template" type="Control"]
 anchor_right = 1.0
@@ -387,7 +387,19 @@ dialog_label = "slam_carrots"
 position = Vector2( 22.6333, -26.5303 )
 polygon = PoolVector2Array( 1048.18, 531.846, 1045.79, 539.339, 1038.89, 551.02, 1049.12, 563.232, 1051.96, 564.31, 1053.65, 574.078, 1060.23, 579.257, 1066.62, 588.13, 1068.28, 591.95, 1076.26, 590.289, 1076.26, 585.307, 1073.6, 575.674, 1078.27, 568.852, 1078.12, 533.15, 1063.5, 524.917 )
 
-[node name="flowers_etc" parent="state_handler" instance=ExtResource( 34 )]
+[node name="flowers_etc" type="Area2D" parent="state_handler"]
+editor/display_folded = true
+position = Vector2( 0.431946, -59.9116 )
+script = ExtResource( 4 )
+dialog_label = "flowers_etc"
+sprite_path = [ null ]
+
+[node name="flowers_etc" type="Sprite" parent="state_handler/flowers_etc"]
+position = Vector2( 632.623, 674.729 )
+texture = ExtResource( 34 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/flowers_etc"]
+polygon = PoolVector2Array( 541.405, 659.325, 501.405, 705.64, 509.826, 756.166, 566.667, 770.903, 688.771, 763.534, 705.613, 717.219, 755.086, 708.798, 762.454, 676.167, 714.034, 610.905, 646.666, 609.852, 629.825, 646.694, 632.982, 680.377, 604.562, 642.483 )
 [connection signal="pressed" from="state_handler/slam_kyungsoon" to="state_handler/slam_kyungsoon" method="_on_char_obj_button_pressed"]
 [connection signal="pressed" from="state_handler/slam_oliver" to="state_handler/slam_oliver" method="_on_char_obj_button_pressed"]
 [connection signal="pressed" from="state_handler/slam_numa" to="state_handler/slam_numa" method="_on_char_obj_button_pressed"]

@@ -58,6 +58,7 @@ func _ready():
 		$right_side/voice_speed/slider.editable = false
 		
 		$web_disclaimer.show()
+		$download_disclaimer.hide()
 	
 	else:
 		$right_side/fullscreen_label.modulate.a = 1
@@ -78,6 +79,7 @@ func _ready():
 		$right_side/voice_speed/slider.editable = true
 		
 		$web_disclaimer.hide()
+		$download_disclaimer.show()
 	
 	# load in resolution options
 	

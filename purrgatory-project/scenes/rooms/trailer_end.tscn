@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/ui/new_logo2.png" type="Texture" id=1]
 [ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/sprites/cat1.png" type="Texture" id=3]
-[ext_resource path="res://assets/badge.svg" type="Texture" id=4]
-[ext_resource path="res://assets/ui/new_logo1.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprites/cat2.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprites/cat3.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/cat2.png" type="Texture" id=3]
+[ext_resource path="res://itchio-textless-black.png" type="Texture" id=4]
+[ext_resource path="res://steam logo.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/new_logo1.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/cat1.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/cat3.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -38,7 +39,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 1 ) ]
+"values": [ ExtResource( 6 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 1 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("cat1_idle:texture")
@@ -50,7 +51,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 6 ) ]
+"values": [ ExtResource( 7 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 3 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath(".:rect_position")
@@ -72,16 +73,20 @@ margin_bottom = 40.0
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1280.0
 margin_bottom = 720.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="fader" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 margin_right = 40.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 640, 360 )
 
 [node name="logo" type="TextureRect" parent="fader"]
-margin_top = 269.063
+margin_top = 278.791
 margin_right = 1280.0
-margin_bottom = 519.063
+margin_bottom = 528.791
 mouse_filter = 2
 texture = ExtResource( 1 )
 expand = true
@@ -89,42 +94,54 @@ stretch_mode = 6
 
 [node name="RichTextLabel" type="Label" parent="fader"]
 visible = false
-margin_top = 408.628
+margin_top = 415.661
 margin_right = 1280.0
-margin_bottom = 508.629
+margin_bottom = 515.662
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Trailer"
+text = "available now!"
 align = 1
 valign = 1
 
 [node name="cat1_idle" type="TextureRect" parent="fader"]
 margin_left = -1.43201
-margin_top = 192.802
+margin_top = 202.53
 margin_right = 1278.57
-margin_bottom = 326.802
+margin_bottom = 336.53
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 4
 
-[node name="badge" type="TextureRect" parent="fader"]
+[node name="itchio-textless-black" type="TextureRect" parent="fader"]
 visible = false
-modulate = Color( 1, 1, 1, 0.823529 )
-margin_left = -1.0
-margin_top = 637.574
-margin_right = 1281.0
-margin_bottom = 680.574
+margin_left = 597.416
+margin_top = 649.092
+margin_right = 639.416
+margin_bottom = 686.092
 texture = ExtResource( 4 )
 expand = true
-stretch_mode = 6
+
+[node name="steam logo" type="TextureRect" parent="fader"]
+visible = false
+margin_left = 648.053
+margin_top = 642.299
+margin_right = 703.053
+margin_bottom = 694.299
+texture = ExtResource( 5 )
+expand = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fader"]
 anims/Woosh = SubResource( 2 )
 
 [node name="Button" type="Button" parent="."]
-margin_right = 1288.0
-margin_bottom = 727.0
+margin_left = 0.568726
+margin_top = 0.568787
+margin_right = 1288.57
+margin_bottom = 727.569
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
+__meta__ = {
+"_edit_lock_": true
+}
 [connection signal="pressed" from="Button" to="fader/AnimationPlayer" method="play" binds= [ "Woosh" ]]

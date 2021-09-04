@@ -25,7 +25,7 @@ var quests = {
 	'tori_lights': 'find a source of light so you can work on the electrical box.',
 	
 	# natalie
-	'natalie_draw_a_paw': 'return the draw-a-paw to natalie.'
+	'natalie_draw_a_paw': 'find and return natalie\'s draw-a-paw.'
 }
 
 func _init():
