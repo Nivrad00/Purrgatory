@@ -37,6 +37,14 @@ stream = ExtResource( 6 )
 volume_db = -10.0
 bus = "SFX"
 
+[node name="bell_alt" type="Area2D" parent="state_handler"]
+visible = false
+script = ExtResource( 7 )
+dialog_label = "bell_rope"
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/bell_alt"]
+polygon = PoolVector2Array( 398.668, 274.383, 402.714, 303.916, 429.185, 317.781, 556.496, 317.151, 567.21, 331.017, 593.998, 330.133, 600.485, 315.77, 703.344, 316.521, 734.857, 306.437, 743.68, 281.857, 730.849, 251.062, 711.51, 224.897, 690.464, 182.806, 683.638, 129.907, 666.159, 91.521, 628.974, 62.5294, 576.033, 53.0757, 522.667, 61.6512, 486.264, 91.2289, 466.925, 125.357, 453.842, 181.668, 435.072, 222.053, 419.145, 237.98 )
+
 [node name="bell_rope" type="Area2D" parent="state_handler"]
 script = ExtResource( 7 )
 dialog_label = "bell_rope"

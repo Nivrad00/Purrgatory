@@ -1243,7 +1243,6 @@ margin_bottom = 424.0
 
 [node name="Label" type="Label" parent="state_handler/1"]
 editor/display_folded = true
-visible = false
 margin_top = 410.645
 margin_right = 1279.0
 margin_bottom = 481.645
@@ -1385,6 +1384,8 @@ animation1 = ExtResource( 11 )
 animation2 = ExtResource( 12 )
 
 [node name="3" type="Control" parent="state_handler"]
+editor/display_folded = true
+visible = false
 margin_left = -15.4296
 margin_right = 24.5704
 margin_bottom = 40.0
@@ -1471,6 +1472,7 @@ text = "rose lim"
 align = 1
 
 [node name="natalie1" type="TextureButton" parent="state_handler/3"]
+visible = false
 margin_left = 228.971
 margin_top = 216.079
 margin_right = 576.971
@@ -1488,7 +1490,6 @@ animation1 = ExtResource( 14 )
 animation2 = ExtResource( 15 )
 
 [node name="natalie2" type="TextureButton" parent="state_handler/3"]
-visible = false
 margin_left = 229.407
 margin_top = 216.471
 margin_right = 577.407
@@ -1625,6 +1626,7 @@ custom_fonts/font = SubResource( 6 )
 text = "(molly)"
 
 [node name="sean1" type="TextureButton" parent="state_handler/4"]
+visible = false
 margin_left = 673.044
 margin_top = 209.079
 margin_right = 1021.04
@@ -1641,7 +1643,6 @@ animation1 = ExtResource( 20 )
 animation2 = ExtResource( 21 )
 
 [node name="sean2" type="TextureButton" parent="state_handler/4"]
-visible = false
 margin_left = 672.821
 margin_top = 208.549
 margin_right = 1020.82
@@ -1726,6 +1727,7 @@ text = "(nicky van der reijden)"
 align = 1
 
 [node name="kyungsoon_numa1" type="TextureButton" parent="state_handler/5"]
+visible = false
 margin_left = 226.861
 margin_top = 209.079
 margin_right = 574.861
@@ -1742,7 +1744,6 @@ animation1 = ExtResource( 26 )
 animation2 = ExtResource( 27 )
 
 [node name="kyungsoon_numa2" type="TextureButton" parent="state_handler/5"]
-visible = false
 margin_left = 227.357
 margin_top = 208.549
 margin_right = 575.357
@@ -1802,6 +1803,7 @@ text = "(daniel taylor)"
 align = 1
 
 [node name="oliver_tori1" type="TextureButton" parent="state_handler/6"]
+visible = false
 margin_left = 652.422
 margin_top = 210.954
 margin_right = 1000.42
@@ -1818,7 +1820,6 @@ animation1 = ExtResource( 32 )
 animation2 = ExtResource( 33 )
 
 [node name="oliver_tori2" type="TextureButton" parent="state_handler/6"]
-visible = false
 margin_left = 651.509
 margin_top = 211.423
 margin_right = 999.509
@@ -1835,6 +1836,7 @@ animation1 = ExtResource( 35 )
 animation2 = ExtResource( 36 )
 
 [node name="7" type="Control" parent="state_handler"]
+editor/display_folded = true
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
@@ -2051,11 +2053,11 @@ animation1 = ExtResource( 38 )
 animation2 = ExtResource( 39 )
 
 [node name="last" type="Control" parent="state_handler"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="back" type="Button" parent="state_handler/last"]
+editor/display_folded = true
 margin_left = 516.402
 margin_top = 582.877
 margin_right = 764.402

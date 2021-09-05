@@ -31,7 +31,8 @@ func skip_bad_credits():
 	
 	$last.show()
 	$last/back.show()
-	$last/Label2.show()
+	if $last/you_saved:
+		$last/you_saved.show()
 
 func skip_good_credits():
 	$AnimationPlayer.stop()

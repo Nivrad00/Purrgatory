@@ -131,10 +131,13 @@ centered = false
 room_label = "hallway8"
 
 [node name="exit3" parent="state_handler" instance=ExtResource( 4 )]
-editor/display_folded = true
 room_label = "hallway15"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit3"]
+polygon = PoolVector2Array( -120.153, 278.778, -92.4216, 328.568, -28.6401, 328.317, -24.4811, 435.887, 14.4351, 437.277, 15.3617, 327.941, 67.6621, 327.937, 123.754, 276.887 )
+
+[node name="Polygon2D" type="Polygon2D" parent="state_handler/exit3"]
+visible = false
 polygon = PoolVector2Array( -120.153, 278.778, -92.4216, 328.568, 67.6621, 327.937, 123.754, 276.887 )
 
 [node name="exit4" parent="state_handler" instance=ExtResource( 4 )]
@@ -150,14 +153,5 @@ dialog_label = "chair_picture "
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/object2"]
 polygon = PoolVector2Array( 1068.09, 336.705, 1066.83, 443.218, 1173.34, 479.142, 1173.34, 355.613, 1125.44, 291.957 )
-
-[node name="object3" parent="state_handler" instance=ExtResource( 5 )]
-editor/display_folded = true
-position = Vector2( -384.487, -23.2686 )
-dialog_label = "hallway_ladder"
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/object3"]
-position = Vector2( 587.557, -177.313 )
-polygon = PoolVector2Array( 223.916, 351.887, 264.516, 355.811, 260.906, 463.208, 223.001, 465.916 )
 [connection signal="animation_finished" from="state_handler/elevator_door1/AnimationPlayer" to="state_handler/object" method="door_finished"]
 [connection signal="pressed" from="state_handler/object" to="state_handler/object" method="_on_object_pressed"]

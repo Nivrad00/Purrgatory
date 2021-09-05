@@ -12,4 +12,10 @@ func update_state(state):
 	if state.get('ringing_bell'):
 		$ringing.play()
 		state['ringing_bell'] = false
-		
+	
+	if state.get('ready_for_slam'):
+		$bell_alt.show()
+		$bell.hide()
+	else:
+		$bell_alt.hide()
+		$bell.show()

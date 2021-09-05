@@ -136,7 +136,6 @@ room_label = "snowglobe1"
 polygon = PoolVector2Array( 818.987, 699.017, 1001.99, 696.017, 999.987, 415.018, 816.987, 417.018 )
 
 [node name="exit2" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -377.956, -198.513 )
 script = ExtResource( 10 )
 __meta__ = {
@@ -144,14 +143,14 @@ __meta__ = {
 }
 room_label = "hallway16"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/exit2"]
-position = Vector2( 0.902466, 0 )
-polygon = PoolVector2Array( 1464.58, 542.869, 1658.18, 450.395, 1658.18, 247.664, 1303.34, 421.789 )
-
 [node name="Polygon2D" type="Polygon2D" parent="state_handler/exit2"]
 modulate = Color( 0, 0, 0, 0.1 )
 position = Vector2( -79.1797, -17.7653 )
 polygon = PoolVector2Array( 1516.21, 403.596, 1535.24, 440.109, 1631.95, 391.761, 1640.8, 407.151, 1660.94, 351.163, 1604.67, 340.568, 1612.45, 355.882 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/exit2"]
+position = Vector2( 657.104, 199.621 )
+polygon = PoolVector2Array( 106.256, 582.388, 1008.25, 582.388, 1002.33, 53.607, 38.4256, 523.602 )
 
 [node name="caution_sign" type="Area2D" parent="state_handler"]
 editor/display_folded = true
@@ -192,15 +191,6 @@ dialog_label = "emergency_lights"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/emergency_lights"]
 position = Vector2( -3.3241, -1.10803 )
 polygon = PoolVector2Array( 166.462, 152.359, 166.462, 182.619, 319.924, 182.079, 319.924, 152.359 )
-
-[node name="escalator" type="Area2D" parent="state_handler"]
-editor/display_folded = true
-position = Vector2( 279.148, 1.10803 )
-script = ExtResource( 11 )
-dialog_label = "escalator"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/escalator"]
-polygon = PoolVector2Array( 106.256, 582.388, 1008.25, 582.388, 1004.22, 250.883, 808.012, 344.743, 646.882, 225.746, 38.4256, 523.602 )
 
 [node name="hum" parent="state_handler" instance=ExtResource( 12 )]
 autoplay = false

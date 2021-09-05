@@ -24,7 +24,6 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="exit" parent="state_handler" instance=ExtResource( 4 )]
-editor/display_folded = true
 room_label = "hallway7"
 
 [node name="Polygon2D" type="Polygon2D" parent="state_handler/exit"]

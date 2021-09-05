@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=2]
@@ -8,9 +8,10 @@
 [ext_resource path="res://assets/sprites/charon_walking2.png" type="Texture" id=6]
 [ext_resource path="res://scenes/logo.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=9]
-[ext_resource path="res://assets/audio/Eternity's_Not_So_Bad.ogg" type="AudioStream" id=10]
-[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=11]
+[ext_resource path="res://scripts/bad_credit_text.gd" type="Script" id=9]
+[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=10]
+[ext_resource path="res://assets/audio/Eternity's_Not_So_Bad.ogg" type="AudioStream" id=11]
+[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -32,22 +33,22 @@ font_data = ExtResource( 8 )
 size = 18
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=6]
 size = 40
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=7]
 size = 18
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=8]
 size = 18
 font_data = ExtResource( 8 )
 
-[sub_resource type="Theme" id=7]
-default_font = SubResource( 6 )
+[sub_resource type="Theme" id=9]
+default_font = SubResource( 8 )
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=10]
 length = 91.0
 step = 0.01
 tracks/0/type = "audio"
@@ -60,7 +61,7 @@ tracks/0/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 10 )
+"stream": ExtResource( 11 )
 } ],
 "times": PoolRealArray( 1.61 )
 }
@@ -342,8 +343,20 @@ tracks/23/keys = {
 "update": 1,
 "values": [ false, true ]
 }
+tracks/24/type = "value"
+tracks/24/path = NodePath("last/you_saved:visible")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( -0.02, 88.5274 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=11]
 length = 91.0
 step = 0.01
 tracks/0/type = "audio"
@@ -356,7 +369,7 @@ tracks/0/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 10 )
+"stream": ExtResource( 11 )
 } ],
 "times": PoolRealArray( 1.61 )
 }
@@ -591,10 +604,10 @@ tracks/19/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=12]
 size = 10
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=13]
 size = 18
 font_data = ExtResource( 8 )
 
@@ -616,9 +629,9 @@ margin_right = 1279.07
 margin_bottom = 720.0
 
 [node name="TextureRect" type="TextureButton" parent="state_handler"]
-margin_left = 1276.96
+margin_left = -200.0
 margin_top = 420.0
-margin_right = 1476.97
+margin_right = 0.0098877
 margin_bottom = 720.0
 rect_scale = Vector2( 0.75, 0.75 )
 texture_normal = ExtResource( 4 )
@@ -636,7 +649,6 @@ margin_top = 174.0
 margin_bottom = 424.0
 
 [node name="Label" type="Label" parent="state_handler/1"]
-visible = false
 margin_top = 410.645
 margin_right = 1279.0
 margin_bottom = 481.645
@@ -644,7 +656,6 @@ text = "a game by"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/1"]
-visible = false
 margin_top = 449.941
 margin_right = 1279.0
 margin_bottom = 520.941
@@ -684,7 +695,6 @@ align = 1
 
 [node name="Label3" type="Label" parent="state_handler/2"]
 editor/display_folded = true
-visible = false
 margin_top = 277.532
 margin_right = 1279.0
 margin_bottom = 348.532
@@ -729,7 +739,6 @@ align = 1
 
 [node name="Label4" type="Label" parent="state_handler/2"]
 editor/display_folded = true
-visible = false
 margin_top = 541.26
 margin_right = 1279.0
 margin_bottom = 612.26
@@ -751,7 +760,6 @@ margin_bottom = 40.0
 
 [node name="Label2" type="Label" parent="state_handler/3"]
 editor/display_folded = true
-visible = false
 margin_top = 149.226
 margin_right = 1279.0
 margin_bottom = 220.226
@@ -778,7 +786,6 @@ align = 1
 
 [node name="Label5" type="Label" parent="state_handler/3"]
 editor/display_folded = true
-visible = false
 margin_top = 319.128
 margin_right = 1279.0
 margin_bottom = 390.128
@@ -805,7 +812,6 @@ align = 1
 
 [node name="Label6" type="Label" parent="state_handler/3"]
 editor/display_folded = true
-visible = false
 margin_top = 488.791
 margin_right = 1279.0
 margin_bottom = 559.791
@@ -828,7 +834,6 @@ margin_right = 73.366
 margin_bottom = 40.0
 
 [node name="Label6" type="Label" parent="state_handler/4"]
-visible = false
 margin_left = -257.375
 margin_top = 122.899
 margin_right = 1021.63
@@ -855,7 +860,6 @@ text = "(brandon warren)"
 align = 1
 
 [node name="Label5" type="Label" parent="state_handler/4"]
-visible = false
 margin_left = -258.16
 margin_top = 297.174
 margin_right = 1024.84
@@ -873,7 +877,6 @@ text = "zardoru"
 align = 1
 
 [node name="Label1" type="Label" parent="state_handler/4"]
-visible = false
 margin_left = -258.282
 margin_top = 444.205
 margin_right = 1021.72
@@ -932,6 +935,7 @@ custom_fonts/font = SubResource( 5 )
 text = "(molly)"
 
 [node name="5" type="Control" parent="state_handler"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -947,7 +951,7 @@ align = 1
 margin_top = 44.0
 margin_right = 1279.0
 margin_bottom = 97.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 6 )
 text = "akarobin"
 align = 1
 
@@ -957,7 +961,7 @@ margin_top = 91.2158
 margin_right = 1279.29
 margin_bottom = 125.216
 rect_pivot_offset = Vector2( 676.708, 14.8751 )
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 7 )
 text = "(robin j.)"
 align = 1
 
@@ -965,7 +969,7 @@ align = 1
 margin_top = 114.628
 margin_right = 1279.0
 margin_bottom = 167.628
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 6 )
 text = "gnomes"
 align = 1
 
@@ -973,7 +977,7 @@ align = 1
 margin_top = 172.876
 margin_right = 1279.0
 margin_bottom = 225.876
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 6 )
 text = "zardoru"
 align = 1
 
@@ -981,7 +985,7 @@ align = 1
 margin_top = 228.412
 margin_right = 1279.0
 margin_bottom = 281.412
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 6 )
 text = "ivee"
 align = 1
 
@@ -991,7 +995,7 @@ margin_top = 273.628
 margin_right = 1279.29
 margin_bottom = 307.628
 rect_pivot_offset = Vector2( 676.708, 14.8751 )
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 7 )
 text = "(nicky van der reijden)"
 align = 1
 
@@ -1075,7 +1079,7 @@ margin_top = 147.0
 margin_right = 374.83
 margin_bottom = 586.0
 rect_pivot_offset = Vector2( -256.157, 173.849 )
-theme = SubResource( 7 )
+theme = SubResource( 9 )
 text = "bell
 river
 glass shatter
@@ -1236,13 +1240,28 @@ shuldyakov on turbosquid.com
 paul d. hunt"
 
 [node name="last" type="Control" parent="state_handler"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
+script = ExtResource( 9 )
+
+[node name="the_end" type="Label" parent="state_handler/last"]
+margin_top = 262.035
+margin_right = 1280.0
+margin_bottom = 339.035
+text = "the end?"
+align = 1
+valign = 1
+
+[node name="you_saved" type="Label" parent="state_handler/last"]
+margin_top = 321.033
+margin_right = 1280.0
+margin_bottom = 398.033
+text = "you saved 0 people"
+align = 1
+valign = 1
 
 [node name="back" type="Button" parent="state_handler/last"]
 editor/display_folded = true
-visible = false
 margin_left = 516.402
 margin_top = 582.877
 margin_right = 764.402
@@ -1253,7 +1272,7 @@ flat = true
 
 [node name="Sprite" type="Sprite" parent="state_handler/last/back"]
 position = Vector2( 124.799, 30.3251 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="state_handler/last/back"]
 margin_top = 1.0
@@ -1263,21 +1282,13 @@ text = "back"
 align = 1
 valign = 1
 
-[node name="Label2" type="Label" parent="state_handler/last"]
-margin_top = 303.593
-margin_right = 1280.0
-margin_bottom = 380.593
-text = "the end?"
-align = 1
-valign = 1
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler"]
 autoplay = "credits"
-anims/credits = SubResource( 8 )
-"anims/credits (copy)" = SubResource( 9 )
+anims/credits = SubResource( 10 )
+"anims/credits (copy)" = SubResource( 11 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="state_handler/AnimationPlayer"]
-stream = ExtResource( 10 )
+stream = ExtResource( 11 )
 volume_db = -8.0
 bus = "Music"
 
@@ -1289,19 +1300,19 @@ margin_top = 680.0
 margin_right = 1259.0
 margin_bottom = 708.0
 focus_mode = 0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 12 )
 enabled_focus_mode = 0
 flat = true
 
 [node name="Sprite" type="Sprite" parent="state_handler/skip"]
 position = Vector2( 38.3624, 13.8851 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 
 [node name="Label" type="Label" parent="state_handler/skip"]
 margin_top = 1.0
 margin_right = 79.0
 margin_bottom = 28.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 13 )
 text = "skip"
 align = 1
 valign = 1

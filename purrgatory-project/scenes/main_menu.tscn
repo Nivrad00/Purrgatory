@@ -1281,7 +1281,7 @@ material = SubResource( 7 )
 margin_right = 1280.0
 margin_bottom = 720.0
 mouse_filter = 2
-color = Color( 0.835294, 0.815686, 0.8, 1 )
+color = Color( 0.854902, 0.835294, 0.823529, 1 )
 [connection signal="pressed" from="loading/click_to_continue" to="." method="_on_click_to_continue_pressed"]
 [connection signal="pressed" from="main_menu/buttons/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="main_menu/buttons/load" to="load_menu" method="show_custom"]

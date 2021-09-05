@@ -27,6 +27,9 @@ var notes_enabled = false
 
 var snowglobes = []
 
+# when the inventory bar is being "flashed," this is true
+var pending_change = false
+
 func _ready():
 	set_process(true) 
 	add_quest('nothing')
@@ -38,6 +41,7 @@ func hide_all():
 	move = true
 	
 func toggle_notes():
+	pending_change = false
 	if notes_shown:
 		notes_shown = false
 		hide_all()
@@ -54,7 +58,8 @@ func toggle_notes():
 		
 		format_quests()
 	
-func toggle_items():
+func toggle_items(temporary=false):
+	pending_change = false
 	if items_shown:
 		items_shown = false
 		hide_all()
@@ -70,6 +75,17 @@ func toggle_items():
 		items_button.set_modulate(Color(0.85, 0.85, 0.85))
 		target_height = items_height
 		move = true
+		
+		if temporary:
+			pending_change = true
+			
+			yield(get_tree().create_timer(1.3), 'timeout')
+			
+			if pending_change:
+				items_shown = false
+				pending_change = false
+				hide_all()
+		
 
 func _process(delta):
 	if move:
@@ -108,8 +124,8 @@ func add_to_inv(_name, loading = false):
 				
 				# this shouldn't happen when loading a save file
 				if not items_shown and not loading:
-					toggle_items()
-					
+					toggle_items(true)
+		
 				return
 		
 		# else, load snowglobe1	
@@ -128,7 +144,7 @@ func add_to_inv(_name, loading = false):
 	
 	# this shouldn't happen when loading a save file
 	if not items_shown and not loading:
-		toggle_items()
+		toggle_items(true)
 		# items_button.flash()
 
 func remove_from_inv(_name, flash = true):
@@ -174,6 +190,7 @@ func get_inv_list():
 
 # called when loading a save file
 func load_inv(list):
+	pending_change = false
 	for item in $inv_container.get_children():
 		item.queue_free()
 	snowglobes = []
@@ -258,6 +275,7 @@ func get_quest_log():
 	
 # called when loading a save file
 func load_quest_log(list):
+	pending_change = false
 	for item in $quest_container/vbox.get_children():
 		item.queue_free()
 	
