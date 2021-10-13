@@ -505,6 +505,7 @@ mouse_filter = 2
 texture = ExtResource( 9 )
 
 [node name="ui" type="Control" parent="content"]
+editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 theme = ExtResource( 10 )
@@ -1571,6 +1572,7 @@ align = 1
 valign = 1
 
 [node name="save_waiting" type="Control" parent="meta_ui"]
+editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -1656,7 +1658,6 @@ valign = 1
 visible = false
 
 [node name="history" type="Control" parent="meta_ui"]
-visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 rect_pivot_offset = Vector2( -460, 150 )
@@ -1667,12 +1668,13 @@ texture = ExtResource( 76 )
 centered = false
 
 [node name="back" type="Button" parent="meta_ui/history"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
 margin_top = 618.0
-margin_right = -515.0
-margin_bottom = -46.0
+margin_right = 487.0
+margin_bottom = 616.0
 rect_pivot_offset = Vector2( 311.063, -221.429 )
 focus_mode = 0
 shortcut_in_tooltip = false
@@ -1700,6 +1702,7 @@ align = 1
 valign = 1
 
 [node name="container" type="ScrollContainer" parent="meta_ui/history"]
+editor/display_folded = true
 margin_left = 186.0
 margin_top = 51.0
 margin_right = 1096.0
@@ -1775,6 +1778,7 @@ custom_styles/normal = SubResource( 34 )
 autowrap = true
 
 [node name="Button" type="Button" parent="meta_ui"]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 110.488
 margin_top = 17.4169
@@ -1820,8 +1824,8 @@ color = Color( 0, 0, 0, 1 )
 [connection signal="pressed" from="content/ui/history_button" to="meta_ui/history" method="toggle"]
 [connection signal="mouse_entered" from="meta_ui/menu_button" to="content/room" method="stop_all_hovering"]
 [connection signal="mouse_exited" from="meta_ui/menu_button" to="content/room" method="start_all_hovering"]
-[connection signal="pressed" from="meta_ui/menu_button" to="." method="turn_off_skip"]
 [connection signal="pressed" from="meta_ui/menu_button" to="." method="toggle_pause_menu"]
+[connection signal="pressed" from="meta_ui/menu_button" to="." method="turn_off_skip"]
 [connection signal="examine_item" from="meta_ui/dropdown" to="." method="examine_item"]
 [connection signal="mouse_entered" from="meta_ui/dropdown" to="content/room" method="stop_all_hovering"]
 [connection signal="mouse_exited" from="meta_ui/dropdown" to="content/room" method="start_all_hovering"]
@@ -1837,22 +1841,22 @@ color = Color( 0, 0, 0, 1 )
 [connection signal="mouse_exited" from="meta_ui/history_button2" to="content/room" method="start_all_hovering"]
 [connection signal="pressed" from="meta_ui/history_button2" to="." method="turn_off_skip"]
 [connection signal="pressed" from="meta_ui/history_button2" to="meta_ui/history" method="toggle"]
-[connection signal="pressed" from="meta_ui/pause_menu/buttons/save" to="meta_ui/menu_button" method="hide"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/save" to="meta_ui/save_menu" method="show_custom"]
-[connection signal="pressed" from="meta_ui/pause_menu/buttons/load" to="meta_ui/menu_button" method="hide"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/save" to="meta_ui/menu_button" method="hide"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/load" to="meta_ui/load_menu" method="show_custom"]
-[connection signal="pressed" from="meta_ui/pause_menu/buttons/options" to="meta_ui/menu_button" method="hide"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/load" to="meta_ui/menu_button" method="hide"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/options" to="meta_ui/options_menu" method="show_custom"]
-[connection signal="pressed" from="meta_ui/pause_menu/buttons/exit" to="meta_ui/menu_button" method="hide"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/options" to="meta_ui/menu_button" method="hide"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/exit" to="meta_ui/exit_confirm" method="show"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/exit" to="meta_ui/menu_button" method="hide"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/back" to="." method="close_pause_menu"]
 [connection signal="hiding" from="meta_ui/options_menu" to="meta_ui/menu_button" method="show"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/dropdown" method="format_quests"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
 [connection signal="pressed" from="meta_ui/exit_confirm/yes" to="." method="return_to_main"]
-[connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/menu_button" method="show"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
+[connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/menu_button" method="show"]
 [connection signal="pressed" from="meta_ui/save_confirm/yes" to="." method="save_confirmed"]
 [connection signal="pressed" from="meta_ui/save_confirm/yes" to="meta_ui/menu_button" method="show"]
 [connection signal="deleted_data" from="meta_ui/save_menu" to="." method="deleted_data"]

@@ -164,13 +164,11 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="done_button" type="Button" parent="state_handler"]
-editor/display_folded = true
-visible = false
 anchor_right = 1.0
-margin_left = 532.0
-margin_top = 604.0
-margin_right = 726.0
-margin_bottom = 675.0
+margin_left = 518.954
+margin_top = 594.233
+margin_right = 712.954
+margin_bottom = 665.233
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -181,12 +179,13 @@ texture = ExtResource( 10 )
 centered = false
 
 [node name="Label" type="Label" parent="state_handler/done_button"]
-margin_left = 68.8147
-margin_top = 18.9905
-margin_right = 125.815
-margin_bottom = 52.9905
+margin_left = 6.0
+margin_top = 19.0
+margin_right = 190.0
+margin_bottom = 53.0
 rect_pivot_offset = Vector2( -555.677, -604.755 )
 text = "done"
+align = 1
 
 [node name="placeholder_input" type="TextEdit" parent="state_handler"]
 visible = false

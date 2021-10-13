@@ -6,6 +6,10 @@ var max_history = 50
 var history = []
 var widths = [150, 700]
 
+var shown = false
+
+var workaround = true
+
 # since the history needs to be rendered for the text formatting to work,
 #   it's actually never hidden, just off-screen
 func _ready():
@@ -14,15 +18,19 @@ func _ready():
 
 func show_custom():
 	set_position(Vector2(0, 0))
+		
 	$'../../content/ui/choices'.hide()
 	$'../../content/ui/text_box'.hide()
 	$'../../content/ui/skip_button'.hide()
 	$'../menu_button'.hide()
 	$'../notes_button'.hide()
 	$'../items_button'.hide()
+	
+	shown = true
 
 func hide_custom():
 	set_position(Vector2(0, 1600))
+		
 	$'../../content/ui/choices'.show()
 	$'../../content/ui/text_box'.show()
 	$'../../content/ui/skip_button'.show()
@@ -30,9 +38,10 @@ func hide_custom():
 	$'../notes_button'.show()
 	$'../items_button'.show()
 		
+	shown = false
 
 func toggle():
-	if rect_position.y > 0:
+	if !shown:
 		show_custom()
 	else:
 		hide_custom()
@@ -87,9 +96,15 @@ func add_to_history(s, t):
 	
 	# do a second pass to set heights
 	var height = speaker.get_content_height()
+	if workaround and (height <= 0 or height >= 1000):
+		height = 32
+		# speaker.add_color_override("default_color", Color(1,0,0,1))
 	speaker.set_custom_minimum_size(Vector2(widths[0], height))
 	
 	height = text.get_content_height()
+	if workaround and (height <= 0 or height >= 1000):
+		height = 32
+		# text.add_color_override("default_color", Color(1,0,0,1))
 	text.set_custom_minimum_size(Vector2(widths[1], height))
 	
 	# getting rid of those extra controls 
@@ -131,6 +146,9 @@ func format_history():
 		if label is RichTextLabel:
 			var width = label.rect_min_size.x
 			var height = label.get_content_height()
+			if workaround and (height <= 0 or height >= 1000):
+				height = 32
+				# label.add_color_override("default_color", Color(1,0,0,1))
 			label.set_custom_minimum_size(Vector2(width, height))
 
 # and THIS is called when a file is loaded

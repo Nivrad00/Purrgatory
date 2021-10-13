@@ -121,7 +121,6 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="snowglobe_dropoff" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -12.6887, -1.375 )
 script = ExtResource( 6 )
 dialog_label = "tori_climb_snowglobe"
@@ -132,7 +131,6 @@ position = Vector2( 1028.32, 2808.96 )
 texture = ExtResource( 7 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/snowglobe_dropoff"]
-visible = false
 position = Vector2( -2.32764, 747.175 )
 polygon = PoolVector2Array( 1000.69, 2034.82, 998.987, 2075.21, 1051.89, 2084.88, 1051.89, 2022.88 )
 

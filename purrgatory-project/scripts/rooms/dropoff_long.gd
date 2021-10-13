@@ -2,7 +2,7 @@ extends 'state_handler_template.gd'
 
 var time = 0 # time elapsed
 var progress = 0 # distance down the hole
-var climb_speed = 15000 # how fast player climbs down
+var climb_speed = 150 # how fast player climbs down
 
 var fall_time = 0 # used when the post cracks - how long player falls for
 var rise_time = 0 # the bounce back from falling
@@ -152,7 +152,7 @@ func _process(delta):
 	
 	else:
 		if Input.is_action_pressed('ui_down') and not Input.is_action_pressed('ui_up')\
-		and $bg.position.y >= -9280:
+		and $bg.position.y >= -9500:
 			var prev_time = time
 			time += delta
 			if int(time * 10) % 12 < 8:
@@ -215,6 +215,9 @@ func _process(delta):
 				emit_signal('start_dialog', 'tori_climb3b', [])
 				time = 0
 			# lucifur: about -9000
+			elif progress > -9400 and position < -9400:
+				emit_signal('start_dialog', 'tori_climb_lucifur', [])
+				time = 0
 			progress = position
 			
 		# easter egg

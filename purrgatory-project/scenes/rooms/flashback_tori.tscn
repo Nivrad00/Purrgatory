@@ -215,7 +215,7 @@ margin_right = 788.0
 margin_bottom = 50.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]skill.[/u]"
+bbcode_text = "[u]skill[/u]."
 text = "skill."
 scroll_active = false
 
@@ -234,7 +234,7 @@ margin_right = 788.0
 margin_bottom = 50.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]happiness.[/u]"
+bbcode_text = "[u]happiness[/u]."
 text = "happiness."
 scroll_active = false
 
@@ -253,7 +253,7 @@ margin_right = 788.0
 margin_bottom = 50.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]freedom.[/u]"
+bbcode_text = "[u]freedom[/u]."
 text = "freedom."
 scroll_active = false
 
@@ -272,7 +272,7 @@ margin_right = 788.0
 margin_bottom = 50.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]love.[/u]"
+bbcode_text = "[u]love[/u]."
 text = "love."
 scroll_active = false
 
@@ -311,7 +311,7 @@ anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
 bbcode_text = "your remember each and every smiling face that touched your life."
-text = "your remember each and every smiling face that touched your life."
+text = "you remember each and every smiling face that touched your life."
 scroll_active = false
 
 [node name="2" type="RichTextLabel" parent="state_handler/hc/vc/t2"]
