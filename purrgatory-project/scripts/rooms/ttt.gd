@@ -113,6 +113,8 @@ func load_ttt(slot):
 	$loaded_drawing.texture = ImageTexture.new()
 	$loaded_drawing.texture.create_from_image(ttt_drawing)
 	
+	$skip_game.hide()
+	
 	if current_board:
 		for i in range(9):
 			if current_board[i] == 1:
@@ -133,6 +135,8 @@ func load_ttt(slot):
 			$done_button.show()
 		else:
 			$done_button.hide()
+			
+		$skip_game.show()
 
 # |
 # |
@@ -185,8 +189,10 @@ func start_game():
 		move_num = 1
 		$shapes.get_child(first_move).play()
 		$asmr.play(audio_pos)
+		whose_turn = 'oliver'
 	else:
 		start_players_turn()
+		whose_turn = 'player'
 
 # the player uses this method, but not oliver
 func start_audio(_a, _b):
@@ -200,6 +206,7 @@ func stop_audio():
 	$asmr.stop()
 
 func _process(delta):
+	print(whose_turn)
 	pass
 	# print($audio_delay.time_left)
 
@@ -242,11 +249,14 @@ func start_players_turn():
 	$draw_container.add_child(current_draw)
 	# $placeholder_input.show()
 	draw_freq = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+	$skip_game.show()
 
 func end_players_turn():
-	current_draw.disable()
+	if current_draw:
+		current_draw.disable()
 	# $placeholder_input.hide()
 	$done_button.hide()
+	$skip_game.hide()
 
 	var x = detect_players_move()
 	current_board[x] = 2
@@ -316,6 +326,11 @@ func detect_players_move():
 	#return int($placeholder_input.text)
 
 func end_game(result):
+	if current_draw:
+		current_draw.disable()
+	$done_button.hide()
+	$skip_game.hide()
+	
 	var i = 'game' + str(game_num)
 	if dialog_map.has(i) and dialog_map[i].has(result):
 		dialog_queue.append(dialog_map[i][result])
