@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=4]
 [ext_resource path="res://assets/ui/save.png" type="Texture" id=5]
-[ext_resource path="res://assets/ui/save files.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/save files with disabled auto save.png" type="Texture" id=6]
 [ext_resource path="res://assets/ui/pronoun_input_box.png" type="Texture" id=7]
 [ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=8]
 
@@ -75,14 +75,22 @@ margin_right = 675.839
 margin_bottom = 366.69
 
 [node name="file0" type="Button" parent="files"]
-margin_left = -479.451
-margin_top = -167.835
-margin_right = 812.549
-margin_bottom = 558.165
-rect_scale = Vector2( 0.21, 0.21 )
+modulate = Color( 1, 1, 1, 0.3 )
+margin_left = -479.0
+margin_top = -168.0
+margin_right = -207.0
+margin_bottom = -15.0
 focus_mode = 0
+disabled = true
 enabled_focus_mode = 0
 flat = true
+
+[node name="Label" type="Label" parent="files/file0"]
+margin_right = 272.0
+margin_bottom = 152.0
+text = "(autosave)"
+align = 1
+valign = 1
 
 [node name="file1" type="Button" parent="files"]
 margin_left = -136.451
@@ -146,6 +154,7 @@ margin_bottom = 367.69
 theme = ExtResource( 1 )
 
 [node name="date0" type="Label" parent="dates"]
+modulate = Color( 1, 1, 1, 0.3 )
 margin_left = -507.0
 margin_top = -11.0019
 margin_right = -183.0

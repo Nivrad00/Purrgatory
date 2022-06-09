@@ -147,6 +147,9 @@ func _ready():
 		
 	# cursor
 	Input.set_custom_mouse_cursor(load("res://assets/draw_cursor.png"), Input.CURSOR_HELP)
+	
+	# connect to language global
+	Language.connect("language_changed", self, "_on_language_changed")
 
 func load_meowkov_chain(f):
 	f.open("res://scripts/procgen/meowutkov_edited.json", File.READ)
@@ -156,8 +159,17 @@ func load_meowkov_chain(f):
 func _notification(what):
 	# when the user quits...
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-		get_tree().quit()
+		
 		# instead of doing the inane stuff below i'm just going to label the button "save and return"
+		# we still need to attempt to autosave, though
+		var f = File.new()
+		f.open("user://seen_blocks.save", File.WRITE)
+		f.store_line(to_json(seen_blocks))
+		f.close()
+		
+		save(0, false)
+		
+		get_tree().quit()
 	
 		# save the changes to options
 		# (i'm doing it here as well as when they press "back" in case they quit
@@ -174,12 +186,6 @@ func _notification(what):
 		#	get_node('../options_menu').save_options()
 
 		#get_tree().quit()
-		
-		# we still need to save the seen blocks, though
-		var f = File.new()
-		f.open("user://seen_blocks.save", File.WRITE)
-		f.store_line(to_json(seen_blocks))
-		f.close()
 
 func _process(delta):
 	# animation stuff
@@ -276,9 +282,9 @@ func start_dialog(label, blackout_label=null):
 			turn_off_skip()
 
 	var choices_text = []
-	for choice in block['choices']:
+	for choice in block['choices'][Language.language]:
 		choices_text.append(choice[0])
-	var text = block['text']
+	var text = block['text'][Language.language]
 
 	if text != null:
 		text = text.format(format_dict)
@@ -290,7 +296,7 @@ func start_dialog(label, blackout_label=null):
 		else:
 			text = regex.sub(text, '$2', true)
 	
-	var speaker = block['speaker']
+	var speaker = block['speaker'][Language.language]
 	if speaker != null:
 		var speaker_format_dict = { }
 		for key in ['tori', 'sean', 'elijah', 'numa']:
@@ -303,7 +309,7 @@ func start_dialog(label, blackout_label=null):
 		
 		if speaker == 'you' and format_dict['player']:
 			# "you" is used even in foreign language translations to denote "replace with player's name"
-			# however, in the very first part of the game before the player inputs their name, "you" must be translated (to "tú" or equivalent)
+			# however, in the very first part of the game before the player inputs their name, "you" must be translated (eg. to "tú")
 			speaker = format_dict['player']
 
 	ui.update_ui(speaker, block['sprites'], text, choices_text)
@@ -344,22 +350,22 @@ func update_dialog(b: int):
 	# mark the previous block as seen
 	seen_blocks.append(block['label'])
 	
-	# seen_blocks is saved whenever you exit
-	# however, also save it every 100 blocks just to be safe
-	# (in case the game crashes or the computer is turned off or something)
+	# autosave every so often. it's also saved whenever you exit (though not if you crash)
 	save_ticker += 1
-	if save_ticker % 100 == 0:
+	if save_ticker % 20 == 0:
 		var f = File.new()
 		f.open("user://seen_blocks.save", File.WRITE)
 		f.store_line(to_json(seen_blocks))
 		f.close()
+		
+		save(0, false)
 		
 	# if there's no choice, get the next block directly
 	if b == -1:
 		block = $dialog_handler.get_block(block['next'], state)
 	# else if there's a choice, use the parameter to decide
 	else:
-		block = $dialog_handler.get_block(block['choices'][b][1], state)
+		block = $dialog_handler.get_block(block['choices'][Language.language][b][1], state)
 
 	if block == null:
 		end_dialog()
@@ -383,9 +389,9 @@ func update_dialog(b: int):
 				turn_off_skip()
 
 		var choices_text = []
-		for choice in block['choices']:
+		for choice in block['choices'][Language.language]:
 			choices_text.append(choice[0])
-		var text = block['text']
+		var text = block['text'][Language.language]
 
 		if text != null:
 			text = text.format(format_dict)
@@ -397,7 +403,7 @@ func update_dialog(b: int):
 			else:
 				text = regex.sub(text, '$2', true)
 
-		var speaker = block['speaker']
+		var speaker = block['speaker'][Language.language]
 		if speaker != null:
 			var speaker_format_dict = { }
 			for key in ['tori', 'sean', 'elijah', 'numa']:
@@ -420,6 +426,41 @@ func update_dialog(b: int):
 		for pair in block['states']:
 			check_special_states(pair)
 
+func _on_language_changed(lang):
+	# this is called whenever.... yeah the language is changed
+	# this is mostly copied from update_dialog and start_dialog... i know, not DRY, but who cares
+	if block and ui.visible:
+		var choices_text = []
+		for choice in block['choices'][lang]:
+			choices_text.append(choice[0])
+		var text = block['text'][lang]
+	
+		if text != null:
+			text = text.format(format_dict)
+	
+			var regex = RegEx.new()
+			regex.compile('{([^/]+)/([^}]+)}')
+			if format_dict.get('they') == 'they':
+				text = regex.sub(text, '$1', true)
+			else:
+				text = regex.sub(text, '$2', true)
+	
+		var speaker = block['speaker'][lang]
+		if speaker != null:
+			var speaker_format_dict = { }
+			for key in ['tori', 'sean', 'elijah', 'numa']:
+				if state.get('met_' + key):
+					speaker_format_dict[key] = key
+				else:
+					speaker_format_dict[key] = '???'
+					
+			speaker = speaker.format(speaker_format_dict)
+			
+			if speaker == 'you' and format_dict['player']:
+				speaker = format_dict['player']
+	
+		ui.update_ui(speaker, null, text, choices_text)
+	
 func set_player_name():
 	var text = ui.get_node('name_input/text').get_text().to_lower()
 	if text.length() != 0:
@@ -506,7 +547,7 @@ func return_to_main():
 	$white_cover.show()
 	fade_out = true
 
-func save(file):		
+func save(file, manual=true):		
 	# save the drawings separately, if they exist
 	# if the player is in the middle of drawing when they save, we have to retrieve the
 	#   image first
@@ -611,60 +652,62 @@ func save(file):
 			
 	var dark_covers = $content/dark_covers
 	
-	# take a screenshot by moving all the relevant nodes to the "ss" viewport
-	$content.remove_child(room)
-	$content.remove_child(dark_covers)
-	$content.remove_child(ui)
-	
-	# some ui elements get hidden when you're in the pause menu
-	# thankfully, the only elements we really need to be present are the text box and choices
-	# so we'll temporarily show them
-	var ui_visible = true
-	if not ui.get_node('text_box').visible:
-		ui_visible = false
-		ui.get_node('text_box').show()
-		ui.get_node('choices').show()
-	
-	$ss.add_child(room)
-	$ss.add_child(dark_covers)
-	$ss.add_child(ui)
-	var neg = $negative_cover.duplicate()
-	$ss.add_child(neg)
-	$ss_tex.show()
-
-	yield(get_tree(), "idle_frame")
-	yield(get_tree(), "idle_frame")
-	yield(get_tree(), "idle_frame")
-
-	# grab the texture from the "ss" viewport
-	var img = $ss.get_texture().get_data()
-	yield(get_tree(), "idle_frame")
-	yield(get_tree(), "idle_frame")
-	img.save_png("user://thumb" + str(file) + ".png")
-
-	# then move the nodes back
-	$ss.remove_child(room)
-	$ss.remove_child(dark_covers)
-	$ss.remove_child(ui)
-	$ss.remove_child(neg)
-	$content.add_child(room)
-	$content.add_child(dark_covers)
-	$content.add_child(ui)
-	$ss_tex.hide()
-	
-	if not ui_visible:
-		ui.get_node('text_box').hide()
-		ui.get_node('choices').hide()
-
-	if get_tree().get_root().get_node('main').web_build:
-		$meta_ui/save_menu.hide()
-		$meta_ui/save_waiting.show()
-		yield(get_tree().create_timer(8.0), 'timeout')
+	# take a screenshot by moving all the relevant nodes to the "ss" viewport (unless it's an autosave)
+	if manual:
+		$content.remove_child(room)
+		$content.remove_child(dark_covers)
+		$content.remove_child(ui)
 		
-	# ok done
-	$meta_ui/save_menu.hide()
-	$meta_ui/save_waiting.hide()
-	$meta_ui/save_confirm.show()
+		# some ui elements get hidden when you're in the pause menu
+		# thankfully, the only elements we really need to be present are the text box and choices
+		# so we'll temporarily show them
+		var ui_visible = true
+		if not ui.get_node('text_box').visible:
+			ui_visible = false
+			ui.get_node('text_box').show()
+			ui.get_node('choices').show()
+		
+		$ss.add_child(room)
+		$ss.add_child(dark_covers)
+		$ss.add_child(ui)
+		var neg = $negative_cover.duplicate()
+		$ss.add_child(neg)
+		$ss_tex.show()
+	
+		yield(get_tree(), "idle_frame")
+		yield(get_tree(), "idle_frame")
+		yield(get_tree(), "idle_frame")
+	
+		# grab the texture from the "ss" viewport
+		var img = $ss.get_texture().get_data()
+		yield(get_tree(), "idle_frame")
+		yield(get_tree(), "idle_frame")
+		img.save_png("user://thumb" + str(file) + ".png")
+	
+		# then move the nodes back
+		$ss.remove_child(room)
+		$ss.remove_child(dark_covers)
+		$ss.remove_child(ui)
+		$ss.remove_child(neg)
+		$content.add_child(room)
+		$content.add_child(dark_covers)
+		$content.add_child(ui)
+		$ss_tex.hide()
+		
+		if not ui_visible:
+			ui.get_node('text_box').hide()
+			ui.get_node('choices').hide()
+
+		if get_tree().get_root().get_node('main').web_build:
+			$meta_ui/save_menu.hide()
+			$meta_ui/save_waiting.show()
+			yield(get_tree().create_timer(8.0), 'timeout')
+			
+		# ok done
+		$meta_ui/save_menu.hide()
+		$meta_ui/save_waiting.hide()
+		$meta_ui/save_confirm.show()
+	
 
 func load_game_while_playing(file):
 	load_game(file)
@@ -847,7 +890,7 @@ func disable_skip():
 	ui.get_node('skip_button/x').show()
 
 func skip():
-	if block['choices'].size() == 0 and (block['states'].size() == 0 or block['states'][0][0] != 'no_skip'):
+	if block['choices'][0].size() == 0 and (block['states'].size() == 0 or block['states'][0][0] != 'no_skip'):
 		# no_skip is used to prevent it from skipping the name input
 		$skip_timer.start()
 

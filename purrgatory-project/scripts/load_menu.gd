@@ -6,9 +6,8 @@ signal hiding()
 
 func load_save_files():
 	var f = File.new()
-	for i in range(0, 6):
-		
-		if f.file_exists('user://thumb' + str(i) + '.png'):
+	for i in range(6):
+		if f.file_exists('user://thumb' + str(i) + '.png') and i != 0:
 			var image = Image.new()
 			image.load('user://thumb' + str(i) + '.png')
 			var texture = ImageTexture.new()
@@ -44,7 +43,7 @@ func show_custom():
 
 func delete_data():
 	var dir = Directory.new()
-	for i in range(0, 6):
+	for i in range(6):
 		dir.remove("user://save" + str(i) + ".save")
 		dir.remove("user://thumb" + str(i) + ".png")
 		dir.remove("user://seen_blocks.save")
