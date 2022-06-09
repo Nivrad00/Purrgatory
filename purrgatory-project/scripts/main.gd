@@ -52,7 +52,16 @@ func _ready():
 	
 	$loading/loading_text.set_text('ready!\r\nclick to continue')
 	loaded_flag = true
+	
+	# load language options - this is copied directly from options_menu.gd
+	for lang in Language.languages:
+		$main_menu/language/language/dropdown.add_item(lang)
+	# also connect it to the global signal
+	Language.connect("language_changed", self, "_on_language_changed")
+	# once that's connected, we can load and apply the options from file
 	$options_menu.load_and_apply_options()
+	
+	# done 
 	
 	emit_signal('game_ready')
 
@@ -137,3 +146,15 @@ func _process(delta):
 func deleted_data():
 	if $game:
 		$game.seen_blocks = []
+
+func _on_language_selected(ID):
+	# when a language is selected on the main menu, apply the change the same as you would if it was selected in the options menu
+	$options_menu._on_language_selected(ID) 
+	# however, IMMEDIATELY save all options, for consistency
+	$options_menu.save_options() 
+
+func _on_language_changed(lang):
+	# whenever the language is changed (presumably from an options menu, or when the game is loaded),
+	#   update the dropdown option to reflect it
+	# this connects to the global Language's signal "language_changed"
+	$main_menu/language/language/dropdown.selected = lang

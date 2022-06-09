@@ -441,13 +441,13 @@ one_shot = true
 script = ExtResource( 3 )
 
 [node name="dialog_handler" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 4 )
 
 [node name="all_dialog" type="Node" parent="dialog_handler"]
 script = ExtResource( 5 )
 
 [node name="content" type="Control" parent="."]
+editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 mouse_filter = 2
@@ -456,7 +456,6 @@ __meta__ = {
 }
 
 [node name="room" type="Control" parent="content"]
-editor/display_folded = true
 script = ExtResource( 6 )
 
 [node name="room_container" type="Control" parent="content/room"]
@@ -473,7 +472,6 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="dark_covers" type="Control" parent="content"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -551,7 +549,6 @@ context_menu_enabled = false
 caret_blink = true
 
 [node name="pronouns" type="Control" parent="content/ui/name_input"]
-editor/display_folded = true
 margin_left = -24.0
 margin_top = 87.0
 margin_right = 705.0
@@ -624,7 +621,6 @@ margin_bottom = 52.5625
 text = "custom"
 
 [node name="ok_button" type="Button" parent="content/ui/name_input"]
-editor/display_folded = true
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -665,7 +661,6 @@ margin_bottom = -180.465
 rect_scale = Vector2( 33.8985, 19.0842 )
 
 [node name="they" type="LineEdit" parent="content/ui/name_input/custom_pronouns"]
-editor/display_folded = true
 margin_left = 309.0
 margin_top = -97.0
 margin_right = 438.0
@@ -698,7 +693,6 @@ text = "they"
 align = 2
 
 [node name="them" type="LineEdit" parent="content/ui/name_input/custom_pronouns"]
-editor/display_folded = true
 margin_left = 309.0
 margin_top = -36.0
 margin_right = 438.0
@@ -732,7 +726,6 @@ align = 2
 clip_text = true
 
 [node name="their" type="LineEdit" parent="content/ui/name_input/custom_pronouns"]
-editor/display_folded = true
 margin_left = 309.0
 margin_top = 25.0
 margin_right = 438.0
@@ -833,7 +826,6 @@ bbcode_text = "to be, or not to be: that is the question: whether 'tis nobler in
 text = "to be, or not to be: that is the question: whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune, or to take arms against a sea of troubles, and by opposing end them?"
 
 [node name="skip_button" type="Button" parent="content/ui"]
-editor/display_folded = true
 margin_left = 1087.43
 margin_top = 431.47
 margin_right = 1163.43
@@ -869,7 +861,6 @@ align = 1
 valign = 1
 
 [node name="history_button" type="Button" parent="content/ui"]
-editor/display_folded = true
 margin_left = 996.904
 margin_top = 431.47
 margin_right = 1072.9
@@ -916,7 +907,6 @@ __meta__ = {
 }
 
 [node name="menu_button" type="Button" parent="meta_ui"]
-editor/display_folded = true
 margin_left = 18.3863
 margin_top = 14.3017
 margin_right = 94.3865
@@ -948,7 +938,6 @@ align = 1
 valign = 1
 
 [node name="dropdown" type="Control" parent="meta_ui"]
-editor/display_folded = true
 margin_left = 163.458
 margin_top = -284.152
 margin_right = 1280.46
@@ -1004,7 +993,6 @@ margin_right = 133.737
 margin_bottom = 393.685
 
 [node name="notes_button" type="Button" parent="meta_ui"]
-editor/display_folded = true
 margin_left = 1093.04
 margin_top = 15.5417
 margin_right = 1169.05
@@ -1036,7 +1024,6 @@ align = 1
 valign = 1
 
 [node name="items_button" type="Button" parent="meta_ui"]
-editor/display_folded = true
 margin_left = 1183.67
 margin_top = 15.5417
 margin_right = 1259.67
@@ -1073,7 +1060,6 @@ wait_time = 0.15
 one_shot = true
 
 [node name="history_button2" type="Button" parent="meta_ui"]
-editor/display_folded = true
 margin_left = 1182.28
 margin_top = 680.015
 margin_right = 1258.28
@@ -1106,7 +1092,6 @@ align = 1
 valign = 1
 
 [node name="pause_menu" type="Control" parent="meta_ui"]
-editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -1124,7 +1109,6 @@ rect_pivot_offset = Vector2( -26.6195, 176.923 )
 mouse_filter = 1
 
 [node name="save" type="Button" parent="meta_ui/pause_menu/buttons"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
@@ -1155,7 +1139,6 @@ align = 1
 valign = 1
 
 [node name="load" type="Button" parent="meta_ui/pause_menu/buttons"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
@@ -1186,7 +1169,6 @@ align = 1
 valign = 1
 
 [node name="options" type="Button" parent="meta_ui/pause_menu/buttons"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
@@ -1219,7 +1201,6 @@ align = 1
 valign = 1
 
 [node name="exit" type="Button" parent="meta_ui/pause_menu/buttons"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
@@ -1252,7 +1233,6 @@ align = 1
 valign = 1
 
 [node name="back" type="Button" parent="meta_ui/pause_menu/buttons"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
@@ -1286,7 +1266,6 @@ align = 1
 valign = 1
 
 [node name="icons" type="HBoxContainer" parent="meta_ui/pause_menu"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 121.0
@@ -1439,7 +1418,6 @@ animation2 = ExtResource( 71 )
 visible = false
 
 [node name="exit_confirm" type="Control" parent="meta_ui"]
-editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -1491,7 +1469,6 @@ align = 1
 valign = 1
 
 [node name="no" type="Button" parent="meta_ui/exit_confirm"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
@@ -1521,7 +1498,6 @@ align = 1
 valign = 1
 
 [node name="save_confirm" type="Control" parent="meta_ui"]
-editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -1571,7 +1547,6 @@ align = 1
 valign = 1
 
 [node name="save_waiting" type="Control" parent="meta_ui"]
-editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -1603,7 +1578,6 @@ margin_right = 1279.58
 margin_bottom = 719.582
 
 [node name="load_confirm" type="Control" parent="meta_ui"]
-editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -1623,7 +1597,6 @@ text = "game loaded."
 align = 1
 
 [node name="yes" type="Button" parent="meta_ui/load_confirm"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
@@ -1657,7 +1630,6 @@ valign = 1
 visible = false
 
 [node name="history" type="Control" parent="meta_ui"]
-editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 rect_pivot_offset = Vector2( -460, 150 )
@@ -1668,7 +1640,6 @@ texture = ExtResource( 76 )
 centered = false
 
 [node name="back" type="Button" parent="meta_ui/history"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
@@ -1702,7 +1673,6 @@ align = 1
 valign = 1
 
 [node name="container" type="ScrollContainer" parent="meta_ui/history"]
-editor/display_folded = true
 margin_left = 186.0
 margin_top = 51.0
 margin_right = 1096.0
@@ -1715,8 +1685,6 @@ theme = ExtResource( 10 )
 columns = 2
 
 [node name="debug" type="Control" parent="meta_ui"]
-editor/display_folded = true
-visible = false
 margin_top = 23.2134
 margin_right = 40.0
 margin_bottom = 63.2134
@@ -1841,29 +1809,29 @@ color = Color( 0, 0, 0, 1 )
 [connection signal="mouse_exited" from="meta_ui/history_button2" to="content/room" method="start_all_hovering"]
 [connection signal="pressed" from="meta_ui/history_button2" to="." method="turn_off_skip"]
 [connection signal="pressed" from="meta_ui/history_button2" to="meta_ui/history" method="toggle"]
-[connection signal="pressed" from="meta_ui/pause_menu/buttons/save" to="meta_ui/save_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/save" to="meta_ui/menu_button" method="hide"]
-[connection signal="pressed" from="meta_ui/pause_menu/buttons/load" to="meta_ui/load_menu" method="show_custom"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/save" to="meta_ui/save_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/load" to="meta_ui/menu_button" method="hide"]
-[connection signal="pressed" from="meta_ui/pause_menu/buttons/options" to="meta_ui/options_menu" method="show_custom"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/load" to="meta_ui/load_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/options" to="meta_ui/menu_button" method="hide"]
-[connection signal="pressed" from="meta_ui/pause_menu/buttons/exit" to="meta_ui/exit_confirm" method="show"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/options" to="meta_ui/options_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/exit" to="meta_ui/menu_button" method="hide"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/exit" to="meta_ui/exit_confirm" method="show"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/back" to="." method="close_pause_menu"]
 [connection signal="hiding" from="meta_ui/options_menu" to="meta_ui/menu_button" method="show"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
-[connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/dropdown" method="format_quests"]
+[connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
 [connection signal="pressed" from="meta_ui/exit_confirm/yes" to="." method="return_to_main"]
-[connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/menu_button" method="show"]
-[connection signal="pressed" from="meta_ui/save_confirm/yes" to="." method="save_confirmed"]
+[connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
 [connection signal="pressed" from="meta_ui/save_confirm/yes" to="meta_ui/menu_button" method="show"]
+[connection signal="pressed" from="meta_ui/save_confirm/yes" to="." method="save_confirmed"]
 [connection signal="deleted_data" from="meta_ui/save_menu" to="." method="deleted_data"]
 [connection signal="hiding" from="meta_ui/save_menu" to="meta_ui/menu_button" method="show"]
 [connection signal="save_file" from="meta_ui/save_menu" to="." method="save"]
-[connection signal="pressed" from="meta_ui/load_confirm/yes" to="." method="load_confirmed"]
 [connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/menu_button" method="show"]
+[connection signal="pressed" from="meta_ui/load_confirm/yes" to="." method="load_confirmed"]
 [connection signal="deleted_data" from="meta_ui/load_menu" to="." method="deleted_data"]
 [connection signal="hiding" from="meta_ui/load_menu" to="meta_ui/menu_button" method="show"]
 [connection signal="load_file" from="meta_ui/load_menu" to="." method="load_game_while_playing"]

@@ -1,18 +1,19 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/options_menu.gd" type="Script" id=2]
 [ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/ui/pronoun_input_box.png" type="Texture" id=5]
-[ext_resource path="res://assets/ui/slider_tick.png" type="Texture" id=6]
-[ext_resource path="res://assets/ui/slider_grabber.png" type="Texture" id=7]
-[ext_resource path="res://assets/ui/slider.png" type="Texture" id=8]
-[ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=9]
-[ext_resource path="res://assets/ui/font_preview.png" type="Texture" id=10]
-[ext_resource path="res://themes/dropdown_menu_theme.tres" type="Theme" id=11]
-[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=12]
-[ext_resource path="res://assets/ui/short_slider.png" type="Texture" id=13]
+[ext_resource path="res://themes/language_dropdown_theme.tres" type="Theme" id=6]
+[ext_resource path="res://assets/ui/slider_tick.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/slider_grabber.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/slider.png" type="Texture" id=9]
+[ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=10]
+[ext_resource path="res://assets/ui/font_preview.png" type="Texture" id=11]
+[ext_resource path="res://themes/dropdown_menu_theme.tres" type="Theme" id=12]
+[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=13]
+[ext_resource path="res://assets/ui/short_slider.png" type="Texture" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -23,7 +24,7 @@ size = 21
 font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 448, 12 )
 axis_stretch_horizontal = 1
 
@@ -36,7 +37,7 @@ extra_spacing_space = 1
 font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxTexture" id=6]
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 region_rect = Rect2( 0, 0, 256, 12 )
 axis_stretch_horizontal = 1
 
@@ -138,12 +139,43 @@ text = "reset settings"
 align = 1
 valign = 1
 
+[node name="language" type="Control" parent="."]
+margin_left = 239.0
+margin_top = 31.0
+margin_right = 279.0
+margin_bottom = 71.0
+
+[node name="language_label" type="Label" parent="language"]
+margin_left = -315.0
+margin_top = 30.0
+margin_right = -41.0
+margin_bottom = 62.0
+text = "language"
+align = 2
+
+[node name="language" type="MarginContainer" parent="language"]
+margin_left = -16.0
+margin_top = 30.0
+margin_right = 258.0
+margin_bottom = 73.0
+custom_constants/margin_left = 18
+
+[node name="dropdown" type="OptionButton" parent="language/language"]
+margin_left = 18.0
+margin_right = 258.0
+margin_bottom = 43.0
+rect_min_size = Vector2( 240, 43 )
+focus_mode = 0
+size_flags_horizontal = 0
+theme = ExtResource( 6 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+
 [node name="text_size" type="Control" parent="."]
-editor/display_folded = true
 margin_left = 240.087
-margin_top = 81.9781
+margin_top = 151.0
 margin_right = 719.087
-margin_bottom = 81.9781
+margin_bottom = 151.0
 __meta__ = {
 "_edit_group_": true
 }
@@ -161,9 +193,9 @@ margin_top = 9.0
 margin_right = 448.0
 margin_bottom = 21.0
 focus_mode = 0
-custom_icons/tick = ExtResource( 6 )
-custom_icons/grabber_highlight = ExtResource( 7 )
-custom_icons/grabber = ExtResource( 7 )
+custom_icons/tick = ExtResource( 7 )
+custom_icons/grabber_highlight = ExtResource( 8 )
+custom_icons/grabber = ExtResource( 8 )
 custom_styles/slider = SubResource( 3 )
 custom_styles/grabber_area = SubResource( 4 )
 min_value = 20.0
@@ -180,7 +212,7 @@ margin_left = 26.0
 margin_top = 66.0
 margin_right = 430.0
 margin_bottom = 123.0
-theme = ExtResource( 9 )
+theme = ExtResource( 10 )
 text = "oliver"
 valign = 1
 
@@ -189,14 +221,14 @@ margin_left = 24.0
 margin_top = 136.0
 margin_right = 432.0
 margin_bottom = 250.0
-theme = ExtResource( 9 )
+theme = ExtResource( 10 )
 bbcode_enabled = true
 bbcode_text = "wahoo i sure [i]love[/i] purrgatory!"
 text = "wahoo i sure love purrgatory!"
 
 [node name="preview_box" type="Sprite" parent="text_size"]
 position = Vector2( 227.314, 167.088 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 
 [node name="preview_label" type="Label" parent="text_size"]
 margin_left = -145.0
@@ -210,9 +242,9 @@ align = 2
 [node name="audio" type="Control" parent="."]
 editor/display_folded = true
 margin_left = 240.087
-margin_top = 420.123
+margin_top = 466.0
 margin_right = 280.087
-margin_bottom = 460.123
+margin_bottom = 506.0
 __meta__ = {
 "_edit_group_": true
 }
@@ -232,9 +264,9 @@ margin_top = -8.0
 margin_right = 408.0
 margin_bottom = -6.0
 focus_mode = 0
-custom_icons/tick = ExtResource( 6 )
-custom_icons/grabber_highlight = ExtResource( 7 )
-custom_icons/grabber = ExtResource( 7 )
+custom_icons/tick = ExtResource( 7 )
+custom_icons/grabber_highlight = ExtResource( 8 )
+custom_icons/grabber = ExtResource( 8 )
 custom_styles/slider = SubResource( 3 )
 custom_styles/grabber_area = SubResource( 4 )
 max_value = 1.0
@@ -259,9 +291,9 @@ margin_top = 53.0
 margin_right = 408.0
 margin_bottom = 55.0
 focus_mode = 0
-custom_icons/tick = ExtResource( 6 )
-custom_icons/grabber_highlight = ExtResource( 7 )
-custom_icons/grabber = ExtResource( 7 )
+custom_icons/tick = ExtResource( 7 )
+custom_icons/grabber_highlight = ExtResource( 8 )
+custom_icons/grabber = ExtResource( 8 )
 custom_styles/slider = SubResource( 3 )
 custom_styles/grabber_area = SubResource( 4 )
 max_value = 1.0
@@ -273,9 +305,9 @@ focus_mode = 0
 
 [node name="right_side" type="GridContainer" parent="."]
 margin_left = 744.65
-margin_top = 55.9658
+margin_top = 52.0
 margin_right = 1233.65
-margin_bottom = 542.966
+margin_bottom = 539.0
 custom_constants/vseparation = 8
 custom_constants/hseparation = 27
 columns = 2
@@ -320,7 +352,7 @@ margin_bottom = 43.0
 rect_min_size = Vector2( 186, 43 )
 focus_mode = 0
 size_flags_horizontal = 0
-theme = ExtResource( 11 )
+theme = ExtResource( 12 )
 disabled = true
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
@@ -378,7 +410,7 @@ margin_top = 0.814514
 margin_right = 91.4253
 margin_bottom = 40.8145
 mouse_filter = 2
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 
 [node name="label3" type="Label" parent="right_side/self_voicing/test_voicing"]
 margin_left = 8.53992
@@ -414,10 +446,10 @@ margin_right = 274.0
 margin_bottom = 32.0
 focus_mode = 0
 size_flags_vertical = 1
-custom_icons/tick = ExtResource( 6 )
-custom_icons/grabber_disabled = ExtResource( 7 )
-custom_icons/grabber_highlight = ExtResource( 7 )
-custom_icons/grabber = ExtResource( 7 )
+custom_icons/tick = ExtResource( 7 )
+custom_icons/grabber_disabled = ExtResource( 8 )
+custom_icons/grabber_highlight = ExtResource( 8 )
+custom_icons/grabber = ExtResource( 8 )
 custom_styles/slider = SubResource( 6 )
 custom_styles/grabber_area = SubResource( 4 )
 min_value = -100.0
@@ -507,6 +539,7 @@ autowrap = true
 [connection signal="pressed" from="back" to="." method="hide_custom"]
 [connection signal="pressed" from="back" to="." method="save_options"]
 [connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]
+[connection signal="item_selected" from="language/language/dropdown" to="." method="_on_language_selected"]
 [connection signal="value_changed" from="text_size/slider" to="." method="_on_text_size_value_changed"]
 [connection signal="value_changed" from="audio/music" to="." method="_on_music_value_changed"]
 [connection signal="value_changed" from="audio/sfx" to="." method="_on_sfx_value_changed"]

@@ -34,7 +34,8 @@ var default_options = {
 	"voicing_enabled": false,
 	"resolution": "1280 x 720",
 	"voice_speed": 1.0,
-	"low_contrast": false
+	"low_contrast": false,
+	"language": 0 # english
 }
 
 func _ready():
@@ -82,10 +83,13 @@ func _ready():
 		$web_disclaimer.hide()
 		$download_disclaimer.show()
 	
-	# load in resolution options
+	# load in resolution and language options
 	
 	for res in resolutions:
 		$right_side/window_size/dropdown.add_item(res)
+	
+	for lang in Language.languages:
+		$language/language/dropdown.add_item(lang)
 		
 func save_options():
 	# saves options to file
@@ -101,7 +105,10 @@ func save_options():
 		"voicing_enabled": $right_side/self_voicing.pressed,
 		"resolution": resolutions[$right_side/window_size/dropdown.selected],
 		"voice_speed": $right_side/voice_speed/slider.value,
-		"low_contrast": $right_side/low_contrast.pressed
+		"low_contrast": $right_side/low_contrast.pressed,
+		"language": Language.language 
+		# unlike the others options, language is based on the global Language rather than the local UI
+		# since there are multiple locations where you can change it
 	}
 	var options_save = File.new()
 	options_save.open("user://options.save", File.WRITE)
@@ -118,19 +125,13 @@ func load_options():
 	var options_save = File.new()
 	var options_dict = default_options.duplicate()
 	
-	print(options_dict)
-	
 	if options_save.file_exists("user://options.save"):
 		options_save.open("user://options.save", File.READ)
 		var options_save_dict = parse_json(options_save.get_line())
 		options_save.close()
-		
-		print(options_save_dict)
 	
 		for key in options_save_dict:
 			options_dict[key] = options_save_dict[key]
-		
-	print(options_dict)
 	
 	$right_side/fullscreen.pressed = options_dict['fullscreen']
 	$audio/music.value = options_dict['music_volume']
@@ -141,6 +142,7 @@ func load_options():
 	$right_side/window_size/dropdown.selected = resolutions.find(options_dict['resolution'])
 	$right_side/voice_speed/slider.value = options_dict['voice_speed']
 	$right_side/low_contrast.pressed = options_dict['low_contrast']
+	$language/language/dropdown.selected = options_dict['language']
 	
 	# also, connect the to-do and tts options if not done already
 	# and this absolute path is disgusting but find_node isn't working so whatever
@@ -173,6 +175,7 @@ func load_and_apply_options():
 	_on_window_size_selected(resolutions.find(options_dict['resolution']))
 	_on_slider_value_changed(options_dict['voice_speed'])
 	_on_low_contrast_toggled(options_dict['low_contrast'])
+	_on_language_selected(options_dict['language'])
 
 func show_custom():
 	var state = get_node('/root/main/game').state
@@ -261,3 +264,6 @@ func _on_low_contrast_toggled(button_pressed):
 		filter.show()
 	else:
 		filter.hide()
+
+func _on_language_selected(ID):
+	Language.set_language(ID)

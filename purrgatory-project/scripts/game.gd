@@ -302,6 +302,8 @@ func start_dialog(label, blackout_label=null):
 		speaker = speaker.format(speaker_format_dict)
 		
 		if speaker == 'you' and format_dict['player']:
+			# "you" is used even in foreign language translations to denote "replace with player's name"
+			# however, in the very first part of the game before the player inputs their name, "you" must be translated (to "tú" or equivalent)
 			speaker = format_dict['player']
 
 	ui.update_ui(speaker, block['sprites'], text, choices_text)

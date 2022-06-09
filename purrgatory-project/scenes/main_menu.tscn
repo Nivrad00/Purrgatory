@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://cat_01_color05.obj" type="ArrayMesh" id=2]
@@ -15,11 +15,12 @@
 [ext_resource path="res://assets/sprites/cat2.png" type="Texture" id=13]
 [ext_resource path="res://assets/sprites/cat3.png" type="Texture" id=14]
 [ext_resource path="res://assets/audio/Slice_Of_Heaven.ogg" type="AudioStream" id=15]
-[ext_resource path="res://assets/ui/credits_box.png" type="Texture" id=16]
-[ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=17]
-[ext_resource path="res://themes/dialog_font_italics.tres" type="DynamicFont" id=18]
-[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=19]
-[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=20]
+[ext_resource path="res://themes/dropdown_menu_theme.tres" type="Theme" id=16]
+[ext_resource path="res://assets/ui/credits_box.png" type="Texture" id=17]
+[ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=18]
+[ext_resource path="res://themes/dialog_font_italics.tres" type="DynamicFont" id=19]
+[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=21]
 
 [sub_resource type="SpatialMaterial" id=1]
 next_pass = ExtResource( 3 )
@@ -52,10 +53,18 @@ size = 25
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=6]
+size = 20
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 20
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=8]
 size = 25
 font_data = ExtResource( 6 )
 
-[sub_resource type="CanvasItemMaterial" id=7]
+[sub_resource type="CanvasItemMaterial" id=9]
 blend_mode = 3
 
 [node name="main" type="Node"]
@@ -73,14 +82,12 @@ margin_bottom = 40.0
 mouse_filter = 2
 
 [node name="Viewport" type="Viewport" parent="rotating_cat"]
-editor/display_folded = true
 size = Vector2( 1280, 720 )
 transparent_bg = true
 msaa = 3
 render_target_v_flip = true
 
 [node name="cat_01_color05" type="MeshInstance" parent="rotating_cat/Viewport"]
-editor/display_folded = true
 transform = Transform( 1, 0, 1.74846e-007, 0, 1, 0, -1.74846e-007, 0, 1, 0, 0, 0 )
 mesh = ExtResource( 2 )
 material/0 = SubResource( 1 )
@@ -118,7 +125,6 @@ __meta__ = {
 }
 
 [node name="loading" type="Control" parent="."]
-editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 theme = ExtResource( 4 )
@@ -143,8 +149,6 @@ enabled_focus_mode = 0
 flat = true
 
 [node name="main_menu" type="Control" parent="."]
-editor/display_folded = true
-visible = false
 margin_top = -14.0
 margin_right = 40.0
 margin_bottom = 26.0
@@ -221,7 +225,6 @@ position = Vector2( 125.826, 29.3703 )
 texture = ExtResource( 9 )
 
 [node name="options" type="Button" parent="main_menu/buttons"]
-editor/display_folded = true
 margin_left = 12.1426
 margin_top = 153.735
 margin_right = 262.143
@@ -278,7 +281,6 @@ align = 1
 valign = 1
 
 [node name="exit" type="Button" parent="main_menu/buttons"]
-editor/display_folded = true
 margin_left = 12.8502
 margin_top = 297.734
 margin_right = 262.85
@@ -322,8 +324,41 @@ stream = ExtResource( 15 )
 volume_db = -6.0
 bus = "Music"
 
+[node name="language" type="Control" parent="main_menu"]
+margin_left = 1041.0
+margin_top = 655.0
+margin_right = 1081.0
+margin_bottom = 695.0
+
+[node name="language_label" type="Label" parent="main_menu/language"]
+margin_left = -281.0
+margin_top = 33.0
+margin_right = -7.0
+margin_bottom = 65.0
+custom_fonts/font = SubResource( 6 )
+text = "language"
+align = 2
+
+[node name="language" type="MarginContainer" parent="main_menu/language"]
+margin_left = -16.0
+margin_top = 30.0
+margin_right = 162.0
+margin_bottom = 66.0
+custom_constants/margin_left = 18
+
+[node name="dropdown" type="OptionButton" parent="main_menu/language/language"]
+margin_left = 18.0
+margin_right = 218.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 200, 36 )
+focus_mode = 0
+size_flags_horizontal = 0
+theme = ExtResource( 16 )
+custom_fonts/font = SubResource( 7 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+
 [node name="credits" type="Control" parent="."]
-editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -335,7 +370,7 @@ margin_right = 1925.3
 margin_bottom = 1080.0
 rect_pivot_offset = Vector2( 73.9432, 195.005 )
 mouse_filter = 2
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="credits"]
 margin_left = 62.0
@@ -343,7 +378,7 @@ margin_top = 55.0
 margin_right = 1238.0
 margin_bottom = 591.0
 rect_pivot_offset = Vector2( 15.9432, 138.005 )
-theme = ExtResource( 17 )
+theme = ExtResource( 18 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="credits/ScrollContainer"]
 margin_right = 1176.0
@@ -396,7 +431,7 @@ margin_bottom = 416.0
 rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 19 )
 text = "note: this is the web version of purrgatory. 
 for higher quality and smoother gameplay, try the windows version!"
 align = 1
@@ -1232,13 +1267,12 @@ align = 1
 autowrap = true
 
 [node name="back" type="Button" parent="credits"]
-editor/display_folded = true
 margin_left = 515.0
 margin_top = 626.351
 margin_right = 765.0
 margin_bottom = 684.351
 focus_mode = 0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
@@ -1259,10 +1293,10 @@ text = "back"
 align = 1
 valign = 1
 
-[node name="load_menu" parent="." instance=ExtResource( 19 )]
+[node name="load_menu" parent="." instance=ExtResource( 20 )]
 visible = false
 
-[node name="options_menu" parent="." instance=ExtResource( 20 )]
+[node name="options_menu" parent="." instance=ExtResource( 21 )]
 visible = false
 
 [node name="cover" type="ColorRect" parent="."]
@@ -1277,7 +1311,7 @@ __meta__ = {
 
 [node name="low_contrast_filter" type="ColorRect" parent="."]
 visible = false
-material = SubResource( 7 )
+material = SubResource( 9 )
 margin_right = 1280.0
 margin_bottom = 720.0
 mouse_filter = 2
@@ -1288,6 +1322,8 @@ color = Color( 0.854902, 0.835294, 0.823529, 1 )
 [connection signal="pressed" from="main_menu/buttons/options" to="options_menu" method="show_custom"]
 [connection signal="pressed" from="main_menu/buttons/credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="main_menu/buttons/exit" to="." method="_on_exit_pressed"]
+[connection signal="visibility_changed" from="main_menu/language" to="." method="_on_language_visibility_changed"]
+[connection signal="item_selected" from="main_menu/language/language/dropdown" to="." method="_on_language_selected"]
 [connection signal="pressed" from="credits/back" to="." method="_on_back_pressed"]
 [connection signal="deleted_data" from="load_menu" to="." method="deleted_data"]
 [connection signal="load_file" from="load_menu" to="." method="load_file"]
