@@ -65,6 +65,8 @@ func button_pressed(value):
 			emit_signal('start_dialog', 'phone_call', [])
 		elif number == '911':
 			emit_signal('start_dialog', 'phone_call_911', [])
+		elif number == '112' and Language.language == 1: # spanish 911
+			emit_signal('start_dialog', 'phone_call_911', [])
 		else:
 			$busy_tone.play()
 		for n in $numbers.get_children():

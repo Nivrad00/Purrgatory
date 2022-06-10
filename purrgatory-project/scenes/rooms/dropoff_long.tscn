@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/dropoff_long.gd" type="Script" id=2]
@@ -18,25 +18,26 @@
 [ext_resource path="res://assets/sprites/tori_dropoff3_3.png" type="Texture" id=16]
 [ext_resource path="res://assets/ui/climb_ui_box.png" type="Texture" id=17]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=18]
-[ext_resource path="res://assets/ui/climb_dialog.png" type="Texture" id=19]
-[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=20]
-[ext_resource path="res://assets/audio/wood_creak1.wav" type="AudioStream" id=21]
-[ext_resource path="res://assets/audio/wood_creak2.wav" type="AudioStream" id=22]
-[ext_resource path="res://assets/audio/wood_creak3.wav" type="AudioStream" id=23]
-[ext_resource path="res://assets/audio/wood_creak4.wav" type="AudioStream" id=24]
-[ext_resource path="res://assets/audio/wood_creak5.wav" type="AudioStream" id=25]
-[ext_resource path="res://assets/audio/wood_creak6.wav" type="AudioStream" id=26]
-[ext_resource path="res://assets/audio/wood_crack1.wav" type="AudioStream" id=27]
-[ext_resource path="res://assets/audio/wood_crack2.wav" type="AudioStream" id=28]
-[ext_resource path="res://assets/audio/rope_creak6.wav" type="AudioStream" id=29]
-[ext_resource path="res://assets/audio/rope_creak5.wav" type="AudioStream" id=30]
-[ext_resource path="res://assets/audio/rope_creak4.wav" type="AudioStream" id=31]
-[ext_resource path="res://assets/audio/rope_creak3.wav" type="AudioStream" id=32]
-[ext_resource path="res://assets/audio/rope_creak2.wav" type="AudioStream" id=33]
-[ext_resource path="res://assets/audio/rope_creak1.wav" type="AudioStream" id=34]
-[ext_resource path="res://assets/audio/falling.wav" type="AudioStream" id=35]
-[ext_resource path="res://assets/audio/rope_hit.wav" type="AudioStream" id=36]
-[ext_resource path="res://assets/audio/hhhhhh2.wav" type="AudioStream" id=37]
+[ext_resource path="res://scripts/TranslatedLabel.gd" type="Script" id=19]
+[ext_resource path="res://assets/ui/climb_dialog.png" type="Texture" id=20]
+[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=21]
+[ext_resource path="res://assets/audio/wood_creak1.wav" type="AudioStream" id=22]
+[ext_resource path="res://assets/audio/wood_creak2.wav" type="AudioStream" id=23]
+[ext_resource path="res://assets/audio/wood_creak3.wav" type="AudioStream" id=24]
+[ext_resource path="res://assets/audio/wood_creak4.wav" type="AudioStream" id=25]
+[ext_resource path="res://assets/audio/wood_creak5.wav" type="AudioStream" id=26]
+[ext_resource path="res://assets/audio/wood_creak6.wav" type="AudioStream" id=27]
+[ext_resource path="res://assets/audio/wood_crack1.wav" type="AudioStream" id=28]
+[ext_resource path="res://assets/audio/wood_crack2.wav" type="AudioStream" id=29]
+[ext_resource path="res://assets/audio/rope_creak6.wav" type="AudioStream" id=30]
+[ext_resource path="res://assets/audio/rope_creak5.wav" type="AudioStream" id=31]
+[ext_resource path="res://assets/audio/rope_creak4.wav" type="AudioStream" id=32]
+[ext_resource path="res://assets/audio/rope_creak3.wav" type="AudioStream" id=33]
+[ext_resource path="res://assets/audio/rope_creak2.wav" type="AudioStream" id=34]
+[ext_resource path="res://assets/audio/rope_creak1.wav" type="AudioStream" id=35]
+[ext_resource path="res://assets/audio/falling.wav" type="AudioStream" id=36]
+[ext_resource path="res://assets/audio/rope_hit.wav" type="AudioStream" id=37]
+[ext_resource path="res://assets/audio/hhhhhh2.wav" type="AudioStream" id=38]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -77,7 +78,7 @@ tracks/0/keys = {
 size = 22
 use_filter = true
 extra_spacing_space = 1
-font_data = ExtResource( 20 )
+font_data = ExtResource( 21 )
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -185,7 +186,6 @@ animation1 = ExtResource( 15 )
 animation2 = ExtResource( 16 )
 
 [node name="_game" type="Control" parent="state_handler"]
-editor/display_folded = true
 visible = false
 margin_top = 592.477
 margin_right = 1280.0
@@ -220,6 +220,8 @@ theme = ExtResource( 18 )
 text = "press up repeatedly to hold on!!"
 align = 1
 valign = 1
+script = ExtResource( 19 )
+translations = [ "¡pulsa [arriba] para no caerte!" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/_game/Label"]
 autoplay = "blink"
@@ -232,7 +234,6 @@ mouse_filter = 2
 theme = ExtResource( 18 )
 
 [node name="0" type="TextureRect" parent="state_handler/_dialog"]
-editor/display_folded = true
 visible = false
 margin_left = 706.563
 margin_top = 16.7019
@@ -240,7 +241,7 @@ margin_right = 1048.56
 margin_bottom = 256.702
 rect_pivot_offset = Vector2( 15.8891, 92.0588 )
 mouse_filter = 2
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/0"]
 margin_left = 18.0
@@ -250,9 +251,10 @@ margin_bottom = 135.0
 text = "just hang on!"
 align = 1
 valign = 1
+script = ExtResource( 19 )
+translations = [ "¡aguanta ahí!" ]
 
 [node name="1" type="TextureRect" parent="state_handler/_dialog"]
-editor/display_folded = true
 visible = false
 margin_left = 598.111
 margin_top = 16.7019
@@ -260,7 +262,7 @@ margin_right = 940.111
 margin_bottom = 256.702
 rect_scale = Vector2( -1, 1 )
 mouse_filter = 2
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/1"]
 margin_left = 320.0
@@ -271,9 +273,10 @@ rect_scale = Vector2( -1, 1 )
 text = "why are you so heavy??"
 align = 1
 valign = 1
+script = ExtResource( 19 )
+translations = [ "¡¿cómo pesas tanto?!" ]
 
 [node name="2" type="TextureRect" parent="state_handler/_dialog"]
-editor/display_folded = true
 visible = false
 margin_left = 1070.66
 margin_top = 643.476
@@ -281,7 +284,7 @@ margin_right = 1412.66
 margin_bottom = 883.476
 rect_scale = Vector2( -1, -1 )
 mouse_filter = 2
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/2"]
 margin_left = 321.36
@@ -292,6 +295,8 @@ rect_scale = Vector2( -1, -1 )
 text = "i'm sorry i guess??"
 align = 1
 valign = 1
+script = ExtResource( 19 )
+translations = [ "¡pues perdóname!" ]
 
 [node name="6" type="TextureRect" parent="state_handler/_dialog/2"]
 margin_left = 472.553
@@ -300,7 +305,7 @@ margin_right = 814.553
 margin_bottom = 865.774
 rect_scale = Vector2( 1, -1 )
 mouse_filter = 2
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/2/6"]
 margin_left = 320.0
@@ -311,9 +316,10 @@ rect_scale = Vector2( -1, 1 )
 text = "why are you so heavy??"
 align = 1
 valign = 1
+script = ExtResource( 19 )
+translations = [ "¡¿cómo pesas tanto?!" ]
 
 [node name="3" type="TextureRect" parent="state_handler/_dialog"]
-editor/display_folded = true
 visible = false
 margin_left = 706.563
 margin_top = 16.7019
@@ -321,7 +327,7 @@ margin_right = 1048.56
 margin_bottom = 256.702
 rect_pivot_offset = Vector2( 15.8891, 92.0588 )
 mouse_filter = 2
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/3"]
 margin_left = 17.8337
@@ -334,9 +340,10 @@ text = "least i'm getting my arm workout for the day..."
 align = 1
 valign = 1
 autowrap = true
+script = ExtResource( 19 )
+translations = [ "esto cuenta como día de brazo..." ]
 
 [node name="4" type="TextureRect" parent="state_handler/_dialog"]
-editor/display_folded = true
 visible = false
 margin_left = 598.111
 margin_top = 15.7019
@@ -344,7 +351,7 @@ margin_right = 940.111
 margin_bottom = 255.702
 rect_scale = Vector2( -1, 1 )
 mouse_filter = 2
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/4"]
 margin_left = 320.0
@@ -355,17 +362,17 @@ rect_scale = Vector2( -1, 1 )
 text = "you okay down there??"
 align = 1
 valign = 1
+script = ExtResource( 19 )
+translations = [ "¡¿estás bien?!" ]
 
 [node name="5" type="TextureRect" parent="state_handler/_dialog"]
-editor/display_folded = true
-visible = false
 margin_left = 1070.66
 margin_top = 642.476
 margin_right = 1412.66
 margin_bottom = 882.476
 rect_scale = Vector2( -1, -1 )
 mouse_filter = 2
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/5"]
 margin_left = 320.0
@@ -376,6 +383,8 @@ rect_scale = Vector2( -1, -1 )
 text = "what sort of a "
 align = 1
 valign = 1
+script = ExtResource( 19 )
+translations = [ "¡¿qué clase de" ]
 
 [node name="Label2" type="Label" parent="state_handler/_dialog/5"]
 margin_left = 320.0
@@ -386,6 +395,8 @@ rect_scale = Vector2( -1, -1 )
 text = "question is that??"
 align = 1
 valign = 1
+script = ExtResource( 19 )
+translations = [ "pregunta es esa?!" ]
 
 [node name="6" type="TextureRect" parent="state_handler/_dialog/5"]
 margin_left = 472.553
@@ -394,7 +405,7 @@ margin_right = 814.553
 margin_bottom = 865.774
 rect_scale = Vector2( 1, -1 )
 mouse_filter = 2
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/5/6"]
 margin_left = 320.0
@@ -405,9 +416,10 @@ rect_scale = Vector2( -1, 1 )
 text = "you okay down there??"
 align = 1
 valign = 1
+script = ExtResource( 19 )
+translations = [ "¡¿estás bien?!" ]
 
 [node name="6" type="TextureRect" parent="state_handler/_dialog"]
-editor/display_folded = true
 visible = false
 margin_left = 706.563
 margin_top = 16.7019
@@ -415,7 +427,7 @@ margin_right = 1048.56
 margin_bottom = 256.702
 rect_pivot_offset = Vector2( 15.8891, 92.0588 )
 mouse_filter = 2
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/6"]
 margin_left = 17.8337
@@ -427,37 +439,39 @@ text = "almost there!!"
 align = 1
 valign = 1
 autowrap = true
+script = ExtResource( 19 )
+translations = [ "¡ya casi estás!" ]
 
 [node name="_creaks" type="Node" parent="state_handler"]
 editor/display_folded = true
 
 [node name="0" type="AudioStreamPlayer" parent="state_handler/_creaks"]
-stream = ExtResource( 21 )
-volume_db = -30.0
-bus = "SFX"
-
-[node name="1" type="AudioStreamPlayer" parent="state_handler/_creaks"]
 stream = ExtResource( 22 )
 volume_db = -30.0
 bus = "SFX"
 
-[node name="2" type="AudioStreamPlayer" parent="state_handler/_creaks"]
+[node name="1" type="AudioStreamPlayer" parent="state_handler/_creaks"]
 stream = ExtResource( 23 )
 volume_db = -30.0
 bus = "SFX"
 
-[node name="3" type="AudioStreamPlayer" parent="state_handler/_creaks"]
+[node name="2" type="AudioStreamPlayer" parent="state_handler/_creaks"]
 stream = ExtResource( 24 )
 volume_db = -30.0
 bus = "SFX"
 
-[node name="4" type="AudioStreamPlayer" parent="state_handler/_creaks"]
+[node name="3" type="AudioStreamPlayer" parent="state_handler/_creaks"]
 stream = ExtResource( 25 )
 volume_db = -30.0
 bus = "SFX"
 
-[node name="5" type="AudioStreamPlayer" parent="state_handler/_creaks"]
+[node name="4" type="AudioStreamPlayer" parent="state_handler/_creaks"]
 stream = ExtResource( 26 )
+volume_db = -30.0
+bus = "SFX"
+
+[node name="5" type="AudioStreamPlayer" parent="state_handler/_creaks"]
+stream = ExtResource( 27 )
 volume_db = -30.0
 bus = "SFX"
 
@@ -465,52 +479,52 @@ bus = "SFX"
 editor/display_folded = true
 
 [node name="a" type="AudioStreamPlayer" parent="state_handler/_cracks"]
-stream = ExtResource( 27 )
+stream = ExtResource( 28 )
 bus = "SFX"
 
 [node name="b" type="AudioStreamPlayer" parent="state_handler/_cracks"]
-stream = ExtResource( 28 )
+stream = ExtResource( 29 )
 bus = "SFX"
 
 [node name="_pulls" type="Node" parent="state_handler"]
 editor/display_folded = true
 
 [node name="5" type="AudioStreamPlayer" parent="state_handler/_pulls"]
-stream = ExtResource( 29 )
-volume_db = -15.0
-bus = "SFX"
-
-[node name="4" type="AudioStreamPlayer" parent="state_handler/_pulls"]
 stream = ExtResource( 30 )
 volume_db = -15.0
 bus = "SFX"
 
-[node name="3" type="AudioStreamPlayer" parent="state_handler/_pulls"]
+[node name="4" type="AudioStreamPlayer" parent="state_handler/_pulls"]
 stream = ExtResource( 31 )
 volume_db = -15.0
 bus = "SFX"
 
-[node name="2" type="AudioStreamPlayer" parent="state_handler/_pulls"]
+[node name="3" type="AudioStreamPlayer" parent="state_handler/_pulls"]
 stream = ExtResource( 32 )
 volume_db = -15.0
 bus = "SFX"
 
-[node name="1" type="AudioStreamPlayer" parent="state_handler/_pulls"]
+[node name="2" type="AudioStreamPlayer" parent="state_handler/_pulls"]
 stream = ExtResource( 33 )
 volume_db = -15.0
 bus = "SFX"
 
-[node name="0" type="AudioStreamPlayer" parent="state_handler/_pulls"]
+[node name="1" type="AudioStreamPlayer" parent="state_handler/_pulls"]
 stream = ExtResource( 34 )
 volume_db = -15.0
 bus = "SFX"
 
-[node name="_falling" type="AudioStreamPlayer" parent="state_handler"]
+[node name="0" type="AudioStreamPlayer" parent="state_handler/_pulls"]
 stream = ExtResource( 35 )
+volume_db = -15.0
+bus = "SFX"
+
+[node name="_falling" type="AudioStreamPlayer" parent="state_handler"]
+stream = ExtResource( 36 )
 bus = "SFX"
 
 [node name="_stop" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 36 )
+stream = ExtResource( 37 )
 volume_db = 10.0
 bus = "SFX"
 
@@ -519,6 +533,6 @@ wait_time = 0.4
 one_shot = true
 
 [node name="_hhhhh" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 37 )
+stream = ExtResource( 38 )
 volume_db = -35.0
 autoplay = true

@@ -283,18 +283,11 @@ func start_dialog(label, blackout_label=null):
 
 	var choices_text = []
 	for choice in block['choices'][Language.language]:
-		choices_text.append(choice[0])
+		choices_text.append(format_text(choice[0]))
 	var text = block['text'][Language.language]
 
 	if text != null:
-		text = text.format(format_dict)
-
-		var regex = RegEx.new()
-		regex.compile('{([^/]+)/([^}]+)}')
-		if 'they' in format_dict and format_dict['they'] == 'they':
-			text = regex.sub(text, '$1', true)
-		else:
-			text = regex.sub(text, '$2', true)
+		text = format_text(text)
 	
 	var speaker = block['speaker'][Language.language]
 	if speaker != null:
@@ -390,18 +383,11 @@ func update_dialog(b: int):
 
 		var choices_text = []
 		for choice in block['choices'][Language.language]:
-			choices_text.append(choice[0])
+			choices_text.append(format_text(choice[0]))
 		var text = block['text'][Language.language]
 
 		if text != null:
-			text = text.format(format_dict)
-
-			var regex = RegEx.new()
-			regex.compile('{([^/]+)/([^}]+)}')
-			if format_dict.get('they') == 'they':
-				text = regex.sub(text, '$1', true)
-			else:
-				text = regex.sub(text, '$2', true)
+			text = format_text(text)
 
 		var speaker = block['speaker'][Language.language]
 		if speaker != null:
@@ -426,24 +412,60 @@ func update_dialog(b: int):
 		for pair in block['states']:
 			check_special_states(pair)
 
+# this handles variable text like {player}, {they}{'s/'re}, etc.
+func format_text(text):
+	text = text.format(format_dict)
+
+	# english
+	if Language.language == 0: 
+		var regex = RegEx.new()
+		regex.compile('{([^/]+)/([^}]+)}')
+		if 'they' in format_dict and format_dict['they'] == 'they':
+			text = regex.sub(text, '$1', true)
+		else:
+			text = regex.sub(text, '$2', true)
+			
+	# spanish
+	elif Language.language == 1:
+		var regex = RegEx.new()
+		regex.compile('{([^/]+)/([^/]+)/([^}]+)}')
+		
+		if state.get('_pronombre_el'):
+			text = regex.sub(text, '$1', true)
+		
+		elif state.get('_pronombre_ella'):
+			text = regex.sub(text, '$2', true)
+		
+		elif state.get('_pronombre_elle'):
+			text = regex.sub(text, '$3', true)
+		
+		elif state.get('_pronombre_personalizado'):
+			# here we handle EVERY CASE manually because... why not
+			var t = state.get('_terminacion')
+			text = text.replacen('{él/ella/elle}', state.get('_pronombre'))\
+					   .replacen('{/a/e}', ('' if t == 'o' else t))\
+					   .replacen('{e/a/e}', ('e' if t == 'o' else t))\
+					   .replacen('{el/la/le}', ('el' if t == 'o' else 'l' + t))\
+					   .replacen('{o/a/e}', t)\
+					   .replacen('{o/a/ue}', ('ui' if t == 'i' else t))\
+					   .replacen('{ooo/aaa/eee}', t + t + t)
+					   
+		else:
+			print('error: no pronouns set in spanish (spain)')
+	
+	return text
+	
 func _on_language_changed(lang):
 	# this is called whenever.... yeah the language is changed
 	# this is mostly copied from update_dialog and start_dialog... i know, not DRY, but who cares
 	if block and ui.visible:
 		var choices_text = []
 		for choice in block['choices'][lang]:
-			choices_text.append(choice[0])
+			choices_text.append(format_text(choice[0]))
 		var text = block['text'][lang]
 	
 		if text != null:
-			text = text.format(format_dict)
-	
-			var regex = RegEx.new()
-			regex.compile('{([^/]+)/([^}]+)}')
-			if format_dict.get('they') == 'they':
-				text = regex.sub(text, '$1', true)
-			else:
-				text = regex.sub(text, '$2', true)
+			text = format_text(text)
 	
 		var speaker = block['speaker'][lang]
 		if speaker != null:
@@ -467,12 +489,19 @@ func set_player_name():
 		format_dict['player'] = text
 
 		if ui.get_node('name_input/pronouns/they').pressed:
+			# english pronouns
 			state['_pronouns_they'] = true
 			format_dict['they'] = 'they'
 			format_dict['them'] = 'them'
 			format_dict['their'] = 'their'
 			format_dict['theirs'] = 'theirs'
 			format_dict['themself'] = 'themself'
+			# spanish pronouns
+			state['_pronombre_elle'] = true
+			# all occurences of variable gender in spanish are written in three parts like {él/ella/elle}
+			# so no need to add anything to the format dict; everything is based on the state dict
+			# also, if you choose elle/-e in spanish, the english is set to they/them
+			# and vice versa, and same for the other pronouns
 
 		elif ui.get_node('name_input/pronouns/she').pressed:
 			state['_pronouns_she'] = true
@@ -481,6 +510,8 @@ func set_player_name():
 			format_dict['their'] = 'her'
 			format_dict['theirs'] = 'hers'
 			format_dict['themself'] = 'herself'
+			# spanish pronouns
+			state['_pronombre_ella'] = true
 
 		elif ui.get_node('name_input/pronouns/he').pressed:
 			state['_pronouns_he'] = true
@@ -489,15 +520,37 @@ func set_player_name():
 			format_dict['their'] = 'his'
 			format_dict['theirs'] = 'his'
 			format_dict['themself'] = 'himself'
+			# spanish pronouns
+			state['_pronombre_el'] = true
 
 		elif ui.get_node('name_input/pronouns/custom').pressed:
-			state['_pronouns_custom'] = true
-			var pronoun_inputs = ui.get_node('name_input/custom_pronouns')
-			format_dict['they'] = pronoun_inputs.get_node('they').text
-			format_dict['them'] = pronoun_inputs.get_node('them').text
-			format_dict['their'] = pronoun_inputs.get_node('their').text
-			format_dict['theirs'] = pronoun_inputs.get_node('their').text + 's' # this isn't technically correct but whatever
-			format_dict['themself'] = pronoun_inputs.get_node('them').text + 'self'
+			# if custom pronouns are entered in english...
+			if Language.language == 0:
+				state['_pronouns_custom'] = true
+				var pronoun_inputs = ui.get_node('name_input/custom_pronouns/inputs/0')
+				format_dict['they'] = pronoun_inputs.get_node('they').text
+				format_dict['them'] = pronoun_inputs.get_node('them').text
+				format_dict['their'] = pronoun_inputs.get_node('their').text
+				format_dict['theirs'] = pronoun_inputs.get_node('their').text + 's' # this isn't technically correct but whatever
+				format_dict['themself'] = pronoun_inputs.get_node('them').text + 'self'
+				# ...the spanish version is automatically set to elle
+				state['_pronombre_elle'] = true
+				
+			# and if a custom pronoun is entered in spanish...
+			elif Language.language == 1:
+				state['_pronombre_personalizado'] = true
+				var pronoun_inputs = ui.get_node('name_input/custom_pronouns/inputs/1')
+				# this may be confusing, but _pronombre and _terminacion are only defined if _pronombre_personalizado
+				# is true; otherwise there's no need for them
+				state['_pronombre'] = pronoun_inputs.get_node('pronombre').text
+				state['_terminacion'] = pronoun_inputs.get_node('terminacion').text
+				# ...and the english version is automatically set to they/them
+				state['_pronouns_they'] = true
+				format_dict['they'] = 'they'
+				format_dict['them'] = 'them'
+				format_dict['their'] = 'their'
+				format_dict['theirs'] = 'theirs'
+				format_dict['themself'] = 'themself'
 			
 		ui.get_node('name_input').hide()
 		ui.get_node('text_box').disabled = false
@@ -813,9 +866,11 @@ func reset_state(reset_room):
 	ui.get_node('name_input/pronouns/they').pressed = true
 	
 	ui.get_node('name_input/custom_pronouns').hide()
-	ui.get_node('name_input/custom_pronouns/they').text = "they"
-	ui.get_node('name_input/custom_pronouns/them').text = "them"
-	ui.get_node('name_input/custom_pronouns/their').text = "their"
+	ui.get_node('name_input/custom_pronouns/inputs/0/they').text = "they"
+	ui.get_node('name_input/custom_pronouns/inputs/0/them').text = "them"
+	ui.get_node('name_input/custom_pronouns/inputs/0/their').text = "their"
+	ui.get_node('name_input/custom_pronouns/inputs/1/pronombre').text = "elle"
+	ui.get_node('name_input/custom_pronouns/inputs/1/terminacion').text = "e"
 	
 	state = {
 		'true': true

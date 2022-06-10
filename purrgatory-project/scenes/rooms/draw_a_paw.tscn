@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=2]
@@ -9,7 +9,7 @@
 [ext_resource path="res://scripts/draw_a_paw_knob.gd" type="Script" id=7]
 [ext_resource path="res://assets/sprites/draw_a_paw_knob.png" type="Texture" id=8]
 [ext_resource path="res://assets/ui/ttt_done.png" type="Texture" id=9]
-
+[ext_resource path="res://scripts/TranslatedLabel.gd" type="Script" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "shake"
@@ -170,7 +170,6 @@ margin_top = 333.882
 margin_right = 1254.75
 margin_bottom = 404.882
 focus_mode = 0
-mouse_default_cursor_shape = 0
 enabled_focus_mode = 0
 flat = true
 __meta__ = {
@@ -189,16 +188,16 @@ margin_right = 125.815
 margin_bottom = 53.9905
 rect_pivot_offset = Vector2( -555.677, -604.755 )
 text = "back"
+script = ExtResource( 10 )
+translations = [ "volver" ]
 
 [node name="erase_button" type="Button" parent="state_handler"]
-editor/display_folded = true
 anchor_right = 1.0
 margin_left = 22.3046
 margin_top = 332.99
 margin_right = 216.305
 margin_bottom = 403.99
 focus_mode = 0
-mouse_default_cursor_shape = 0
 enabled_focus_mode = 0
 flat = true
 __meta__ = {
@@ -218,6 +217,8 @@ margin_bottom = 52.9905
 rect_pivot_offset = Vector2( -555.677, -604.755 )
 text = "erase"
 align = 1
+script = ExtResource( 10 )
+translations = [ "borrar" ]
 [connection signal="draw" from="state_handler/paw/draw/draw_viewport/pen" to="state_handler/paw/draw/draw_viewport/pen" method="_on_draw"]
 [connection signal="button_down" from="state_handler/paw/left_knob" to="state_handler/paw/left_knob" method="_on_volume_button_down"]
 [connection signal="button_up" from="state_handler/paw/left_knob" to="state_handler/paw/left_knob" method="_on_volume_button_up"]

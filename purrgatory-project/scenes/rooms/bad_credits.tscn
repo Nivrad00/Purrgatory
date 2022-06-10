@@ -1324,7 +1324,6 @@ shuldyakov on turbosquid.com
 paul d. hunt"
 
 [node name="last" type="Control" parent="state_handler"]
-editor/display_folded = true
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
@@ -1371,6 +1370,8 @@ margin_bottom = 60.0
 text = "back"
 align = 1
 valign = 1
+script = ExtResource( 8 )
+translations = [ "volver" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler"]
 autoplay = "credits"

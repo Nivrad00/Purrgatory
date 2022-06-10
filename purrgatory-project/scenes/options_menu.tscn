@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/options_menu.gd" type="Script" id=2]
@@ -44,6 +44,12 @@ axis_stretch_horizontal = 1
 
 [sub_resource type="DynamicFont" id=8]
 size = 24
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 20
+use_filter = true
+extra_spacing_space = 1
 font_data = ExtResource( 4 )
 
 [node name="options_menu" type="Control"]
@@ -554,7 +560,7 @@ margin_left = 19.0
 margin_top = 681.0
 margin_right = 902.0
 margin_bottom = 737.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
 text = "note: some options not available in the web build"
 autowrap = true

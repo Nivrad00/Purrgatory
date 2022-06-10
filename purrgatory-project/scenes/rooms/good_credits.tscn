@@ -2139,6 +2139,8 @@ margin_bottom = 60.0
 text = "back"
 align = 1
 valign = 1
+script = ExtResource( 5 )
+translations = [ "volver" ]
 
 [node name="Label2" type="Label" parent="state_handler/last"]
 margin_top = 215.731
@@ -2147,6 +2149,8 @@ margin_bottom = 292.731
 text = "thanks for playing!"
 align = 1
 valign = 1
+script = ExtResource( 5 )
+translations = [ "¡gracias por jugar!" ]
 
 [node name="cat" type="TextureButton" parent="state_handler/last"]
 margin_left = 464.635

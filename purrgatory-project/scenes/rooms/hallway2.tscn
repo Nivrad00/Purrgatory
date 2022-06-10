@@ -133,7 +133,6 @@ animation1 = ExtResource( 16 )
 animation2 = ExtResource( 17 )
 
 [node name="done_button" type="Button" parent="state_handler"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 margin_left = 542.977

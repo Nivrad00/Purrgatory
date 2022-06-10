@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/wire_game.gd" type="Script" id=2]
@@ -15,8 +15,9 @@
 [ext_resource path="res://assets/sprites/wire_shelf.png" type="Texture" id=13]
 [ext_resource path="res://assets/ui/ok_button.png" type="Texture" id=14]
 [ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=15]
-[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=16]
-[ext_resource path="res://assets/rooms/wire_game.png" type="Texture" id=17]
+[ext_resource path="res://scripts/TranslatedLabel.gd" type="Script" id=16]
+[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=17]
+[ext_resource path="res://assets/rooms/wire_game.png" type="Texture" id=18]
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
@@ -1336,12 +1337,10 @@ align = 1
 valign = 1
 
 [node name="shelf" type="Sprite" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 1058.46, 348.237 )
 texture = ExtResource( 13 )
 
 [node name="skip" type="Button" parent="state_handler/shelf"]
-editor/display_folded = true
 margin_left = -42.2587
 margin_top = -26.5378
 margin_right = 16.7413
@@ -1360,35 +1359,38 @@ position = Vector2( 35.6935, 31.0452 )
 texture = ExtResource( 14 )
 
 [node name="Label" type="Label" parent="state_handler/shelf/skip"]
-margin_left = 0.0032959
-margin_top = 16.8675
-margin_right = 64.0033
-margin_bottom = 46.8675
+margin_top = 17.0
+margin_right = 61.0
+margin_bottom = 47.0
 rect_pivot_offset = Vector2( 66.313, 64.7428 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "skip"
 align = 1
 valign = 1
+script = ExtResource( 16 )
+translations = [ "saltar" ]
 
 [node name="sure?" type="Label" parent="state_handler/shelf"]
-editor/display_folded = true
 visible = false
-margin_left = -38.2552
-margin_top = -51.6703
-margin_right = 25.7448
-margin_bottom = -21.6703
+margin_left = -61.46
+margin_top = -52.237
+margin_right = 35.54
+margin_bottom = -22.237
+rect_scale = Vector2( 0.8, 0.8 )
 rect_pivot_offset = Vector2( 66.313, 64.7428 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "sure?"
 align = 1
 valign = 1
+script = ExtResource( 16 )
+translations = [ "¿abandonar?" ]
 
 [node name="yes" type="Button" parent="state_handler/shelf/sure?"]
-margin_left = -6.58301
+margin_left = 10.9218
 margin_top = 34.1911
-margin_right = 68.417
+margin_right = 85.9218
 margin_bottom = 61.1911
 focus_mode = 0
 enabled_focus_mode = 0
@@ -1399,7 +1401,7 @@ __meta__ = {
 
 [node name="menu_button" type="Sprite" parent="state_handler/shelf/sure?/yes"]
 position = Vector2( 37.3354, 13.2222 )
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 
 [node name="Label" type="Label" parent="state_handler/shelf/sure?/yes"]
 margin_left = 5.0033
@@ -1412,11 +1414,13 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "yes"
 align = 1
 valign = 1
+script = ExtResource( 16 )
+translations = [ "sí" ]
 
 [node name="no" type="Button" parent="state_handler/shelf/sure?"]
-margin_left = -6.58301
+margin_left = 10.9218
 margin_top = 75.1152
-margin_right = 68.417
+margin_right = 85.9218
 margin_bottom = 102.115
 focus_mode = 0
 enabled_focus_mode = 0
@@ -1427,7 +1431,7 @@ __meta__ = {
 
 [node name="menu_button" type="Sprite" parent="state_handler/shelf/sure?/no"]
 position = Vector2( 37.3354, 13.2222 )
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 
 [node name="Label" type="Label" parent="state_handler/shelf/sure?/no"]
 margin_left = 5.0033
@@ -1440,6 +1444,8 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "no"
 align = 1
 valign = 1
+script = ExtResource( 16 )
+translations = [ "no" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/shelf"]
 "anims/come out" = SubResource( 3 )
@@ -1449,7 +1455,7 @@ wait_time = 60.0
 one_shot = true
 
 [node name="fg" type="Sprite" parent="state_handler"]
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 centered = false
 __meta__ = {
 "_edit_lock_": true
@@ -1475,10 +1481,10 @@ margin_top = 718.295
 margin_right = 1280.13
 margin_bottom = 754.295
 mouse_filter = 2
-[connection signal="pressed" from="state_handler/shelf/skip" to="state_handler/shelf/skip" method="hide"]
 [connection signal="pressed" from="state_handler/shelf/skip" to="state_handler/shelf/sure?" method="show"]
+[connection signal="pressed" from="state_handler/shelf/skip" to="state_handler/shelf/skip" method="hide"]
 [connection signal="pressed" from="state_handler/shelf/sure?/yes" to="state_handler" method="skip"]
-[connection signal="pressed" from="state_handler/shelf/sure?/no" to="state_handler/shelf/skip" method="show"]
 [connection signal="pressed" from="state_handler/shelf/sure?/no" to="state_handler/shelf/sure?" method="hide"]
+[connection signal="pressed" from="state_handler/shelf/sure?/no" to="state_handler/shelf/skip" method="show"]
 [connection signal="timeout" from="state_handler/shelf/Timer" to="state_handler/shelf/AnimationPlayer" method="play" binds= [ "come out" ]]
 [connection signal="pressed" from="state_handler/cover2" to="state_handler" method="_on_cover2_pressed"]

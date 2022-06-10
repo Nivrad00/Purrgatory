@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=2]
+[gd_scene load_steps=121 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ss.tscn" type="PackedScene" id=2]
@@ -16,71 +16,72 @@
 [ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=15]
 [ext_resource path="res://pronoun_buttongroup.tres" type="ButtonGroup" id=16]
-[ext_resource path="res://assets/ui/ok_button.png" type="Texture" id=17]
-[ext_resource path="res://scripts/TranslatedLabel.gd" type="Script" id=18]
-[ext_resource path="res://assets/ui/pronoun_input_box.png" type="Texture" id=19]
-[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=20]
-[ext_resource path="res://assets/ui/text_box.png" type="Texture" id=21]
-[ext_resource path="res://assets/ui/narration_text_box.png" type="Texture" id=22]
-[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=23]
-[ext_resource path="res://assets/ui/small_menu_x.png" type="Texture" id=24]
-[ext_resource path="res://scripts/dropdown.gd" type="Script" id=25]
-[ext_resource path="res://assets/ui/dropdown_box.png" type="Texture" id=26]
-[ext_resource path="res://scripts/items_button.gd" type="Script" id=27]
-[ext_resource path="res://scripts/pause_menu.gd" type="Script" id=28]
-[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=29]
-[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=30]
-[ext_resource path="res://assets/sprites/icons/numa1.png" type="Texture" id=31]
-[ext_resource path="res://scripts/menu_icons.gd" type="Script" id=32]
-[ext_resource path="res://assets/sprites/icons/numa1_2.png" type="Texture" id=33]
-[ext_resource path="res://assets/sprites/icons/numa1_3.png" type="Texture" id=34]
-[ext_resource path="res://assets/sprites/icons/numa2.png" type="Texture" id=35]
-[ext_resource path="res://assets/sprites/icons/numa2_2.png" type="Texture" id=36]
-[ext_resource path="res://assets/sprites/icons/numa2_3.png" type="Texture" id=37]
-[ext_resource path="res://assets/sprites/icons/tori1_1.png" type="Texture" id=38]
-[ext_resource path="res://assets/sprites/icons/tori1_2.png" type="Texture" id=39]
-[ext_resource path="res://assets/sprites/icons/tori1_3.png" type="Texture" id=40]
-[ext_resource path="res://assets/sprites/icons/tori2_1.png" type="Texture" id=41]
-[ext_resource path="res://assets/sprites/icons/tori2_2.png" type="Texture" id=42]
-[ext_resource path="res://assets/sprites/icons/tori2_3.png" type="Texture" id=43]
-[ext_resource path="res://assets/sprites/icons/oliver1.png" type="Texture" id=44]
-[ext_resource path="res://assets/sprites/icons/oliver1_2.png" type="Texture" id=45]
-[ext_resource path="res://assets/sprites/icons/oliver1_3.png" type="Texture" id=46]
-[ext_resource path="res://assets/sprites/icons/oliver2.png" type="Texture" id=47]
-[ext_resource path="res://assets/sprites/icons/oliver2_2.png" type="Texture" id=48]
-[ext_resource path="res://assets/sprites/icons/oliver2_3.png" type="Texture" id=49]
-[ext_resource path="res://assets/sprites/icons/natalie1.png" type="Texture" id=50]
-[ext_resource path="res://assets/sprites/icons/natalie1_2.png" type="Texture" id=51]
-[ext_resource path="res://assets/sprites/icons/natalie1_3.png" type="Texture" id=52]
-[ext_resource path="res://assets/sprites/icons/natalie2.png" type="Texture" id=53]
-[ext_resource path="res://assets/sprites/icons/natalie2_2.png" type="Texture" id=54]
-[ext_resource path="res://assets/sprites/icons/natalie2_3.png" type="Texture" id=55]
-[ext_resource path="res://assets/sprites/icons/kyungsoon1.png" type="Texture" id=56]
-[ext_resource path="res://assets/sprites/icons/kyungsoon1_2.png" type="Texture" id=57]
-[ext_resource path="res://assets/sprites/icons/kyungsoon1_3.png" type="Texture" id=58]
-[ext_resource path="res://assets/sprites/icons/kyungsoon2.png" type="Texture" id=59]
-[ext_resource path="res://assets/sprites/icons/kyungsoon2_2.png" type="Texture" id=60]
-[ext_resource path="res://assets/sprites/icons/kyungsoon2_3.png" type="Texture" id=61]
-[ext_resource path="res://assets/sprites/icons/elijah1.png" type="Texture" id=62]
-[ext_resource path="res://assets/sprites/icons/elijah1_2.png" type="Texture" id=63]
-[ext_resource path="res://assets/sprites/icons/elijah1_3.png" type="Texture" id=64]
-[ext_resource path="res://assets/sprites/icons/elijah2.png" type="Texture" id=65]
-[ext_resource path="res://assets/sprites/icons/elijah2_2.png" type="Texture" id=66]
-[ext_resource path="res://assets/sprites/icons/elijah2_3.png" type="Texture" id=67]
-[ext_resource path="res://assets/sprites/icons/sean1.png" type="Texture" id=68]
-[ext_resource path="res://assets/sprites/icons/sean1_2.png" type="Texture" id=69]
-[ext_resource path="res://assets/sprites/icons/sean1_3.png" type="Texture" id=70]
-[ext_resource path="res://assets/sprites/icons/sean2.png" type="Texture" id=71]
-[ext_resource path="res://assets/sprites/icons/sean2_2.png" type="Texture" id=72]
-[ext_resource path="res://assets/sprites/icons/sean2_3.png" type="Texture" id=73]
-[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=74]
-[ext_resource path="res://scripts/saving_text.gd" type="Script" id=75]
-[ext_resource path="res://scenes/save_menu.tscn" type="PackedScene" id=76]
-[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=77]
-[ext_resource path="res://scripts/history.gd" type="Script" id=78]
-[ext_resource path="res://assets/ui/history.png" type="Texture" id=79]
-[ext_resource path="res://scripts/debug.gd" type="Script" id=80]
-[ext_resource path="res://scripts/negative_cover.gd" type="Script" id=81]
+[ext_resource path="res://scripts/TranslatedLabel.gd" type="Script" id=17]
+[ext_resource path="res://assets/ui/ok_button.png" type="Texture" id=18]
+[ext_resource path="res://scripts/TranslatedNode.gd" type="Script" id=19]
+[ext_resource path="res://assets/ui/pronoun_input_box.png" type="Texture" id=20]
+[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=21]
+[ext_resource path="res://assets/ui/text_box.png" type="Texture" id=22]
+[ext_resource path="res://assets/ui/narration_text_box.png" type="Texture" id=23]
+[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=24]
+[ext_resource path="res://assets/ui/small_menu_x.png" type="Texture" id=25]
+[ext_resource path="res://scripts/dropdown.gd" type="Script" id=26]
+[ext_resource path="res://assets/ui/dropdown_box.png" type="Texture" id=27]
+[ext_resource path="res://scripts/items_button.gd" type="Script" id=28]
+[ext_resource path="res://scripts/pause_menu.gd" type="Script" id=29]
+[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=30]
+[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprites/icons/numa1.png" type="Texture" id=32]
+[ext_resource path="res://scripts/menu_icons.gd" type="Script" id=33]
+[ext_resource path="res://assets/sprites/icons/numa1_2.png" type="Texture" id=34]
+[ext_resource path="res://assets/sprites/icons/numa1_3.png" type="Texture" id=35]
+[ext_resource path="res://assets/sprites/icons/numa2.png" type="Texture" id=36]
+[ext_resource path="res://assets/sprites/icons/numa2_2.png" type="Texture" id=37]
+[ext_resource path="res://assets/sprites/icons/numa2_3.png" type="Texture" id=38]
+[ext_resource path="res://assets/sprites/icons/tori1_1.png" type="Texture" id=39]
+[ext_resource path="res://assets/sprites/icons/tori1_2.png" type="Texture" id=40]
+[ext_resource path="res://assets/sprites/icons/tori1_3.png" type="Texture" id=41]
+[ext_resource path="res://assets/sprites/icons/tori2_1.png" type="Texture" id=42]
+[ext_resource path="res://assets/sprites/icons/tori2_2.png" type="Texture" id=43]
+[ext_resource path="res://assets/sprites/icons/tori2_3.png" type="Texture" id=44]
+[ext_resource path="res://assets/sprites/icons/oliver1.png" type="Texture" id=45]
+[ext_resource path="res://assets/sprites/icons/oliver1_2.png" type="Texture" id=46]
+[ext_resource path="res://assets/sprites/icons/oliver1_3.png" type="Texture" id=47]
+[ext_resource path="res://assets/sprites/icons/oliver2.png" type="Texture" id=48]
+[ext_resource path="res://assets/sprites/icons/oliver2_2.png" type="Texture" id=49]
+[ext_resource path="res://assets/sprites/icons/oliver2_3.png" type="Texture" id=50]
+[ext_resource path="res://assets/sprites/icons/natalie1.png" type="Texture" id=51]
+[ext_resource path="res://assets/sprites/icons/natalie1_2.png" type="Texture" id=52]
+[ext_resource path="res://assets/sprites/icons/natalie1_3.png" type="Texture" id=53]
+[ext_resource path="res://assets/sprites/icons/natalie2.png" type="Texture" id=54]
+[ext_resource path="res://assets/sprites/icons/natalie2_2.png" type="Texture" id=55]
+[ext_resource path="res://assets/sprites/icons/natalie2_3.png" type="Texture" id=56]
+[ext_resource path="res://assets/sprites/icons/kyungsoon1.png" type="Texture" id=57]
+[ext_resource path="res://assets/sprites/icons/kyungsoon1_2.png" type="Texture" id=58]
+[ext_resource path="res://assets/sprites/icons/kyungsoon1_3.png" type="Texture" id=59]
+[ext_resource path="res://assets/sprites/icons/kyungsoon2.png" type="Texture" id=60]
+[ext_resource path="res://assets/sprites/icons/kyungsoon2_2.png" type="Texture" id=61]
+[ext_resource path="res://assets/sprites/icons/kyungsoon2_3.png" type="Texture" id=62]
+[ext_resource path="res://assets/sprites/icons/elijah1.png" type="Texture" id=63]
+[ext_resource path="res://assets/sprites/icons/elijah1_2.png" type="Texture" id=64]
+[ext_resource path="res://assets/sprites/icons/elijah1_3.png" type="Texture" id=65]
+[ext_resource path="res://assets/sprites/icons/elijah2.png" type="Texture" id=66]
+[ext_resource path="res://assets/sprites/icons/elijah2_2.png" type="Texture" id=67]
+[ext_resource path="res://assets/sprites/icons/elijah2_3.png" type="Texture" id=68]
+[ext_resource path="res://assets/sprites/icons/sean1.png" type="Texture" id=69]
+[ext_resource path="res://assets/sprites/icons/sean1_2.png" type="Texture" id=70]
+[ext_resource path="res://assets/sprites/icons/sean1_3.png" type="Texture" id=71]
+[ext_resource path="res://assets/sprites/icons/sean2.png" type="Texture" id=72]
+[ext_resource path="res://assets/sprites/icons/sean2_2.png" type="Texture" id=73]
+[ext_resource path="res://assets/sprites/icons/sean2_3.png" type="Texture" id=74]
+[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=75]
+[ext_resource path="res://scripts/saving_text.gd" type="Script" id=76]
+[ext_resource path="res://scenes/save_menu.tscn" type="PackedScene" id=77]
+[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=78]
+[ext_resource path="res://scripts/history.gd" type="Script" id=79]
+[ext_resource path="res://assets/ui/history.png" type="Texture" id=80]
+[ext_resource path="res://scripts/debug.gd" type="Script" id=81]
+[ext_resource path="res://scripts/negative_cover.gd" type="Script" id=82]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("ss")
@@ -114,6 +115,12 @@ bg_color = Color( 1, 1, 1, 0 )
 [sub_resource type="StyleBoxEmpty" id=9]
 
 [sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="DynamicFont" id=38]
+size = 20
+use_filter = true
+extra_spacing_space = 1
+font_data = ExtResource( 14 )
 
 [sub_resource type="InputEventAction" id=11]
 action = "ui_select"
@@ -543,8 +550,6 @@ margin_right = 1075.0
 margin_bottom = 464.0
 
 [node name="name_input" type="Control" parent="content/ui"]
-editor/display_folded = true
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 299.0
@@ -598,22 +603,26 @@ margin_top = 18.563
 margin_right = 190.56
 margin_bottom = 52.563
 text = "they/them"
+script = ExtResource( 17 )
+translations = [ "elle/-e" ]
 
 [node name="she" type="CheckBox" parent="content/ui/name_input/pronouns"]
-margin_left = 215.0
+margin_left = 191.0
 margin_top = -3.0
-margin_right = 382.0
+margin_right = 358.0
 margin_bottom = 71.0
 focus_mode = 0
 enabled_focus_mode = 0
 group = ExtResource( 16 )
 
 [node name="she2" type="Label" parent="content/ui/name_input/pronouns"]
-margin_left = 280.56
+margin_left = 256.56
 margin_top = 18.563
-margin_right = 369.56
+margin_right = 345.56
 margin_bottom = 52.563
 text = "she/her"
+script = ExtResource( 17 )
+translations = [ "ella/-a" ]
 
 [node name="he" type="CheckBox" parent="content/ui/name_input/pronouns"]
 margin_left = 387.0
@@ -630,24 +639,29 @@ margin_top = 18.5625
 margin_right = 533.56
 margin_bottom = 52.5625
 text = "he/him"
+script = ExtResource( 17 )
+translations = [ "él/-o" ]
 
 [node name="custom" type="CheckBox" parent="content/ui/name_input/pronouns"]
-margin_left = 555.452
+margin_left = 560.0
 margin_top = -3.0
-margin_right = 719.452
+margin_right = 724.0
 margin_bottom = 71.0
 focus_mode = 0
 enabled_focus_mode = 0
 group = ExtResource( 16 )
 
 [node name="custom2" type="Label" parent="content/ui/name_input/pronouns"]
-margin_left = 619.845
+margin_left = 624.393
 margin_top = 18.5625
-margin_right = 706.845
+margin_right = 711.393
 margin_bottom = 52.5625
 text = "custom"
+script = ExtResource( 17 )
+translations = [ "personalizar" ]
 
 [node name="ok_button" type="Button" parent="content/ui/name_input"]
+editor/display_folded = true
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -663,7 +677,7 @@ flat = true
 
 [node name="Sprite" type="Sprite" parent="content/ui/name_input/ok_button"]
 position = Vector2( 38.5194, 31.0667 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="ok" type="Label" parent="content/ui/name_input/ok_button"]
 margin_left = 5.0
@@ -673,7 +687,7 @@ margin_bottom = 61.0
 text = "ok"
 align = 1
 valign = 1
-script = ExtResource( 18 )
+script = ExtResource( 17 )
 translations = [ "listo" ]
 
 [node name="custom_pronouns" type="Control" parent="content/ui/name_input"]
@@ -689,11 +703,24 @@ margin_right = -296.546
 margin_bottom = -180.465
 rect_scale = Vector2( 33.8985, 19.0842 )
 
-[node name="they" type="LineEdit" parent="content/ui/name_input/custom_pronouns"]
-margin_left = 309.0
-margin_top = -97.0
-margin_right = 438.0
-margin_bottom = -50.0
+[node name="inputs" type="Control" parent="content/ui/name_input/custom_pronouns"]
+margin_left = -336.546
+margin_top = -220.465
+margin_right = -296.546
+margin_bottom = -180.465
+script = ExtResource( 19 )
+
+[node name="0" type="Control" parent="content/ui/name_input/custom_pronouns/inputs"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="they" type="LineEdit" parent="content/ui/name_input/custom_pronouns/inputs/0"]
+editor/display_folded = true
+margin_left = 645.546
+margin_top = 123.465
+margin_right = 774.546
+margin_bottom = 170.465
 rect_pivot_offset = Vector2( -341.701, 118.831 )
 focus_mode = 1
 custom_styles/focus = SubResource( 7 )
@@ -705,15 +732,15 @@ focus_mode = 1
 context_menu_enabled = false
 caret_blink = true
 
-[node name="TextureRect" type="TextureRect" parent="content/ui/name_input/custom_pronouns/they"]
+[node name="TextureRect" type="TextureRect" parent="content/ui/name_input/custom_pronouns/inputs/0/they"]
 show_behind_parent = true
 margin_left = -19.0
 margin_top = -6.0
 margin_right = 157.0
 margin_bottom = 54.0
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 
-[node name="Label" type="Label" parent="content/ui/name_input/custom_pronouns/they"]
+[node name="Label" type="Label" parent="content/ui/name_input/custom_pronouns/inputs/0/they"]
 margin_left = -95.0
 margin_top = 6.14563
 margin_right = -25.0
@@ -721,11 +748,12 @@ margin_bottom = 40.1456
 text = "they"
 align = 2
 
-[node name="them" type="LineEdit" parent="content/ui/name_input/custom_pronouns"]
-margin_left = 309.0
-margin_top = -36.0
-margin_right = 438.0
-margin_bottom = 11.0
+[node name="them" type="LineEdit" parent="content/ui/name_input/custom_pronouns/inputs/0"]
+editor/display_folded = true
+margin_left = 645.546
+margin_top = 184.465
+margin_right = 774.546
+margin_bottom = 231.465
 rect_pivot_offset = Vector2( -341.701, 57.8306 )
 focus_mode = 1
 custom_styles/focus = SubResource( 9 )
@@ -737,15 +765,15 @@ focus_mode = 1
 context_menu_enabled = false
 caret_blink = true
 
-[node name="TextureRect" type="TextureRect" parent="content/ui/name_input/custom_pronouns/them"]
+[node name="TextureRect" type="TextureRect" parent="content/ui/name_input/custom_pronouns/inputs/0/them"]
 show_behind_parent = true
 margin_left = -19.0
 margin_top = -6.0
 margin_right = 157.0
 margin_bottom = 54.0
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 
-[node name="Label2" type="Label" parent="content/ui/name_input/custom_pronouns/them"]
+[node name="Label2" type="Label" parent="content/ui/name_input/custom_pronouns/inputs/0/them"]
 margin_left = -95.0
 margin_top = 6.0192
 margin_right = -25.0
@@ -754,11 +782,12 @@ text = "them"
 align = 2
 clip_text = true
 
-[node name="their" type="LineEdit" parent="content/ui/name_input/custom_pronouns"]
-margin_left = 309.0
-margin_top = 25.0
-margin_right = 438.0
-margin_bottom = 72.0
+[node name="their" type="LineEdit" parent="content/ui/name_input/custom_pronouns/inputs/0"]
+editor/display_folded = true
+margin_left = 645.546
+margin_top = 245.465
+margin_right = 774.546
+margin_bottom = 292.465
 rect_pivot_offset = Vector2( -341.701, -3.16943 )
 focus_mode = 1
 custom_styles/focus = SubResource( 9 )
@@ -770,15 +799,15 @@ focus_mode = 1
 context_menu_enabled = false
 caret_blink = true
 
-[node name="TextureRect" type="TextureRect" parent="content/ui/name_input/custom_pronouns/their"]
+[node name="TextureRect" type="TextureRect" parent="content/ui/name_input/custom_pronouns/inputs/0/their"]
 show_behind_parent = true
 margin_left = -19.0
 margin_top = -6.0
 margin_right = 157.0
 margin_bottom = 54.0
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 
-[node name="Label2" type="Label" parent="content/ui/name_input/custom_pronouns/their"]
+[node name="Label2" type="Label" parent="content/ui/name_input/custom_pronouns/inputs/0/their"]
 margin_left = -95.0
 margin_top = 7.14563
 margin_right = -25.0
@@ -787,7 +816,92 @@ text = "their"
 align = 2
 clip_text = true
 
+[node name="1" type="Control" parent="content/ui/name_input/custom_pronouns/inputs"]
+margin_left = 28.546
+margin_top = -30.535
+margin_right = 68.546
+margin_bottom = 9.465
+
+[node name="pronombre" type="LineEdit" parent="content/ui/name_input/custom_pronouns/inputs/1"]
+margin_left = 645.546
+margin_top = 155.465
+margin_right = 774.546
+margin_bottom = 202.465
+rect_pivot_offset = Vector2( -341.701, 118.831 )
+focus_mode = 1
+custom_styles/focus = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+text = "elle"
+max_length = 10
+focus_mode = 1
+context_menu_enabled = false
+caret_blink = true
+
+[node name="TextureRect" type="TextureRect" parent="content/ui/name_input/custom_pronouns/inputs/1/pronombre"]
+show_behind_parent = true
+margin_left = -19.0
+margin_top = -6.0
+margin_right = 157.0
+margin_bottom = 54.0
+texture = ExtResource( 20 )
+
+[node name="Label" type="Label" parent="content/ui/name_input/custom_pronouns/inputs/1/pronombre"]
+margin_left = -434.0
+margin_top = 6.0
+margin_right = -24.0
+margin_bottom = 40.0
+text = "pronombre"
+align = 2
+
+[node name="terminacion" type="LineEdit" parent="content/ui/name_input/custom_pronouns/inputs/1"]
+editor/display_folded = true
+margin_left = 645.546
+margin_top = 216.465
+margin_right = 774.546
+margin_bottom = 263.465
+rect_pivot_offset = Vector2( -341.701, 57.8306 )
+focus_mode = 1
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+text = "e"
+max_length = 10
+focus_mode = 1
+context_menu_enabled = false
+caret_blink = true
+
+[node name="TextureRect" type="TextureRect" parent="content/ui/name_input/custom_pronouns/inputs/1/terminacion"]
+show_behind_parent = true
+margin_left = -19.0
+margin_top = -6.0
+margin_right = 157.0
+margin_bottom = 54.0
+texture = ExtResource( 20 )
+
+[node name="Label2" type="Label" parent="content/ui/name_input/custom_pronouns/inputs/1/terminacion"]
+margin_left = -435.0
+margin_top = 6.0
+margin_right = -25.0
+margin_bottom = 40.0
+text = "terminación"
+align = 2
+clip_text = true
+
+[node name="disclaimer" type="Label" parent="content/ui/name_input/custom_pronouns/inputs/1"]
+margin_left = 408.0
+margin_top = 287.0
+margin_right = 891.0
+margin_bottom = 343.0
+custom_fonts/font = SubResource( 38 )
+custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+text = "atención: la terminación que elijas podría no adaptarse bien a las reglas gramaticales de la lengua"
+align = 1
+valign = 1
+autowrap = true
+
 [node name="back" type="Button" parent="content/ui/name_input/custom_pronouns"]
+editor/display_folded = true
 margin_left = 211.573
 margin_top = 146.731
 margin_right = 466.573
@@ -801,7 +915,7 @@ margin_left = -5.78436
 margin_top = -4.97546
 margin_right = 262.216
 margin_bottom = 64.0245
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 
 [node name="Label" type="Label" parent="content/ui/name_input/custom_pronouns/back"]
 margin_right = 256.0
@@ -809,6 +923,8 @@ margin_bottom = 59.0
 text = "back"
 align = 1
 valign = 1
+script = ExtResource( 17 )
+translations = [ "volver" ]
 
 [node name="text_box" type="Button" parent="content/ui"]
 editor/display_folded = true
@@ -826,13 +942,13 @@ flat = true
 
 [node name="speech_box" type="Sprite" parent="content/ui/text_box"]
 position = Vector2( 20, 10 )
-texture = ExtResource( 21 )
+texture = ExtResource( 22 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
 [node name="narration_box" type="Sprite" parent="content/ui/text_box"]
 position = Vector2( 20, 10 )
-texture = ExtResource( 22 )
+texture = ExtResource( 23 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -871,14 +987,14 @@ flat = true
 
 [node name="box2" type="Sprite" parent="content/ui/skip_button"]
 position = Vector2( 2.2108, 1.67036 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
 [node name="x" type="Sprite" parent="content/ui/skip_button"]
 visible = false
 position = Vector2( 2.2108, 1.67036 )
-texture = ExtResource( 24 )
+texture = ExtResource( 25 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -890,7 +1006,7 @@ custom_fonts/font = SubResource( 16 )
 text = "skip"
 align = 1
 valign = 1
-script = ExtResource( 18 )
+script = ExtResource( 17 )
 translations = [ "saltar" ]
 
 [node name="history_button" type="Button" parent="content/ui"]
@@ -909,7 +1025,7 @@ flat = true
 
 [node name="box2" type="Sprite" parent="content/ui/history_button"]
 position = Vector2( 2.2108, 1.67036 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -921,7 +1037,7 @@ custom_fonts/font = SubResource( 16 )
 text = "history"
 align = 1
 valign = 1
-script = ExtResource( 18 )
+script = ExtResource( 17 )
 translations = [ "historial" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="content/ui"]
@@ -960,7 +1076,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/menu_button"]
 position = Vector2( 2.2108, 1.67036 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -972,7 +1088,7 @@ custom_fonts/font = SubResource( 16 )
 text = "menu"
 align = 1
 valign = 1
-script = ExtResource( 18 )
+script = ExtResource( 17 )
 translations = [ "menú" ]
 
 [node name="dropdown" type="Control" parent="meta_ui"]
@@ -981,11 +1097,11 @@ margin_left = 163.458
 margin_top = -284.152
 margin_right = 1280.46
 margin_bottom = -5.0
-script = ExtResource( 25 )
+script = ExtResource( 26 )
 
 [node name="dropdown_box" type="Sprite" parent="meta_ui/dropdown"]
 position = Vector2( -23.9236, 0 )
-texture = ExtResource( 26 )
+texture = ExtResource( 27 )
 centered = false
 
 [node name="inv_container" type="HBoxContainer" parent="meta_ui/dropdown"]
@@ -1049,7 +1165,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/notes_button"]
 position = Vector2( 2.2108, 1.67036 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -1061,7 +1177,7 @@ custom_fonts/font = SubResource( 16 )
 text = "to do"
 align = 1
 valign = 1
-script = ExtResource( 18 )
+script = ExtResource( 17 )
 translations = [ "tareas" ]
 
 [node name="items_button" type="Button" parent="meta_ui"]
@@ -1076,14 +1192,14 @@ shortcut_in_tooltip = false
 enabled_focus_mode = 0
 shortcut = SubResource( 30 )
 flat = true
-script = ExtResource( 27 )
+script = ExtResource( 28 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="box2" type="Sprite" parent="meta_ui/items_button"]
 position = Vector2( 2.2108, 1.67036 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -1095,7 +1211,7 @@ custom_fonts/font = SubResource( 16 )
 text = "items"
 align = 1
 valign = 1
-script = ExtResource( 18 )
+script = ExtResource( 17 )
 translations = [ "objetos" ]
 
 [node name="flash_timer" type="Timer" parent="meta_ui/items_button"]
@@ -1121,7 +1237,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/history_button2"]
 position = Vector2( 2.2108, 1.67036 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -1133,7 +1249,7 @@ custom_fonts/font = SubResource( 16 )
 text = "history"
 align = 1
 valign = 1
-script = ExtResource( 18 )
+script = ExtResource( 17 )
 translations = [ "historial" ]
 
 [node name="pause_menu" type="Control" parent="meta_ui"]
@@ -1141,7 +1257,7 @@ visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 rect_pivot_offset = Vector2( -460, 150 )
-script = ExtResource( 28 )
+script = ExtResource( 29 )
 
 [node name="white" type="ColorRect" parent="meta_ui/pause_menu"]
 anchor_right = 1.0
@@ -1170,7 +1286,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/buttons/save"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -1182,7 +1298,7 @@ margin_bottom = 58.0
 text = "save"
 align = 1
 valign = 1
-script = ExtResource( 18 )
+script = ExtResource( 17 )
 translations = [ "guardar" ]
 
 [node name="load" type="Button" parent="meta_ui/pause_menu/buttons"]
@@ -1202,7 +1318,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/buttons/load"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 29 )
+texture = ExtResource( 30 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -1214,7 +1330,7 @@ margin_bottom = 58.0
 text = "load"
 align = 1
 valign = 1
-script = ExtResource( 18 )
+script = ExtResource( 17 )
 translations = [ "cargar" ]
 
 [node name="options" type="Button" parent="meta_ui/pause_menu/buttons"]
@@ -1234,7 +1350,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/buttons/options"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 30 )
+texture = ExtResource( 31 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
@@ -1248,7 +1364,7 @@ margin_bottom = 58.0
 text = "options"
 align = 1
 valign = 1
-script = ExtResource( 18 )
+script = ExtResource( 17 )
 translations = [ "opciones" ]
 
 [node name="exit" type="Button" parent="meta_ui/pause_menu/buttons"]
@@ -1268,7 +1384,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/buttons/exit"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
@@ -1282,7 +1398,7 @@ margin_bottom = 58.0
 text = "exit to main menu"
 align = 1
 valign = 1
-script = ExtResource( 18 )
+script = ExtResource( 17 )
 translations = [ "volver al menú principal" ]
 
 [node name="back" type="Button" parent="meta_ui/pause_menu/buttons"]
@@ -1303,7 +1419,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/pause_menu/buttons/back"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 29 )
+texture = ExtResource( 30 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
@@ -1317,7 +1433,7 @@ margin_bottom = 58.0
 text = "back"
 align = 1
 valign = 1
-script = ExtResource( 18 )
+script = ExtResource( 17 )
 translations = [ "volver" ]
 
 [node name="icons" type="HBoxContainer" parent="meta_ui/pause_menu"]
@@ -1334,143 +1450,143 @@ alignment = 1
 margin_left = 12.0
 margin_right = 98.0
 margin_bottom = 100.0
-texture = ExtResource( 31 )
-script = ExtResource( 32 )
-animation0 = ExtResource( 31 )
-animation1 = ExtResource( 33 )
-animation2 = ExtResource( 34 )
+texture = ExtResource( 32 )
+script = ExtResource( 33 )
+animation0 = ExtResource( 32 )
+animation1 = ExtResource( 34 )
+animation2 = ExtResource( 35 )
 
 [node name="numa2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 102.0
 margin_right = 188.0
 margin_bottom = 100.0
-texture = ExtResource( 35 )
-script = ExtResource( 32 )
-animation0 = ExtResource( 35 )
-animation1 = ExtResource( 36 )
-animation2 = ExtResource( 37 )
+texture = ExtResource( 36 )
+script = ExtResource( 33 )
+animation0 = ExtResource( 36 )
+animation1 = ExtResource( 37 )
+animation2 = ExtResource( 38 )
 
 [node name="tori1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 192.0
 margin_right = 278.0
 margin_bottom = 100.0
-texture = ExtResource( 38 )
-script = ExtResource( 32 )
-animation0 = ExtResource( 38 )
-animation1 = ExtResource( 39 )
-animation2 = ExtResource( 40 )
+texture = ExtResource( 39 )
+script = ExtResource( 33 )
+animation0 = ExtResource( 39 )
+animation1 = ExtResource( 40 )
+animation2 = ExtResource( 41 )
 
 [node name="tori2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 282.0
 margin_right = 368.0
 margin_bottom = 100.0
-texture = ExtResource( 41 )
-script = ExtResource( 32 )
-animation0 = ExtResource( 41 )
-animation1 = ExtResource( 42 )
-animation2 = ExtResource( 43 )
+texture = ExtResource( 42 )
+script = ExtResource( 33 )
+animation0 = ExtResource( 42 )
+animation1 = ExtResource( 43 )
+animation2 = ExtResource( 44 )
 
 [node name="oliver1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 372.0
 margin_right = 458.0
 margin_bottom = 100.0
-texture = ExtResource( 44 )
-script = ExtResource( 32 )
-animation0 = ExtResource( 44 )
-animation1 = ExtResource( 45 )
-animation2 = ExtResource( 46 )
+texture = ExtResource( 45 )
+script = ExtResource( 33 )
+animation0 = ExtResource( 45 )
+animation1 = ExtResource( 46 )
+animation2 = ExtResource( 47 )
 
 [node name="oliver2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 462.0
 margin_right = 548.0
 margin_bottom = 100.0
-texture = ExtResource( 47 )
-script = ExtResource( 32 )
-animation0 = ExtResource( 47 )
-animation1 = ExtResource( 48 )
-animation2 = ExtResource( 49 )
+texture = ExtResource( 48 )
+script = ExtResource( 33 )
+animation0 = ExtResource( 48 )
+animation1 = ExtResource( 49 )
+animation2 = ExtResource( 50 )
 
 [node name="natalie1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 552.0
 margin_right = 638.0
 margin_bottom = 100.0
-texture = ExtResource( 50 )
-script = ExtResource( 32 )
-animation0 = ExtResource( 50 )
-animation1 = ExtResource( 51 )
-animation2 = ExtResource( 52 )
+texture = ExtResource( 51 )
+script = ExtResource( 33 )
+animation0 = ExtResource( 51 )
+animation1 = ExtResource( 52 )
+animation2 = ExtResource( 53 )
 
 [node name="natalie2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 642.0
 margin_right = 728.0
 margin_bottom = 100.0
-texture = ExtResource( 53 )
-script = ExtResource( 32 )
-animation0 = ExtResource( 53 )
-animation1 = ExtResource( 54 )
-animation2 = ExtResource( 55 )
+texture = ExtResource( 54 )
+script = ExtResource( 33 )
+animation0 = ExtResource( 54 )
+animation1 = ExtResource( 55 )
+animation2 = ExtResource( 56 )
 
 [node name="kyungsoon1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 732.0
 margin_right = 818.0
 margin_bottom = 100.0
-texture = ExtResource( 56 )
-script = ExtResource( 32 )
-animation0 = ExtResource( 56 )
-animation1 = ExtResource( 57 )
-animation2 = ExtResource( 58 )
+texture = ExtResource( 57 )
+script = ExtResource( 33 )
+animation0 = ExtResource( 57 )
+animation1 = ExtResource( 58 )
+animation2 = ExtResource( 59 )
 
 [node name="kyungsoon2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 822.0
 margin_right = 908.0
 margin_bottom = 100.0
-texture = ExtResource( 59 )
-script = ExtResource( 32 )
-animation0 = ExtResource( 59 )
-animation1 = ExtResource( 60 )
-animation2 = ExtResource( 61 )
+texture = ExtResource( 60 )
+script = ExtResource( 33 )
+animation0 = ExtResource( 60 )
+animation1 = ExtResource( 61 )
+animation2 = ExtResource( 62 )
 
 [node name="elijah1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 912.0
 margin_right = 998.0
 margin_bottom = 100.0
-texture = ExtResource( 62 )
-script = ExtResource( 32 )
-animation0 = ExtResource( 62 )
-animation1 = ExtResource( 63 )
-animation2 = ExtResource( 64 )
+texture = ExtResource( 63 )
+script = ExtResource( 33 )
+animation0 = ExtResource( 63 )
+animation1 = ExtResource( 64 )
+animation2 = ExtResource( 65 )
 
 [node name="elijah2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 1002.0
 margin_right = 1088.0
 margin_bottom = 100.0
-texture = ExtResource( 65 )
-script = ExtResource( 32 )
-animation0 = ExtResource( 65 )
-animation1 = ExtResource( 66 )
-animation2 = ExtResource( 67 )
+texture = ExtResource( 66 )
+script = ExtResource( 33 )
+animation0 = ExtResource( 66 )
+animation1 = ExtResource( 67 )
+animation2 = ExtResource( 68 )
 
 [node name="sean1" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 1092.0
 margin_right = 1178.0
 margin_bottom = 100.0
-texture = ExtResource( 68 )
-script = ExtResource( 32 )
-animation0 = ExtResource( 68 )
-animation1 = ExtResource( 69 )
-animation2 = ExtResource( 70 )
+texture = ExtResource( 69 )
+script = ExtResource( 33 )
+animation0 = ExtResource( 69 )
+animation1 = ExtResource( 70 )
+animation2 = ExtResource( 71 )
 
 [node name="sean2" type="TextureRect" parent="meta_ui/pause_menu/icons"]
 margin_left = 1182.0
 margin_right = 1268.0
 margin_bottom = 100.0
-texture = ExtResource( 71 )
-script = ExtResource( 32 )
-animation0 = ExtResource( 71 )
-animation1 = ExtResource( 72 )
-animation2 = ExtResource( 73 )
+texture = ExtResource( 72 )
+script = ExtResource( 33 )
+animation0 = ExtResource( 72 )
+animation1 = ExtResource( 73 )
+animation2 = ExtResource( 74 )
 
-[node name="options_menu" parent="meta_ui" instance=ExtResource( 74 )]
+[node name="options_menu" parent="meta_ui" instance=ExtResource( 75 )]
 visible = false
 
 [node name="exit_confirm" type="Control" parent="meta_ui"]
@@ -1494,7 +1610,7 @@ bbcode_enabled = true
 bbcode_text = "[center]are you sure? unsaved progress will be lost.[/center]"
 text = "are you sure? unsaved progress will be lost."
 scroll_active = false
-script = ExtResource( 18 )
+script = ExtResource( 17 )
 translations = [ "[center]recuerda: todo el progreso no guardado se perderá.[/center]" ]
 
 [node name="yes" type="Button" parent="meta_ui/exit_confirm"]
@@ -1513,7 +1629,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/exit_confirm/yes"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -1525,7 +1641,7 @@ margin_bottom = 58.0
 text = "yes"
 align = 1
 valign = 1
-script = ExtResource( 18 )
+script = ExtResource( 17 )
 translations = [ "aceptar" ]
 
 [node name="no" type="Button" parent="meta_ui/exit_confirm"]
@@ -1544,7 +1660,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/exit_confirm/no"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 29 )
+texture = ExtResource( 30 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -1556,7 +1672,7 @@ margin_bottom = 58.0
 text = "no"
 align = 1
 valign = 1
-script = ExtResource( 18 )
+script = ExtResource( 17 )
 translations = [ "cancelar" ]
 
 [node name="save_confirm" type="Control" parent="meta_ui"]
@@ -1577,7 +1693,7 @@ margin_bottom = 436.825
 mouse_filter = 1
 text = "game saved."
 align = 1
-script = ExtResource( 18 )
+script = ExtResource( 17 )
 translations = [ "partida guardada." ]
 
 [node name="yes" type="Button" parent="meta_ui/save_confirm"]
@@ -1597,7 +1713,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/save_confirm/yes"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -1609,7 +1725,7 @@ margin_bottom = 58.0
 text = "back"
 align = 1
 valign = 1
-script = ExtResource( 18 )
+script = ExtResource( 17 )
 translations = [ "volver" ]
 
 [node name="save_waiting" type="Control" parent="meta_ui"]
@@ -1631,14 +1747,14 @@ mouse_filter = 1
 text = "guardando...
 ¡no cierres el juego todavía!"
 align = 1
-script = ExtResource( 75 )
+script = ExtResource( 76 )
 translations = [ "guardando...\\n¡no cierres el juego todavía!" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="meta_ui/save_waiting/text2"]
 anims/guardando... = SubResource( 33 )
 anims/saving.. = SubResource( 34 )
 
-[node name="save_menu" parent="meta_ui" instance=ExtResource( 76 )]
+[node name="save_menu" parent="meta_ui" instance=ExtResource( 77 )]
 visible = false
 margin_left = -0.418121
 margin_top = -0.418091
@@ -1663,7 +1779,7 @@ margin_bottom = 436.825
 mouse_filter = 1
 text = "game loaded."
 align = 1
-script = ExtResource( 18 )
+script = ExtResource( 17 )
 translations = [ "partida cargada." ]
 
 [node name="yes" type="Button" parent="meta_ui/load_confirm"]
@@ -1683,7 +1799,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/load_confirm/yes"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -1695,10 +1811,10 @@ margin_bottom = 58.0
 text = "continue"
 align = 1
 valign = 1
-script = ExtResource( 18 )
+script = ExtResource( 17 )
 translations = [ "continuar" ]
 
-[node name="load_menu" parent="meta_ui" instance=ExtResource( 77 )]
+[node name="load_menu" parent="meta_ui" instance=ExtResource( 78 )]
 visible = false
 
 [node name="history" type="Control" parent="meta_ui"]
@@ -1706,10 +1822,10 @@ visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 rect_pivot_offset = Vector2( -460, 150 )
-script = ExtResource( 78 )
+script = ExtResource( 79 )
 
 [node name="bg" type="Sprite" parent="meta_ui/history"]
-texture = ExtResource( 79 )
+texture = ExtResource( 80 )
 centered = false
 
 [node name="back" type="Button" parent="meta_ui/history"]
@@ -1730,7 +1846,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="meta_ui/history/back"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 29 )
+texture = ExtResource( 30 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 flip_h = true
@@ -1744,7 +1860,7 @@ margin_bottom = 58.0
 text = "back"
 align = 1
 valign = 1
-script = ExtResource( 18 )
+script = ExtResource( 17 )
 translations = [ "volver" ]
 
 [node name="container" type="ScrollContainer" parent="meta_ui/history"]
@@ -1765,7 +1881,7 @@ margin_top = 23.2134
 margin_right = 40.0
 margin_bottom = 63.2134
 rect_scale = Vector2( 0.7, 0.7 )
-script = ExtResource( 80 )
+script = ExtResource( 81 )
 
 [node name="LineEdit" type="LineEdit" parent="meta_ui/debug"]
 margin_left = 36.0
@@ -1846,7 +1962,7 @@ anchor_bottom = 1.0
 margin_right = 1280.0
 margin_bottom = 720.0
 mouse_filter = 2
-script = ExtResource( 81 )
+script = ExtResource( 82 )
 
 [node name="negative_cover2" type="ColorRect" parent="."]
 visible = false
@@ -1857,14 +1973,16 @@ color = Color( 0, 0, 0, 1 )
 [connection signal="timeout" from="skip_timer" to="." method="update_dialog" binds= [ -1 ]]
 [connection signal="pressed" from="content/ui/name_input/pronouns/custom" to="content/ui/name_input/custom_pronouns" method="show"]
 [connection signal="pressed" from="content/ui/name_input/ok_button" to="." method="set_player_name"]
-[connection signal="focus_exited" from="content/ui/name_input/custom_pronouns/they" to="content/ui/name_input/custom_pronouns/they" method="deselect"]
-[connection signal="focus_exited" from="content/ui/name_input/custom_pronouns/them" to="content/ui/name_input/custom_pronouns/them" method="deselect"]
-[connection signal="focus_exited" from="content/ui/name_input/custom_pronouns/their" to="content/ui/name_input/custom_pronouns/their" method="deselect"]
+[connection signal="focus_exited" from="content/ui/name_input/custom_pronouns/inputs/0/they" to="content/ui/name_input/custom_pronouns/inputs/0/they" method="deselect"]
+[connection signal="focus_exited" from="content/ui/name_input/custom_pronouns/inputs/0/them" to="content/ui/name_input/custom_pronouns/inputs/0/them" method="deselect"]
+[connection signal="focus_exited" from="content/ui/name_input/custom_pronouns/inputs/0/their" to="content/ui/name_input/custom_pronouns/inputs/0/their" method="deselect"]
+[connection signal="focus_exited" from="content/ui/name_input/custom_pronouns/inputs/1/pronombre" to="content/ui/name_input/custom_pronouns/inputs/1/pronombre" method="deselect"]
+[connection signal="focus_exited" from="content/ui/name_input/custom_pronouns/inputs/1/terminacion" to="content/ui/name_input/custom_pronouns/inputs/1/terminacion" method="deselect"]
 [connection signal="pressed" from="content/ui/name_input/custom_pronouns/back" to="content/ui/name_input/custom_pronouns" method="hide"]
 [connection signal="pressed" from="content/ui/text_box" to="." method="update_dialog_button_clicked"]
 [connection signal="pressed" from="content/ui/skip_button" to="." method="toggle_skip"]
-[connection signal="pressed" from="content/ui/history_button" to="." method="turn_off_skip"]
 [connection signal="pressed" from="content/ui/history_button" to="meta_ui/history" method="toggle"]
+[connection signal="pressed" from="content/ui/history_button" to="." method="turn_off_skip"]
 [connection signal="mouse_entered" from="meta_ui/menu_button" to="content/room" method="stop_all_hovering"]
 [connection signal="mouse_exited" from="meta_ui/menu_button" to="content/room" method="start_all_hovering"]
 [connection signal="pressed" from="meta_ui/menu_button" to="." method="toggle_pause_menu"]
@@ -1882,8 +2000,8 @@ color = Color( 0, 0, 0, 1 )
 [connection signal="pressed" from="meta_ui/items_button" to="meta_ui/dropdown" method="toggle_items"]
 [connection signal="mouse_entered" from="meta_ui/history_button2" to="content/room" method="stop_all_hovering"]
 [connection signal="mouse_exited" from="meta_ui/history_button2" to="content/room" method="start_all_hovering"]
-[connection signal="pressed" from="meta_ui/history_button2" to="." method="turn_off_skip"]
 [connection signal="pressed" from="meta_ui/history_button2" to="meta_ui/history" method="toggle"]
+[connection signal="pressed" from="meta_ui/history_button2" to="." method="turn_off_skip"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/save" to="meta_ui/menu_button" method="hide"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/save" to="meta_ui/save_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/load" to="meta_ui/menu_button" method="hide"]
@@ -1894,19 +2012,19 @@ color = Color( 0, 0, 0, 1 )
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/exit" to="meta_ui/exit_confirm" method="show"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/back" to="." method="close_pause_menu"]
 [connection signal="hiding" from="meta_ui/options_menu" to="meta_ui/menu_button" method="show"]
-[connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/dropdown" method="format_quests"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
+[connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
 [connection signal="pressed" from="meta_ui/exit_confirm/yes" to="." method="return_to_main"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/menu_button" method="show"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
-[connection signal="pressed" from="meta_ui/save_confirm/yes" to="." method="save_confirmed"]
 [connection signal="pressed" from="meta_ui/save_confirm/yes" to="meta_ui/menu_button" method="show"]
+[connection signal="pressed" from="meta_ui/save_confirm/yes" to="." method="save_confirmed"]
 [connection signal="deleted_data" from="meta_ui/save_menu" to="." method="deleted_data"]
 [connection signal="hiding" from="meta_ui/save_menu" to="meta_ui/menu_button" method="show"]
 [connection signal="save_file" from="meta_ui/save_menu" to="." method="save"]
-[connection signal="pressed" from="meta_ui/load_confirm/yes" to="." method="load_confirmed"]
 [connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/menu_button" method="show"]
+[connection signal="pressed" from="meta_ui/load_confirm/yes" to="." method="load_confirmed"]
 [connection signal="deleted_data" from="meta_ui/load_menu" to="." method="deleted_data"]
 [connection signal="hiding" from="meta_ui/load_menu" to="meta_ui/menu_button" method="show"]
 [connection signal="load_file" from="meta_ui/load_menu" to="." method="load_game_while_playing"]

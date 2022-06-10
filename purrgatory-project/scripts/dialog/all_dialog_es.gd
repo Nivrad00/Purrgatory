@@ -6529,7 +6529,7 @@ var raw_blocks = [
 ["","???","","un momento","","","","","",""],
 ["","","","¿tú quién eres?","","","","","",""],
 ["","you","","¡me llamo {player}! soy nuev{o/a/e} aquí.","","","","","",""],
-["","???","","… o sea, ¿¿que acaba de llegar y ya l{a/o/e} has arrastrado a uno de tus RIDÍCULOS PLANES??","","","","","",""],
+["","???","","… o sea, ¿¿que acaba de llegar y ya l{o/a/e} has arrastrado a uno de tus RIDÍCULOS PLANES??","","","","","",""],
 ["","tori","","oye, ¡que se ofreció voluntar{o/a/e}!","","","","","",""],
 ["","","","… y mis planes no son ridículos.","","","","","",""],
 ["","_none","","el caracol cierra los ojos.","","","","","",""],
