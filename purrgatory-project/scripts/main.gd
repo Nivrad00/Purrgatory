@@ -22,12 +22,14 @@ func _ready():
 	if web_build:
 		$main_menu/buttons/exit.hide()
 		$main_menu.rect_position.y = 17
+		$main_menu/language.rect_position.y = 616
 		$credits/ScrollContainer/VBoxContainer/version.text = 'version ' + version + ' web'
 		$credits/ScrollContainer/VBoxContainer/web_disclaimer1.show()
 		$credits/ScrollContainer/VBoxContainer/web_disclaimer2.show()
 	else:
 		$main_menu/buttons/exit.show()
 		$main_menu.rect_position.y = -14
+		$main_menu/language.rect_position.y = 647
 		$credits/ScrollContainer/VBoxContainer/version.text = 'version ' + version + ' downloadable'
 		$credits/ScrollContainer/VBoxContainer/web_disclaimer1.hide()
 		$credits/ScrollContainer/VBoxContainer/web_disclaimer2.hide()
@@ -50,7 +52,8 @@ func _ready():
 	# wait so that it doesn't immediately pass "ready" if you clicked during "loading"
 	yield(get_tree(), 'idle_frame')
 	
-	$loading/loading_text.set_text('ready!\r\nclick to continue')
+	$loading/loading_text.hide()
+	$loading/ready_text.show()
 	loaded_flag = true
 	
 	# load language options - this is copied directly from options_menu.gd

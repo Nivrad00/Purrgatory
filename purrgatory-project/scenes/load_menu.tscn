@@ -1,13 +1,16 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/load_menu.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=4]
-[ext_resource path="res://assets/ui/load.png" type="Texture" id=5]
-[ext_resource path="res://assets/ui/save files.png" type="Texture" id=6]
-[ext_resource path="res://assets/ui/pronoun_input_box.png" type="Texture" id=7]
-[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=8]
+[ext_resource path="res://scripts/TranslatedLabel.gd" type="Script" id=5]
+[ext_resource path="res://scripts/TranslatedNode.gd" type="Script" id=6]
+[ext_resource path="res://assets/ui/load.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/cargar.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/save files.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/pronoun_input_box.png" type="Texture" id=10]
+[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -58,10 +61,23 @@ margin_bottom = 60.0
 text = "back"
 align = 1
 valign = 1
+script = ExtResource( 5 )
+translations = [ "volver" ]
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 640, 79.865 )
-texture = ExtResource( 5 )
+[node name="load" type="Control" parent="."]
+margin_left = 640.0
+margin_top = 79.865
+margin_right = 680.0
+margin_bottom = 119.865
+script = ExtResource( 6 )
+
+[node name="0" type="Sprite" parent="load"]
+texture = ExtResource( 7 )
+
+[node name="1" type="Sprite" parent="load"]
+visible = false
+position = Vector2( 0, 14.135 )
+texture = ExtResource( 8 )
 
 [node name="files" type="Control" parent="."]
 margin_left = 635.839
@@ -85,6 +101,8 @@ margin_bottom = 155.0
 text = "(autosave)"
 align = 1
 valign = 1
+script = ExtResource( 5 )
+translations = [ "(autoguardado)" ]
 
 [node name="file1" type="Button" parent="files"]
 margin_left = -136.95
@@ -138,9 +156,10 @@ flat = true
 
 [node name="Sprite2" type="Sprite" parent="."]
 position = Vector2( 635.839, 347.29 )
-texture = ExtResource( 6 )
+texture = ExtResource( 9 )
 
 [node name="dates" type="Control" parent="."]
+editor/display_folded = true
 margin_left = 667.839
 margin_top = 319.528
 margin_right = 707.839
@@ -203,7 +222,6 @@ custom_constants/line_spacing = -5
 align = 1
 
 [node name="delete_data" type="Button" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1117.8
@@ -220,7 +238,7 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="delete_data"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 7 )
+texture = ExtResource( 10 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
@@ -234,9 +252,10 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "delete data"
 align = 1
 valign = 1
+script = ExtResource( 5 )
+translations = [ "eliminar datos" ]
 
 [node name="delete_confirm" type="Control" parent="."]
-editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -256,6 +275,8 @@ margin_bottom = 378.0
 text = "are you sure you want to delete all your data?
 this will delete your saves and reset the \"skip\" button."
 align = 1
+script = ExtResource( 5 )
+translations = [ "¿de verdad quieres borrar todos los datos?\\nse eliminarán todas las partidas guardadas y se restablecerá el botón de \"saltar\"" ]
 
 [node name="yes" type="Button" parent="delete_confirm"]
 margin_left = 516.0
@@ -274,7 +295,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="delete_confirm/yes"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 centered = false
 
 [node name="Label" type="Label" parent="delete_confirm/yes"]
@@ -283,9 +304,10 @@ margin_bottom = 60.0
 text = "yes"
 align = 1
 valign = 1
+script = ExtResource( 5 )
+translations = [ "aceptar" ]
 
 [node name="no" type="Button" parent="delete_confirm"]
-editor/display_folded = true
 margin_left = 516.0
 margin_top = 405.0
 margin_right = 766.0
@@ -311,6 +333,8 @@ margin_bottom = 60.0
 text = "no"
 align = 1
 valign = 1
+script = ExtResource( 5 )
+translations = [ "cancelar" ]
 
 [node name="delete_after" type="Control" parent="."]
 visible = false
@@ -331,6 +355,8 @@ margin_right = 1280.0
 margin_bottom = 454.0
 text = "data deleted."
 align = 1
+script = ExtResource( 5 )
+translations = [ "datos eliminados." ]
 
 [node name="back" type="Button" parent="delete_after"]
 margin_left = 516.0
@@ -349,7 +375,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="delete_after/back"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 centered = false
 
 [node name="Label" type="Label" parent="delete_after/back"]
@@ -358,6 +384,8 @@ margin_bottom = 59.0
 text = "back"
 align = 1
 valign = 1
+script = ExtResource( 5 )
+translations = [ "volver" ]
 [connection signal="pressed" from="back" to="." method="hide_custom"]
 [connection signal="pressed" from="files/file0" to="." method="load_file" binds= [ 0 ]]
 [connection signal="pressed" from="files/file1" to="." method="load_file" binds= [ 1 ]]
@@ -367,7 +395,7 @@ valign = 1
 [connection signal="pressed" from="files/file5" to="." method="load_file" binds= [ 5 ]]
 [connection signal="pressed" from="delete_data" to="delete_confirm" method="show"]
 [connection signal="pressed" from="delete_confirm/yes" to="." method="delete_data"]
-[connection signal="pressed" from="delete_confirm/yes" to="delete_confirm" method="hide"]
 [connection signal="pressed" from="delete_confirm/yes" to="delete_after" method="show"]
+[connection signal="pressed" from="delete_confirm/yes" to="delete_confirm" method="hide"]
 [connection signal="pressed" from="delete_confirm/no" to="delete_confirm" method="hide"]
 [connection signal="pressed" from="delete_after/back" to="delete_after" method="hide"]

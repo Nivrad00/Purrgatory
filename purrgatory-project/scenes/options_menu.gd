@@ -15,14 +15,38 @@ var resolutions = [
 ]
 
 var quips = [
-	['cat', 'meow meow, meow meow meow :3'],
-	['oliver', 'to meow, or not to meow, that is the question!'],
-	['kyungsoon', 'hmmm. that\'s an options menu'],
-	['numa', 'HEY!! change the font size right now! i mean... if you want.'],
-	['sean', 'what\'s a nice player like you doing in a menu like this? (;'],
-	['elijah', '\'tis better to have meowed and lost than never to have meowed at all.'],
-	['tori', 'what are you doing fiddling with the settings? there\'s a game to play!'],
-	['natalie', 'zzz... huh? where am i?']
+	['cat', 
+		['meow meow, meow meow meow :3',
+		'miau miau, miau miau miau :3']
+	],
+	['oliver', 
+		['to meow, or not to meow, that is the question!',
+		'¿no es cierto, ángel de amor, que en esta apartada orilla más pura la luna brilla y se maúlla mejor?']
+	],
+	['kyungsoon', 
+		['hmmm. that\'s an options menu',
+		'em. pues un menú de opciones']
+	],
+	['numa', 
+		['HEY!! change the font size right now! i mean... if you want.',
+		'¡OYE! ¡ya estás cambiando el tamaño de la letra! bueno... si te apetece.']
+	],
+	['sean', 
+		['what\'s a nice player like you doing in a menu like this? (;',
+		'y... ¿vienes mucho por este menú de opciones? (;']
+	],
+	['elijah', 
+		['\'tis better to have meowed and lost than never to have meowed at all.',
+		'que toda la vida es un gato, y los gatos, gatos son.']
+	],
+	['tori', 
+		['what are you doing fiddling with the settings? there\'s a game to play!',
+		'¿se puede saber qué haces mirando la configuración? ¡ponte a jugar!']
+	],
+	['natalie', 
+		['zzz... huh? where am i?',
+		'zzz... ¿eing? ¿dónde estoy?']
+	]
 ]
 
 var default_options = {
@@ -187,11 +211,24 @@ func show_custom():
 			
 	var current_quip = available_quips[randi() % available_quips.size()]
 	$text_size/preview_a.set_text(current_quip[0])
-	$text_size/preview_b.set_bbcode(current_quip[1])
+	$text_size/preview_b.set_bbcode(current_quip[1][Language.language])
 	
 	load_options()
 	show()
 
+# need to choose a new quip if the language is changed
+func _on_language_changed(lang):
+	var state = get_node('/root/main/game').state
+	
+	var available_quips = [quips[0]]
+	for quip in quips:
+		if state.get('met_' + quip[0]):
+			available_quips.append(quip)
+			
+	var current_quip = available_quips[randi() % available_quips.size()]
+	$text_size/preview_a.set_text(current_quip[0])
+	$text_size/preview_b.set_bbcode(current_quip[1][Language.language])
+	
 func change_volume(bus, volume):
 	var db = math(volume)
 	# print(db)

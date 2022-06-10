@@ -1,86 +1,95 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=2]
 [ext_resource path="res://scripts/rooms/bad_credits.gd" type="Script" id=3]
 [ext_resource path="res://scenes/logo.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://assets/sprites/credits/oliver1.png" type="Texture" id=6]
-[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=7]
-[ext_resource path="res://assets/sprites/credits/oliver2.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprites/credits/oliver3.png" type="Texture" id=9]
-[ext_resource path="res://assets/sprites/credits/oliver4.png" type="Texture" id=10]
-[ext_resource path="res://assets/sprites/credits/oliver5.png" type="Texture" id=11]
-[ext_resource path="res://assets/sprites/credits/oliver6.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprites/credits/natalie1.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprites/credits/natalie2.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprites/credits/natalie3.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprites/credits/natalie4.png" type="Texture" id=16]
-[ext_resource path="res://assets/sprites/credits/natalie5.png" type="Texture" id=17]
-[ext_resource path="res://assets/sprites/credits/natalie6.png" type="Texture" id=18]
-[ext_resource path="res://assets/sprites/credits/sean1.png" type="Texture" id=19]
-[ext_resource path="res://assets/sprites/credits/sean2.png" type="Texture" id=20]
-[ext_resource path="res://assets/sprites/credits/sean3.png" type="Texture" id=21]
-[ext_resource path="res://assets/sprites/credits/sean4.png" type="Texture" id=22]
-[ext_resource path="res://assets/sprites/credits/sean5.png" type="Texture" id=23]
-[ext_resource path="res://assets/sprites/credits/sean6.png" type="Texture" id=24]
-[ext_resource path="res://assets/sprites/credits/kyungsoon_numa1.png" type="Texture" id=25]
-[ext_resource path="res://assets/sprites/credits/kyungsoon_numa2.png" type="Texture" id=26]
-[ext_resource path="res://assets/sprites/credits/kyungsoon_numa3.png" type="Texture" id=27]
-[ext_resource path="res://assets/sprites/credits/kyungsoon_numa4.png" type="Texture" id=28]
-[ext_resource path="res://assets/sprites/credits/kyungsoon_numa5.png" type="Texture" id=29]
-[ext_resource path="res://assets/sprites/credits/kyungsoon_numa6.png" type="Texture" id=30]
-[ext_resource path="res://assets/sprites/credits/oliver_tori1.png" type="Texture" id=31]
-[ext_resource path="res://assets/sprites/credits/oliver_tori2.png" type="Texture" id=32]
-[ext_resource path="res://assets/sprites/credits/oliver_tori3.png" type="Texture" id=33]
-[ext_resource path="res://assets/sprites/credits/oliver_tori4.png" type="Texture" id=34]
-[ext_resource path="res://assets/sprites/credits/oliver_tori5.png" type="Texture" id=35]
-[ext_resource path="res://assets/sprites/credits/oliver_tori6.png" type="Texture" id=36]
-[ext_resource path="res://assets/sprites/credits/elijah_sean1.png" type="Texture" id=37]
-[ext_resource path="res://assets/sprites/credits/elijah_sean2.png" type="Texture" id=38]
-[ext_resource path="res://assets/sprites/credits/elijah_sean3.png" type="Texture" id=39]
-[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=40]
-[ext_resource path="res://assets/sprites/credits/cat1.png" type="Texture" id=41]
-[ext_resource path="res://assets/sprites/credits/cat2.png" type="Texture" id=42]
-[ext_resource path="res://assets/sprites/credits/cat3.png" type="Texture" id=43]
-[ext_resource path="res://assets/audio/Purrgatory_Blues.wav" type="AudioStream" id=44]
-[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=45]
+[ext_resource path="res://scripts/TranslatedLabel.gd" type="Script" id=5]
+[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/sprites/credits/oliver1.png" type="Texture" id=7]
+[ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=8]
+[ext_resource path="res://assets/sprites/credits/oliver2.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/credits/oliver3.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/credits/oliver4.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/credits/oliver5.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/credits/oliver6.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/credits/natalie1.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/credits/natalie2.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/credits/natalie3.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/credits/natalie4.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/credits/natalie5.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/credits/natalie6.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/credits/sean1.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/credits/sean2.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/credits/sean3.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/credits/sean4.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/credits/sean5.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/credits/sean6.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprites/credits/kyungsoon_numa1.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprites/credits/kyungsoon_numa2.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprites/credits/kyungsoon_numa3.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprites/credits/kyungsoon_numa4.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprites/credits/kyungsoon_numa5.png" type="Texture" id=30]
+[ext_resource path="res://assets/sprites/credits/kyungsoon_numa6.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprites/credits/oliver_tori1.png" type="Texture" id=32]
+[ext_resource path="res://assets/sprites/credits/oliver_tori2.png" type="Texture" id=33]
+[ext_resource path="res://assets/sprites/credits/oliver_tori3.png" type="Texture" id=34]
+[ext_resource path="res://assets/sprites/credits/oliver_tori4.png" type="Texture" id=35]
+[ext_resource path="res://assets/sprites/credits/oliver_tori5.png" type="Texture" id=36]
+[ext_resource path="res://assets/sprites/credits/oliver_tori6.png" type="Texture" id=37]
+[ext_resource path="res://assets/sprites/credits/elijah_sean1.png" type="Texture" id=38]
+[ext_resource path="res://assets/sprites/credits/elijah_sean2.png" type="Texture" id=39]
+[ext_resource path="res://assets/sprites/credits/elijah_sean3.png" type="Texture" id=40]
+[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=41]
+[ext_resource path="res://assets/sprites/credits/cat1.png" type="Texture" id=42]
+[ext_resource path="res://assets/sprites/credits/cat2.png" type="Texture" id=43]
+[ext_resource path="res://assets/sprites/credits/cat3.png" type="Texture" id=44]
+[ext_resource path="res://assets/audio/Purrgatory_Blues.wav" type="AudioStream" id=45]
+[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=46]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
-font_data = ExtResource( 5 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 18
-font_data = ExtResource( 5 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 18
-font_data = ExtResource( 5 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 40
-font_data = ExtResource( 5 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 40
-font_data = ExtResource( 5 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 18
-font_data = ExtResource( 5 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 40
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 18
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 40
-font_data = ExtResource( 5 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=8]
 size = 18
-font_data = ExtResource( 5 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=9]
 size = 18
-font_data = ExtResource( 5 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="Theme" id=10]
 default_font = SubResource( 9 )
@@ -98,7 +107,7 @@ tracks/0/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 44 )
+"stream": ExtResource( 45 )
 } ],
 "times": PoolRealArray( 1.05 )
 }
@@ -390,7 +399,7 @@ tracks/0/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 44 )
+"stream": ExtResource( 45 )
 } ],
 "times": PoolRealArray( 1.05 )
 }
@@ -674,7 +683,7 @@ tracks/0/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 44 )
+"stream": ExtResource( 45 )
 } ],
 "times": PoolRealArray( 1.05 )
 }
@@ -958,7 +967,7 @@ tracks/0/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 44 )
+"stream": ExtResource( 45 )
 } ],
 "times": PoolRealArray( 0.99 )
 }
@@ -1208,7 +1217,7 @@ size = 10
 
 [sub_resource type="DynamicFont" id=17]
 size = 18
-font_data = ExtResource( 5 )
+font_data = ExtResource( 6 )
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -1242,12 +1251,13 @@ margin_top = 174.0
 margin_bottom = 424.0
 
 [node name="Label" type="Label" parent="state_handler/1"]
-editor/display_folded = true
 margin_top = 410.645
 margin_right = 1279.0
 margin_bottom = 481.645
 text = "a game by"
 align = 1
+script = ExtResource( 5 )
+translations = [ "un juego creado por" ]
 
 [node name="Label2" type="Label" parent="state_handler/1/Label"]
 margin_top = 39.296
@@ -1265,13 +1275,14 @@ margin_right = 62.1109
 margin_bottom = 40.0
 
 [node name="Label2" type="Label" parent="state_handler/2"]
-editor/display_folded = true
 margin_left = 127.741
 margin_top = 96.134
 margin_right = 627.741
 margin_bottom = 167.134
 text = "story, art, music, and code"
 align = 1
+script = ExtResource( 5 )
+translations = [ "guion, dibujo, música y programación" ]
 
 [node name="Label2" type="Label" parent="state_handler/2/Label2"]
 margin_top = 42.29
@@ -1296,6 +1307,8 @@ margin_right = 627.741
 margin_bottom = 348.532
 text = "with story help from"
 align = 1
+script = ExtResource( 5 )
+translations = [ "asistencia de guion" ]
 
 [node name="Label2" type="Label" parent="state_handler/2/Label3"]
 margin_left = 1.29236
@@ -1341,6 +1354,8 @@ margin_right = 627.741
 margin_bottom = 612.26
 text = "additional code"
 align = 1
+script = ExtResource( 5 )
+translations = [ "asistencia de programación" ]
 
 [node name="Label2" type="Label" parent="state_handler/2/Label4"]
 margin_top = 41.29
@@ -1358,13 +1373,13 @@ margin_bottom = 492.079
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 6 )
+texture_normal = ExtResource( 7 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 7 )
-animation0 = ExtResource( 6 )
-animation1 = ExtResource( 8 )
-animation2 = ExtResource( 9 )
+script = ExtResource( 8 )
+animation0 = ExtResource( 7 )
+animation1 = ExtResource( 9 )
+animation2 = ExtResource( 10 )
 
 [node name="oliver2" type="TextureButton" parent="state_handler/2"]
 visible = false
@@ -1375,13 +1390,13 @@ margin_bottom = 492.079
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 10 )
+texture_normal = ExtResource( 11 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 7 )
-animation0 = ExtResource( 10 )
-animation1 = ExtResource( 11 )
-animation2 = ExtResource( 12 )
+script = ExtResource( 8 )
+animation0 = ExtResource( 11 )
+animation1 = ExtResource( 12 )
+animation2 = ExtResource( 13 )
 
 [node name="3" type="Control" parent="state_handler"]
 editor/display_folded = true
@@ -1399,15 +1414,18 @@ margin_bottom = 158.271
 custom_fonts/font = SubResource( 4 )
 text = "additional art"
 align = 1
+script = ExtResource( 5 )
+translations = [ "dibujo" ]
 
 [node name="Label2" type="Label" parent="state_handler/3"]
-editor/display_folded = true
 margin_left = 714.267
 margin_top = 140.926
 margin_right = 1214.27
 margin_bottom = 211.926
 text = "tracing"
 align = 1
+script = ExtResource( 5 )
+translations = [ "delineado" ]
 
 [node name="Label2" type="Label" parent="state_handler/3/Label2"]
 margin_top = 40.29
@@ -1428,13 +1446,14 @@ text = "(david wolters)"
 align = 1
 
 [node name="Label5" type="Label" parent="state_handler/3"]
-editor/display_folded = true
 margin_left = 714.267
 margin_top = 310.828
 margin_right = 1214.27
 margin_bottom = 381.828
 text = "character design help"
 align = 1
+script = ExtResource( 5 )
+translations = [ "asistencia de diseño" ]
 
 [node name="Label2" type="Label" parent="state_handler/3/Label5"]
 margin_top = 41.29
@@ -1462,6 +1481,8 @@ margin_right = 1214.27
 margin_bottom = 551.491
 text = "background help"
 align = 1
+script = ExtResource( 5 )
+translations = [ "asistencia para los fondos" ]
 
 [node name="Label2" type="Label" parent="state_handler/3/Label6"]
 margin_top = 40.29
@@ -1481,13 +1502,13 @@ rect_pivot_offset = Vector2( -130.708, 62.1809 )
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 13 )
+texture_normal = ExtResource( 14 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 7 )
-animation0 = ExtResource( 13 )
-animation1 = ExtResource( 14 )
-animation2 = ExtResource( 15 )
+script = ExtResource( 8 )
+animation0 = ExtResource( 14 )
+animation1 = ExtResource( 15 )
+animation2 = ExtResource( 16 )
 
 [node name="natalie2" type="TextureButton" parent="state_handler/3"]
 margin_left = 229.407
@@ -1498,13 +1519,13 @@ rect_pivot_offset = Vector2( -131.144, 61.789 )
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 16 )
+texture_normal = ExtResource( 17 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 7 )
-animation0 = ExtResource( 16 )
-animation1 = ExtResource( 17 )
-animation2 = ExtResource( 18 )
+script = ExtResource( 8 )
+animation0 = ExtResource( 17 )
+animation1 = ExtResource( 18 )
+animation2 = ExtResource( 19 )
 
 [node name="4" type="Control" parent="state_handler"]
 editor/display_folded = true
@@ -1520,6 +1541,8 @@ margin_right = 1021.63
 margin_bottom = 188.568
 text = "additional music"
 align = 1
+script = ExtResource( 5 )
+translations = [ "música adicional" ]
 
 [node name="Label3" type="Label" parent="state_handler/4/Label2"]
 margin_left = -2.49268
@@ -1540,7 +1563,6 @@ text = "(brandon warren)"
 align = 1
 
 [node name="Label5" type="Label" parent="state_handler/4"]
-editor/display_folded = true
 margin_left = -258.16
 margin_top = 297.112
 margin_right = 1024.84
@@ -1567,7 +1589,6 @@ text = "zardoru"
 align = 1
 
 [node name="Label6" type="Label" parent="state_handler/4"]
-editor/display_folded = true
 margin_left = -258.282
 margin_top = 444.143
 margin_right = 1021.72
@@ -1583,6 +1604,8 @@ margin_bottom = 156.836
 text = "written by
 guitar"
 align = 2
+script = ExtResource( 5 )
+translations = [ "guion\\nguitarra" ]
 
 [node name="Label10" type="Label" parent="state_handler/4/Label6"]
 margin_left = 514.508
@@ -1591,6 +1614,8 @@ margin_right = 630.508
 margin_bottom = 227.32
 text = "vocals"
 align = 2
+script = ExtResource( 5 )
+translations = [ "voz" ]
 
 [node name="Label8" type="Label" parent="state_handler/4/Label6"]
 margin_left = 651.508
@@ -1634,13 +1659,13 @@ margin_bottom = 498.079
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 19 )
+texture_normal = ExtResource( 20 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 7 )
-animation0 = ExtResource( 19 )
-animation1 = ExtResource( 20 )
-animation2 = ExtResource( 21 )
+script = ExtResource( 8 )
+animation0 = ExtResource( 20 )
+animation1 = ExtResource( 21 )
+animation2 = ExtResource( 22 )
 
 [node name="sean2" type="TextureButton" parent="state_handler/4"]
 margin_left = 672.821
@@ -1650,80 +1675,49 @@ margin_bottom = 497.549
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 22 )
+texture_normal = ExtResource( 23 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 7 )
-animation0 = ExtResource( 22 )
-animation1 = ExtResource( 23 )
-animation2 = ExtResource( 24 )
+script = ExtResource( 8 )
+animation0 = ExtResource( 23 )
+animation1 = ExtResource( 24 )
+animation2 = ExtResource( 25 )
 
 [node name="5" type="Control" parent="state_handler"]
-editor/display_folded = true
 visible = false
 margin_left = 1.87463
 margin_top = 1.87469
 margin_right = 41.8746
 margin_bottom = 41.8747
 
-[node name="Label2" type="Label" parent="state_handler/5"]
-margin_left = 306.884
-margin_top = 195.556
-margin_right = 1585.88
-margin_bottom = 266.556
-text = "testing"
+[node name="Label4" type="Label" parent="state_handler/5"]
+editor/display_folded = true
+margin_left = 317.125
+margin_top = 291.125
+margin_right = 1596.12
+margin_bottom = 362.125
+text = "spanish (spain) translation"
+align = 1
+script = ExtResource( 5 )
+translations = [ "traducción al español (españa)" ]
+
+[node name="Label5" type="Label" parent="state_handler/5/Label4"]
+margin_left = 1.29236
+margin_top = 42.0
+margin_right = 1280.29
+margin_bottom = 95.0
+custom_fonts/font = SubResource( 18 )
+text = "samo"
 align = 1
 
-[node name="Label2" type="Label" parent="state_handler/5/Label2"]
-margin_top = 44.0
-margin_right = 1279.0
-margin_bottom = 97.0
-custom_fonts/font = SubResource( 7 )
-text = "akarobin"
-align = 1
-
-[node name="Label6" type="Label" parent="state_handler/5/Label2"]
+[node name="Label7" type="Label" parent="state_handler/5/Label4"]
 margin_left = 3.29236
-margin_top = 91.2158
+margin_top = 87.301
 margin_right = 1279.29
-margin_bottom = 125.216
+margin_bottom = 121.301
 rect_pivot_offset = Vector2( 676.708, 14.8751 )
-custom_fonts/font = SubResource( 8 )
-text = "(robin j.)"
-align = 1
-
-[node name="Label3" type="Label" parent="state_handler/5/Label2"]
-margin_top = 114.628
-margin_right = 1279.0
-margin_bottom = 167.628
-custom_fonts/font = SubResource( 7 )
-text = "gnomes"
-align = 1
-
-[node name="Label4" type="Label" parent="state_handler/5/Label2"]
-margin_top = 172.876
-margin_right = 1279.0
-margin_bottom = 225.876
-custom_fonts/font = SubResource( 7 )
-text = "zardoru"
-align = 1
-
-[node name="Label5" type="Label" parent="state_handler/5/Label2"]
-margin_top = 228.412
-margin_right = 1279.0
-margin_bottom = 281.412
-custom_fonts/font = SubResource( 7 )
-text = "ivee"
-align = 1
-
-[node name="Label7" type="Label" parent="state_handler/5/Label2"]
-margin_left = 3.29236
-margin_top = 273.628
-margin_right = 1279.29
-margin_bottom = 307.628
-rect_pivot_offset = Vector2( 676.708, 14.8751 )
-custom_fonts/font = SubResource( 8 )
-text = "(nicky van der reijden)"
+custom_fonts/font = SubResource( 19 )
+text = "(samuel de la torre galán)"
 align = 1
 
 [node name="kyungsoon_numa1" type="TextureButton" parent="state_handler/5"]
@@ -1735,13 +1729,13 @@ margin_bottom = 498.079
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 25 )
+texture_normal = ExtResource( 26 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 7 )
-animation0 = ExtResource( 25 )
-animation1 = ExtResource( 26 )
-animation2 = ExtResource( 27 )
+script = ExtResource( 8 )
+animation0 = ExtResource( 26 )
+animation1 = ExtResource( 27 )
+animation2 = ExtResource( 28 )
 
 [node name="kyungsoon_numa2" type="TextureButton" parent="state_handler/5"]
 margin_left = 227.357
@@ -1751,28 +1745,93 @@ margin_bottom = 497.549
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 28 )
+texture_normal = ExtResource( 29 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 7 )
-animation0 = ExtResource( 28 )
-animation1 = ExtResource( 29 )
-animation2 = ExtResource( 30 )
+script = ExtResource( 8 )
+animation0 = ExtResource( 29 )
+animation1 = ExtResource( 30 )
+animation2 = ExtResource( 31 )
 
 [node name="6" type="Control" parent="state_handler"]
-editor/display_folded = true
 visible = false
 margin_left = 16.7737
 margin_right = 56.7737
 margin_bottom = 40.0
 
+[node name="Label2" type="Label" parent="state_handler/6"]
+editor/display_folded = true
+margin_left = -425.774
+margin_top = 197.431
+margin_right = 853.222
+margin_bottom = 268.431
+text = "testing"
+align = 1
+script = ExtResource( 5 )
+translations = [ "pruebas" ]
+
+[node name="Label2" type="Label" parent="state_handler/6/Label2"]
+margin_top = 44.0
+margin_right = 1279.0
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 7 )
+text = "akarobin"
+align = 1
+
+[node name="Label6" type="Label" parent="state_handler/6/Label2"]
+margin_left = 3.29236
+margin_top = 91.2158
+margin_right = 1279.29
+margin_bottom = 125.216
+rect_pivot_offset = Vector2( 676.708, 14.8751 )
+custom_fonts/font = SubResource( 8 )
+text = "(robin j.)"
+align = 1
+
+[node name="Label3" type="Label" parent="state_handler/6/Label2"]
+margin_top = 114.628
+margin_right = 1279.0
+margin_bottom = 167.628
+custom_fonts/font = SubResource( 7 )
+text = "gnomes"
+align = 1
+
+[node name="Label4" type="Label" parent="state_handler/6/Label2"]
+margin_top = 172.876
+margin_right = 1279.0
+margin_bottom = 225.876
+custom_fonts/font = SubResource( 7 )
+text = "zardoru"
+align = 1
+
+[node name="Label5" type="Label" parent="state_handler/6/Label2"]
+margin_top = 228.412
+margin_right = 1279.0
+margin_bottom = 281.412
+custom_fonts/font = SubResource( 7 )
+text = "ivee"
+align = 1
+
+[node name="Label7" type="Label" parent="state_handler/6/Label2"]
+margin_left = 3.29236
+margin_top = 273.628
+margin_right = 1279.29
+margin_bottom = 307.628
+rect_pivot_offset = Vector2( 676.708, 14.8751 )
+custom_fonts/font = SubResource( 8 )
+text = "(nicky van der reijden)"
+align = 1
+
 [node name="Label3" type="Label" parent="state_handler/6"]
-margin_left = -337.642
-margin_top = 263.906
-margin_right = 941.354
-margin_bottom = 334.906
+editor/display_folded = true
+margin_left = -173.774
+margin_top = 266.0
+margin_right = 1105.22
+margin_bottom = 337.0
 text = "special thanks"
 align = 1
+script = ExtResource( 5 )
+translations = [ "agradecimientos" ]
 
 [node name="Label2" type="Label" parent="state_handler/6/Label3"]
 margin_left = 1.29236
@@ -1804,40 +1863,38 @@ align = 1
 
 [node name="oliver_tori1" type="TextureButton" parent="state_handler/6"]
 visible = false
-margin_left = 652.422
+margin_left = 731.226
 margin_top = 210.954
-margin_right = 1000.42
+margin_right = 1079.22
 margin_bottom = 499.954
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 31 )
+texture_normal = ExtResource( 32 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 7 )
-animation0 = ExtResource( 31 )
-animation1 = ExtResource( 32 )
-animation2 = ExtResource( 33 )
+script = ExtResource( 8 )
+animation0 = ExtResource( 32 )
+animation1 = ExtResource( 33 )
+animation2 = ExtResource( 34 )
 
 [node name="oliver_tori2" type="TextureButton" parent="state_handler/6"]
-margin_left = 651.509
+margin_left = 731.226
 margin_top = 211.423
-margin_right = 999.509
+margin_right = 1079.23
 margin_bottom = 500.423
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 34 )
+texture_normal = ExtResource( 35 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 7 )
-animation0 = ExtResource( 34 )
-animation1 = ExtResource( 35 )
-animation2 = ExtResource( 36 )
+script = ExtResource( 8 )
+animation0 = ExtResource( 35 )
+animation1 = ExtResource( 36 )
+animation2 = ExtResource( 37 )
 
 [node name="7" type="Control" parent="state_handler"]
-editor/display_folded = true
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -1854,6 +1911,8 @@ margin_bottom = 102.692
 custom_fonts/font = SubResource( 1 )
 text = "sound effects"
 align = 1
+script = ExtResource( 5 )
+translations = [ "efectos de sonido" ]
 
 [node name="Label9" type="Label" parent="state_handler/7"]
 margin_top = 104.0
@@ -1994,7 +2053,6 @@ __meta__ = {
 }
 
 [node name="8" type="Control" parent="state_handler"]
-editor/display_folded = true
 visible = false
 margin_top = 3.21468
 margin_right = 40.0
@@ -2009,9 +2067,11 @@ rect_scale = Vector2( 0.95, 0.95 )
 custom_fonts/font = SubResource( 1 )
 text = "additional assets"
 align = 1
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+translations = [ "recursos adicionales" ]
 
 [node name="Label3" type="Label" parent="state_handler/8"]
 margin_left = 346.277
@@ -2024,6 +2084,8 @@ text = "text-to-speech module
 3d cat model
 source sans pro font"
 align = 2
+script = ExtResource( 5 )
+translations = [ "sintetizador de voz\\nsombras del delineado 3d\\nmodelo 3d del gato\\nfuente source sans pro" ]
 
 [node name="Label4" type="Label" parent="state_handler/8"]
 margin_left = 653.0
@@ -2044,20 +2106,20 @@ margin_bottom = 648.637
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 37 )
+texture_normal = ExtResource( 38 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 7 )
-animation0 = ExtResource( 37 )
-animation1 = ExtResource( 38 )
-animation2 = ExtResource( 39 )
+script = ExtResource( 8 )
+animation0 = ExtResource( 38 )
+animation1 = ExtResource( 39 )
+animation2 = ExtResource( 40 )
 
 [node name="last" type="Control" parent="state_handler"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="back" type="Button" parent="state_handler/last"]
-editor/display_folded = true
 margin_left = 516.402
 margin_top = 582.877
 margin_right = 764.402
@@ -2068,7 +2130,7 @@ flat = true
 
 [node name="Sprite" type="Sprite" parent="state_handler/last/back"]
 position = Vector2( 124.799, 30.3251 )
-texture = ExtResource( 40 )
+texture = ExtResource( 41 )
 
 [node name="Label" type="Label" parent="state_handler/last/back"]
 margin_top = 1.0
@@ -2094,13 +2156,13 @@ margin_bottom = 500.497
 focus_mode = 0
 mouse_filter = 2
 enabled_focus_mode = 0
-texture_normal = ExtResource( 41 )
+texture_normal = ExtResource( 42 )
 expand = true
 stretch_mode = 3
-script = ExtResource( 7 )
-animation0 = ExtResource( 41 )
-animation1 = ExtResource( 42 )
-animation2 = ExtResource( 43 )
+script = ExtResource( 8 )
+animation0 = ExtResource( 42 )
+animation1 = ExtResource( 43 )
+animation2 = ExtResource( 44 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler"]
 autoplay = "Good Credits"
@@ -2111,12 +2173,11 @@ anims/bad_credits_anim = SubResource( 13 )
 anims/credits = SubResource( 15 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="state_handler/AnimationPlayer"]
-stream = ExtResource( 44 )
+stream = ExtResource( 45 )
 volume_db = -3.0
 bus = "Music"
 
 [node name="skip" type="Button" parent="state_handler"]
-visible = false
 margin_left = 1182.0
 margin_top = 680.0
 margin_right = 1259.0
@@ -2128,7 +2189,7 @@ flat = true
 
 [node name="Sprite" type="Sprite" parent="state_handler/skip"]
 position = Vector2( 38.3624, 13.8851 )
-texture = ExtResource( 45 )
+texture = ExtResource( 46 )
 
 [node name="Label" type="Label" parent="state_handler/skip"]
 margin_top = 1.0
@@ -2138,5 +2199,7 @@ custom_fonts/font = SubResource( 17 )
 text = "skip"
 align = 1
 valign = 1
+script = ExtResource( 5 )
+translations = [ "saltar" ]
 [connection signal="pressed" from="state_handler/last/back" to="state_handler" method="_on_back_pressed"]
 [connection signal="pressed" from="state_handler/skip" to="state_handler" method="skip_good_credits"]

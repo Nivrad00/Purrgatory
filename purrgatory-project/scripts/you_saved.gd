@@ -1,7 +1,8 @@
-extends Control
-# note: this code is defunct and has been moved to you_saved.gd
+extends "TranslatedLabel.gd"
 
 func _ready():
+	._ready()
+	
 	var i = 0
 	var quest_states = [
 		'kyungsoon_quest_complete',
@@ -17,6 +18,10 @@ func _ready():
 			i += 1
 	
 	if i == 1:
-		$you_saved.text = "you saved 1 person"
+		translations[0] = "you saved 1 person"
+		translations[1] = "salvaste a 1 persona"
 	else:
-		$you_saved.text = "you saved " + str(i) + " people"
+		translations[0] = "you saved " + str(i) + " people"
+		translations[1] = "salvaste a " + str(i) + " personas"
+		
+	update_label(Language.language)

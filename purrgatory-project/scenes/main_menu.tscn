@@ -1,26 +1,27 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://cat_01_color05.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://addons/3D Outline/Outline.material" type="Material" id=3]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=4]
-[ext_resource path="res://scenes/logo.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=7]
-[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=8]
-[ext_resource path="res://assets/ui/menu_x.png" type="Texture" id=9]
-[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=10]
-[ext_resource path="res://scenes/cat1_idle.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/sprites/cat1.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprites/cat2.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprites/cat3.png" type="Texture" id=14]
-[ext_resource path="res://assets/audio/Slice_Of_Heaven.ogg" type="AudioStream" id=15]
-[ext_resource path="res://themes/dropdown_menu_theme.tres" type="Theme" id=16]
-[ext_resource path="res://assets/ui/credits_box.png" type="Texture" id=17]
-[ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=18]
-[ext_resource path="res://themes/dialog_font_italics.tres" type="DynamicFont" id=19]
-[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=20]
-[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scripts/TranslatedLabel.gd" type="Script" id=5]
+[ext_resource path="res://scenes/logo.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/menu_x.png" type="Texture" id=10]
+[ext_resource path="res://assets/ui/menu_button2.png" type="Texture" id=11]
+[ext_resource path="res://scenes/cat1_idle.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/sprites/cat1.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/cat2.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/cat3.png" type="Texture" id=15]
+[ext_resource path="res://assets/audio/Slice_Of_Heaven.ogg" type="AudioStream" id=16]
+[ext_resource path="res://themes/dropdown_menu_theme.tres" type="Theme" id=17]
+[ext_resource path="res://assets/ui/credits_box.png" type="Texture" id=18]
+[ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=19]
+[ext_resource path="res://themes/dialog_font_italics.tres" type="DynamicFont" id=20]
+[ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=22]
 
 [sub_resource type="SpatialMaterial" id=1]
 next_pass = ExtResource( 3 )
@@ -50,19 +51,19 @@ viewport_path = NodePath("rotating_cat/Viewport")
 
 [sub_resource type="DynamicFont" id=5]
 size = 25
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 20
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 20
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=8]
 size = 25
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="CanvasItemMaterial" id=9]
 blend_mode = 3
@@ -125,6 +126,7 @@ __meta__ = {
 }
 
 [node name="loading" type="Control" parent="."]
+editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 theme = ExtResource( 4 )
@@ -139,6 +141,23 @@ margin_bottom = -300.0
 text = "loading..."
 align = 1
 valign = 1
+script = ExtResource( 5 )
+translations = [ "cargando..." ]
+
+[node name="ready_text" type="Label" parent="loading"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 500.0
+margin_top = 300.0
+margin_right = -500.0
+margin_bottom = -300.0
+text = "ready!
+click to continue"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+translations = [ "¡listo!\\nhaz click para continuar" ]
 
 [node name="click_to_continue" type="Button" parent="loading"]
 visible = false
@@ -155,7 +174,7 @@ margin_right = 40.0
 margin_bottom = 26.0
 theme = ExtResource( 4 )
 
-[node name="logo" parent="main_menu" instance=ExtResource( 5 )]
+[node name="logo" parent="main_menu" instance=ExtResource( 6 )]
 
 [node name="buttons" type="Control" parent="main_menu"]
 editor/display_folded = true
@@ -184,7 +203,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/start"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 centered = false
 
 [node name="Label" type="Label" parent="main_menu/buttons/start"]
@@ -193,6 +212,8 @@ margin_bottom = 60.0
 text = "start"
 align = 1
 valign = 1
+script = ExtResource( 5 )
+translations = [ "empezar" ]
 
 [node name="load" type="Button" parent="main_menu/buttons"]
 margin_left = 13.7148
@@ -211,7 +232,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/load"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 centered = false
 
 [node name="Label" type="Label" parent="main_menu/buttons/load"]
@@ -220,11 +241,13 @@ margin_bottom = 60.0
 text = "load"
 align = 1
 valign = 1
+script = ExtResource( 5 )
+translations = [ "cargar" ]
 
 [node name="x" type="Sprite" parent="main_menu/buttons/load"]
 visible = false
 position = Vector2( 125.826, 29.3703 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="options" type="Button" parent="main_menu/buttons"]
 margin_left = 12.1426
@@ -243,7 +266,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/options"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 centered = false
 
 [node name="Label" type="Label" parent="main_menu/buttons/options"]
@@ -252,6 +275,8 @@ margin_bottom = 60.0
 text = "options"
 align = 1
 valign = 1
+script = ExtResource( 5 )
+translations = [ "opciones" ]
 
 [node name="credits" type="Button" parent="main_menu/buttons"]
 margin_left = 12.1426
@@ -270,7 +295,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/credits"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 centered = false
 flip_h = true
 flip_v = true
@@ -281,6 +306,8 @@ margin_bottom = 60.0
 text = "info"
 align = 1
 valign = 1
+script = ExtResource( 5 )
+translations = [ "información" ]
 
 [node name="exit" type="Button" parent="main_menu/buttons"]
 margin_left = 12.8502
@@ -299,7 +326,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="main_menu/buttons/exit"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 centered = false
 flip_h = true
 flip_v = true
@@ -310,24 +337,25 @@ margin_bottom = 60.0
 text = "exit"
 align = 1
 valign = 1
+script = ExtResource( 5 )
+translations = [ "salir" ]
 
-[node name="cat1_idle" parent="main_menu" instance=ExtResource( 11 )]
+[node name="cat1_idle" parent="main_menu" instance=ExtResource( 12 )]
 margin_left = 883.779
 margin_top = 274.295
 margin_right = 1023.78
 margin_bottom = 408.295
 mouse_filter = 2
-animation0 = ExtResource( 12 )
-animation1 = ExtResource( 13 )
-animation2 = ExtResource( 14 )
+animation0 = ExtResource( 13 )
+animation1 = ExtResource( 14 )
+animation2 = ExtResource( 15 )
 
 [node name="audio" type="AudioStreamPlayer" parent="main_menu"]
-stream = ExtResource( 15 )
+stream = ExtResource( 16 )
 volume_db = -6.0
 bus = "Music"
 
 [node name="language" type="Control" parent="main_menu"]
-editor/display_folded = true
 margin_left = 1041.0
 margin_top = 647.0
 margin_right = 1081.0
@@ -341,6 +369,8 @@ margin_bottom = 65.0
 custom_fonts/font = SubResource( 6 )
 text = "language"
 align = 2
+script = ExtResource( 5 )
+translations = [ "idioma" ]
 
 [node name="language" type="MarginContainer" parent="main_menu/language"]
 margin_left = -16.0
@@ -356,13 +386,12 @@ margin_bottom = 36.0
 rect_min_size = Vector2( 200, 36 )
 focus_mode = 0
 size_flags_horizontal = 0
-theme = ExtResource( 16 )
+theme = ExtResource( 17 )
 custom_fonts/font = SubResource( 7 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
 
 [node name="credits" type="Control" parent="."]
-editor/display_folded = true
 visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -374,19 +403,19 @@ margin_right = 1925.3
 margin_bottom = 1080.0
 rect_pivot_offset = Vector2( 73.9432, 195.005 )
 mouse_filter = 2
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="credits"]
 margin_left = 62.0
 margin_top = 55.0
 margin_right = 1238.0
-margin_bottom = 591.0
+margin_bottom = 592.0
 rect_pivot_offset = Vector2( 15.9432, 138.005 )
-theme = ExtResource( 18 )
+theme = ExtResource( 19 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="credits/ScrollContainer"]
 margin_right = 1176.0
-margin_bottom = 1461.0
+margin_bottom = 1583.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
@@ -400,7 +429,7 @@ size_flags_vertical = 1
 align = 1
 autowrap = true
 
-[node name="logo" parent="credits/ScrollContainer/VBoxContainer" instance=ExtResource( 5 )]
+[node name="logo" parent="credits/ScrollContainer/VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 70.0
 margin_right = 1155.0
 margin_bottom = 210.0
@@ -415,6 +444,8 @@ size_flags_vertical = 1
 text = "a game by niv"
 align = 1
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "un juego creado por niv" ]
 
 [node name="web_disclaimer1" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
 visible = false
@@ -429,17 +460,19 @@ autowrap = true
 
 [node name="web_disclaimer2" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
 visible = false
-margin_top = 351.0
+margin_top = 281.0
 margin_right = 1155.0
-margin_bottom = 416.0
+margin_bottom = 346.0
 rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 19 )
+custom_fonts/font = ExtResource( 20 )
 text = "note: this is the web version of purrgatory. 
 for higher quality and smoother gameplay, try the windows version!"
 align = 1
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "nota: esta es la versión web de purrgatorio. la versión de windows ofrece una mayor calidad y jugabilidad." ]
 
 [node name="_12" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
 margin_top = 281.0
@@ -460,6 +493,8 @@ text = "hotkeys"
 align = 1
 autowrap = true
 uppercase = true
+script = ExtResource( 5 )
+translations = [ "atajos de teclado" ]
 
 [node name="GridContainer" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
 margin_top = 383.0
@@ -478,6 +513,8 @@ size_flags_vertical = 1
 text = "space"
 align = 2
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "espacio" ]
 
 [node name="Label3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_left = 595.0
@@ -487,6 +524,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "advance text"
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "avanzar el diálogo" ]
 
 [node name="Label5" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_top = 51.0
@@ -507,6 +546,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "choose option"
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "elegir respuestas" ]
 
 [node name="Label9" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_top = 102.0
@@ -517,6 +558,8 @@ size_flags_vertical = 1
 text = "escape"
 align = 2
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "escape" ]
 
 [node name="Label8" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_left = 595.0
@@ -527,6 +570,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "open pause menu"
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "menú de pausa" ]
 
 [node name="Label7" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_top = 153.0
@@ -537,6 +582,8 @@ size_flags_vertical = 1
 text = "tab"
 align = 2
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "tabulador" ]
 
 [node name="Label6" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_left = 595.0
@@ -547,6 +594,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "skip"
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "saltar" ]
 
 [node name="Label10" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_top = 204.0
@@ -567,6 +616,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "history"
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "historial" ]
 
 [node name="Label14" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_top = 255.0
@@ -587,6 +638,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "to do"
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "tareas" ]
 
 [node name="Label12" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_top = 306.0
@@ -607,6 +660,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "items"
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "objetos" ]
 
 [node name="_2" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
 margin_top = 740.0
@@ -627,6 +682,8 @@ text = "credits"
 align = 1
 autowrap = true
 uppercase = true
+script = ExtResource( 5 )
+translations = [ "créditos" ]
 
 [node name="GridContainer2" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
 margin_top = 842.0
@@ -645,6 +702,8 @@ size_flags_vertical = 1
 text = "story, art, music, and code"
 align = 2
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "guion, dibujo, música y programación" ]
 
 [node name="Label3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer2"]
 margin_left = 595.0
@@ -664,6 +723,8 @@ size_flags_vertical = 1
 text = "with story help from"
 align = 2
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "asistencia de guion" ]
 
 [node name="Label5" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer2"]
 margin_left = 595.0
@@ -685,6 +746,8 @@ size_flags_vertical = 1
 text = "additional code"
 align = 2
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "asistencia de programación" ]
 
 [node name="Label7" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer2"]
 margin_left = 595.0
@@ -714,6 +777,8 @@ size_flags_vertical = 1
 text = "art"
 align = 1
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "dibujo" ]
 
 [node name="GridContainer3" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
 margin_top = 1131.0
@@ -732,6 +797,8 @@ size_flags_vertical = 1
 text = "tracing"
 align = 2
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "delineado" ]
 
 [node name="Label3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer3"]
 margin_left = 595.0
@@ -751,6 +818,8 @@ size_flags_vertical = 1
 text = "character design help"
 align = 2
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "asistencia de diseño" ]
 
 [node name="Label5" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer3"]
 margin_left = 595.0
@@ -771,6 +840,8 @@ size_flags_vertical = 1
 text = "background help"
 align = 2
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "asistencia para los fondos" ]
 
 [node name="Label7" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer3"]
 margin_left = 595.0
@@ -800,6 +871,8 @@ size_flags_vertical = 1
 text = "music"
 align = 1
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "música" ]
 
 [node name="GridContainer4" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
 margin_top = 1386.0
@@ -818,6 +891,8 @@ size_flags_vertical = 1
 text = "additional music"
 align = 2
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "música adicional" ]
 
 [node name="niv, wiz" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer4"]
 margin_left = 595.0
@@ -884,6 +959,8 @@ size_flags_vertical = 1
 text = "written by"
 align = 2
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "guion" ]
 
 [node name="Label3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer7"]
 margin_left = 595.0
@@ -903,6 +980,8 @@ size_flags_vertical = 1
 text = "guitar"
 align = 2
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "guitarra" ]
 
 [node name="Label5" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer7"]
 margin_left = 595.0
@@ -923,6 +1002,8 @@ size_flags_vertical = 1
 text = "vocals"
 align = 2
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "voz" ]
 
 [node name="Label7" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer7"]
 margin_left = 595.0
@@ -935,7 +1016,7 @@ size_flags_vertical = 1
 text = "molly (molly)"
 autowrap = true
 
-[node name="_5" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
+[node name="_8" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
 margin_top = 1743.0
 margin_right = 1155.0
 margin_bottom = 1774.0
@@ -944,20 +1025,72 @@ size_flags_vertical = 1
 align = 1
 autowrap = true
 
-[node name="other" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
+[node name="localization" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
 margin_top = 1794.0
 margin_right = 1155.0
 margin_bottom = 1825.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "other"
+text = "translation"
+align = 1
+autowrap = true
+script = ExtResource( 5 )
+translations = [ "traducción" ]
+
+[node name="GridContainer10" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
+margin_top = 1845.0
+margin_right = 1155.0
+margin_bottom = 1876.0
+size_flags_horizontal = 3
+custom_constants/vseparation = 20
+custom_constants/hseparation = 35
+columns = 2
+
+[node name="1" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_right = 560.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "spanish (spain)"
+align = 2
+autowrap = true
+script = ExtResource( 5 )
+translations = [ "español (españa)" ]
+
+[node name="2" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 595.0
+margin_right = 1155.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "samo (samuel de la torre galán)"
+autowrap = true
+
+[node name="_5" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
+margin_top = 1896.0
+margin_right = 1155.0
+margin_bottom = 1927.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
 align = 1
 autowrap = true
 
-[node name="GridContainer5" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1845.0
+[node name="other" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
+margin_top = 1947.0
 margin_right = 1155.0
-margin_bottom = 2063.0
+margin_bottom = 1978.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "other"
+align = 1
+autowrap = true
+script = ExtResource( 5 )
+translations = [ "otros" ]
+
+[node name="GridContainer5" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
+margin_top = 1998.0
+margin_right = 1155.0
+margin_bottom = 2216.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -971,6 +1104,8 @@ size_flags_vertical = 1
 text = "testing"
 align = 2
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "pruebas" ]
 
 [node name="2" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer5"]
 margin_left = 595.0
@@ -993,6 +1128,8 @@ size_flags_vertical = 1
 text = "special thanks"
 align = 2
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "agradecimientos" ]
 
 [node name="4" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer5"]
 margin_left = 595.0
@@ -1005,29 +1142,31 @@ text = "jude m.
 uro (daniel taylor)"
 autowrap = true
 
-[node name="_8" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2083.0
+[node name="_11" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
+margin_top = 2236.0
 margin_right = 1155.0
-margin_bottom = 2114.0
+margin_bottom = 2267.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="sfx" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2134.0
+margin_top = 2287.0
 margin_right = 1155.0
-margin_bottom = 2165.0
+margin_bottom = 2318.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "sound effects"
 align = 1
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "efectos de sonido" ]
 
 [node name="sfx4" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2185.0
+margin_top = 2338.0
 margin_right = 1155.0
-margin_bottom = 2216.0
+margin_bottom = 2369.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "freesound.org"
@@ -1035,9 +1174,9 @@ align = 1
 autowrap = true
 
 [node name="GridContainer6" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2236.0
+margin_top = 2389.0
 margin_right = 1155.0
-margin_bottom = 2811.0
+margin_bottom = 2964.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1143,9 +1282,9 @@ sinewave1kHz"
 autowrap = true
 
 [node name="GridContainer9" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2831.0
+margin_top = 2984.0
 margin_right = 1155.0
-margin_bottom = 2913.0
+margin_bottom = 3066.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1190,28 +1329,30 @@ text = "soundeffectsfactory"
 autowrap = true
 
 [node name="_6" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2933.0
+margin_top = 3086.0
 margin_right = 1155.0
-margin_bottom = 2964.0
+margin_bottom = 3117.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="additional assets" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2984.0
+margin_top = 3137.0
 margin_right = 1155.0
-margin_bottom = 3015.0
+margin_bottom = 3168.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "additional assets"
 align = 1
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "recursos adicionales" ]
 
 [node name="GridContainer8" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3035.0
+margin_top = 3188.0
 margin_right = 1155.0
-margin_bottom = 3168.0
+margin_bottom = 3321.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1228,6 +1369,8 @@ text = "text-to-speech module
 source sans pro font"
 align = 2
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "sintetizador de voz\\nsombras del delineado 3d\\nmodelo 3d del gato\\nfuente source sans pro\\n" ]
 
 [node name="Label3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer8"]
 margin_left = 595.0
@@ -1242,9 +1385,9 @@ paul d. hunt"
 autowrap = true
 
 [node name="_10" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3188.0
+margin_top = 3341.0
 margin_right = 1155.0
-margin_bottom = 3219.0
+margin_bottom = 3372.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
@@ -1252,9 +1395,9 @@ autowrap = true
 
 [node name="version" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
 modulate = Color( 1, 1, 1, 0.509804 )
-margin_top = 3239.0
+margin_top = 3392.0
 margin_right = 1155.0
-margin_bottom = 3270.0
+margin_bottom = 3423.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "version: 21-7-7, web"
@@ -1262,9 +1405,9 @@ align = 1
 autowrap = true
 
 [node name="_13" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3290.0
+margin_top = 3443.0
 margin_right = 1155.0
-margin_bottom = 3321.0
+margin_bottom = 3474.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
@@ -1287,7 +1430,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="credits/back"]
 position = Vector2( -8.38, -4.88837 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 centered = false
 
 [node name="Label" type="Label" parent="credits/back"]
@@ -1296,11 +1439,13 @@ margin_bottom = 60.0
 text = "back"
 align = 1
 valign = 1
+script = ExtResource( 5 )
+translations = [ "volver" ]
 
-[node name="load_menu" parent="." instance=ExtResource( 20 )]
+[node name="load_menu" parent="." instance=ExtResource( 21 )]
 visible = false
 
-[node name="options_menu" parent="." instance=ExtResource( 21 )]
+[node name="options_menu" parent="." instance=ExtResource( 22 )]
 visible = false
 
 [node name="cover" type="ColorRect" parent="."]

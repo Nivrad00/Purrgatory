@@ -1,30 +1,31 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/options_menu.gd" type="Script" id=2]
 [ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://assets/ui/pronoun_input_box.png" type="Texture" id=5]
-[ext_resource path="res://themes/language_dropdown_theme.tres" type="Theme" id=6]
-[ext_resource path="res://assets/ui/slider_tick.png" type="Texture" id=7]
-[ext_resource path="res://assets/ui/slider_grabber.png" type="Texture" id=8]
-[ext_resource path="res://assets/ui/slider.png" type="Texture" id=9]
-[ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=10]
-[ext_resource path="res://assets/ui/font_preview.png" type="Texture" id=11]
-[ext_resource path="res://themes/dropdown_menu_theme.tres" type="Theme" id=12]
-[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=13]
-[ext_resource path="res://assets/ui/short_slider.png" type="Texture" id=14]
+[ext_resource path="res://scripts/TranslatedLabel.gd" type="Script" id=5]
+[ext_resource path="res://assets/ui/pronoun_input_box.png" type="Texture" id=6]
+[ext_resource path="res://themes/language_dropdown_theme.tres" type="Theme" id=7]
+[ext_resource path="res://assets/ui/slider_tick.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/slider_grabber.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/slider.png" type="Texture" id=10]
+[ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=11]
+[ext_resource path="res://assets/ui/font_preview.png" type="Texture" id=12]
+[ext_resource path="res://themes/dropdown_menu_theme.tres" type="Theme" id=13]
+[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=14]
+[ext_resource path="res://assets/ui/short_slider.png" type="Texture" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=7]
 size = 21
 font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 region_rect = Rect2( 0, 0, 448, 12 )
 axis_stretch_horizontal = 1
 
@@ -37,9 +38,13 @@ extra_spacing_space = 1
 font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxTexture" id=6]
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 region_rect = Rect2( 0, 0, 256, 12 )
 axis_stretch_horizontal = 1
+
+[sub_resource type="DynamicFont" id=8]
+size = 24
+font_data = ExtResource( 4 )
 
 [node name="options_menu" type="Control"]
 margin_right = 1280.0
@@ -70,9 +75,9 @@ visible = false
 position = Vector2( 398.949, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
+texture_mode = 927014784
 
 [node name="back" type="Button" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 515.0
@@ -103,9 +108,10 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "save and return"
 align = 1
 valign = 1
+script = ExtResource( 5 )
+translations = [ "guardar y volver" ]
 
 [node name="reset" type="Button" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1118.0
@@ -122,20 +128,23 @@ __meta__ = {
 
 [node name="box2" type="Sprite" parent="reset"]
 position = Vector2( 0.366638, 1.67036 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
 [node name="Label" type="Label" parent="reset"]
-margin_left = 2.0
-margin_top = 2.0
-margin_right = 148.0
-margin_bottom = 47.0
-custom_fonts/font = SubResource( 2 )
+margin_left = -15.0
+margin_top = -9.0
+margin_right = 165.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -5
 text = "reset settings"
 align = 1
 valign = 1
+script = ExtResource( 5 )
+translations = [ "reestablecer\\nconfiguración" ]
 
 [node name="language" type="Control" parent="."]
 margin_left = 239.0
@@ -150,6 +159,8 @@ margin_right = -41.0
 margin_bottom = 62.0
 text = "language"
 align = 2
+script = ExtResource( 5 )
+translations = [ "idioma" ]
 
 [node name="language" type="MarginContainer" parent="language"]
 margin_left = -16.0
@@ -165,7 +176,7 @@ margin_bottom = 43.0
 rect_min_size = Vector2( 240, 43 )
 focus_mode = 0
 size_flags_horizontal = 0
-theme = ExtResource( 6 )
+theme = ExtResource( 7 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
 
@@ -179,21 +190,24 @@ __meta__ = {
 }
 
 [node name="slider_label" type="Label" parent="text_size"]
-margin_left = -127.191
-margin_top = -5.21382
-margin_right = -46.191
-margin_bottom = 26.7862
+margin_left = -447.0
+margin_top = -5.0
+margin_right = -46.0
+margin_bottom = 27.0
 text = "text size"
 align = 2
+script = ExtResource( 5 )
+translations = [ "tamaño del texto
+" ]
 
 [node name="slider" type="HSlider" parent="text_size"]
 margin_top = 9.0
 margin_right = 448.0
 margin_bottom = 21.0
 focus_mode = 0
-custom_icons/tick = ExtResource( 7 )
-custom_icons/grabber_highlight = ExtResource( 8 )
-custom_icons/grabber = ExtResource( 8 )
+custom_icons/tick = ExtResource( 8 )
+custom_icons/grabber_highlight = ExtResource( 9 )
+custom_icons/grabber = ExtResource( 9 )
 custom_styles/slider = SubResource( 3 )
 custom_styles/grabber_area = SubResource( 4 )
 min_value = 20.0
@@ -210,7 +224,7 @@ margin_left = 26.0
 margin_top = 66.0
 margin_right = 430.0
 margin_bottom = 123.0
-theme = ExtResource( 10 )
+theme = ExtResource( 11 )
 text = "oliver"
 valign = 1
 
@@ -219,26 +233,27 @@ margin_left = 24.0
 margin_top = 136.0
 margin_right = 432.0
 margin_bottom = 250.0
-theme = ExtResource( 10 )
+theme = ExtResource( 11 )
 bbcode_enabled = true
 bbcode_text = "wahoo i sure [i]love[/i] purrgatory!"
 text = "wahoo i sure love purrgatory!"
 
 [node name="preview_box" type="Sprite" parent="text_size"]
 position = Vector2( 227.314, 167.088 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 
 [node name="preview_label" type="Label" parent="text_size"]
-margin_left = -145.0
+margin_left = -366.0
 margin_top = 62.0
 margin_right = -47.0
 margin_bottom = 94.0
 theme = ExtResource( 1 )
 text = "preview"
 align = 2
+script = ExtResource( 5 )
+translations = [ "vista previa" ]
 
 [node name="audio" type="Control" parent="."]
-editor/display_folded = true
 margin_left = 240.087
 margin_top = 466.0
 margin_right = 280.087
@@ -254,6 +269,8 @@ margin_right = -44.6502
 margin_bottom = 27.0
 text = "music volume"
 align = 2
+script = ExtResource( 5 )
+translations = [ "música" ]
 
 [node name="music" type="HSlider" parent="audio"]
 anchor_right = 1.0
@@ -262,9 +279,9 @@ margin_top = -8.0
 margin_right = 408.0
 margin_bottom = -6.0
 focus_mode = 0
-custom_icons/tick = ExtResource( 7 )
-custom_icons/grabber_highlight = ExtResource( 8 )
-custom_icons/grabber = ExtResource( 8 )
+custom_icons/tick = ExtResource( 8 )
+custom_icons/grabber_highlight = ExtResource( 9 )
+custom_icons/grabber = ExtResource( 9 )
 custom_styles/slider = SubResource( 3 )
 custom_styles/grabber_area = SubResource( 4 )
 max_value = 1.0
@@ -281,6 +298,8 @@ margin_right = -44.7923
 margin_bottom = 87.9303
 text = "sfx volume"
 align = 2
+script = ExtResource( 5 )
+translations = [ "sonidos" ]
 
 [node name="sfx" type="HSlider" parent="audio"]
 anchor_right = 1.0
@@ -289,9 +308,9 @@ margin_top = 53.0
 margin_right = 408.0
 margin_bottom = 55.0
 focus_mode = 0
-custom_icons/tick = ExtResource( 7 )
-custom_icons/grabber_highlight = ExtResource( 8 )
-custom_icons/grabber = ExtResource( 8 )
+custom_icons/tick = ExtResource( 8 )
+custom_icons/grabber_highlight = ExtResource( 9 )
+custom_icons/grabber = ExtResource( 9 )
 custom_styles/slider = SubResource( 3 )
 custom_styles/grabber_area = SubResource( 4 )
 max_value = 1.0
@@ -317,6 +336,8 @@ margin_right = 188.0
 margin_bottom = 53.0
 text = "fullscreen"
 align = 2
+script = ExtResource( 5 )
+translations = [ "pantalla completa" ]
 
 [node name="fullscreen" type="CheckBox" parent="right_side"]
 modulate = Color( 1, 1, 1, 0.3 )
@@ -334,6 +355,8 @@ margin_right = 188.0
 margin_bottom = 119.0
 text = "window size"
 align = 2
+script = ExtResource( 5 )
+translations = [ "tamaño de ventana" ]
 
 [node name="window_size" type="MarginContainer" parent="right_side"]
 modulate = Color( 1, 1, 1, 0.3 )
@@ -350,7 +373,7 @@ margin_bottom = 43.0
 rect_min_size = Vector2( 186, 43 )
 focus_mode = 0
 size_flags_horizontal = 0
-theme = ExtResource( 12 )
+theme = ExtResource( 13 )
 disabled = true
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
@@ -376,9 +399,10 @@ margin_right = 188.0
 margin_bottom = 224.0
 text = "self-voicing"
 align = 2
+script = ExtResource( 5 )
+translations = [ "voz automática" ]
 
 [node name="self_voicing" type="CheckBox" parent="right_side"]
-editor/display_folded = true
 modulate = Color( 1, 1, 1, 0.3 )
 margin_left = 215.0
 margin_top = 171.0
@@ -408,7 +432,7 @@ margin_top = 0.814514
 margin_right = 91.4253
 margin_bottom = 40.8145
 mouse_filter = 2
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 
 [node name="label3" type="Label" parent="right_side/self_voicing/test_voicing"]
 margin_left = 8.53992
@@ -420,6 +444,8 @@ text = "test"
 align = 1
 valign = 1
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "probar" ]
 
 [node name="voice_speed_label" type="Label" parent="right_side"]
 modulate = Color( 1, 1, 1, 0.3 )
@@ -428,6 +454,8 @@ margin_right = 188.0
 margin_bottom = 285.0
 text = "voice speed"
 align = 2
+script = ExtResource( 5 )
+translations = [ "velocidad de voz" ]
 
 [node name="voice_speed" type="MarginContainer" parent="right_side"]
 editor/display_folded = true
@@ -444,10 +472,10 @@ margin_right = 274.0
 margin_bottom = 32.0
 focus_mode = 0
 size_flags_vertical = 1
-custom_icons/tick = ExtResource( 7 )
-custom_icons/grabber_disabled = ExtResource( 8 )
-custom_icons/grabber_highlight = ExtResource( 8 )
-custom_icons/grabber = ExtResource( 8 )
+custom_icons/tick = ExtResource( 8 )
+custom_icons/grabber_disabled = ExtResource( 9 )
+custom_icons/grabber_highlight = ExtResource( 9 )
+custom_icons/grabber = ExtResource( 9 )
 custom_styles/slider = SubResource( 6 )
 custom_styles/grabber_area = SubResource( 4 )
 min_value = -100.0
@@ -488,22 +516,17 @@ pressed = true
 enabled_focus_mode = 0
 
 [node name="to_do_label" type="Label" parent="right_side"]
-editor/display_folded = true
 margin_top = 434.0
 margin_right = 188.0
-margin_bottom = 466.0
+margin_bottom = 465.0
+custom_fonts/font = SubResource( 8 )
+custom_constants/line_spacing = -5
 text = "enable to do list"
 align = 2
-
-[node name="label2" type="Label" parent="right_side/to_do_label"]
-margin_left = -4.0
-margin_top = 46.0
-margin_right = 394.0
-margin_bottom = 102.0
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
-text = "automatically keeps track of certain objectives"
+valign = 2
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "habilitar la lista de tareas" ]
 
 [node name="to_do" type="CheckBox" parent="right_side"]
 margin_left = 215.0
@@ -514,28 +537,44 @@ focus_mode = 0
 pressed = true
 enabled_focus_mode = 0
 
+[node name="label2" type="Label" parent="."]
+margin_left = 746.0
+margin_top = 540.0
+margin_right = 1144.0
+margin_bottom = 596.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+text = "automatically keeps track of certain objectives"
+autowrap = true
+script = ExtResource( 5 )
+translations = [ "registra ciertos objetivos de manera automática" ]
+
 [node name="web_disclaimer" type="Label" parent="."]
-margin_left = 19.4555
-margin_top = 681.323
-margin_right = 477.455
-margin_bottom = 737.323
+margin_left = 19.0
+margin_top = 681.0
+margin_right = 902.0
+margin_bottom = 737.0
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
 text = "note: some options not available in the web build"
 autowrap = true
+script = ExtResource( 5 )
+translations = [ "nota: algunas opciones no están disponibles en la versión web" ]
 
 [node name="download_disclaimer" type="Label" parent="."]
 visible = false
 margin_left = 19.0
 margin_top = 681.0
-margin_right = 740.0
+margin_right = 964.0
 margin_bottom = 737.0
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
 text = "note: purrgatory looks best at its original resolution, 1280 x 720!"
 autowrap = true
-[connection signal="pressed" from="back" to="." method="hide_custom"]
+script = ExtResource( 5 )
+translations = [ "nota: es recomendable jugar este juego en su resolución original (1280 x 720)" ]
 [connection signal="pressed" from="back" to="." method="save_options"]
+[connection signal="pressed" from="back" to="." method="hide_custom"]
 [connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]
 [connection signal="item_selected" from="language/language/dropdown" to="." method="_on_language_selected"]
 [connection signal="value_changed" from="text_size/slider" to="." method="_on_text_size_value_changed"]

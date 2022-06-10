@@ -352,7 +352,7 @@ func update_dialog(b: int):
 	
 	# autosave every so often. it's also saved whenever you exit (though not if you crash)
 	save_ticker += 1
-	if save_ticker % 20 == 0:
+	if save_ticker % 15 == 0:
 		var f = File.new()
 		f.open("user://seen_blocks.save", File.WRITE)
 		f.store_line(to_json(seen_blocks))
