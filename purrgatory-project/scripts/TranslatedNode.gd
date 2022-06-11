@@ -12,5 +12,5 @@ func update_label(lang):
 	if get_child(lang):
 		get_child(lang).show()
 	else:
-		print("error: no translation found for sprite " + name)
+		print("error: no translation found for node " + name)
 		
