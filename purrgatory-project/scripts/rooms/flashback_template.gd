@@ -251,18 +251,21 @@ func format_text(_lang=null):
 					#if option.has_node('end_text'):
 						#option.get_node('end_text').set_position(Vector2(option_width + space_size.x, 0))
 			
-func set_format_dict(key, value):
-	# to do: support spanish
-	var formatter = [
-		['your', 'my'], 
-		['you', 'i'], 
-		['.', '']
-	]
-	for pair in formatter:
-		value = value.replacen(pair[0], pair[1])
-	
-	# the formatter fucks up "young adult novel" lmao
-	value = value.replacen("ing adult", "young adult")
+func set_format_dict(key, value, lang=0):
+	if lang == 0: # english
+		var formatter = [
+			['your', 'my'], 
+			['you', 'i'], 
+			['.', '']
+		]
+		for pair in formatter:
+			value = value.replacen(pair[0], pair[1])
 		
-	game.format_dict['bio.' + key] = value
+		# the formatter fucks up "young adult novel" lmao
+		value = value.replacen("ing adult", "young adult")
+			
+		game.format_dict['bio.' + key] = value
 	
+	else:
+		game.format_dict['bio.' + key] = value
+		

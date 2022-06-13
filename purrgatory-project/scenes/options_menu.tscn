@@ -20,7 +20,7 @@
 size = 25
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=2]
 size = 21
 font_data = ExtResource( 4 )
 
@@ -42,11 +42,11 @@ texture = ExtResource( 15 )
 region_rect = Rect2( 0, 0, 256, 12 )
 axis_stretch_horizontal = 1
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=7]
 size = 24
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=8]
 size = 20
 use_filter = true
 extra_spacing_space = 1
@@ -75,13 +75,13 @@ visible = false
 position = Vector2( 369.758, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
+texture_mode = -741873382
 
 [node name="Line2D2" type="Line2D" parent="."]
 visible = false
 position = Vector2( 398.949, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
-texture_mode = 927014784
 
 [node name="back" type="Button" parent="."]
 anchor_right = 1.0
@@ -143,7 +143,7 @@ margin_left = -15.0
 margin_top = -9.0
 margin_right = 165.0
 margin_bottom = 58.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/line_spacing = -5
 text = "reset settings"
@@ -406,7 +406,7 @@ margin_bottom = 224.0
 text = "self-voicing"
 align = 2
 script = ExtResource( 5 )
-translations = [ "voz automática" ]
+translations = [ "lector de pantalla" ]
 
 [node name="self_voicing" type="CheckBox" parent="right_side"]
 modulate = Color( 1, 1, 1, 0.3 )
@@ -511,6 +511,8 @@ margin_right = 188.0
 margin_bottom = 384.0
 text = "low contrast mode"
 align = 2
+script = ExtResource( 5 )
+translations = [ "contraste bajo" ]
 
 [node name="low_contrast" type="CheckBox" parent="right_side"]
 margin_left = 215.0
@@ -525,7 +527,7 @@ enabled_focus_mode = 0
 margin_top = 434.0
 margin_right = 188.0
 margin_bottom = 465.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 custom_constants/line_spacing = -5
 text = "enable to do list"
 align = 2
@@ -560,7 +562,7 @@ margin_left = 19.0
 margin_top = 681.0
 margin_right = 902.0
 margin_bottom = 737.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
 text = "note: some options not available in the web build"
 autowrap = true

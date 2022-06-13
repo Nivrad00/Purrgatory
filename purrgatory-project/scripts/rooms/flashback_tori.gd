@@ -15,3 +15,14 @@ func wake_up():
 	emit_signal('change_room', 'warehouse3')
 	
 	set_format_dict('desire', choice_text[1])
+	
+	var desire_es_replacements = [
+		'el conocimiento',
+		'la amistad',
+		'la aventura',
+		'la destreza',
+		'la felicidad',
+		'la libertad',
+		'el amor'
+	]
+	set_format_dict('desire_es', desire_es_replacements[choice_log[1]])

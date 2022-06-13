@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/hallway2.gd" type="Script" id=2]
@@ -19,7 +19,8 @@
 [ext_resource path="res://assets/sprites/natalie_and_tori3.png" type="Texture" id=17]
 [ext_resource path="res://assets/ui/ttt_done.png" type="Texture" id=18]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=19]
-[ext_resource path="res://assets/audio/pencil.ogg" type="AudioStream" id=20]
+[ext_resource path="res://scripts/TranslatedLabel.gd" type="Script" id=20]
+[ext_resource path="res://assets/audio/pencil.ogg" type="AudioStream" id=21]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -159,9 +160,11 @@ margin_bottom = 53.9905
 rect_pivot_offset = Vector2( -555.677, -604.755 )
 theme = ExtResource( 19 )
 text = "done"
+script = ExtResource( 20 )
+translations = [ "hecho" ]
 
 [node name="asmr" type="AudioStreamPlayer" parent="state_handler"]
-stream = ExtResource( 20 )
+stream = ExtResource( 21 )
 volume_db = 10.0
 bus = "SFX"
 

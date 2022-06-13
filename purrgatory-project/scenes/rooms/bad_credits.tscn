@@ -978,7 +978,6 @@ custom_fonts/font = SubResource( 5 )
 text = "(molly)"
 
 [node name="5" type="Control" parent="state_handler"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -987,10 +986,10 @@ margin_left = -338.0
 margin_top = 171.0
 margin_right = 940.996
 margin_bottom = 242.0
-text = "spanish (spain) translation"
+text = "spanish localization (spain)"
 align = 1
 script = ExtResource( 8 )
-translations = [ "traducción al español (españa)" ]
+translations = [ "traducción al español de españa" ]
 
 [node name="Label5" type="Label" parent="state_handler/5/Label4"]
 margin_left = 1.29236
@@ -1012,7 +1011,6 @@ text = "(samuel de la torre galán)"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/5"]
-editor/display_folded = true
 margin_left = 3.05176e-005
 margin_top = 104.566
 margin_right = 1279.0
@@ -1075,7 +1073,6 @@ text = "(nicky van der reijden)"
 align = 1
 
 [node name="Label3" type="Label" parent="state_handler/5"]
-editor/display_folded = true
 margin_left = 341.0
 margin_top = 151.423
 margin_right = 1620.0
@@ -1286,6 +1283,7 @@ __meta__ = {
 
 [node name="7" type="Control" parent="state_handler"]
 editor/display_folded = true
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 

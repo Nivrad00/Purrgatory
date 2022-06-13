@@ -448,7 +448,7 @@ func format_text(text):
 					   .replacen('{el/la/le}', ('el' if t == 'o' else 'l' + t))\
 					   .replacen('{o/a/e}', t)\
 					   .replacen('{o/a/ue}', ('ui' if t == 'i' else t))\
-					   .replacen('{ooo/aaa/eee}', t + t + t)
+					   .replacen('{ooo/aaa/eee}', t)
 					   
 		else:
 			print('error: no pronouns set in spanish (spain)')

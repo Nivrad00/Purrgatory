@@ -126,7 +126,6 @@ __meta__ = {
 }
 
 [node name="loading" type="Control" parent="."]
-editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 theme = ExtResource( 4 )
@@ -157,7 +156,7 @@ click to continue"
 align = 1
 valign = 1
 script = ExtResource( 5 )
-translations = [ "¡listo!\\nhaz click para continuar" ]
+translations = [ "¡listo!\\nhaz clic para continuar" ]
 
 [node name="click_to_continue" type="Button" parent="loading"]
 visible = false
@@ -1031,7 +1030,7 @@ margin_right = 1155.0
 margin_bottom = 1825.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "translation"
+text = "localization"
 align = 1
 autowrap = true
 script = ExtResource( 5 )
@@ -1055,7 +1054,7 @@ text = "spanish (spain)"
 align = 2
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "español (españa)" ]
+translations = [ "español de españa" ]
 
 [node name="2" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
 margin_left = 595.0

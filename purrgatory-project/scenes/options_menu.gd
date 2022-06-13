@@ -280,7 +280,10 @@ func _on_enable_voicing_toggled(button_pressed):
 
 func _on_test_voicing_pressed():
 	get_tree().get_root().get_node('main/game/tts_node').stop()
-	get_tree().get_root().get_node('main/game/tts_node').speak('self-voicing sample')
+	if Language.language == 0:
+		get_tree().get_root().get_node('main/game/tts_node').speak('self-voicing sample')
+	elif Language.language == 1:
+		get_tree().get_root().get_node('main/game/tts_node').speak('prueba del lector de pantalla')
 
 func _on_window_size_selected(ID):
 	var res_string = resolutions[ID]
