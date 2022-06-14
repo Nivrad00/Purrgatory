@@ -3,7 +3,7 @@ extends "state_handler_template.gd"
 const empty_space = '                              '
 
 onready var game = get_node('../../../../..')
-var last_editable_text = null
+var last_editable_text = []
 var text_n = -1
 var choice_n = 0
 var choice_log = {}
@@ -26,20 +26,26 @@ func _ready():
 	format_text()
 	
 func next():
-	# if the previous line of text was a choice, turn off the button so it doesn't cause highlighting
+	# if the previous line of text was a choice, turn off the button so it doesn't cause highlighting, and save the choice
 	var olds = []
 	if text_n >= 0:
 		for lang_node in lang_nodes:
 			olds.append(lang_node.get_node('vc').get_child(text_n))
-	for old in olds:
-		if old and old.name[0] == 'c':
-			var old_choice = old.get_node('choice_container').get_child(choice_n)
-			old_choice.get_node('Button').hide()
-		
-			# also get rid of the underline and store the choice for later
-			old_choice.set_bbcode(old_choice.get_bbcode().replace('[u]', '').replace('[/u]', ''))
+
+	if olds.size() > 0:
+		# we only need to save the number of the choice (in choice_log) and the english text of the choice (in choice_text)
+		if olds[0] and olds[0].name[0] == 'c':
 			choice_log[text_n] = choice_n
-			choice_text[text_n] = old_choice.text
+			choice_text[text_n] = olds[0].get_node('choice_container').get_child(choice_n).text
+	
+		# but we need to fix the button and formatting for all langs
+		for old in olds:
+			if old and old.name[0] == 'c':
+				var old_choice = old.get_node('choice_container').get_child(choice_n)
+				old_choice.get_node('Button').hide()
+			
+				# get rid of the underline and store the choice for later
+				old_choice.set_bbcode(old_choice.get_bbcode().replace('[u]', '').replace('[/u]', ''))
 	
 	# try getting the next line of text
 	text_n += 1
@@ -47,6 +53,7 @@ func next():
 	for lang_node in lang_nodes:
 		currents.append(lang_node.get_node('vc').get_child(text_n))
 	# if there is one...
+	var all_done = false
 	for current in currents:
 		if current is RichTextLabel:
 			# fade in the new text
@@ -64,14 +71,14 @@ func next():
 					
 					# check if there's a lineedit WITHIN the variable text
 					if var_text.name[0] == 'e':
-						last_editable_text = var_text.get_bbcode()
-						var_text.set_bbcode(last_editable_text % empty_space)
+						last_editable_text.append(var_text.get_bbcode())
+						var_text.set_bbcode(var_text.get_bbcode() % empty_space)
 						$next_cover.hide()
 			
 			# if it's a lineedit...
 			if current.name[0] == 'e':
-				last_editable_text = current.get_bbcode()
-				current.set_bbcode(last_editable_text % empty_space)
+				last_editable_text.append(current.get_bbcode())
+				current.set_bbcode(current.get_bbcode() % empty_space)
 				$next_cover.hide()
 				
 			# if it's a choice...
@@ -86,29 +93,40 @@ func next():
 				var default_choice = current.get_node('choice_container').get_child(0).show()
 				
 		else: 
-			$next_button.hide()
-			$next_cover.hide()
-			
-			# if the last line of text was interactable, then let them look at it for a while
-			if olds.size() > 0 and olds[Language.language] and (olds[Language.language].name[0] == 'c' or last_editable_text):
-				$next_cover.show()
-			
-			# otherwise fade out all the text and enable the "wake up" cover
-			else:
-				$AnimationPlayer.play_backwards('Fadein')
-				$wake_up_cover.show()
+			all_done = true # need to do this outside of the for loop so it only happens once
+	
+	if all_done:
+		$next_button.hide()
+		$next_cover.hide()
 		
-		# also, if the previous line of text had a lineedit, format it correctly
-		if olds.size() > 0 and last_editable_text:
-			for old in olds:
-				for child in old.get_children():
-					if child.name[0] == 'e' and child.get_node('LineEdit').text != '':
+		# if the last line of text was interactable, then let them look at it for a while
+		if olds.size() > 0 and olds[Language.language] and (olds[Language.language].name[0] == 'c' or last_editable_text.size() > 0):
+			$next_cover.show()
+		
+		# otherwise fade out all the text and enable the "wake up" cover
+		else:
+			$AnimationPlayer.play_backwards('Fadein')
+			$wake_up_cover.show()
+		
+	# also, if the previous line of text had a lineedit, we need to save the player's input and format it correctly
+	if olds.size() > 0 and last_editable_text.size() > 0:
+		# use the current language's nodes to see if there was a lineedit, and if so, save what the player entered
+		var player_input = null
+		for child in olds[Language.language].get_children():
+			if child.name[0] == 'e':
+				player_input = child.get_node('LineEdit').text
+				input_text[text_n - 1] = player_input
+		
+		# now update the text in all languages to reflect the player's input
+		if player_input:
+			for i in range(olds.size()):
+				for child in olds[i].get_children():
+					if child.name[0] == 'e':
 						var lineedit = child.get_node('LineEdit')
-						lineedit.get_parent().set_bbcode(last_editable_text % lineedit.text)
+						lineedit.get_parent().set_bbcode(last_editable_text[i] % player_input)
 						lineedit.get_parent().get_node('underline').hide()
 						lineedit.hide()
-						last_editable_text = null
-						input_text[text_n - 1] = lineedit.text
+			last_editable_text = []
 
 func cycle_choice():
 	var size 
@@ -161,7 +179,8 @@ func max_text_width(font, texts):
 	return max_width
 
 func format_text(_lang=null):
-	for lang_node in lang_nodes:
+	for i in range(lang_nodes.size()):
+		var lang_node = lang_nodes[i]
 		# first, set the width of the vertical container to the length of the longest line.
 		# this code might break if you use italics. don't use fucking italics
 		
@@ -232,8 +251,8 @@ func format_text(_lang=null):
 				if option.name[0] == 'e' and option.name.length() == 2:
 					# snapping lineedit
 					var start_text
-					if last_editable_text:
-						start_text = last_editable_text.split('%s')[0]
+					if last_editable_text.size() > 0:
+						start_text = last_editable_text[i].split('%s')[0]
 					else:
 						start_text = option.text.split('%s')[0]
 					var start_width = font.get_string_size(start_text).x

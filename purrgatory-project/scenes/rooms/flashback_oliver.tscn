@@ -210,7 +210,6 @@ margin_bottom = 40.0
 script = ExtResource( 4 )
 
 [node name="0" type="HBoxContainer" parent="state_handler/text"]
-editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 720.0
 alignment = 1
@@ -239,7 +238,6 @@ scroll_active = false
 anims/Fadein = SubResource( 2 )
 
 [node name="c1" type="RichTextLabel" parent="state_handler/text/0/vc"]
-editor/display_folded = true
 margin_top = 290.0
 margin_right = 800.0
 margin_bottom = 350.0
@@ -560,6 +558,7 @@ flat = true
 script = ExtResource( 5 )
 
 [node name="t3" type="RichTextLabel" parent="state_handler/text/0/vc"]
+editor/display_folded = true
 margin_top = 450.0
 margin_right = 800.0
 margin_bottom = 510.0
@@ -1017,6 +1016,7 @@ flat = true
 script = ExtResource( 5 )
 
 [node name="t3" type="RichTextLabel" parent="state_handler/text/1/vc"]
+editor/display_folded = true
 margin_top = 450.0
 margin_right = 800.0
 margin_bottom = 510.0
@@ -1125,7 +1125,6 @@ scroll_active = false
 anims/Fadein = SubResource( 15 )
 
 [node name="next_button" type="Button" parent="state_handler"]
-editor/display_folded = true
 margin_left = 573.0
 margin_top = 571.0
 margin_right = 708.0

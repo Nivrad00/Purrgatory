@@ -48,5 +48,3 @@ func wake_up():
 	# done
 	
 	emit_signal('change_room', 'flashback_sean')
-	
-	
