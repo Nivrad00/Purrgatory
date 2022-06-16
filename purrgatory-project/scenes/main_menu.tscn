@@ -70,7 +70,7 @@ blend_mode = 3
 
 [node name="main" type="Node"]
 script = ExtResource( 1 )
-version = "2022-06-09"
+version = "2022-06-15"
 
 [node name="delay_timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -496,6 +496,7 @@ script = ExtResource( 5 )
 translations = [ "atajos de teclado" ]
 
 [node name="GridContainer" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
+editor/display_folded = true
 margin_top = 383.0
 margin_right = 1155.0
 margin_bottom = 720.0
@@ -685,6 +686,7 @@ script = ExtResource( 5 )
 translations = [ "créditos" ]
 
 [node name="GridContainer2" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
+editor/display_folded = true
 margin_top = 842.0
 margin_right = 1155.0
 margin_bottom = 1009.0
@@ -780,6 +782,7 @@ script = ExtResource( 5 )
 translations = [ "dibujo" ]
 
 [node name="GridContainer3" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
+editor/display_folded = true
 margin_top = 1131.0
 margin_right = 1155.0
 margin_bottom = 1264.0
@@ -874,6 +877,7 @@ script = ExtResource( 5 )
 translations = [ "música" ]
 
 [node name="GridContainer4" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
+editor/display_folded = true
 margin_top = 1386.0
 margin_right = 1155.0
 margin_bottom = 1468.0
@@ -942,6 +946,7 @@ align = 1
 autowrap = true
 
 [node name="GridContainer7" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
+editor/display_folded = true
 margin_top = 1590.0
 margin_right = 1155.0
 margin_bottom = 1723.0
@@ -1037,6 +1042,7 @@ script = ExtResource( 5 )
 translations = [ "traducción" ]
 
 [node name="GridContainer10" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
+editor/display_folded = true
 margin_top = 1845.0
 margin_right = 1155.0
 margin_bottom = 1876.0
@@ -1087,6 +1093,7 @@ script = ExtResource( 5 )
 translations = [ "otros" ]
 
 [node name="GridContainer5" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
+editor/display_folded = true
 margin_top = 1998.0
 margin_right = 1155.0
 margin_bottom = 2216.0
@@ -1173,6 +1180,7 @@ align = 1
 autowrap = true
 
 [node name="GridContainer6" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
+editor/display_folded = true
 margin_top = 2389.0
 margin_right = 1155.0
 margin_bottom = 2964.0
@@ -1281,6 +1289,7 @@ sinewave1kHz"
 autowrap = true
 
 [node name="GridContainer9" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
+editor/display_folded = true
 margin_top = 2984.0
 margin_right = 1155.0
 margin_bottom = 3066.0
@@ -1349,6 +1358,7 @@ script = ExtResource( 5 )
 translations = [ "recursos adicionales" ]
 
 [node name="GridContainer8" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
+editor/display_folded = true
 margin_top = 3188.0
 margin_right = 1155.0
 margin_bottom = 3321.0
@@ -1399,7 +1409,7 @@ margin_right = 1155.0
 margin_bottom = 3423.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "version: 21-7-7, web"
+text = "version..."
 align = 1
 autowrap = true
 

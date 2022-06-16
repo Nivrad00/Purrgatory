@@ -115,6 +115,8 @@ func _ready():
 	for lang in Language.languages:
 		$language/language/dropdown.add_item(lang)
 		
+	Language.connect("language_changed", self, "_on_language_changed")
+		
 func save_options():
 	# saves options to file
 	# (the options are applied as soon as the values are changed or the game starts, so no need to apply anything here)

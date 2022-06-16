@@ -705,6 +705,7 @@ margin_bottom = -180.465
 rect_scale = Vector2( 33.8985, 19.0842 )
 
 [node name="inputs" type="Control" parent="content/ui/name_input/custom_pronouns"]
+editor/display_folded = true
 margin_left = -336.546
 margin_top = -220.465
 margin_right = -296.546
@@ -902,7 +903,6 @@ valign = 1
 autowrap = true
 
 [node name="back" type="Button" parent="content/ui/name_input/custom_pronouns"]
-editor/display_folded = true
 margin_left = 211.573
 margin_top = 146.731
 margin_right = 466.573
@@ -1011,7 +1011,6 @@ script = ExtResource( 17 )
 translations = [ "saltar" ]
 
 [node name="history_button" type="Button" parent="content/ui"]
-editor/display_folded = true
 margin_left = 996.904
 margin_top = 431.47
 margin_right = 1072.9
@@ -1051,7 +1050,6 @@ anims/numa_with_crowbar = SubResource( 24 )
 anims/right_to_left_run = SubResource( 25 )
 
 [node name="meta_ui" type="Control" parent="."]
-editor/display_folded = true
 margin_right = 1280.01
 margin_bottom = 720.0
 mouse_filter = 2
@@ -1094,7 +1092,6 @@ script = ExtResource( 17 )
 translations = [ "menú" ]
 
 [node name="dropdown" type="Control" parent="meta_ui"]
-editor/display_folded = true
 margin_left = 163.458
 margin_top = -284.152
 margin_right = 1280.46
@@ -2004,29 +2001,29 @@ color = Color( 0, 0, 0, 1 )
 [connection signal="mouse_exited" from="meta_ui/history_button2" to="content/room" method="start_all_hovering"]
 [connection signal="pressed" from="meta_ui/history_button2" to="." method="turn_off_skip"]
 [connection signal="pressed" from="meta_ui/history_button2" to="meta_ui/history" method="toggle"]
-[connection signal="pressed" from="meta_ui/pause_menu/buttons/save" to="meta_ui/menu_button" method="hide"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/save" to="meta_ui/save_menu" method="show_custom"]
-[connection signal="pressed" from="meta_ui/pause_menu/buttons/load" to="meta_ui/menu_button" method="hide"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/save" to="meta_ui/menu_button" method="hide"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/load" to="meta_ui/load_menu" method="show_custom"]
-[connection signal="pressed" from="meta_ui/pause_menu/buttons/options" to="meta_ui/menu_button" method="hide"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/load" to="meta_ui/menu_button" method="hide"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/options" to="meta_ui/options_menu" method="show_custom"]
-[connection signal="pressed" from="meta_ui/pause_menu/buttons/exit" to="meta_ui/menu_button" method="hide"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/options" to="meta_ui/menu_button" method="hide"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/exit" to="meta_ui/exit_confirm" method="show"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/exit" to="meta_ui/menu_button" method="hide"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/back" to="." method="close_pause_menu"]
 [connection signal="hiding" from="meta_ui/options_menu" to="meta_ui/menu_button" method="show"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
-[connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/dropdown" method="format_quests"]
+[connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
 [connection signal="pressed" from="meta_ui/exit_confirm/yes" to="." method="return_to_main"]
-[connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/menu_button" method="show"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
-[connection signal="pressed" from="meta_ui/save_confirm/yes" to="meta_ui/menu_button" method="show"]
+[connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/menu_button" method="show"]
 [connection signal="pressed" from="meta_ui/save_confirm/yes" to="." method="save_confirmed"]
+[connection signal="pressed" from="meta_ui/save_confirm/yes" to="meta_ui/menu_button" method="show"]
 [connection signal="deleted_data" from="meta_ui/save_menu" to="." method="deleted_data"]
 [connection signal="hiding" from="meta_ui/save_menu" to="meta_ui/menu_button" method="show"]
 [connection signal="save_file" from="meta_ui/save_menu" to="." method="save"]
-[connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/menu_button" method="show"]
 [connection signal="pressed" from="meta_ui/load_confirm/yes" to="." method="load_confirmed"]
+[connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/menu_button" method="show"]
 [connection signal="deleted_data" from="meta_ui/load_menu" to="." method="deleted_data"]
 [connection signal="hiding" from="meta_ui/load_menu" to="meta_ui/menu_button" method="show"]
 [connection signal="load_file" from="meta_ui/load_menu" to="." method="load_game_while_playing"]

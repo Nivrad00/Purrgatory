@@ -75,13 +75,14 @@ visible = false
 position = Vector2( 369.758, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
-texture_mode = -741873382
+texture_mode = 83127041
 
 [node name="Line2D2" type="Line2D" parent="."]
 visible = false
 position = Vector2( 398.949, -15.7146 )
 points = PoolVector2Array( 0, 0, 0, 800 )
 width = 1.0
+texture_mode = 1
 
 [node name="back" type="Button" parent="."]
 anchor_right = 1.0
@@ -327,9 +328,9 @@ ticks_on_borders = true
 focus_mode = 0
 
 [node name="right_side" type="GridContainer" parent="."]
-margin_left = 744.65
-margin_top = 52.0
-margin_right = 1233.65
+margin_left = 745.0
+margin_top = 99.0
+margin_right = 1234.0
 margin_bottom = 539.0
 custom_constants/vseparation = 8
 custom_constants/hseparation = 27
@@ -365,6 +366,7 @@ script = ExtResource( 5 )
 translations = [ "tamaño de ventana" ]
 
 [node name="window_size" type="MarginContainer" parent="right_side"]
+editor/display_folded = true
 modulate = Color( 1, 1, 1, 0.3 )
 margin_left = 215.0
 margin_top = 82.0
@@ -409,6 +411,7 @@ script = ExtResource( 5 )
 translations = [ "lector de pantalla" ]
 
 [node name="self_voicing" type="CheckBox" parent="right_side"]
+editor/display_folded = true
 modulate = Color( 1, 1, 1, 0.3 )
 margin_left = 215.0
 margin_top = 171.0
@@ -524,6 +527,7 @@ pressed = true
 enabled_focus_mode = 0
 
 [node name="to_do_label" type="Label" parent="right_side"]
+visible = false
 margin_top = 434.0
 margin_right = 188.0
 margin_bottom = 465.0
@@ -537,15 +541,16 @@ script = ExtResource( 5 )
 translations = [ "habilitar la lista de tareas" ]
 
 [node name="to_do" type="CheckBox" parent="right_side"]
-margin_left = 215.0
+visible = false
 margin_top = 413.0
-margin_right = 489.0
+margin_right = 188.0
 margin_bottom = 487.0
 focus_mode = 0
 pressed = true
 enabled_focus_mode = 0
 
 [node name="label2" type="Label" parent="."]
+visible = false
 margin_left = 746.0
 margin_top = 540.0
 margin_right = 1144.0
@@ -581,8 +586,8 @@ text = "note: purrgatory looks best at its original resolution, 1280 x 720!"
 autowrap = true
 script = ExtResource( 5 )
 translations = [ "nota: es recomendable jugar este juego en su resolución original (1280 x 720)" ]
-[connection signal="pressed" from="back" to="." method="save_options"]
 [connection signal="pressed" from="back" to="." method="hide_custom"]
+[connection signal="pressed" from="back" to="." method="save_options"]
 [connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]
 [connection signal="item_selected" from="language/language/dropdown" to="." method="_on_language_selected"]
 [connection signal="value_changed" from="text_size/slider" to="." method="_on_text_size_value_changed"]

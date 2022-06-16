@@ -36,7 +36,14 @@ func init_state(state):
 		bio_choices.append(choice_dict['sloth'])
 		
 	state['bio_choices'] = bio_choices
-		
+
+func add_to_choices(choices, additions):
+	for i in range(additions.size()):
+		if i < choices.size():
+			choices[i].append(additions[i])
+		else:
+			choices.append([additions[i]])
+
 func update_state(state):
 	.update_state(state)
 	
@@ -52,61 +59,53 @@ func update_state(state):
 			state['show_bio_choices0'] = false
 		
 			if state['bio_choices'].size() > 4:
-				choices = [
-					state['bio_choices'][0][Language.language],
-					state['bio_choices'][1][Language.language],
-					state['bio_choices'][2][Language.language],
-					choice_dict['something_else1'][Language.language]
-				]
+				add_to_choices(choices, state['bio_choices'][0])
+				add_to_choices(choices, state['bio_choices'][1])
+				add_to_choices(choices, state['bio_choices'][2])
+				add_to_choices(choices, choice_dict['something_else1'])
+				
 			elif state['bio_choices'].size() > 0:
 				choices = []
 				for choice in state['bio_choices']:
-					choices.append(choice[Language.language])
+					add_to_choices(choices, choice)
+					
 			else:
-				choices = [
-					choice_dict['done'][Language.language]
-				]
+				add_to_choices(choices, choice_dict['done'])
 				
 		elif state.get('show_bio_choices1'):
 			state['show_bio_choices1'] = false
 		
 			if state['bio_choices'].size() == 7:
-				choices = [
-					state['bio_choices'][3][Language.language],
-					state['bio_choices'][4][Language.language],
-					state['bio_choices'][5][Language.language],
-					choice_dict['something_else2'][Language.language]
-				]
+				add_to_choices(choices, state['bio_choices'][3])
+				add_to_choices(choices, state['bio_choices'][4])
+				add_to_choices(choices, state['bio_choices'][5])
+				add_to_choices(choices, choice_dict['something_else2'])
+				
 			elif state['bio_choices'].size() == 6:
-				choices = [
-					state['bio_choices'][3][Language.language],
-					state['bio_choices'][4][Language.language],
-					state['bio_choices'][5][Language.language],
-					choice_dict['something_else0'][Language.language]
-				]
+				add_to_choices(choices, state['bio_choices'][3])
+				add_to_choices(choices, state['bio_choices'][4])
+				add_to_choices(choices, state['bio_choices'][5])
+				add_to_choices(choices, choice_dict['something_else0'])
+				
 			elif state['bio_choices'].size() == 5:
-				choices = [
-					state['bio_choices'][3][Language.language],
-					state['bio_choices'][4][Language.language],
-					choice_dict['something_else0'][Language.language]
-				]
+				add_to_choices(choices, state['bio_choices'][3])
+				add_to_choices(choices, state['bio_choices'][4])
+				add_to_choices(choices, choice_dict['something_else0'])
 				
 		elif state.get('show_bio_choices2'):
 			state['show_bio_choices2'] = false
+			add_to_choices(choices, state['bio_choices'][6])
+			add_to_choices(choices, choice_dict['something_else0'])
 		
-			choices = [
-				state['bio_choices'][6][Language.language],
-				choice_dict['something_else0'][Language.language]
-			]
+		if choices.size() > 0:
+			var choices_text = []
+			for choice in choices[Language.language]:
+				choices_text.append(choice[0])
 		
-		var choices_text = []
-		for choice in choices:
-			choices_text.append(choice[0])
-			
-		game.block['choices'] = choices
-		# tts set to false for this one, since the original update_ui call already
-		# triggers the tts
-		game.ui.update_ui(null, null, null, choices_text, false)
+			game.block['choices'] = choices
+			# tts set to false for this one, since the original update_ui call already
+			# triggers the tts
+			game.ui.update_ui(null, null, null, choices_text, false)
 		
 	if state.get('lucifur_talked_about_gluttony'):
 		state['lucifur_talked_about_gluttony'] = false

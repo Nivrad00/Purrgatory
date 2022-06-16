@@ -428,7 +428,7 @@ func format_text(text):
 	# spanish
 	elif Language.language == 1:
 		var regex = RegEx.new()
-		regex.compile('{([^/]+)/([^/]+)/([^}]+)}')
+		regex.compile('{([^/]*)/([^/]*)/([^}]*)}')
 		
 		if state.get('_pronombre_el'):
 			text = regex.sub(text, '$1', true)

@@ -40,7 +40,7 @@ func hide_all():
 	target_height = default_height
 	move = true
 	
-func toggle_notes():
+func toggle_notes():	
 	pending_change = false
 	if notes_shown:
 		notes_shown = false
@@ -215,8 +215,12 @@ func add_quest(quest):
 	
 	label.set_size(Vector2($quest_container.get_size().x, 0))
 	label.set_custom_minimum_size(Vector2($quest_container.get_size().x, 0))
-	label.set_bbcode(quests[quest])
 	label.set_mouse_filter(Control.MOUSE_FILTER_IGNORE)
+	
+	label.set_bbcode(quests[quest][Language.language])
+	label.translations = []
+	for lang in quests[quest]:
+		label.translations.append(lang)
 	
 	# if there's a placeholder, remove it
 	# also remember not to do this if the thing you just added was the placeholder
@@ -292,6 +296,9 @@ func load_quest_log(list):
 		add_quest('nothing')
 
 func toggle_quest_log(on):
+	# we removed this functionality, so
+	on = true
+	
 	notes_enabled = on
 	if on:
 		notes_button.show()

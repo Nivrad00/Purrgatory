@@ -220,11 +220,10 @@ wait_time = 0.03
 one_shot = true
 
 [node name="skip_game" type="Button" parent="state_handler"]
-visible = false
-margin_left = 55.0
+margin_left = 32.0
 margin_top = 652.0
-margin_right = 116.0
-margin_bottom = 715.0
+margin_right = 183.0
+margin_bottom = 699.0
 rect_pivot_offset = Vector2( -315.752, -7.95071 )
 focus_mode = 0
 theme = ExtResource( 2 )
@@ -235,14 +234,14 @@ __meta__ = {
 }
 
 [node name="menu_button0" type="Sprite" parent="state_handler/skip_game"]
-position = Vector2( 35.6935, 31.0452 )
+position = Vector2( 75.5, 26 )
 texture = ExtResource( 13 )
 
 [node name="Label" type="Label" parent="state_handler/skip_game"]
-margin_left = -32.0
-margin_top = 7.0
-margin_right = 104.0
-margin_bottom = 57.0
+margin_left = 7.8065
+margin_top = 1.95477
+margin_right = 143.807
+margin_bottom = 51.9548
 rect_pivot_offset = Vector2( 66.313, 64.7428 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )

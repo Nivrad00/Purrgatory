@@ -28,7 +28,10 @@ func _ready():
 				file_name = dir.get_next()
 	
 func get_current_room():
-	return current_room.get_name()
+	if not current_room:
+		return null
+	else:
+		return current_room.get_name()
 
 func get_hidden_sprites():
 	var sprite_names = []

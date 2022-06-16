@@ -1,13 +1,19 @@
-extends RichTextLabel
+extends 'TranslatedLabel.gd'
 
+# note: technically this is a child of Control bc TranslatedLabel works on both Labels and RichTextLabels
+# but it can only be used on RichTextLabels!
 var copy = null
 
 func _ready():
-	set_scroll_active(false) # formatting fucks up when there's a scroll bar
+	._ready()
+	if get_class() != "RichTextLabel":
+		print('error: FormattedRichTextLabel not on RichTextLabel')
+		return
+	call("set_scroll_active", false) # formatting fucks up when there's a scroll bar
 
 func set_bbcode(bbcode):
 	# change the text
-	.set_bbcode(bbcode)
+	set("bbcode_text", bbcode)
 	
 	# wait to be visible, then wait a frame so the text is drawn
 	var really_visible = true
@@ -23,7 +29,7 @@ func set_bbcode(bbcode):
 	yield(get_tree(), 'idle_frame')
 	
 	# now you can change the height
-	var height = get_content_height()
+	var height = call("get_content_height")
 	# print(height)
 	set_custom_minimum_size(Vector2(get_size().x, height))
 	set_size(Vector2(get_size().x, height))
@@ -42,6 +48,6 @@ func update_formatting():
 	yield(get_tree(), 'idle_frame')
 	
 	# now you can change the height
-	var height = get_content_height()
+	var height = call("get_content_height")
 	set_custom_minimum_size(Vector2(get_size().x, height))
 	set_size(Vector2(get_size().x, height))

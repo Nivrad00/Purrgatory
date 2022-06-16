@@ -206,7 +206,7 @@ func stop_audio():
 	$asmr.stop()
 
 func _process(delta):
-	print(whose_turn)
+	#print(whose_turn)
 	pass
 	# print($audio_delay.time_left)
 

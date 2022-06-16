@@ -234,6 +234,7 @@ mouse_filter = 2
 theme = ExtResource( 18 )
 
 [node name="0" type="TextureRect" parent="state_handler/_dialog"]
+editor/display_folded = true
 visible = false
 margin_left = 706.563
 margin_top = 16.7019
@@ -255,6 +256,7 @@ script = ExtResource( 19 )
 translations = [ "¡aguanta ahí!" ]
 
 [node name="1" type="TextureRect" parent="state_handler/_dialog"]
+editor/display_folded = true
 visible = false
 margin_left = 598.111
 margin_top = 16.7019
@@ -277,6 +279,7 @@ script = ExtResource( 19 )
 translations = [ "¡¿cómo pesas tanto?!" ]
 
 [node name="2" type="TextureRect" parent="state_handler/_dialog"]
+editor/display_folded = true
 visible = false
 margin_left = 1070.66
 margin_top = 643.476
@@ -320,6 +323,7 @@ script = ExtResource( 19 )
 translations = [ "¡¿cómo pesas tanto?!" ]
 
 [node name="3" type="TextureRect" parent="state_handler/_dialog"]
+editor/display_folded = true
 visible = false
 margin_left = 706.563
 margin_top = 16.7019
@@ -344,6 +348,7 @@ script = ExtResource( 19 )
 translations = [ "esto cuenta como día de brazo..." ]
 
 [node name="4" type="TextureRect" parent="state_handler/_dialog"]
+editor/display_folded = true
 visible = false
 margin_left = 598.111
 margin_top = 15.7019
@@ -366,6 +371,8 @@ script = ExtResource( 19 )
 translations = [ "¡¿estás bien?!" ]
 
 [node name="5" type="TextureRect" parent="state_handler/_dialog"]
+editor/display_folded = true
+visible = false
 margin_left = 1070.66
 margin_top = 642.476
 margin_right = 1412.66
@@ -420,6 +427,7 @@ script = ExtResource( 19 )
 translations = [ "¡¿estás bien?!" ]
 
 [node name="6" type="TextureRect" parent="state_handler/_dialog"]
+editor/display_folded = true
 visible = false
 margin_left = 706.563
 margin_top = 16.7019
