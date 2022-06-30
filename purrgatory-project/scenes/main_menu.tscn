@@ -70,7 +70,7 @@ blend_mode = 3
 
 [node name="main" type="Node"]
 script = ExtResource( 1 )
-version = "2022-06-15"
+version = "2022-06-29"
 
 [node name="delay_timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -1035,7 +1035,7 @@ margin_right = 1155.0
 margin_bottom = 1825.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "localization"
+text = "translation"
 align = 1
 autowrap = true
 script = ExtResource( 5 )
@@ -1358,7 +1358,6 @@ script = ExtResource( 5 )
 translations = [ "recursos adicionales" ]
 
 [node name="GridContainer8" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-editor/display_folded = true
 margin_top = 3188.0
 margin_right = 1155.0
 margin_bottom = 3321.0
@@ -1379,7 +1378,7 @@ source sans pro font"
 align = 2
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "sintetizador de voz\\nsombras del delineado 3d\\nmodelo 3d del gato\\nfuente source sans pro\\n" ]
+translations = [ "lector de pantalla\\nsombras del delineado 3d\\nmodelo 3d del gato\\nfuente source sans pro\\n" ]
 
 [node name="Label3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer8"]
 margin_left = 595.0

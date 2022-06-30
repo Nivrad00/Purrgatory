@@ -986,7 +986,7 @@ margin_left = -338.0
 margin_top = 171.0
 margin_right = 940.996
 margin_bottom = 242.0
-text = "spanish localization (spain)"
+text = "spanish translation (spain)"
 align = 1
 script = ExtResource( 8 )
 translations = [ "traducción al español de españa" ]
@@ -1282,7 +1282,6 @@ __meta__ = {
 }
 
 [node name="7" type="Control" parent="state_handler"]
-editor/display_folded = true
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
@@ -1309,7 +1308,7 @@ text = "text-to-speech module
 source sans pro font"
 align = 2
 script = ExtResource( 8 )
-translations = [ "sintetizador de voz\\nsombras del delineado 3d\\nmodelo 3d del gato\\nfuente source sans pro" ]
+translations = [ "lector de pantalla\\nsombras del delineado 3d\\nmodelo 3d del gato\\nfuente source sans pro" ]
 
 [node name="Label4" type="Label" parent="state_handler/7"]
 margin_left = 654.68

@@ -363,15 +363,16 @@ margin_bottom = 119.0
 text = "window size"
 align = 2
 script = ExtResource( 5 )
-translations = [ "tamaño de ventana" ]
+translations = [ "tamaño\\nde la ventana" ]
 
 [node name="window_size" type="MarginContainer" parent="right_side"]
-editor/display_folded = true
 modulate = Color( 1, 1, 1, 0.3 )
 margin_left = 215.0
 margin_top = 82.0
-margin_right = 489.0
+margin_right = 419.0
 margin_bottom = 125.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
 custom_constants/margin_left = 18
 
 [node name="dropdown" type="OptionButton" parent="right_side/window_size"]

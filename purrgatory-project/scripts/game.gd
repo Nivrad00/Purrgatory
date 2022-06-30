@@ -296,7 +296,10 @@ func start_dialog(label, blackout_label=null):
 			if state.get('met_' + key):
 				speaker_format_dict[key] = key
 			else:
-				speaker_format_dict[key] = '???'
+				if Language.language == 0:
+					speaker_format_dict[key] = '???'
+				elif Language.language == 1:
+					speaker_format_dict[key] = '¿¿??'
 				
 		speaker = speaker.format(speaker_format_dict)
 		
@@ -396,7 +399,10 @@ func update_dialog(b: int):
 				if state.get('met_' + key):
 					speaker_format_dict[key] = key
 				else:
-					speaker_format_dict[key] = '???'
+					if Language.language == 0:
+						speaker_format_dict[key] = '???'
+					elif Language.language == 1:
+						speaker_format_dict[key] = '¿¿??'
 					
 			speaker = speaker.format(speaker_format_dict)
 			
@@ -430,6 +436,24 @@ func format_text(text):
 		var regex = RegEx.new()
 		regex.compile('{([^/]*)/([^/]*)/([^}]*)}')
 		
+		# this ensures english-only saves from older versions of purrgatory get updated with spanish equivalents
+		if not (\
+		state.get('_pronombre_el') or\
+		state.get('_pronombre_ella') or\
+		state.get('_pronombre_elle') or\
+		state.get('_pronombre_personalizado')\
+		):
+			if 'they' in format_dict and format_dict['they'].length() > 0:
+				if format_dict['they'] == 'he':
+					state['_pronombre_el'] = true
+				elif format_dict['they'] == 'she':
+					state['_pronombre_ella'] = true
+				else:
+					state['_pronombre_elle'] = true
+			# i guess technically this means if you have an old version of purrgatory where you put 
+			# a blank for "they" then this won't work and you'll see all the {o/a/e}'s
+			# but whatever
+		
 		if state.get('_pronombre_el'):
 			text = regex.sub(text, '$1', true)
 		
@@ -447,7 +471,7 @@ func format_text(text):
 					   .replacen('{e/a/e}', ('e' if t == 'o' else t))\
 					   .replacen('{el/la/le}', ('el' if t == 'o' else 'l' + t))\
 					   .replacen('{o/a/e}', t)\
-					   .replacen('{o/a/ue}', ('ui' if t == 'i' else t))\
+					   .replacen('{o/a/ue}', ('u' + t if t in ['i', 'e'] else t))\
 					   .replacen('{ooo/aaa/eee}', t)
 					   
 		else:
@@ -459,6 +483,7 @@ func _on_language_changed(lang):
 	# this is called whenever.... yeah the language is changed
 	# this is mostly copied from update_dialog and start_dialog... i know, not DRY, but who cares
 	if block and ui.visible:
+		print(block)
 		var choices_text = []
 		for choice in block['choices'][lang]:
 			choices_text.append(format_text(choice[0]))
@@ -474,7 +499,10 @@ func _on_language_changed(lang):
 				if state.get('met_' + key):
 					speaker_format_dict[key] = key
 				else:
-					speaker_format_dict[key] = '???'
+					if Language.language == 0:
+						speaker_format_dict[key] = '???'
+					elif Language.language == 1:
+						speaker_format_dict[key] = '¿¿??'
 					
 			speaker = speaker.format(speaker_format_dict)
 			

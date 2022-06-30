@@ -25,7 +25,7 @@ var quips = [
 	],
 	['kyungsoon', 
 		['hmmm. that\'s an options menu',
-		'em. pues un menú de opciones']
+		'hum. pues un menú de opciones']
 	],
 	['numa', 
 		['HEY!! change the font size right now! i mean... if you want.',
@@ -159,6 +159,10 @@ func load_options():
 		for key in options_save_dict:
 			options_dict[key] = options_save_dict[key]
 	
+	# take extra care with language for compatibility with old versions
+	if not options_dict.has('language'):
+		options_dict['language'] = 0
+		
 	$right_side/fullscreen.pressed = options_dict['fullscreen']
 	$audio/music.value = options_dict['music_volume']
 	$audio/sfx.value = options_dict['sfx_volume']
@@ -212,7 +216,12 @@ func show_custom():
 			available_quips.append(quip)
 			
 	var current_quip = available_quips[randi() % available_quips.size()]
-	$text_size/preview_a.set_text(current_quip[0])
+	
+	# exception for "cat"
+	if current_quip[0] == "cat" and Language.language == 1:
+		$text_size/preview_a.set_text("gato")
+	else:
+		$text_size/preview_a.set_text(current_quip[0])
 	$text_size/preview_b.set_bbcode(current_quip[1][Language.language])
 	
 	load_options()
@@ -228,7 +237,11 @@ func _on_language_changed(lang):
 			available_quips.append(quip)
 			
 	var current_quip = available_quips[randi() % available_quips.size()]
-	$text_size/preview_a.set_text(current_quip[0])
+	# exception for "cat"
+	if current_quip[0] == "cat" and Language.language == 1:
+		$text_size/preview_a.set_text("gato")
+	else:
+		$text_size/preview_a.set_text(current_quip[0])
 	$text_size/preview_b.set_bbcode(current_quip[1][Language.language])
 	
 func change_volume(bus, volume):

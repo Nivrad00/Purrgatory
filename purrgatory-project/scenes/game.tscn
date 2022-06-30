@@ -1398,7 +1398,7 @@ text = "exit to main menu"
 align = 1
 valign = 1
 script = ExtResource( 17 )
-translations = [ "volver al menú principal" ]
+translations = [ "menú principal" ]
 
 [node name="back" type="Button" parent="meta_ui/pause_menu/buttons"]
 anchor_right = 1.0
@@ -1938,6 +1938,7 @@ custom_styles/normal = SubResource( 36 )
 autowrap = true
 
 [node name="Button" type="Button" parent="meta_ui"]
+visible = false
 margin_left = 110.488
 margin_top = 17.4169
 margin_right = 261.488
@@ -2001,29 +2002,29 @@ color = Color( 0, 0, 0, 1 )
 [connection signal="mouse_exited" from="meta_ui/history_button2" to="content/room" method="start_all_hovering"]
 [connection signal="pressed" from="meta_ui/history_button2" to="." method="turn_off_skip"]
 [connection signal="pressed" from="meta_ui/history_button2" to="meta_ui/history" method="toggle"]
-[connection signal="pressed" from="meta_ui/pause_menu/buttons/save" to="meta_ui/save_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/save" to="meta_ui/menu_button" method="hide"]
-[connection signal="pressed" from="meta_ui/pause_menu/buttons/load" to="meta_ui/load_menu" method="show_custom"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/save" to="meta_ui/save_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/load" to="meta_ui/menu_button" method="hide"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/load" to="meta_ui/load_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/options" to="meta_ui/options_menu" method="show_custom"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/options" to="meta_ui/menu_button" method="hide"]
-[connection signal="pressed" from="meta_ui/pause_menu/buttons/exit" to="meta_ui/exit_confirm" method="show"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/exit" to="meta_ui/menu_button" method="hide"]
+[connection signal="pressed" from="meta_ui/pause_menu/buttons/exit" to="meta_ui/exit_confirm" method="show"]
 [connection signal="pressed" from="meta_ui/pause_menu/buttons/back" to="." method="close_pause_menu"]
 [connection signal="hiding" from="meta_ui/options_menu" to="meta_ui/menu_button" method="show"]
-[connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/dropdown" method="format_quests"]
+[connection signal="options_changed" from="meta_ui/options_menu" to="." method="options_changed"]
 [connection signal="options_changed" from="meta_ui/options_menu" to="meta_ui/history" method="format_history"]
 [connection signal="pressed" from="meta_ui/exit_confirm/yes" to="." method="return_to_main"]
-[connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
 [connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/menu_button" method="show"]
-[connection signal="pressed" from="meta_ui/save_confirm/yes" to="." method="save_confirmed"]
+[connection signal="pressed" from="meta_ui/exit_confirm/no" to="meta_ui/exit_confirm" method="hide"]
 [connection signal="pressed" from="meta_ui/save_confirm/yes" to="meta_ui/menu_button" method="show"]
+[connection signal="pressed" from="meta_ui/save_confirm/yes" to="." method="save_confirmed"]
 [connection signal="deleted_data" from="meta_ui/save_menu" to="." method="deleted_data"]
 [connection signal="hiding" from="meta_ui/save_menu" to="meta_ui/menu_button" method="show"]
 [connection signal="save_file" from="meta_ui/save_menu" to="." method="save"]
-[connection signal="pressed" from="meta_ui/load_confirm/yes" to="." method="load_confirmed"]
 [connection signal="pressed" from="meta_ui/load_confirm/yes" to="meta_ui/menu_button" method="show"]
+[connection signal="pressed" from="meta_ui/load_confirm/yes" to="." method="load_confirmed"]
 [connection signal="deleted_data" from="meta_ui/load_menu" to="." method="deleted_data"]
 [connection signal="hiding" from="meta_ui/load_menu" to="meta_ui/menu_button" method="show"]
 [connection signal="load_file" from="meta_ui/load_menu" to="." method="load_game_while_playing"]
