@@ -659,7 +659,7 @@ var raw_blocks = [
 ["talk_to_receptionist","tú","receptionist_neutral","¿hola?",[['recep_main0', true], ['recep_main1', true]],"","","","",""],
 ["","recepcionista","","hola, sí. hazme un favor y rellena este formulario, amor.","","","","","",""],
 ["","tú","","esto... no sé cómo he llegado aquí...","","","","","",""],
-["","recepcionista","","lo lamento. necesito que firmes en encima de esta línea de aquí.","","","","","",""],
+["","recepcionista","","lo lamento. necesito que firmes encima de esta línea de aquí.","","","","","",""],
 ["","_none","registration","la recepcionista te da un boli y un portapapeles.","","","","","",""],
 ["recep_main","","","","","","",['recep_main0', 'recep_main1', 'true'],['está mal escrito', '¿qué pasa si no firmo?', '(firmar con tu nombre)'],['recep_spelling', 'recep_dont', 'recep_ok']],
 ["recep_spelling","tú","","esto... \"purgatorio\" está mal escrito aquí.",[['recep_main0', false]],"","","","",""],

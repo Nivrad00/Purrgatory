@@ -70,6 +70,7 @@ blend_mode = 3
 
 [node name="main" type="Node"]
 script = ExtResource( 1 )
+web_build = true
 version = "2022-06-29"
 
 [node name="delay_timer" type="Timer" parent="."]
