@@ -71,14 +71,13 @@ blend_mode = 3
 [node name="main" type="Node"]
 script = ExtResource( 1 )
 web_build = true
-version = "2022-06-29"
+version = "2022-07-04"
 
 [node name="delay_timer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
 
 [node name="rotating_cat" type="Control" parent="."]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
@@ -177,7 +176,6 @@ theme = ExtResource( 4 )
 [node name="logo" parent="main_menu" instance=ExtResource( 6 )]
 
 [node name="buttons" type="Control" parent="main_menu"]
-editor/display_folded = true
 margin_left = 504.871
 margin_top = 284.323
 margin_right = 782.871
@@ -497,7 +495,6 @@ script = ExtResource( 5 )
 translations = [ "atajos de teclado" ]
 
 [node name="GridContainer" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-editor/display_folded = true
 margin_top = 383.0
 margin_right = 1155.0
 margin_bottom = 720.0
@@ -687,7 +684,6 @@ script = ExtResource( 5 )
 translations = [ "créditos" ]
 
 [node name="GridContainer2" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-editor/display_folded = true
 margin_top = 842.0
 margin_right = 1155.0
 margin_bottom = 1009.0
@@ -783,7 +779,6 @@ script = ExtResource( 5 )
 translations = [ "dibujo" ]
 
 [node name="GridContainer3" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-editor/display_folded = true
 margin_top = 1131.0
 margin_right = 1155.0
 margin_bottom = 1264.0
@@ -878,7 +873,6 @@ script = ExtResource( 5 )
 translations = [ "música" ]
 
 [node name="GridContainer4" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-editor/display_folded = true
 margin_top = 1386.0
 margin_right = 1155.0
 margin_bottom = 1468.0
@@ -947,7 +941,6 @@ align = 1
 autowrap = true
 
 [node name="GridContainer7" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-editor/display_folded = true
 margin_top = 1590.0
 margin_right = 1155.0
 margin_bottom = 1723.0
@@ -1043,7 +1036,6 @@ script = ExtResource( 5 )
 translations = [ "traducción" ]
 
 [node name="GridContainer10" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-editor/display_folded = true
 margin_top = 1845.0
 margin_right = 1155.0
 margin_bottom = 1876.0
@@ -1094,7 +1086,6 @@ script = ExtResource( 5 )
 translations = [ "otros" ]
 
 [node name="GridContainer5" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-editor/display_folded = true
 margin_top = 1998.0
 margin_right = 1155.0
 margin_bottom = 2216.0
@@ -1181,7 +1172,6 @@ align = 1
 autowrap = true
 
 [node name="GridContainer6" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-editor/display_folded = true
 margin_top = 2389.0
 margin_right = 1155.0
 margin_bottom = 2964.0
@@ -1290,7 +1280,6 @@ sinewave1kHz"
 autowrap = true
 
 [node name="GridContainer9" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-editor/display_folded = true
 margin_top = 2984.0
 margin_right = 1155.0
 margin_bottom = 3066.0

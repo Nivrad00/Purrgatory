@@ -7,8 +7,7 @@ signal hiding()
 func load_save_files():
 	var f = File.new()
 	for i in range(0, 6):
-		
-		if f.file_exists('user://thumb' + str(i) + '.png') and i != 0:
+		if f.file_exists('user://thumb' + str(i) + '.png'):
 			var image = Image.new()
 			image.load('user://thumb' + str(i) + '.png')
 			var texture = ImageTexture.new()
@@ -17,6 +16,7 @@ func load_save_files():
 		else:
 			get_node("files/file" + str(i)).set_button_icon(null)
 			
+	for i in range(0, 6):
 		if f.file_exists('user://save' + str(i) + '.save'):
 			f.open("user://save" + str(i) + ".save", File.READ)
 			var save_dict = parse_json(f.get_line())
@@ -26,6 +26,7 @@ func load_save_files():
 			var name = save_dict["format_dict"].get("player", "")
 			if name.length() > 16:
 				name = name.substr(0, 13) + "..."
+				
 			get_node("dates/date" + str(i)).set_text(timestamp + "\r\n" + name)
 		else:
 			get_node("dates/date" + str(i)).set_text("")
@@ -39,7 +40,7 @@ func show_custom():
 	
 func delete_data():
 	var dir = Directory.new()
-	for i in range(6):
+	for i in range(-1, 6):
 		dir.remove("user://save" + str(i) + ".save")
 		dir.remove("user://thumb" + str(i) + ".png")
 		dir.remove("user://seen_blocks" + str(i) + ".save")

@@ -167,7 +167,7 @@ func _notification(what):
 		f.store_line(to_json(seen_blocks))
 		f.close()
 		
-		save(0, false)
+		save(-1, false) # -1 is the autosave slot
 		
 		get_tree().quit()
 	
@@ -354,7 +354,7 @@ func update_dialog(b: int):
 		f.store_line(to_json(seen_blocks))
 		f.close()
 		
-		save(0, false)
+		save(-1, false) # -1 is the autosave slot
 		
 	# if there's no choice, get the next block directly
 	if b == -1:
@@ -483,7 +483,6 @@ func _on_language_changed(lang):
 	# this is called whenever.... yeah the language is changed
 	# this is mostly copied from update_dialog and start_dialog... i know, not DRY, but who cares
 	if block and ui.visible:
-		print(block)
 		var choices_text = []
 		for choice in block['choices'][lang]:
 			choices_text.append(format_text(choice[0]))
