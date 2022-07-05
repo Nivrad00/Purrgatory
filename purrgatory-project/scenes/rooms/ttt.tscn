@@ -220,6 +220,7 @@ wait_time = 0.03
 one_shot = true
 
 [node name="skip_game" type="Button" parent="state_handler"]
+visible = false
 margin_left = 32.0
 margin_top = 652.0
 margin_right = 183.0
