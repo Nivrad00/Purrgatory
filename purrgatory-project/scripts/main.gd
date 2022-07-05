@@ -1,7 +1,7 @@
 extends Node
 
 # null when not fading out
-# -1 when fading out to start a new game
+# -2 when fading out to start a new game (-1 is taken by autosave, which is slot -1)
 # n when fading out to load save file n
 var fade_out = null
 var fade_out_loading = false
@@ -82,7 +82,7 @@ func _on_click_to_continue_pressed():
 	fade_out_loading = true
 	
 func _on_start_pressed():
-	fade_out = -1
+	fade_out = -2
 
 func _on_credits_pressed():
 	$main_menu.hide()
