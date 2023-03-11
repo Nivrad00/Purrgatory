@@ -129,8 +129,8 @@ func _ready():
 		for data in all_data:
 			var current_choices = []
 			if typeof(data[8]) == TYPE_ARRAY and typeof(data[9]) == TYPE_ARRAY:
-				for i in range(data[8].size()):
-					current_choices.append([data[8][i], data[9][i]])
+				for j in range(data[8].size()):
+					current_choices.append([data[8][j], data[9][j]])
 			block['choices'].append(current_choices)
 			
 			# make sure to check if the number of choices is mismatched
@@ -141,11 +141,11 @@ func _ready():
 		# set choice conditions
 		var new_array = []
 		if typeof(original_data[7]) == TYPE_STRING and original_data[7] == '':
-			for i in range(block['choices'][0].size()):
+			for _j in range(block['choices'][0].size()):
 				new_array.append(true_evaluator)
 		else:
-			for i in range(block['choices'][0].size()):
-				var tokens = tokenizer.tokenize(original_data[7][i])
+			for j in range(block['choices'][0].size()):
+				var tokens = tokenizer.tokenize(original_data[7][j])
 				var tree = EvalTree.new(tokens)
 				var evaluator = EvalEvaluate.new(tree.get_tree())
 				new_array.append(evaluator)

@@ -105,8 +105,8 @@ func generate_flowers(ids):
 			var y = rand_range(area.position.y, area.end.y)
 			pos = Vector2(x, y)
 			var valid_pos = true
-			for flower in flowers:
-				if flower.get_position().distance_to(pos) < flower_min_dist:
+			for a_flower in flowers:
+				if a_flower.get_position().distance_to(pos) < flower_min_dist:
 					valid_pos = false
 			if valid_pos:
 				break
