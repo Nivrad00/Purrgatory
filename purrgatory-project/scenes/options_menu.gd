@@ -17,35 +17,43 @@ var resolutions = [
 var quips = [
 	['cat', 
 		['meow meow, meow meow meow :3',
-		'miau miau, miau miau miau :3']
+		'miau miau, miau miau miau :3',
+		'喵喵，喵喵喵 :3']
 	],
 	['oliver', 
 		['to meow, or not to meow, that is the question!',
-		'¿no es cierto, ángel de amor, que en esta apartada orilla más pura la luna brilla y se maúlla mejor?']
+		'¿no es cierto, ángel de amor, que en esta apartada orilla más pura la luna brilla y se maúlla mejor?',
+		'是要喵，还是不要喵，这是问题所在！']
 	],
 	['kyungsoon', 
 		['hmmm. that\'s an options menu',
-		'hum. pues un menú de opciones']
+		'hum. pues un menú de opciones',
+		'嗯——这是个设置菜单']
 	],
 	['numa', 
 		['HEY!! change the font size right now! i mean... if you want.',
-		'¡OYE! ¡ya estás cambiando el tamaño de la letra! bueno... si te apetece.']
+		'¡OYE! ¡ya estás cambiando el tamaño de la letra! bueno... si te apetece.',
+		'嘿！！快改一下字体大小！我是说…如果你想的话']
 	],
 	['sean', 
 		['what\'s a nice player like you doing in a menu like this? (;',
-		'y... ¿vienes mucho por este menú de opciones? (;']
+		'y... ¿vienes mucho por este menú de opciones? (;',
+		'你这样可爱的玩家在菜单里做什么呢 (;']
 	],
 	['elijah', 
 		['\'tis better to have meowed and lost than never to have meowed at all.',
-		'que toda la vida es un gato, y los gatos, gatos son.']
+		'que toda la vida es un gato, y los gatos, gatos son.',
+		'喵过却失去，总比从未喵过好']
 	],
 	['tori', 
 		['what are you doing fiddling with the settings? there\'s a game to play!',
-		'¿se puede saber qué haces mirando la configuración? ¡ponte a jugar!']
+		'¿se puede saber qué haces mirando la configuración? ¡ponte a jugar!',
+		'你怎么还在这摆弄设置？还有游戏要玩！']
 	],
 	['natalie', 
 		['zzz... huh? where am i?',
-		'zzz... ¿eing? ¿dónde estoy?']
+		'zzz... ¿eing? ¿dónde estoy?',
+		'zzz…哎？咱在哪？']
 	]
 ]
 
@@ -218,6 +226,8 @@ func show_custom():
 	var current_quip = available_quips[randi() % available_quips.size()]
 	
 	# exception for "cat"
+	if current_quip[0] == "cat" and Language.language == 2:
+		$text_size/preview_a.set_text("(placeholder) cat")
 	if current_quip[0] == "cat" and Language.language == 1:
 		$text_size/preview_a.set_text("gato")
 	else:

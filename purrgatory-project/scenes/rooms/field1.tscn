@@ -47,7 +47,6 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="field_tree" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 script = ExtResource( 4 )
 dialog_label = "field_tree"
 
@@ -58,7 +57,6 @@ polygon = PoolVector2Array( 89.4541, 303.771, 132.323, 318.346, 141.754, 321.776
 polygon = PoolVector2Array( 627.887, 271.19, 674.186, 301.198, 699.907, 305.485, 704.194, 373.218, 761.638, 374.076, 753.922, 326.92, 811.366, 295.197, 783.073, 182.88, 740.204, 163.161, 668.184, 160.589, 630.459, 176.021, 608.167, 226.607 )
 
 [node name="field_rocks" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 script = ExtResource( 4 )
 dialog_label = "field_rocks"
 
@@ -78,7 +76,6 @@ polygon = PoolVector2Array( 903.099, 544.74, 921.541, 566.562, 941.212, 562.259,
 polygon = PoolVector2Array( 956.523, 538.636, 955.601, 545.398, 968.203, 554.618, 975.272, 562.61, 987.874, 559.843, 979.575, 542.324, 963.285, 534.025 )
 
 [node name="field_river" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 script = ExtResource( 4 )
 dialog_label = "field_river"
 
@@ -101,7 +98,6 @@ animation1 = ExtResource( 9 )
 animation2 = ExtResource( 10 )
 
 [node name="wheelbarrow" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 38.4896, 0 )
 script = ExtResource( 4 )
 dialog_label = "wheelbarrow"

@@ -100,7 +100,6 @@ texture = ExtResource( 6 )
 centered = false
 
 [node name="left_knob" type="Button" parent="state_handler/paw"]
-editor/display_folded = true
 margin_left = 280.0
 margin_top = 570.0
 margin_right = 331.0
@@ -130,7 +129,6 @@ rect_pivot_offset = Vector2( 43.878, 41.0737 )
 texture = ExtResource( 8 )
 
 [node name="right_knob" type="Button" parent="state_handler/paw"]
-editor/display_folded = true
 margin_left = 950.0
 margin_top = 570.0
 margin_right = 1001.0
@@ -189,7 +187,7 @@ margin_bottom = 53.9905
 rect_pivot_offset = Vector2( -555.677, -604.755 )
 text = "back"
 script = ExtResource( 10 )
-translations = [ "volver" ]
+translations = [ "volver", "返回" ]
 
 [node name="erase_button" type="Button" parent="state_handler"]
 anchor_right = 1.0
@@ -218,7 +216,8 @@ rect_pivot_offset = Vector2( -555.677, -604.755 )
 text = "erase"
 align = 1
 script = ExtResource( 10 )
-translations = [ "borrar" ]
+translations = [ "borrar", "擦除" ]
+
 [connection signal="draw" from="state_handler/paw/draw/draw_viewport/pen" to="state_handler/paw/draw/draw_viewport/pen" method="_on_draw"]
 [connection signal="button_down" from="state_handler/paw/left_knob" to="state_handler/paw/left_knob" method="_on_volume_button_down"]
 [connection signal="button_up" from="state_handler/paw/left_knob" to="state_handler/paw/left_knob" method="_on_volume_button_up"]

@@ -136,7 +136,6 @@ position = Vector2( -2.32764, 747.175 )
 polygon = PoolVector2Array( 1000.69, 2034.82, 998.987, 2075.21, 1051.89, 2084.88, 1051.89, 2022.88 )
 
 [node name="object2" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -11.9416, 0.663574 )
 script = ExtResource( 6 )
 dialog_label = "tori_climb_ttt"
@@ -146,7 +145,6 @@ position = Vector2( 1.10803, 1562.32 )
 polygon = PoolVector2Array( 193.085, 4277.92, 196.41, 4421.96, 309.429, 4423.07, 319.401, 4298.97 )
 
 [node name="object3" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -7.56299, 0 )
 script = ExtResource( 6 )
 dialog_label = "tori_climb_lucifur"
@@ -221,7 +219,7 @@ text = "press up repeatedly to hold on!!"
 align = 1
 valign = 1
 script = ExtResource( 19 )
-translations = [ "¡pulsa [arriba] para no caerte!" ]
+translations = [ "¡pulsa [arriba] para no caerte!", "反复按上键以坚持！！" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/_game/Label"]
 autoplay = "blink"
@@ -234,7 +232,6 @@ mouse_filter = 2
 theme = ExtResource( 18 )
 
 [node name="0" type="TextureRect" parent="state_handler/_dialog"]
-editor/display_folded = true
 visible = false
 margin_left = 706.563
 margin_top = 16.7019
@@ -253,10 +250,9 @@ text = "just hang on!"
 align = 1
 valign = 1
 script = ExtResource( 19 )
-translations = [ "¡aguanta ahí!" ]
+translations = [ "¡aguanta ahí!", "你就坚持一下！" ]
 
 [node name="1" type="TextureRect" parent="state_handler/_dialog"]
-editor/display_folded = true
 visible = false
 margin_left = 598.111
 margin_top = 16.7019
@@ -276,10 +272,9 @@ text = "why are you so heavy??"
 align = 1
 valign = 1
 script = ExtResource( 19 )
-translations = [ "¡¿cómo pesas tanto?!" ]
+translations = [ "¡¿cómo pesas tanto?!", "你为什么这么重？？" ]
 
 [node name="2" type="TextureRect" parent="state_handler/_dialog"]
-editor/display_folded = true
 visible = false
 margin_left = 1070.66
 margin_top = 643.476
@@ -299,7 +294,7 @@ text = "i'm sorry i guess??"
 align = 1
 valign = 1
 script = ExtResource( 19 )
-translations = [ "¡pues perdóname!" ]
+translations = [ "¡pues perdóname!", "我很抱歉？？" ]
 
 [node name="6" type="TextureRect" parent="state_handler/_dialog/2"]
 margin_left = 472.553
@@ -320,10 +315,9 @@ text = "why are you so heavy??"
 align = 1
 valign = 1
 script = ExtResource( 19 )
-translations = [ "¡¿cómo pesas tanto?!" ]
+translations = [ "¡¿cómo pesas tanto?!", "你为什么这么重？？" ]
 
 [node name="3" type="TextureRect" parent="state_handler/_dialog"]
-editor/display_folded = true
 visible = false
 margin_left = 706.563
 margin_top = 16.7019
@@ -338,17 +332,16 @@ margin_left = 17.8337
 margin_top = 82.5047
 margin_right = 321.834
 margin_bottom = 153.505
-custom_fonts/font = SubResource( 7 )
 custom_constants/line_spacing = -6
+custom_fonts/font = SubResource( 7 )
 text = "least i'm getting my arm workout for the day..."
 align = 1
 valign = 1
 autowrap = true
 script = ExtResource( 19 )
-translations = [ "esto cuenta como día de brazo..." ]
+translations = [ "esto cuenta como día de brazo...", "至少我今天胳膊锻炼量有了…" ]
 
 [node name="4" type="TextureRect" parent="state_handler/_dialog"]
-editor/display_folded = true
 visible = false
 margin_left = 598.111
 margin_top = 15.7019
@@ -368,11 +361,9 @@ text = "you okay down there??"
 align = 1
 valign = 1
 script = ExtResource( 19 )
-translations = [ "¡¿estás bien?!" ]
+translations = [ "¡¿estás bien?!", "你在下面没事吗？？" ]
 
 [node name="5" type="TextureRect" parent="state_handler/_dialog"]
-editor/display_folded = true
-visible = false
 margin_left = 1070.66
 margin_top = 642.476
 margin_right = 1412.66
@@ -391,7 +382,7 @@ text = "what sort of a "
 align = 1
 valign = 1
 script = ExtResource( 19 )
-translations = [ "¡¿qué clase de" ]
+translations = [ "¡¿qué clase de", "" ]
 
 [node name="Label2" type="Label" parent="state_handler/_dialog/5"]
 margin_left = 320.0
@@ -403,7 +394,18 @@ text = "question is that??"
 align = 1
 valign = 1
 script = ExtResource( 19 )
-translations = [ "pregunta es esa?!" ]
+translations = [ "pregunta es esa?!", "" ]
+
+[node name="Label3" type="Label" parent="state_handler/_dialog/5"]
+margin_left = 320.0
+margin_top = 152.476
+margin_right = 626.0
+margin_bottom = 223.476
+rect_scale = Vector2( -1, -1 )
+align = 1
+valign = 1
+script = ExtResource( 19 )
+translations = [ "", "那是什么样的问题啦？？" ]
 
 [node name="6" type="TextureRect" parent="state_handler/_dialog/5"]
 margin_left = 472.553
@@ -424,10 +426,9 @@ text = "you okay down there??"
 align = 1
 valign = 1
 script = ExtResource( 19 )
-translations = [ "¡¿estás bien?!" ]
+translations = [ "¡¿estás bien?!", "你在下面没事吗？？" ]
 
 [node name="6" type="TextureRect" parent="state_handler/_dialog"]
-editor/display_folded = true
 visible = false
 margin_left = 706.563
 margin_top = 16.7019
@@ -448,10 +449,9 @@ align = 1
 valign = 1
 autowrap = true
 script = ExtResource( 19 )
-translations = [ "¡ya casi estás!" ]
+translations = [ "¡ya casi estás!", "快了！！" ]
 
 [node name="_creaks" type="Node" parent="state_handler"]
-editor/display_folded = true
 
 [node name="0" type="AudioStreamPlayer" parent="state_handler/_creaks"]
 stream = ExtResource( 22 )
@@ -484,7 +484,6 @@ volume_db = -30.0
 bus = "SFX"
 
 [node name="_cracks" type="Node" parent="state_handler"]
-editor/display_folded = true
 
 [node name="a" type="AudioStreamPlayer" parent="state_handler/_cracks"]
 stream = ExtResource( 28 )
@@ -495,7 +494,6 @@ stream = ExtResource( 29 )
 bus = "SFX"
 
 [node name="_pulls" type="Node" parent="state_handler"]
-editor/display_folded = true
 
 [node name="5" type="AudioStreamPlayer" parent="state_handler/_pulls"]
 stream = ExtResource( 30 )

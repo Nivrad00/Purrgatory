@@ -17,11 +17,14 @@ func _ready():
 		if get_tree().get_root().get_node('main/game').state.get(quest_state):
 			i += 1
 	
+	translations = []
 	if i == 1:
-		translations[0] = "you saved 1 person"
-		translations[1] = "salvaste a 1 persona"
-	else:
-		translations[0] = "you saved " + str(i) + " people"
-		translations[1] = "salvaste a " + str(i) + " personas"
+		translations.append("you saved 1 person")
+		translations.append("salvaste a 1 persona")
+		translations.append("(placeholder) you saved 1 person")
+	elif i == 0:
+		translations.append("you saved " + str(i) + " people")
+		translations.append("salvaste a " + str(i) + " personas")
+		translations.append("(placeholder) you saved " + str(i) + " people")
 		
 	update_label(Language.language)

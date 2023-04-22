@@ -12,13 +12,10 @@
 [ext_resource path="res://assets/ui/save files.png" type="Texture" id=10]
 [ext_resource path="res://assets/ui/pronoun_input_box.png" type="Texture" id=11]
 [ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=12]
+[ext_resource path="res://themes/ui_font_21.tres" type="DynamicFont" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 21
 font_data = ExtResource( 3 )
 
 [node name="load_menu" type="Control"]
@@ -42,8 +39,8 @@ margin_top = 605.0
 margin_right = 921.265
 margin_bottom = 663.0
 focus_mode = 0
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
 flat = true
@@ -63,7 +60,7 @@ text = "back"
 align = 1
 valign = 1
 script = ExtResource( 5 )
-translations = [ "volver" ]
+translations = [ "volver", "返回" ]
 
 [node name="load_autosave" type="Button" parent="."]
 margin_left = 352.265
@@ -71,8 +68,8 @@ margin_top = 605.0
 margin_right = 602.265
 margin_bottom = 663.0
 focus_mode = 0
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
 flat = true
@@ -96,7 +93,7 @@ text = "load autosave"
 align = 1
 valign = 1
 script = ExtResource( 5 )
-translations = [ "cargar autoguardado" ]
+translations = [ "cargar autoguardado", "(placeholder) load autosave" ]
 
 [node name="load" type="Control" parent="."]
 margin_left = 640.0
@@ -112,6 +109,10 @@ texture = ExtResource( 8 )
 visible = false
 position = Vector2( 0, 14.135 )
 texture = ExtResource( 9 )
+
+[node name="2" type="Sprite" parent="load"]
+visible = false
+texture = ExtResource( 8 )
 
 [node name="files" type="Control" parent="."]
 margin_left = 635.839
@@ -282,13 +283,13 @@ margin_left = 1.0
 margin_top = 2.0
 margin_right = 148.0
 margin_bottom = 46.0
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 13 )
 text = "delete data"
 align = 1
 valign = 1
 script = ExtResource( 5 )
-translations = [ "eliminar datos" ]
+translations = [ "eliminar datos", "删除进度" ]
 
 [node name="delete_confirm" type="Control" parent="."]
 visible = false
@@ -311,7 +312,7 @@ text = "are you sure you want to delete all your data?
 this will delete your saves and reset the \"skip\" button."
 align = 1
 script = ExtResource( 5 )
-translations = [ "¿de verdad quieres borrar todos los datos?\\nse eliminarán todas las partidas guardadas y se restablecerá el botón de \"saltar\"" ]
+translations = [ "¿de verdad quieres borrar todos los datos?\\nse eliminarán todas las partidas guardadas y se restablecerá el botón de \"saltar\"", "你确定要删除所有的进度吗？\\r\\n(placeholder) this will delete your saves and reset the \"skip\" button." ]
 
 [node name="yes" type="Button" parent="delete_confirm"]
 margin_left = 516.0
@@ -319,8 +320,8 @@ margin_top = 329.0
 margin_right = 766.0
 margin_bottom = 387.0
 focus_mode = 0
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
 flat = true
@@ -340,7 +341,7 @@ text = "yes"
 align = 1
 valign = 1
 script = ExtResource( 5 )
-translations = [ "aceptar" ]
+translations = [ "aceptar", "是" ]
 
 [node name="no" type="Button" parent="delete_confirm"]
 margin_left = 516.0
@@ -348,8 +349,8 @@ margin_top = 405.0
 margin_right = 766.0
 margin_bottom = 463.0
 focus_mode = 0
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
 flat = true
@@ -369,7 +370,7 @@ text = "no"
 align = 1
 valign = 1
 script = ExtResource( 5 )
-translations = [ "cancelar" ]
+translations = [ "cancelar", "否" ]
 
 [node name="delete_after" type="Control" parent="."]
 visible = false
@@ -391,7 +392,7 @@ margin_bottom = 454.0
 text = "data deleted."
 align = 1
 script = ExtResource( 5 )
-translations = [ "datos eliminados." ]
+translations = [ "datos eliminados.", "进度已删除" ]
 
 [node name="back" type="Button" parent="delete_after"]
 margin_left = 516.0
@@ -399,8 +400,8 @@ margin_top = 366.0
 margin_right = 766.0
 margin_bottom = 424.0
 focus_mode = 0
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
 flat = true
@@ -420,7 +421,8 @@ text = "back"
 align = 1
 valign = 1
 script = ExtResource( 5 )
-translations = [ "volver" ]
+translations = [ "volver", "返回" ]
+
 [connection signal="pressed" from="back" to="." method="hide_custom"]
 [connection signal="pressed" from="load_autosave" to="." method="load_file" binds= [ -1 ]]
 [connection signal="pressed" from="files/file0" to="." method="load_file" binds= [ 0 ]]

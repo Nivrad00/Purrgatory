@@ -87,7 +87,6 @@ position = Vector2( 646.139, 100.647 )
 texture = ExtResource( 6 )
 
 [node name="natalies_drawings" type="Node2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 329.673, 296.827 )
 
 [node name="cat" type="Sprite" parent="state_handler/natalies_drawings"]
@@ -161,7 +160,7 @@ rect_pivot_offset = Vector2( -555.677, -604.755 )
 theme = ExtResource( 19 )
 text = "done"
 script = ExtResource( 20 )
-translations = [ "hecho" ]
+translations = [ "hecho", "(placeholder) done" ]
 
 [node name="asmr" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 21 )
@@ -171,6 +170,7 @@ bus = "SFX"
 [node name="audio_delay" type="Timer" parent="state_handler"]
 wait_time = 0.03
 one_shot = true
+
 [connection signal="draw" from="state_handler/draw/draw_viewport/pen" to="state_handler/draw/draw_viewport/pen" method="_on_draw"]
 [connection signal="pressed" from="state_handler/done_button" to="state_handler" method="stop_drawing"]
 [connection signal="timeout" from="state_handler/audio_delay" to="state_handler" method="stop_audio"]

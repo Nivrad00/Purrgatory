@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://cat_01_color05.obj" type="ArrayMesh" id=2]
@@ -19,9 +19,9 @@
 [ext_resource path="res://themes/dropdown_menu_theme.tres" type="Theme" id=17]
 [ext_resource path="res://assets/ui/credits_box.png" type="Texture" id=18]
 [ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=19]
-[ext_resource path="res://themes/dialog_font_italics.tres" type="DynamicFont" id=20]
 [ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=21]
 [ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=22]
+[ext_resource path="res://themes/ui_font_21.tres" type="DynamicFont" id=23]
 
 [sub_resource type="SpatialMaterial" id=1]
 next_pass = ExtResource( 3 )
@@ -53,14 +53,6 @@ viewport_path = NodePath("rotating_cat/Viewport")
 size = 25
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=6]
-size = 20
-font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=7]
-size = 20
-font_data = ExtResource( 7 )
-
 [sub_resource type="DynamicFont" id=8]
 size = 25
 font_data = ExtResource( 7 )
@@ -70,7 +62,7 @@ blend_mode = 3
 
 [node name="main" type="Node"]
 script = ExtResource( 1 )
-version = "2023-03-11 (Debug)"
+version = "2023-04-22 (Debug)"
 
 [node name="delay_timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -140,7 +132,7 @@ text = "loading..."
 align = 1
 valign = 1
 script = ExtResource( 5 )
-translations = [ "cargando..." ]
+translations = [ "cargando...", "正在加载！" ]
 
 [node name="ready_text" type="Label" parent="loading"]
 visible = false
@@ -155,7 +147,7 @@ click to continue"
 align = 1
 valign = 1
 script = ExtResource( 5 )
-translations = [ "¡listo!\\nhaz clic para continuar" ]
+translations = [ "¡listo!\\nhaz clic para continuar", "已就绪！\\r\\n按任意键继续" ]
 
 [node name="click_to_continue" type="Button" parent="loading"]
 visible = false
@@ -210,7 +202,7 @@ text = "start"
 align = 1
 valign = 1
 script = ExtResource( 5 )
-translations = [ "empezar" ]
+translations = [ "empezar", "开始" ]
 
 [node name="load" type="Button" parent="main_menu/buttons"]
 margin_left = 13.7148
@@ -239,7 +231,7 @@ text = "load"
 align = 1
 valign = 1
 script = ExtResource( 5 )
-translations = [ "cargar" ]
+translations = [ "cargar", "载入" ]
 
 [node name="x" type="Sprite" parent="main_menu/buttons/load"]
 visible = false
@@ -273,7 +265,7 @@ text = "options"
 align = 1
 valign = 1
 script = ExtResource( 5 )
-translations = [ "opciones" ]
+translations = [ "opciones", "选项" ]
 
 [node name="credits" type="Button" parent="main_menu/buttons"]
 margin_left = 12.1426
@@ -304,7 +296,7 @@ text = "info"
 align = 1
 valign = 1
 script = ExtResource( 5 )
-translations = [ "información" ]
+translations = [ "información", "制作人员名单" ]
 
 [node name="exit" type="Button" parent="main_menu/buttons"]
 margin_left = 12.8502
@@ -335,7 +327,7 @@ text = "exit"
 align = 1
 valign = 1
 script = ExtResource( 5 )
-translations = [ "salir" ]
+translations = [ "salir", "退出" ]
 
 [node name="cat1_idle" parent="main_menu" instance=ExtResource( 12 )]
 margin_left = 883.779
@@ -363,11 +355,11 @@ margin_left = -281.0
 margin_top = 33.0
 margin_right = -7.0
 margin_bottom = 65.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = ExtResource( 23 )
 text = "language"
 align = 2
 script = ExtResource( 5 )
-translations = [ "idioma" ]
+translations = [ "idioma", "(placeholder) language" ]
 
 [node name="language" type="MarginContainer" parent="main_menu/language"]
 margin_left = -16.0
@@ -384,7 +376,7 @@ rect_min_size = Vector2( 200, 36 )
 focus_mode = 0
 size_flags_horizontal = 0
 theme = ExtResource( 17 )
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = ExtResource( 23 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
 
@@ -412,7 +404,7 @@ theme = ExtResource( 19 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="credits/ScrollContainer"]
 margin_right = 1176.0
-margin_bottom = 3474.0
+margin_bottom = 3602.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
@@ -442,7 +434,7 @@ text = "a game by niv"
 align = 1
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "un juego creado por niv" ]
+translations = [ "un juego creado por niv", "制作人：niv" ]
 
 [node name="web_disclaimer1" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
 visible = false
@@ -456,34 +448,34 @@ align = 1
 autowrap = true
 
 [node name="web_disclaimer2" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-visible = false
 margin_top = 281.0
 margin_right = 1155.0
-margin_bottom = 346.0
+margin_bottom = 338.0
 rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 20 )
+custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_fonts/font = ExtResource( 23 )
 text = "note: this is the web version of purrgatory. 
 for higher quality and smoother gameplay, try the windows version!"
 align = 1
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "nota: esta es la versión web de purrgatorio. la versión de windows ofrece una mayor calidad y jugabilidad." ]
+translations = [ "nota: esta es la versión web de purrgatorio. la versión de windows ofrece una mayor calidad y jugabilidad.", "注：该版本为网页版，如果想拥有更高质量与更为流畅的游戏体验，请尝试windows版！" ]
 
 [node name="_12" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 281.0
+margin_top = 358.0
 margin_right = 1155.0
-margin_bottom = 312.0
+margin_bottom = 389.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="hotkeys" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 332.0
+margin_top = 409.0
 margin_right = 1155.0
-margin_bottom = 363.0
+margin_bottom = 440.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "hotkeys"
@@ -491,12 +483,12 @@ align = 1
 autowrap = true
 uppercase = true
 script = ExtResource( 5 )
-translations = [ "atajos de teclado" ]
+translations = [ "atajos de teclado", "热键" ]
 
 [node name="GridContainer" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 383.0
+margin_top = 460.0
 margin_right = 1155.0
-margin_bottom = 720.0
+margin_bottom = 797.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -511,7 +503,7 @@ text = "space"
 align = 2
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "espacio" ]
+translations = [ "espacio", "空格" ]
 
 [node name="Label3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_left = 595.0
@@ -522,7 +514,7 @@ size_flags_vertical = 1
 text = "advance text"
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "avanzar el diálogo" ]
+translations = [ "avanzar el diálogo", "下一句" ]
 
 [node name="Label5" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_top = 51.0
@@ -544,7 +536,7 @@ size_flags_vertical = 1
 text = "choose option"
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "elegir respuestas" ]
+translations = [ "elegir respuestas", "选择选项" ]
 
 [node name="Label9" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_top = 102.0
@@ -556,7 +548,7 @@ text = "escape"
 align = 2
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "escape" ]
+translations = [ "escape", "esc" ]
 
 [node name="Label8" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_left = 595.0
@@ -568,7 +560,7 @@ size_flags_vertical = 1
 text = "open pause menu"
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "menú de pausa" ]
+translations = [ "menú de pausa", "打开暂停菜单" ]
 
 [node name="Label7" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_top = 153.0
@@ -580,7 +572,7 @@ text = "tab"
 align = 2
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "tabulador" ]
+translations = [ "tabulador", "tab" ]
 
 [node name="Label6" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_left = 595.0
@@ -592,7 +584,7 @@ size_flags_vertical = 1
 text = "skip"
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "saltar" ]
+translations = [ "saltar", "跳过" ]
 
 [node name="Label10" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_top = 204.0
@@ -614,7 +606,7 @@ size_flags_vertical = 1
 text = "history"
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "historial" ]
+translations = [ "historial", "历史" ]
 
 [node name="Label14" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_top = 255.0
@@ -636,7 +628,7 @@ size_flags_vertical = 1
 text = "to do"
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "tareas" ]
+translations = [ "tareas", "待办" ]
 
 [node name="Label12" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer"]
 margin_top = 306.0
@@ -658,21 +650,21 @@ size_flags_vertical = 1
 text = "items"
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "objetos" ]
+translations = [ "objetos", "物品" ]
 
 [node name="_2" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 740.0
+margin_top = 817.0
 margin_right = 1155.0
-margin_bottom = 771.0
+margin_bottom = 848.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="credits" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 791.0
+margin_top = 868.0
 margin_right = 1155.0
-margin_bottom = 822.0
+margin_bottom = 899.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "credits"
@@ -680,12 +672,12 @@ align = 1
 autowrap = true
 uppercase = true
 script = ExtResource( 5 )
-translations = [ "créditos" ]
+translations = [ "créditos", "制作人员名单" ]
 
 [node name="GridContainer2" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 842.0
+margin_top = 919.0
 margin_right = 1155.0
-margin_bottom = 1009.0
+margin_bottom = 1086.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -700,7 +692,7 @@ text = "story, art, music, and code"
 align = 2
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "guion, dibujo, música y programación" ]
+translations = [ "guion, dibujo, música y programación", "编剧，美术，音乐，程序" ]
 
 [node name="Label3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer2"]
 margin_left = 595.0
@@ -721,7 +713,7 @@ text = "with story help from"
 align = 2
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "asistencia de guion" ]
+translations = [ "asistencia de guion", "编剧协助" ]
 
 [node name="Label5" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer2"]
 margin_left = 595.0
@@ -744,7 +736,7 @@ text = "additional code"
 align = 2
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "asistencia de programación" ]
+translations = [ "asistencia de programación", "程序协助" ]
 
 [node name="Label7" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer2"]
 margin_left = 595.0
@@ -757,30 +749,30 @@ text = "zardoru (diego ahumada)"
 autowrap = true
 
 [node name="_3" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1029.0
+margin_top = 1106.0
 margin_right = 1155.0
-margin_bottom = 1060.0
+margin_bottom = 1137.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="art" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1080.0
+margin_top = 1157.0
 margin_right = 1155.0
-margin_bottom = 1111.0
+margin_bottom = 1188.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "art"
 align = 1
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "dibujo" ]
+translations = [ "dibujo", "美术" ]
 
 [node name="GridContainer3" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1131.0
+margin_top = 1208.0
 margin_right = 1155.0
-margin_bottom = 1264.0
+margin_bottom = 1341.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -795,7 +787,7 @@ text = "tracing"
 align = 2
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "delineado" ]
+translations = [ "delineado", "线稿" ]
 
 [node name="Label3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer3"]
 margin_left = 595.0
@@ -816,7 +808,7 @@ text = "character design help"
 align = 2
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "asistencia de diseño" ]
+translations = [ "asistencia de diseño", "角色设计协助" ]
 
 [node name="Label5" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer3"]
 margin_left = 595.0
@@ -838,7 +830,7 @@ text = "background help"
 align = 2
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "asistencia para los fondos" ]
+translations = [ "asistencia para los fondos", "背景设计协助" ]
 
 [node name="Label7" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer3"]
 margin_left = 595.0
@@ -851,30 +843,30 @@ text = "rose lim"
 autowrap = true
 
 [node name="_4" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1284.0
+margin_top = 1361.0
 margin_right = 1155.0
-margin_bottom = 1315.0
+margin_bottom = 1392.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="music" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1335.0
+margin_top = 1412.0
 margin_right = 1155.0
-margin_bottom = 1366.0
+margin_bottom = 1443.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "music"
 align = 1
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "música" ]
+translations = [ "música", "音乐" ]
 
 [node name="GridContainer4" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1386.0
+margin_top = 1463.0
 margin_right = 1155.0
-margin_bottom = 1468.0
+margin_bottom = 1545.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -889,7 +881,7 @@ text = "additional music"
 align = 2
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "música adicional" ]
+translations = [ "música adicional", "额外音乐" ]
 
 [node name="niv, wiz" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer4"]
 margin_left = 595.0
@@ -921,18 +913,18 @@ text = "zardoru (diego ahumada)"
 autowrap = true
 
 [node name="_7" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1488.0
+margin_top = 1565.0
 margin_right = 1155.0
-margin_bottom = 1519.0
+margin_bottom = 1596.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="purrgatory blues" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1539.0
+margin_top = 1616.0
 margin_right = 1155.0
-margin_bottom = 1570.0
+margin_bottom = 1647.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "\"purrgatory blues\""
@@ -940,9 +932,9 @@ align = 1
 autowrap = true
 
 [node name="GridContainer7" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1590.0
+margin_top = 1667.0
 margin_right = 1155.0
-margin_bottom = 1723.0
+margin_bottom = 1800.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -957,7 +949,7 @@ text = "written by"
 align = 2
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "guion" ]
+translations = [ "guion", "作曲" ]
 
 [node name="Label3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer7"]
 margin_left = 595.0
@@ -978,7 +970,7 @@ text = "guitar"
 align = 2
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "guitarra" ]
+translations = [ "guitarra", "吉他" ]
 
 [node name="Label5" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer7"]
 margin_left = 595.0
@@ -1000,7 +992,7 @@ text = "vocals"
 align = 2
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "voz" ]
+translations = [ "voz", "演唱" ]
 
 [node name="Label7" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer7"]
 margin_left = 595.0
@@ -1014,30 +1006,30 @@ text = "molly (molly)"
 autowrap = true
 
 [node name="_8" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1743.0
+margin_top = 1820.0
 margin_right = 1155.0
-margin_bottom = 1774.0
+margin_bottom = 1851.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="localization" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1794.0
+margin_top = 1871.0
 margin_right = 1155.0
-margin_bottom = 1825.0
+margin_bottom = 1902.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "translation"
 align = 1
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "traducción" ]
+translations = [ "traducción", "(placeholder) translation" ]
 
 [node name="GridContainer10" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1845.0
+margin_top = 1922.0
 margin_right = 1155.0
-margin_bottom = 1876.0
+margin_bottom = 2004.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1052,7 +1044,7 @@ text = "spanish (spain)"
 align = 2
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "español de españa" ]
+translations = [ "español de españa", "(placeholder) spanish (spain)" ]
 
 [node name="2" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
 margin_left = 595.0
@@ -1063,31 +1055,53 @@ size_flags_vertical = 1
 text = "samo (samuel de la torre galán)"
 autowrap = true
 
-[node name="_5" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1896.0
+[node name="3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_top = 51.0
+margin_right = 560.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "simplified chinese"
+align = 2
+autowrap = true
+script = ExtResource( 5 )
+translations = [ "chino (simplificado)", "(placeholder) simplified chinese" ]
+
+[node name="4" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 595.0
+margin_top = 51.0
 margin_right = 1155.0
-margin_bottom = 1927.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "(placeholder) syakudo"
+autowrap = true
+
+[node name="_5" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
+margin_top = 2024.0
+margin_right = 1155.0
+margin_bottom = 2055.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="other" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1947.0
+margin_top = 2075.0
 margin_right = 1155.0
-margin_bottom = 1978.0
+margin_bottom = 2106.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "other"
 align = 1
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "otros" ]
+translations = [ "otros", "其他" ]
 
 [node name="GridContainer5" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 1998.0
+margin_top = 2126.0
 margin_right = 1155.0
-margin_bottom = 2216.0
+margin_bottom = 2344.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1102,7 +1116,7 @@ text = "testing"
 align = 2
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "pruebas" ]
+translations = [ "pruebas", "测试" ]
 
 [node name="2" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer5"]
 margin_left = 595.0
@@ -1126,7 +1140,7 @@ text = "special thanks"
 align = 2
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "agradecimientos" ]
+translations = [ "agradecimientos", "特别感谢" ]
 
 [node name="4" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer5"]
 margin_left = 595.0
@@ -1140,30 +1154,30 @@ uro (daniel taylor)"
 autowrap = true
 
 [node name="_11" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2236.0
+margin_top = 2364.0
 margin_right = 1155.0
-margin_bottom = 2267.0
+margin_bottom = 2395.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="sfx" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2287.0
+margin_top = 2415.0
 margin_right = 1155.0
-margin_bottom = 2318.0
+margin_bottom = 2446.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "sound effects"
 align = 1
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "efectos de sonido" ]
+translations = [ "efectos de sonido", "音效" ]
 
 [node name="sfx4" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2338.0
+margin_top = 2466.0
 margin_right = 1155.0
-margin_bottom = 2369.0
+margin_bottom = 2497.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "freesound.org"
@@ -1171,16 +1185,16 @@ align = 1
 autowrap = true
 
 [node name="GridContainer6" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2389.0
+margin_top = 2517.0
 margin_right = 1155.0
-margin_bottom = 2964.0
+margin_bottom = 3092.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
 columns = 4
 
 [node name="Label2" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer6"]
-margin_right = 262.0
+margin_right = 263.0
 margin_bottom = 575.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -1205,8 +1219,8 @@ align = 2
 autowrap = true
 
 [node name="Label3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer6"]
-margin_left = 297.0
-margin_right = 559.0
+margin_left = 298.0
+margin_right = 561.0
 margin_bottom = 575.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -1230,8 +1244,8 @@ geraldfiebig"
 autowrap = true
 
 [node name="Label4" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer6"]
-margin_left = 594.0
-margin_right = 856.0
+margin_left = 596.0
+margin_right = 858.0
 margin_bottom = 575.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -1255,8 +1269,8 @@ align = 2
 autowrap = true
 
 [node name="Label5" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer6"]
-margin_left = 891.0
-margin_right = 1153.0
+margin_left = 893.0
+margin_right = 1155.0
 margin_bottom = 575.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -1279,9 +1293,9 @@ sinewave1kHz"
 autowrap = true
 
 [node name="GridContainer9" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2984.0
+margin_top = 3112.0
 margin_right = 1155.0
-margin_bottom = 3066.0
+margin_bottom = 3194.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1326,30 +1340,30 @@ text = "soundeffectsfactory"
 autowrap = true
 
 [node name="_6" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3086.0
+margin_top = 3214.0
 margin_right = 1155.0
-margin_bottom = 3117.0
+margin_bottom = 3245.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="additional assets" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3137.0
+margin_top = 3265.0
 margin_right = 1155.0
-margin_bottom = 3168.0
+margin_bottom = 3296.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "additional assets"
 align = 1
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "recursos adicionales" ]
+translations = [ "recursos adicionales", "额外素材" ]
 
 [node name="GridContainer8" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3188.0
+margin_top = 3316.0
 margin_right = 1155.0
-margin_bottom = 3321.0
+margin_bottom = 3449.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1367,7 +1381,7 @@ source sans pro font"
 align = 2
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "lector de pantalla\\nsombras del delineado 3d\\nmodelo 3d del gato\\nfuente source sans pro\\n" ]
+translations = [ "lector de pantalla\\nsombras del delineado 3d\\nmodelo 3d del gato\\nfuente source sans pro\\n", "tts模块\\n3d轮廓渲染\\n3d猫猫模型\\n字体来源" ]
 
 [node name="Label3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer8"]
 margin_left = 595.0
@@ -1382,29 +1396,29 @@ paul d. hunt"
 autowrap = true
 
 [node name="_10" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3341.0
+margin_top = 3469.0
 margin_right = 1155.0
-margin_bottom = 3372.0
+margin_bottom = 3500.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="version" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-modulate = Color( 1, 1, 1, 0.509804 )
-margin_top = 3392.0
+margin_top = 3520.0
 margin_right = 1155.0
-margin_bottom = 3423.0
+margin_bottom = 3551.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
+custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
 text = "version..."
 align = 1
 autowrap = true
 
 [node name="_13" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3443.0
+margin_top = 3571.0
 margin_right = 1155.0
-margin_bottom = 3474.0
+margin_bottom = 3602.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
@@ -1437,7 +1451,7 @@ text = "back"
 align = 1
 valign = 1
 script = ExtResource( 5 )
-translations = [ "volver" ]
+translations = [ "volver", "返回" ]
 
 [node name="load_menu" parent="." instance=ExtResource( 21 )]
 visible = false

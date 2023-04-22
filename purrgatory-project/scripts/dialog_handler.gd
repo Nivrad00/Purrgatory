@@ -6,10 +6,10 @@ var placeholder_block = {
 	'label': 'placeholder',
 	'speaker': [''],
 	'sprites': [],
-	'text': ['(text block not found)'],
+	'text': ['(text block not found)', '(text block not found)', '(text block not found)'],
 	'states': [],
 	'next': null,
-	'choices': [[]]
+	'choices': [[], [], []]
 }
 
 func _ready():

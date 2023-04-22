@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=2]
@@ -13,7 +13,7 @@
 [ext_resource path="res://scripts/TranslatedLabel.gd" type="Script" id=11]
 [ext_resource path="res://assets/audio/pencil.ogg" type="AudioStream" id=12]
 [ext_resource path="res://assets/ui/pronoun_input_box.png" type="Texture" id=13]
-[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://themes/ui_font_18.tres" type="DynamicFont" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -22,12 +22,6 @@ animations = [ {
 "name": "o1",
 "speed": 15.0
 } ]
-
-[sub_resource type="DynamicFont" id=2]
-size = 18
-use_filter = true
-extra_spacing_space = 1
-font_data = ExtResource( 14 )
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -48,7 +42,6 @@ centered = false
 offset = Vector2( -7.68423, 41.1628 )
 
 [node name="spaces" type="Control" parent="state_handler"]
-editor/display_folded = true
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
@@ -117,7 +110,6 @@ margin_bottom = 565.0
 color = Color( 0.313726, 1, 0, 0.266667 )
 
 [node name="shapes" type="Node2D" parent="state_handler"]
-editor/display_folded = true
 
 [node name="0" type="AnimatedSprite" parent="state_handler/shapes"]
 position = Vector2( 452.402, 152.873 )
@@ -197,7 +189,7 @@ rect_pivot_offset = Vector2( -555.677, -604.755 )
 text = "done"
 align = 1
 script = ExtResource( 11 )
-translations = [ "hecho" ]
+translations = [ "hecho", "(placeholder) done" ]
 
 [node name="placeholder_input" type="TextEdit" parent="state_handler"]
 visible = false
@@ -220,7 +212,6 @@ wait_time = 0.03
 one_shot = true
 
 [node name="skip_game" type="Button" parent="state_handler"]
-visible = false
 margin_left = 32.0
 margin_top = 652.0
 margin_right = 183.0
@@ -239,19 +230,20 @@ position = Vector2( 75.5, 26 )
 texture = ExtResource( 13 )
 
 [node name="Label" type="Label" parent="state_handler/skip_game"]
-margin_left = 7.8065
-margin_top = 1.95477
-margin_right = 143.807
-margin_bottom = 51.9548
+margin_left = 8.0
+margin_top = 2.0
+margin_right = 144.0
+margin_bottom = 49.0
 rect_pivot_offset = Vector2( 66.313, 64.7428 )
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/line_spacing = -6
+custom_fonts/font = ExtResource( 14 )
 text = "skip game"
 align = 1
 valign = 1
 script = ExtResource( 11 )
-translations = [ "abandonar" ]
+translations = [ "abandonar", "跳过" ]
+
 [connection signal="animation_finished" from="state_handler/shapes/0" to="state_handler" method="end_olivers_turn"]
 [connection signal="animation_finished" from="state_handler/shapes/1" to="state_handler" method="end_olivers_turn"]
 [connection signal="animation_finished" from="state_handler/shapes/2" to="state_handler" method="end_olivers_turn"]

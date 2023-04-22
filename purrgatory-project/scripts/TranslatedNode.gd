@@ -13,4 +13,3 @@ func update_label(lang):
 		get_child(lang).show()
 	else:
 		print("error: no translation found for node " + name)
-		

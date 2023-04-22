@@ -6,3 +6,5 @@ func update_label(lang):
 		$AnimationPlayer.play("guardando...")
 	elif lang == 0:
 		$AnimationPlayer.play("saving..")
+	elif lang == 2:
+		$AnimationPlayer.play("saving-ch")

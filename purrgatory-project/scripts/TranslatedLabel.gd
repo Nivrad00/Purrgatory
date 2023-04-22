@@ -15,7 +15,12 @@ func _ready():
 			translations.push_front(get("text"))
 	
 	else:
-		print("error: wrong number of translations for node " + name)
+		if get_parent().get_parent() != null:
+			print("error: wrong number of translations for node ..." + get_parent().get_parent().name + "."  + get_parent().name + "." + name)
+		elif get_parent() != null:
+			print("error: wrong number of translations for node ..." + get_parent().name + "." + name)
+		else:
+			print("error: wrong number of translations for node ..." + name)
 		
 	update_label(Language.language)
 	
