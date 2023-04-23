@@ -28,6 +28,9 @@ func update_state(state):
 	if state.get('looking_for_poem'):
 		$elijah_searching.show()
 		$ks_and_numa.hide()
+	elif state.get('slam_outro'):
+		$ks_and_numa.hide()
+		
 	
 	if state.get('elijah_alert'):
 		state['elijah_alert'] = false

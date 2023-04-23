@@ -160,7 +160,7 @@ rect_pivot_offset = Vector2( -555.677, -604.755 )
 theme = ExtResource( 19 )
 text = "done"
 script = ExtResource( 20 )
-translations = [ "hecho", "(placeholder) done" ]
+translations = [ "hecho", "完成" ]
 
 [node name="asmr" type="AudioStreamPlayer" parent="state_handler"]
 stream = ExtResource( 21 )

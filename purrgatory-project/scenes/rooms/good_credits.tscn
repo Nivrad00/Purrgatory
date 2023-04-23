@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=2]
@@ -49,6 +49,7 @@
 [ext_resource path="res://themes/ui_font_18.tres" type="DynamicFont" id=47]
 [ext_resource path="res://themes/ui_font_40.tres" type="DynamicFont" id=48]
 [ext_resource path="res://themes/english_only_font.tres" type="DynamicFont" id=49]
+[ext_resource path="res://themes/chinese_only_font.tres" type="DynamicFont" id=50]
 
 [sub_resource type="DynamicFont" id=4]
 size = 40
@@ -1646,14 +1647,14 @@ margin_bottom = 41.8747
 
 [node name="Label4" type="Label" parent="state_handler/5"]
 margin_left = 317.125
-margin_top = 212.125
+margin_top = 93.1253
 margin_right = 1596.12
-margin_bottom = 283.125
+margin_bottom = 164.125
 rect_pivot_offset = Vector2( 350, 21 )
-text = "spanish translation (spain)"
+text = "spanish translation"
 align = 1
 script = ExtResource( 5 )
-translations = [ "traducción al español de españa", "(placeholder) spanish translation (spain)" ]
+translations = [ "traducción al español", "西班牙语本地化" ]
 
 [node name="Label5" type="Label" parent="state_handler/5/Label4"]
 margin_left = 1.29236
@@ -1676,32 +1677,69 @@ align = 1
 
 [node name="Label5" type="Label" parent="state_handler/5"]
 margin_left = 317.125
-margin_top = 381.126
+margin_top = 262.126
 margin_right = 1596.12
-margin_bottom = 452.126
+margin_bottom = 333.126
 rect_pivot_offset = Vector2( 350, -148 )
-text = "simplified chinese translation"
+text = "chinese translation"
 align = 1
 script = ExtResource( 5 )
-translations = [ "traducción al chino simplificado", "(placeholder) simplified chinese translation" ]
+translations = [ "traducción al chino", "简体中文本地化" ]
 
 [node name="Label5" type="Label" parent="state_handler/5/Label5"]
 margin_left = 1.29236
-margin_top = 37.0
+margin_top = 41.0
 margin_right = 1280.29
-margin_bottom = 90.0
-custom_fonts/font = ExtResource( 48 )
-text = "syakudo"
+margin_bottom = 94.0
+custom_fonts/font = ExtResource( 50 )
+text = "赤铜/syakudo"
 align = 1
 
-[node name="Label7" type="Label" parent="state_handler/5/Label5"]
-margin_left = 3.29236
-margin_top = 82.301
-margin_right = 1279.29
-margin_bottom = 116.301
-rect_pivot_offset = Vector2( 676.708, 14.8751 )
-custom_fonts/font = ExtResource( 47 )
-text = "(placeholder)"
+[node name="Label6" type="Label" parent="state_handler/5/Label5"]
+margin_left = 1.29236
+margin_top = 41.0
+margin_right = 1280.29
+margin_bottom = 94.0
+custom_fonts/font = ExtResource( 50 )
+text = "赤铜/syakudo"
+align = 1
+
+[node name="Label6" type="Label" parent="state_handler/5"]
+margin_left = 317.125
+margin_top = 424.126
+margin_right = 1596.12
+margin_bottom = 495.126
+rect_pivot_offset = Vector2( 350, -148 )
+text = "chinese translation support"
+align = 1
+script = ExtResource( 5 )
+translations = [ "(placeholder) chinese translation support", "汉化协力" ]
+
+[node name="Label6" type="Label" parent="state_handler/5/Label6"]
+margin_left = 1.29236
+margin_top = 41.0
+margin_right = 1280.29
+margin_bottom = 94.0
+custom_fonts/font = ExtResource( 50 )
+text = "lililioon/ciinore"
+align = 1
+
+[node name="Label7" type="Label" parent="state_handler/5/Label6"]
+margin_left = 1.29236
+margin_top = 86.9999
+margin_right = 1280.29
+margin_bottom = 140.0
+custom_fonts/font = ExtResource( 50 )
+text = "面具魔【MaskDevil】"
+align = 1
+
+[node name="Label8" type="Label" parent="state_handler/5/Label6"]
+margin_left = 1.29236
+margin_top = 135.0
+margin_right = 1280.29
+margin_bottom = 188.0
+custom_fonts/font = ExtResource( 50 )
+text = "伏霖CRLINEEPER"
 align = 1
 
 [node name="kyungsoon_numa1" type="TextureButton" parent="state_handler/5"]
@@ -1877,6 +1915,7 @@ animation1 = ExtResource( 36 )
 animation2 = ExtResource( 37 )
 
 [node name="7" type="Control" parent="state_handler"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 

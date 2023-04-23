@@ -271,7 +271,7 @@ text = "are you sure you want to delete all your data?
 this will delete your saves and reset the \"skip\" button."
 align = 1
 script = ExtResource( 5 )
-translations = [ "¿de verdad quieres borrar todos los datos?\\nse eliminarán todas las partidas guardadas y se restablecerá el botón de \"saltar\"", "你确定要删除所有的进度吗？\\r\\n(placeholder) this will delete your saves and reset the \"skip\" button." ]
+translations = [ "¿de verdad quieres borrar todos los datos?\\nse eliminarán todas las partidas guardadas y se restablecerá el botón de \"saltar\"", "你确定要删除所有的进度吗？\\n该选项会清除你的存档并重置“跳过”按钮" ]
 
 [node name="yes" type="Button" parent="delete_confirm"]
 anchor_right = 1.0

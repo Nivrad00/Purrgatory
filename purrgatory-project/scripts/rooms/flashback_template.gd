@@ -46,6 +46,7 @@ func next():
 			
 				# get rid of the underline and store the choice for later
 				old_choice.set_bbcode(old_choice.get_bbcode().replace('[u]', '').replace('[/u]', ''))
+				old_choice.set_bbcode(old_choice.get_bbcode().replace('[i]', '').replace('[/i]', ''))
 	
 	# try getting the next line of text
 	text_n += 1

@@ -26,3 +26,7 @@ func wake_up():
 		'el amor'
 	]
 	set_format_dict('desire_es', desire_es_replacements[choice_log[1]])
+	
+	# chinese (placeholder)
+	
+	set_format_dict('desire_ch', choice_text[1])

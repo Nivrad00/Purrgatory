@@ -41,6 +41,11 @@ func wake_up():
 	set_format_dict('partner_es', partner_es_replacements[choice_log[1]])
 	set_format_dict('partner_about_es', partner_about_es_replacements[choice_log[3]])
 	
+	# chinese (placeholder)
+	
+	set_format_dict('partner_ch', replacements[choice_log[1]])
+	set_format_dict('partner_about_ch', choice_text[3])
+	
 	# done 
 	
 	emit_signal('change_room', 'hallway1')

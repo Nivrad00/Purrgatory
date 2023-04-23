@@ -46,6 +46,11 @@ func wake_up():
 	set_format_dict('pride_es', pride_es_replacements[choice_log[1]])
 	set_format_dict('proudest_moment_es', proudest_moment_es_replacements[choice_log[2]])
 	
+	# chinese (placeholder)
+
+	set_format_dict('pride_ch', replacements[choice_log[1]])
+	set_format_dict('proudest_moment_ch', choice_text[2])
+	
 func update_state(state):
 	.update_state(state)
 	if state.get('flashback_goto_commons'):

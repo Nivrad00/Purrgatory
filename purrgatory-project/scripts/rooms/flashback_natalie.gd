@@ -35,4 +35,8 @@ func wake_up():
 	]
 	set_format_dict('regret_es', regret_es_replacements[choice_log[3]])
 	
+	# chinese (placeholder)
+	set_format_dict('dream_ch', choice_text[1])
+	set_format_dict('regret_ch', choice_text[3])
+		
 	emit_signal('start_dialog', 'natalie_post2', [])

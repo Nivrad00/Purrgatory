@@ -411,10 +411,10 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ "正在保存
-(placeholder) don't exit the game yet!", "正在保存.
-(placeholder) don't exit the game yet!", "正在保存..
-(placeholder) don't exit the game yet!", "正在保存...
-(placeholder) don't exit the game yet!" ]
+先别退出游戏！", "正在保存.
+先别退出游戏！", "正在保存..
+先别退出游戏！", "正在保存...
+先别退出游戏！" ]
 }
 
 [sub_resource type="Animation" id=35]
@@ -929,7 +929,7 @@ margin_left = -434.0
 margin_top = 6.0
 margin_right = -24.0
 margin_bottom = 40.0
-text = "(placeholder) pronoun"
+text = "称呼"
 align = 2
 
 [node name="back" type="Button" parent="content/ui/name_input/custom_pronouns"]
@@ -1770,8 +1770,8 @@ margin_top = 326.623
 margin_right = 1280.0
 margin_bottom = 402.623
 mouse_filter = 1
-text = "正在保存...
-don't exit the game yet!"
+text = "正在保存
+先别退出游戏！"
 align = 1
 script = ExtResource( 76 )
 translations = [ "guardando...\\n¡no cierres el juego todavía!", "正在保存…" ]

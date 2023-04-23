@@ -26,3 +26,6 @@ func wake_up():
 		'flipaba la crema de cacahuete'
 	]
 	set_format_dict('food_es', food_es_replacements[choice_log[1]])
+	
+	# chinese (placeholder)
+	set_format_dict('food_ch', choice_text[1])

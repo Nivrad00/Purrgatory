@@ -189,7 +189,7 @@ rect_pivot_offset = Vector2( -555.677, -604.755 )
 text = "done"
 align = 1
 script = ExtResource( 11 )
-translations = [ "hecho", "(placeholder) done" ]
+translations = [ "hecho", "完成" ]
 
 [node name="placeholder_input" type="TextEdit" parent="state_handler"]
 visible = false

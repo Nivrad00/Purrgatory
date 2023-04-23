@@ -1,4 +1,4 @@
-extends "flashback_template.gd"
+ extends "flashback_template.gd"
 
 func _ready():
 	._ready()
@@ -44,6 +44,11 @@ func wake_up():
 		'prudente'
 	]
 	set_format_dict('envy_es', envy_es_replacements[choice_log[2]])
+	
+	# chinese (placeholder)
+	
+	set_format_dict('role_model_ch', replacements[choice_log[1]])
+	set_format_dict('envy_ch', choice_text[2])
 	
 	# done
 	

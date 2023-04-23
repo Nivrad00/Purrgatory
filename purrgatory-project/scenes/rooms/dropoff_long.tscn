@@ -226,6 +226,7 @@ autoplay = "blink"
 anims/blink = SubResource( 6 )
 
 [node name="_dialog" type="Control" parent="state_handler"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2

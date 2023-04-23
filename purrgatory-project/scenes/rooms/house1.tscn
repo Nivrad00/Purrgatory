@@ -94,5 +94,6 @@ room_label = "hallway15"
 stream = ExtResource( 16 )
 volume_db = -5.0
 bus = "SFX"
+
 [connection signal="pressed" from="state_handler/elijah_searching" to="state_handler/elijah_searching" method="_on_char_obj_button_pressed"]
 [connection signal="pressed" from="state_handler/ks_and_numa" to="state_handler/ks_and_numa" method="_on_char_obj_button_pressed"]

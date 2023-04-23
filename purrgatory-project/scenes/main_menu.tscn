@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://cat_01_color05.obj" type="ArrayMesh" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://themes/dropdown_menu_theme.tres" type="Theme" id=17]
 [ext_resource path="res://assets/ui/credits_box.png" type="Texture" id=18]
 [ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=19]
+[ext_resource path="res://themes/chinese_only_dialog_font.tres" type="DynamicFont" id=20]
 [ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=21]
 [ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=22]
 [ext_resource path="res://themes/ui_font_21.tres" type="DynamicFont" id=23]
@@ -62,7 +63,7 @@ blend_mode = 3
 
 [node name="main" type="Node"]
 script = ExtResource( 1 )
-version = "2023-04-22 (Debug)"
+version = "2023-04-23 (Debug)"
 
 [node name="delay_timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -359,7 +360,7 @@ custom_fonts/font = ExtResource( 23 )
 text = "language"
 align = 2
 script = ExtResource( 5 )
-translations = [ "idioma", "(placeholder) language" ]
+translations = [ "idioma", "语言" ]
 
 [node name="language" type="MarginContainer" parent="main_menu/language"]
 margin_left = -16.0
@@ -376,7 +377,6 @@ rect_min_size = Vector2( 200, 36 )
 focus_mode = 0
 size_flags_horizontal = 0
 theme = ExtResource( 17 )
-custom_fonts/font = ExtResource( 23 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
 
@@ -404,7 +404,7 @@ theme = ExtResource( 19 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="credits/ScrollContainer"]
 margin_right = 1176.0
-margin_bottom = 3602.0
+margin_bottom = 3737.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
@@ -1024,7 +1024,7 @@ text = "translation"
 align = 1
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "traducción", "(placeholder) translation" ]
+translations = [ "traducción", "翻译" ]
 
 [node name="GridContainer10" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
 margin_top = 1922.0
@@ -1044,7 +1044,7 @@ text = "spanish (spain)"
 align = 2
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "español de españa", "(placeholder) spanish (spain)" ]
+translations = [ "español de españa", "西班牙语（西）" ]
 
 [node name="2" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
 margin_left = 595.0
@@ -1065,7 +1065,7 @@ text = "simplified chinese"
 align = 2
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "chino (simplificado)", "(placeholder) simplified chinese" ]
+translations = [ "chino simplificado", "简体中文" ]
 
 [node name="4" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
 margin_left = 595.0
@@ -1074,7 +1074,33 @@ margin_right = 1155.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "(placeholder) syakudo"
+custom_fonts/font = ExtResource( 20 )
+text = "赤铜/syakudo"
+autowrap = true
+
+[node name="5" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_top = 51.0
+margin_right = 560.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "chinese translation support"
+align = 2
+autowrap = true
+script = ExtResource( 5 )
+translations = [ "(placeholder) chinese translation support", "汉化协力" ]
+
+[node name="6" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 595.0
+margin_top = 51.0
+margin_right = 1155.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 20 )
+text = "lililioon/ciinore
+面具魔【MaskDevil】
+伏霖CRLINEEPER"
 autowrap = true
 
 [node name="_5" type="Label" parent="credits/ScrollContainer/VBoxContainer"]

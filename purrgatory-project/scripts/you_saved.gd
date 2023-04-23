@@ -25,6 +25,6 @@ func _ready():
 	elif i == 0:
 		translations.append("you saved " + str(i) + " people")
 		translations.append("salvaste a " + str(i) + " personas")
-		translations.append("(placeholder) you saved " + str(i) + " people")
+		translations.append("你拯救了" + str(i) + "人")
 		
 	update_label(Language.language)

@@ -56,6 +56,11 @@ func wake_up():
 	]
 	set_format_dict('favorite_place_es', favorite_place_es_replacements[choice_log[2]])
 	
+	# (placeholder) chinese
+	
+	set_format_dict('hometown_ch', replacements[choice_log[1]])
+	set_format_dict('favorite_place_ch', replacements2[choice_log[2]])
+	
 	# done
 	
 	emit_signal('change_room', 'flashback_kyungsoon')

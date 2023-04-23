@@ -296,10 +296,10 @@ func start_dialog(label, blackout_label=null):
 			if state.get('met_' + key):
 				speaker_format_dict[key] = key
 			else:
-				if Language.language == 0:
-					speaker_format_dict[key] = '???'
-				elif Language.language == 1:
+				if Language.language == 1:
 					speaker_format_dict[key] = '¿¿??'
+				else:
+					speaker_format_dict[key] = '???'
 				
 		speaker = speaker.format(speaker_format_dict)
 		
@@ -399,10 +399,10 @@ func update_dialog(b: int):
 				if state.get('met_' + key):
 					speaker_format_dict[key] = key
 				else:
-					if Language.language == 0:
-						speaker_format_dict[key] = '???'
-					elif Language.language == 1:
+					if Language.language == 1:
 						speaker_format_dict[key] = '¿¿??'
+					else:
+						speaker_format_dict[key] = '???'
 					
 			speaker = speaker.format(speaker_format_dict)
 			
@@ -420,9 +420,11 @@ func update_dialog(b: int):
 
 # this handles variable text like {player}, {they}{'s/'re}, etc.
 func format_text(text):
+	# basic replacements get done using the format_dict, including {player}, {they} and derivatives, and {ta}
+	# spanish doesn't use the format_dict bc it's clampicated, instead everything is written in {él/ella/elle} form
 	text = text.format(format_dict)
 
-	# english
+	# additional english
 	if Language.language == 0: 
 		var regex = RegEx.new()
 		regex.compile('{([^/]+)/([^}]+)}')
@@ -431,7 +433,7 @@ func format_text(text):
 		else:
 			text = regex.sub(text, '$2', true)
 			
-	# spanish
+	# additional spanish
 	elif Language.language == 1:
 		var regex = RegEx.new()
 		regex.compile('{([^/]*)/([^/]*)/([^}]*)}')
@@ -477,6 +479,20 @@ func format_text(text):
 		else:
 			print('error: no pronouns set in spanish (spain)')
 	
+	# additional chinese
+	elif Language.language == 2:
+		# ensuring older versions of purrgatory get updated with spanish equivalents
+		if not format_dict.get('ta'):
+			if 'they' in format_dict and format_dict['they'].length() > 0:
+				if format_dict['they'] == 'he':
+					format_dict['ta'] = '他'
+				elif format_dict['they'] == 'she':
+					format_dict['ta'] = '她'
+				else:
+					format_dict['ta'] = 'ta'
+			
+	# there is no additional formatting needed in chinese. yay for non-gendered languages!
+	
 	return text
 	
 func _on_language_changed(lang):
@@ -498,10 +514,10 @@ func _on_language_changed(lang):
 				if state.get('met_' + key):
 					speaker_format_dict[key] = key
 				else:
-					if Language.language == 0:
-						speaker_format_dict[key] = '???'
-					elif Language.language == 1:
+					if Language.language == 1:
 						speaker_format_dict[key] = '¿¿??'
+					else:
+						speaker_format_dict[key] = '???'
 					
 			speaker = speaker.format(speaker_format_dict)
 			
@@ -524,11 +540,14 @@ func set_player_name():
 			format_dict['theirs'] = 'theirs'
 			format_dict['themself'] = 'themself'
 			# spanish pronouns
-			state['_pronombre_elle'] = true
 			# all occurences of variable gender in spanish are written in three parts like {él/ella/elle}
 			# so no need to add anything to the format dict; everything is based on the state dict
 			# also, if you choose elle/-e in spanish, the english is set to they/them
 			# and vice versa, and same for the other pronouns
+			state['_pronombre_elle'] = true
+			# chinese pronouns
+			# everything in chinese can be handled with just one pronoun, woohoo!
+			format_dict['ta'] = 'ta'
 
 		elif ui.get_node('name_input/pronouns/she').pressed:
 			state['_pronouns_she'] = true
@@ -539,6 +558,8 @@ func set_player_name():
 			format_dict['themself'] = 'herself'
 			# spanish pronouns
 			state['_pronombre_ella'] = true
+			# chinese pronouns
+			format_dict['ta'] = '她'
 
 		elif ui.get_node('name_input/pronouns/he').pressed:
 			state['_pronouns_he'] = true
@@ -549,6 +570,8 @@ func set_player_name():
 			format_dict['themself'] = 'himself'
 			# spanish pronouns
 			state['_pronombre_el'] = true
+			# chinese pronouns
+			format_dict['ta'] = '他'
 
 		elif ui.get_node('name_input/pronouns/custom').pressed:
 			# if custom pronouns are entered in english...
@@ -562,6 +585,8 @@ func set_player_name():
 				format_dict['themself'] = pronoun_inputs.get_node('them').text + 'self'
 				# ...the spanish version is automatically set to elle
 				state['_pronombre_elle'] = true
+				# ...and the chinese version is automatically set to ta
+				format_dict['ta'] = 'ta'
 				
 			# and if a custom pronoun is entered in spanish...
 			elif Language.language == 1:
@@ -578,6 +603,8 @@ func set_player_name():
 				format_dict['their'] = 'their'
 				format_dict['theirs'] = 'theirs'
 				format_dict['themself'] = 'themself'
+				# ...and the chinese version is automatically set to ta
+				format_dict['ta'] = 'ta'
 			
 		ui.get_node('name_input').hide()
 		ui.get_node('text_box').disabled = false

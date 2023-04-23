@@ -160,7 +160,7 @@ margin_bottom = 62.0
 text = "language"
 align = 2
 script = ExtResource( 5 )
-translations = [ "idioma", "(placeholder)\\nlanguage" ]
+translations = [ "idioma", "语言" ]
 
 [node name="language" type="MarginContainer" parent="language"]
 margin_left = -16.0
@@ -503,7 +503,7 @@ margin_bottom = 382.0
 text = "low contrast mode"
 align = 2
 script = ExtResource( 5 )
-translations = [ "contraste bajo", "(placeholder)\\n low contrast mode" ]
+translations = [ "contraste bajo", "护眼模式" ]
 
 [node name="low_contrast" type="CheckBox" parent="right_side"]
 margin_left = 210.0

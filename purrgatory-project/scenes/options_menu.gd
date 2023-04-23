@@ -227,8 +227,8 @@ func show_custom():
 	
 	# exception for "cat"
 	if current_quip[0] == "cat" and Language.language == 2:
-		$text_size/preview_a.set_text("(placeholder) cat")
-	if current_quip[0] == "cat" and Language.language == 1:
+		$text_size/preview_a.set_text("猫")
+	elif current_quip[0] == "cat" and Language.language == 1:
 		$text_size/preview_a.set_text("gato")
 	else:
 		$text_size/preview_a.set_text(current_quip[0])
@@ -250,6 +250,8 @@ func _on_language_changed(lang):
 	# exception for "cat"
 	if current_quip[0] == "cat" and Language.language == 1:
 		$text_size/preview_a.set_text("gato")
+	elif current_quip[0] == "cat" and Language.language == 2:
+		$text_size/preview_a.set_text("猫")
 	else:
 		$text_size/preview_a.set_text(current_quip[0])
 	$text_size/preview_b.set_bbcode(current_quip[1][Language.language])
@@ -287,8 +289,13 @@ func _on_fullscreen_toggled(on):
 		OS.window_size = Vector2(int(res[0]), int(res[1]))
 	
 func _on_text_size_value_changed(value):
+	# dialog font
 	$text_size/preview_b.get_font('normal_font').set_size(value)
 	$text_size/preview_b.get_font('italics_font').set_size(value)
+	# this font is used in the main menu credits, bc it needs to be resized
+	#  like the dialog font is, but it also needs to stay in chinese
+	preload("res://themes/chinese_only_dialog_font.tres").set_size(value)
+	
 	var bb = $text_size/preview_b.get_bbcode()
 	$text_size/preview_b.clear()
 	$text_size/preview_b.set_bbcode(bb)
@@ -309,6 +316,8 @@ func _on_test_voicing_pressed():
 		get_tree().get_root().get_node('main/game/tts_node').speak('self-voicing sample')
 	elif Language.language == 1:
 		get_tree().get_root().get_node('main/game/tts_node').speak('prueba del lector de pantalla')
+	elif Language.language == 2:
+		get_tree().get_root().get_node('main/game/tts_node').speak('(placeholder) self-voicing sample')
 
 func _on_window_size_selected(ID):
 	var res_string = resolutions[ID]
