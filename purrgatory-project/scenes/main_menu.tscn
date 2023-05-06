@@ -63,7 +63,7 @@ blend_mode = 3
 
 [node name="main" type="Node"]
 script = ExtResource( 1 )
-version = "2023-04-23 (Debug)"
+version = "2023-05-05 (Debug)"
 
 [node name="delay_timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -1088,7 +1088,7 @@ text = "chinese translation support"
 align = 2
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "(placeholder) chinese translation support", "汉化协力" ]
+translations = [ "asistencia de traducción al chino", "汉化协助" ]
 
 [node name="6" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
 margin_left = 595.0
@@ -1098,8 +1098,8 @@ margin_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 20 )
-text = "lililioon/ciinore
-面具魔【MaskDevil】
+text = "ciinore
+面具魔MaskDevil
 伏霖CRLINEEPER"
 autowrap = true
 

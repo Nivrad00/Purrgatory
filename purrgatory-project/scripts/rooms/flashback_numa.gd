@@ -56,10 +56,29 @@ func wake_up():
 	]
 	set_format_dict('favorite_place_es', favorite_place_es_replacements[choice_log[2]])
 	
-	# (placeholder) chinese
+	# chinese
 	
-	set_format_dict('hometown_ch', replacements[choice_log[1]])
-	set_format_dict('favorite_place_ch', replacements2[choice_log[2]])
+	var hometown_ch_replacements = [
+		'远处群山连绵',
+		'街道熙熙攘攘',
+		'海浪拍打岸边',
+		'尘路延至天际',
+		'空气闷热潮湿',
+		'田园精心照料',
+		'屋顶摇摇欲坠'
+	]
+	set_format_dict('hometown_ch', hometown_ch_replacements[choice_log[1]])
+	
+	var favorite_place_ch_replacements = [
+		'转角那有肥皂味的小卖部',
+		'溪流旁的卵石浅滩',
+		'老街另一头的书店',
+		'婶婶奢华的家',
+		'商场里五光十色的街机厅',
+		'家里小店的后屋',
+		'学校后杂草疯长的田径场'
+	]
+	set_format_dict('favorite_place_ch', favorite_place_ch_replacements[choice_log[2]])
 	
 	# done
 	

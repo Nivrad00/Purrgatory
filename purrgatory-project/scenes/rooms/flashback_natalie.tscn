@@ -924,8 +924,8 @@ rect_min_size = Vector2( 0, 60 )
 rect_clip_content = false
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "你想起了那些从未有机会做过的事情"
-text = "你想起了那些从未有机会做过的事情"
+bbcode_text = "你想起了那些你从未有机会做过的事情"
+text = "你想起了那些你从未有机会做过的事情"
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text/2/vc/t0"]
@@ -1088,8 +1088,8 @@ margin_bottom = 430.0
 rect_min_size = Vector2( 0, 60 )
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "或许，假使你能知道会如何死去，也至少能让某些事情有所区别"
-text = "或许，假使你能知道会如何死去，也至少能让某些事情有所区别"
+bbcode_text = "或许，假使你能知道你会如何死去，也至少能改变某些事情"
+text = "或许，假使你能知道你会如何死去，也至少能改变某些事情"
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text/2/vc/t2"]

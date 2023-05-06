@@ -115,10 +115,9 @@ func next():
 		var player_input = null
 		for child in olds[Language.language].get_children():
 			if child.name[0] == 'e':
-				player_input = child.get_node('LineEdit').text
-				if player_input == "":
-					player_input = " "
-				input_text[text_n - 1] = player_input
+				if child.get_node('LineEdit').text != "":
+					input_text[text_n - 1] = child.get_node('LineEdit').text
+					player_input = child.get_node('LineEdit').text
 		
 		# now update the text in all languages to reflect the player's input
 		if player_input:

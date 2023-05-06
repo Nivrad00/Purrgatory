@@ -41,7 +41,7 @@ func set_language(n):
 # a note on fonts:
 
 # dialog_font / dialog_font_italics
-#    used for large quantities of text, name the dialog, 
+#    used for large quantities of text, namely the dialog, 
 #    flashbacks, and main menu credits. can be rescaled in settings, and switches between
 #    latin and chinese fonts as needed
 # chinese_only_dialog_font

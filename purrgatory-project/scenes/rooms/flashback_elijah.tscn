@@ -1012,8 +1012,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[i][u]最喜欢的电视剧的角色[/u][/i]"
-text = "最喜欢的电视剧的角色"
+bbcode_text = "[i][u]最喜欢的电视剧角色[/u][/i]"
+text = "最喜欢的电视剧角色"
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/2/vc/c1/choice_container/5"]

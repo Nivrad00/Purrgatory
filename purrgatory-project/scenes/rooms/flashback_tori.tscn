@@ -940,8 +940,8 @@ rect_min_size = Vector2( 0, 60 )
 rect_clip_content = false
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "你想起了在万物之上所追求的东西"
-text = "你想起了在万物之上所追求的东西"
+bbcode_text = "你想起了你在万物之上所追求的东西"
+text = "你想起了你在万物之上所追求的东西"
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text/2/vc/t0"]
@@ -1006,8 +1006,8 @@ margin_right = 788.0
 margin_bottom = 50.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[i][u]探险[/u][/i]"
-text = "探险"
+bbcode_text = "[i][u]冒险[/u][/i]"
+text = "冒险"
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/2/vc/c1/choice_container/2"]
@@ -1232,8 +1232,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "又何以得知？"
-text = "又何以得知？"
+bbcode_text = "这些问题的答案又何以得知？"
+text = "这些问题的答案又何以得知？"
 scroll_active = false
 
 [node name="5" type="RichTextLabel" parent="state_handler/text/2/vc/t3"]
@@ -1252,8 +1252,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "真是愚蠢"
-text = "真是愚蠢"
+bbcode_text = "你可真是愚蠢"
+text = "你可真是愚蠢"
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text/2/vc/t3"]

@@ -27,6 +27,15 @@ func wake_up():
 	]
 	set_format_dict('desire_es', desire_es_replacements[choice_log[1]])
 	
-	# chinese (placeholder)
+	# chinese
 	
-	set_format_dict('desire_ch', choice_text[1])
+	var desire_ch_replacements = [
+		'知识',
+		'友谊',
+		'冒险',
+		'技能',
+		'幸福',
+		'自由',
+		'爱情'
+	]
+	set_format_dict('desire_ch', desire_ch_replacements[choice_log[1]])

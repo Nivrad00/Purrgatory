@@ -43,8 +43,22 @@ func wake_up():
 	
 	# chinese (placeholder)
 	
-	set_format_dict('partner_ch', replacements[choice_log[1]])
-	set_format_dict('partner_about_ch', choice_text[3])
+	var partner_ch_replacements = [
+		'情人',
+		'朋友',
+		'爱人'
+	]
+	var partner_about_ch_replacements = [
+		'在暴风雨后出门散步',
+		'让其他人发笑',
+		'读完一本好书',
+		'一天工作之后畅饮一杯',
+		'在火车站去看人来人往',
+		'超长的自驾旅行',
+		'在温暖的周日早晨睡到自然醒'
+	]
+	set_format_dict('partner_ch', partner_ch_replacements[choice_log[1]])
+	set_format_dict('partner_about_ch', partner_about_ch_replacements[choice_log[3]])
 	
 	# done 
 	

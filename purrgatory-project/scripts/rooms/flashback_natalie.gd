@@ -13,6 +13,8 @@ func wake_up():
 	set_format_dict('dream', choice_text[1])
 	set_format_dict('regret', choice_text[3])
 	
+	# spanish
+	
 	var dream_es_replacements = [
 		'formar una familia',
 		'aprender a programar',
@@ -35,8 +37,28 @@ func wake_up():
 	]
 	set_format_dict('regret_es', regret_es_replacements[choice_log[3]])
 	
-	# chinese (placeholder)
-	set_format_dict('dream_ch', choice_text[1])
-	set_format_dict('regret_ch', choice_text[3])
+	# chinese
+	
+	var dream_ch_replacements = [
+		'组建一个家庭',
+		'学习如何编程',
+		'出版一部青年小说',
+		'练习飞镖技巧',
+		'搬进林中的小屋',
+		'在学业上继续深造',
+		'前往另一个国家'
+	]
+	set_format_dict('dream_ch', dream_ch_replacements[choice_log[1]])
+	
+	var regret_ch_replacements = [
+		'为我的狗找个新家',
+		'拜访我的家乡',
+		'向我的朋友们告别',
+		'关掉烤箱',
+		'删掉电脑上一些私人的东西',
+		'把我的毛绒玩具收藏捐掉',
+		'把存下的钱都花在披萨上'
+	]
+	set_format_dict('regret_ch', regret_ch_replacements[choice_log[3]])
 		
 	emit_signal('start_dialog', 'natalie_post2', [])

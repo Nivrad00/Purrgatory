@@ -46,10 +46,28 @@ func wake_up():
 	set_format_dict('pride_es', pride_es_replacements[choice_log[1]])
 	set_format_dict('proudest_moment_es', proudest_moment_es_replacements[choice_log[2]])
 	
-	# chinese (placeholder)
+	# chinese
 
-	set_format_dict('pride_ch', replacements[choice_log[1]])
-	set_format_dict('proudest_moment_ch', choice_text[2])
+	var pride_ch_replacements = [ 
+		'一直对陌生人很善良',
+		'一直真诚且坚强',
+		'一直很聪慧而且善于言辞',
+		'一直很漂亮',
+		'一直为朋友两肋插刀',
+		'是个有才的音乐家',
+		'一直保持无尽的乐观'
+	]
+	var proudest_moment_ch_replacements = [ 
+		'六年级时赢得了单词拼写比赛',
+		'第一次上台表演吉他',
+		'跑完了第一次半程马拉松',
+		'有了我的第一个孩子',
+		'在一个游戏上取得世界纪录',
+		'从大学毕业',
+		'把头发剪掉了'
+	]
+	set_format_dict('pride_ch', pride_ch_replacements[choice_log[1]])
+	set_format_dict('proudest_moment_ch', proudest_moment_ch_replacements[choice_log[2]])
 	
 func update_state(state):
 	.update_state(state)

@@ -1058,8 +1058,8 @@ rect_min_size = Vector2( 0, 60 )
 rect_clip_content = false
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "你想起了关于爱情的经历"
-text = "你想起了关于爱情的经历"
+bbcode_text = "你想起了你的感情经历"
+text = "你想起了你的感情经历"
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text/2/vc/t0"]

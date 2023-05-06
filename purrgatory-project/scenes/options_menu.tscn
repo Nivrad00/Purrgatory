@@ -574,7 +574,7 @@ custom_fonts/font = ExtResource( 17 )
 text = "note: purrgatory looks best at its original resolution, 1280 x 720!"
 autowrap = true
 script = ExtResource( 5 )
-translations = [ "nota: es recomendable jugar este juego en su resolución original (1280 x 720)", "注：喵的炼狱在原生分辨率下显示效果最高，即1280 x 720！" ]
+translations = [ "nota: es recomendable jugar este juego en su resolución original (1280 x 720)", "注：喵的炼狱在原生分辨率下显示效果最好，即1280 x 720！" ]
 
 [connection signal="pressed" from="back" to="." method="save_options"]
 [connection signal="pressed" from="back" to="." method="hide_custom"]

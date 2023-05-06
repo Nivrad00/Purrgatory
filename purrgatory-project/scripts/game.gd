@@ -292,14 +292,26 @@ func start_dialog(label, blackout_label=null):
 	var speaker = block['speaker'][Language.language]
 	if speaker != null:
 		var speaker_format_dict = { }
-		for key in ['tori', 'sean', 'elijah', 'numa']:
-			if state.get('met_' + key):
-				speaker_format_dict[key] = key
+		
+		for key in ['tori', 'sean', 'elijah', 'numa', '托丽', '肖恩', '伊莱贾', '纽玛']:
+			if Language.language == 1:
+				speaker_format_dict[key] = '¿¿??'
 			else:
-				if Language.language == 1:
-					speaker_format_dict[key] = '¿¿??'
-				else:
-					speaker_format_dict[key] = '???'
+				speaker_format_dict[key] = '???'
+		
+		# spanish and english names are the same, but chinese names aren't
+		if state.get('met_tori'):
+			speaker_format_dict['托丽'] = '托丽'
+			speaker_format_dict['tori'] = 'tori'
+		if state.get('met_sean'):
+			speaker_format_dict['肖恩'] = '肖恩'
+			speaker_format_dict['sean'] = 'sean'
+		if state.get('met_elijah'):
+			speaker_format_dict['伊莱贾'] = '伊莱贾'
+			speaker_format_dict['elijah'] = 'elijah'
+		if state.get('met_numa'):
+			speaker_format_dict['纽玛'] = '纽玛'
+			speaker_format_dict['numa'] = 'numa'
 				
 		speaker = speaker.format(speaker_format_dict)
 		
@@ -395,14 +407,26 @@ func update_dialog(b: int):
 		var speaker = block['speaker'][Language.language]
 		if speaker != null:
 			var speaker_format_dict = { }
-			for key in ['tori', 'sean', 'elijah', 'numa']:
-				if state.get('met_' + key):
-					speaker_format_dict[key] = key
+			
+			for key in ['tori', 'sean', 'elijah', 'numa', '托丽', '肖恩', '伊莱贾', '纽玛']:
+				if Language.language == 1:
+					speaker_format_dict[key] = '¿¿??'
 				else:
-					if Language.language == 1:
-						speaker_format_dict[key] = '¿¿??'
-					else:
-						speaker_format_dict[key] = '???'
+					speaker_format_dict[key] = '???'
+			
+			# spanish and english names are the same, but chinese names aren't
+			if state.get('met_tori'):
+				speaker_format_dict['托丽'] = '托丽'
+				speaker_format_dict['tori'] = 'tori'
+			if state.get('met_sean'):
+				speaker_format_dict['肖恩'] = '肖恩'
+				speaker_format_dict['sean'] = 'sean'
+			if state.get('met_elijah'):
+				speaker_format_dict['伊莱贾'] = '伊莱贾'
+				speaker_format_dict['elijah'] = 'elijah'
+			if state.get('met_numa'):
+				speaker_format_dict['纽玛'] = '纽玛'
+				speaker_format_dict['numa'] = 'numa'
 					
 			speaker = speaker.format(speaker_format_dict)
 			
@@ -508,16 +532,29 @@ func _on_language_changed(lang):
 			text = format_text(text)
 	
 		var speaker = block['speaker'][lang]
+		
 		if speaker != null:
 			var speaker_format_dict = { }
-			for key in ['tori', 'sean', 'elijah', 'numa']:
-				if state.get('met_' + key):
-					speaker_format_dict[key] = key
+			
+			for key in ['tori', 'sean', 'elijah', 'numa', '托丽', '肖恩', '伊莱贾', '纽玛']:
+				if Language.language == 1:
+					speaker_format_dict[key] = '¿¿??'
 				else:
-					if Language.language == 1:
-						speaker_format_dict[key] = '¿¿??'
-					else:
-						speaker_format_dict[key] = '???'
+					speaker_format_dict[key] = '???'
+			
+			# spanish and english names are the same, but chinese names aren't
+			if state.get('met_tori'):
+				speaker_format_dict['托丽'] = '托丽'
+				speaker_format_dict['tori'] = 'tori'
+			if state.get('met_sean'):
+				speaker_format_dict['肖恩'] = '肖恩'
+				speaker_format_dict['sean'] = 'sean'
+			if state.get('met_elijah'):
+				speaker_format_dict['伊莱贾'] = '伊莱贾'
+				speaker_format_dict['elijah'] = 'elijah'
+			if state.get('met_numa'):
+				speaker_format_dict['纽玛'] = '纽玛'
+				speaker_format_dict['numa'] = 'numa'
 					
 			speaker = speaker.format(speaker_format_dict)
 			

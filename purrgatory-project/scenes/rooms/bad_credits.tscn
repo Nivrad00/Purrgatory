@@ -951,7 +951,6 @@ custom_fonts/font = ExtResource( 15 )
 text = "(molly)"
 
 [node name="5" type="Control" parent="state_handler"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -1011,14 +1010,14 @@ margin_bottom = 187.0
 text = "chinese translation support"
 align = 1
 script = ExtResource( 8 )
-translations = [ "(placeholder) chinese translation support", "汉化协力" ]
+translations = [ "asistencia de traducción al chino", "汉化协助" ]
 
 [node name="Label2" type="Label" parent="state_handler/5/chinese2"]
 margin_top = 44.0
 margin_right = 1279.0
 margin_bottom = 97.0
 custom_fonts/font = ExtResource( 16 )
-text = "lililioon/ciinore"
+text = "ciinore"
 align = 1
 
 [node name="Label3" type="Label" parent="state_handler/5/chinese2"]
@@ -1027,7 +1026,7 @@ margin_top = 100.434
 margin_right = 1288.0
 margin_bottom = 153.434
 custom_fonts/font = ExtResource( 16 )
-text = "面具魔【MaskDevil】"
+text = "面具魔MaskDevil"
 align = 1
 
 [node name="Label4" type="Label" parent="state_handler/5/chinese2"]
@@ -1145,6 +1144,7 @@ text = "(daniel taylor)"
 align = 1
 
 [node name="7" type="Control" parent="state_handler"]
+visible = false
 margin_left = 21.0
 margin_right = 61.0
 margin_bottom = 40.0

@@ -12,7 +12,7 @@ var quests = {
 	
 	# numa/kyungsoon
 	'vent': ['find a screwdriver to open the vent cover.', 'encontrar un destornillador para abrir la rejilla de la ventilación.', '找到一把螺丝刀打开通风口'],
-	'numa_kyungsoon': ['help numa get flowers, poetry, and food for kyungsoon.', 'ayudar a numa con las flores, el poema y la comida para kyungsoon.', '帮助纽玛准备给京纯花，诗歌与食物'],
+	'numa_kyungsoon': ['help numa get flowers, poetry, and food for kyungsoon.', 'ayudar a numa con las flores, el poema y la comida para kyungsoon.', '帮助纽玛准备给京纯的花，诗歌与食物'],
 	'numa_friendship': ['try to salvage the situation between numa and kyungsoon.', 'intentar arreglar la situación entre numa y kyungsoon.', '尝试挽回纽玛和京纯的关系'],
 	
 	# elijah/sean

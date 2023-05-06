@@ -1028,8 +1028,8 @@ rect_min_size = Vector2( 0, 60 )
 rect_clip_content = false
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "你记起了长大的地方"
-text = "你记起了长大的地方"
+bbcode_text = "你记起了你长大的地方"
+text = "你记起了你长大的地方"
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text/2/vc/t0"]
@@ -1208,8 +1208,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[i][u]转角里有肥皂味的小卖部[/u][/i]"
-text = "转角里有肥皂味的小卖部"
+bbcode_text = "[i][u]转角那有肥皂味的小卖部[/u][/i]"
+text = "转角那有肥皂味的小卖部"
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/2/vc/c2/choice_container/0"]
@@ -1245,8 +1245,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[i][u]路边的那家书店[/u][/i]"
-text = "路边的那家书店"
+bbcode_text = "[i][u]老街另一头的书店[/u][/i]"
+text = "老街另一头的书店"
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/2/vc/c2/choice_container/2"]
@@ -1264,8 +1264,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[i][u]婶婶那边奢华的家[/u][/i]"
-text = "婶婶那边奢华的家"
+bbcode_text = "[i][u]婶婶奢华的家[/u][/i]"
+text = "婶婶奢华的家"
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/2/vc/c2/choice_container/3"]

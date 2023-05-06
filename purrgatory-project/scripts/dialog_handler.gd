@@ -62,9 +62,15 @@ func _ready():
 		
 		# set speaker
 		block['speaker'] = [] # each element in speaker array represents a different language
-		for data in all_data:
+		for k in range(all_data.size()):
+			var data = all_data[k]
 			if data[1] == '':
-				block['speaker'].append(null)
+				# each block needs to have the speaker defined so that the player can swap between languages fluidly
+				# (originally I just allowed the speaker to be null, which signaled to the UI to not change the speaker)
+				if last_block and typeof(last_block['speaker'][k]) == TYPE_STRING:
+					block['speaker'].append(last_block['speaker'][k])
+				else:
+					block['speaker'].append(null)
 			elif data[1] == '_none':
 				block['speaker'].append('')
 			else:

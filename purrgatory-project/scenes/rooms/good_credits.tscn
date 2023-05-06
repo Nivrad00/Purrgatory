@@ -1639,7 +1639,6 @@ animation1 = ExtResource( 24 )
 animation2 = ExtResource( 25 )
 
 [node name="5" type="Control" parent="state_handler"]
-visible = false
 margin_left = 1.87463
 margin_top = 1.87469
 margin_right = 41.8746
@@ -1713,7 +1712,7 @@ rect_pivot_offset = Vector2( 350, -148 )
 text = "chinese translation support"
 align = 1
 script = ExtResource( 5 )
-translations = [ "(placeholder) chinese translation support", "汉化协力" ]
+translations = [ "asistencia de traducción al chino", "汉化协助" ]
 
 [node name="Label6" type="Label" parent="state_handler/5/Label6"]
 margin_left = 1.29236
@@ -1721,7 +1720,7 @@ margin_top = 41.0
 margin_right = 1280.29
 margin_bottom = 94.0
 custom_fonts/font = ExtResource( 50 )
-text = "lililioon/ciinore"
+text = "ciinore"
 align = 1
 
 [node name="Label7" type="Label" parent="state_handler/5/Label6"]
@@ -1730,7 +1729,7 @@ margin_top = 86.9999
 margin_right = 1280.29
 margin_bottom = 140.0
 custom_fonts/font = ExtResource( 50 )
-text = "面具魔【MaskDevil】"
+text = "面具魔MaskDevil"
 align = 1
 
 [node name="Label8" type="Label" parent="state_handler/5/Label6"]

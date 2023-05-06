@@ -225,13 +225,32 @@ func show_custom():
 			
 	var current_quip = available_quips[randi() % available_quips.size()]
 	
-	# exception for "cat"
-	if current_quip[0] == "cat" and Language.language == 2:
-		$text_size/preview_a.set_text("猫")
+	# set the speaker
+	# there are exceptions for chinese, which has unique character names, and "cat" in spanish
+	if Language.language == 2:
+		match current_quip[0]:
+			'natalie':
+				$text_size/preview_a.set_text('娜塔丽')
+			'kyungsoon':
+				$text_size/preview_a.set_text('京纯')
+			'oliver':
+				$text_size/preview_a.set_text('奥利弗')
+			'numa':
+				$text_size/preview_a.set_text('纽玛')
+			'elijah':
+				$text_size/preview_a.set_text('伊莱贾')
+			'sean':
+				$text_size/preview_a.set_text('肖恩')
+			'tori':
+				$text_size/preview_a.set_text('托丽')
+			'cat':
+				$text_size/preview_a.set_text('猫')
 	elif current_quip[0] == "cat" and Language.language == 1:
 		$text_size/preview_a.set_text("gato")
 	else:
 		$text_size/preview_a.set_text(current_quip[0])
+	
+	# set the quip
 	$text_size/preview_b.set_bbcode(current_quip[1][Language.language])
 	
 	load_options()
@@ -247,13 +266,33 @@ func _on_language_changed(lang):
 			available_quips.append(quip)
 			
 	var current_quip = available_quips[randi() % available_quips.size()]
-	# exception for "cat"
-	if current_quip[0] == "cat" and Language.language == 1:
+	
+	# set the speaker
+	# there are exceptions for chinese, which has unique character names, and "cat" in spanish
+	if lang == 2:
+		match current_quip[0]:
+			'natalie':
+				$text_size/preview_a.set_text('娜塔丽')
+			'kyungsoon':
+				$text_size/preview_a.set_text('京纯')
+			'oliver':
+				$text_size/preview_a.set_text('奥利弗')
+			'numa':
+				$text_size/preview_a.set_text('纽玛')
+			'elijah':
+				$text_size/preview_a.set_text('伊莱贾')
+			'sean':
+				$text_size/preview_a.set_text('肖恩')
+			'tori':
+				$text_size/preview_a.set_text('托丽')
+			'cat':
+				$text_size/preview_a.set_text('猫')
+	elif current_quip[0] == "cat" and lang == 1:
 		$text_size/preview_a.set_text("gato")
-	elif current_quip[0] == "cat" and Language.language == 2:
-		$text_size/preview_a.set_text("猫")
 	else:
 		$text_size/preview_a.set_text(current_quip[0])
+	
+	# set the quip
 	$text_size/preview_b.set_bbcode(current_quip[1][Language.language])
 	
 func change_volume(bus, volume):
