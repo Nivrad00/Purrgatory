@@ -66,8 +66,12 @@ func _ready():
 			var data = all_data[k]
 			if data[1] == '':
 				# each block needs to have the speaker defined so that the player can swap between languages fluidly
-				# (originally I just allowed the speaker to be null, which signaled to the UI to not change the speaker)
-				if last_block and typeof(last_block['speaker'][k]) == TYPE_STRING:
+				# rather than just having the speaker be null, which signals to the UI to not change the speaker
+				# EXCEPT. for choices. some choices need to have null speaker bc there might be multiple paths (with different speakers)
+				#   that lead to the same choice, in which case the speaker from before the choice still needs to show
+				# unfortunately this means that if you change language while on a choice, the speaker (and dialog) wont get translated
+				#   until you move to the next block, but i dont care enough to fix this
+				if typeof(data[8]) != TYPE_ARRAY and last_block and typeof(last_block['speaker'][k]) == TYPE_STRING:
 					block['speaker'].append(last_block['speaker'][k])
 				else:
 					block['speaker'].append(null)

@@ -63,8 +63,8 @@ margin_top = 11.632
 margin_right = 284.369
 margin_bottom = 33.632
 mouse_filter = 1
-custom_fonts/mono_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/mono_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "fdfgjlsdfsdf323"
 text = "fdfgjlsdfsdf323"
@@ -75,9 +75,10 @@ margin_top = 35.0
 margin_right = 732.0
 margin_bottom = 122.0
 mouse_filter = 1
-custom_fonts/mono_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/mono_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "fdfgjlsdfsdf323"
 text = "fdfgjlsdfsdf323"
+
 [connection signal="pressed" from="ui/text_box" to="." method="update_dialog" binds= [ -1 ]]

@@ -951,6 +951,7 @@ custom_fonts/font = ExtResource( 15 )
 text = "(molly)"
 
 [node name="5" type="Control" parent="state_handler"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -1353,7 +1354,6 @@ shuldyakov
 paul d. hunt"
 
 [node name="last" type="Control" parent="state_handler"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
