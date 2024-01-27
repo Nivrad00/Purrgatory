@@ -14,7 +14,9 @@ var fonts = [
 var languages = [
 	'english', # 0
 	'español (españa)', # 1
-	'简体中文' # 2
+	'简体中文', # 2
+	'italiano', # 3
+	'polski' # 4
 ]
 
 func set_language(n):

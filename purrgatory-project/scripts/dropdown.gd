@@ -217,7 +217,10 @@ func add_quest(quest):
 	label.set_custom_minimum_size(Vector2($quest_container.get_size().x, 0))
 	label.set_mouse_filter(Control.MOUSE_FILTER_IGNORE)
 	
-	label.set_bbcode(quests[quest][Language.language])
+	if Language.language < quests[quest].size():
+		label.set_bbcode(quests[quest][Language.language])
+	else: # fallback if the quest hasn't been translated yet
+		label.set_bbcode(quests[quest][0])
 	label.translations = []
 	for lang in quests[quest]:
 		label.translations.append(lang)

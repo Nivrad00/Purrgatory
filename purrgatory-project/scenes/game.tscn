@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=2]
+[gd_scene load_steps=123 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ss.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=11]
 [ext_resource path="res://scripts/ui_handler.gd" type="Script" id=12]
 [ext_resource path="res://assets/ui/choice2.png" type="Texture" id=13]
+[ext_resource path="res://scripts/dialog/all_dialog_it.gd" type="Script" id=14]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=15]
 [ext_resource path="res://pronoun_buttongroup.tres" type="ButtonGroup" id=16]
 [ext_resource path="res://scripts/TranslatedLabel.gd" type="Script" id=17]
@@ -82,6 +83,7 @@
 [ext_resource path="res://scripts/debug.gd" type="Script" id=81]
 [ext_resource path="res://scripts/negative_cover.gd" type="Script" id=82]
 [ext_resource path="res://scripts/dialog/all_dialog_ch.gd" type="Script" id=83]
+[ext_resource path="res://scripts/dialog/all_dialog_po.gd" type="Script" id=84]
 [ext_resource path="res://themes/ui_font_18.tres" type="DynamicFont" id=85]
 [ext_resource path="res://themes/button_placeholder_font.tres" type="DynamicFont" id=86]
 [ext_resource path="res://themes/ui_font_21.tres" type="DynamicFont" id=87]
@@ -483,6 +485,12 @@ script = ExtResource( 6 )
 
 [node name="all_dialog_ch" type="Node" parent="dialog_handler"]
 script = ExtResource( 83 )
+
+[node name="all_dialog_it" type="Node" parent="dialog_handler"]
+script = ExtResource( 14 )
+
+[node name="all_dialog_po" type="Node" parent="dialog_handler"]
+script = ExtResource( 84 )
 
 [node name="content" type="Control" parent="."]
 margin_right = 1280.0

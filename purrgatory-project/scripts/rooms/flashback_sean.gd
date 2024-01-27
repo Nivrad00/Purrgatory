@@ -10,7 +10,7 @@ func wake_up():
 	
 	# all languages
 	
-	set_format_dict('partner_name', input_text[2])
+	set_format_dict('partner_name', input_text.get(2, ""))
 	
 	# english
 	

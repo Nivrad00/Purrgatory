@@ -9,6 +9,7 @@ func _ready():
 		pass
 		
 	elif translations.size() == Language.languages.size() - 1:
+		# add the english version to the start of the array
 		if "bbcode_text" in self:
 			translations.push_front(get("bbcode_text"))
 		elif "text" in self:
@@ -21,6 +22,12 @@ func _ready():
 			print("error: wrong number of translations for node ..." + get_parent().name + "." + name)
 		else:
 			print("error: wrong number of translations for node ..." + name)
+		# still add the english version to the start of the array lol
+		if "bbcode_text" in self:
+			translations.push_front(get("bbcode_text"))
+		elif "text" in self:
+			translations.push_front(get("text"))
+	
 		
 	update_label(Language.language)
 	
@@ -28,6 +35,11 @@ func _ready():
 		Language.connect("language_changed", self, "update_label")
 
 func update_label(lang):
+	if lang >= translations.size():
+		lang = 0 
+		# default to english if the translation id is out of bounds
+		# (aka if i haven't gotten around to translating the node yet)
+		
 	if "bbcode_text" in self and translations.size() > lang:
 		set("bbcode_text", translations[lang].c_unescape())
 	elif "text" in self and translations.size() > lang:

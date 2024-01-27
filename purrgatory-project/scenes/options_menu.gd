@@ -251,7 +251,8 @@ func show_custom():
 		$text_size/preview_a.set_text(current_quip[0])
 	
 	# set the quip
-	$text_size/preview_b.set_bbcode(current_quip[1][Language.language])
+	if Language.language in current_quip[1]:
+		$text_size/preview_b.set_bbcode(current_quip[1][Language.language])
 	
 	load_options()
 	show()
@@ -293,7 +294,8 @@ func _on_language_changed(lang):
 		$text_size/preview_a.set_text(current_quip[0])
 	
 	# set the quip
-	$text_size/preview_b.set_bbcode(current_quip[1][Language.language])
+	if Language.language in current_quip[1]:
+		$text_size/preview_b.set_bbcode(current_quip[1][Language.language])
 	
 func change_volume(bus, volume):
 	var db = math(volume)

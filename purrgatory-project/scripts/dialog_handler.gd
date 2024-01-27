@@ -4,13 +4,27 @@ var blocks = {}
 
 var placeholder_block = {
 	'label': 'placeholder',
-	'speaker': [''],
+	'speaker': ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
 	'sprites': [],
-	'text': ['(text block not found)', '(text block not found)', '(text block not found)'],
+	'text': [
+		'(text block not found)', 
+		'(text block not found)', 
+		'(text block not found)', 
+		'(text block not found)', 
+		'(text block not found)', 
+		'(text block not found)', 
+		'(text block not found)', 
+		'(text block not found)', 
+		'(text block not found)', 
+		'(text block not found)', 
+		'(text block not found)'
+	],
 	'states': [],
 	'next': null,
-	'choices': [[], [], []]
+	'choices': [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []]
 }
+# i've just put a bunch of extra copies so that it doesn't break if there's too
+# many languages
 
 func _ready():
 	var i = 0

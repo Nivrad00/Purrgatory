@@ -141,7 +141,7 @@ func update_state(state):
 			add_to_choices(choices, state['bio_choices'][6])
 			add_to_choices(choices, choice_dict['something_else0'])
 		
-		if choices.size() > 0:
+		if choices.size() > Language.language:
 			var choices_text = []
 			for choice in choices[Language.language]:
 				choices_text.append(choice[0])

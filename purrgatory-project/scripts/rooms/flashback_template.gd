@@ -101,7 +101,7 @@ func next():
 		$next_cover.hide()
 		
 		# if the last line of text was interactable, then let them look at it for a while
-		if olds.size() > 0 and olds[Language.language] and (olds[Language.language].name[0] == 'c' or last_editable_text.size() > 0):
+		if olds.size() > Language.language and olds[Language.language] and (olds[Language.language].name[0] == 'c' or last_editable_text.size() > 0):
 			$next_cover.show()
 		
 		# otherwise fade out all the text and enable the "wake up" cover
@@ -110,7 +110,7 @@ func next():
 			$wake_up_cover.show()
 		
 	# also, if the previous line of text had a lineedit, we need to save the player's input and format it correctly
-	if olds.size() > 0 and last_editable_text.size() > 0:
+	if olds.size() > Language.language and last_editable_text.size() > 0:
 		# use the current language's nodes to see if there was a lineedit, and if so, save what the player entered
 		var player_input = null
 		for child in olds[Language.language].get_children():
