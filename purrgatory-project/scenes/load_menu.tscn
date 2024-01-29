@@ -1,14 +1,11 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/load_menu.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/ui/menu_button1.png" type="Texture" id=4]
-[ext_resource path="res://scripts/TranslatedLabel.gd" type="Script" id=5]
 [ext_resource path="res://assets/ui/menu_x.png" type="Texture" id=6]
-[ext_resource path="res://scripts/TranslatedNode.gd" type="Script" id=7]
 [ext_resource path="res://assets/ui/load.png" type="Texture" id=8]
-[ext_resource path="res://assets/ui/cargar.png" type="Texture" id=9]
 [ext_resource path="res://assets/ui/save files.png" type="Texture" id=10]
 [ext_resource path="res://assets/ui/pronoun_input_box.png" type="Texture" id=11]
 [ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=12]
@@ -59,8 +56,7 @@ margin_bottom = 60.0
 text = "back"
 align = 1
 valign = 1
-script = ExtResource( 5 )
-translations = [ "volver", "返回" ]
+autowrap = true
 
 [node name="load_autosave" type="Button" parent="."]
 margin_left = 352.265
@@ -89,29 +85,19 @@ texture = ExtResource( 6 )
 [node name="Label" type="Label" parent="load_autosave"]
 margin_right = 251.0
 margin_bottom = 60.0
+custom_constants/line_spacing = -7
 text = "load autosave"
 align = 1
 valign = 1
-script = ExtResource( 5 )
-translations = [ "cargar autoguardado", "加载自动存档" ]
+autowrap = true
 
 [node name="load" type="Control" parent="."]
 margin_left = 640.0
 margin_top = 79.865
 margin_right = 680.0
 margin_bottom = 119.865
-script = ExtResource( 7 )
 
 [node name="0" type="Sprite" parent="load"]
-texture = ExtResource( 8 )
-
-[node name="1" type="Sprite" parent="load"]
-visible = false
-position = Vector2( 0, 14.135 )
-texture = ExtResource( 9 )
-
-[node name="2" type="Sprite" parent="load"]
-visible = false
 texture = ExtResource( 8 )
 
 [node name="files" type="Control" parent="."]
@@ -288,8 +274,7 @@ custom_fonts/font = ExtResource( 13 )
 text = "delete data"
 align = 1
 valign = 1
-script = ExtResource( 5 )
-translations = [ "eliminar datos", "删除进度" ]
+autowrap = true
 
 [node name="delete_confirm" type="Control" parent="."]
 visible = false
@@ -308,11 +293,8 @@ __meta__ = {
 margin_top = 237.0
 margin_right = 1280.0
 margin_bottom = 378.0
-text = "are you sure you want to delete all your data?
-this will delete your saves and reset the \"skip\" button."
+text = "DELETE_DATA_CONFIRM"
 align = 1
-script = ExtResource( 5 )
-translations = [ "¿de verdad quieres borrar todos los datos?\\nse eliminarán todas las partidas guardadas y se restablecerá el botón de \"saltar\"", "你确定要删除所有的进度吗？\\n该选项会清除你的存档并重置“跳过”按钮" ]
 
 [node name="yes" type="Button" parent="delete_confirm"]
 margin_left = 516.0
@@ -340,8 +322,6 @@ margin_bottom = 60.0
 text = "yes"
 align = 1
 valign = 1
-script = ExtResource( 5 )
-translations = [ "aceptar", "是" ]
 
 [node name="no" type="Button" parent="delete_confirm"]
 margin_left = 516.0
@@ -369,8 +349,6 @@ margin_bottom = 60.0
 text = "no"
 align = 1
 valign = 1
-script = ExtResource( 5 )
-translations = [ "cancelar", "否" ]
 
 [node name="delete_after" type="Control" parent="."]
 visible = false
@@ -391,8 +369,6 @@ margin_right = 1280.0
 margin_bottom = 454.0
 text = "data deleted."
 align = 1
-script = ExtResource( 5 )
-translations = [ "datos eliminados.", "进度已删除" ]
 
 [node name="back" type="Button" parent="delete_after"]
 margin_left = 516.0
@@ -420,8 +396,6 @@ margin_bottom = 59.0
 text = "back"
 align = 1
 valign = 1
-script = ExtResource( 5 )
-translations = [ "volver", "返回" ]
 
 [connection signal="pressed" from="back" to="." method="hide_custom"]
 [connection signal="pressed" from="load_autosave" to="." method="load_file" binds= [ -1 ]]

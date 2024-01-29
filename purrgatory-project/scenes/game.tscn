@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=2]
+[gd_scene load_steps=121 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ss.tscn" type="PackedScene" id=2]
@@ -16,7 +16,7 @@
 [ext_resource path="res://scripts/dialog/all_dialog_it.gd" type="Script" id=14]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=15]
 [ext_resource path="res://pronoun_buttongroup.tres" type="ButtonGroup" id=16]
-[ext_resource path="res://scripts/TranslatedLabel.gd" type="Script" id=17]
+[ext_resource path="res://themes/ui_font_18_scalable.tres" type="DynamicFont" id=17]
 [ext_resource path="res://assets/ui/ok_button.png" type="Texture" id=18]
 [ext_resource path="res://scripts/TranslatedNode.gd" type="Script" id=19]
 [ext_resource path="res://assets/ui/pronoun_input_box.png" type="Texture" id=20]
@@ -75,7 +75,6 @@
 [ext_resource path="res://assets/sprites/icons/sean2_2.png" type="Texture" id=73]
 [ext_resource path="res://assets/sprites/icons/sean2_3.png" type="Texture" id=74]
 [ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=75]
-[ext_resource path="res://scripts/saving_text.gd" type="Script" id=76]
 [ext_resource path="res://scenes/save_menu.tscn" type="PackedScene" id=77]
 [ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=78]
 [ext_resource path="res://scripts/history.gd" type="Script" id=79]
@@ -87,6 +86,7 @@
 [ext_resource path="res://themes/ui_font_18.tres" type="DynamicFont" id=85]
 [ext_resource path="res://themes/button_placeholder_font.tres" type="DynamicFont" id=86]
 [ext_resource path="res://themes/ui_font_21.tres" type="DynamicFont" id=87]
+[ext_resource path="res://scripts/custom_pronouns_button.gd" type="Script" id=88]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("ss")
@@ -380,7 +380,7 @@ action = "ui_history"
 [sub_resource type="ShortCut" id=33]
 shortcut = SubResource( 32 )
 
-[sub_resource type="Animation" id=34]
+[sub_resource type="Animation" id=41]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:text")
@@ -392,50 +392,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ "guardando
-¡no cierres el juego todavía!", "guardando.
-¡no cierres el juego todavía!", "guardando..
-¡no cierres el juego todavía!", "guardando...
-¡no cierres el juego todavía!" ]
-}
-
-[sub_resource type="Animation" id=39]
-resource_name = "saving-ch"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ "正在保存
-先别退出游戏！", "正在保存.
-先别退出游戏！", "正在保存..
-先别退出游戏！", "正在保存...
-先别退出游戏！" ]
-}
-
-[sub_resource type="Animation" id=35]
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ "saving
-don't exit the game yet!", "saving.
-don't exit the game yet!", "saving..
-don't exit the game yet!", "saving...
-don't exit the game yet!" ]
+"values": [ "", ".", ". .", ". . ." ]
 }
 
 [sub_resource type="StyleBoxFlat" id=36]
@@ -614,9 +571,7 @@ margin_left = 72.56
 margin_top = 18.563
 margin_right = 190.56
 margin_bottom = 52.563
-text = "they/them"
-script = ExtResource( 17 )
-translations = [ "elle/-e", "ta" ]
+text = "PRONOUN1"
 
 [node name="she" type="CheckBox" parent="content/ui/name_input/pronouns"]
 margin_left = 191.0
@@ -632,27 +587,23 @@ margin_left = 256.56
 margin_top = 18.563
 margin_right = 345.56
 margin_bottom = 52.563
-text = "she/her"
-script = ExtResource( 17 )
-translations = [ "ella/-a", "她" ]
+text = "PRONOUN2"
 
 [node name="he" type="CheckBox" parent="content/ui/name_input/pronouns"]
-margin_left = 387.0
+margin_left = 376.0
 margin_top = -3.0
-margin_right = 551.0
+margin_right = 540.0
 margin_bottom = 71.0
 focus_mode = 0
 enabled_focus_mode = 0
 group = ExtResource( 16 )
 
 [node name="he2" type="Label" parent="content/ui/name_input/pronouns"]
-margin_left = 452.56
+margin_left = 441.56
 margin_top = 18.5625
-margin_right = 533.56
+margin_right = 556.56
 margin_bottom = 52.5625
-text = "he/him"
-script = ExtResource( 17 )
-translations = [ "él/-o", "他" ]
+text = "PRONOUN3"
 
 [node name="custom" type="CheckBox" parent="content/ui/name_input/pronouns"]
 margin_left = 560.0
@@ -662,15 +613,14 @@ margin_bottom = 71.0
 focus_mode = 0
 enabled_focus_mode = 0
 group = ExtResource( 16 )
+script = ExtResource( 88 )
 
 [node name="custom2" type="Label" parent="content/ui/name_input/pronouns"]
 margin_left = 624.393
 margin_top = 18.5625
 margin_right = 711.393
 margin_bottom = 52.5625
-text = "custom"
-script = ExtResource( 17 )
-translations = [ "personalizar", "自定义" ]
+text = "PRONOUN4"
 
 [node name="ok_button" type="Button" parent="content/ui/name_input"]
 anchor_left = 1.0
@@ -698,8 +648,6 @@ margin_bottom = 61.0
 text = "ok"
 align = 1
 valign = 1
-script = ExtResource( 17 )
-translations = [ "listo", "好" ]
 
 [node name="custom_pronouns" type="Control" parent="content/ui/name_input"]
 visible = false
@@ -904,9 +852,9 @@ autowrap = true
 
 [node name="2" type="Control" parent="content/ui/name_input/custom_pronouns/inputs"]
 visible = false
-margin_left = 28.546
+margin_left = -55.454
 margin_top = -30.535
-margin_right = 68.546
+margin_right = -15.454
 margin_bottom = 9.465
 
 [node name="pronombre" type="LineEdit" parent="content/ui/name_input/custom_pronouns/inputs/2"]
@@ -940,6 +888,21 @@ margin_bottom = 40.0
 text = "称呼"
 align = 2
 
+[node name="3" type="Control" parent="content/ui/name_input/custom_pronouns/inputs"]
+visible = false
+margin_left = 20.546
+margin_top = -30.535
+margin_right = 60.546
+margin_bottom = 9.465
+
+[node name="Label" type="Label" parent="content/ui/name_input/custom_pronouns/inputs/3"]
+margin_left = 346.0
+margin_top = 253.0
+margin_right = 984.0
+margin_bottom = 287.0
+text = "i haven't implemented custom pronouns for italian yet, sorry! -niv"
+align = 1
+
 [node name="back" type="Button" parent="content/ui/name_input/custom_pronouns"]
 margin_left = 211.573
 margin_top = 146.731
@@ -962,8 +925,6 @@ margin_bottom = 59.0
 text = "back"
 align = 1
 valign = 1
-script = ExtResource( 17 )
-translations = [ "volver", "返回" ]
 
 [node name="text_box" type="Button" parent="content/ui"]
 anchor_right = 1.0
@@ -1043,8 +1004,6 @@ custom_fonts/font = ExtResource( 85 )
 text = "skip"
 align = 1
 valign = 1
-script = ExtResource( 17 )
-translations = [ "saltar", "跳过" ]
 
 [node name="history_button" type="Button" parent="content/ui"]
 margin_left = 996.904
@@ -1073,8 +1032,6 @@ custom_fonts/font = ExtResource( 85 )
 text = "history"
 align = 1
 valign = 1
-script = ExtResource( 17 )
-translations = [ "historial", "历史" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="content/ui"]
 root_node = NodePath("../sprites")
@@ -1124,8 +1081,6 @@ custom_fonts/font = ExtResource( 85 )
 text = "menu"
 align = 1
 valign = 1
-script = ExtResource( 17 )
-translations = [ "menú", "菜单" ]
 
 [node name="dropdown" type="Control" parent="meta_ui"]
 margin_left = 163.458
@@ -1194,6 +1149,7 @@ shortcut_in_tooltip = false
 enabled_focus_mode = 0
 shortcut = SubResource( 29 )
 flat = true
+expand_icon = true
 __meta__ = {
 "_edit_group_": true
 }
@@ -1205,15 +1161,16 @@ centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
 [node name="Label" type="Label" parent="meta_ui/notes_button"]
-margin_top = 1.0
-margin_right = 77.0
-margin_bottom = 27.0
-custom_fonts/font = ExtResource( 85 )
+margin_left = -5.0
+margin_top = -6.0
+margin_right = 82.0
+margin_bottom = 34.0
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 17 )
 text = "to do"
 align = 1
 valign = 1
-script = ExtResource( 17 )
-translations = [ "tareas", "待办" ]
+autowrap = true
 
 [node name="items_button" type="Button" parent="meta_ui"]
 margin_left = 1183.67
@@ -1239,15 +1196,14 @@ centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
 [node name="Label" type="Label" parent="meta_ui/items_button"]
-margin_top = 1.0
-margin_right = 77.0
-margin_bottom = 27.0
-custom_fonts/font = ExtResource( 85 )
+margin_left = -7.0
+margin_top = -5.0
+margin_right = 83.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 17 )
 text = "items"
 align = 1
 valign = 1
-script = ExtResource( 17 )
-translations = [ "objetos", "物品" ]
 
 [node name="flash_timer" type="Timer" parent="meta_ui/items_button"]
 wait_time = 0.15
@@ -1284,8 +1240,6 @@ custom_fonts/font = ExtResource( 85 )
 text = "history"
 align = 1
 valign = 1
-script = ExtResource( 17 )
-translations = [ "historial", "历史" ]
 
 [node name="pause_menu" type="Control" parent="meta_ui"]
 visible = false
@@ -1333,8 +1287,6 @@ margin_bottom = 58.0
 text = "save"
 align = 1
 valign = 1
-script = ExtResource( 17 )
-translations = [ "guardar", "保存" ]
 
 [node name="load" type="Button" parent="meta_ui/pause_menu/buttons"]
 anchor_right = 1.0
@@ -1365,8 +1317,6 @@ margin_bottom = 58.0
 text = "load"
 align = 1
 valign = 1
-script = ExtResource( 17 )
-translations = [ "cargar", "读取" ]
 
 [node name="options" type="Button" parent="meta_ui/pause_menu/buttons"]
 anchor_right = 1.0
@@ -1399,8 +1349,6 @@ margin_bottom = 58.0
 text = "options"
 align = 1
 valign = 1
-script = ExtResource( 17 )
-translations = [ "opciones", "选项" ]
 
 [node name="exit" type="Button" parent="meta_ui/pause_menu/buttons"]
 anchor_right = 1.0
@@ -1430,11 +1378,11 @@ margin_left = 3.0
 margin_top = 2.0
 margin_right = 249.0
 margin_bottom = 58.0
+custom_constants/line_spacing = -8
 text = "exit to main menu"
 align = 1
 valign = 1
-script = ExtResource( 17 )
-translations = [ "menú principal", "回到主菜单" ]
+autowrap = true
 
 [node name="back" type="Button" parent="meta_ui/pause_menu/buttons"]
 anchor_right = 1.0
@@ -1468,8 +1416,6 @@ margin_bottom = 58.0
 text = "back"
 align = 1
 valign = 1
-script = ExtResource( 17 )
-translations = [ "volver", "返回" ]
 
 [node name="icons" type="HBoxContainer" parent="meta_ui/pause_menu"]
 anchor_right = 1.0
@@ -1634,18 +1580,13 @@ anchor_bottom = 1.0
 margin_top = 1.0
 margin_bottom = 1.0
 
-[node name="text2" type="RichTextLabel" parent="meta_ui/exit_confirm"]
+[node name="text2" type="Label" parent="meta_ui/exit_confirm"]
 margin_top = 270.993
 margin_right = 1280.0
 margin_bottom = 394.993
 mouse_filter = 1
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[center]are you sure? unsaved progress will be lost.[/center]"
 text = "are you sure? unsaved progress will be lost."
-scroll_active = false
-script = ExtResource( 17 )
-translations = [ "[center]recuerda: todo el progreso no guardado se perderá.[/center]", "[center]你确定吗？未保存的进度将会遗失[/center]" ]
+align = 1
 
 [node name="yes" type="Button" parent="meta_ui/exit_confirm"]
 anchor_right = 1.0
@@ -1675,8 +1616,6 @@ margin_bottom = 58.0
 text = "yes"
 align = 1
 valign = 1
-script = ExtResource( 17 )
-translations = [ "aceptar", "是" ]
 
 [node name="no" type="Button" parent="meta_ui/exit_confirm"]
 anchor_right = 1.0
@@ -1706,8 +1645,6 @@ margin_bottom = 58.0
 text = "no"
 align = 1
 valign = 1
-script = ExtResource( 17 )
-translations = [ "cancelar", "否" ]
 
 [node name="save_confirm" type="Control" parent="meta_ui"]
 visible = false
@@ -1727,8 +1664,6 @@ margin_bottom = 436.825
 mouse_filter = 1
 text = "game saved."
 align = 1
-script = ExtResource( 17 )
-translations = [ "partida guardada.", "游戏已保存" ]
 
 [node name="yes" type="Button" parent="meta_ui/save_confirm"]
 anchor_right = 1.0
@@ -1759,8 +1694,6 @@ margin_bottom = 58.0
 text = "back"
 align = 1
 valign = 1
-script = ExtResource( 17 )
-translations = [ "volver", "返回" ]
 
 [node name="save_waiting" type="Control" parent="meta_ui"]
 visible = false
@@ -1778,16 +1711,19 @@ margin_top = 326.623
 margin_right = 1280.0
 margin_bottom = 402.623
 mouse_filter = 1
-text = "正在保存
-先别退出游戏！"
+text = "SAVING_WAITING"
 align = 1
-script = ExtResource( 76 )
-translations = [ "guardando...\\n¡no cierres el juego todavía!", "正在保存…" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="meta_ui/save_waiting/text2"]
-anims/guardando... = SubResource( 34 )
-anims/saving-ch = SubResource( 39 )
-anims/saving.. = SubResource( 35 )
+[node name="text3" type="Label" parent="meta_ui/save_waiting"]
+margin_top = 393.0
+margin_right = 1280.0
+margin_bottom = 469.0
+mouse_filter = 1
+align = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="meta_ui/save_waiting/text3"]
+autoplay = "saving.."
+anims/saving.. = SubResource( 41 )
 
 [node name="save_menu" parent="meta_ui" instance=ExtResource( 77 )]
 visible = false
@@ -1814,8 +1750,6 @@ margin_bottom = 436.825
 mouse_filter = 1
 text = "game loaded."
 align = 1
-script = ExtResource( 17 )
-translations = [ "partida cargada.", "已加载" ]
 
 [node name="yes" type="Button" parent="meta_ui/load_confirm"]
 anchor_right = 1.0
@@ -1846,8 +1780,6 @@ margin_bottom = 58.0
 text = "continue"
 align = 1
 valign = 1
-script = ExtResource( 17 )
-translations = [ "continuar", "继续" ]
 
 [node name="load_menu" parent="meta_ui" instance=ExtResource( 78 )]
 visible = false
@@ -1895,8 +1827,6 @@ margin_bottom = 58.0
 text = "back"
 align = 1
 valign = 1
-script = ExtResource( 17 )
-translations = [ "volver", "返回" ]
 
 [node name="container" type="ScrollContainer" parent="meta_ui/history"]
 margin_left = 186.0
@@ -2007,7 +1937,7 @@ mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 
 [connection signal="timeout" from="skip_timer" to="." method="update_dialog" binds= [ -1 ]]
-[connection signal="pressed" from="content/ui/name_input/pronouns/custom" to="content/ui/name_input/custom_pronouns" method="show"]
+[connection signal="pressed" from="content/ui/name_input/pronouns/custom" to="content/ui/name_input/pronouns/custom" method="_on_custom_pressed"]
 [connection signal="pressed" from="content/ui/name_input/ok_button" to="." method="set_player_name"]
 [connection signal="focus_exited" from="content/ui/name_input/custom_pronouns/inputs/0/they" to="content/ui/name_input/custom_pronouns/inputs/0/they" method="deselect"]
 [connection signal="focus_exited" from="content/ui/name_input/custom_pronouns/inputs/0/them" to="content/ui/name_input/custom_pronouns/inputs/0/them" method="deselect"]

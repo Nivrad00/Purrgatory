@@ -1,10 +1,9 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/options_menu.gd" type="Script" id=2]
 [ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://scripts/TranslatedLabel.gd" type="Script" id=5]
 [ext_resource path="res://assets/ui/pronoun_input_box.png" type="Texture" id=6]
 [ext_resource path="res://themes/language_dropdown_theme.tres" type="Theme" id=7]
 [ext_resource path="res://assets/ui/slider_tick.png" type="Texture" id=8]
@@ -108,8 +107,6 @@ custom_fonts/font = SubResource( 1 )
 text = "save and return"
 align = 1
 valign = 1
-script = ExtResource( 5 )
-translations = [ "guardar y volver", "保存并返回" ]
 
 [node name="reset" type="Button" parent="."]
 anchor_right = 1.0
@@ -133,9 +130,9 @@ centered = false
 offset = Vector2( -8.3689, -6.12292 )
 
 [node name="Label" type="Label" parent="reset"]
-margin_left = -15.0
+margin_left = 3.0
 margin_top = -9.0
-margin_right = 165.0
+margin_right = 149.0
 margin_bottom = 58.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/line_spacing = -5
@@ -143,8 +140,7 @@ custom_fonts/font = ExtResource( 17 )
 text = "reset settings"
 align = 1
 valign = 1
-script = ExtResource( 5 )
-translations = [ "reestablecer\\nconfiguración", "重置设定" ]
+autowrap = true
 
 [node name="language" type="Control" parent="."]
 margin_left = 239.0
@@ -153,14 +149,12 @@ margin_right = 279.0
 margin_bottom = 71.0
 
 [node name="language_label" type="Label" parent="language"]
-margin_left = -315.0
+margin_left = -214.087
 margin_top = 30.0
-margin_right = -41.0
+margin_right = -33.087
 margin_bottom = 62.0
 text = "language"
 align = 2
-script = ExtResource( 5 )
-translations = [ "idioma", "语言" ]
 
 [node name="language" type="MarginContainer" parent="language"]
 margin_left = -16.0
@@ -190,15 +184,12 @@ __meta__ = {
 }
 
 [node name="slider_label" type="Label" parent="text_size"]
-margin_left = -447.0
-margin_top = -5.0
-margin_right = -46.0
-margin_bottom = 27.0
+margin_left = -205.087
+margin_top = 1.0
+margin_right = -38.087
+margin_bottom = 33.0
 text = "text size"
 align = 2
-script = ExtResource( 5 )
-translations = [ "tamaño del texto
-", "文字大小" ]
 
 [node name="slider" type="HSlider" parent="text_size"]
 margin_top = 9.0
@@ -242,15 +233,13 @@ position = Vector2( 227.314, 167.088 )
 texture = ExtResource( 12 )
 
 [node name="preview_label" type="Label" parent="text_size"]
-margin_left = -366.0
+margin_left = -216.087
 margin_top = 62.0
-margin_right = -47.0
+margin_right = -39.087
 margin_bottom = 94.0
 theme = ExtResource( 1 )
 text = "preview"
 align = 2
-script = ExtResource( 5 )
-translations = [ "vista previa", "预览" ]
 
 [node name="audio" type="Control" parent="."]
 margin_left = 240.087
@@ -262,14 +251,12 @@ __meta__ = {
 }
 
 [node name="music_label" type="Label" parent="audio"]
-margin_left = -205.65
+margin_left = -197.737
 margin_top = -7.0
-margin_right = -44.6502
+margin_right = -36.7372
 margin_bottom = 27.0
 text = "music volume"
 align = 2
-script = ExtResource( 5 )
-translations = [ "música", "音乐音量" ]
 
 [node name="music" type="HSlider" parent="audio"]
 anchor_right = 1.0
@@ -290,14 +277,13 @@ scrollable = false
 ticks_on_borders = true
 
 [node name="sfx_label" type="Label" parent="audio"]
-margin_left = -167.792
-margin_top = 53.9303
-margin_right = -44.7923
-margin_bottom = 87.9303
+margin_left = -216.087
+margin_top = 54.0
+margin_right = -37.087
+margin_bottom = 88.0
 text = "sfx volume"
 align = 2
-script = ExtResource( 5 )
-translations = [ "sonidos", "音效音量" ]
+autowrap = true
 
 [node name="sfx" type="HSlider" parent="audio"]
 anchor_right = 1.0
@@ -323,23 +309,23 @@ margin_top = 99.0
 margin_right = 1234.0
 margin_bottom = 539.0
 custom_constants/vseparation = 8
-custom_constants/hseparation = 27
+custom_constants/hseparation = 20
 columns = 2
 
 [node name="fullscreen_label" type="Label" parent="right_side"]
 modulate = Color( 1, 1, 1, 0.301961 )
 margin_top = 21.0
-margin_right = 183.0
+margin_right = 200.0
 margin_bottom = 52.0
+rect_min_size = Vector2( 200, 0 )
 text = "fullscreen"
 align = 2
-script = ExtResource( 5 )
-translations = [ "pantalla completa", "全屏" ]
+autowrap = true
 
 [node name="fullscreen" type="CheckBox" parent="right_side"]
 modulate = Color( 1, 1, 1, 0.3 )
-margin_left = 210.0
-margin_right = 484.0
+margin_left = 220.0
+margin_right = 494.0
 margin_bottom = 74.0
 focus_mode = 0
 disabled = true
@@ -348,18 +334,18 @@ enabled_focus_mode = 0
 [node name="window_size_label" type="Label" parent="right_side"]
 modulate = Color( 1, 1, 1, 0.3 )
 margin_top = 88.0
-margin_right = 183.0
+margin_right = 200.0
 margin_bottom = 119.0
+rect_min_size = Vector2( 200, 0 )
 text = "window size"
 align = 2
-script = ExtResource( 5 )
-translations = [ "tamaño\\nde la ventana", "窗口大小" ]
+autowrap = true
 
 [node name="window_size" type="MarginContainer" parent="right_side"]
 modulate = Color( 1, 1, 1, 0.3 )
-margin_left = 210.0
+margin_left = 220.0
 margin_top = 82.0
-margin_right = 414.0
+margin_right = 424.0
 margin_bottom = 125.0
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -380,32 +366,32 @@ text = "1280 x 720"
 
 [node name="space1" type="Control" parent="right_side"]
 margin_top = 133.0
-margin_right = 183.0
+margin_right = 200.0
 margin_bottom = 163.0
 rect_min_size = Vector2( 0, 30 )
 
 [node name="space2" type="Control" parent="right_side"]
-margin_left = 210.0
+margin_left = 220.0
 margin_top = 133.0
-margin_right = 484.0
+margin_right = 494.0
 margin_bottom = 163.0
 rect_min_size = Vector2( 0, 30 )
 
 [node name="self_voicing_label" type="Label" parent="right_side"]
 modulate = Color( 1, 1, 1, 0.3 )
 margin_top = 192.0
-margin_right = 183.0
+margin_right = 200.0
 margin_bottom = 223.0
+rect_min_size = Vector2( 200, 0 )
 text = "self-voicing"
 align = 2
-script = ExtResource( 5 )
-translations = [ "lector de pantalla", "文字转语音" ]
+autowrap = true
 
 [node name="self_voicing" type="CheckBox" parent="right_side"]
 modulate = Color( 1, 1, 1, 0.3 )
-margin_left = 210.0
+margin_left = 220.0
 margin_top = 171.0
-margin_right = 484.0
+margin_right = 494.0
 margin_bottom = 245.0
 focus_mode = 0
 disabled = true
@@ -443,24 +429,22 @@ text = "test"
 align = 1
 valign = 1
 autowrap = true
-script = ExtResource( 5 )
-translations = [ "probar", "测试" ]
 
 [node name="voice_speed_label" type="Label" parent="right_side"]
 modulate = Color( 1, 1, 1, 0.3 )
 margin_top = 253.0
-margin_right = 183.0
+margin_right = 200.0
 margin_bottom = 284.0
+rect_min_size = Vector2( 200, 0 )
 text = "voice speed"
 align = 2
-script = ExtResource( 5 )
-translations = [ "velocidad de voz", "语音速度" ]
+autowrap = true
 
 [node name="voice_speed" type="MarginContainer" parent="right_side"]
 modulate = Color( 1, 1, 1, 0.3 )
-margin_left = 210.0
+margin_left = 220.0
 margin_top = 253.0
-margin_right = 484.0
+margin_right = 494.0
 margin_bottom = 284.0
 custom_constants/margin_left = 18
 
@@ -485,30 +469,30 @@ ticks_on_borders = true
 
 [node name="space3" type="Control" parent="right_side"]
 margin_top = 292.0
-margin_right = 183.0
+margin_right = 200.0
 margin_bottom = 322.0
 rect_min_size = Vector2( 0, 30 )
 
 [node name="space4" type="Control" parent="right_side"]
-margin_left = 210.0
+margin_left = 220.0
 margin_top = 292.0
-margin_right = 484.0
+margin_right = 494.0
 margin_bottom = 322.0
 rect_min_size = Vector2( 0, 30 )
 
 [node name="low_contrast_label" type="Label" parent="right_side"]
 margin_top = 351.0
-margin_right = 183.0
+margin_right = 200.0
 margin_bottom = 382.0
+rect_min_size = Vector2( 200, 0 )
 text = "low contrast mode"
 align = 2
-script = ExtResource( 5 )
-translations = [ "contraste bajo", "护眼模式" ]
+autowrap = true
 
 [node name="low_contrast" type="CheckBox" parent="right_side"]
-margin_left = 210.0
+margin_left = 220.0
 margin_top = 330.0
-margin_right = 484.0
+margin_right = 494.0
 margin_bottom = 404.0
 focus_mode = 0
 pressed = true
@@ -525,8 +509,6 @@ text = "enable to do list"
 align = 2
 valign = 2
 autowrap = true
-script = ExtResource( 5 )
-translations = [ "habilitar la lista de tareas", "开启待办菜单" ]
 
 [node name="to_do" type="CheckBox" parent="right_side"]
 visible = false
@@ -548,8 +530,6 @@ custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
 custom_fonts/font = SubResource( 5 )
 text = "automatically keeps track of certain objectives"
 autowrap = true
-script = ExtResource( 5 )
-translations = [ "registra ciertos objetivos de manera automática", "能够自动记录某些任务目标" ]
 
 [node name="web_disclaimer" type="Label" parent="."]
 visible = false
@@ -561,8 +541,6 @@ custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
 custom_fonts/font = ExtResource( 17 )
 text = "note: some options not available in the web build"
 autowrap = true
-script = ExtResource( 5 )
-translations = [ "nota: algunas opciones no están disponibles en la versión web", "注意：部分选项在网页版不可用" ]
 
 [node name="download_disclaimer" type="Label" parent="."]
 margin_left = 19.0
@@ -573,11 +551,9 @@ custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
 custom_fonts/font = ExtResource( 17 )
 text = "note: purrgatory looks best at its original resolution, 1280 x 720!"
 autowrap = true
-script = ExtResource( 5 )
-translations = [ "nota: es recomendable jugar este juego en su resolución original (1280 x 720)", "注：喵的炼狱在原生分辨率下显示效果最好，即1280 x 720！" ]
 
-[connection signal="pressed" from="back" to="." method="save_options"]
 [connection signal="pressed" from="back" to="." method="hide_custom"]
+[connection signal="pressed" from="back" to="." method="save_options"]
 [connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]
 [connection signal="item_selected" from="language/language/dropdown" to="." method="_on_language_selected"]
 [connection signal="value_changed" from="text_size/slider" to="." method="_on_text_size_value_changed"]

@@ -170,6 +170,10 @@ ui_notes={
  ]
 }
 
+[locale]
+
+translations=PoolStringArray( "res://ui_translations.en.translation", "res://ui_translations.es.translation", "res://ui_translations.it.translation", "res://ui_translations.pl.translation", "res://ui_translations.zh.translation" )
+
 [rendering]
 
 2d/snapping/use_gpu_pixel_snap=true

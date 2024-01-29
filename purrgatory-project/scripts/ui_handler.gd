@@ -37,7 +37,17 @@ func _ready():
 	book_singleton.modulate.a = 0.01
 	book_singleton.position = Vector2(0, 0)
 	$sprites.add_child(book_singleton)
-
+	
+	# we need to disable automatic translation on the speaker box and text box because
+	#   dialog translation is handled separately from godot's built in translation system
+	#   (mainly because i handled it before i knew about godot's built in translation system)
+	var text_box = get_node("text_box/text")
+	text_box.set_message_translation(false)
+	text_box.notification(NOTIFICATION_TRANSLATION_CHANGED)
+	var speaker_box = get_node("text_box/speaker")
+	speaker_box.set_message_translation(false)
+	speaker_box.notification(NOTIFICATION_TRANSLATION_CHANGED)
+	
 func show_ui():
 	show()
 

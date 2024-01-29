@@ -1,14 +1,8 @@
-extends 'TranslatedLabel.gd'
+extends RichTextLabel
 
-# note: technically this is a child of Control bc TranslatedLabel works on both Labels and RichTextLabels
-# but it can only be used on RichTextLabels!
 var copy = null
 
 func _ready():
-	._ready()
-	if get_class() != "RichTextLabel":
-		print('error: FormattedRichTextLabel not on RichTextLabel')
-		return
 	call("set_scroll_active", false) # formatting fucks up when there's a scroll bar
 
 func set_bbcode(bbcode):

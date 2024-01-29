@@ -15,46 +15,14 @@ var resolutions = [
 ]
 
 var quips = [
-	['cat', 
-		['meow meow, meow meow meow :3',
-		'miau miau, miau miau miau :3',
-		'喵喵，喵喵喵 :3']
-	],
-	['oliver', 
-		['to meow, or not to meow, that is the question!',
-		'¿no es cierto, ángel de amor, que en esta apartada orilla más pura la luna brilla y se maúlla mejor?',
-		'是要喵，还是不要喵，这是问题所在！']
-	],
-	['kyungsoon', 
-		['hmmm. that\'s an options menu',
-		'hum. pues un menú de opciones',
-		'嗯——这是个设置菜单']
-	],
-	['numa', 
-		['HEY!! change the font size right now! i mean... if you want.',
-		'¡OYE! ¡ya estás cambiando el tamaño de la letra! bueno... si te apetece.',
-		'嘿！！快改一下字体大小！我是说…如果你想的话']
-	],
-	['sean', 
-		['what\'s a nice player like you doing in a menu like this? (;',
-		'y... ¿vienes mucho por este menú de opciones? (;',
-		'你这样可爱的玩家在菜单里做什么呢 (;']
-	],
-	['elijah', 
-		['\'tis better to have meowed and lost than never to have meowed at all.',
-		'que toda la vida es un gato, y los gatos, gatos son.',
-		'喵过却失去，总比从未喵过好']
-	],
-	['tori', 
-		['what are you doing fiddling with the settings? there\'s a game to play!',
-		'¿se puede saber qué haces mirando la configuración? ¡ponte a jugar!',
-		'你怎么还在这摆弄设置？还有游戏要玩！']
-	],
-	['natalie', 
-		['zzz... huh? where am i?',
-		'zzz... ¿eing? ¿dónde estoy?',
-		'zzz…哎？咱在哪？']
-	]
+	['cat', 'QUIP_CAT'],
+	['oliver', 'QUIP_OLIVER'],
+	['kyungsoon', 'QUIP_KYUNGSOON'],
+	['numa', 'QUIP_NUMA'],
+	['sean', 'QUIP_SEAN'],
+	['elijah', 'QUIP_ELIJAH'],
+	['tori', 'QUIP_TORI'],
+	['natalie', 'QUIP_NATALIE']
 ]
 
 var default_options = {
@@ -225,34 +193,8 @@ func show_custom():
 			
 	var current_quip = available_quips[randi() % available_quips.size()]
 	
-	# set the speaker
-	# there are exceptions for chinese, which has unique character names, and "cat" in spanish
-	if Language.language == 2:
-		match current_quip[0]:
-			'natalie':
-				$text_size/preview_a.set_text('娜塔丽')
-			'kyungsoon':
-				$text_size/preview_a.set_text('京纯')
-			'oliver':
-				$text_size/preview_a.set_text('奥利弗')
-			'numa':
-				$text_size/preview_a.set_text('纽玛')
-			'elijah':
-				$text_size/preview_a.set_text('伊莱贾')
-			'sean':
-				$text_size/preview_a.set_text('肖恩')
-			'tori':
-				$text_size/preview_a.set_text('托丽')
-			'cat':
-				$text_size/preview_a.set_text('猫')
-	elif current_quip[0] == "cat" and Language.language == 1:
-		$text_size/preview_a.set_text("gato")
-	else:
-		$text_size/preview_a.set_text(current_quip[0])
-	
-	# set the quip
-	if Language.language in current_quip[1]:
-		$text_size/preview_b.set_bbcode(current_quip[1][Language.language])
+	$text_size/preview_a.set_text(tr(current_quip[0]))
+	$text_size/preview_b.set_bbcode(tr(current_quip[1]))
 	
 	load_options()
 	show()
@@ -268,34 +210,8 @@ func _on_language_changed(lang):
 			
 	var current_quip = available_quips[randi() % available_quips.size()]
 	
-	# set the speaker
-	# there are exceptions for chinese, which has unique character names, and "cat" in spanish
-	if lang == 2:
-		match current_quip[0]:
-			'natalie':
-				$text_size/preview_a.set_text('娜塔丽')
-			'kyungsoon':
-				$text_size/preview_a.set_text('京纯')
-			'oliver':
-				$text_size/preview_a.set_text('奥利弗')
-			'numa':
-				$text_size/preview_a.set_text('纽玛')
-			'elijah':
-				$text_size/preview_a.set_text('伊莱贾')
-			'sean':
-				$text_size/preview_a.set_text('肖恩')
-			'tori':
-				$text_size/preview_a.set_text('托丽')
-			'cat':
-				$text_size/preview_a.set_text('猫')
-	elif current_quip[0] == "cat" and lang == 1:
-		$text_size/preview_a.set_text("gato")
-	else:
-		$text_size/preview_a.set_text(current_quip[0])
-	
-	# set the quip
-	if Language.language in current_quip[1]:
-		$text_size/preview_b.set_bbcode(current_quip[1][Language.language])
+	$text_size/preview_a.set_text(tr(current_quip[0]))
+	$text_size/preview_b.set_bbcode(tr(current_quip[1]))
 	
 func change_volume(bus, volume):
 	var db = math(volume)
@@ -353,12 +269,7 @@ func _on_enable_voicing_toggled(button_pressed):
 
 func _on_test_voicing_pressed():
 	get_tree().get_root().get_node('main/game/tts_node').stop()
-	if Language.language == 0:
-		get_tree().get_root().get_node('main/game/tts_node').speak('self-voicing sample')
-	elif Language.language == 1:
-		get_tree().get_root().get_node('main/game/tts_node').speak('prueba del lector de pantalla')
-	elif Language.language == 2:
-		get_tree().get_root().get_node('main/game/tts_node').speak('(placeholder) self-voicing sample')
+	get_tree().get_root().get_node('main/game/tts_node').speak(tr('self-voicing sample'))
 
 func _on_window_size_selected(ID):
 	var res_string = resolutions[ID]

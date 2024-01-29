@@ -1,3 +1,9 @@
+# this is an old script from when i implemented translations from scratch and like
+#   manually copy-pasted every translation into every ui element
+# which is stupid of course
+# we are using the built-in translation system now so we should ONLY SOMTIMES need this script
+# namely, when we need an entirely separate node for each language, like with the custom pronouns menu
+
 extends Node
 
 func _ready():

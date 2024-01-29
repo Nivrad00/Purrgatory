@@ -1,3 +1,5 @@
+# no longer used
+
 extends "TranslatedLabel.gd"
 
 func update_label(lang):

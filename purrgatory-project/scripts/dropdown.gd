@@ -33,6 +33,7 @@ var pending_change = false
 func _ready():
 	set_process(true) 
 	add_quest('nothing')
+	Language.connect("language_changed", self, "_on_language_changed")
 	
 func hide_all():
 	notes_button.set_modulate(Color(1, 1, 1))
@@ -217,13 +218,7 @@ func add_quest(quest):
 	label.set_custom_minimum_size(Vector2($quest_container.get_size().x, 0))
 	label.set_mouse_filter(Control.MOUSE_FILTER_IGNORE)
 	
-	if Language.language < quests[quest].size():
-		label.set_bbcode(quests[quest][Language.language])
-	else: # fallback if the quest hasn't been translated yet
-		label.set_bbcode(quests[quest][0])
-	label.translations = []
-	for lang in quests[quest]:
-		label.translations.append(lang)
+	label.set_bbcode(tr(quests[quest]))
 	
 	# if there's a placeholder, remove it
 	# also remember not to do this if the thing you just added was the placeholder
@@ -235,6 +230,15 @@ func add_quest(quest):
 	if notes_shown:
 		format_quests()
 
+func _on_language_changed(lang):
+	# need to update the todo items when the language changes
+	#   because they're richtextlabels, which don't do it automatically
+	for item in $quest_container/vbox.get_children():
+		item.set_bbcode(tr(quests[item.name]))
+		
+	if notes_shown:
+		format_quests()
+	
 func remove_quest(quest):
 	for item in $quest_container/vbox.get_children():
 		if item.name == quest:
@@ -309,3 +313,4 @@ func toggle_quest_log(on):
 		if notes_shown:
 			toggle_notes()
 		notes_button.hide()
+

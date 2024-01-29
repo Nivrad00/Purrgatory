@@ -2,7 +2,7 @@ extends Button
 
 onready var dropdown = get_node('../dropdown')
 var flashing = false
-
+		
 func flash():
 	if flashing:
 		return # don't start the flashing animation if it's already going
