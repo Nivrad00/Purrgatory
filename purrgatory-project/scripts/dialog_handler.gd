@@ -56,7 +56,7 @@ func _ready():
 		# make sure labels match up between translations
 		for data in all_data:
 			if data[0] != original_data[0]:
-				print("error: label " + original_data[0] + " in original script does not match translated label " + data[0])
+				print("error: label " + original_data[0] + " in original script does not match translated label " + data[0] + ". block index is " + str(block_index))
 				return
 				
 		# choose label

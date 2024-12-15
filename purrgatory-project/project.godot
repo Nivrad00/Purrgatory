@@ -172,7 +172,7 @@ ui_notes={
 
 [locale]
 
-translations=PoolStringArray( "res://ui_translations.en.translation", "res://ui_translations.es.translation", "res://ui_translations.it.translation", "res://ui_translations.pl.translation", "res://ui_translations.zh.translation" )
+translations=PoolStringArray( "res://ui_translations.en.translation", "res://ui_translations.es.translation", "res://ui_translations.it.translation", "res://ui_translations.pl.translation", "res://ui_translations.zh.translation", "res://ui_translations.pt.translation", "res://ui_translations.es_SV.translation" )
 
 [rendering]
 

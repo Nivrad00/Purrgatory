@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=2]
+[gd_scene load_steps=123 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ss.tscn" type="PackedScene" id=2]
@@ -75,6 +75,7 @@
 [ext_resource path="res://assets/sprites/icons/sean2_2.png" type="Texture" id=73]
 [ext_resource path="res://assets/sprites/icons/sean2_3.png" type="Texture" id=74]
 [ext_resource path="res://scenes/options_menu.tscn" type="PackedScene" id=75]
+[ext_resource path="res://scripts/dialog/all_dialog_pt.gd" type="Script" id=76]
 [ext_resource path="res://scenes/save_menu.tscn" type="PackedScene" id=77]
 [ext_resource path="res://scenes/load_menu.tscn" type="PackedScene" id=78]
 [ext_resource path="res://scripts/history.gd" type="Script" id=79]
@@ -87,6 +88,7 @@
 [ext_resource path="res://themes/button_placeholder_font.tres" type="DynamicFont" id=86]
 [ext_resource path="res://themes/ui_font_21.tres" type="DynamicFont" id=87]
 [ext_resource path="res://scripts/custom_pronouns_button.gd" type="Script" id=88]
+[ext_resource path="res://scenes/all_dialog_es_latam.gd" type="Script" id=89]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("ss")
@@ -448,6 +450,12 @@ script = ExtResource( 14 )
 
 [node name="all_dialog_po" type="Node" parent="dialog_handler"]
 script = ExtResource( 84 )
+
+[node name="all_dialog_pt" type="Node" parent="dialog_handler"]
+script = ExtResource( 76 )
+
+[node name="all_dialog_es_latam" type="Node" parent="dialog_handler"]
+script = ExtResource( 89 )
 
 [node name="content" type="Control" parent="."]
 margin_right = 1280.0

@@ -8780,7 +8780,7 @@ var raw_blocks = [
 ["","","","una entrevista para la que he olvidado prepararme","","","","","",""],
 ["","","","y que si no paso acabaré ARDIENDO EN EL INFIERNO","","","","","",""],
 ["","","","jajajajaaaaaaa","","","","","",""],
-["","","","","","","",['it\'ll be okay!', 'deep breaths'],['¡no va a pasar nada!', 'respira hondo'],""],
+["","","","","","","","",['¡no va a pasar nada!', 'respira hondo'],['wait_numa1c', 'wait_numa1d']],
 ["wait_numa1c","you","","¡no va a pasar nada, en serio!","","","","","",""],
 ["","","","eres muy simpática, seguro que acabas yendo al cielo","","","","","",""],
 ["","numa","","aaaaaaaaaaaaaa no sé","","","","","",""],

@@ -82,11 +82,16 @@ func init_state(state):
 	state['bio_choices'] = bio_choices
 
 func add_to_choices(choices, additions):
-	for i in range(additions.size()):
+	# for i in range(additions.size()):
+		# if i < choices.size():
+			# choices[i].append(additions[i])
+		# else:
+			# choices.append([additions[i]])
+	for i in range(Language.languages.size()):
 		if i < choices.size():
-			choices[i].append(additions[i])
+			choices[i].append(additions[0]) # always use english, because translationserver will translate it
 		else:
-			choices.append([additions[i]])
+			choices.append([additions[0]]) # always use english, because translationserver will translate it
 
 func update_state(state):
 	.update_state(state)
@@ -141,15 +146,22 @@ func update_state(state):
 			add_to_choices(choices, state['bio_choices'][6])
 			add_to_choices(choices, choice_dict['something_else0'])
 		
-		if choices.size() > Language.language:
-			var choices_text = []
-			for choice in choices[Language.language]:
-				choices_text.append(choice[0])
+		# jury-rigging the old code to always return english so the automatic translationserver
+		#   can do its thing
+		# if choices.size() > Language.language:
+			# var choices_text = []
+			# for choice in choices[Language.language]:
+				# choices_text.append(choice[0])
 		
-			game.block['choices'] = choices
-			# tts set to false for this one, since the original update_ui call already
-			# triggers the tts
-			game.ui.update_ui(null, null, null, choices_text, false)
+		var choices_text = []
+		for choice in choices[0]:
+			choices_text.append(choice[0]) # always using english
+		
+		print(choices)
+		game.block['choices'] = choices
+		# tts set to false for this one, since the original update_ui call already
+		# triggers the tts
+		game.ui.update_ui(null, null, null, choices_text, false)
 		
 	if state.get('lucifur_talked_about_gluttony'):
 		state['lucifur_talked_about_gluttony'] = false

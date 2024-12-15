@@ -8780,7 +8780,7 @@ var raw_blocks = [
 ["","","","tylko, że jakbym zapomniała się na nią przygotować","","","","","",""],
 ["","","","i jeśli źle mi pójdzie SPŁONĘ W PIEKLE","","","","","",""],
 ["","","","hahahahaaaaaaaa","","","","","",""],
-["","","","","","","",['wait_numa1c', 'wait_numa1d'],['będzie dobrze!', 'oddychaj głeboko'],""],
+["","","","","","","","",['będzie dobrze!', 'oddychaj głeboko'],['wait_numa1c', 'wait_numa1d']],
 ["wait_numa1c","you","","będzie dobrze, naprawdę!","","","","","",""],
 ["","","","jesteś taka miła, nie ma opcji, że nie pójdziesz do nieba","","","","","",""],
 ["","numa","","aaaaaaaaaaaaaa no nie wiem","","","","","",""],

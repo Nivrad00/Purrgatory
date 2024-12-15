@@ -8780,7 +8780,7 @@ var raw_blocks = [
 ["","","","except it's like i forgot to prepare for it","","","","","",""],
 ["","","","and also if i don't pass then i BURN IN HELL","","","","","",""],
 ["","","","hahahahaaaaaaaaa","","","","","",""],
-["","","","","","","",['it\'ll be okay!', 'deep breaths'],['wait_numa1c', 'wait_numa1d'],""],
+["","","","","","","","",['it\'ll be okay!', 'deep breaths'],['wait_numa1c', 'wait_numa1d']],
 ["wait_numa1c","you","","it'll be okay, i promise!","","","","","",""],
 ["","","","you're so nice, there's no way you won't go to heaven","","","","","",""],
 ["","numa","","aaaaaaaaaaaaaaa i don't know","","","","","",""],
