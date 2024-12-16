@@ -4,6 +4,7 @@
 [ext_resource path="res://cat_01_color05.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://addons/3D Outline/Outline.material" type="Material" id=3]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=4]
+[ext_resource path="res://themes/language_dropdown_theme.tres" type="Theme" id=5]
 [ext_resource path="res://scenes/logo.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=8]
@@ -15,7 +16,6 @@
 [ext_resource path="res://assets/sprites/cat2.png" type="Texture" id=14]
 [ext_resource path="res://assets/sprites/cat3.png" type="Texture" id=15]
 [ext_resource path="res://assets/audio/Slice_Of_Heaven.ogg" type="AudioStream" id=16]
-[ext_resource path="res://themes/dropdown_menu_theme.tres" type="Theme" id=17]
 [ext_resource path="res://assets/ui/credits_box.png" type="Texture" id=18]
 [ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=19]
 [ext_resource path="res://themes/chinese_only_dialog_font.tres" type="DynamicFont" id=20]
@@ -62,7 +62,7 @@ blend_mode = 3
 
 [node name="main" type="Node"]
 script = ExtResource( 1 )
-version = "2024-12-14 debug"
+version = "2024-12-15 debug"
 
 [node name="delay_timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -336,29 +336,28 @@ margin_right = 1081.0
 margin_bottom = 687.0
 
 [node name="language_label" type="Label" parent="main_menu/language"]
-margin_left = -281.0
+margin_left = -356.0
 margin_top = 33.0
-margin_right = -7.0
+margin_right = -82.0
 margin_bottom = 65.0
 custom_fonts/font = ExtResource( 23 )
 text = "language"
 align = 2
 
 [node name="language" type="MarginContainer" parent="main_menu/language"]
-margin_left = -16.0
-margin_top = 30.0
-margin_right = 162.0
-margin_bottom = 66.0
+margin_left = -84.0
+margin_top = 27.0
+margin_right = 202.0
+margin_bottom = 70.0
 custom_constants/margin_left = 18
 
 [node name="dropdown" type="OptionButton" parent="main_menu/language/language"]
 margin_left = 18.0
-margin_right = 218.0
-margin_bottom = 36.0
-rect_min_size = Vector2( 200, 36 )
+margin_right = 286.0
+margin_bottom = 43.0
+rect_min_size = Vector2( 268, 43 )
 focus_mode = 0
-size_flags_horizontal = 0
-theme = ExtResource( 17 )
+theme = ExtResource( 5 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
 

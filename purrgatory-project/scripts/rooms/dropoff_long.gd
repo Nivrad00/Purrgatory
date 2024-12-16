@@ -2,7 +2,7 @@ extends 'state_handler_template.gd'
 
 var time = 0 # time elapsed
 var progress = 0 # distance down the hole
-var climb_speed = 150 # how fast player climbs down
+var climb_speed = 150000 # how fast player climbs down
 
 var fall_time = 0 # used when the post cracks - how long player falls for
 var rise_time = 0 # the bounce back from falling
@@ -13,7 +13,7 @@ var velocity = 0 # player's velocity while falling
 var climbing = false # climbing minigame
 var pull_speed = 500 # how fast tori pulls player up
 var base_drain_speed = 10
-var recover_amount = 4
+var recover_amount = 4000 
 var dialog_timing = [-8500, -6600, -6100, -4700, -2800, -2300, -900]
 var used_dialog = [false, false, false, false, false, false, false]
 var creak_num = 0

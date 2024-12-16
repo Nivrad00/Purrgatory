@@ -19,7 +19,6 @@ content_margin_right = 5.0
 content_margin_top = 5.0
 content_margin_bottom = 5.0
 texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 240, 149 )
 
 [resource]
 default_font = ExtResource( 3 )

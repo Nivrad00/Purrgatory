@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=5]
 [ext_resource path="res://assets/sprites/charon_walking2.png" type="Texture" id=6]
 [ext_resource path="res://scenes/logo.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scripts/TranslatedLabel.gd" type="Script" id=8]
 [ext_resource path="res://themes/english_only_font.tres" type="DynamicFont" id=9]
 [ext_resource path="res://scripts/you_saved.gd" type="Script" id=10]
 [ext_resource path="res://assets/ui/menu_button0.png" type="Texture" id=11]
@@ -658,8 +657,6 @@ margin_right = 1279.0
 margin_bottom = 481.645
 text = "a game by"
 align = 1
-script = ExtResource( 8 )
-translations = [ "un juego creado por", "制作人" ]
 
 [node name="Label2" type="Label" parent="state_handler/1"]
 margin_top = 449.941
@@ -680,8 +677,6 @@ margin_right = 1279.0
 margin_bottom = 167.134
 text = "story, art, music, and code"
 align = 1
-script = ExtResource( 8 )
-translations = [ "guion, dibujo, música y programación", "编剧，美术，音乐，程序" ]
 
 [node name="Label2" type="Label" parent="state_handler/2/Label2"]
 margin_top = 42.29
@@ -696,7 +691,7 @@ margin_top = 85.8512
 margin_right = 1279.0
 margin_bottom = 156.851
 custom_fonts/font = ExtResource( 15 )
-text = "(darvin heo)"
+text = "(niv heo)"
 align = 1
 
 [node name="Label3" type="Label" parent="state_handler/2"]
@@ -705,8 +700,6 @@ margin_right = 1279.0
 margin_bottom = 348.532
 text = "with story help from"
 align = 1
-script = ExtResource( 8 )
-translations = [ "asistencia de guion", "编剧协助" ]
 
 [node name="Label2" type="Label" parent="state_handler/2/Label3"]
 margin_left = 1.29236
@@ -750,8 +743,6 @@ margin_right = 1279.0
 margin_bottom = 612.26
 text = "additional code"
 align = 1
-script = ExtResource( 8 )
-translations = [ "asistencia de programación", "程序协助" ]
 
 [node name="Label2" type="Label" parent="state_handler/2/Label4"]
 margin_top = 41.29
@@ -772,8 +763,6 @@ margin_right = 1279.0
 margin_bottom = 220.226
 text = "tracing"
 align = 1
-script = ExtResource( 8 )
-translations = [ "delineado", "线稿" ]
 
 [node name="Label2" type="Label" parent="state_handler/3/Label2"]
 margin_top = 40.29
@@ -799,8 +788,6 @@ margin_right = 1279.0
 margin_bottom = 390.128
 text = "character design help"
 align = 1
-script = ExtResource( 8 )
-translations = [ "asistencia de diseño", "角色设计协助" ]
 
 [node name="Label2" type="Label" parent="state_handler/3/Label5"]
 margin_top = 41.29
@@ -826,8 +813,6 @@ margin_right = 1279.0
 margin_bottom = 559.791
 text = "background help"
 align = 1
-script = ExtResource( 8 )
-translations = [ "asistencia para los fondos", "背景设计协助" ]
 
 [node name="Label2" type="Label" parent="state_handler/3/Label6"]
 margin_top = 42.29
@@ -838,7 +823,6 @@ text = "rose lim"
 align = 1
 
 [node name="4" type="Control" parent="state_handler"]
-visible = false
 margin_left = 33.366
 margin_right = 73.366
 margin_bottom = 40.0
@@ -850,8 +834,6 @@ margin_right = 1021.63
 margin_bottom = 193.899
 text = "additional music"
 align = 1
-script = ExtResource( 8 )
-translations = [ "música adicional", "额外音乐" ]
 
 [node name="Label3" type="Label" parent="state_handler/4/Label6"]
 margin_left = -2.49268
@@ -897,15 +879,20 @@ text = "\"purrgatory blues\""
 align = 1
 
 [node name="Label7" type="Label" parent="state_handler/4/Label1"]
-margin_left = 514.508
-margin_top = 48.8356
-margin_right = 630.508
-margin_bottom = 156.836
-text = "written by
-guitar"
+margin_left = 365.0
+margin_top = 49.0
+margin_right = 631.0
+margin_bottom = 157.0
+text = "written by"
 align = 2
-script = ExtResource( 8 )
-translations = [ "guion\\nguitarra", "作曲\\n吉他" ]
+
+[node name="Label13" type="Label" parent="state_handler/4/Label1"]
+margin_left = 514.508
+margin_top = 84.795
+margin_right = 630.508
+margin_bottom = 192.795
+text = "guitar"
+align = 2
 
 [node name="Label10" type="Label" parent="state_handler/4/Label1"]
 margin_left = 514.508
@@ -914,22 +901,26 @@ margin_right = 630.508
 margin_bottom = 227.32
 text = "vocals"
 align = 2
-script = ExtResource( 8 )
-translations = [ "voz", "演唱" ]
 
 [node name="Label8" type="Label" parent="state_handler/4/Label1"]
 margin_left = 651.508
 margin_top = 48.8356
 margin_right = 720.508
 margin_bottom = 156.836
-text = "niv
-niko"
+text = "niv"
+
+[node name="Label14" type="Label" parent="state_handler/4/Label1"]
+margin_left = 651.508
+margin_top = 84.795
+margin_right = 720.508
+margin_bottom = 192.795
+text = "niko"
 
 [node name="Label9" type="Label" parent="state_handler/4/Label1"]
 margin_left = 708.128
-margin_top = 88.5603
+margin_top = 90.5603
 margin_right = 900.128
-margin_bottom = 113.561
+margin_bottom = 115.561
 rect_pivot_offset = Vector2( 78.3446, 14.9474 )
 custom_fonts/font = ExtResource( 15 )
 text = "(jonny andino)"
@@ -962,8 +953,6 @@ margin_right = 1075.0
 margin_bottom = 152.0
 text = "spanish translation"
 align = 1
-script = ExtResource( 8 )
-translations = [ "traducción al español", "西班牙语本地化" ]
 
 [node name="Label5" type="Label" parent="state_handler/5/spanish"]
 margin_left = 1.29236
@@ -991,8 +980,6 @@ margin_right = 1075.0
 margin_bottom = 332.0
 text = "chinese translation"
 align = 1
-script = ExtResource( 8 )
-translations = [ "traducción al chino", "简体中文本地化" ]
 
 [node name="Label5" type="Label" parent="state_handler/5/chinese"]
 margin_left = 1.29236
@@ -1010,8 +997,6 @@ margin_right = 1484.0
 margin_bottom = 187.0
 text = "chinese translation support"
 align = 1
-script = ExtResource( 8 )
-translations = [ "asistencia de traducción al chino", "汉化协助" ]
 
 [node name="Label2" type="Label" parent="state_handler/5/chinese2"]
 margin_top = 44.0
@@ -1051,8 +1036,6 @@ margin_right = 1141.0
 margin_bottom = 148.0
 text = "testing"
 align = 1
-script = ExtResource( 8 )
-translations = [ "pruebas", "测试" ]
 
 [node name="Label2" type="Label" parent="state_handler/6/testing"]
 margin_top = 44.0
@@ -1113,8 +1096,6 @@ margin_right = 1421.0
 margin_bottom = 194.857
 text = "special thanks"
 align = 1
-script = ExtResource( 8 )
-translations = [ "agradecimientos", "特别感谢" ]
 
 [node name="Label2" type="Label" parent="state_handler/6/thanks"]
 margin_left = 1.29236
@@ -1165,8 +1146,6 @@ rect_pivot_offset = Vector2( -23.3271, 291.157 )
 custom_fonts/font = ExtResource( 14 )
 text = "sound effects"
 align = 1
-script = ExtResource( 8 )
-translations = [ "efectos de sonido", "音效" ]
 
 [node name="Label10" type="Label" parent="state_handler/7"]
 margin_left = -257.0
@@ -1327,21 +1306,14 @@ margin_bottom = 306.0
 custom_fonts/font = ExtResource( 14 )
 text = "additional assets"
 align = 1
-script = ExtResource( 8 )
-translations = [ "recursos adicionales", "额外素材" ]
 
 [node name="Label3" type="Label" parent="state_handler/7"]
-margin_left = 720.0
-margin_top = 326.49
+margin_left = 694.0
+margin_top = 326.0
 margin_right = 994.0
-margin_bottom = 545.49
-text = "text-to-speech module
-3d outline shader
-3d cat model
-source sans pro font"
+margin_bottom = 545.0
+text = "ADDITIONAL_ASSETS_DESC"
 align = 2
-script = ExtResource( 8 )
-translations = [ "lector de pantalla\\nsombras del delineado 3d\\nmodelo 3d del gato\\nfuente source sans pro", "tts模块\\n3d轮廓渲染\\n3d猫猫模型\\n字体来源" ]
 
 [node name="Label4" type="Label" parent="state_handler/7"]
 margin_left = 1041.66
@@ -1354,6 +1326,7 @@ shuldyakov
 paul d. hunt"
 
 [node name="last" type="Control" parent="state_handler"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -1364,8 +1337,6 @@ margin_bottom = 339.035
 text = "the end?"
 align = 1
 valign = 1
-script = ExtResource( 8 )
-translations = [ "¿fin?", "结局？" ]
 
 [node name="you_saved" type="Label" parent="state_handler/last"]
 visible = false
@@ -1376,7 +1347,6 @@ text = "you saved x people"
 align = 1
 valign = 1
 script = ExtResource( 10 )
-translations = [ "", "" ]
 
 [node name="back" type="Button" parent="state_handler/last"]
 visible = false
@@ -1399,8 +1369,6 @@ margin_bottom = 60.0
 text = "back"
 align = 1
 valign = 1
-script = ExtResource( 8 )
-translations = [ "volver", "返回" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler"]
 autoplay = "credits"
@@ -1435,8 +1403,6 @@ custom_fonts/font = ExtResource( 15 )
 text = "skip"
 align = 1
 valign = 1
-script = ExtResource( 8 )
-translations = [ "saltar", "跳过" ]
 
 [connection signal="pressed" from="state_handler/last/back" to="state_handler" method="_on_back_pressed"]
 [connection signal="pressed" from="state_handler/skip" to="state_handler" method="skip_bad_credits"]

@@ -1,8 +1,6 @@
-extends "TranslatedLabel.gd"
+extends Label
 
-func _ready():
-	._ready()
-	
+func _ready():	
 	var i = 0
 	var quest_states = [
 		'kyungsoon_quest_complete',
@@ -17,14 +15,8 @@ func _ready():
 		if get_tree().get_root().get_node('main/game').state.get(quest_state):
 			i += 1
 	
-	translations = []
 	if i == 1:
-		translations.append("you saved 1 person")
-		translations.append("salvaste a 1 persona")
-		translations.append("你拯救了1人")
+		text = tr("YOU_SAVED_SINGULAR")
 	else:
-		translations.append("you saved " + str(i) + " people")
-		translations.append("salvaste a " + str(i) + " personas")
-		translations.append("你拯救了" + str(i) + "人")
-		
-	update_label(Language.language)
+		text = tr("YOU_SAVED_PLURAL")
+		text = text.replace("#", str(i))

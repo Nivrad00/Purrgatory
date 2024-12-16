@@ -79,7 +79,6 @@ animation1 = ExtResource( 12 )
 animation2 = ExtResource( 13 )
 
 [node name="exit" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 724.798, -291.001 )
 script = ExtResource( 14 )
 __meta__ = {
@@ -101,14 +100,12 @@ position = Vector2( 724.798, -291.001 )
 polygon = PoolVector2Array( 465.033, 291.01, 465.026, 1011.01, 555.174, 1011.01, 555.195, 291.021 )
 
 [node name="garden_flowers" parent="state_handler" instance=ExtResource( 8 )]
-editor/display_folded = true
 dialog_label = "garden_flowers"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/garden_flowers"]
 polygon = PoolVector2Array( -1.1388, 527.905, -0.540062, 462.642, 130.175, 433.102, 148.546, 414.144, 260.813, 430.392, 295.51, 407.64, 462.883, 446.476 )
 
 [node name="well" parent="state_handler" instance=ExtResource( 8 )]
-editor/display_folded = true
 dialog_label = "well"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/well"]
@@ -134,7 +131,6 @@ dialog_label = "garden_flower"
 polygon = PoolVector2Array( 1006.03, 507.376, 1007.42, 581.4, 1050.02, 583.495, 1060.5, 504.583 )
 
 [node name="flowerbed" parent="state_handler" instance=ExtResource( 8 )]
-editor/display_folded = true
 dialog_label = "garden_flowers"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/flowerbed"]
@@ -147,7 +143,6 @@ dialog_label = "hoe"
 polygon = PoolVector2Array( 610.148, 619.438, 676.166, 635.728, 653.017, 676.882, 598.144, 640.872 )
 
 [node name="garden_sidewalk" parent="state_handler" instance=ExtResource( 8 )]
-editor/display_folded = true
 dialog_label = "garden_sidewalk"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="state_handler/garden_sidewalk"]

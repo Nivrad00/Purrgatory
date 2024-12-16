@@ -41,7 +41,26 @@ func hide_all():
 	target_height = default_height
 	move = true
 	
-func toggle_notes():	
+func toggle_notes():
+	# for item in [
+	# 'commons_door',
+	# 'meowseum_door',
+	# 'return_books',
+	# 'call_lucifur',
+	# 'oliver_chess',
+	# 'oliver_soda1',
+	# 'oliver_soda2',
+	# 'vent',
+	# 'numa_kyungsoon',
+	# 'numa_friendship',
+	# 'sean_batteries',
+	# 'elijah_invitations',
+	# 'elijah_bell',
+	# 'elijah_poem',
+	# 'tori_lights',
+	# 'natalie_draw_a_paw']:
+	# 	add_quest(item)
+		
 	pending_change = false
 	if notes_shown:
 		notes_shown = false

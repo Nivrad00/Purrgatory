@@ -188,7 +188,6 @@ margin_bottom = 40.0
 script = ExtResource( 4 )
 
 [node name="0" type="HBoxContainer" parent="state_handler/text"]
-visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 alignment = 1
@@ -868,6 +867,7 @@ text = " de lo que era esa persona."
 scroll_active = false
 
 [node name="2" type="HBoxContainer" parent="state_handler/text"]
+visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 alignment = 1

@@ -67,7 +67,6 @@ dialog_label = "closet_blanket"
 polygon = PoolVector2Array( 797.108, 650.732, 811.579, 697.864, 914.119, 698.06, 901.039, 681.412, 820.415, 639.554, 807.097, 636.938 )
 
 [node name="closet_big_box" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -7.0002, -124.804 )
 script = ExtResource( 5 )
 dialog_label = "closet_big_box"
@@ -79,7 +78,6 @@ polygon = PoolVector2Array( 1129.61, 722.885, 1131.79, 587.063, 1071.85, 557.557
 polygon = PoolVector2Array( 921.122, 553.57, 889.343, 552.146, 889.002, 667.256, 919.073, 720.733 )
 
 [node name="wipes" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -7.0002, -124.804 )
 script = ExtResource( 5 )
 dialog_label = "wipes"
@@ -88,7 +86,6 @@ dialog_label = "wipes"
 polygon = PoolVector2Array( 863.585, 586.105, 853.307, 591.112, 853.571, 645.134, 866.22, 651.458, 878.605, 652.249, 889.818, 649.874, 889.41, 588.477, 880.378, 585.014 )
 
 [node name="closet_towels" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -7.0002, -124.804 )
 script = ExtResource( 5 )
 dialog_label = "closet_towels"
@@ -97,7 +94,6 @@ dialog_label = "closet_towels"
 polygon = PoolVector2Array( 893.881, 513.608, 841.787, 513.672, 838.487, 528.509, 839.975, 535.408, 834.564, 546.365, 835.376, 558.27, 831.034, 568.835, 845.672, 574.741, 818.574, 589.776, 815.602, 602.014, 822.07, 605.86, 818.565, 614.877, 853.014, 618.447, 905.268, 575.461, 905.503, 517.89 )
 
 [node name="cleaner" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -7.0002, -124.804 )
 script = ExtResource( 5 )
 dialog_label = "cleaner"
@@ -144,7 +140,6 @@ position = Vector2( -5, 0 )
 polygon = PoolVector2Array( 981.948, 498.65, 1128.2, 498.597, 1129.74, 427.29, 1079.94, 428.212, 1079.33, 422.372, 1026.01, 428.303, 982.204, 447.575 )
 
 [node name="closet_rope" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -16.8491, -322.978 )
 script = ExtResource( 5 )
 dialog_label = "closet_rope"
@@ -153,7 +148,6 @@ dialog_label = "closet_rope"
 polygon = PoolVector2Array( 794.02, 531.585, 794.187, 537.232, 794.278, 571.477, 802.989, 578.753, 813.286, 577.258, 815.445, 568.622, 812.36, 558.169, 818.909, 533.529, 886.341, 514.117, 870.675, 509.008, 826.979, 508.022, 801.418, 520.935 )
 
 [node name="electric_box_warning" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -16.8491, -322.978 )
 script = ExtResource( 5 )
 dialog_label = "electric_box_warning"
@@ -162,7 +156,6 @@ dialog_label = "electric_box_warning"
 polygon = PoolVector2Array( 712.466, 599.039, 712.917, 644.678, 777.083, 648.293, 777.535, 598.587 )
 
 [node name="electric_box_note" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -16.8491, -322.978 )
 script = ExtResource( 5 )
 dialog_label = "electric_box_note"
@@ -171,7 +164,6 @@ dialog_label = "electric_box_note"
 polygon = PoolVector2Array( 652.923, 564.977, 652.923, 595.92, 678.206, 593.278, 678.206, 565.354 )
 
 [node name="ceiling_tile" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -16.8491, -322.978 )
 script = ExtResource( 5 )
 dialog_label = "ceiling_tile"
@@ -196,7 +188,6 @@ dialog_label = "closet_wires"
 polygon = PoolVector2Array( 694.263, 591.06, 683.813, 626.099, 696.107, 654.069, 698.874, 688.493, 727.458, 695.869, 831.844, 673.63, 830.263, 657.292, 810.763, 649.914, 796.796, 633.312, 810.499, 625.933, 812.596, 611.961, 701.947, 589.216 )
 
 [node name="bucket" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -21, -66 )
 script = ExtResource( 5 )
 dialog_label = "bucket"
@@ -213,7 +204,6 @@ dialog_label = "closet_water"
 polygon = PoolVector2Array( 471.189, 626.366, 474.075, 631.833, 494.031, 640.91, 516.889, 637.81, 518.7, 625.755, 516.049, 614.132, 498.717, 602.305, 475.064, 600.674, 467.519, 608.423 )
 
 [node name="closet_pipe2" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -21, -66 )
 script = ExtResource( 5 )
 dialog_label = "closet_pipe2"
@@ -222,7 +212,6 @@ dialog_label = "closet_pipe2"
 polygon = PoolVector2Array( 518.409, 595.187, 558.361, 607.275, 572.631, 603.232, 572.155, 590.865, 566.075, 583.229, 524.432, 575.161, 508.893, 575.882, 508.776, 589.872 )
 
 [node name="closet_sink" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -21, -66 )
 script = ExtResource( 5 )
 dialog_label = "closet_sink"
@@ -239,7 +228,6 @@ dialog_label = "broom"
 polygon = PoolVector2Array( 536.479, 275.812, 599.162, 598.146, 559.76, 605.53, 561.804, 627.429, 664, 611.37, 656.992, 588.01, 614.654, 594.434, 549.859, 271.631 )
 
 [node name="closet_pipe" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 168.368, -106.226 )
 script = ExtResource( 5 )
 dialog_label = "closet_pipe"
@@ -249,7 +237,6 @@ position = Vector2( 0, 0.225937 )
 polygon = PoolVector2Array( 319.61, 147.43, 319.671, 191.246, 316.089, 193.748, 315.946, 203.288, 319.8, 205.706, 319.364, 212.259, 313.81, 222.369, 301.048, 222.425, 298.432, 219.094, 288.322, 218.81, 283.877, 222.425, 221.735, 222.125, 217.232, 231.663, 221.84, 240.952, 284.199, 240.952, 288.322, 245.295, 299.998, 244.726, 299.428, 241.451, 330.064, 239.822, 338.423, 229.881, 340.005, 204.576, 342.29, 204.57, 343.144, 193.748, 340.005, 192.15, 339.357, 148.074, 328.84, 144.855 )
 
 [node name="paper_towel_holder" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -21, -66 )
 script = ExtResource( 5 )
 dialog_label = "paper_towel_holder"
@@ -258,7 +245,6 @@ dialog_label = "paper_towel_holder"
 polygon = PoolVector2Array( 458.891, 362.269, 461.895, 380.084, 472.85, 383.388, 473.302, 431.512, 460.178, 442.544, 458.461, 453.491, 407.377, 453.92, 407.377, 439.11, 431.504, 432.19, 431.052, 383.162, 409.309, 376.006, 409.738, 360.981 )
 
 [node name="cylinder" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -21, -66 )
 script = ExtResource( 5 )
 dialog_label = "cylinder"
@@ -267,7 +253,6 @@ dialog_label = "cylinder"
 polygon = PoolVector2Array( 312.318, 606.176, 314.277, 697.93, 462.283, 698.092, 464.451, 600.615, 445.385, 584.726, 415.991, 572.81, 361.97, 574.399, 325.426, 587.11 )
 
 [node name="closet_notes" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -21, -66 )
 script = ExtResource( 5 )
 dialog_label = "closet_notes"
@@ -279,7 +264,6 @@ polygon = PoolVector2Array( 169.861, 362.835, 175.225, 412.578, 216.678, 409.651
 polygon = PoolVector2Array( 223.168, 465.294, 234.039, 499.58, 255.363, 488.291, 262.471, 468.639, 257.036, 441.461, 240.729, 446.061 )
 
 [node name="calendar" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -21, -66 )
 script = ExtResource( 5 )
 dialog_label = "calendar"

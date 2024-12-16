@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/wire_game.gd" type="Script" id=2]
@@ -15,7 +15,6 @@
 [ext_resource path="res://assets/sprites/wire_shelf.png" type="Texture" id=13]
 [ext_resource path="res://assets/ui/ok_button.png" type="Texture" id=14]
 [ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=15]
-[ext_resource path="res://scripts/TranslatedLabel.gd" type="Script" id=16]
 [ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=17]
 [ext_resource path="res://assets/rooms/wire_game.png" type="Texture" id=18]
 [ext_resource path="res://themes/ui_font_18.tres" type="DynamicFont" id=19]
@@ -1363,8 +1362,6 @@ custom_fonts/font = ExtResource( 20 )
 text = "skip"
 align = 1
 valign = 1
-script = ExtResource( 16 )
-translations = [ "saltar", "跳过" ]
 
 [node name="sure\?" type="Label" parent="state_handler/shelf"]
 visible = false
@@ -1379,8 +1376,6 @@ custom_fonts/font = SubResource( 2 )
 text = "sure?"
 align = 1
 valign = 1
-script = ExtResource( 16 )
-translations = [ "¿abandonar?", "确定？" ]
 
 [node name="yes" type="Button" parent="state_handler/shelf/sure\?"]
 margin_left = 10.9218
@@ -1409,8 +1404,6 @@ custom_fonts/font = ExtResource( 19 )
 text = "yes"
 align = 1
 valign = 1
-script = ExtResource( 16 )
-translations = [ "sí", "是" ]
 
 [node name="no" type="Button" parent="state_handler/shelf/sure\?"]
 margin_left = 10.9218
@@ -1439,8 +1432,6 @@ custom_fonts/font = ExtResource( 19 )
 text = "no"
 align = 1
 valign = 1
-script = ExtResource( 16 )
-translations = [ "no", "否" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/shelf"]
 "anims/come out" = SubResource( 3 )

@@ -27,13 +27,13 @@ yes,yes,sì,tak,aceptar,是,sim,sí
 no,no,no,nie,cancelar,否,não,no
 data deleted.,data deleted.,dati cancellati.,dane usunięte.,datos eliminados.,进度已删除,data deletada.,los datos han sido borrados.
 load autosave,load autosave,carica autosalvataggio,załaduj automatyczny zapis,cargar autoguardado,加载自动存档,carregar autosave,cargar guardado automático
-MAIN_READY,ready!\nclick to continue,finito!\nclicca per continuare,gotowe!\nkliknij by kontynuować,¡listo!\nhaz click para continuar,已就绪！\n按任意键继续,pronto! clique para continuar ,¡listo! haz clic para continuar
+MAIN_READY,ready!\nclick to continue,finito!\nclicca per continuare,gotowe!\nkliknij by kontynuować,¡listo!\nhaz click para continuar,已就绪！\n按任意键继续,pronto!\nclique para continuar ,¡listo!\nhaz clic para continuar
 start,start,inizia,rozpocznij,empezar,开始,começar,empezar
 load,load,carica,załaduj,cargar,载入,carregar,cargar
 options,options,opzioni,opcje,opciones,选项,opções,ajustes
 info,info,informazioni,informacje,información,制作人员名单,sobre,información
 exit,exit,esci,wyjście,salir,退出,sair,salir
-a game by niv,a game by niv,un gioco creato da niv,gra stworzona przez niv,un juego creado por niv,制作人：Niv,um jogo feito pelo niv,un juego creado por niv
+a game by,a game by,un gioco creato da,gra stworzona przez,un juego creado por,制作人：,um jogo feito pelo,un juego creado por
 "note: this is the web version of purrgatory. for higher quality and smoother gameplay, try the windows version!","note: this is the web version of purrgatory. for higher quality and smoother gameplay, try the windows version!","nota: questa è la versione web di purrgatory. per una qualità migliore e un gameplay più fluido, prova la versione windows!","uwaga: jest to wersja internetowa purrgatory. dla lepszej jakości i gładszej rozgrywki, wypróbuj wersję na windows!",nota: esta es la versión web de purrgatorio. la versión de windows ofrece una mayor calidad y jugabilidad.,注：该版本为网页版，如果想拥有更高质量与更为流畅的游戏体验，请尝试windows版！,nota: essa é a versão da web de purrgatory. para maior qualidade e gameplay mais suave experimente a versão de windows!,"nota: esta es la versión web de purrgatory. para una mejor calidad y un juego más fluido, ¡prueba la versión para windows!"
 hotkeys,hotkeys,scorciatoie,skróty klawiszowe,atajos de teclado,热键,teclas chave,TECLAS DE ACCESO RÁPIDO
 space,space,barra spazio,spacja,espacio,空格,espaço,espacio
@@ -67,12 +67,13 @@ vocals,vocals,voci,wokal,voz,演唱,vocais,voz
 other,other,altro,inne,otros,其他,outros,OTROS
 testing,testing,testing,testowanie,pruebas,测试,beta testing,testeo
 special thanks,special thanks,ringraziamenti speciali,specjalne podziękowania,agradecimientos,特别感谢,agradecimentos especiais,agradecimientos especiales
-sound effects,sound effects,effetti sonori,efekty dźwiękowe,efectos de sonido,音效,efeitos sonoros,EFECTOS DE SONIDO
-additional assets,additional assets,elementi aggiuntivi,dodatkowe zasoby,recursos adicionales,额外素材,assets adicionais,CARACTERÍSTICAS ADICIONALES
+sound effects,sound effects,effetti sonori,efekty dźwiękowe,efectos de sonido,音效,efeitos sonoros,efectos de sonido
+additional assets,additional assets,elementi aggiuntivi,dodatkowe zasoby,recursos adicionales,额外素材,assets adicionais,características adicionales
 ADDITIONAL_ASSETS_DESC,text-to-speech module\n3d outline shader\n3d cat model\nsource sans pro font,modulo sintesi vocale\nshader contorno 3d\nmodello gatto 3d\nsource sans pro font,przetwarzanie tekstu na mowę\nshader krawędzi 3D\nmodel kota 3D\nczcionka source sans pro,sintetizador de voz\nsombras del delineado 3d\nmodelo 3d del gato\nfuente source sans pro,tts模块\n3d轮廓渲染\n3d猫猫模型\n字体来源,modulo de texto-para-fala\nshadder de contorno 3D\nmodelo de gato 3D\nfonte source sans pro,narrador de texto\nsombreador de trazos 3d\nmodelo 3d del gato\nfuente de texto: sans pro font
 thanks for playing!,thanks for playing!,grazie per aver giocato!,dziękuję za zagranie!,¡gracias por jugar!,感谢游玩！,agradecemos por jogar!,¡gracias por jugar!
 the end?,the end?,la fine?,koniec?,¿fin?,结局？,o fim?,¿el fin?
-you saved X person/people,you saved X person/people,hai salvato X persona/persone,ocalono X osobę/ludzi,salvaste a x persona/personas,你拯救了X人,você salvou X pessoa/pessoas,salvaste a x persona/personajes
+YOU_SAVED_SINGULAR,you saved 1 person,hai salvato 1 persona,ocalono 1 osobę,salvaste a 1 persona,你拯救了1人,você salvou 1 pessoa,salvaste a 1 persona
+YOU_SAVED_PLURAL,you saved # people,hai salvato # persone,ocalono # ludzi,salvaste a # personas,你拯救了#人,você salvou # pessoas,salvaste a # personajes
 skip,skip,salta,pomiń,saltar,跳过,pular,saltar
 save and return,save and return,salva e ritorna,zapisz i wróć,guardar y volver,保存并返回,salvar e voltar,guardar y volver
 reset settings,reset settings,resetta impostazioni,zresetuj ustawienia,reestablecer configuración,重置设定,resetar configuração,ajustes predeterminados
@@ -117,8 +118,8 @@ translation,translation,traduzione,tłumaczenie,traducción,翻译,tradução,TR
 language,language,lingua,język,idioma,语言,idioma,idioma
 simplified chinese,simplified chinese,cinese semplificato,chiński uproszczony,chino simplificado,简体中文,mandarim simplificado,chino simplificado
 spanish (spain),spanish (spain),spagnolo (spagna),hiszpański (hiszpania),español de españa,西班牙语（西）,espanhól (espanha),español (españa)
-spanish translation,spanish translation,traduzione spagnola,hiszpańskie tłumaczenie,traducción al español,西班牙语本地化,tradução em espanhól,español (latino) 
-chinese translation,chinese translation,traduzione cinese,chińskie tłumaczenie,traducción al chino,简体中文本地化,tradução chinesa,chino
+spanish translation,spanish translation,traduzione spagnola,hiszpańskie tłumaczenie,traducción al español,西班牙语本地化,tradução em espanhól,traducción en español
+chinese translation,chinese translation,traduzione cinese,chińskie tłumaczenie,traducción al chino,简体中文本地化,tradução chinesa,traducción en chino
 chinese translation support,chinese translation support,supporto localizzazione cinese,pomoc przy lokalizacji chińskiego tłumaczenia,asistencia de traducción al chino,汉化协助,suporte de localização chinesa,soporte de traducción en chino
 cat,cat,gatto,kot,gato,猫,gato,gato
 you,you,tu,ty,tú,你,você ,tú
@@ -143,17 +144,17 @@ what i always wanted to do,what i always wanted to do,quello che ho sempre volut
 (something else...),(something else...),(altro...),(coś innego...),(otra cosa...),（别的什么…）,(alguma outra coisa...),(algo más...)
 unlock the door.,unlock the door.,apri la porta.,odblokuj drzwi.,abrir la puerta.,解锁大门,destrancar a porta.,abrir la puerta.
 open the door to the meowseum.,open the door to the meowseum.,apri la porta del miaoseo.,otwórz drzwi do miauzeum.,abrir la puerta del miauseo.,打开喵物馆的门,abrir a porta para o miauseu.,abre la puerta del miauseo.
-return natalie\'s books to oliver.,return natalie\'s books to oliver.,restituisci i libri di natalie a oliver.,zwróć książki natalie oliverowi.,devolver a oliver los libros de natalie.,把娜塔莉的书还给奥利弗,devolver os livros da natalie pro oliver.,entregar los libros de natalie a oliver.
+return natalie's books to oliver.,return natalie's books to oliver.,restituisci i libri di natalie a oliver.,zwróć książki natalie oliverowi.,devolver a oliver los libros de natalie.,把娜塔莉的书还给奥利弗,devolver os livros da natalie pro oliver.,entregar los libros de natalie a oliver.
 "call the devil, maybe.","call the devil, maybe.","chiama il diavolo, forse.",może zadzwoń do diabła?,"llamar al diablo, quizás.",给恶魔打电话，也许,"ligar pro diabo, talvez. ","llamar al diablo, tal vez."
-deliver oliver\'s chess letter  to tori.,deliver oliver\'s chess letter  to tori.,consegna la lettera di oliver a tori.,dostarcz list o szachach olivera do tori,entregarle a tori la carta de ajedrez de oliver.,把奥利弗的棋局信件送给托丽,entregar a carta de xadrêz do oliver pra tori.,entrega la jugada de ajedrez de oliver a tori.
+deliver oliver's chess letter to tori.,deliver oliver's chess letter to tori.,consegna la lettera di oliver a tori.,dostarcz list o szachach olivera do tori,entregarle a tori la carta de ajedrez de oliver.,把奥利弗的棋局信件送给托丽,entregar a carta de xadrêz do oliver pra tori.,entrega la jugada de ajedrez de oliver a tori.
 get some orange soda for oliver.,get some orange soda for oliver.,porta dell\'aranciata a oliver.,zdobądź trochę pomarańczowego napoju dla olivera,llevarle a oliver refresco de naranja.,给奥利弗找点橙子汽水,pegar um pouco de refri de laranja pro oliver.,consigue un poco de refresco de naranja para oliver.
-tell oliver you couldn\'t find a cup for the orange soda.,tell oliver you couldn\'t find a cup for the orange soda.,dì a oliver che non hai trovato un bicchiere per l\'aranciata.,powiedz oliverowi że nie mog{łeś/łaś/łoś/łxś} znaleźć kubka na pomarańczowy napój.,decirle a oliver que no has encontrado un vaso para el refresco.,跟奥利弗说你找不到杯子,dizer ao dliver que você não achou um copo para o refrigerante. ,dile a oliver que no pudiste encontrar un vaso para el refresco de naranja.
+tell oliver you couldn't find a cup for the orange soda.,tell oliver you couldn't find a cup for the orange soda.,dì a oliver che non hai trovato un bicchiere per l\'aranciata.,powiedz oliverowi że nie mog{łeś/łaś/łoś/łxś} znaleźć kubka na pomarańczowy napój.,decirle a oliver que no has encontrado un vaso para el refresco.,跟奥利弗说你找不到杯子,dizer ao dliver que você não achou um copo para o refrigerante. ,dile a oliver que no pudiste encontrar un vaso para el refresco de naranja.
 find a screwdriver to open the vent cover.,find a screwdriver to open the vent cover.,trova un cacciavite per aprire il condotto.,"znajdź śrubokręt, aby zdjąć kratkę wentylacyjną.",encontrar un destornillador para abrir la rejilla de la ventilación.,找到一把螺丝刀打开通风口,achar uma chave de fenda para abrir a ventoinha.,encuentra un destornillador para abrir la rejilla del conducto de ventilación.
 "help numa get flowers, poetry, and food for kyungsoon.","help numa get flowers, poetry, and food for kyungsoon.","aiuta numa con i fiori, la poesia e il cibo per kyungsoon.","pomóż numie zdobyć kwiaty, wiersz i jedzenie dla kyungsoon.","ayudar a numa con las flores, el poema y la comida para kyungsoon.",帮助纽玛准备给京纯的花，诗歌与食物,"ajudar a numa a pegar flores, poesia, e comida para a kyungsoon.","ayuda a numa a conseguir flores, poesía y comida para kyungsoon."
 try to salvage the situation between numa and kyungsoon.,try to salvage the situation between numa and kyungsoon.,prova a sistemare le cose tra numa e kyungsoon.,"spróbuj uratować sytuację między num, a kyungsoon.",intentar arreglar la situación entre numa y kyungsoon.,尝试挽回纽玛和京纯的关系,tentar salvar a situação entre a numa e kyungsoon.,trata de salvar la situación entre numa y kyungsoon.
 find two batteries for sean.,find two batteries for sean.,trova due batterie per sean.,znajdź dwie baterie dla seana.,encontrar dos pilas para sean.,为肖恩找两个AA电池,ache duas pilhas para o sean.,encuentra dos pilas para sean.
 invite everyone to the everything slam.,invite everyone to the everything slam.,invita tutti all\'evento supremo.,"zaproś wszystkich na \""wszystko-slam\"".",invitar a todo el mundo al multicertamen.,邀请所有人参加啥都友会,convide todo mundo para o slam de tudo.,invita a todo el mundo al multicertamen.
 ring the bell to start the everything slam.,ring the bell to start the everything slam.,suona la campana per dare il via all\'evento.,"zadzwoń dzwonem, aby rozpocząć \""wszystko-slam\""",tocar la campana para que comience el multicertamen.,敲钟以开始啥都友会,toque o sino para começar o slam.,toca la campana para empezar el multicertamen.
-find elijah\'s poem!,find elijah\'s poem!,trova la poesia di elijah!,znajdź wiersz elijaha!,¡encontrar el poema de elijah!,找到伊莱贾的诗！,ache o poema do elijah!,¡encuentra el poema de elijah!
+find elijah's poem!,find elijah's poem!,trova la poesia di elijah!,znajdź wiersz elijaha!,¡encontrar el poema de elijah!,找到伊莱贾的诗！,ache o poema do elijah!,¡encuentra el poema de elijah!
 find a source of light so you can work on the electrical box.,find a source of light so you can work on the electrical box.,trova una fonte di luce per aggiustare il quadro elettrico.,"znajdź źródło światła, żeby móc pracować przy skrzynce rozdzielczej.",encontrar una fuente de luz para ver el cuadro eléctrico.,找到一个光源以便在电箱工作,ache uma fonte de luz para que você possa arrumar a caixa elétrica.,encuentra una fuente de luz para poder trabajar en la caja eléctrica.
-find and return natalie\'s draw-a-paw.,find and return natalie\'s draw-a-paw.,trova e resitituisci la lavagnetta di natalie.,znajdź i zwróć zni-[i]kot[/i]-pis natalie.,encontrar el telesketch de natalie y devolvérselo.,寻找并归还娜塔莉的爪机绘画玩具,ache e devolva o traço mágico da natalie,encuentra y devuélvele su pizarra a natalie.
+find and return natalie's draw-a-paw.,find and return natalie's draw-a-paw.,trova e resitituisci la lavagnetta di natalie.,znajdź i zwróć zni-[i]kot[/i]-pis natalie.,encontrar el telesketch de natalie y devolvérselo.,寻找并归还娜塔莉的爪机绘画玩具,ache e devolva o traço mágico da natalie,encuentra y devuélvele su pizarra a natalie.

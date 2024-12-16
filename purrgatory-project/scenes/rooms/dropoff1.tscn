@@ -44,7 +44,6 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="dropoff_fence" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 0, -66 )
 script = ExtResource( 6 )
 dialog_label = "dropoff_fence"
@@ -53,7 +52,6 @@ dialog_label = "dropoff_fence"
 polygon = PoolVector2Array( 160.801, 396.716, 160.102, 412.777, 173.371, 416.269, 173.371, 602.027, 578.407, 602.027, 575.973, 438.929, 575.614, 414.873, 591.676, 414.873, 588.883, 387.637, 190.829, 389.034 )
 
 [node name="dropoff_rope" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 visible = false
 position = Vector2( 0, -66 )
 script = ExtResource( 6 )
@@ -64,7 +62,6 @@ position = Vector2( 77.1639, 80.5934 )
 polygon = PoolVector2Array( 227.341, 575.131, 242.086, 595.149, 277.926, 614.57, 520.564, 615.428, 522.279, 578.561, 550.572, 558.841, 523.993, 524.546, 467.964, 553.126, 367.787, 530.203, 275.606, 545.567 )
 
 [node name="dropoff_rope2" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 visible = false
 position = Vector2( 0, -66 )
 script = ExtResource( 6 )
@@ -79,7 +76,6 @@ position = Vector2( 317.774, 110.192 )
 polygon = PoolVector2Array( 247.463, 586.666, 283.292, 586.79, 299.874, 568.753, 335.035, 556.812, 325.084, 584.675, 439.192, 587.329, 438.529, 550.177, 453.124, 507.719, 446.32, 481.686, 413.158, 480.711, 417.06, 503.631, 407.348, 524.967, 354.274, 517.67, 282.625, 534.919 )
 
 [node name="dropoff_plank" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -185.06, -73.6817 )
 script = ExtResource( 6 )
 dialog_label = "dropoff_plank"
@@ -89,7 +85,6 @@ position = Vector2( 77.1639, 79.9947 )
 polygon = PoolVector2Array( 227.35, 577.497, 317.16, 623.001, 494.387, 622.403, 306.982, 536.783, 225.553, 564.325 )
 
 [node name="dropoff_dropoff" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 visible = false
 position = Vector2( 0, -66 )
 script = ExtResource( 7 )
@@ -115,7 +110,6 @@ modulate = Color( 0, 0, 0, 0.15 )
 polygon = PoolVector2Array( 197.587, 578.423, 225.396, 561.313, 549.162, 560.784, 548.82, 588.844, 196.763, 588.844 )
 
 [node name="dropoff_again" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 0, -66 )
 script = ExtResource( 6 )
 dialog_label = "tori_climb_again"
@@ -163,7 +157,6 @@ animation1 = ExtResource( 14 )
 animation2 = ExtResource( 15 )
 
 [node name="cant_leave" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 visible = false
 position = Vector2( 0, -66 )
 script = ExtResource( 6 )
@@ -174,7 +167,6 @@ position = Vector2( -465.02, -225.018 )
 polygon = PoolVector2Array( 465.026, 1011.01, 1745.01, 1011.01, 1745.02, 923.026, 465.007, 923.014 )
 
 [node name="exit" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -465.02, -291.018 )
 script = ExtResource( 7 )
 __meta__ = {

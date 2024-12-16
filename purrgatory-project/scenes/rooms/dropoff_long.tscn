@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/dropoff_long.gd" type="Script" id=2]
@@ -18,9 +18,7 @@
 [ext_resource path="res://assets/sprites/tori_dropoff3_3.png" type="Texture" id=16]
 [ext_resource path="res://assets/ui/climb_ui_box.png" type="Texture" id=17]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=18]
-[ext_resource path="res://scripts/TranslatedLabel.gd" type="Script" id=19]
 [ext_resource path="res://assets/ui/climb_dialog.png" type="Texture" id=20]
-[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=21]
 [ext_resource path="res://assets/audio/wood_creak1.wav" type="AudioStream" id=22]
 [ext_resource path="res://assets/audio/wood_creak2.wav" type="AudioStream" id=23]
 [ext_resource path="res://assets/audio/wood_creak3.wav" type="AudioStream" id=24]
@@ -73,12 +71,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [ true, false ]
 }
-
-[sub_resource type="DynamicFont" id=7]
-size = 22
-use_filter = true
-extra_spacing_space = 1
-font_data = ExtResource( 21 )
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -218,15 +210,12 @@ theme = ExtResource( 18 )
 text = "press up repeatedly to hold on!!"
 align = 1
 valign = 1
-script = ExtResource( 19 )
-translations = [ "¡pulsa [arriba] para no caerte!", "反复按上键以坚持！！" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/_game/Label"]
 autoplay = "blink"
 anims/blink = SubResource( 6 )
 
 [node name="_dialog" type="Control" parent="state_handler"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 mouse_filter = 2
@@ -244,14 +233,13 @@ texture = ExtResource( 20 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/0"]
 margin_left = 18.0
-margin_top = 101.0
+margin_top = 65.0
 margin_right = 323.0
-margin_bottom = 135.0
+margin_bottom = 172.0
 text = "just hang on!"
 align = 1
 valign = 1
-script = ExtResource( 19 )
-translations = [ "¡aguanta ahí!", "你就坚持一下！" ]
+autowrap = true
 
 [node name="1" type="TextureRect" parent="state_handler/_dialog"]
 visible = false
@@ -265,15 +253,14 @@ texture = ExtResource( 20 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/1"]
 margin_left = 320.0
-margin_top = 101.0
+margin_top = 58.0
 margin_right = 622.0
-margin_bottom = 135.0
+margin_bottom = 179.0
 rect_scale = Vector2( -1, 1 )
 text = "why are you so heavy??"
 align = 1
 valign = 1
-script = ExtResource( 19 )
-translations = [ "¡¿cómo pesas tanto?!", "你为什么这么重？？" ]
+autowrap = true
 
 [node name="2" type="TextureRect" parent="state_handler/_dialog"]
 visible = false
@@ -286,16 +273,15 @@ mouse_filter = 2
 texture = ExtResource( 20 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/2"]
-margin_left = 321.36
-margin_top = 133.935
-margin_right = 623.36
-margin_bottom = 167.935
+margin_left = 321.0
+margin_top = 166.0
+margin_right = 623.0
+margin_bottom = 265.0
 rect_scale = Vector2( -1, -1 )
 text = "i'm sorry i guess??"
 align = 1
 valign = 1
-script = ExtResource( 19 )
-translations = [ "¡pues perdóname!", "我很抱歉？？" ]
+autowrap = true
 
 [node name="6" type="TextureRect" parent="state_handler/_dialog/2"]
 margin_left = 472.553
@@ -308,15 +294,14 @@ texture = ExtResource( 20 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/2/6"]
 margin_left = 320.0
-margin_top = 101.0
+margin_top = 65.0
 margin_right = 622.0
-margin_bottom = 135.0
+margin_bottom = 172.0
 rect_scale = Vector2( -1, 1 )
 text = "why are you so heavy??"
 align = 1
 valign = 1
-script = ExtResource( 19 )
-translations = [ "¡¿cómo pesas tanto?!", "你为什么这么重？？" ]
+autowrap = true
 
 [node name="3" type="TextureRect" parent="state_handler/_dialog"]
 visible = false
@@ -329,18 +314,15 @@ mouse_filter = 2
 texture = ExtResource( 20 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/3"]
-margin_left = 17.8337
-margin_top = 82.5047
-margin_right = 321.834
-margin_bottom = 153.505
-custom_constants/line_spacing = -6
-custom_fonts/font = SubResource( 7 )
+margin_left = 18.0
+margin_top = 61.0
+margin_right = 322.0
+margin_bottom = 180.0
+custom_constants/line_spacing = 0
 text = "least i'm getting my arm workout for the day..."
 align = 1
 valign = 1
 autowrap = true
-script = ExtResource( 19 )
-translations = [ "esto cuenta como día de brazo...", "至少我今天胳膊锻炼量有了…" ]
 
 [node name="4" type="TextureRect" parent="state_handler/_dialog"]
 visible = false
@@ -354,17 +336,17 @@ texture = ExtResource( 20 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/4"]
 margin_left = 320.0
-margin_top = 101.0
+margin_top = 57.0
 margin_right = 622.0
-margin_bottom = 135.0
+margin_bottom = 180.0
 rect_scale = Vector2( -1, 1 )
 text = "you okay down there??"
 align = 1
 valign = 1
-script = ExtResource( 19 )
-translations = [ "¡¿estás bien?!", "你在下面没事吗？？" ]
+autowrap = true
 
 [node name="5" type="TextureRect" parent="state_handler/_dialog"]
+visible = false
 margin_left = 1070.66
 margin_top = 642.476
 margin_right = 1412.66
@@ -374,39 +356,15 @@ mouse_filter = 2
 texture = ExtResource( 20 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/5"]
-margin_left = 320.0
-margin_top = 166.243
-margin_right = 626.0
-margin_bottom = 237.243
+margin_left = 316.0
+margin_top = 182.0
+margin_right = 608.0
+margin_bottom = 311.0
 rect_scale = Vector2( -1, -1 )
-text = "what sort of a "
+text = "what sort of a question is that??"
 align = 1
 valign = 1
-script = ExtResource( 19 )
-translations = [ "¡¿qué clase de", "" ]
-
-[node name="Label2" type="Label" parent="state_handler/_dialog/5"]
-margin_left = 320.0
-margin_top = 140.396
-margin_right = 626.0
-margin_bottom = 211.396
-rect_scale = Vector2( -1, -1 )
-text = "question is that??"
-align = 1
-valign = 1
-script = ExtResource( 19 )
-translations = [ "pregunta es esa?!", "" ]
-
-[node name="Label3" type="Label" parent="state_handler/_dialog/5"]
-margin_left = 320.0
-margin_top = 152.476
-margin_right = 626.0
-margin_bottom = 223.476
-rect_scale = Vector2( -1, -1 )
-align = 1
-valign = 1
-script = ExtResource( 19 )
-translations = [ "", "那是什么样的问题啦？？" ]
+autowrap = true
 
 [node name="6" type="TextureRect" parent="state_handler/_dialog/5"]
 margin_left = 472.553
@@ -419,15 +377,14 @@ texture = ExtResource( 20 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/5/6"]
 margin_left = 320.0
-margin_top = 101.0
+margin_top = 61.0
 margin_right = 622.0
-margin_bottom = 135.0
+margin_bottom = 176.0
 rect_scale = Vector2( -1, 1 )
 text = "you okay down there??"
 align = 1
 valign = 1
-script = ExtResource( 19 )
-translations = [ "¡¿estás bien?!", "你在下面没事吗？？" ]
+autowrap = true
 
 [node name="6" type="TextureRect" parent="state_handler/_dialog"]
 visible = false
@@ -440,17 +397,15 @@ mouse_filter = 2
 texture = ExtResource( 20 )
 
 [node name="Label" type="Label" parent="state_handler/_dialog/6"]
-margin_left = 17.8337
-margin_top = 82.5047
-margin_right = 321.834
-margin_bottom = 153.505
+margin_left = 18.0
+margin_top = 71.0
+margin_right = 322.0
+margin_bottom = 166.0
 custom_constants/line_spacing = -6
 text = "almost there!!"
 align = 1
 valign = 1
 autowrap = true
-script = ExtResource( 19 )
-translations = [ "¡ya casi estás!", "快了！！" ]
 
 [node name="_creaks" type="Node" parent="state_handler"]
 

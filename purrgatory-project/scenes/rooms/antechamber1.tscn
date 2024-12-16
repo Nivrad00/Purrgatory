@@ -577,7 +577,6 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="welcome_sign" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -172.62, 3.49905 )
 script = ExtResource( 4 )
 dialog_label = "welcome_sign"
@@ -587,7 +586,6 @@ position = Vector2( 605.999, 3.99997 )
 polygon = PoolVector2Array( 266, 293, 264, 359.999, 412.314, 361.822, 415.999, 270, 292, 271 )
 
 [node name="exit" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 453.085, -178.215 )
 script = ExtResource( 5 )
 __meta__ = {
@@ -599,7 +597,6 @@ room_label = "antechamber2"
 polygon = PoolVector2Array( -112.086, 729.214, 198.914, 752.214, 198.914, 271.215, -115.086, 305.215 )
 
 [node name="exit_dialog" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 visible = false
 position = Vector2( 453.085, -178.215 )
 script = ExtResource( 4 )
@@ -632,7 +629,6 @@ position = Vector2( 53.6617, 101.443 )
 texture = ExtResource( 11 )
 
 [node name="lucifur_extra" type="Control" parent="state_handler"]
-editor/display_folded = true
 visible = false
 margin_left = 451.0
 margin_top = 192.0
@@ -642,7 +638,6 @@ rect_scale = Vector2( -1, 1 )
 mouse_filter = 2
 
 [node name="trident" type="Sprite" parent="state_handler/lucifur_extra"]
-editor/display_folded = true
 position = Vector2( 145, 183.222 )
 texture = ExtResource( 12 )
 
@@ -690,7 +685,6 @@ stream = ExtResource( 18 )
 volume_db = 5.0
 
 [node name="portal" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 visible = false
 position = Vector2( 1005.95, 345.892 )
 script = ExtResource( 4 )
@@ -705,7 +699,6 @@ position = Vector2( 15.9611, -520.608 )
 polygon = PoolVector2Array( -144.025, 802.17, 139.398, 818.499, 242.037, 551.405, 156.893, 292.475, -115.086, 305.215, -165.019, 449.933, -169.685, 547.906, -207.008, 546.74 )
 
 [node name="sprite" type="Node2D" parent="state_handler/portal"]
-editor/display_folded = true
 position = Vector2( -1032.47, -450.424 )
 scale = Vector2( 1, 1.3 )
 
@@ -748,10 +741,10 @@ margin_bottom = 720.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
+
 [connection signal="pressed" from="state_handler/lucifur" to="state_handler/lucifur" method="_on_char_obj_button_pressed"]
 [connection signal="animation_finished" from="state_handler/lucifur_extra/AnimationPlayer" to="state_handler" method="animation_finished"]
 [connection signal="pressed" from="state_handler/poof_cover" to="state_handler" method="_on_poof_cover_pressed"]
 
 [editable path="state_handler/portal/sprite/portal_sprite2"]
-
 [editable path="state_handler/portal/sprite/portal_sprite"]

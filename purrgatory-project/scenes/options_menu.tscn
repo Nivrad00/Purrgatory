@@ -159,17 +159,16 @@ align = 2
 [node name="language" type="MarginContainer" parent="language"]
 margin_left = -16.0
 margin_top = 30.0
-margin_right = 258.0
-margin_bottom = 73.0
+margin_right = 270.0
+margin_bottom = 66.0
 custom_constants/margin_left = 18
 
 [node name="dropdown" type="OptionButton" parent="language/language"]
 margin_left = 18.0
-margin_right = 258.0
+margin_right = 286.0
 margin_bottom = 43.0
-rect_min_size = Vector2( 240, 43 )
+rect_min_size = Vector2( 268, 43 )
 focus_mode = 0
-size_flags_horizontal = 0
 theme = ExtResource( 7 )
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
