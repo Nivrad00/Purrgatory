@@ -527,7 +527,6 @@ margin_right = 1075.0
 margin_bottom = 464.0
 
 [node name="name_input" type="Control" parent="content/ui"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 299.0
@@ -626,9 +625,27 @@ script = ExtResource( 88 )
 [node name="custom2" type="Label" parent="content/ui/name_input/pronouns"]
 margin_left = 624.393
 margin_top = 18.5625
-margin_right = 711.393
+margin_right = 739.393
 margin_bottom = 52.5625
 text = "PRONOUN4"
+
+[node name="polish_gender_x" type="CheckBox" parent="content/ui/name_input/pronouns"]
+visible = false
+margin_left = 560.0
+margin_top = -3.0
+margin_right = 724.0
+margin_bottom = 71.0
+focus_mode = 0
+enabled_focus_mode = 0
+group = ExtResource( 16 )
+
+[node name="polish_gender_x2" type="Label" parent="content/ui/name_input/pronouns"]
+visible = false
+margin_left = 624.393
+margin_top = 18.5625
+margin_right = 739.393
+margin_bottom = 52.5625
+text = "onx/jex"
 
 [node name="ok_button" type="Button" parent="content/ui/name_input"]
 anchor_left = 1.0
@@ -678,6 +695,7 @@ margin_bottom = -180.465
 script = ExtResource( 19 )
 
 [node name="0" type="Control" parent="content/ui/name_input/custom_pronouns/inputs"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 

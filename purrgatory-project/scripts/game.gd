@@ -289,17 +289,19 @@ func start_dialog(label, blackout_label=null):
 	if text != null:
 		text = format_text(text)
 	
+	# this isn't DRY btw, replicated below twice
 	var speaker = block['speaker'][Language.language]
 	if speaker != null:
 		var speaker_format_dict = { }
 		
+		# this turns "{tori}" into either "tori" or "???" depending on if you've met tori
 		for key in ['tori', 'sean', 'elijah', 'numa', '托丽', '肖恩', '伊莱贾', '纽玛']:
-			if Language.language == 1:
+			if Language.language == 1 or Language.language == 6:
 				speaker_format_dict[key] = '¿¿??'
 			else:
 				speaker_format_dict[key] = '???'
 		
-		# spanish and english names are the same, but chinese names aren't
+		# chinese is the only translation so far with unique names
 		if state.get('met_tori'):
 			speaker_format_dict['托丽'] = '托丽'
 			speaker_format_dict['tori'] = 'tori'
@@ -315,10 +317,14 @@ func start_dialog(label, blackout_label=null):
 				
 		speaker = speaker.format(speaker_format_dict)
 		
+		# "you" is used even in foreign language translations to denote "replace with player's name"
+		# however, in the very first part of the game before the player inputs their name, "you" must be translated (eg. to "tú")
+		# note, the european spanish and chinese translations have "you" manually translated in the dialog
+		# however, all the languages after that will have it done automatically with tr()
 		if speaker == 'you' and format_dict['player']:
-			# "you" is used even in foreign language translations to denote "replace with player's name"
-			# however, in the very first part of the game before the player inputs their name, "you" must be translated (eg. to "tú")
 			speaker = format_dict['player']
+		else:
+			speaker = tr("you")
 
 	ui.update_ui(speaker, block['sprites'], text, choices_text)
 	
@@ -404,17 +410,19 @@ func update_dialog(b: int):
 		if text != null:
 			text = format_text(text)
 
+		# this isn't DRY btw, replicated above once and below once
 		var speaker = block['speaker'][Language.language]
 		if speaker != null:
 			var speaker_format_dict = { }
 			
+			# this turns "{tori}" into either "tori" or "???" depending on if you've met tori
 			for key in ['tori', 'sean', 'elijah', 'numa', '托丽', '肖恩', '伊莱贾', '纽玛']:
-				if Language.language == 1:
+				if Language.language == 1 or Language.language == 6:
 					speaker_format_dict[key] = '¿¿??'
 				else:
 					speaker_format_dict[key] = '???'
 			
-			# spanish and english names are the same, but chinese names aren't
+			# chinese is the only translation so far with unique names
 			if state.get('met_tori'):
 				speaker_format_dict['托丽'] = '托丽'
 				speaker_format_dict['tori'] = 'tori'
@@ -430,8 +438,14 @@ func update_dialog(b: int):
 					
 			speaker = speaker.format(speaker_format_dict)
 			
+			# "you" is used even in foreign language translations to denote "replace with player's name"
+			# however, in the very first part of the game before the player inputs their name, "you" must be translated (eg. to "tú")
+			# note, the european spanish and chinese translations have "you" manually translated in the dialog
+			# however, all the languages after that will have it done automatically with tr()
 			if speaker == 'you' and format_dict['player']:
 				speaker = format_dict['player']
+			else:
+				speaker = tr("you")
 	
 		ui.update_ui(speaker, block['sprites'], text, choices_text)
 		
@@ -505,7 +519,7 @@ func format_text(text):
 	
 	# additional chinese
 	elif Language.language == 2:
-		# ensuring older versions of purrgatory get updated with spanish equivalents
+		# ensuring older versions of purrgatory get updated with chinese equivalents
 		if not format_dict.get('ta'):
 			if 'they' in format_dict and format_dict['they'].length() > 0:
 				if format_dict['they'] == 'he':
@@ -514,9 +528,39 @@ func format_text(text):
 					format_dict['ta'] = '她'
 				else:
 					format_dict['ta'] = 'ta'
-			
 	# there is no additional formatting needed in chinese. yay for non-gendered languages!
 	
+	# languages after this point only use the english variables to determine gender: _pronouns_they, _pronouns_she, _pronouns_he, and _pronouns_custom 
+	# except for polish which has an additional option, _polish_gender_x, which turns neuter words into -x words
+	# this ensures languages after this point are back-compatible with old purrgatory saves
+	
+	# italian, portuguese, and latin american spanish
+	elif Language.language in [3, 5, 6]:
+		var regex = RegEx.new()
+		regex.compile('{([^/]*)/([^/]*)/([^}]*)}')
+		
+		if state.get('_pronouns_he'):
+			text = regex.sub(text, '$1', true)
+		elif state.get('_pronouns_she'):
+			text = regex.sub(text, '$2', true)
+		elif state.get('_pronouns_they') or state.get('_pronouns_custom'):
+			text = regex.sub(text, '$3', true)
+	
+	# polish
+	elif Language.language == 4:
+		var regex = RegEx.new()
+		regex.compile('{([^/]*)/([^/]*)/([^}]*)/([^}]*)}')
+		
+		if state.get('_pronouns_he'):
+			text = regex.sub(text, '$1', true)
+		elif state.get('_pronouns_she'):
+			text = regex.sub(text, '$2', true)
+		elif state.get('_pronouns_they') or state.get('_pronouns_custom'):
+			if state.get('_polish_gender_x'):
+				text = regex.sub(text, '$4', true)
+			else:
+				text = regex.sub(text, '$3', true)
+		
 	return text
 	
 func _on_language_changed(lang):
@@ -531,18 +575,19 @@ func _on_language_changed(lang):
 		if text != null:
 			text = format_text(text)
 	
-		var speaker = block['speaker'][lang]
-		
+		# this isn't DRY btw, replicated above twice
+		var speaker = block['speaker'][Language.language]
 		if speaker != null:
 			var speaker_format_dict = { }
 			
+			# this turns "{tori}" into either "tori" or "???" depending on if you've met tori
 			for key in ['tori', 'sean', 'elijah', 'numa', '托丽', '肖恩', '伊莱贾', '纽玛']:
-				if Language.language == 1:
+				if Language.language == 1 or Language.language == 6:
 					speaker_format_dict[key] = '¿¿??'
 				else:
 					speaker_format_dict[key] = '???'
 			
-			# spanish and english names are the same, but chinese names aren't
+			# chinese is the only translation so far with unique names
 			if state.get('met_tori'):
 				speaker_format_dict['托丽'] = '托丽'
 				speaker_format_dict['tori'] = 'tori'
@@ -558,8 +603,14 @@ func _on_language_changed(lang):
 					
 			speaker = speaker.format(speaker_format_dict)
 			
+			# "you" is used even in foreign language translations to denote "replace with player's name"
+			# however, in the very first part of the game before the player inputs their name, "you" must be translated (eg. to "tú")
+			# note, the european spanish and chinese translations have "you" manually translated in the dialog
+			# however, all the languages after that will have it done automatically with tr()
 			if speaker == 'you' and format_dict['player']:
 				speaker = format_dict['player']
+			else:
+				speaker = tr("you")
 	
 		ui.update_ui(speaker, null, text, choices_text)
 	
@@ -585,6 +636,7 @@ func set_player_name():
 			# chinese pronouns
 			# everything in chinese can be handled with just one pronoun, woohoo!
 			format_dict['ta'] = 'ta'
+			# remaining languages are based on the english variables
 
 		elif ui.get_node('name_input/pronouns/she').pressed:
 			state['_pronouns_she'] = true
@@ -597,6 +649,7 @@ func set_player_name():
 			state['_pronombre_ella'] = true
 			# chinese pronouns
 			format_dict['ta'] = '她'
+			# remaining languages are based on the english variables
 
 		elif ui.get_node('name_input/pronouns/he').pressed:
 			state['_pronouns_he'] = true
@@ -609,6 +662,7 @@ func set_player_name():
 			state['_pronombre_el'] = true
 			# chinese pronouns
 			format_dict['ta'] = '他'
+			# remaining languages are based on the english variables
 
 		elif ui.get_node('name_input/pronouns/custom').pressed:
 			# if custom pronouns are entered in english...
@@ -624,6 +678,7 @@ func set_player_name():
 				state['_pronombre_elle'] = true
 				# ...and the chinese version is automatically set to ta
 				format_dict['ta'] = 'ta'
+				# (and the remaining languages know to use the neutral version)
 				
 			# and if a custom pronoun is entered in spanish...
 			elif Language.language == 1:
@@ -642,6 +697,22 @@ func set_player_name():
 				format_dict['themself'] = 'themself'
 				# ...and the chinese version is automatically set to ta
 				format_dict['ta'] = 'ta'
+				
+			# the remaining languages don't have a custom button
+			# chinese used to, but i think... i never hooked it up? so it never worked? LOL
+			
+		elif ui.get_node('name_input/pronouns/polish_gender_x').pressed:
+			# polish is the only language with four preset options, so it needs its own button
+			# it's almost identical to the they/them button, except for the _polish_gender_x state
+			state['_pronouns_they'] = true
+			format_dict['they'] = 'they'
+			format_dict['them'] = 'them'
+			format_dict['their'] = 'their'
+			format_dict['theirs'] = 'theirs'
+			format_dict['themself'] = 'themself'
+			state['_pronombre_elle'] = true
+			format_dict['ta'] = 'ta'
+			state['_polish_gender_x'] = true
 			
 		ui.get_node('name_input').hide()
 		ui.get_node('text_box').disabled = false
