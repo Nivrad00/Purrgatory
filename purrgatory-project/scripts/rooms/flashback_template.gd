@@ -24,7 +24,10 @@ func _ready():
 	$next_button.hide()
 	$wake_up_cover.hide()
 	format_text()
-	
+
+# please note that all translations are implemented manually (eg. i copy-and-paste in all the translated texts)
+# using the translatednode.gd class
+# i could have changed it to be automatic and saved myself a lot of work, but i was afraid to touch this code
 func next():
 	# if the previous line of text was a choice, turn off the button so it doesn't cause highlighting, and save the choice
 	var olds = []
@@ -159,7 +162,7 @@ func show_next_button(what = null):
 		return
 	$next_button.modulate.a = 0
 	# idk why this line is necessary but it was manually resetting the text, so i'm just gonna keep it but with multiple languages
-	$next_button.get_node('text').update_label(Language.language)
+	# $next_button.get_node('text').update_label(Language.language) # next button is now automatically translated
 	$next_button.show()
 	$next_button.get_node('AnimationPlayer').play("Fadein")
 
