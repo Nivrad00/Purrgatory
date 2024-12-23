@@ -7349,7 +7349,7 @@ var raw_blocks = [
 ["","tori","","...","","","","","",""],
 ["","","","ho baciato tanti ragazzi, ma mai una ragazza.","","","","","",""],
 ["","you","","awwwwwwwwwwwwwww","","_pronouns_she",['tori_life1', 'tori_life2'],"","",""],
-["tori_life1","","","_pass","","","","",['vorresti... provare?', 'mi spiace'],['tori_life1a', 'tori_life2']],
+["tori_life1","","","","","","","",['vorresti... provare?', 'mi spiace'],['tori_life1a', 'tori_life2']],
 ["tori_life1a","you","","vorresti... provare?","","","","","",""],
 ["","tori","","cosa, con te?","","","","","",""],
 ["","you","","vuoi?","","","","","",""],

@@ -194,7 +194,7 @@ func show_custom():
 	var current_quip = available_quips[randi() % available_quips.size()]
 	
 	$text_size/preview_a.set_text(tr(current_quip[0]))
-	$text_size/preview_b.set_bbcode(tr(current_quip[1]))
+	$text_size/preview_b.set_bbcode(get_node('/root/main/game').format_text(tr(current_quip[1])))
 	
 	load_options()
 	show()
@@ -211,7 +211,7 @@ func _on_language_changed(lang):
 	var current_quip = available_quips[randi() % available_quips.size()]
 	
 	$text_size/preview_a.set_text(tr(current_quip[0]))
-	$text_size/preview_b.set_bbcode(tr(current_quip[1]))
+	$text_size/preview_b.set_bbcode(get_node('/root/main/game').format_text(tr(current_quip[1])))
 	
 func change_volume(bus, volume):
 	var db = math(volume)

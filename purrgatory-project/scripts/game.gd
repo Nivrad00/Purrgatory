@@ -289,43 +289,10 @@ func start_dialog(label, blackout_label=null):
 	if text != null:
 		text = format_text(text)
 	
-	# this isn't DRY btw, replicated below twice
 	var speaker = block['speaker'][Language.language]
 	if speaker != null:
-		var speaker_format_dict = { }
+		speaker = format_speaker(speaker)
 		
-		# this turns "{tori}" into either "tori" or "???" depending on if you've met tori
-		for key in ['tori', 'sean', 'elijah', 'numa', '托丽', '肖恩', '伊莱贾', '纽玛']:
-			if Language.language == 1 or Language.language == 6:
-				speaker_format_dict[key] = '¿¿??'
-			else:
-				speaker_format_dict[key] = '???'
-		
-		# chinese is the only translation so far with unique names
-		if state.get('met_tori'):
-			speaker_format_dict['托丽'] = '托丽'
-			speaker_format_dict['tori'] = 'tori'
-		if state.get('met_sean'):
-			speaker_format_dict['肖恩'] = '肖恩'
-			speaker_format_dict['sean'] = 'sean'
-		if state.get('met_elijah'):
-			speaker_format_dict['伊莱贾'] = '伊莱贾'
-			speaker_format_dict['elijah'] = 'elijah'
-		if state.get('met_numa'):
-			speaker_format_dict['纽玛'] = '纽玛'
-			speaker_format_dict['numa'] = 'numa'
-				
-		speaker = speaker.format(speaker_format_dict)
-		
-		# "you" is used even in foreign language translations to denote "replace with player's name"
-		# however, in the very first part of the game before the player inputs their name, "you" must be translated (eg. to "tú")
-		# note, the european spanish and chinese translations have "you" manually translated in the dialog
-		# however, all the languages after that will have it done automatically with tr()
-		if speaker == 'you' and format_dict['player']:
-			speaker = format_dict['player']
-		else:
-			speaker = tr("you")
-
 	ui.update_ui(speaker, block['sprites'], text, choices_text)
 	
 	for pair in block['states']:
@@ -337,6 +304,52 @@ func start_dialog(label, blackout_label=null):
 		
 	room.stop_all_hovering()
 
+func format_speaker(speaker):
+	# first, turn "{name}" into either "name" or "???" depending on if you've met that character
+	var speaker_format_dict = { }
+	
+	# chinese is written out bc this used to be manual, but even if we only had english in this list
+	# it would still be automatically translated to chinese by the tr() function below
+	for key in ['tori', 'sean', 'elijah', 'numa', '托丽', '肖恩', '伊莱贾', '纽玛']:
+		if Language.language == 1 or Language.language == 6:
+			speaker_format_dict[key] = '¿¿??'
+		else:
+			speaker_format_dict[key] = '???'
+	
+	if state.get('met_tori'):
+		speaker_format_dict['托丽'] = '托丽'
+		speaker_format_dict['tori'] = 'tori'
+	if state.get('met_sean'):
+		speaker_format_dict['肖恩'] = '肖恩'
+		speaker_format_dict['sean'] = 'sean'
+	if state.get('met_elijah'):
+		speaker_format_dict['伊莱贾'] = '伊莱贾'
+		speaker_format_dict['elijah'] = 'elijah'
+	if state.get('met_numa'):
+		speaker_format_dict['纽玛'] = '纽玛'
+		speaker_format_dict['numa'] = 'numa'
+			
+	speaker = speaker.format(speaker_format_dict)
+	
+	# next, "you" is used even in foreign language translations to denote "replace with player's name"
+	# however, in the very first part of the game before the player inputs their name, "you" must be translated (eg. to "tú")
+	# note, the european spanish and chinese translations have "you" manually translated in the dialog
+	# however, all the languages after that will have it done automatically with tr()
+	if speaker == 'you':
+		if format_dict['player']:
+			speaker = format_dict['player']
+		else:
+			speaker = tr("you")
+	
+	# finally, make any other replacements needed
+	# the only ones that should be relevant are "receptionist," "operator," and "cat"
+	# note, the european spanish and chinese translations have these manually translated in the dialog
+	else:
+		speaker = tr(speaker)
+	
+	return speaker
+	
+	
 func end_dialog():
 	ui.hide_ui()
 	$meta_ui/history_button2.show()
@@ -410,42 +423,9 @@ func update_dialog(b: int):
 		if text != null:
 			text = format_text(text)
 
-		# this isn't DRY btw, replicated above once and below once
 		var speaker = block['speaker'][Language.language]
 		if speaker != null:
-			var speaker_format_dict = { }
-			
-			# this turns "{tori}" into either "tori" or "???" depending on if you've met tori
-			for key in ['tori', 'sean', 'elijah', 'numa', '托丽', '肖恩', '伊莱贾', '纽玛']:
-				if Language.language == 1 or Language.language == 6:
-					speaker_format_dict[key] = '¿¿??'
-				else:
-					speaker_format_dict[key] = '???'
-			
-			# chinese is the only translation so far with unique names
-			if state.get('met_tori'):
-				speaker_format_dict['托丽'] = '托丽'
-				speaker_format_dict['tori'] = 'tori'
-			if state.get('met_sean'):
-				speaker_format_dict['肖恩'] = '肖恩'
-				speaker_format_dict['sean'] = 'sean'
-			if state.get('met_elijah'):
-				speaker_format_dict['伊莱贾'] = '伊莱贾'
-				speaker_format_dict['elijah'] = 'elijah'
-			if state.get('met_numa'):
-				speaker_format_dict['纽玛'] = '纽玛'
-				speaker_format_dict['numa'] = 'numa'
-					
-			speaker = speaker.format(speaker_format_dict)
-			
-			# "you" is used even in foreign language translations to denote "replace with player's name"
-			# however, in the very first part of the game before the player inputs their name, "you" must be translated (eg. to "tú")
-			# note, the european spanish and chinese translations have "you" manually translated in the dialog
-			# however, all the languages after that will have it done automatically with tr()
-			if speaker == 'you' and format_dict['player']:
-				speaker = format_dict['player']
-			else:
-				speaker = tr("you")
+			speaker = format_speaker(speaker)
 	
 		ui.update_ui(speaker, block['sprites'], text, choices_text)
 		
@@ -575,42 +555,9 @@ func _on_language_changed(lang):
 		if text != null:
 			text = format_text(text)
 	
-		# this isn't DRY btw, replicated above twice
 		var speaker = block['speaker'][Language.language]
 		if speaker != null:
-			var speaker_format_dict = { }
-			
-			# this turns "{tori}" into either "tori" or "???" depending on if you've met tori
-			for key in ['tori', 'sean', 'elijah', 'numa', '托丽', '肖恩', '伊莱贾', '纽玛']:
-				if Language.language == 1 or Language.language == 6:
-					speaker_format_dict[key] = '¿¿??'
-				else:
-					speaker_format_dict[key] = '???'
-			
-			# chinese is the only translation so far with unique names
-			if state.get('met_tori'):
-				speaker_format_dict['托丽'] = '托丽'
-				speaker_format_dict['tori'] = 'tori'
-			if state.get('met_sean'):
-				speaker_format_dict['肖恩'] = '肖恩'
-				speaker_format_dict['sean'] = 'sean'
-			if state.get('met_elijah'):
-				speaker_format_dict['伊莱贾'] = '伊莱贾'
-				speaker_format_dict['elijah'] = 'elijah'
-			if state.get('met_numa'):
-				speaker_format_dict['纽玛'] = '纽玛'
-				speaker_format_dict['numa'] = 'numa'
-					
-			speaker = speaker.format(speaker_format_dict)
-			
-			# "you" is used even in foreign language translations to denote "replace with player's name"
-			# however, in the very first part of the game before the player inputs their name, "you" must be translated (eg. to "tú")
-			# note, the european spanish and chinese translations have "you" manually translated in the dialog
-			# however, all the languages after that will have it done automatically with tr()
-			if speaker == 'you' and format_dict['player']:
-				speaker = format_dict['player']
-			else:
-				speaker = tr("you")
+			speaker = format_speaker(speaker)
 	
 		ui.update_ui(speaker, null, text, choices_text)
 	

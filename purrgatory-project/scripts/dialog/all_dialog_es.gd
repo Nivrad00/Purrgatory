@@ -7349,7 +7349,7 @@ var raw_blocks = [
 ["","tori","","...","","","","","",""],
 ["","","","he besado a una cantidad considerable de tíos, pero nunca a una chica.","","","","","",""],
 ["","you","","aaaaaaaaaay","","_pronouns_she",['tori_life1', 'tori_life2'],"","",""],
-["tori_life1","","","_pass","","","","",['¿quieres... probar?', 'qué pena ):'],['tori_life1a', 'tori_life2']],
+["tori_life1","","","","","","","",['¿quieres... probar?', 'qué pena ):'],['tori_life1a', 'tori_life2']],
 ["tori_life1a","you","","¿quieres... probar?","","","","","",""],
 ["","tori","","¿cómo? ¿contigo dices?","","","","","",""],
 ["","you","","¿por qué no?","","","","","",""],

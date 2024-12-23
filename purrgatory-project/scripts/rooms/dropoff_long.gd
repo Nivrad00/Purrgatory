@@ -94,6 +94,10 @@ func _process(delta):
 		
 		for i in range(0, 7):
 			if $bg.position.y >= dialog_timing[i] and progress < dialog_timing[i] and not used_dialog[i]:
+				# need to run these through the text formatter bc polish has a gendered phrase
+				$_dialog.get_node(str(i)).get_node("Label").text = get_node("/root/main/game").format_text(tr($_dialog.get_node(str(i)).get_node("Label").text))
+				if $_dialog.get_node(str(i)).get_node("6/Label"):
+					$_dialog.get_node(str(i)).get_node("6/Label").text = get_node("/root/main/game").format_text(tr($_dialog.get_node(str(i)).get_node("6/Label").text))
 				$_dialog.get_node(str(i)).show()
 				used_dialog[i] = true
 			elif $bg.position.y >= dialog_timing[i] + 700 and progress < dialog_timing[i] + 700:
@@ -122,6 +126,11 @@ func _process(delta):
 		
 		for i in range(0, 7):
 			if $bg.position.y >= dialog_timing[i] and progress < dialog_timing[i] and not used_dialog[i]:
+				# need to run these through the text formatter bc polish has a gendered phrase
+				$_dialog.get_node(str(i)).get_node("Label").text = get_node("/root/main/game").format_text(tr($_dialog.get_node(str(i)).get_node("Label").text))
+				if $_dialog.get_node(str(i)).get_node("6/Label"):
+					print($_dialog.get_node(str(i)).get_node("6/Label"))
+					$_dialog.get_node(str(i)).get_node("6/Label").text = get_node("/root/main/game").format_text(tr($_dialog.get_node(str(i)).get_node("6/Label").text))
 				$_dialog.get_node(str(i)).show()
 				used_dialog[i] = true
 			elif $bg.position.y >= dialog_timing[i] + 700 and progress < dialog_timing[i] + 700:

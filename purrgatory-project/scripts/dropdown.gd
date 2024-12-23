@@ -42,24 +42,24 @@ func hide_all():
 	move = true
 	
 func toggle_notes():
-	# for item in [
-	# 'commons_door',
-	# 'meowseum_door',
-	# 'return_books',
-	# 'call_lucifur',
-	# 'oliver_chess',
-	# 'oliver_soda1',
-	# 'oliver_soda2',
-	# 'vent',
-	# 'numa_kyungsoon',
-	# 'numa_friendship',
-	# 'sean_batteries',
-	# 'elijah_invitations',
-	# 'elijah_bell',
-	# 'elijah_poem',
-	# 'tori_lights',
-	# 'natalie_draw_a_paw']:
-	# 	add_quest(item)
+	#for item in [
+	#'commons_door',
+	##'meowseum_door',
+	#'return_books',
+	#'call_lucifur',
+	#'oliver_chess',
+	#'oliver_soda1',
+	#'oliver_soda2',
+	#'vent',
+	#'numa_kyungsoon',
+	#'numa_friendship',
+	#'sean_batteries',
+	#'elijah_invitations',
+	#'elijah_bell',
+	#'elijah_poem',
+	#'tori_lights',
+	#'natalie_draw_a_paw']:
+	#	add_quest(item)
 		
 	pending_change = false
 	if notes_shown:
@@ -237,7 +237,7 @@ func add_quest(quest):
 	label.set_custom_minimum_size(Vector2($quest_container.get_size().x, 0))
 	label.set_mouse_filter(Control.MOUSE_FILTER_IGNORE)
 	
-	label.set_bbcode(tr(quests[quest]))
+	label.set_bbcode(get_node('/root/main/game').format_text(tr(quests[quest])))
 	
 	# if there's a placeholder, remove it
 	# also remember not to do this if the thing you just added was the placeholder
@@ -253,7 +253,7 @@ func _on_language_changed(lang):
 	# need to update the todo items when the language changes
 	#   because they're richtextlabels, which don't do it automatically
 	for item in $quest_container/vbox.get_children():
-		item.set_bbcode(tr(quests[item.name]))
+		item.set_bbcode(get_node('/root/main/game').format_text(tr(quests[item.name])))
 		
 	if notes_shown:
 		format_quests()

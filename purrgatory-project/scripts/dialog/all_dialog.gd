@@ -7349,7 +7349,7 @@ var raw_blocks = [
 ["","tori","","...","","","","","",""],
 ["","","","i've kissed my fair share of guys, but never a girl.","","","","","",""],
 ["","you","","awwwwwwwwwwwwwww","","_pronouns_she",['tori_life1', 'tori_life2'],"","",""],
-["tori_life1","","","_pass","","","","",['do you... want to try it?', 'that\'s a shame'],['tori_life1a', 'tori_life2']],
+["tori_life1","","","","","","","",['do you... want to try it?', 'that\'s a shame'],['tori_life1a', 'tori_life2']],
 ["tori_life1a","you","","do you... wanna try it?","","","","","",""],
 ["","tori","","what, with you?","","","","","",""],
 ["","you","","why not?","","","","","",""],
