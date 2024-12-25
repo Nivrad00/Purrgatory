@@ -2840,7 +2840,7 @@ margin_right = 565.2
 margin_bottom = 10.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]honest{o/a/e} e resiliente."
+bbcode_text = "[u]honest{o/a/e} e resiliente[/u]."
 text = "honest{o/a/e} e resiliente."
 scroll_active = false
 
@@ -3378,8 +3378,8 @@ margin_right = 565.2
 margin_bottom = 10.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]u[n/na/ne} talentos{o/a/e} músi{co/ca/que}[/u]."
-text = "u[n/na/ne} talentos{o/a/e} músi{co/ca/que}."
+bbcode_text = "[u]un{/a/e} talentos{o/a/e} músi{co/ca/que}[/u]."
+text = "un{/a/e} talentos{o/a/e} músi{co/ca/que}."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/6/vc/c1/choice_container/5"]

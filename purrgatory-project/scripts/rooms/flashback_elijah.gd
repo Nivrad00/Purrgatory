@@ -72,6 +72,102 @@ func wake_up():
 		'明智'
 	]
 	set_format_dict('envy_ch', envy_ch_replacements[choice_log[2]])
+
+	# italian
+	
+	var role_model_it_replacements = [
+		"una persona estranea alla famiglia",
+		"un amico d'infanzia che si è trasferito",
+		"un'artista che ho conosciuto online",
+		"una professoressa alla mano del liceo",
+		"un bassista di una band ignota",
+		"il personaggio di una serie tv",
+		"la mia migliore amica"
+	]
+	set_format_dict('role_model_it', role_model_it_replacements[choice_log[1]])
+	
+	var envy_it_replacements = [
+		"l'intelligenza",
+		"l'altruismo",
+		"il coraggio",
+		"la compassione",
+		"il successo",
+		"il talento",
+		"la saggezza"
+	]
+	set_format_dict('envy_it', envy_it_replacements[choice_log[2]])
+	
+	# polish
+	
+	var role_model_pl_replacements = [
+		"odległy członek rodziny",
+		"przyjaciel z dzieciństwa, który się wyprowadził",
+		"artysta poznany online",
+		"twardo stąpający po ziemi nauczyciel z liceum",
+		"basista z mało znanego zespołu",
+		"bohater mojego ulubionego serialu",
+		"mój najbliższy przyjaciel"
+	]
+	set_format_dict('role_model_pl', role_model_pl_replacements[choice_log[1]])
+	
+	var envy_pl_replacements = [
+		"inteligentny",
+		"bezinteresowny",
+		"odważny",
+		"współczujący",
+		"popularny",
+		"utalentowany",
+		"mądry"
+	]
+	set_format_dict('envy_pl', envy_pl_replacements[choice_log[2]])
+	
+	# portuguese
+	
+	var role_model_pt_replacements = [
+		"um parente distante",
+		"um amigo de infância que se distanciou",
+		"um artista que eu conheci online",
+		"um professor diferenciado do ensino médio",
+		"um baixista de uma banda obscura",
+		"um personagem do meu show de tv favorito",
+		"meu amigo mais próximo"
+	]
+	set_format_dict('role_model_pt', role_model_pt_replacements[choice_log[1]])
+	
+	var envy_pt_replacements = [
+		"inteligente",
+		"autruísta",
+		"valente",
+		"compassiva",
+		"sussedida",
+		"talentosa",
+		"sabia"
+	]
+	set_format_dict('envy_pt', envy_pt_replacements[choice_log[2]])
+	
+	# latam spanish
+	
+	var role_model_es2_replacements = [
+		"un familiar distanciado",
+		"un amigo de la infancia que se mudó muy lejos",
+		"un artista que conocí por internet",
+		"un profesor de la escuela que tenía los pies en la tierra",
+		"un bajista de una banda dark",
+		"un personaje de mi serie favorita de televisión",
+		"mi amigo más cercano"
+	]
+	set_format_dict('role_model_es2', role_model_es2_replacements[choice_log[1]])
+	
+	var envy_es2_replacements = [
+		"inteligente",
+		"altruista",
+		"valiente",
+		"sensible",
+		"hábil",
+		"perspicaz",
+		"prudente"
+	]
+	set_format_dict('envy_es2', envy_es2_replacements[choice_log[2]])
 	
 	# done
 	

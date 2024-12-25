@@ -2624,7 +2624,7 @@ margin_right = 788.0
 margin_bottom = 50.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]destreza.[/u]"
+bbcode_text = "[u]destreza[/u]."
 text = "destreza."
 scroll_active = false
 
@@ -2643,7 +2643,7 @@ margin_right = 788.0
 margin_bottom = 50.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]felicidad.[/u]"
+bbcode_text = "[u]felicidad[/u]."
 text = "felicidad."
 scroll_active = false
 
@@ -2662,7 +2662,7 @@ margin_right = 788.0
 margin_bottom = 50.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]libertad.[/u]"
+bbcode_text = "[u]libertad[/u]."
 text = "libertad."
 scroll_active = false
 
@@ -2681,7 +2681,7 @@ margin_right = 788.0
 margin_bottom = 50.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]amor.[/u]"
+bbcode_text = "[u]amor[/u]."
 text = "amor."
 scroll_active = false
 

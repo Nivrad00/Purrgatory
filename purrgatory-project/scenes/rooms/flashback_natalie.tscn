@@ -2559,8 +2559,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]publicar una novela para jóvenes adultos/u]."
-text = "publicar una novela para jóvenes adultos/u]."
+bbcode_text = "[u]publicar una novela para jóvenes adultos[/u]."
+text = "publicar una novela para jóvenes adultos."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/6/vc/c1/choice_container/2"]

@@ -8,7 +8,7 @@ func _ready():
 		Language.connect("language_changed", self, "update_label")
 
 func update_label(lang):
-	if lang in [0, 1]:
+	if lang in [0, 1, 6]:
 		show()
 		$"../custom2".show()
 		

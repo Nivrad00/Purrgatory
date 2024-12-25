@@ -183,12 +183,24 @@ func max_text_width(font, texts):
 				max_width = width
 	return max_width
 
+func recursive_format(node, lang):
+	if "bbcode_text" in node:
+		node.bbcode_text = get_node("/root/main/game").format_text(node.bbcode_text, lang)
+	# idk if any of them are plain labels but just in case
+	elif "text" in node:
+		node.text = get_node("/root/main/game").format_text(node.text, lang)
+	for child in node.get_children():
+		recursive_format(child, lang)
+		
 func format_text(_lang=null):
 	for i in range(lang_nodes.size()):
 		var lang_node = lang_nodes[i]
+		
+		# before anything, handle any gendered {}'s in the text
+		recursive_format(lang_node, i)
+		
 		# first, set the width of the vertical container to the length of the longest line.
 		# this code might break if you use italics. don't use fucking italics
-		
 		var max_width = 0
 		var font = lang_node.get_node('vc').get_child(0).get_font('normal_font')
 		

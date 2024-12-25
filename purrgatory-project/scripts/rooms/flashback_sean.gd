@@ -60,6 +60,82 @@ func wake_up():
 	set_format_dict('partner_ch', partner_ch_replacements[choice_log[1]])
 	set_format_dict('partner_about_ch', partner_about_ch_replacements[choice_log[3]])
 	
+	# italian
+	
+	var partner_it_replacements = [
+		"ho avuto molte relazioni, ma mai una stabile",
+		"l'amicizia è sempre stata più importante dell'amore",
+		"la mia morte sarà stata devastante per chi mi amava"
+	]
+	var partner_about_it_replacements = [
+		"fare una passeggiata dopo un temporale",
+		"far ridere le altre persone",
+		"finire di leggere un bel libro",
+		"bersi qualcosa dopo una giornata di lavoro",
+		"osservare le persone in stazione",
+		"fare dei road trip molto lunghi",
+		"stare a letto la domenica mattina"
+	]
+	set_format_dict('partner_it', partner_it_replacements[choice_log[1]])
+	set_format_dict('partner_about_it', partner_about_it_replacements[choice_log[3]])
+	
+	# polish
+	
+	var partner_pl_replacements = [
+		"moja druga połówka",
+		"mój przyjaciel",
+		"moja druga połówka"
+	]
+	var partner_about_pl_replacements = [
+		"chodzić na spacery po burzy",
+		"sprawiać, by inni się śmiali",
+		"czytać dobre książki",
+		"zrelaksować się przy drinku po dniu pracy",
+		"obserwować ludzi na dworcu kolejowym",
+		"chodzić na długie wycieczki",
+		"długo spać w niedzielne poranki"
+	]
+	set_format_dict('partner_pl', partner_pl_replacements[choice_log[1]])
+	set_format_dict('partner_about_pl', partner_about_pl_replacements[choice_log[3]])
+	
+	# portuguese
+	
+	var partner_pt_replacements = [
+		"parça",
+		"seus amigos sempre foram mais importantes para você do que romance",
+		"seu amor deve ter ficado em estado de devastação com sua morte"
+	]
+	var partner_about_pt_replacements = [
+		"caminhar depois de uma tempestade",
+		"fazer as pessoas rirem",
+		"terminar um bom livro",
+		"relaxar com uma bebida depois de um dia de trabalho",
+		"observar pessoas na estação de trem",
+		"cair em longas viagens na estrada",
+		"dormir em uma manhã quentinha de domingo"
+	]
+	set_format_dict('partner_pt', partner_pt_replacements[choice_log[1]])
+	set_format_dict('partner_about_pt', partner_about_pt_replacements[choice_log[3]])
+	
+	# spanish latam
+	
+	var partner_es2_replacements = [
+		"pareja",
+		"mejor amigx",
+		"pareja"
+	]
+	var partner_about_es2_replacements = [
+		"salir a caminar después de una tormenta",
+		"hacer reír a las demás personas",
+		"terminarse un buen libro",
+		"relajarse y beber algo después de un duro día de trabajo",
+		"mirar qué hacían las personas en la estación de tren",
+		"hacer largos viajes en su auto",
+		"quedarse durmiendo toda la mañana en un cálido domingo"
+	]
+	set_format_dict('partner_es2', partner_es2_replacements[choice_log[1]])
+	set_format_dict('partner_about_es2', partner_about_es2_replacements[choice_log[3]])
+	
 	# done 
 	
 	emit_signal('change_room', 'hallway1')

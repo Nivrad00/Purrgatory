@@ -437,13 +437,19 @@ func update_dialog(b: int):
 			check_special_states(pair)
 
 # this handles variable text like {player}, {they}{'s/'re}, etc.
-func format_text(text):
+func format_text(text, lang=-1):
 	# basic replacements get done using the format_dict, including {player}, {they} and derivatives, and {ta}
 	# spanish doesn't use the format_dict bc it's clampicated, instead everything is written in {él/ella/elle} form
 	text = text.format(format_dict)
 
+	# this function can be overriden to do formatting for any language
+	# (this is only used for flashbacks at the moment, since all languages get formatted at the same time during flashbacks)
+	# otherwise it uses the current global language
+	if lang == -1:
+		lang = Language.language
+		
 	# additional english
-	if Language.language == 0: 
+	if lang == 0: 
 		var regex = RegEx.new()
 		regex.compile('{([^/]+)/([^}]+)}')
 		if 'they' in format_dict and format_dict['they'] == 'they':
@@ -452,7 +458,7 @@ func format_text(text):
 			text = regex.sub(text, '$2', true)
 			
 	# additional spanish
-	elif Language.language == 1:
+	elif lang == 1:
 		var regex = RegEx.new()
 		regex.compile('{([^/]*)/([^/]*)/([^}]*)}')
 		
@@ -485,6 +491,7 @@ func format_text(text):
 		
 		elif state.get('_pronombre_personalizado'):
 			# here we handle EVERY CASE manually because... why not
+			# not DRY, see below
 			var t = state.get('_terminacion')
 			text = text.replacen('{él/ella/elle}', state.get('_pronombre'))\
 					   .replacen('{/a/e}', ('' if t == 'o' else t))\
@@ -492,13 +499,14 @@ func format_text(text):
 					   .replacen('{el/la/le}', ('el' if t == 'o' else 'l' + t))\
 					   .replacen('{o/a/e}', t)\
 					   .replacen('{o/a/ue}', ('u' + t if t in ['i', 'e'] else t))\
-					   .replacen('{ooo/aaa/eee}', t)
+					   .replacen('{ooo/aaa/eee}', t)\
+					   .replacen('{co/ca/que}', ('qu' + t if t in ['i', 'e'] else 'c' + t))
 					   
 		else:
 			print('error: no pronouns set in spanish (spain)')
 	
 	# additional chinese
-	elif Language.language == 2:
+	elif lang == 2:
 		# ensuring older versions of purrgatory get updated with chinese equivalents
 		if not format_dict.get('ta'):
 			if 'they' in format_dict and format_dict['they'].length() > 0:
@@ -514,8 +522,8 @@ func format_text(text):
 	# except for polish which has an additional option, _polish_gender_x, which turns neuter words into -x words
 	# this ensures languages after this point are back-compatible with old purrgatory saves
 	
-	# italian, portuguese, and latin american spanish
-	elif Language.language in [3, 5, 6]:
+	# italian, portuguese
+	elif lang in [3, 5]:
 		var regex = RegEx.new()
 		regex.compile('{([^/]*)/([^/]*)/([^}]*)}')
 		
@@ -527,7 +535,7 @@ func format_text(text):
 			text = regex.sub(text, '$3', true)
 	
 	# polish
-	elif Language.language == 4:
+	elif lang == 4:
 		var regex = RegEx.new()
 		regex.compile('{([^/]*)/([^/]*)/([^}]*)/([^}]*)}')
 		
@@ -540,7 +548,30 @@ func format_text(text):
 				text = regex.sub(text, '$4', true)
 			else:
 				text = regex.sub(text, '$3', true)
+	
+	# latin american spanish
+	elif lang == 6:
+		var regex = RegEx.new()
+		regex.compile('{([^/]*)/([^/]*)/([^}]*)}')
 		
+		if state.get('_pronombre_personalizado'):
+			# not DRY, see above
+			var t = state.get('_terminacion')
+			text = text.replacen('{él/ella/elle}', state.get('_pronombre'))\
+					   .replacen('{/a/e}', ('' if t == 'o' else t))\
+					   .replacen('{e/a/e}', ('e' if t == 'o' else t))\
+					   .replacen('{el/la/le}', ('el' if t == 'o' else 'l' + t))\
+					   .replacen('{o/a/e}', t)\
+					   .replacen('{o/a/ue}', ('u' + t if t in ['i', 'e'] else t))\
+					   .replacen('{ooo/aaa/eee}', t)\
+					   .replacen('{co/ca/que}', ('qu' + t if t in ['i', 'e'] else 'c' + t))
+		elif state.get('_pronouns_he'):
+			text = regex.sub(text, '$1', true)
+		elif state.get('_pronouns_she'):
+			text = regex.sub(text, '$2', true)
+		elif state.get('_pronouns_they') or state.get('_pronouns_custom'):
+			text = regex.sub(text, '$3', true)
+	
 	return text
 	
 func _on_language_changed(lang):
@@ -627,10 +658,14 @@ func set_player_name():
 				format_dict['ta'] = 'ta'
 				# (and the remaining languages know to use the neutral version)
 				
-			# and if a custom pronoun is entered in spanish...
-			elif Language.language == 1:
+			# and if a custom pronoun is entered in EITHER version of spanish...
+			elif Language.language == 1 or Language.language == 6:
 				state['_pronombre_personalizado'] = true
-				var pronoun_inputs = ui.get_node('name_input/custom_pronouns/inputs/1')
+				var pronoun_inputs
+				if Language.language == 1:
+					pronoun_inputs = ui.get_node('name_input/custom_pronouns/inputs/1')
+				if Language.language == 6:
+					pronoun_inputs = ui.get_node('name_input/custom_pronouns/inputs/6')
 				# this may be confusing, but _pronombre and _terminacion are only defined if _pronombre_personalizado
 				# is true; otherwise there's no need for them
 				state['_pronombre'] = pronoun_inputs.get_node('pronombre').text
@@ -644,6 +679,7 @@ func set_player_name():
 				format_dict['themself'] = 'themself'
 				# ...and the chinese version is automatically set to ta
 				format_dict['ta'] = 'ta'
+				# (and the remaining languages know to use the neutral version)
 				
 			# the remaining languages don't have a custom button
 			# chinese used to, but i think... i never hooked it up? so it never worked? LOL

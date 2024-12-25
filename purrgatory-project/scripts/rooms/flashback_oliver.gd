@@ -69,6 +69,98 @@ func wake_up():
 	set_format_dict('pride_ch', pride_ch_replacements[choice_log[1]])
 	set_format_dict('proudest_moment_ch', proudest_moment_ch_replacements[choice_log[2]])
 	
+	# italian
+	
+	var pride_it_replacements = [ 
+		"la gentilezza con gli sconosciuti",
+		"l'onestà e la resilienza",
+		"la mia intelligenza ed eloquenza",
+		"la mia bellezza impareggiabile",
+		"l'esserci sempre per gli amici",
+		"il mio talento musicale",
+		"l'essere sempre ottimista"
+	]
+	var proudest_moment_it_replacements = [ 
+		"ho vinto il concorso di poesia alle elementari",
+		"ho suonato la chitarra per la prima volta su un palco",
+		"ho finito la mia prima mezza maratona",
+		"è nato il mio primo figlio",
+		"ho fatto un record mondiale a un videogioco",
+		"ho finito l'università",
+		"ho tagliato i capelli"
+	]
+	set_format_dict('pride_it', pride_it_replacements[choice_log[1]])
+	set_format_dict('proudest_moment_it', proudest_moment_it_replacements[choice_log[2]])
+	
+	# polish
+	
+	var pride_pl_replacements = [ 
+		"mił{y/a/e/x} dla obcych",
+		"szczer{y/a/e/x} i wytrwał{y/a/e/x}",
+		"mądr{y/a/e/x} i elokwentn{y/a/e/x}",
+		"przepiękn{y/a/e/x}",
+		"zawsze obecn{y/a/e/x} dla przyjaciół",
+		"utalentowanym muzykiem",
+		"nieskończenie optymistyczn{y/a/e/x}"
+	]
+	var proudest_moment_pl_replacements = [ 
+		"wygraniu konkursu literowania w szóstej klasie",
+		"pierwszym występie na scenie",
+		"ukończeniu pierwszego półmaraton",
+		"narodzinach pierwszego dziecka",
+		"ustanowieniu rekordu świata w grze komputerowej",
+		"ukończeniu studiów",
+		"ścięciu włosów"
+	]
+	set_format_dict('pride_pl', pride_pl_replacements[choice_log[1]])
+	set_format_dict('proudest_moment_pl', proudest_moment_pl_replacements[choice_log[2]])
+	
+	# portuguese
+	
+	var pride_pt_replacements = [ 
+		"gentil com estranhos",
+		"honest{o/a/e} e resiliente",
+		"inteligente e bo{m/a/e} com as palavras",
+		"indescritivelmente bel{o/a/e}",
+		"sempre presente para meus amigos",
+		"um{/a/e} musicista talentos{a/o/e}",
+		"um poço sem fundo de otimismo"
+	]
+	var proudest_moment_pt_replacements = [ 
+		"venci o campeonato de soletrar do sexto ano",
+		"toquei guitarra no palco",
+		"terminei minha primeira meia maratona",
+		"tive minha primeira criança",
+		"consegui um recorde mundial em um video game",
+		"graduei na faculdade",
+		"cortei meu cabelo"
+	]
+	set_format_dict('pride_pt', pride_pt_replacements[choice_log[1]])
+	set_format_dict('proudest_moment_pt', proudest_moment_pt_replacements[choice_log[2]])
+	
+	# spanish latam
+	
+	var pride_es2_replacements = [ 
+		"amable con los desconocidos",
+		"honest{o/a/e} y resiliente",
+		"elocuente y ocurrente",
+		"hermosamente deslumbrante",
+		"leal con tus amigos",
+		"un{/a/e} talentos{o/a/e} músi{co/ca/que}",
+		"infinitamente optimista"
+	]
+	var proudest_moment_es2_replacements = [ 
+		"gané un concurso literario en 6to grado de primaria",
+		"toqué por primera vez la guitarra en un escenario",
+		"terminé mi primer medio maratón",
+		"tuve a mi primer bebé",
+		"conseguí un record mundial en un videojuego",
+		"me gradué de la universidad",
+		"me corté el pelo"
+	]
+	set_format_dict('pride_es2', pride_es2_replacements[choice_log[1]])
+	set_format_dict('proudest_moment_es2', proudest_moment_es2_replacements[choice_log[2]])
+	
 func update_state(state):
 	.update_state(state)
 	if state.get('flashback_goto_commons'):
