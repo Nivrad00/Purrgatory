@@ -1225,6 +1225,7 @@ text = "niv"
 align = 1
 
 [node name="2" type="Control" parent="state_handler"]
+visible = false
 margin_left = 22.1109
 margin_right = 62.1109
 margin_bottom = 40.0

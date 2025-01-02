@@ -62,7 +62,7 @@ blend_mode = 3
 
 [node name="main" type="Node"]
 script = ExtResource( 1 )
-version = "2024-12-15 debug"
+version = "2024-12-25 v2 debug"
 
 [node name="delay_timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -385,7 +385,7 @@ theme = ExtResource( 19 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="credits/ScrollContainer"]
 margin_right = 1176.0
-margin_bottom = 3737.0
+margin_bottom = 4536.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
@@ -651,7 +651,7 @@ margin_right = 1155.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "niv (darvin heo)"
+text = "niv (niv heo)"
 autowrap = true
 
 [node name="Label4" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer2"]
@@ -890,7 +890,7 @@ margin_right = 1155.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "niv (darvin heo)"
+text = "niv (niv heo)"
 autowrap = true
 
 [node name="Label4" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer7"]
@@ -956,7 +956,7 @@ autowrap = true
 [node name="GridContainer10" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
 margin_top = 1922.0
 margin_right = 1155.0
-margin_bottom = 2004.0
+margin_bottom = 2938.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -967,7 +967,7 @@ margin_right = 560.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "spanish (spain)"
+text = "spanish translation (spain)"
 align = 2
 autowrap = true
 
@@ -983,10 +983,10 @@ autowrap = true
 [node name="3" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
 margin_top = 51.0
 margin_right = 560.0
-margin_bottom = 82.0
+margin_bottom = 86.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "simplified chinese"
+text = "chinese translation"
 align = 2
 autowrap = true
 
@@ -994,7 +994,7 @@ autowrap = true
 margin_left = 595.0
 margin_top = 51.0
 margin_right = 1155.0
-margin_bottom = 82.0
+margin_bottom = 86.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 20 )
@@ -1002,9 +1002,9 @@ text = "赤铜/syakudo"
 autowrap = true
 
 [node name="5" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
-margin_top = 51.0
+margin_top = 106.0
 margin_right = 560.0
-margin_bottom = 82.0
+margin_bottom = 217.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "chinese translation support"
@@ -1013,9 +1013,9 @@ autowrap = true
 
 [node name="6" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
 margin_left = 595.0
-margin_top = 51.0
+margin_top = 106.0
 margin_right = 1155.0
-margin_bottom = 82.0
+margin_bottom = 217.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 20 )
@@ -1024,19 +1024,172 @@ text = "ciinore
 伏霖CRLINEEPER"
 autowrap = true
 
-[node name="_5" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2024.0
+[node name="7" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_top = 237.0
+margin_right = 560.0
+margin_bottom = 336.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "italian translation "
+align = 2
+autowrap = true
+
+[node name="8" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 595.0
+margin_top = 237.0
 margin_right = 1155.0
-margin_bottom = 2055.0
+margin_bottom = 336.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "aki (giulia bosioli)
+chiro (alessandro mura)
+cora bruno"
+autowrap = true
+
+[node name="9" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_top = 356.0
+margin_right = 560.0
+margin_bottom = 421.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "italian translation support"
+align = 2
+autowrap = true
+
+[node name="10" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 595.0
+margin_top = 356.0
+margin_right = 1155.0
+margin_bottom = 421.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "droghead
+serj"
+autowrap = true
+
+[node name="11" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_top = 441.0
+margin_right = 560.0
+margin_bottom = 540.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "polish translation "
+align = 2
+autowrap = true
+
+[node name="12" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 595.0
+margin_top = 441.0
+margin_right = 1155.0
+margin_bottom = 540.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "brumik (julia bartnik)
+kttlvr (maja kędys)
+shrug"
+autowrap = true
+
+[node name="13" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_top = 560.0
+margin_right = 560.0
+margin_bottom = 591.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "polish translation support"
+align = 2
+autowrap = true
+
+[node name="14" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 595.0
+margin_top = 560.0
+margin_right = 1155.0
+margin_bottom = 591.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "blejzew"
+autowrap = true
+
+[node name="15" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_top = 611.0
+margin_right = 560.0
+margin_bottom = 812.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "portuguese translation (brazil)"
+align = 2
+autowrap = true
+
+[node name="16" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 595.0
+margin_top = 611.0
+margin_right = 1155.0
+margin_bottom = 812.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "david (the potoo) torazzi
+doubletime (mari)
+gustavo moret
+koral
+liquid_tax
+xd1498 (nicholas santos)"
+autowrap = true
+
+[node name="17" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_top = 832.0
+margin_right = 560.0
+margin_bottom = 931.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "portuguese translation support (brazil)"
+align = 2
+autowrap = true
+
+[node name="18" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 595.0
+margin_top = 832.0
+margin_right = 1155.0
+margin_bottom = 931.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "sahbiah
+ararajubazul
+minnow"
+autowrap = true
+
+[node name="19" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_top = 951.0
+margin_right = 560.0
+margin_bottom = 1016.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "spanish translation (latin america)"
+align = 2
+autowrap = true
+
+[node name="20" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 595.0
+margin_top = 951.0
+margin_right = 1155.0
+margin_bottom = 1016.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "cortinas, pufs, pantuflas y más (antonio colombo)
+NivaldoLBS (iván)"
+autowrap = true
+
+[node name="_5" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
+margin_top = 2958.0
+margin_right = 1155.0
+margin_bottom = 2989.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="other" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2075.0
+margin_top = 3009.0
 margin_right = 1155.0
-margin_bottom = 2106.0
+margin_bottom = 3040.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "other"
@@ -1044,9 +1197,9 @@ align = 1
 autowrap = true
 
 [node name="GridContainer5" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2126.0
+margin_top = 3060.0
 margin_right = 1155.0
-margin_bottom = 2344.0
+margin_bottom = 3278.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1095,18 +1248,18 @@ uro (daniel taylor)"
 autowrap = true
 
 [node name="_11" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2364.0
+margin_top = 3298.0
 margin_right = 1155.0
-margin_bottom = 2395.0
+margin_bottom = 3329.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="sfx" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2415.0
+margin_top = 3349.0
 margin_right = 1155.0
-margin_bottom = 2446.0
+margin_bottom = 3380.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "sound effects"
@@ -1114,9 +1267,9 @@ align = 1
 autowrap = true
 
 [node name="sfx4" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2466.0
+margin_top = 3400.0
 margin_right = 1155.0
-margin_bottom = 2497.0
+margin_bottom = 3431.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "freesound.org"
@@ -1124,9 +1277,9 @@ align = 1
 autowrap = true
 
 [node name="GridContainer6" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 2517.0
+margin_top = 3451.0
 margin_right = 1155.0
-margin_bottom = 3092.0
+margin_bottom = 4026.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1232,9 +1385,9 @@ sinewave1kHz"
 autowrap = true
 
 [node name="GridContainer9" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3112.0
+margin_top = 4046.0
 margin_right = 1155.0
-margin_bottom = 3194.0
+margin_bottom = 4128.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1279,18 +1432,18 @@ text = "soundeffectsfactory"
 autowrap = true
 
 [node name="_6" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3214.0
+margin_top = 4148.0
 margin_right = 1155.0
-margin_bottom = 3245.0
+margin_bottom = 4179.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="additional assets" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3265.0
+margin_top = 4199.0
 margin_right = 1155.0
-margin_bottom = 3296.0
+margin_bottom = 4230.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "additional assets"
@@ -1298,9 +1451,9 @@ align = 1
 autowrap = true
 
 [node name="GridContainer8" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3316.0
+margin_top = 4250.0
 margin_right = 1155.0
-margin_bottom = 3449.0
+margin_bottom = 4383.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1328,18 +1481,18 @@ paul d. hunt"
 autowrap = true
 
 [node name="_10" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3469.0
+margin_top = 4403.0
 margin_right = 1155.0
-margin_bottom = 3500.0
+margin_bottom = 4434.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="version" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3520.0
+margin_top = 4454.0
 margin_right = 1155.0
-margin_bottom = 3551.0
+margin_bottom = 4485.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
@@ -1348,9 +1501,9 @@ align = 1
 autowrap = true
 
 [node name="_13" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3571.0
+margin_top = 4505.0
 margin_right = 1155.0
-margin_bottom = 3602.0
+margin_bottom = 4536.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1

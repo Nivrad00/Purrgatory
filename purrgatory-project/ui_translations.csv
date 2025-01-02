@@ -116,11 +116,16 @@ yes,yes,sì,tak,sí,是,sim,sí
 no,no,no,nie,no,否,não,no
 translation,translation,traduzione,tłumaczenie,traducción,翻译,tradução,TRADUCCIÓN
 language,language,lingua,język,idioma,语言,idioma,idioma
-simplified chinese,simplified chinese,cinese semplificato,chiński uproszczony,chino simplificado,简体中文,mandarim simplificado,chino simplificado
-spanish (spain),spanish (spain),spagnolo (spagna),hiszpański (hiszpania),español de españa,西班牙语（西）,espanhól (espanha),español (españa)
-spanish translation,spanish translation,traduzione spagnola,hiszpańskie tłumaczenie,traducción al español,西班牙语本地化,tradução em espanhól,traducción en español
-chinese translation,chinese translation,traduzione cinese,chińskie tłumaczenie,traducción al chino,简体中文本地化,tradução chinesa,traducción en chino
-chinese translation support,chinese translation support,supporto localizzazione cinese,pomoc przy lokalizacji chińskiego tłumaczenia,asistencia de traducción al chino,汉化协助,suporte de localização chinesa,soporte de traducción en chino
+spanish translation (spain),spanish translation (spain),traduzione spagnolo (spagna),hiszpańska wersja językowa (hiszpania),traducción al español de españa,西班牙语翻译（西班牙）,tradução espanhola (espanha),traducción al español de españa
+spanish translation (latin america),spanish translation (latin america),traduzione spagnolo (america latina),hiszpańska wersja językowa (ameryka łacińska),traducción al español de latinoamérica,西班牙语翻译（拉丁美洲）,tradução espanhola (américa latina),traducción al español de latinoamérica
+chinese translation,chinese translation,traduzione cinese,chińska wersja językowa,traducción al chino,简体中文翻译,tradução chinesa,traducción al chino
+chinese translation support,chinese translation support,supporto traduzione cinese,wsparcie powstawania chińskiej wersji językowej,asistencia de traducción al chino,简体中文翻译协助,suporte da tradução chinesa,apoyo de traducción al chino
+italian translation,italian translation,traduzione italiano,włoska wersja językowa,traducción al italiano,意大利语翻译,tradução italiana,traducción al italiano
+italian translation support,italian translation support,supporto traduzione italiano,wsparcie powstawania włoskiej wersji językowej,asistencia de traducción al italiano,意大利语翻译协助,suporte da tradução italiana,apoyo de traducción al italiano
+polish translation,polish translation,traduzione polacco,polska wersja językowa,traducción al polaco,波兰语翻译,tradução polonesa,traducción al polaco
+polish translation support,polish translation support,supporto traduzione polacco,wsparcie powstawania polskiej wersji językowej,asistencia de traducción al polaco,波兰语翻译协助,suporte da tradução polonesa,apoyo de traducción al polaco
+portuguese translation (brazil),portuguese translation (brazil),traduzione portoghese (brasile),portugalska wersja językowa (brazylia),traducción al portugués de brasil,葡萄牙语翻译（巴西）,tradução portuguesa (brasil),traducción al portugués de brasil
+portuguese translation support,portuguese translation support,supporto traduzione portoghese,wsparcie powstawania portugalskiej wersji językowej,asistencia de traducción al portugués,葡萄牙语翻译协助,suporte da tradução portuguesa,apoyo de traducción al portugués
 cat,cat,gatto,kot,gato,猫,gato,gato
 you,you,tu,ty,tú,你,você ,tú
 receptionist,receptionist,la receptionist,recepcjonistka,recepcionista,接待员,recepcionista,recepcionista
