@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/field1.gd" type="Script" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://assets/sprites/hoels/shovel7.png" type="Texture" id=28]
 [ext_resource path="res://scenes/hole_score.tscn" type="PackedScene" id=29]
 [ext_resource path="res://scenes/digging_sound.tscn" type="PackedScene" id=30]
+[ext_resource path="res://assets/audio/river.ogg" type="AudioStream" id=31]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -83,6 +84,8 @@ dialog_label = "field_river"
 polygon = PoolVector2Array( 572.136, 461.854, 720.263, 499.177, 923.208, 539.999, 934.872, 578.489, 1144.82, 690.459, 1268.45, 725.45, 1284.78, 720.784, 1283.61, 635.641, 1130.82, 611.147, 1024.68, 531.835, 871.889, 488.68, 668.943, 461.854 )
 
 [node name="river" parent="state_handler" instance=ExtResource( 5 )]
+stream = ExtResource( 31 )
+volume_db = -12.0
 
 [node name="elijah_field" parent="state_handler" instance=ExtResource( 6 )]
 margin_left = 394.442

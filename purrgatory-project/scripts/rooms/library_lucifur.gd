@@ -93,6 +93,17 @@ func add_to_choices(choices, additions):
 		else:
 			choices.append([additions[0]]) # always use english, because translationserver will translate it
 
+func _ready():
+	Language.connect("language_changed", self, "_on_language_changed")
+	
+func _on_language_changed(_lang):
+	# not DRY, see below
+	# this makes sure the choices get translated AND formatted if you change language while on this screen
+	var choices_text = []
+	for choice in game.block['choices'][0]:
+		choices_text.append(get_node('/root/main/game').format_text(tr(choice[0]))) 
+	game.ui.update_ui(null, null, null, choices_text, false)
+		
 func update_state(state):
 	.update_state(state)
 	
@@ -155,12 +166,14 @@ func update_state(state):
 		
 		var choices_text = []
 		for choice in choices[0]:
-			choices_text.append(choice[0]) # always using english
+			choices_text.append(get_node('/root/main/game').format_text(tr(choice[0]))) 
+			# need to manually call tr() because otherwise i won't be able to format_text after
 		
-		print(choices)
+		# print(choices_text)
 		game.block['choices'] = choices
 		# tts set to false for this one, since the original update_ui call already
 		# triggers the tts
+		
 		game.ui.update_ui(null, null, null, choices_text, false)
 		
 	if state.get('lucifur_talked_about_gluttony'):

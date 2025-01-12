@@ -90,7 +90,7 @@ func wake_up():
 		"vatapá",
 		"chocolate meio amargo",
 		"ostras frescas",
-		"assinhas de frango",
+		"asinhas de frango",
 		"galinhada",
 		"filé de costela",
 		"pão de queijo",

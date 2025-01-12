@@ -136,7 +136,7 @@ func wake_up():
 		"sentir o cheiro do oceano",
 		"ver as estradas empoeiradas",
 		"sentir o ar abafado e quente",
-		"ver os gramados polidos à perfeição",
+		"ver os gramados polidos com perfeição",
 		"ver o teto desgastado"
 	]
 	set_format_dict('hometown_pt', hometown_pt_replacements[choice_log[1]])

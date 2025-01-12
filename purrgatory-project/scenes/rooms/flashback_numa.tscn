@@ -454,6 +454,7 @@ margin_bottom = 40.0
 script = ExtResource( 4 )
 
 [node name="0" type="HBoxContainer" parent="state_handler/text"]
+visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 alignment = 1
@@ -2398,7 +2399,6 @@ text = "zadrapał{eś/aś/oś/xś} sobie tam kolana więcej niż kilka razy."
 anims/Fadein = SubResource( 26 )
 
 [node name="5" type="HBoxContainer" parent="state_handler/text"]
-visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 alignment = 1
@@ -2598,8 +2598,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]o canto da loja que cheirava a sabão[/u]."
-text = "o canto da loja que cheirava a sabão."
+bbcode_text = "[u]a loja da esquina que cheirava a sabão[/u]."
+text = "a loja da esquina que cheirava a sabão."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/5/vc/c2/choice_container/0"]
@@ -2692,8 +2692,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]a parte de tráz da loja da sua família[/u]."
-text = "a parte de tráz da loja da sua família."
+bbcode_text = "[u]a parte de trás da loja da sua família[/u]."
+text = "a parte de trás da loja da sua família."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/5/vc/c2/choice_container/5"]
@@ -2711,8 +2711,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]o campo de futebol cheio de grama atráz da sua escola[/u]."
-text = "o campo de futebol cheio de grama atráz da sua escola."
+bbcode_text = "[u]o campo de futebol cheio de grama atrás da sua escola[/u]."
+text = "o campo de futebol cheio de grama atrás da sua escola."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/5/vc/c2/choice_container/6"]
@@ -2752,8 +2752,8 @@ text = "você pegou as pedras mais bonitas lá."
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-bbcode_text = "os livros pareciam mais velhos que as estrelas."
-text = "os livros pareciam mais velhos que as estrelas."
+bbcode_text = "os livros pareciam mais velhos do que as estrelas."
+text = "os livros pareciam mais velhos do que as estrelas."
 
 [node name="3" type="RichTextLabel" parent="state_handler/text/5/vc/t3"]
 visible = false
@@ -2773,15 +2773,15 @@ text = "você gastou todas as moedas dos seus pais lá."
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-bbcode_text = "você sempre pode comer as sobras."
-text = "você sempre pode comer as sobras."
+bbcode_text = "você sempre comia as sobras."
+text = "você sempre comia as sobras."
 
 [node name="6" type="RichTextLabel" parent="state_handler/text/5/vc/t3"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-bbcode_text = "você teve um boucado de joelhos ralados ali."
-text = "você teve um boucado de joelhos ralados ali."
+bbcode_text = "você teve um bocado de joelhos ralados ali."
+text = "você teve um bocado de joelhos ralados ali."
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text/5/vc/t3"]
 anims/Fadein = SubResource( 30 )

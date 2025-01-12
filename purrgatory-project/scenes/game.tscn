@@ -88,7 +88,7 @@
 [ext_resource path="res://themes/button_placeholder_font.tres" type="DynamicFont" id=86]
 [ext_resource path="res://themes/ui_font_21.tres" type="DynamicFont" id=87]
 [ext_resource path="res://scripts/custom_pronouns_button.gd" type="Script" id=88]
-[ext_resource path="res://scenes/all_dialog_es_latam.gd" type="Script" id=89]
+[ext_resource path="res://scripts/dialog/all_dialog_es_latam.gd" type="Script" id=89]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("ss")
@@ -1985,6 +1985,7 @@ custom_styles/normal = SubResource( 36 )
 autowrap = true
 
 [node name="Button" type="Button" parent="meta_ui"]
+visible = false
 margin_left = 110.488
 margin_top = 17.4169
 margin_right = 261.488

@@ -1759,8 +1759,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]hai avuto molte relazioni, ma mai una stabile[/u]."
-text = "hai avuto molte relazioni, ma mai una stabile."
+bbcode_text = "[u]hai avuto molte frequentazioni, ma mai una stabile[/u]."
+text = "hai avuto molte frequentazioni, ma mai una stabile."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/3/vc/c1/choice_container/0"]
@@ -2200,8 +2200,8 @@ margin_right = 800.0
 margin_bottom = 50.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "osoba, z którą ostatnio się spotkał{eś/aś/oś/xś} miała na imię %s."
-text = "osoba, z którą ostatnio się spotkał{eś/aś/oś/xś} miała na imię %s."
+bbcode_text = "osoba, z którą ostatnio się spotykał{eś/aś/oś/xś} miała na imię %s."
+text = "osoba, z którą ostatnio się spotykał{eś/aś/oś/xś} miała na imię %s."
 scroll_active = false
 
 [node name="underline" type="RichTextLabel" parent="state_handler/text/4/vc/t2/e0"]
@@ -2548,8 +2548,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]seu amor deve ter ficado em estado de devastação com sua morte[/u]."
-text = "seu amor deve ter ficado em estado de devastação com sua morte."
+bbcode_text = "[u]seu amor deve ter ficado em estado de choque com sua morte[/u]."
+text = "seu amor deve ter ficado em estado de choque com sua morte."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/5/vc/c1/choice_container/2"]
@@ -2609,8 +2609,8 @@ margin_right = 800.0
 margin_bottom = 50.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "o nome de sua amizade mais proxima era %s."
-text = "o nome de sua amizade mais proxima era %s."
+bbcode_text = "o nome de sua amizade mais próxima era %s."
+text = "o nome de sua amizade mais próxima era %s."
 scroll_active = false
 
 [node name="underline" type="RichTextLabel" parent="state_handler/text/5/vc/t2/e1"]
@@ -2831,8 +2831,8 @@ margin_bottom = 550.0
 rect_min_size = Vector2( 0, 60 )
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "como você pode esquecer?"
-text = "como você pode esquecer?"
+bbcode_text = "como você poderia ter esquecido?"
+text = "como você poderia ter esquecido?"
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text/5/vc/t4"]

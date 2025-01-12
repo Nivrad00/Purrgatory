@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/field5.gd" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://assets/sprites/hoels/field5_1.png" type="Texture" id=14]
 [ext_resource path="res://scenes/hole_score.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/digging_sound.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/audio/river.ogg" type="AudioStream" id=17]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -45,7 +46,6 @@ position = Vector2( 170.526, 356.842 )
 polygon = PoolVector2Array( 755.605, 246.34, 727.916, 259.218, 743.8, 278.107, 772.347, 278.751, 796.816, 260.936, 777.498, 249.13 )
 
 [node name="bad_tree" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 script = ExtResource( 5 )
 dialog_label = "bad_tree"
 
@@ -60,7 +60,6 @@ dialog_label = "field_fence"
 polygon = PoolVector2Array( 775.749, 532.465, 777.378, 661.971, 886.529, 639.084, 905.74, 628.51, 896.296, 615.631, 926.188, 601.037, 948.453, 604.899, 969.703, 615.202, 1035.9, 630.26, 1124.25, 641.595, 1189.81, 643.864, 1189.95, 532.448, 1097.8, 522.778, 980.259, 496.022, 977.786, 488.65, 947.071, 487.512, 943.047, 497.694, 874.833, 522.209, 809.99, 535.861, 804.871, 527.897 )
 
 [node name="field_river" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 script = ExtResource( 5 )
 dialog_label = "field_river"
 
@@ -68,7 +67,8 @@ dialog_label = "field_river"
 polygon = PoolVector2Array( 1021.31, 423.511, 1054.7, 423.511, 1096.37, 440.337, 1105.58, 464.175, 1144.7, 487.187, 1189.71, 504.97, 1189.71, 472.316, 1160, 457.072, 1143.71, 435.016, 1115.57, 421.558, 1091.48, 416.605, 1016.4, 414.322 )
 
 [node name="river" parent="state_handler" instance=ExtResource( 6 )]
-volume_db = -35.0
+stream = ExtResource( 17 )
+volume_db = -18.0
 
 [node name="surprise" parent="state_handler" instance=ExtResource( 7 )]
 

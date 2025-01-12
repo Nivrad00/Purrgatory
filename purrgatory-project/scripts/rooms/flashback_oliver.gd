@@ -74,10 +74,10 @@ func wake_up():
 	var pride_it_replacements = [ 
 		"la gentilezza con gli sconosciuti",
 		"l'onestà e la resilienza",
-		"la mia intelligenza ed eloquenza",
-		"la mia bellezza impareggiabile",
+		"l'intelligenza ed eloquenza",
+		"la bellezza impareggiabile",
 		"l'esserci sempre per gli amici",
-		"il mio talento musicale",
+		"il talento musicale",
 		"l'essere sempre ottimista"
 	]
 	var proudest_moment_it_replacements = [ 
@@ -131,7 +131,7 @@ func wake_up():
 		"toquei guitarra no palco",
 		"terminei minha primeira meia maratona",
 		"tive minha primeira criança",
-		"consegui um recorde mundial em um video game",
+		"consegui um recorde mundial em um videogame",
 		"graduei na faculdade",
 		"cortei meu cabelo"
 	]

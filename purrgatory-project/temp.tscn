@@ -1,152 +1,142 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/sprites/wire_shelf.png" type="Texture" id=1]
-[ext_resource path="res://themes/ui_theme.tres" type="Theme" id=2]
-[ext_resource path="res://assets/ui/ok_button.png" type="Texture" id=3]
-[ext_resource path="res://assets/fonts/Krub-ExtraLight.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://assets/ui/menu_button.png" type="Texture" id=5]
+[ext_resource path="res://themes/ui_font_40.tres" type="DynamicFont" id=1]
+[ext_resource path="res://themes/ui_font_18.tres" type="DynamicFont" id=2]
 
-[sub_resource type="DynamicFont" id=1]
-size = 22
-use_filter = true
-extra_spacing_space = 1
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 18
-use_filter = true
-extra_spacing_space = 1
-font_data = ExtResource( 4 )
-
-[sub_resource type="Animation" id=3]
-resource_name = "come out"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 0.241484, 1 ),
-"update": 0,
-"values": [ Vector2( 1058.46, 348.237 ), Vector2( 1178.52, 348.237 ) ]
-}
-
-[node name="shelf" type="Sprite"]
-position = Vector2( 1058.46, 348.237 )
-texture = ExtResource( 1 )
-
-[node name="skip" type="Button" parent="."]
-editor/display_folded = true
-margin_left = -42.2587
-margin_top = -26.5378
-margin_right = 16.7413
-margin_bottom = 36.4622
-rect_pivot_offset = Vector2( -315.752, -7.95071 )
-focus_mode = 0
-theme = ExtResource( 2 )
-enabled_focus_mode = 0
-flat = true
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="menu_button0" type="Sprite" parent="skip"]
-position = Vector2( 35.6935, 31.0452 )
-texture = ExtResource( 3 )
-
-[node name="Label" type="Label" parent="skip"]
-margin_left = 0.0032959
-margin_top = 16.8675
-margin_right = 64.0033
-margin_bottom = 46.8675
-rect_pivot_offset = Vector2( 66.313, 64.7428 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "skip"
+[node name="portuguese" type="Label"]
+margin_left = 20.0
+margin_top = 49.0
+margin_right = 400.0
+margin_bottom = 120.0
+grow_vertical = 0
+custom_constants/line_spacing = -10
+text = "portuguese translation (brazil)"
 align = 1
-valign = 1
+autowrap = true
 
-[node name="sure?" type="Label" parent="."]
-editor/display_folded = true
-visible = false
-margin_left = -38.2552
-margin_top = -51.6703
-margin_right = 25.7448
-margin_bottom = -21.6703
-rect_pivot_offset = Vector2( 66.313, 64.7428 )
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "sure?"
+[node name="Label5" type="Label" parent="."]
+margin_top = 42.0
+margin_right = 380.0
+margin_bottom = 93.0
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 1 )
+text = "david the potoo"
 align = 1
-valign = 1
+autowrap = true
 
-[node name="yes" type="Button" parent="sure?"]
-margin_left = -6.58301
-margin_top = 34.1911
-margin_right = 68.417
-margin_bottom = 61.1911
-focus_mode = 0
-enabled_focus_mode = 0
-flat = true
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="menu_button" type="Sprite" parent="sure?/yes"]
-position = Vector2( 37.3354, 13.2222 )
-texture = ExtResource( 5 )
-
-[node name="Label" type="Label" parent="sure?/yes"]
-margin_left = 5.0033
-margin_top = -1.13251
-margin_right = 69.0033
-margin_bottom = 28.8675
-rect_pivot_offset = Vector2( 66.313, 64.7428 )
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "yes"
+[node name="Label11" type="Label" parent="."]
+margin_top = 88.0
+margin_right = 380.0
+margin_bottom = 122.0
+rect_pivot_offset = Vector2( 296, 26.699 )
+custom_fonts/font = ExtResource( 2 )
+text = "(david torazzi)"
 align = 1
-valign = 1
 
-[node name="no" type="Button" parent="sure?"]
-margin_left = -6.58301
-margin_top = 75.1152
-margin_right = 68.417
-margin_bottom = 102.115
-focus_mode = 0
-enabled_focus_mode = 0
-flat = true
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="menu_button" type="Sprite" parent="sure?/no"]
-position = Vector2( 37.3354, 13.2222 )
-texture = ExtResource( 5 )
-
-[node name="Label" type="Label" parent="sure?/no"]
-margin_left = 5.0033
-margin_top = -1.13251
-margin_right = 69.0033
-margin_bottom = 28.8675
-rect_pivot_offset = Vector2( 66.313, 64.7428 )
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "no"
+[node name="Label6" type="Label" parent="."]
+margin_top = 110.0
+margin_right = 380.0
+margin_bottom = 161.0
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 1 )
+text = "doubletime"
 align = 1
-valign = 1
+autowrap = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-"anims/come out" = SubResource( 3 )
+[node name="Label9" type="Label" parent="."]
+margin_top = 154.0
+margin_right = 380.0
+margin_bottom = 188.0
+rect_pivot_offset = Vector2( 296, 26.699 )
+custom_fonts/font = ExtResource( 2 )
+text = "(mari)"
+align = 1
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 60.0
-one_shot = true
-[connection signal="pressed" from="skip" to="sure?" method="show"]
-[connection signal="pressed" from="skip" to="skip" method="hide"]
-[connection signal="pressed" from="sure?/no" to="sure?" method="hide"]
-[connection signal="pressed" from="sure?/no" to="skip" method="show"]
-[connection signal="timeout" from="Timer" to="AnimationPlayer" method="play" binds= [ "come out" ]]
+[node name="Label8" type="Label" parent="."]
+margin_top = 169.0
+margin_right = 380.0
+margin_bottom = 220.0
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 1 )
+text = "gustavo moret"
+align = 1
+autowrap = true
+
+[node name="Label7" type="Label" parent="."]
+margin_top = 221.111
+margin_right = 380.0
+margin_bottom = 272.111
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 1 )
+text = "koral"
+align = 1
+autowrap = true
+
+[node name="Label10" type="Label" parent="."]
+margin_top = 272.222
+margin_right = 380.0
+margin_bottom = 323.222
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 1 )
+text = "liquid_tax"
+align = 1
+autowrap = true
+
+[node name="Label12" type="Label" parent="."]
+margin_top = 325.333
+margin_right = 380.0
+margin_bottom = 376.333
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 1 )
+text = "xd1498"
+align = 1
+autowrap = true
+
+[node name="Label13" type="Label" parent="."]
+margin_top = 369.333
+margin_right = 380.0
+margin_bottom = 403.333
+rect_pivot_offset = Vector2( 296, 26.699 )
+custom_fonts/font = ExtResource( 2 )
+text = "(nicholas santos)"
+align = 1
+
+[node name="support" type="Label" parent="."]
+margin_top = 438.0
+margin_right = 380.0
+margin_bottom = 509.0
+grow_vertical = 0
+custom_constants/line_spacing = -10
+text = "portuguese translation support"
+align = 1
+autowrap = true
+
+[node name="Label5" type="Label" parent="support"]
+margin_top = 42.0
+margin_right = 380.0
+margin_bottom = 93.0
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 1 )
+text = "ararajubazul"
+align = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="support"]
+margin_top = 90.0
+margin_right = 380.0
+margin_bottom = 141.0
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 1 )
+text = "minnow"
+align = 1
+autowrap = true
+
+[node name="Label8" type="Label" parent="support"]
+margin_top = 139.0
+margin_right = 380.0
+margin_bottom = 190.0
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 1 )
+text = "sahbiah"
+align = 1
+autowrap = true

@@ -25,7 +25,6 @@ __meta__ = {
 }
 
 [node name="exit" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -894.594, -163.238 )
 script = ExtResource( 4 )
 __meta__ = {
@@ -49,7 +48,6 @@ position = Vector2( -2.73169, -13.2684 )
 polygon = PoolVector2Array( 1570.88, 385.293, 1608.19, 385.09, 1599.02, 367.35, 1615.4, 367.409, 1589.23, 354.707, 1563.94, 367.41, 1579.04, 367.35 )
 
 [node name="heaven_fountain" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -894.594, -163.238 )
 script = ExtResource( 5 )
 __meta__ = {
@@ -62,7 +60,6 @@ dialog_label = "heaven_fountain"
 polygon = PoolVector2Array( 1460.07, 403.468, 1434.41, 436.125, 1433.24, 461.785, 1393.58, 485.112, 1409.91, 534.099, 1345.76, 552.76, 1343.43, 597.082, 1436.74, 644.902, 1427.41, 726.546, 1400.58, 766.202, 1416.91, 808.191, 1510.22, 808.191, 1566.2, 775.533, 1553.37, 737.043, 1532.38, 724.214, 1525.38, 651.9, 1621.02, 592.416, 1622.19, 545.762, 1561.54, 525.934, 1569.7, 476.948, 1525.38, 447.789, 1513.72, 409.299 )
 
 [node name="heaven_bench" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -562.185, -207.559 )
 script = ExtResource( 5 )
 __meta__ = {

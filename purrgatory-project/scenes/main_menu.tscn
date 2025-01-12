@@ -62,7 +62,7 @@ blend_mode = 3
 
 [node name="main" type="Node"]
 script = ExtResource( 1 )
-version = "2024-12-25 v2 debug"
+version = "2025-1-12"
 
 [node name="delay_timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -1030,7 +1030,7 @@ margin_right = 560.0
 margin_bottom = 336.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "italian translation "
+text = "italian translation"
 align = 2
 autowrap = true
 
@@ -1073,7 +1073,7 @@ margin_right = 560.0
 margin_bottom = 540.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "polish translation "
+text = "polish translation"
 align = 2
 autowrap = true
 
@@ -1140,7 +1140,7 @@ margin_right = 560.0
 margin_bottom = 931.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "portuguese translation support (brazil)"
+text = "portuguese translation support"
 align = 2
 autowrap = true
 

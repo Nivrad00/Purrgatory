@@ -147,5 +147,6 @@ polygon = PoolVector2Array( 465.026, 1011.01, 1745.01, 1011.01, 1745.02, 923.026
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="state_handler/exit2"]
 polygon = PoolVector2Array( 465.026, 1011.01, 1745.01, 1011.01, 1745.02, 923.026, 465.007, 923.014 )
+
 [connection signal="pressed" from="state_handler/kyungsoon_heaven" to="state_handler/kyungsoon_heaven" method="_on_char_obj_button_pressed"]
 [connection signal="pressed" from="state_handler/numa_heaven" to="state_handler/numa_heaven" method="_on_char_obj_button_pressed"]

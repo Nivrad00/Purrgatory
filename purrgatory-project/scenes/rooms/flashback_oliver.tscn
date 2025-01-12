@@ -1874,8 +1874,8 @@ rect_min_size = Vector2( 0, 60 )
 rect_clip_content = false
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "ti viene in mente una qualità apprezzavi di te."
-text = "ti viene in mente una qualità apprezzavi di te."
+bbcode_text = "ti viene in mente una qualità che apprezzavi di te."
+text = "ti viene in mente una qualità che apprezzavi di te."
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text/3/vc/t0"]
@@ -1951,8 +1951,8 @@ margin_right = 565.2
 margin_bottom = 10.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]la tua intelligenza ed eloquenza[/u]."
-text = "la tua intelligenza ed eloquenza."
+bbcode_text = "[u]l'intelligenza ed eloquenza[/u]."
+text = "l'intelligenza ed eloquenza."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/3/vc/c1/choice_container/2"]
@@ -1972,8 +1972,8 @@ margin_right = 565.2
 margin_bottom = 10.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]la tua bellezza impareggiabile[/u]."
-text = "la tua bellezza impareggiabile."
+bbcode_text = "[u]la bellezza impareggiabile[/u]."
+text = "la bellezza impareggiabile."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/3/vc/c1/choice_container/3"]
@@ -2014,8 +2014,8 @@ margin_right = 565.2
 margin_bottom = 10.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]il tuo talento musicale[/u]."
-text = "il tuo talento musicale."
+bbcode_text = "[u]il talento musicale[/u]."
+text = "il talento musicale."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/3/vc/c1/choice_container/5"]
@@ -2239,8 +2239,8 @@ margin_right = 1280.0
 margin_bottom = 52.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "l'hai completata in meno di tre ore."
-text = "l'hai completata in meno di tre ore."
+bbcode_text = "mettendoci meno di tre ore."
+text = "mettendoci meno di tre ore."
 scroll_active = false
 
 [node name="e3" type="RichTextLabel" parent="state_handler/text/3/vc/t3"]
@@ -2528,8 +2528,8 @@ margin_right = 800.0
 margin_bottom = 50.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]wygraniu konkursu literowania w szóstej klasie[/u]"
-text = "wygraniu konkursu literowania w szóstej klasie"
+bbcode_text = "[u]wygraniu konkursu literowania w szóstej klasie[/u]."
+text = "wygraniu konkursu literowania w szóstej klasie."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/4/vc/c2/choice_container/0"]
@@ -2585,8 +2585,8 @@ margin_right = 800.0
 margin_bottom = 50.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]narodzinach pierwszego dziecko[/u]."
-text = "narodzinach pierwszego dziecko."
+bbcode_text = "[u]narodzinach pierwszego dziecka[/u]."
+text = "narodzinach pierwszego dziecka."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/4/vc/c2/choice_container/3"]
@@ -2674,8 +2674,8 @@ margin_right = 1280.0
 margin_bottom = 52.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "zwycięskim słowem było \\miliarder.\\"
-text = "zwycięskim słowem było \\miliarder.\\"
+bbcode_text = "zwycięskim słowem było \"miliarder.\""
+text = "zwycięskim słowem było \"miliarder.\""
 scroll_active = false
 
 [node name="1" type="RichTextLabel" parent="state_handler/text/4/vc/t3"]
@@ -2694,8 +2694,8 @@ margin_right = 1280.0
 margin_bottom = 52.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "ukończyłeś go poniżej trzech godzin."
-text = "ukończyłeś go poniżej trzech godzin."
+bbcode_text = "ukończył{eś/aś/oś/xś} go poniżej trzech godzin."
+text = "ukończył{eś/aś/oś/xś} go poniżej trzech godzin."
 scroll_active = false
 
 [node name="e3" type="RichTextLabel" parent="state_handler/text/4/vc/t3"]
@@ -2764,7 +2764,6 @@ scroll_active = false
 anims/Fadein = SubResource( 28 )
 
 [node name="5" type="HBoxContainer" parent="state_handler/text"]
-visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 alignment = 1
@@ -2965,8 +2964,8 @@ margin_bottom = 430.0
 rect_min_size = Vector2( 0, 60 )
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "seu momento de maior orgulho foi quando "
-text = "seu momento de maior orgulho foi quando "
+bbcode_text = "seu momento de maior orgulho foi quando você "
+text = "seu momento de maior orgulho foi quando você "
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text/5/vc/c2"]
@@ -2983,8 +2982,8 @@ margin_right = 800.0
 margin_bottom = 50.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]você venceu o campeonato de soletrar do sexto ano[/u]."
-text = "você venceu o campeonato de soletrar do sexto ano."
+bbcode_text = "[u]venceu o campeonato de soletrar no sexto ano[/u]."
+text = "venceu o campeonato de soletrar no sexto ano."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/5/vc/c2/choice_container/0"]
@@ -3002,8 +3001,8 @@ margin_right = 800.0
 margin_bottom = 50.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]você tocou guitarra no estágio[/u]."
-text = "você tocou guitarra no estágio."
+bbcode_text = "[u]tocou guitarra no palco[/u]."
+text = "tocou guitarra no palco."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/5/vc/c2/choice_container/1"]
@@ -3201,8 +3200,8 @@ margin_right = 1280.0
 margin_bottom = 52.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "você ainda tem pesadelos daquele ultimo semestre."
-text = "você ainda tem pesadelos daquele ultimo semestre."
+bbcode_text = "você ainda tem pesadelos daquele último semestre."
+text = "você ainda tem pesadelos daquele último semestre."
 scroll_active = false
 
 [node name="6" type="RichTextLabel" parent="state_handler/text/5/vc/t3"]
@@ -3211,14 +3210,15 @@ margin_right = 1280.0
 margin_bottom = 52.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "não me arrependo "
-text = "não me arrependo "
+bbcode_text = "não me arrependo."
+text = "não me arrependo."
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text/5/vc/t3"]
 anims/Fadein = SubResource( 32 )
 
 [node name="6" type="HBoxContainer" parent="state_handler/text"]
+visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 alignment = 1

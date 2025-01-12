@@ -1,0 +1,173 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://themes/ui_font_40.tres" type="DynamicFont" id=1]
+[ext_resource path="res://themes/chinese_only_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://themes/ui_font_18.tres" type="DynamicFont" id=3]
+
+[node name="6" type="Control"]
+visible = false
+margin_left = 63.0
+margin_top = 37.0
+margin_right = 1343.0
+margin_bottom = 757.0
+rect_scale = Vector2( 0.9, 0.9 )
+
+[node name="spanish" type="Label" parent="."]
+margin_left = 61.0
+margin_top = 49.0
+margin_right = 441.0
+margin_bottom = 120.0
+grow_vertical = 0
+custom_constants/line_spacing = -10
+text = "spanish translation (spain)"
+align = 1
+autowrap = true
+
+[node name="Label5" type="Label" parent="spanish"]
+margin_top = 45.0
+margin_right = 380.0
+margin_bottom = 98.0
+custom_fonts/font = ExtResource( 1 )
+text = "samo"
+align = 1
+
+[node name="Label7" type="Label" parent="spanish"]
+margin_top = 90.301
+margin_right = 380.0
+margin_bottom = 124.301
+rect_pivot_offset = Vector2( 676.708, 14.8751 )
+custom_fonts/font = ExtResource( 3 )
+text = "(samuel de la torre galán)"
+align = 1
+
+[node name="chinese" type="Label" parent="."]
+margin_left = 447.0
+margin_top = 49.0
+margin_right = 827.0
+margin_bottom = 120.0
+grow_vertical = 0
+custom_constants/line_spacing = -10
+text = "chinese translation"
+align = 1
+autowrap = true
+
+[node name="Label5" type="Label" parent="chinese"]
+margin_top = 47.0
+margin_right = 380.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 2 )
+text = "赤铜/syakudo"
+align = 1
+
+[node name="chinese2" type="Label" parent="chinese"]
+margin_top = 141.0
+margin_right = 380.0
+margin_bottom = 212.0
+grow_vertical = 0
+custom_constants/line_spacing = -10
+text = "chinese translation support"
+align = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="chinese/chinese2"]
+margin_top = 49.0
+margin_right = 380.0
+margin_bottom = 102.0
+custom_fonts/font = ExtResource( 2 )
+text = "ciinore"
+align = 1
+
+[node name="Label3" type="Label" parent="chinese/chinese2"]
+margin_top = 98.434
+margin_right = 380.0
+margin_bottom = 151.434
+custom_fonts/font = ExtResource( 2 )
+text = "面具魔MaskDevil"
+align = 1
+
+[node name="Label4" type="Label" parent="chinese/chinese2"]
+margin_top = 149.682
+margin_right = 380.0
+margin_bottom = 202.682
+custom_fonts/font = ExtResource( 2 )
+text = "伏霖CRLINEEPER"
+align = 1
+
+[node name="italian" type="Label" parent="."]
+margin_left = 833.0
+margin_top = 49.0
+margin_right = 1213.0
+margin_bottom = 120.0
+grow_vertical = 0
+custom_constants/line_spacing = -10
+text = "italian translation"
+align = 1
+autowrap = true
+
+[node name="Label8" type="Label" parent="italian"]
+margin_top = 44.0
+margin_right = 380.0
+margin_bottom = 97.0
+custom_fonts/font = ExtResource( 1 )
+text = "aki"
+align = 1
+
+[node name="Label9" type="Label" parent="italian"]
+margin_top = 89.301
+margin_right = 380.0
+margin_bottom = 123.301
+rect_pivot_offset = Vector2( 676.708, 14.8751 )
+custom_fonts/font = ExtResource( 3 )
+text = "(giulia bosioli)"
+align = 1
+
+[node name="Label5" type="Label" parent="italian"]
+margin_top = 112.0
+margin_right = 380.0
+margin_bottom = 165.0
+custom_fonts/font = ExtResource( 1 )
+text = "chiro"
+align = 1
+
+[node name="Label7" type="Label" parent="italian"]
+margin_top = 157.301
+margin_right = 380.0
+margin_bottom = 191.301
+rect_pivot_offset = Vector2( 676.708, 14.8751 )
+custom_fonts/font = ExtResource( 3 )
+text = "(alessandro mura)"
+align = 1
+
+[node name="Label6" type="Label" parent="italian"]
+margin_top = 179.0
+margin_right = 380.0
+margin_bottom = 232.0
+custom_fonts/font = ExtResource( 1 )
+text = "cora bruno"
+align = 1
+
+[node name="italian2" type="Label" parent="italian"]
+margin_top = 273.0
+margin_right = 380.0
+margin_bottom = 344.0
+grow_vertical = 0
+custom_constants/line_spacing = -10
+text = "italian translation support"
+align = 1
+autowrap = true
+
+[node name="Label8" type="Label" parent="italian/italian2"]
+margin_top = 50.0
+margin_right = 380.0
+margin_bottom = 103.0
+custom_fonts/font = ExtResource( 1 )
+text = "droghead"
+align = 1
+
+[node name="Label5" type="Label" parent="italian/italian2"]
+margin_top = 98.0
+margin_right = 380.0
+margin_bottom = 151.0
+custom_fonts/font = ExtResource( 1 )
+text = "serj"
+align = 1

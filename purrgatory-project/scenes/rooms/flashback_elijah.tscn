@@ -1501,8 +1501,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]un bassista di una band ignota[/u]."
-text = "un bassista di una band ignota."
+bbcode_text = "[u]un bassista di una band sconosciuta[/u]."
+text = "un bassista di una band sconosciuta."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/3/vc/c1/choice_container/4"]
@@ -2075,8 +2075,8 @@ rect_min_size = Vector2( 0, 60 )
 rect_clip_content = false
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "você se lembra da pessoa que você mais adimirou."
-text = "você se lembra da pessoa que você mais adimirou."
+bbcode_text = "você se lembra da pessoa que você mais admirou."
+text = "você se lembra da pessoa que você mais admirou."
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text/5/vc/t0"]
@@ -2275,8 +2275,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]autruísta[/u]"
-text = "autruísta"
+bbcode_text = "[u]altruísta[/u]"
+text = "altruísta"
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/5/vc/c2/choice_container/1"]
@@ -2332,8 +2332,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]sussedid{o/a/e}[/u]"
-text = "sussedid{o/a/e}"
+bbcode_text = "[u]sucedid{o/a/e}[/u]"
+text = "sucedid{o/a/e}"
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/5/vc/c2/choice_container/4"]
@@ -2370,8 +2370,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]sabi{o/a/e}[/u]"
-text = "sabi{o/a/e}"
+bbcode_text = "[u]sábi{o/a/e}[/u]"
+text = "sábi{o/a/e}"
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/5/vc/c2/choice_container/6"]
@@ -2390,8 +2390,8 @@ rect_min_size = Vector2( 0, 60 )
 rect_clip_content = false
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = " como aquela pessoa"
-text = " como aquela pessoa"
+bbcode_text = " como aquela pessoa."
+text = " como aquela pessoa."
 scroll_active = false
 
 [node name="6" type="HBoxContainer" parent="state_handler/text"]

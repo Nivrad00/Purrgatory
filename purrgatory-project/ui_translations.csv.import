@@ -5,10 +5,10 @@ type="Translation"
 
 [deps]
 
-files=[ "res://ui_translations.en.translation", "res://ui_translations.it.translation", "res://ui_translations.pl.translation", "res://ui_translations.es.translation", "res://ui_translations.zh.translation", "res://ui_translations.pt.translation", "res://ui_translations.es_SV.translation" ]
+files=[ "res://ui_translations.en.translation", "res://ui_translations.es.translation", "res://ui_translations.zh.translation", "res://ui_translations.it.translation", "res://ui_translations.pl.translation", "res://ui_translations.pt.translation", "res://ui_translations.es_SV.translation" ]
 
 source_file="res://ui_translations.csv"
-dest_files=[ "res://ui_translations.en.translation", "res://ui_translations.it.translation", "res://ui_translations.pl.translation", "res://ui_translations.es.translation", "res://ui_translations.zh.translation", "res://ui_translations.pt.translation", "res://ui_translations.es_SV.translation" ]
+dest_files=[ "res://ui_translations.en.translation", "res://ui_translations.es.translation", "res://ui_translations.zh.translation", "res://ui_translations.it.translation", "res://ui_translations.pl.translation", "res://ui_translations.pt.translation", "res://ui_translations.es_SV.translation" ]
 
 [params]
 

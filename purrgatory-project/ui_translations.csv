@@ -1,165 +1,165 @@
-﻿keys,en,it,pl,es,zh,pt,es_SV
-PRONOUN1,they/them,ləi,ono/jeno,elle/-e,ta,elu/delu,elle
-PRONOUN2,she/her,lei,ona/jej,ella/-a,她,ela/dela,ella
-PRONOUN3,he/him,lui,on/jego,él/-o,他,ele/dele,él
-PRONOUN4,custom,personalizza,onx/jex,personalizar,自定义,customizado,personalizado
-ok,ok,ok,ok,listo,好,ok,ok
-skip,skip,salta,pomiń,saltar,跳过,pular,saltar
-history,history,storia,historia,historial,历史,história,historial
-menu,menu,menu,menu,menú,菜单,menu,menú
-to do,to do,da fare,do zrobienia,tareas,待办,afazeres,tareas
-items,items,oggetti,przedmioty,objetos,物品,itens,objetos
-save,save,salva,zapisz,guardar,保存,salvar,guardar
-load,load,carica,załaduj,cargar,读取,carregar,cargar
-options,options,opzioni,opcje,opciones,选项,opções,ajustes
-exit to main menu,exit to main menu,vai al menu principale,wyjdź do menu głównego,volver al menú principal,回到主菜单,voltar,ir al menú principal
-back,back,indietro,wróć,cancelar,返回,voltar,atrás
-are you sure? unsaved progress will be lost.,are you sure? unsaved progress will be lost.,confermi? i tuoi progressi andranno persi.,na pewno? niezapisane zmiany będą stracone.,recuerda: todo el progreso no guardado se perderá.,你确定吗？未保存的进度将会遗失,tem certeza? todo o progresso não salvo vai ser perdido.,¿estás seguro? el progreso no guardado se perderá.
-yes,yes,sì,tak,aceptar,是,sim,sí
-no,no,no,nie,cancelar,否,não,no
-game saved.,game saved.,progressi salvati.,gra zapisana.,partida guardada.,游戏已保存,jogo salvo.,juego guardado.
-SAVING_WAITING,saving…\ndon't exit the game yet!,salvataggio…\nnon uscire dal gioco!,zapisywanie…\nnie wychodź jeszcze z gry!,guardando…\n¡no cierres el juego todavía!,正在保存…\n先别退出游戏！,salvando…\nnão saia do jogo ainda!,guardando…\n¡no salgas del juego todavía!
-game loaded.,game loaded.,gioco caricato.,gra załadowana.,partida cargada.,已加载,jogo carregado.,juego cargado.
-continue,continue,continua,kontynuuj,continuar,继续,continuar,continuar
-delete data,delete data,cancella dati,usuń dane,eliminar datos,删除进度,deletar data,borrar datos
-DELETE_DATA_CONFIRM,"are you sure you want to delete all your data?\nthis will delete your saves and reset the ""skip"" button","confermi di voler cancellare tutti i tuoi dati?\ncancellerà i tuoi progressi e resetterà il tasto ""salta""","na pewno chcesz usunąć wszystkie dane?\nto usunie twoje zapisy i zresetuje przycisk ""pomiń""","todos tus datos se eliminarán.\nse eliminarán todas las partidas guardadas y se restablecerá el botón de ""saltar""",你确定要删除所有的进度吗？\n该选项会清除你的存档并重置“跳过”按钮,"certeza que você quer deletar toda sua data?\nisso vai deletar todos os seus saves e resetar o botão ""pular""","¿estás seguro de que quieres borrar todos los datos?\nesto borrará tus partidas guardadas y reiniciará el botón ""saltar"""
-yes,yes,sì,tak,aceptar,是,sim,sí
-no,no,no,nie,cancelar,否,não,no
-data deleted.,data deleted.,dati cancellati.,dane usunięte.,datos eliminados.,进度已删除,data deletada.,los datos han sido borrados.
-load autosave,load autosave,carica autosalvataggio,załaduj automatyczny zapis,cargar autoguardado,加载自动存档,carregar autosave,cargar guardado automático
-MAIN_READY,ready!\nclick to continue,finito!\nclicca per continuare,gotowe!\nkliknij by kontynuować,¡listo!\nhaz click para continuar,已就绪！\n按任意键继续,pronto!\nclique para continuar ,¡listo!\nhaz clic para continuar
-start,start,inizia,rozpocznij,empezar,开始,começar,empezar
-load,load,carica,załaduj,cargar,载入,carregar,cargar
-options,options,opzioni,opcje,opciones,选项,opções,ajustes
-info,info,informazioni,informacje,información,制作人员名单,sobre,información
-exit,exit,esci,wyjście,salir,退出,sair,salir
-a game by,a game by,un gioco creato da,gra stworzona przez,un juego creado por,制作人：,um jogo feito pelo,un juego creado por
-"note: this is the web version of purrgatory. for higher quality and smoother gameplay, try the windows version!","note: this is the web version of purrgatory. for higher quality and smoother gameplay, try the windows version!","nota: questa è la versione web di purrgatory. per una qualità migliore e un gameplay più fluido, prova la versione windows!","uwaga: jest to wersja internetowa purrgatory. dla lepszej jakości i gładszej rozgrywki, wypróbuj wersję na windows!",nota: esta es la versión web de purrgatorio. la versión de windows ofrece una mayor calidad y jugabilidad.,注：该版本为网页版，如果想拥有更高质量与更为流畅的游戏体验，请尝试windows版！,nota: essa é a versão da web de purrgatory. para maior qualidade e gameplay mais suave experimente a versão de windows!,"nota: esta es la versión web de purrgatory. para una mejor calidad y un juego más fluido, ¡prueba la versión para windows!"
-hotkeys,hotkeys,scorciatoie,skróty klawiszowe,atajos de teclado,热键,teclas chave,TECLAS DE ACCESO RÁPIDO
-space,space,barra spazio,spacja,espacio,空格,espaço,espacio
-advance text,advance text,avanza con il testo,tekst zaawansowany,avanzar el diálogo,下一句,avançar texto,saltar texto
+﻿keys,en,es,zh,it,pl,pt,es_SV
+PRONOUN1,they/them,elle/-e,ta,ləi,ono/jeno,elu/delu,elle
+PRONOUN2,she/her,ella/-a,她,lei,ona/jej,ela/dela,ella
+PRONOUN3,he/him,él/-o,他,lui,on/jego,ele/dele,él
+PRONOUN4,custom,personalizar,自定义,personalizzati,onx/jex,customizado,personalizado
+ok,ok,listo,好,ok,ok,ok,ok
+skip,skip,saltar,跳过,salta,pomiń,pular,saltar
+history,history,historial,历史,storia,historia,história,historial
+menu,menu,menú,菜单,menu,menu,menu,menú
+to do,to do,tareas,待办,da fare,do zrobienia,tarefas,tareas
+items,items,objetos,物品,oggetti,przedmioty,itens,objetos
+save,save,guardar,保存,salva,zapisz,salvar,guardar
+load,load,cargar,读取,carica,załaduj,carregar,cargar
+options,options,opciones,选项,opzioni,opcje,opções,ajustes
+exit to main menu,exit to main menu,volver al menú principal,回到主菜单,vai al menu principale,wyjdź do menu głównego,sair pro menu,ir al menú principal
+back,back,cancelar,返回,indietro,wróć,voltar,atrás
+are you sure? unsaved progress will be lost.,are you sure? unsaved progress will be lost.,recuerda: todo el progreso no guardado se perderá.,你确定吗？未保存的进度将会遗失,confermi? i tuoi progressi andranno persi.,na pewno? niezapisane zmiany będą stracone.,tem certeza? o progresso não salvo será perdido.,¿estás seguro? el progreso no guardado se perderá.
+yes,yes,aceptar,是,sì,tak,sim,sí
+no,no,cancelar,否,no,nie,não,no
+game saved.,game saved.,partida guardada.,游戏已保存,progressi salvati.,gra zapisana.,jogo salvo.,juego guardado.
+SAVING_WAITING,saving…\ndon't exit the game yet!,guardando…\n¡no cierres el juego todavía!,正在保存…\n先别退出游戏！,salvataggio…\nnon uscire dal gioco!,zapisywanie…\nnie wychodź jeszcze z gry!,salvando…\nnão saia do jogo ainda!,guardando…\n¡no salgas del juego todavía!
+game loaded.,game loaded.,partida cargada.,已加载,partita caricata.,gra załadowana.,jogo carregado.,juego cargado.
+continue,continue,continuar,继续,continua,kontynuuj,continuar,continuar
+delete data,delete data,eliminar datos,删除进度,cancella dati,usuń dane,deletar dados,borrar datos
+DELETE_DATA_CONFIRM,"are you sure you want to delete all your data?\nthis will delete your saves and reset the ""skip"" button","todos tus datos se eliminarán.\nse eliminarán todas las partidas guardadas y se restablecerá el botón de ""saltar""",你确定要删除所有的进度吗？\n该选项会清除你的存档并重置“跳过”按钮,"confermi di voler cancellare tutti i tuoi dati?\nquesto cancellerà i tuoi progressi e resetterà il tasto ""salta""","na pewno chcesz usunąć wszystkie dane?\nto usunie twoje zapisy i zresetuje przycisk ""pomiń""","certeza que você quer deletar todos os seus dados?\nisso vai deletar todos os seus saves e resetar o botão ""pular""","¿estás seguro de que quieres borrar todos los datos?\nesto borrará tus partidas guardadas y reiniciará el botón ""saltar"""
+yes,yes,aceptar,是,sì,tak,sim,sí
+no,no,cancelar,否,no,nie,não,no
+data deleted.,data deleted.,datos eliminados.,进度已删除,dati cancellati.,dane usunięte.,dados deletados.,los datos han sido borrados.
+load autosave,load autosave,cargar autoguardado,加载自动存档,carica autosalvataggio,załaduj automatyczny zapis,carregar autosave,cargar guardado automático
+MAIN_READY,ready!\nclick to continue,¡listo!\nhaz click para continuar,已就绪！\n按任意键继续,finito!\nclicca per continuare,gotowe!\nkliknij by kontynuować,pronto!\nclique para continuar,¡listo!\nhaz clic para continuar
+start,start,empezar,开始,inizia,rozpocznij,começar,empezar
+load,load,cargar,载入,carica,załaduj,carregar,cargar
+options,options,opciones,选项,opzioni,opcje,opções,ajustes
+info,info,información,制作人员名单,informazioni,informacje,sobre,información
+exit,exit,salir,退出,esci,wyjście,sair,salir
+a game by niv,a game by niv,un juego creado por niv,制作人：Niv,un gioco creato da niv,gra stworzona przez niv,um jogo feito pelo niv,un juego creado por niv
+"note: this is the web version of purrgatory. for higher quality and smoother gameplay, try the windows version!","note: this is the web version of purrgatory. for higher quality and smoother gameplay, try the windows version!",nota: esta es la versión web de purrgatorio. la versión de windows ofrece una mayor calidad y jugabilidad.,注：该版本为网页版，如果想拥有更高质量与更为流畅的游戏体验，请尝试windows版！,"nota: questa è la versione web di purrgatory. per una qualità migliore e un gameplay più fluido, prova la versione windows!","uwaga: jest to wersja internetowa purrgatory. dla lepszej jakości i gładszej rozgrywki, wypróbuj wersję na windows!","nota: essa é a versão da web de purrgatory. para maior qualidade e gameplay mais suave, experimente a versão do windows!","nota: esta es la versión web de purrgatory. para una mejor calidad y un juego más fluido, ¡prueba la versión para windows!"
+hotkeys,hotkeys,atajos de teclado,热键,scorciatoie,skróty klawiszowe,atalhos,teclas de acceso rápido
+space,space,espacio,空格,barra spaziatrice,spacja,espaço,espacio
+advance text,advance text,avanzar el diálogo,下一句,avanza con il testo,tekst zaawansowany,avançar texto,saltar texto
 "1, 2, 3, 4","1, 2, 3, 4","1, 2, 3, 4","1, 2, 3, 4","1, 2, 3, 4","1, 2, 3, 4","1, 2, 3, 4","1, 2, 3, 4"
-choose option,choose option,scegli opzione,wybierz opcję,elegir respuestas,选择选项,escolher opção,escoger opción
-escape,escape,scappa,wyjdź ,escape,esc,escape,esc
-open pause menu,open pause menu,apri il menu di pausa,otwórz menu pauzy,menú de pausa,打开暂停菜单,abrir menu de pausa,abrir menú de pausa
-tab,tab,tab,tab,tabulador,tab,tab,tab
-skip,skip,salta,pomiń,saltar,跳过,pular,saltar texto
+choose option,choose option,elegir respuestas,选择选项,scegli opzione,wybierz opcję,escolher opção,escoger opción
+escape,escape,escape,esc,scappa,wyjdź,escape,esc
+open pause menu,open pause menu,menú de pausa,打开暂停菜单,apri il menu di pausa,otwórz menu pauzy,abrir menu de pausa,abrir menú de pausa
+tab,tab,tabulador,tab,tab,tab,tab,tab
+skip,skip,saltar,跳过,salta,pomiń,pular,saltar texto
 h,h,h,h,h,h,h,h
-history,history,storia,historia,historial,历史,história,historial
+history,history,historial,历史,storia,historia,história,historial
 t,t,t,t,t,t,t,t
-to do,to do,da fare,do zrobienia,tareas,待办,afazeres,tareas
+to do,to do,tareas,待办,da fare,do zrobienia,tarefas,tareas
 i,i,i,i,i,i,i,i
-items,items,oggetti,przedmioty,objetos,物品,itens,objetos
-credits,credits,crediti,napisy końcowe,créditos,制作人员名单,creditos,CRÉDITOS
-a game by niv,a game by niv,un gioco creato da niv,gra stworzona przez niv,un juego creado por niv,制作人：Niv,um jogo feito pelo niv,un juego creado por niv
-"story, art, music, and code","story, art, music, and code","storia, arte, musica e codice","fabuła, oprawa graficzna, muzyka, kod","guion, dibujo, música y programación",编剧，美术，音乐，程序,"história, arte, música, e programação","historia, arte, música y programación"
-with story help from,with story help from,con aiuto per la storia da,z pomocą przy fabule od,asistencia de guion,编剧协助,com ajuda de história de ,colaboración en la historia
-additional code,additional code,codice aggiuntivo,dodatkowy kod,asistencia de programación,程序协助,código adicional,programación adicional
-art,art,arte,oprawa graficzna,dibujo,美术,arte,ARTE
-tracing,tracing,tracing,sprawdzenie,delineado,线稿,traço,trazados
-character design help,character design help,aiuto creazione personaggi,pomoc przy kreacji postaci,asistencia de diseño,角色设计协助,ajuda com o desing de personagem,ayuda con el diseño de personajes
-background help,background help,aiuto background,pomoc przy kreacji tła,asistencia para los fondos,背景设计协助,ajuda com o plano de fundo ,ayuda con los fondos
-music,music,musica,muzyka,música,音乐,música,MÚSICA
-additional music,additional music,musica aggiuntiva,dodatkowa muzyka,música adicional,额外音乐,música adicional,música adicional
-written by,written by,scritto da,napisane przez,guion,作曲,escrito por,escrito por
-guitar,guitar,chitarra,gitara,guitarra,吉他,guitarra,guitarra
-vocals,vocals,voci,wokal,voz,演唱,vocais,voz
-other,other,altro,inne,otros,其他,outros,OTROS
-testing,testing,testing,testowanie,pruebas,测试,beta testing,testeo
-special thanks,special thanks,ringraziamenti speciali,specjalne podziękowania,agradecimientos,特别感谢,agradecimentos especiais,agradecimientos especiales
-sound effects,sound effects,effetti sonori,efekty dźwiękowe,efectos de sonido,音效,efeitos sonoros,efectos de sonido
-additional assets,additional assets,elementi aggiuntivi,dodatkowe zasoby,recursos adicionales,额外素材,assets adicionais,características adicionales
-ADDITIONAL_ASSETS_DESC,text-to-speech module\n3d outline shader\n3d cat model\nsource sans pro font,modulo sintesi vocale\nshader contorno 3d\nmodello gatto 3d\nsource sans pro font,przetwarzanie tekstu na mowę\nshader krawędzi 3D\nmodel kota 3D\nczcionka source sans pro,sintetizador de voz\nsombras del delineado 3d\nmodelo 3d del gato\nfuente source sans pro,tts模块\n3d轮廓渲染\n3d猫猫模型\n字体来源,modulo de texto-para-fala\nshadder de contorno 3D\nmodelo de gato 3D\nfonte source sans pro,narrador de texto\nsombreador de trazos 3d\nmodelo 3d del gato\nfuente de texto: sans pro font
-thanks for playing!,thanks for playing!,grazie per aver giocato!,dziękuję za zagranie!,¡gracias por jugar!,感谢游玩！,agradecemos por jogar!,¡gracias por jugar!
-the end?,the end?,la fine?,koniec?,¿fin?,结局？,o fim?,¿el fin?
-YOU_SAVED_SINGULAR,you saved 1 person,hai salvato 1 persona,ocalono 1 osobę,salvaste a 1 persona,你拯救了1人,você salvou 1 pessoa,salvaste a 1 persona
-YOU_SAVED_PLURAL,you saved # people,hai salvato # persone,ocalono # ludzi,salvaste a # personas,你拯救了#人,você salvou # pessoas,salvaste a # personajes
-skip,skip,salta,pomiń,saltar,跳过,pular,saltar
-save and return,save and return,salva e ritorna,zapisz i wróć,guardar y volver,保存并返回,salvar e voltar,guardar y volver
-reset settings,reset settings,resetta impostazioni,zresetuj ustawienia,reestablecer configuración,重置设定,resetar configuração,ajustes predeterminados
-text size,text size,dimensioni testo,rozmiar tekstu,tamaño del texto,文字大小,tamanho do texto,tamaño del texto
-preview,preview,anteprima,podgląd,vista previa,预览,visualizar,vista previa
-music volume,music volume,volume musica,głośność muzyki,música,音乐音量,volume da música,música
-sfx volume,sfx volume,volume effetti sonori,głośność efektów dźwiękowych,sonidos,音效音量,volume dos efeitos sonoros,efectos
-fullscreen,fullscreen,schermo intero,tryb pełnoekranowy,pantalla completa,全屏,tela cheia,pantalla completa
-window size,window size,grandezza finestra,tryb widoku z okna,tamaño de ventana,窗口大小,tamanho da janela,resolución de la pantalla
-self-voicing,self-voicing,voce automatica,synteza mowy,voz automática,文字转语音,dublagem automática,narrador de texto
-test,test,test,test,probar,测试,testar,probar
-voice speed,voice speed,velocità voce,szybkość mówienia,velocidad de voz,语音速度,velocidade de voz,velocidad del narrador
-self-voicing sample,self-voicing sample,esempio sintesi vocale,próbka syntezy mowy,prueba del lector de pantalla,这是一段测试语音,amostra da dublagem automática,muestra de voz del narrador de texto
-enable to do list,enable to do list,attiva lista cose da fare,włącz listę rzeczy do zrobienia,habilitar la lista de tareas,开启待办菜单,exibir lista de tarefas,habilitar lista de tareas
-automatically keeps track of certain objectives,automatically keeps track of certain objectives,tieni traccia automaticamente di alcuni obiettivi,automatycznie śledzi pewne cele,registra ciertos objetivos de manera automática,能够自动记录某些任务目标,automaticamente manter acompanhamento de certos objetivos,controla automáticamente ciertos objetivos
-low contrast mode,low contrast mode,modalità contrasto basso,tryb niskiego kontrastu,contraste bajo,护眼模式,modo baixo contraste,modo de bajo contraste
-note: some options not available in the web build,note: some options not available in the web build,nota: alcune opzioni non sono disponibili nella modalità web,uwaga: niektóre opcje nie są dostępne w wersji web,nota: algunas opciones no están disponibles en la versión web,注意：部分选项在网页版不可用,nota: algumas opções não estão disponiveis na versão da web,nota: algunos ajustes no están disponibles en la versión web
-"note: purrgatory looks best at its original resolution, 1280 x 720!","note: purrgatory looks best at its original resolution, 1280 x 720!",nota: purrgatory funziona meglio nella risoluzione originaria 1280x720!,"uwaga: purrgattory wygląda najlepiej w pierwotnej rozdzielczości, 1280 x 720!",nota: es recomendable jugar este juego en su resolución original (1280 x 720),注：喵的炼狱在原生分辨率下显示效果最好，即1280 x 720！,"nota: purrgatory fica melhor na sua resolusão original, 1280 x 720!","nota: purrgatory se ve mejor en su resolución original, ¡1280x720!"
-QUIP_CAT,"meow meow, meow meow meow :3","miao, miao, miao, miao, miao :3","miau miau, miau miau miau :3","miau miau, miau miau miau :3",喵喵，喵喵喵 :3,"miau miau, miau miau miau :3","miau miau, miau miau miau :3"
-QUIP_OLIVER,"to meow, or not to meow, that is the question!","miagolare o non miagolare, questo è il dilemma!",miau czy nie miau; oto jest pytanie!,"¿no es cierto, ángel de amor, que en esta apartada orilla más pura la luna brilla y se maúlla mejor?",是要喵，还是不要喵，这是问题所在！,"miar, ou não miar, essa é questão!","maullar o no maullar, ¡he ahí el dilema!"
-QUIP_KYUNGSOON,hmmm. that\'s an options menu,mmmh. è il menu delle impostazioni,hmmm. to jest menu opcji,em. pues un menú de opciones,嗯——这是个设置菜单,hmmmm. isso é um menu de opções,"hmmm, este es el menú de ajustes"
-QUIP_NUMA,HEY!! change the font size right now! i mean... if you want.,EHI!! cambia subito la grandezza del font! se vuoi... ovviamente.,EJ!! zmień natychmiast rozmiar czcionki! to znaczy… jeśli chcesz.,¡OYE! ¡ya estás cambiando el tamaño de la letra! bueno... si te apetece.,嘿！！快改一下字体大小！我是说…如果你想的话,EI!! mude o tamanho da fonte agora mesmo! quero dizer... se você quiser.,¡¡OYE!! ¡cambia el tamaño de la fuente de texto ahora mismo! digo.... solo si tú quieres.
-QUIP_SEAN,what\'s a nice player like you doing in a menu like this? (;,cosa ci fa un bell'utente come te in questo menu? ;),co taki miły gracz jak ty robi w takim menu? (;,y... ¿vienes mucho por este menú de opciones? (;,你这样可爱的玩家在菜单里做什么呢 (;,o que um jogador legal como você fazendo em um menu como esse? (;,¿qué hace {un/una/une} lind{o/a/e} jugad{or/ra/re} como tú en un menú como este? (;
-QUIP_ELIJAH,'tis better to have meowed and lost than never to have meowed at all.,meglio aver miagolato e perso che non aver miagolato affatto.,"lepiej zamiauczeć i przegrać, niż wcale nie zamiauczeć.","que toda la vida es un gato, y los gatos, gatos son.",喵过却失去，总比从未喵过好,é melhor ter dado miado e perde-lo do que nunca ter miado ,es mejor maullar y perderse que nunca haber maullado.
-QUIP_TORI,what are you doing fiddling with the settings? there\'s a game to play!,perché perdi tempo con le impostazioni? hai un gioco da giocare!,czemu bawisz się ustawieniami? tam jest gra do grania!,¿se puede saber qué haces mirando la configuración? ¡ponte a jugar!,你怎么还在这摆弄设置？还有游戏要玩！,por que você tá fazendo mexendo com as opções? tem um jogo a ser jogado!,¿qué haces toqueteando los ajustes? ¡hay un juego que jugar!
-QUIP_NATALIE,zzz... huh? where am i?,zzz... eh? dove sono?,zzz… hę? gdzie ja jestem?,zzz... ¿eing? ¿dónde estoy?,zzz…哎？咱在哪？,zzz... que? onde é que eu tô? (lagoinha)?,zzz... ¿huh? ¿en dónde estoy?
-erase,erase,cancella,usuń,borrar,擦除,apagar,borrar
-press up repeatedly to hold on!!,press up repeatedly to hold on!!,premi ripetutamente su per resistere!!,"klikaj strzałkę w górę, aby się trzymać!!",¡pulsa [arriba] para no caerte!,反复按上键以坚持！！,aperte para cima repetidamente para segurar!!,¡¡presiona arriba repetidamente para aguantar!!
-just hang on!,just hang on!,non mollare!,trzymaj się!,¡aguanta ahí!,你就坚持一下！,só segura firme!,¡solo aguanta! 
-why are you so heavy??,why are you so heavy??,perché sei così pesante?,dlaczego jesteś tak{i/a/ie/x} ciężk{i/a/ie/x},¡¿cómo pesas tanto?!,你为什么这么重？？,porque você tem tanto peso??,¿por qué pesas tanto?
-i'm sorry i guess??,i'm sorry i guess??,forse dovrei scusarmi??,no przepraszam??,¡pues perdóname!,我很抱歉？？,me desculpa eu acho??,"lo siento, ¿¿supongo??"
-least i'm getting my arm workout for the day...,least i'm getting my arm workout for the day...,almeno ho allenato un po' il braccio...,przynajmniej mam z głowy trening ramion na dziś…,esto cuenta como día de brazo...,至少我今天胳膊锻炼量有了…,pelo menos eu fiz meu exercício de braço diario...,al menos estoy haciendo mi entrenamiento de brazos del día...
-you okay down there??,you okay down there??,tutto bene laggiù?,wszystko w porządku tam na dole??,¡¿estás bien?!,你在下面没事吗？？,tá tudo bem ai em baixo??,¿¿todo bien ahí abajo??
-what sort of a question is that??,what sort of a question is that??,che razza di domande fai??,co to za pytanie??,¡¿qué clase de pregunta es esa?!,那是什么样的问题啦？？,que tipo de pergunta é essa?,¿¿qué clase de pregunta es esa??
-almost there!!,almost there!!,ci sono quasi!!,już prawie!!,¡ya casi estás!,快了！！,quase lá!!,¡¡ya casi!!
-done,done,fatto,zrobione,hecho,完成,pronto,listo
-skip,skip,salta,pomiń,saltar,跳过,pular,saltar
-sure?,sure?,confermi?,na pewno?,¿abandonar?,确定？,certeza?,¿seguro?
-yes,yes,sì,tak,sí,是,sim,sí
-no,no,no,nie,no,否,não,no
-translation,translation,traduzione,tłumaczenie,traducción,翻译,tradução,TRADUCCIÓN
-language,language,lingua,język,idioma,语言,idioma,idioma
-spanish translation (spain),spanish translation (spain),traduzione spagnolo (spagna),hiszpańska wersja językowa (hiszpania),traducción al español de españa,西班牙语翻译（西班牙）,tradução espanhola (espanha),traducción al español de españa
-spanish translation (latin america),spanish translation (latin america),traduzione spagnolo (america latina),hiszpańska wersja językowa (ameryka łacińska),traducción al español de latinoamérica,西班牙语翻译（拉丁美洲）,tradução espanhola (américa latina),traducción al español de latinoamérica
-chinese translation,chinese translation,traduzione cinese,chińska wersja językowa,traducción al chino,简体中文翻译,tradução chinesa,traducción al chino
-chinese translation support,chinese translation support,supporto traduzione cinese,wsparcie powstawania chińskiej wersji językowej,asistencia de traducción al chino,简体中文翻译协助,suporte da tradução chinesa,apoyo de traducción al chino
-italian translation,italian translation,traduzione italiano,włoska wersja językowa,traducción al italiano,意大利语翻译,tradução italiana,traducción al italiano
-italian translation support,italian translation support,supporto traduzione italiano,wsparcie powstawania włoskiej wersji językowej,asistencia de traducción al italiano,意大利语翻译协助,suporte da tradução italiana,apoyo de traducción al italiano
-polish translation,polish translation,traduzione polacco,polska wersja językowa,traducción al polaco,波兰语翻译,tradução polonesa,traducción al polaco
-polish translation support,polish translation support,supporto traduzione polacco,wsparcie powstawania polskiej wersji językowej,asistencia de traducción al polaco,波兰语翻译协助,suporte da tradução polonesa,apoyo de traducción al polaco
-portuguese translation (brazil),portuguese translation (brazil),traduzione portoghese (brasile),portugalska wersja językowa (brazylia),traducción al portugués de brasil,葡萄牙语翻译（巴西）,tradução portuguesa (brasil),traducción al portugués de brasil
-portuguese translation support,portuguese translation support,supporto traduzione portoghese,wsparcie powstawania portugalskiej wersji językowej,asistencia de traducción al portugués,葡萄牙语翻译协助,suporte da tradução portuguesa,apoyo de traducción al portugués
-cat,cat,gatto,kot,gato,猫,gato,gato
-you,you,tu,ty,tú,你,você ,tú
-receptionist,receptionist,la receptionist,recepcjonistka,recepcionista,接待员,recepcionista,recepcionista
-operator,operator ,l'operatore,operator,telefonista,接线员,operador,operadora
-kyungsoon,kyungsoon,kyungsoon,kyungsoon,kyungsoon,京纯,kyungsoon,kyungsoon
-oliver,oliver,oliver,oliver,oliver,奥利弗,oliver,oliver
-numa,numa,numa,numa,numa,纽玛,numa,numa
-elijah,elijah,elijah,elijah,elijah,伊莱贾,elijah,elijah
-sean,sean,sean,sean,sean,肖恩,sean,sean
-tori,tori,tori,tori,tori,托丽,tori,tori
-natalie,natalie,natalie,natalie,natalie,娜塔丽,natalie,natalie
-lucifur,lucifur,lucipelo,lucifur,lucifur,喵西法,gatanás,lucifur
-my favorite food,my favorite food,il mio cibo preferito,moje ulubione jedzenie,mi comida favorita,我最喜爱的食物,minha comida favorita,mi comida favorita
-something about myself,something about myself,qualcosa su di me,coś o mnie,algo sobre mí,关于我自己的事情,algo sobre mim,algo sobre mí
-where i grew up,where i grew up,il luogo della mia infanzia,gdzie dorastał{em/am/om/xm},el lugar donde me crié,我长大的地方,onde eu cresci,el lugar donde crecí
-someone i admired,someone i admired,una persona che ammiravo,"ktoś, kogo podziwiał{em/am/om/xm}",alguien a quien admiraba,我崇拜的某人,alguém que eu adimiro ,alguien a quien admirabas
-someone important,someone important,una persona importante,ktoś ważny,alguien importante,某个重要的人,alguém importante,alguien importante
-my greatest desire,my greatest desire,il mio più grande desiderio,moje największe pragnienie,mi mayor anhelo,我最大的欲望,meu maior desejo,lo que más anhelo
-what i always wanted to do,what i always wanted to do,quello che ho sempre voluto fare,coś co zawsze chciał{em/am/om/xm} zrobić,lo que siempre quise hacer,我一直想做的事情,o que eu sempre quis fazer,lo que siempre he querido hacer
-(something else...),(something else...),(altro...),(coś innego...),(otra cosa...),（别的什么…）,(alguma outra coisa...),(algo más...)
-unlock the door.,unlock the door.,apri la porta.,odblokuj drzwi.,abrir la puerta.,解锁大门,destrancar a porta.,abrir la puerta.
-open the door to the meowseum.,open the door to the meowseum.,apri la porta del miaoseo.,otwórz drzwi do miauzeum.,abrir la puerta del miauseo.,打开喵物馆的门,abrir a porta para o miauseu.,abre la puerta del miauseo.
-return natalie's books to oliver.,return natalie's books to oliver.,restituisci i libri di natalie a oliver.,zwróć książki natalie oliverowi.,devolver a oliver los libros de natalie.,把娜塔莉的书还给奥利弗,devolver os livros da natalie pro oliver.,entregar los libros de natalie a oliver.
-"call the devil, maybe.","call the devil, maybe.","chiama il diavolo, forse.",może zadzwoń do diabła?,"llamar al diablo, quizás.",给恶魔打电话，也许,"ligar pro diabo, talvez. ","llamar al diablo, tal vez."
-deliver oliver's chess letter to tori.,deliver oliver's chess letter to tori.,consegna la lettera di oliver a tori.,dostarcz list o szachach olivera do tori,entregarle a tori la carta de ajedrez de oliver.,把奥利弗的棋局信件送给托丽,entregar a carta de xadrêz do oliver pra tori.,entrega la jugada de ajedrez de oliver a tori.
-get some orange soda for oliver.,get some orange soda for oliver.,porta dell\'aranciata a oliver.,zdobądź trochę pomarańczowego napoju dla olivera,llevarle a oliver refresco de naranja.,给奥利弗找点橙子汽水,pegar um pouco de refri de laranja pro oliver.,consigue un poco de refresco de naranja para oliver.
-tell oliver you couldn't find a cup for the orange soda.,tell oliver you couldn't find a cup for the orange soda.,dì a oliver che non hai trovato un bicchiere per l\'aranciata.,powiedz oliverowi że nie mog{łeś/łaś/łoś/łxś} znaleźć kubka na pomarańczowy napój.,decirle a oliver que no has encontrado un vaso para el refresco.,跟奥利弗说你找不到杯子,dizer ao dliver que você não achou um copo para o refrigerante. ,dile a oliver que no pudiste encontrar un vaso para el refresco de naranja.
-find a screwdriver to open the vent cover.,find a screwdriver to open the vent cover.,trova un cacciavite per aprire il condotto.,"znajdź śrubokręt, aby zdjąć kratkę wentylacyjną.",encontrar un destornillador para abrir la rejilla de la ventilación.,找到一把螺丝刀打开通风口,achar uma chave de fenda para abrir a ventoinha.,encuentra un destornillador para abrir la rejilla del conducto de ventilación.
-"help numa get flowers, poetry, and food for kyungsoon.","help numa get flowers, poetry, and food for kyungsoon.","aiuta numa con i fiori, la poesia e il cibo per kyungsoon.","pomóż numie zdobyć kwiaty, wiersz i jedzenie dla kyungsoon.","ayudar a numa con las flores, el poema y la comida para kyungsoon.",帮助纽玛准备给京纯的花，诗歌与食物,"ajudar a numa a pegar flores, poesia, e comida para a kyungsoon.","ayuda a numa a conseguir flores, poesía y comida para kyungsoon."
-try to salvage the situation between numa and kyungsoon.,try to salvage the situation between numa and kyungsoon.,prova a sistemare le cose tra numa e kyungsoon.,"spróbuj uratować sytuację między num, a kyungsoon.",intentar arreglar la situación entre numa y kyungsoon.,尝试挽回纽玛和京纯的关系,tentar salvar a situação entre a numa e kyungsoon.,trata de salvar la situación entre numa y kyungsoon.
-find two batteries for sean.,find two batteries for sean.,trova due batterie per sean.,znajdź dwie baterie dla seana.,encontrar dos pilas para sean.,为肖恩找两个AA电池,ache duas pilhas para o sean.,encuentra dos pilas para sean.
-invite everyone to the everything slam.,invite everyone to the everything slam.,invita tutti all\'evento supremo.,"zaproś wszystkich na \""wszystko-slam\"".",invitar a todo el mundo al multicertamen.,邀请所有人参加啥都友会,convide todo mundo para o slam de tudo.,invita a todo el mundo al multicertamen.
-ring the bell to start the everything slam.,ring the bell to start the everything slam.,suona la campana per dare il via all\'evento.,"zadzwoń dzwonem, aby rozpocząć \""wszystko-slam\""",tocar la campana para que comience el multicertamen.,敲钟以开始啥都友会,toque o sino para começar o slam.,toca la campana para empezar el multicertamen.
-find elijah's poem!,find elijah's poem!,trova la poesia di elijah!,znajdź wiersz elijaha!,¡encontrar el poema de elijah!,找到伊莱贾的诗！,ache o poema do elijah!,¡encuentra el poema de elijah!
-find a source of light so you can work on the electrical box.,find a source of light so you can work on the electrical box.,trova una fonte di luce per aggiustare il quadro elettrico.,"znajdź źródło światła, żeby móc pracować przy skrzynce rozdzielczej.",encontrar una fuente de luz para ver el cuadro eléctrico.,找到一个光源以便在电箱工作,ache uma fonte de luz para que você possa arrumar a caixa elétrica.,encuentra una fuente de luz para poder trabajar en la caja eléctrica.
-find and return natalie's draw-a-paw.,find and return natalie's draw-a-paw.,trova e resitituisci la lavagnetta di natalie.,znajdź i zwróć zni-[i]kot[/i]-pis natalie.,encontrar el telesketch de natalie y devolvérselo.,寻找并归还娜塔莉的爪机绘画玩具,ache e devolva o traço mágico da natalie,encuentra y devuélvele su pizarra a natalie.
-next,next,prossimo,dalej,siguiente,继续,próximo,siguiente
+items,items,objetos,物品,oggetti,przedmioty,itens,objetos
+credits,credits,créditos,制作人员名单,crediti,napisy końcowe,créditos,créditos
+a game by,a game by,un juego creado por,制作人：,un gioco creato da,gra stworzona przez,um jogo feito pelo,un juego creado por
+"story, art, music, and code","story, art, music, and code","guion, dibujo, música y programación",编剧，美术，音乐，程序,"storia, arte, musica e codice","fabuła, oprawa graficzna, muzyka, kod","história, arte, música, e programação","historia, arte, música y programación"
+with story help from,with story help from,asistencia de guion,编剧协助,con aiuto per la storia da,z pomocą przy fabule od,com ajuda de história de,colaboración en la historia
+additional code,additional code,asistencia de programación,程序协助,codice aggiuntivo,dodatkowy kod,código adicional,programación adicional
+art,art,dibujo,美术,arte,oprawa graficzna,arte,arte
+tracing,tracing,delineado,线稿,tracing,sprawdzenie,traço,trazados
+character design help,character design help,asistencia de diseño,角色设计协助,aiuto creazione personaggi,pomoc przy kreacji postaci,ajuda com o design de personagem,ayuda con el diseño de personajes
+background help,background help,asistencia para los fondos,背景设计协助,aiuto background,pomoc przy kreacji tła,ajuda com o plano de fundo,ayuda con los fondos
+music,music,música,音乐,musica,muzyka,música,música
+additional music,additional music,música adicional,额外音乐,musica aggiuntiva,dodatkowa muzyka,música adicional,música adicional
+written by,written by,guion,作曲,scritto da,napisane przez,escrito por,escrito por
+guitar,guitar,guitarra,吉他,chitarra,gitara,guitarra,guitarra
+vocals,vocals,voz,演唱,voci,wokal,vocais,voz
+other,other,otros,其他,altro,inne,outros,otros
+testing,testing,pruebas,测试,testing,testowanie,testes,testeo
+special thanks,special thanks,agradecimientos,特别感谢,ringraziamenti speciali,specjalne podziękowania,agradecimentos especiais,agradecimientos especiales
+sound effects,sound effects,efectos de sonido,音效,effetti sonori,efekty dźwiękowe,efeitos sonoros,efectos de sonido
+additional assets,additional assets,recursos adicionales,额外素材,elementi aggiuntivi,dodatkowe zasoby,assets adicionais,características adicionales
+ADDITIONAL_ASSETS_DESC,text-to-speech module\n3d outline shader\n3d cat model\nsource sans pro font,sintetizador de voz\nsombras del delineado 3d\nmodelo 3d del gato\nfuente source sans pro,tts模块\n3d轮廓渲染\n3d猫猫模型\n字体来源,modulo sintesi vocale\nshader contorno 3d\nmodello gatto 3d\nsource sans pro font,przetwarzanie tekstu na mowę\nshader krawędzi 3D\nmodel kota 3D\nczcionka source sans pro,módulo de texto-para-fala\nshader de contorno 3D\nmodelo de gato 3D\nfonte source sans pro,narrador de texto\nsombreador de trazos 3d\nmodelo 3d del gato\nfuente de texto: sans pro font
+thanks for playing!,thanks for playing!,¡gracias por jugar!,感谢游玩！,grazie per aver giocato!,dziękuję za zagranie!,agradecemos por jogar!,¡gracias por jugar!
+the end?,the end?,¿fin?,结局？,la fine?,koniec?,o fim?,¿el fin?
+YOU_SAVED_SINGULAR,you saved 1 person,salvaste a 1 persona,你拯救了1人,hai salvato 1 persona,ocalono 1 osobę,você salvou 1 pessoa,salvaste a 1 persona
+YOU_SAVED_PLURAL,you saved # people,salvaste a # personas,你拯救了#人,hai salvato # persone,ocalono # ludzi,você salvou # pessoas,salvaste a # personas
+skip,skip,saltar,跳过,salta,pomiń,pular,saltar
+save and return,save and return,guardar y volver,保存并返回,salva e ritorna,zapisz i wróć,salvar e voltar,guardar y volver
+reset settings,reset settings,reestablecer configuración,重置设定,resetta impostazioni,zresetuj ustawienia,resetar configuração,reestablecer ajustes
+text size,text size,tamaño del texto,文字大小,dimensioni testo,rozmiar tekstu,tamanho do texto,tamaño del texto
+preview,preview,vista previa,预览,anteprima,podgląd,visualizar,vista previa
+music volume,music volume,música,音乐音量,volume musica,głośność muzyki,volume da música,música
+sfx volume,sfx volume,sonidos,音效音量,volume effetti sonori,głośność efektów dźwiękowych,volume dos efeitos sonoros,efectos
+fullscreen,fullscreen,pantalla completa,全屏,schermo intero,tryb pełnoekranowy,tela cheia,pantalla completa
+window size,window size,tamaño de ventana,窗口大小,grandezza finestra,tryb widoku z okna,tamanho da janela,resolución de la pantalla
+self-voicing,self-voicing,voz automática,文字转语音,voce automatica,synteza mowy,dublagem automática,narrador de texto
+test,test,probar,测试,test,test,testar,probar
+voice speed,voice speed,velocidad de voz,语音速度,velocità voce,szybkość mówienia,velocidade de voz,velocidad del narrador
+self-voicing sample,self-voicing sample,prueba del lector de pantalla,这是一段测试语音,esempio sintesi vocale,próbka syntezy mowy,amostra da dublagem automática,muestra de voz del narrador de texto
+enable to do list,enable to do list,habilitar la lista de tareas,开启待办菜单,attiva lista cose da fare,włącz listę rzeczy do zrobienia,exibir lista de tarefas,habilitar lista de tareas
+automatically keeps track of certain objectives,automatically keeps track of certain objectives,registra ciertos objetivos de manera automática,能够自动记录某些任务目标,tieni traccia automaticamente di alcuni obiettivi,automatycznie śledzi pewne cele,automaticamente manter acompanhamento de certos objetivos,controla automáticamente ciertos objetivos
+low contrast mode,low contrast mode,contraste bajo,护眼模式,modalità contrasto basso,tryb niskiego kontrastu,modo de baixo contraste,modo de bajo contraste
+note: some options not available in the web build,note: some options not available in the web build,nota: algunas opciones no están disponibles en la versión web,注意：部分选项在网页版不可用,nota: alcune opzioni non sono disponibili nella modalità web,uwaga: niektóre opcje nie są dostępne w wersji web,nota: algumas opções não estão disponíveis na versão da web,nota: algunos ajustes no están disponibles en la versión web
+"note: purrgatory looks best at its original resolution, 1280 x 720!","note: purrgatory looks best at its original resolution, 1280 x 720!",nota: es recomendable jugar este juego en su resolución original (1280 x 720),注：喵的炼狱在原生分辨率下显示效果最好，即1280 x 720！,nota: purrgatory funziona meglio nella risoluzione originaria 1280x720!,"uwaga: purrgattory wygląda najlepiej w pierwotnej rozdzielczości, 1280 x 720!","nota: purrgatory fica melhor na sua resolução original, 1280 x 720!","nota: purrgatory se ve mejor en su resolución original, ¡1280x720!"
+QUIP_CAT,"meow meow, meow meow meow :3","miau miau, miau miau miau :3",喵喵，喵喵喵 :3,"miao, miao, miao, miao, miao :3","miau miau, miau miau miau :3","miau miau, miau miau miau :3","miau miau, miau miau miau :3"
+QUIP_OLIVER,"to meow, or not to meow, that is the question!","¿no es cierto, ángel de amor, que en esta apartada orilla más pura la luna brilla y se maúlla mejor?",是要喵，还是不要喵，这是问题所在！,"miagolare o non miagolare, questo è il dilemma!",miau czy nie miau; oto jest pytanie!,"miar, ou não miar, essa é questão!","maullar o no maullar, ¡he ahí el dilema!"
+QUIP_KYUNGSOON,hmmm. that\'s an options menu,em. pues un menú de opciones,嗯——这是个设置菜单,mmmh. è il menu delle impostazioni,hmmm. to jest menu opcji,hmmmm. isso é um menu de opções,"hmmm, este es el menú de ajustes"
+QUIP_NUMA,HEY!! change the font size right now! i mean... if you want.,¡OYE! ¡ya estás cambiando el tamaño de la letra! bueno... si te apetece.,嘿！！快改一下字体大小！我是说…如果你想的话,EHI!! cambia subito la grandezza del font! se vuoi... ovviamente.,EJ!! zmień natychmiast rozmiar czcionki! to znaczy… jeśli chcesz.,EI!! mude o tamanho da fonte agora mesmo! quero dizer... se você quiser.,¡¡OYE!! ¡cambia el tamaño de la fuente de texto ahora mismo! digo.... solo si tú quieres.
+QUIP_SEAN,what\'s a nice player like you doing in a menu like this? (;,y... ¿vienes mucho por este menú de opciones? (;,你这样可爱的玩家在菜单里做什么呢 (;,cosa ci fa un bell'utente come te in questo menu? ;),co taki miły gracz jak ty robi w takim menu? (;,o que um jogador legal como você fazendo em um menu como esse? (;,¿qué hace un{/a/e} lind{o/a/e} jugador{/a/e} como tú en un menú como este? (;
+QUIP_ELIJAH,'tis better to have meowed and lost than never to have meowed at all.,"que toda la vida es un gato, y los gatos, gatos son.",喵过却失去，总比从未喵过好,meglio aver miagolato e perso che non aver miagolato affatto.,"lepiej zamiauczeć i przegrać, niż wcale nie zamiauczeć.",é melhor ter dado miado e perdê-lo do que nunca ter miado,es mejor maullar y perderse que nunca haber maullado.
+QUIP_TORI,what are you doing fiddling with the settings? there\'s a game to play!,¿se puede saber qué haces mirando la configuración? ¡ponte a jugar!,你怎么还在这摆弄设置？还有游戏要玩！,perché perdi tempo con le impostazioni? hai un gioco da giocare!,czemu bawisz się ustawieniami? tam jest gra do grania!,o que você tá fazendo mexendo com as opções? tem um jogo a ser jogado!,¿qué haces toqueteando los ajustes? ¡hay un juego que jugar!
+QUIP_NATALIE,zzz... huh? where am i?,zzz... ¿eing? ¿dónde estoy?,zzz…哎？咱在哪？,zzz... eh? dove sono?,zzz… hę? gdzie ja jestem?,zzz... que? onde é que eu tô? (lagoinha)?,zzz... ¿ah? ¿en dónde estoy?
+erase,erase,borrar,擦除,cancella,usuń,apagar,borrar
+press up repeatedly to hold on!!,press up repeatedly to hold on!!,¡pulsa [arriba] para no caerte!,反复按上键以坚持！！,premi ripetutamente su per resistere!!,"klikaj strzałkę w górę, aby się trzymać!!",aperte para cima repetidamente para segurar!!,¡¡presiona arriba repetidamente para aguantar!!
+just hang on!,just hang on!,¡aguanta ahí!,你就坚持一下！,non mollare!,trzymaj się!,só segura firme!,¡solo aguanta!
+why are you so heavy??,why are you so heavy??,¡¿cómo pesas tanto?!,你为什么这么重？？,perché sei così pesante?,dlaczego jesteś tak{i/a/ie/x} ciężk{i/a/ie/x},porque você tem tanto peso??,¿por qué pesas tanto?
+i'm sorry i guess??,i'm sorry i guess??,¡pues perdóname!,我很抱歉？？,huh scusa??,no przepraszam??,me desculpa eu acho??,"lo siento, ¿¿supongo??"
+least i'm getting my arm workout for the day...,least i'm getting my arm workout for the day...,esto cuenta como día de brazo...,至少我今天胳膊锻炼量有了…,almeno ho allenato un po' il braccio...,przynajmniej mam z głowy trening ramion na dziś…,pelo menos eu fiz meu exercício de braço diário...,al menos estoy haciendo mi entrenamiento de brazos del día...
+you okay down there??,you okay down there??,¡¿estás bien?!,你在下面没事吗？？,tutto bene laggiù?,wszystko w porządku tam na dole??,tá tudo bem aí em baixo??,¿¿todo bien ahí abajo??
+what sort of a question is that??,what sort of a question is that??,¡¿qué clase de pregunta es esa?!,那是什么样的问题啦？？,che razza di domande fai??,co to za pytanie??,que tipo de pergunta é essa?,¿¿qué clase de pregunta es esa??
+almost there!!,almost there!!,¡ya casi estás!,快了！！,ci sono quasi!!,już prawie!!,quase lá!!,¡¡ya casi!!
+done,done,hecho,完成,fatto,zrobione,pronto,listo
+skip,skip,saltar,跳过,salta,pomiń,pular,saltar
+sure?,sure?,¿abandonar?,确定？,confermi?,na pewno?,certeza?,¿seguro?
+yes,yes,sí,是,sì,tak,sim,sí
+no,no,no,否,no,nie,não,no
+translation,translation,traducción,翻译,traduzione,tłumaczenie,tradução,traducción
+language,language,idioma,语言,lingua,język,idioma,idioma
+spanish translation (spain),spanish translation (spain),traducción al español de españa,西班牙语翻译（西班牙）,traduzione spagnolo (spagna),hiszpańska wersja językowa (hiszpania),tradução espanhola (espanha),traducción al español de españa
+spanish translation (latin america),spanish translation (latin america),traducción al español de latinoamérica,西班牙语翻译（拉丁美洲）,traduzione spagnolo (america latina),hiszpańska wersja językowa (ameryka łacińska),tradução espanhola (américa latina),traducción al español de latinoamérica
+chinese translation,chinese translation,traducción al chino,简体中文翻译,traduzione cinese,chińska wersja językowa,tradução chinesa,traducción al chino
+chinese translation support,chinese translation support,asistencia de traducción al chino,简体中文翻译协助,supporto traduzione cinese,wsparcie powstawania chińskiej wersji językowej,suporte da tradução chinesa,apoyo de traducción al chino
+italian translation,italian translation,traducción al italiano,意大利语翻译,traduzione italiano,włoska wersja językowa,tradução italiana,traducción al italiano
+italian translation support,italian translation support,asistencia de traducción al italiano,意大利语翻译协助,supporto traduzione italiano,wsparcie powstawania włoskiej wersji językowej,suporte da tradução italiana,apoyo de traducción al italiano
+polish translation,polish translation,traducción al polaco,波兰语翻译,traduzione polacco,polska wersja językowa,tradução polonesa,traducción al polaco
+polish translation support,polish translation support,asistencia de traducción al polaco,波兰语翻译协助,supporto traduzione polacco,wsparcie powstawania polskiej wersji językowej,suporte da tradução polonesa,apoyo de traducción al polaco
+portuguese translation (brazil),portuguese translation (brazil),traducción al portugués de brasil,葡萄牙语翻译（巴西）,traduzione portoghese (brasile),portugalska wersja językowa (brazylia),tradução portuguesa (brasil),traducción al portugués de brasil
+portuguese translation support,portuguese translation support,asistencia de traducción al portugués,葡萄牙语翻译协助,supporto traduzione portoghese,wsparcie powstawania portugalskiej wersji językowej,suporte da tradução portuguesa,apoyo de traducción al portugués
+cat,cat,gato,猫,gatto,kot,gato,gato
+you,you,tú,你,tu,ty,você,tú
+receptionist,receptionist,recepcionista,接待员,la receptionist,recepcjonistka,recepcionista,recepcionista
+operator,operator ,telefonista,接线员,l'operatore,operator,operador,operadora
+kyungsoon,kyungsoon,kyungsoon,京纯,kyungsoon,kyungsoon,kyungsoon,kyungsoon
+oliver,oliver,oliver,奥利弗,oliver,oliver,oliver,oliver
+numa,numa,numa,纽玛,numa,numa,numa,numa
+elijah,elijah,elijah,伊莱贾,elijah,elijah,elijah,elijah
+sean,sean,sean,肖恩,sean,sean,sean,sean
+tori,tori,tori,托丽,tori,tori,tori,tori
+natalie,natalie,natalie,娜塔丽,natalie,natalie,natalie,natalie
+lucifur,lucifur,lucifur,喵西法,lucipelo,lucifur,gatanás,lucifur
+my favorite food,my favorite food,mi comida favorita,我最喜爱的食物,il mio cibo preferito,moje ulubione jedzenie,minha comida favorita,mi comida favorita
+something about myself,something about myself,algo sobre mí,关于我自己的事情,qualcosa su di me,coś o mnie,algo sobre mim,algo sobre mí
+where i grew up,where i grew up,el lugar donde me crié,我长大的地方,il luogo della mia infanzia,gdzie dorastał{em/am/om/xm},onde eu cresci,el lugar donde crecí
+someone i admired,someone i admired,alguien a quien admiraba,我崇拜的某人,una persona che ammiravo,"ktoś, kogo podziwiał{em/am/om/xm}",alguém que eu admiro,alguien a quien admirabas
+someone important,someone important,alguien importante,某个重要的人,una persona importante,ktoś ważny,alguém importante,alguien importante
+my greatest desire,my greatest desire,mi mayor anhelo,我最大的欲望,il mio più grande desiderio,moje największe pragnienie,meu maior desejo,lo que más anhelo
+what i always wanted to do,what i always wanted to do,lo que siempre quise hacer,我一直想做的事情,quello che ho sempre voluto fare,coś co zawsze chciał{em/am/om/xm} zrobić,o que eu sempre quis fazer,lo que siempre he querido hacer
+(something else...),(something else...),(otra cosa...),（别的什么…）,(altro...),(coś innego...),(outra coisa...),(algo más...)
+unlock the door.,unlock the door.,abrir la puerta.,解锁大门,apri la porta.,odblokuj drzwi.,destrancar a porta.,abrir la puerta.
+open the door to the meowseum.,open the door to the meowseum.,abrir la puerta del miauseo.,打开喵物馆的门,apri la porta del miaoseo.,otwórz drzwi do miauzeum.,abrir a porta para o miauseu.,abre la puerta del miauseo.
+return natalie's books to oliver.,return natalie's books to oliver.,devolver a oliver los libros de natalie.,把娜塔莉的书还给奥利弗,restituisci i libri di natalie a oliver.,zwróć książki natalie oliverowi.,devolver os livros da natalie pro oliver.,entregar los libros de natalie a oliver.
+"call the devil, maybe.","call the devil, maybe.","llamar al diablo, quizás.",给恶魔打电话，也许,"chiama il diavolo, forse.",może zadzwoń do diabła?,"ligar pro diabo, talvez.","llamar al diablo, tal vez."
+deliver oliver's chess letter to tori.,deliver oliver's chess letter to tori.,entregarle a tori la carta de ajedrez de oliver.,把奥利弗的棋局信件送给托丽,consegna la lettera di oliver a tori.,dostarcz list o szachach olivera do tori,entregar a carta de xadrez do oliver pra tori.,entrega la jugada de ajedrez de oliver a tori.
+get some orange soda for oliver.,get some orange soda for oliver.,llevarle a oliver refresco de naranja.,给奥利弗找点橙子汽水,porta dell\'aranciata a oliver.,zdobądź trochę pomarańczowego napoju dla olivera,pegar um pouco de refri de laranja pro oliver.,consigue un poco de refresco de naranja para oliver.
+tell oliver you couldn't find a cup for the orange soda.,tell oliver you couldn't find a cup for the orange soda.,decirle a oliver que no has encontrado un vaso para el refresco.,跟奥利弗说你找不到杯子,dì a oliver che non hai trovato un bicchiere per l\'aranciata.,powiedz oliverowi że nie mog{łeś/łaś/łoś/łxś} znaleźć kubka na pomarańczowy napój.,dizer ao oliver que você não achou um copo para o refrigerante.,dile a oliver que no pudiste encontrar un vaso para el refresco de naranja.
+find a screwdriver to open the vent cover.,find a screwdriver to open the vent cover.,encontrar un destornillador para abrir la rejilla de la ventilación.,找到一把螺丝刀打开通风口,trova un cacciavite per aprire il condotto.,"znajdź śrubokręt, aby zdjąć kratkę wentylacyjną.",achar uma chave de fenda para abrir a grade de ventilação.,encuentra un destornillador para abrir la rejilla del conducto de ventilación.
+"help numa get flowers, poetry, and food for kyungsoon.","help numa get flowers, poetry, and food for kyungsoon.","ayudar a numa con las flores, el poema y la comida para kyungsoon.",帮助纽玛准备给京纯的花，诗歌与食物,"aiuta numa con i fiori, la poesia e il cibo per kyungsoon.","pomóż numie zdobyć kwiaty, wiersz i jedzenie dla kyungsoon.","ajudar a numa pegar as flores, a poesia, e a comida para a kyungsoon.","ayuda a numa a conseguir flores, poesía y comida para kyungsoon."
+try to salvage the situation between numa and kyungsoon.,try to salvage the situation between numa and kyungsoon.,intentar arreglar la situación entre numa y kyungsoon.,尝试挽回纽玛和京纯的关系,prova a sistemare le cose tra numa e kyungsoon.,"spróbuj uratować sytuację między num, a kyungsoon.",tentar salvar a situação entre a numa e kyungsoon.,trata de salvar la situación entre numa y kyungsoon.
+find two batteries for sean.,find two batteries for sean.,encontrar dos pilas para sean.,为肖恩找两个AA电池,trova due batterie per sean.,znajdź dwie baterie dla seana.,ache duas pilhas para o sean.,encuentra dos pilas para sean.
+invite everyone to the everything slam.,invite everyone to the everything slam.,invitar a todo el mundo al multicertamen.,邀请所有人参加啥都友会,invita tutti all\'evento supremo.,"zaproś wszystkich na \""wszystko-slam\"".",convide todo mundo para o slam de tudo.,invita a todo el mundo al multicertamen.
+ring the bell to start the everything slam.,ring the bell to start the everything slam.,tocar la campana para que comience el multicertamen.,敲钟以开始啥都友会,suona la campana per dare il via all\'evento.,"zadzwoń dzwonem, aby rozpocząć \""wszystko-slam\""",toque o sino para começar o slam.,toca la campana para empezar el multicertamen.
+find elijah's poem!,find elijah's poem!,¡encontrar el poema de elijah!,找到伊莱贾的诗！,trova la poesia di elijah!,znajdź wiersz elijaha!,ache o poema do elijah!,¡encuentra el poema de elijah!
+find a source of light so you can work on the electrical box.,find a source of light so you can work on the electrical box.,encontrar una fuente de luz para ver el cuadro eléctrico.,找到一个光源以便在电箱工作,trova una fonte di luce per aggiustare il quadro elettrico.,"znajdź źródło światła, żeby móc pracować przy skrzynce rozdzielczej.",ache uma fonte de luz para que você possa arrumar a caixa elétrica.,encuentra una fuente de luz para poder trabajar en la caja eléctrica.
+find and return natalie's draw-a-paw.,find and return natalie's draw-a-paw.,encontrar el telesketch de natalie y devolvérselo.,寻找并归还娜塔莉的爪机绘画玩具,trova e resitituisci la lavagnetta di natalie.,znajdź i zwróć zni-[i]kot[/i]-pis natalie.,ache e devolva a lousinha mágica da natalie,encuentra y devuélvele su pizarra a natalie.
+next,next,siguiente,继续,prossimo,dalej,próximo,siguiente

@@ -63,9 +63,9 @@ func wake_up():
 	# italian
 	
 	var partner_it_replacements = [
-		"ho avuto molte relazioni, ma mai una stabile",
-		"l'amicizia è sempre stata più importante dell'amore",
-		"la mia morte sarà stata devastante per chi mi amava"
+		"la persona che frequentavo",
+		"la persona a cui volevo più bene",
+		"la persona che frequentavo"
 	]
 	var partner_about_it_replacements = [
 		"fare una passeggiata dopo un temporale",
@@ -102,8 +102,8 @@ func wake_up():
 	
 	var partner_pt_replacements = [
 		"parça",
-		"seus amigos sempre foram mais importantes para você do que romance",
-		"seu amor deve ter ficado em estado de devastação com sua morte"
+		"amigo",
+		"parça"
 	]
 	var partner_about_pt_replacements = [
 		"caminhar depois de uma tempestade",

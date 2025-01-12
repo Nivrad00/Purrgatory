@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Purrgatory_Blues.ogg-198e1cd540ca2c82a4ede8139791dc04.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/Purrgatory_Blues.ogg"
+dest_files=[ "res://.import/Purrgatory_Blues.ogg-198e1cd540ca2c82a4ede8139791dc04.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

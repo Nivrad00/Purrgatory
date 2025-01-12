@@ -66,7 +66,6 @@ margin_bottom = 239.25
 rect_scale = Vector2( 0.7, 0.7 )
 
 [node name="buttons" type="Control" parent="state_handler"]
-editor/display_folded = true
 margin_left = 570.0
 margin_top = 343.0
 margin_right = 934.0
@@ -328,7 +327,6 @@ texture = ExtResource( 29 )
 centered = false
 
 [node name="clear" type="Button" parent="state_handler/buttons"]
-editor/display_folded = true
 margin_left = 289.167
 margin_top = 68.0
 margin_right = 357.167
@@ -344,7 +342,6 @@ texture = ExtResource( 30 )
 centered = false
 
 [node name="meow" type="Button" parent="state_handler/buttons"]
-editor/display_folded = true
 margin_left = 288.167
 margin_top = 117.0
 margin_right = 353.167
@@ -398,6 +395,7 @@ margin_bottom = 392.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
+
 [connection signal="button_down" from="state_handler/buttons/1" to="state_handler/buttons/1" method="_on_Button_button_down"]
 [connection signal="button_up" from="state_handler/buttons/1" to="state_handler/buttons/1" method="_on_Button_button_up"]
 [connection signal="button_down" from="state_handler/buttons/2" to="state_handler/buttons/2" method="_on_Button_button_down"]

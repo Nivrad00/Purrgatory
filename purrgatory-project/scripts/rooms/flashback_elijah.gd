@@ -80,7 +80,7 @@ func wake_up():
 		"un amico d'infanzia che si è trasferito",
 		"un'artista che ho conosciuto online",
 		"una professoressa alla mano del liceo",
-		"un bassista di una band ignota",
+		"un bassista di una band sconosciuta",
 		"il personaggio di una serie tv",
 		"la mia migliore amica"
 	]
@@ -136,12 +136,12 @@ func wake_up():
 	
 	var envy_pt_replacements = [
 		"inteligente",
-		"autruísta",
+		"altruísta",
 		"valente",
 		"compassiva",
-		"sussedida",
+		"sucedida",
 		"talentosa",
-		"sabia"
+		"sábia"
 	]
 	set_format_dict('envy_pt', envy_pt_replacements[choice_log[2]])
 	

@@ -1186,8 +1186,8 @@ margin_bottom = 430.0
 rect_min_size = Vector2( 0, 60 )
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "ecco sì, ricordi che ti piaceva mangiare "
-text = "ecco sì, ricordi che ti piaceva mangiare "
+bbcode_text = "ecco sì, ricordi che adoravi mangiare "
+text = "ecco sì, ricordi che adoravi mangiare "
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text/3/vc/c1"]
@@ -1573,8 +1573,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]płatki kukurydziane[/u]."
-text = "płatki kukurydziane."
+bbcode_text = "[u]świeże ostrygi[/u]."
+text = "świeże ostrygi."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/4/vc/c1/choice_container/4"]
@@ -1943,8 +1943,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]assinhas de frango[/u]."
-text = "assinhas de frango."
+bbcode_text = "[u]asinhas de frango[/u]."
+text = "asinhas de frango."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/5/vc/c1/choice_container/8"]
@@ -2240,8 +2240,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]era el pollo frito[/u]."
-text = "era el pollo frito."
+bbcode_text = "[u]era el pollo frito del kfc[/u]."
+text = "era el pollo frito del kfc."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/6/vc/c1/choice_container/8"]

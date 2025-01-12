@@ -2262,8 +2262,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]viver em um sitio no interior[/u]."
-text = "viver em um sitio no interior."
+bbcode_text = "[u]viver em um sítio no interior[/u]."
+text = "viver em um sítio no interior."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/5/vc/c1/choice_container/4"]
@@ -2351,8 +2351,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]achar novos lares para os cachorros[/u]."
-text = "achar novos lares para os cachorros."
+bbcode_text = "[u]achado novos lares para os cachorros[/u]."
+text = "achado novos lares para os cachorros."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/5/vc/c3/choice_container/0"]
@@ -2369,8 +2369,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]visitar sua cidade natal[/u]."
-text = "visitar sua cidade natal."
+bbcode_text = "[u]visitado sua cidade natal[/u]."
+text = "visitado sua cidade natal."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/5/vc/c3/choice_container/1"]
@@ -2387,8 +2387,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]dizer adeus a seus amigos[/u]."
-text = "dizer adeus a seus amigos."
+bbcode_text = "[u]se despedido de seus amigos[/u]."
+text = "se despedido de seus amigos."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/5/vc/c3/choice_container/2"]
@@ -2405,8 +2405,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]desligar o forno[/u]."
-text = "desligar o forno."
+bbcode_text = "[u]desligado o forno[/u]."
+text = "desligado o forno."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/5/vc/c3/choice_container/3"]
@@ -2423,8 +2423,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]deletar os arquivos privados de seu computador[/u]."
-text = "deletar os arquivos privados de seu computador."
+bbcode_text = "[u]deletado os arquivos privados de seu computador[/u]."
+text = "deletado os arquivos privados de seu computador."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/5/vc/c3/choice_container/4"]
@@ -2441,8 +2441,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]doar sua coleção de bichos de pelúcia[/u]."
-text = "doar sua coleção de bichos de pelúcia."
+bbcode_text = "[u]doado sua coleção de bichos de pelúcia[/u]."
+text = "doado sua coleção de bichos de pelúcia."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/5/vc/c3/choice_container/5"]
@@ -2459,8 +2459,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "[u]gastar o resto de suas economias com pizza[/u]."
-text = "gastar o resto de suas economias com pizza."
+bbcode_text = "[u]gastado o resto de suas economias com pizza[/u]."
+text = "gastado o resto de suas economias com pizza."
 scroll_active = false
 
 [node name="Button" type="Button" parent="state_handler/text/5/vc/c3/choice_container/6"]

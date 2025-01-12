@@ -116,20 +116,20 @@ func wake_up():
 		"aprender a programar",
 		"publicar um livro para jovens adultos",
 		"aprender a jogar dardos",
-		"viver em um sitio no interior",
+		"viver em um sítio no interior",
 		"voltar para a escola",
 		"se mudar para outro país"
 	]
 	set_format_dict('dream_pt', dream_pt_replacements[choice_log[1]])
 	
 	var regret_pt_replacements = [
-		"achar novos lares para os cachorros",
-		"visitar sua cidade natal",
-		"dizer adeus a seus amigos",
-		"desligar o forno",
-		"deletar os arquivos privados de seu computador",
-		"doar sua coleção de bichos de pelúcia",
-		"gastar o resto de suas economias com pizza"
+		"achado novos lares para os cachorros",
+		"visitado sua cidade natal",
+		"se despedido de seus amigos",
+		"desligado o forno",
+		"deletado os arquivos privados de seu computador",
+		"doado sua coleção de bichos de pelúcia",
+		"gastado o resto de suas economias com pizza"
 	]
 	set_format_dict('regret_pt', regret_pt_replacements[choice_log[3]])
 	

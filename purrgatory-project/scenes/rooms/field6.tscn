@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/field6.gd" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://assets/sprites/hoels/shovel6.png" type="Texture" id=14]
 [ext_resource path="res://scenes/hole_score.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/digging_sound.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/audio/river.ogg" type="AudioStream" id=17]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -52,7 +53,6 @@ dialog_label = "tori_park_leave"
 polygon = PoolVector2Array( 135.16, 472.403, 135.523, 547.981, 202.555, 548.044, 200.046, 474.913 )
 
 [node name="field_path" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 script = ExtResource( 6 )
 dialog_label = "field_path"
 
@@ -60,7 +60,6 @@ dialog_label = "field_path"
 polygon = PoolVector2Array( 588.855, 370.006, 612.622, 394.091, 619.311, 419.649, 723.198, 482.657, 792.968, 498.64, 982.332, 505.265, 1056.71, 518.028, 1114.78, 517.296, 1189.55, 525.626, 1189.71, 468.488, 1129.77, 461.692, 847.985, 462.372, 788.973, 452.536, 738.566, 437.168, 674.635, 397.212, 667.949, 382.527, 655.659, 369.88 )
 
 [node name="field_rocks" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 script = ExtResource( 6 )
 dialog_label = "field_rocks"
 
@@ -94,6 +93,8 @@ dialog_label = "field_river"
 polygon = PoolVector2Array( 399.256, 386.991, 411.247, 396.757, 418.362, 408.352, 418.362, 439.975, 386.213, 472.388, 395.465, 484.932, 432.593, 513.234, 488.319, 537.549, 576.531, 578.56, 672.924, 637.089, 667.39, 652.373, 677.404, 678.725, 708.763, 721.152, 1189.8, 719.958, 1189.82, 675.345, 1154.05, 652.281, 1093.44, 646.588, 863.214, 598.783, 838.011, 553.908, 839.241, 538.848, 778.076, 518.255, 683.41, 507.805, 528.96, 477.32, 482.788, 444.269, 490.748, 419.435, 485.214, 405.732, 449.806, 386.706, 428.424, 386.827 )
 
 [node name="river" parent="state_handler" instance=ExtResource( 7 )]
+stream = ExtResource( 17 )
+volume_db = -12.0
 
 [node name="surprise" parent="state_handler" instance=ExtResource( 8 )]
 

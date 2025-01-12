@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://scripts/rooms/field3.gd" type="Script" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://scripts/char_obj_button.gd" type="Script" id=23]
 [ext_resource path="res://assets/sprites/sean_fence_2.png" type="Texture" id=24]
 [ext_resource path="res://assets/sprites/sean_fence_3.png" type="Texture" id=25]
+[ext_resource path="res://assets/audio/river.ogg" type="AudioStream" id=26]
 
 [node name="room_instance" type="Control"]
 anchor_right = 1.0
@@ -42,7 +43,6 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="exit" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -1040.73, -12.432 )
 script = ExtResource( 4 )
 __meta__ = {
@@ -84,7 +84,6 @@ dialog_label = "field_river"
 polygon = PoolVector2Array( 372.731, 432.368, 358.764, 455.682, 371.191, 479.75, 436.91, 525.663, 523.22, 606.142, 683.011, 660.96, 834.637, 659.794, 980.431, 582.815, 1024.75, 538.493, 1098.23, 507.002, 1221.87, 476.676, 1182.21, 468.512, 1044.58, 479.009, 901.119, 526.83, 832.304, 567.652, 699.34, 585.147, 623.527, 569.985, 464.474, 504.777, 431.078, 480.175, 431.078, 452.183, 441.576, 426.523, 422.914, 416.026, 341.78, 394.086, 276.619, 387.57, 261.958, 403.046, 327.933, 413.635 )
 
 [node name="bad_tree" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 script = ExtResource( 7 )
 dialog_label = "bad_tree"
 
@@ -92,7 +91,6 @@ dialog_label = "bad_tree"
 polygon = PoolVector2Array( 376.65, 195, 351, 239.65, 358.6, 303.301, 395.736, 330.69, 427.993, 331.361, 437.277, 423.911, 464.05, 428.701, 452.246, 327.514, 474.998, 312.546, 496.552, 280.214, 502.54, 242.494, 488.75, 211.15, 459.431, 191.601, 423.506, 184.416 )
 
 [node name="field_tiny_tree" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 script = ExtResource( 7 )
 dialog_label = "field_tiny_tree"
 
@@ -107,7 +105,6 @@ dialog_label = "field_tree"
 polygon = PoolVector2Array( 872.378, 507.264, 880.972, 395.54, 898.16, 336.608, 804.394, 343.605, 788.99, 326.44, 668.811, 299.708, 654.001, 191.001, 723.09, 17.9734, 777.179, -18.5962, 1207.91, -6.28961, 1196.5, 309.598, 1168.26, 336.608, 1141.9, 339.562, 1126.15, 368.75, 1103.91, 389.598, 1106.88, 418.867, 1079.36, 411.373, 1066.36, 341.519, 1064.07, 315.008, 1044.15, 321.031, 1028.3, 337.836, 985.307, 333.539, 941.131, 353.797, 936.22, 404.134, 954.636, 474.115, 984.102, 497.442, 959.547, 510.947, 904.299, 518.314 )
 
 [node name="field_distant_cemetery" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 script = ExtResource( 7 )
 dialog_label = "field_distant_cemetery"
 
@@ -115,7 +112,6 @@ dialog_label = "field_distant_cemetery"
 polygon = PoolVector2Array( 1035.84, 357.864, 1035.84, 385.003, 1176.71, 386.296, 1175.42, 357.864 )
 
 [node name="field_distant_doorway" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 script = ExtResource( 7 )
 dialog_label = "field_distant_doorway"
 
@@ -123,6 +119,8 @@ dialog_label = "field_distant_doorway"
 polygon = PoolVector2Array( 211.948, 350.054, 212.384, 378.414, 251.208, 381.326, 251.531, 349.943 )
 
 [node name="river" parent="state_handler" instance=ExtResource( 8 )]
+stream = ExtResource( 26 )
+volume_db = -12.0
 
 [node name="surprise" parent="state_handler" instance=ExtResource( 9 )]
 
@@ -243,7 +241,6 @@ texture = ExtResource( 18 )
 [node name="sound" parent="state_handler/digging" instance=ExtResource( 20 )]
 
 [node name="field_fence" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 script = ExtResource( 7 )
 dialog_label = "field_fence"
 
@@ -265,4 +262,5 @@ blackout_label = "sean_on_the_fence"
 animation0 = ExtResource( 21 )
 animation1 = ExtResource( 24 )
 animation2 = ExtResource( 25 )
+
 [connection signal="pressed" from="state_handler/sean_fence" to="state_handler/sean_fence" method="_on_char_obj_button_pressed"]

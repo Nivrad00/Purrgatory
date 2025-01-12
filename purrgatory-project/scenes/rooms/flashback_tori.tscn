@@ -2200,8 +2200,8 @@ rect_min_size = Vector2( 0, 60 )
 rect_clip_content = false
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "você se lembra daquilo que você desejava acima de tudo."
-text = "você se lembra daquilo que você desejava acima de tudo."
+bbcode_text = "você se lembra daquilo que desejava acima de tudo."
+text = "você se lembra daquilo que desejava acima de tudo."
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text/5/vc/t0"]
@@ -2370,8 +2370,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "você se lembra de virar varias noite estudando. "
-text = "você se lembra de virar varias noite estudando. "
+bbcode_text = "você se lembra de virar várias noites estudando. "
+text = "você se lembra de virar várias noites estudando. "
 scroll_active = false
 
 [node name="1" type="RichTextLabel" parent="state_handler/text/5/vc/t2"]
@@ -2400,8 +2400,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "você se lembra de anos e anos de treinamento arduo."
-text = "você se lembra de anos e anos de treinamento arduo."
+bbcode_text = "você se lembra de anos e anos de treinamento árduo."
+text = "você se lembra de anos e anos de treinamento árduo."
 scroll_active = false
 
 [node name="4" type="RichTextLabel" parent="state_handler/text/5/vc/t2"]
@@ -2420,8 +2420,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "você se lembra de esperar estar em algum lugar, qualquer lugar menos aqui."
-text = "você se lembra de esperar estar em algum lugar, qualquer lugar menos aqui."
+bbcode_text = "você se lembra de querer estar em algum lugar, qualquer lugar menos aqui."
+text = "você se lembra de querer estar em algum lugar, qualquer lugar menos aqui."
 scroll_active = false
 
 [node name="6" type="RichTextLabel" parent="state_handler/text/5/vc/t2"]
@@ -2430,8 +2430,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "você se lebra de achar que seus entes queridos estariam com você para sempre."
-text = "você se lebra de achar que seus entes queridos estariam com você para sempre."
+bbcode_text = "você se lembra de achar que seus entes queridos estariam com você para sempre."
+text = "você se lembra de achar que seus entes queridos estariam com você para sempre."
 scroll_active = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text/5/vc/t2"]
@@ -2492,8 +2492,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
 bbcode_enabled = true
-bbcode_text = "isso é demais para perguntar?"
-text = "isso é demais para perguntar?"
+bbcode_text = "e isso é pedir muito?"
+text = "e isso é pedir muito?"
 scroll_active = false
 
 [node name="5" type="RichTextLabel" parent="state_handler/text/5/vc/t3"]
