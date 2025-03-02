@@ -115,7 +115,7 @@ var raw_blocks = [
 ["reception_desk","_none","_none","a mesa da recepcionista.","","","null","","",""],
 ["reception_paper","_none","_none","uns papéis ou algo assim.","","","null","","",""],
 ["reception_water","_none","_none","água.","","","","","",""],
-["","","","é importante ficar hidratad{o/a/e}!","","","null","","",""],
+["","","","hidratação é importante!","","","null","","",""],
 ["reception_computer","_none","_none","um computador muito velho.","","","null","","",""],
 ["reception_picture","_none","_none","um quadro.","","","null","","",""],
 ["vent_leaf","_none","_none","uma folha","","","","","",""],

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://themes/ui_theme.tres" type="Theme" id=2]
@@ -471,254 +471,6 @@ tracks/31/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=13]
-length = 91.0
-step = 0.01
-tracks/0/type = "audio"
-tracks/0/path = NodePath("AnimationPlayer/AudioStreamPlayer")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 12 )
-} ],
-"times": PoolRealArray( 1.61 )
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("1:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1.61, 10.96 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 12.28, 21.68 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("3:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 23.03, 32.33 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("6:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 54.96, 64.26 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("5:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0, 65.56, 74.95 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("7:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0, 76.33, 85.66 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("1/Label:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0, 4.27 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("2/Label3:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0, 13.64 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("2/Label4:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0, 14.97 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("3/Label2:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0, 24.31 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("3/Label5:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0, 25.64 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("3/Label6:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
-"times": PoolRealArray( 0, 26.89 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("5/thanks:visible")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
-"times": PoolRealArray( 0, 57.59 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/14/type = "value"
-tracks/14/path = NodePath("last:visible")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
-"times": PoolRealArray( 0, 86.94 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/15/type = "value"
-tracks/15/path = NodePath("last/back:visible")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/keys = {
-"times": PoolRealArray( 0, 89.88 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/16/type = "value"
-tracks/16/path = NodePath("TextureRect:rect_position")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/keys = {
-"times": PoolRealArray( 0, 34.96, 85.3 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1276.96, 420 ), Vector2( 1276.96, 420 ), Vector2( -200, 420 ) ]
-}
-tracks/17/type = "method"
-tracks/17/path = NodePath(".")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/keys = {
-"times": PoolRealArray( 0.04 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "disable_ui"
-} ]
-}
-tracks/18/type = "value"
-tracks/18/path = NodePath("skip:visible")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/keys = {
-"times": PoolRealArray( 0, 1.61, 89.88 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false ]
-}
-tracks/19/type = "value"
-tracks/19/path = NodePath("1/Label2:visible")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/keys = {
-"times": PoolRealArray( 0, 4.27 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-
 [sub_resource type="DynamicFont" id=14]
 size = 10
 
@@ -740,10 +492,10 @@ margin_right = 1279.07
 margin_bottom = 720.0
 
 [node name="TextureRect" type="TextureButton" parent="state_handler"]
-margin_left = -93.8274
-margin_top = 447.843
-margin_right = 106.273
-margin_bottom = 747.843
+margin_left = 1276.96
+margin_top = 450.0
+margin_right = 1477.06
+margin_bottom = 750.0
 rect_scale = Vector2( 0.75, 0.75 )
 texture_normal = ExtResource( 4 )
 script = ExtResource( 5 )
@@ -760,6 +512,7 @@ margin_top = 174.0
 margin_bottom = 424.0
 
 [node name="Label" type="Label" parent="state_handler/1"]
+visible = false
 margin_top = 410.645
 margin_right = 1279.0
 margin_bottom = 481.645
@@ -767,6 +520,7 @@ text = "a game by"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/1"]
+visible = false
 margin_top = 449.941
 margin_right = 1279.0
 margin_bottom = 520.941
@@ -803,6 +557,7 @@ text = "(niv heo)"
 align = 1
 
 [node name="Label3" type="Label" parent="state_handler/2"]
+visible = false
 margin_top = 277.532
 margin_right = 1279.0
 margin_bottom = 348.532
@@ -846,6 +601,7 @@ text = "gnomes"
 align = 1
 
 [node name="Label4" type="Label" parent="state_handler/2"]
+visible = false
 margin_top = 541.26
 margin_right = 1279.0
 margin_bottom = 612.26
@@ -866,6 +622,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Label2" type="Label" parent="state_handler/3"]
+visible = false
 margin_top = 149.226
 margin_right = 1279.0
 margin_bottom = 220.226
@@ -891,6 +648,7 @@ text = "(david wolters)"
 align = 1
 
 [node name="Label5" type="Label" parent="state_handler/3"]
+visible = false
 margin_top = 319.128
 margin_right = 1279.0
 margin_bottom = 390.128
@@ -916,6 +674,7 @@ text = "(scott topping)"
 align = 1
 
 [node name="Label6" type="Label" parent="state_handler/3"]
+visible = false
 margin_top = 488.791
 margin_right = 1279.0
 margin_bottom = 559.791
@@ -937,6 +696,7 @@ margin_right = 73.366
 margin_bottom = 40.0
 
 [node name="Label6" type="Label" parent="state_handler/4"]
+visible = false
 margin_left = -33.459
 margin_top = 121.0
 margin_right = 1245.55
@@ -963,6 +723,7 @@ text = "(brandon warren)"
 align = 1
 
 [node name="Label5" type="Label" parent="state_handler/4"]
+visible = false
 margin_left = -34.244
 margin_top = 295.275
 margin_right = 1248.76
@@ -980,6 +741,7 @@ text = "zardoru"
 align = 1
 
 [node name="Label1" type="Label" parent="state_handler/4"]
+visible = false
 margin_left = -34.366
 margin_top = 442.306
 margin_right = 1245.64
@@ -1057,6 +819,7 @@ margin_bottom = 40.0
 rect_pivot_offset = Vector2( 169.93, 244.072 )
 
 [node name="testing" type="Label" parent="state_handler/5"]
+visible = false
 margin_left = -138.0
 margin_top = 77.0
 margin_right = 1141.0
@@ -1117,6 +880,7 @@ text = "(nicky van der reijden)"
 align = 1
 
 [node name="thanks" type="Label" parent="state_handler/5"]
+visible = false
 margin_left = 142.0
 margin_top = 123.857
 margin_right = 1421.0
@@ -1189,6 +953,7 @@ text = "(samuel de la torre galán)"
 align = 1
 
 [node name="chinese" type="Label" parent="state_handler/6"]
+visible = false
 margin_left = 441.444
 margin_top = 49.0
 margin_right = 821.445
@@ -1584,6 +1349,7 @@ align = 1
 autowrap = true
 
 [node name="7" type="Control" parent="state_handler"]
+visible = false
 margin_left = 71.0
 margin_top = 36.0
 margin_right = 111.0
@@ -1827,7 +1593,6 @@ valign = 1
 autoplay = "credits"
 anims/RESET = SubResource( 15 )
 anims/credits = SubResource( 12 )
-"anims/credits (copy)" = SubResource( 13 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="state_handler/AnimationPlayer"]
 stream = ExtResource( 12 )
@@ -1835,6 +1600,7 @@ volume_db = -8.0
 bus = "Music"
 
 [node name="skip" type="Button" parent="state_handler"]
+visible = false
 margin_left = 1182.0
 margin_top = 680.0
 margin_right = 1259.0
