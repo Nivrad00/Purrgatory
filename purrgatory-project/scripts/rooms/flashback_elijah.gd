@@ -169,6 +169,30 @@ func wake_up():
 	]
 	set_format_dict('envy_es2', envy_es2_replacements[choice_log[2]])
 	
+	# french
+	
+	var role_model_fr_replacements = [
+		"une personne de ma famille que j'ai perdue de vue",
+		"quelqu'un dont j'étais proche dans mon enfance",
+		"une personne que j'ai rencontrée en ligne et qui était super douée en art",
+		"quelqu'un de très terre-à-terre qui enseignait dans mon lycée",
+		"quelqu'un qui jouait de la basse dans un groupe indé",
+		"un personnage de ma série préférée",
+		"quelqu'un dont j'étais très proche"
+	]
+	set_format_dict('role_model_fr', role_model_fr_replacements[choice_log[1]])
+	
+	var envy_fr_replacements = [
+		"l'intelligence",
+		"l'altruisme",
+		"la bravoure",
+		"la compassion",
+		"le succès",
+		"le talent",
+		"la sagesse"
+	]
+	set_format_dict('envy_fr', envy_fr_replacements[choice_log[2]])
+	
 	# done
 	
 	emit_signal('change_room', 'flashback_sean')

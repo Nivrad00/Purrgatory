@@ -5890,7 +5890,7 @@ var raw_blocks = [
 ["","","","ma, ehm, è stato gentile da parte tua","","","","","",""],
 ["","","","ascoltarmi","","","","","",""],
 ["","you","","felice di essere stat{o/a/ə} d'aiuto.","","","","","",""],
-["","sean","","se in gamba, lo sai?","","","","","",""],
+["","sean","","sei in gamba, lo sai?","","","","","",""],
 ["","you","","grazie!","","","","","",""],
 ["","_none","_none","sean va via.",[["sean_on_walk", true], ["sean_on_walk_timer", true]],"","null","","",""],
 ["sean_worked_on","you","","sei andato avanti con purrgatory blues?","","invited_sean",['sean_worked_on1', 'sean_worked_on2'],"","",""],

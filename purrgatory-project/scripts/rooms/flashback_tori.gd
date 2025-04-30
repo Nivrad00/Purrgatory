@@ -82,3 +82,14 @@ func wake_up():
 	]
 	set_format_dict('desire_es2', desire_es2_replacements[choice_log[1]])
 	
+	var desire_fr_replacements = [
+		"la connaissance",
+		"l'amitié",
+		"l'aventure",
+		"le savoir-faire",
+		"le bonheur",
+		"la liberté",
+		"l'amour"
+	]
+	set_format_dict('desire_fr', desire_fr_replacements[choice_log[1]])
+	

@@ -157,6 +157,30 @@ func wake_up():
 	]
 	set_format_dict('regret_es2', regret_es2_replacements[choice_log[3]])
 	
+	# french
+	
+	var dream_fr_replacements = [
+		"fonder une famille",
+		"apprendre à coder",
+		"publier un roman jeunesse",
+		"apprendre à jouer aux fléchettes",
+		"vivre dans une cabane dans les bois",
+		"reprendre les études",
+		"partir vivre dans un autre pays"
+	]
+	set_format_dict('dream_fr', dream_fr_replacements[choice_log[1]])
+	
+	var regret_fr_replacements = [
+		"trouver un nouveau foyer pour mes chiens",
+		"visiter ma ville natale",
+		"dire au revoir à mes potes",
+		"éteindre le four",
+		"supprimer certains trucs privés de mon ordinateur",
+		"faire don de ma collection de peluches",
+		"dépenser le reste de mes économies en pizza"
+	]
+	set_format_dict('regret_fr', regret_fr_replacements[choice_log[3]])
+	
 	# done
 	
 	emit_signal('start_dialog', 'natalie_post2', [])

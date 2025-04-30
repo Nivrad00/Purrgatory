@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=2]
+[gd_scene load_steps=125 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ss.tscn" type="PackedScene" id=2]
@@ -89,6 +89,8 @@
 [ext_resource path="res://themes/ui_font_21.tres" type="DynamicFont" id=87]
 [ext_resource path="res://scripts/custom_pronouns_button.gd" type="Script" id=88]
 [ext_resource path="res://scripts/dialog/all_dialog_es_latam.gd" type="Script" id=89]
+[ext_resource path="res://scripts/dialog/all_dialog_fr.gd" type="Script" id=90]
+[ext_resource path="res://french_custom_buttongroup.tres" type="ButtonGroup" id=91]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("ss")
@@ -456,6 +458,9 @@ script = ExtResource( 76 )
 
 [node name="all_dialog_es_latam" type="Node" parent="dialog_handler"]
 script = ExtResource( 89 )
+
+[node name="all_dialog_fr" type="Node" parent="dialog_handler"]
+script = ExtResource( 90 )
 
 [node name="content" type="Control" parent="."]
 margin_right = 1280.0
@@ -904,6 +909,7 @@ margin_right = 68.546
 margin_bottom = 9.465
 
 [node name="6" type="Control" parent="content/ui/name_input/custom_pronouns/inputs"]
+visible = false
 margin_left = 28.546
 margin_top = -30.535
 margin_right = 68.546
@@ -983,6 +989,127 @@ text = "atención: la terminación que elijas podría no adaptarse bien a las re
 align = 1
 valign = 1
 autowrap = true
+
+[node name="7" type="Control" parent="content/ui/name_input/custom_pronouns/inputs"]
+margin_left = 28.546
+margin_top = -30.535
+margin_right = 68.546
+margin_bottom = 9.465
+
+[node name="Label" type="Label" parent="content/ui/name_input/custom_pronouns/inputs/7"]
+margin_left = 128.0
+margin_top = 161.465
+margin_right = 538.0
+margin_bottom = 195.465
+text = "pronoms"
+align = 2
+
+[node name="pronoun" type="LineEdit" parent="content/ui/name_input/custom_pronouns/inputs/7"]
+margin_left = 570.546
+margin_top = 155.465
+margin_right = 699.546
+margin_bottom = 202.465
+rect_pivot_offset = Vector2( -341.701, 118.831 )
+focus_mode = 1
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+text = "iel"
+max_length = 10
+context_menu_enabled = false
+caret_blink = true
+
+[node name="TextureRect" type="TextureRect" parent="content/ui/name_input/custom_pronouns/inputs/7/pronoun"]
+show_behind_parent = true
+margin_left = -19.0
+margin_top = -6.0
+margin_right = 157.0
+margin_bottom = 54.0
+texture = ExtResource( 20 )
+
+[node name="pronoun2" type="LineEdit" parent="content/ui/name_input/custom_pronouns/inputs/7"]
+margin_left = 736.0
+margin_top = 155.465
+margin_right = 865.0
+margin_bottom = 202.465
+rect_pivot_offset = Vector2( -341.701, 118.831 )
+focus_mode = 1
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+text = "ellui"
+max_length = 10
+context_menu_enabled = false
+caret_blink = true
+
+[node name="TextureRect" type="TextureRect" parent="content/ui/name_input/custom_pronouns/inputs/7/pronoun2"]
+show_behind_parent = true
+margin_left = -19.0
+margin_top = -6.0
+margin_right = 157.0
+margin_bottom = 54.0
+texture = ExtResource( 20 )
+
+[node name="word_endings" type="Label" parent="content/ui/name_input/custom_pronouns/inputs/7"]
+margin_left = 127.0
+margin_top = 222.465
+margin_right = 537.0
+margin_bottom = 256.465
+text = "accords"
+align = 2
+clip_text = true
+
+[node name="they" type="CheckBox" parent="content/ui/name_input/custom_pronouns/inputs/7"]
+margin_left = 541.0
+margin_top = 206.0
+margin_right = 735.0
+margin_bottom = 280.0
+focus_mode = 0
+pressed = true
+enabled_focus_mode = 0
+group = ExtResource( 91 )
+
+[node name="word_endings2" type="Label" parent="content/ui/name_input/custom_pronouns/inputs/7/they"]
+margin_left = 81.0
+margin_top = 19.0
+margin_right = 491.0
+margin_bottom = 53.0
+text = "neutres"
+clip_text = true
+
+[node name="she" type="CheckBox" parent="content/ui/name_input/custom_pronouns/inputs/7"]
+margin_left = 540.0
+margin_top = 257.0
+margin_right = 707.0
+margin_bottom = 331.0
+focus_mode = 0
+enabled_focus_mode = 0
+group = ExtResource( 91 )
+
+[node name="word_endings2" type="Label" parent="content/ui/name_input/custom_pronouns/inputs/7/she"]
+margin_left = 81.0
+margin_top = 20.0
+margin_right = 491.0
+margin_bottom = 54.0
+text = "féminins"
+clip_text = true
+
+[node name="he" type="CheckBox" parent="content/ui/name_input/custom_pronouns/inputs/7"]
+margin_left = 541.0
+margin_top = 307.0
+margin_right = 705.0
+margin_bottom = 381.0
+focus_mode = 0
+enabled_focus_mode = 0
+group = ExtResource( 91 )
+
+[node name="word_endings3" type="Label" parent="content/ui/name_input/custom_pronouns/inputs/7/he"]
+margin_left = 80.0
+margin_top = 20.0
+margin_right = 490.0
+margin_bottom = 54.0
+text = "masculins"
+clip_text = true
 
 [node name="back" type="Button" parent="content/ui/name_input/custom_pronouns"]
 margin_left = 211.573
@@ -2028,6 +2155,8 @@ color = Color( 0, 0, 0, 1 )
 [connection signal="focus_exited" from="content/ui/name_input/custom_pronouns/inputs/1/terminacion" to="content/ui/name_input/custom_pronouns/inputs/1/terminacion" method="deselect"]
 [connection signal="focus_exited" from="content/ui/name_input/custom_pronouns/inputs/6/pronombre" to="content/ui/name_input/custom_pronouns/inputs/6/pronombre" method="deselect"]
 [connection signal="focus_exited" from="content/ui/name_input/custom_pronouns/inputs/6/terminacion" to="content/ui/name_input/custom_pronouns/inputs/6/terminacion" method="deselect"]
+[connection signal="focus_exited" from="content/ui/name_input/custom_pronouns/inputs/7/pronoun" to="content/ui/name_input/custom_pronouns/inputs/7/pronoun" method="deselect"]
+[connection signal="focus_exited" from="content/ui/name_input/custom_pronouns/inputs/7/pronoun2" to="content/ui/name_input/custom_pronouns/inputs/7/pronoun2" method="deselect"]
 [connection signal="pressed" from="content/ui/name_input/custom_pronouns/back" to="content/ui/name_input/custom_pronouns" method="hide"]
 [connection signal="pressed" from="content/ui/text_box" to="." method="update_dialog_button_clicked"]
 [connection signal="pressed" from="content/ui/skip_button" to="." method="toggle_skip"]

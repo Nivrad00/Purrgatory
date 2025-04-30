@@ -176,6 +176,30 @@ func wake_up():
 	]
 	set_format_dict('favorite_place_es2', favorite_place_es2_replacements[choice_log[2]])
 	
+	# french
+	
+	var hometown_fr_replacements = [
+		"les montagnes",
+		"les rues animées",
+		"les vagues",
+		"les routes poussiéreuses",
+		"l'air lourd et chaud",
+		"les pelouses tondues minutieusement",
+		"le plafond fissuré"
+	]
+	set_format_dict('hometown_fr', hometown_fr_replacements[choice_log[1]])
+	
+	var favorite_place_fr_replacements = [
+		"la supérette du coin qui sentait le savon",
+		"la partie rocheuse du ruisseau",
+		"la librairie au bout de la rue",
+		"la villa de ma grand-tante",
+		"la salle d'arcade colorée au centre commercial",
+		"l'arrière du magasin de ma famille",
+		"le terrain de foot abandonné derrière l'école"
+	]
+	set_format_dict('favorite_place_fr', favorite_place_fr_replacements[choice_log[2]])
+	
 	# done
 	
 	emit_signal('change_room', 'flashback_kyungsoon')

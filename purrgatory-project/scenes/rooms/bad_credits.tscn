@@ -43,7 +43,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("6 and a half/polish:visible")
+tracks/2/path = NodePath("6/polish:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -73,6 +73,18 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("6 and a half/french:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -429,19 +441,19 @@ tracks/28/loop_wrap = true
 tracks/28/imported = false
 tracks/28/enabled = true
 tracks/28/keys = {
-"times": PoolRealArray( 0, 65.6, 74.95 ),
+"times": PoolRealArray( 0, 65.62, 74.95 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("6 and a half/polish:visible")
+tracks/29/path = NodePath("6/polish:visible")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/imported = false
 tracks/29/enabled = true
 tracks/29/keys = {
-"times": PoolRealArray( 0, 64.78 ),
+"times": PoolRealArray( 0, 58.97 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -453,7 +465,7 @@ tracks/30/loop_wrap = true
 tracks/30/imported = false
 tracks/30/enabled = true
 tracks/30/keys = {
-"times": PoolRealArray( 0, 66.96 ),
+"times": PoolRealArray( 0, 65.61 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -465,7 +477,19 @@ tracks/31/loop_wrap = true
 tracks/31/imported = false
 tracks/31/enabled = true
 tracks/31/keys = {
-"times": PoolRealArray( 0, 68.3 ),
+"times": PoolRealArray( 0, 67 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/32/type = "value"
+tracks/32/path = NodePath("6 and a half/french:visible")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/keys = {
+"times": PoolRealArray( -0.02, 68.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -492,10 +516,10 @@ margin_right = 1279.07
 margin_bottom = 720.0
 
 [node name="TextureRect" type="TextureButton" parent="state_handler"]
-margin_left = 1276.96
-margin_top = 450.0
-margin_right = 1477.06
-margin_bottom = 750.0
+margin_left = 44.8254
+margin_top = 445.027
+margin_right = 244.961
+margin_bottom = 745.027
 rect_scale = Vector2( 0.75, 0.75 )
 texture_normal = ExtResource( 4 )
 script = ExtResource( 5 )
@@ -512,7 +536,6 @@ margin_top = 174.0
 margin_bottom = 424.0
 
 [node name="Label" type="Label" parent="state_handler/1"]
-visible = false
 margin_top = 410.645
 margin_right = 1279.0
 margin_bottom = 481.645
@@ -520,7 +543,6 @@ text = "a game by"
 align = 1
 
 [node name="Label2" type="Label" parent="state_handler/1"]
-visible = false
 margin_top = 449.941
 margin_right = 1279.0
 margin_bottom = 520.941
@@ -557,7 +579,6 @@ text = "(niv heo)"
 align = 1
 
 [node name="Label3" type="Label" parent="state_handler/2"]
-visible = false
 margin_top = 277.532
 margin_right = 1279.0
 margin_bottom = 348.532
@@ -601,7 +622,6 @@ text = "gnomes"
 align = 1
 
 [node name="Label4" type="Label" parent="state_handler/2"]
-visible = false
 margin_top = 541.26
 margin_right = 1279.0
 margin_bottom = 612.26
@@ -622,7 +642,6 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Label2" type="Label" parent="state_handler/3"]
-visible = false
 margin_top = 149.226
 margin_right = 1279.0
 margin_bottom = 220.226
@@ -648,7 +667,6 @@ text = "(david wolters)"
 align = 1
 
 [node name="Label5" type="Label" parent="state_handler/3"]
-visible = false
 margin_top = 319.128
 margin_right = 1279.0
 margin_bottom = 390.128
@@ -674,7 +692,6 @@ text = "(scott topping)"
 align = 1
 
 [node name="Label6" type="Label" parent="state_handler/3"]
-visible = false
 margin_top = 488.791
 margin_right = 1279.0
 margin_bottom = 559.791
@@ -696,7 +713,6 @@ margin_right = 73.366
 margin_bottom = 40.0
 
 [node name="Label6" type="Label" parent="state_handler/4"]
-visible = false
 margin_left = -33.459
 margin_top = 121.0
 margin_right = 1245.55
@@ -723,7 +739,6 @@ text = "(brandon warren)"
 align = 1
 
 [node name="Label5" type="Label" parent="state_handler/4"]
-visible = false
 margin_left = -34.244
 margin_top = 295.275
 margin_right = 1248.76
@@ -741,7 +756,6 @@ text = "zardoru"
 align = 1
 
 [node name="Label1" type="Label" parent="state_handler/4"]
-visible = false
 margin_left = -34.366
 margin_top = 442.306
 margin_right = 1245.64
@@ -819,7 +833,6 @@ margin_bottom = 40.0
 rect_pivot_offset = Vector2( 169.93, 244.072 )
 
 [node name="testing" type="Label" parent="state_handler/5"]
-visible = false
 margin_left = -138.0
 margin_top = 77.0
 margin_right = 1141.0
@@ -880,7 +893,6 @@ text = "(nicky van der reijden)"
 align = 1
 
 [node name="thanks" type="Label" parent="state_handler/5"]
-visible = false
 margin_left = 142.0
 margin_top = 123.857
 margin_right = 1421.0
@@ -917,7 +929,6 @@ text = "(daniel taylor)"
 align = 1
 
 [node name="6" type="Control" parent="state_handler"]
-visible = false
 margin_left = 63.0
 margin_top = 37.0
 margin_right = 1343.0
@@ -925,9 +936,9 @@ margin_bottom = 757.0
 rect_scale = Vector2( 0.9, 0.9 )
 
 [node name="spanish" type="Label" parent="state_handler/6"]
-margin_left = 61.0
+margin_left = -4.0
 margin_top = 49.0
-margin_right = 441.0
+margin_right = 303.0
 margin_bottom = 120.0
 grow_vertical = 0
 custom_constants/line_spacing = -10
@@ -936,16 +947,18 @@ align = 1
 autowrap = true
 
 [node name="Label5" type="Label" parent="state_handler/6/spanish"]
+margin_left = -37.1111
 margin_top = 45.0
-margin_right = 380.0
+margin_right = 342.889
 margin_bottom = 98.0
 custom_fonts/font = ExtResource( 14 )
 text = "samo"
 align = 1
 
 [node name="Label7" type="Label" parent="state_handler/6/spanish"]
+margin_left = -37.1111
 margin_top = 90.301
-margin_right = 380.0
+margin_right = 342.889
 margin_bottom = 124.301
 rect_pivot_offset = Vector2( 676.708, 14.8751 )
 custom_fonts/font = ExtResource( 15 )
@@ -953,10 +966,9 @@ text = "(samuel de la torre galán)"
 align = 1
 
 [node name="chinese" type="Label" parent="state_handler/6"]
-visible = false
-margin_left = 441.444
+margin_left = 324.0
 margin_top = 49.0
-margin_right = 821.445
+margin_right = 624.0
 margin_bottom = 120.0
 grow_vertical = 0
 custom_constants/line_spacing = -10
@@ -965,16 +977,17 @@ align = 1
 autowrap = true
 
 [node name="Label5" type="Label" parent="state_handler/6/chinese"]
-margin_top = 47.0
-margin_right = 380.0
-margin_bottom = 100.0
+margin_left = -39.5556
+margin_top = 46.8889
+margin_right = 340.444
+margin_bottom = 99.8889
 custom_fonts/font = ExtResource( 16 )
 text = "赤铜/syakudo"
 align = 1
 
 [node name="chinese2" type="Label" parent="state_handler/6/chinese"]
 margin_top = 141.0
-margin_right = 380.0
+margin_right = 301.0
 margin_bottom = 212.0
 grow_vertical = 0
 custom_constants/line_spacing = -10
@@ -982,34 +995,37 @@ text = "chinese translation support"
 align = 1
 autowrap = true
 
-[node name="Label2" type="Label" parent="state_handler/6/chinese/chinese2"]
-margin_top = 49.0
-margin_right = 380.0
-margin_bottom = 102.0
+[node name="Label2" type="Label" parent="state_handler/6/chinese"]
+margin_left = -39.5556
+margin_top = 189.889
+margin_right = 340.444
+margin_bottom = 242.889
 custom_fonts/font = ExtResource( 16 )
 text = "ciinore"
 align = 1
 
-[node name="Label3" type="Label" parent="state_handler/6/chinese/chinese2"]
-margin_top = 98.434
-margin_right = 380.0
-margin_bottom = 151.434
+[node name="Label3" type="Label" parent="state_handler/6/chinese"]
+margin_left = -39.5556
+margin_top = 239.323
+margin_right = 340.444
+margin_bottom = 292.323
 custom_fonts/font = ExtResource( 16 )
 text = "面具魔MaskDevil"
 align = 1
 
-[node name="Label4" type="Label" parent="state_handler/6/chinese/chinese2"]
-margin_top = 149.682
-margin_right = 380.0
-margin_bottom = 202.682
+[node name="Label4" type="Label" parent="state_handler/6/chinese"]
+margin_left = -39.5556
+margin_top = 290.571
+margin_right = 340.444
+margin_bottom = 343.571
 custom_fonts/font = ExtResource( 16 )
 text = "伏霖CRLINEEPER"
 align = 1
 
 [node name="italian" type="Label" parent="state_handler/6"]
-margin_left = 833.0
+margin_left = 650.0
 margin_top = 49.0
-margin_right = 1213.0
+margin_right = 945.0
 margin_bottom = 120.0
 grow_vertical = 0
 custom_constants/line_spacing = -10
@@ -1018,16 +1034,18 @@ align = 1
 autowrap = true
 
 [node name="Label8" type="Label" parent="state_handler/6/italian"]
+margin_left = -42.2225
 margin_top = 44.0
-margin_right = 380.0
+margin_right = 337.778
 margin_bottom = 97.0
 custom_fonts/font = ExtResource( 14 )
 text = "aki"
 align = 1
 
 [node name="Label9" type="Label" parent="state_handler/6/italian"]
+margin_left = -42.2225
 margin_top = 89.301
-margin_right = 380.0
+margin_right = 337.778
 margin_bottom = 123.301
 rect_pivot_offset = Vector2( 676.708, 14.8751 )
 custom_fonts/font = ExtResource( 15 )
@@ -1035,16 +1053,18 @@ text = "(giulia bosioli)"
 align = 1
 
 [node name="Label5" type="Label" parent="state_handler/6/italian"]
+margin_left = -42.2225
 margin_top = 112.0
-margin_right = 380.0
+margin_right = 337.778
 margin_bottom = 165.0
 custom_fonts/font = ExtResource( 14 )
 text = "chiro"
 align = 1
 
 [node name="Label7" type="Label" parent="state_handler/6/italian"]
+margin_left = -42.2225
 margin_top = 157.301
-margin_right = 380.0
+margin_right = 337.778
 margin_bottom = 191.301
 rect_pivot_offset = Vector2( 676.708, 14.8751 )
 custom_fonts/font = ExtResource( 15 )
@@ -1052,16 +1072,18 @@ text = "(alessandro mura)"
 align = 1
 
 [node name="Label6" type="Label" parent="state_handler/6/italian"]
+margin_left = -42.2225
 margin_top = 179.0
-margin_right = 380.0
+margin_right = 337.778
 margin_bottom = 232.0
 custom_fonts/font = ExtResource( 14 )
 text = "cora bruno"
 align = 1
 
 [node name="italian2" type="Label" parent="state_handler/6/italian"]
+margin_left = -2.0
 margin_top = 273.0
-margin_right = 380.0
+margin_right = 298.0
 margin_bottom = 344.0
 grow_vertical = 0
 custom_constants/line_spacing = -10
@@ -1069,21 +1091,101 @@ text = "italian translation support"
 align = 1
 autowrap = true
 
-[node name="Label8" type="Label" parent="state_handler/6/italian/italian2"]
-margin_top = 50.0
-margin_right = 380.0
-margin_bottom = 103.0
+[node name="Label10" type="Label" parent="state_handler/6/italian"]
+margin_left = -42.2225
+margin_top = 323.0
+margin_right = 337.778
+margin_bottom = 376.0
 custom_fonts/font = ExtResource( 14 )
 text = "droghead"
 align = 1
 
-[node name="Label5" type="Label" parent="state_handler/6/italian/italian2"]
-margin_top = 98.0
-margin_right = 380.0
-margin_bottom = 151.0
+[node name="Label11" type="Label" parent="state_handler/6/italian"]
+margin_left = -42.2225
+margin_top = 371.0
+margin_right = 337.778
+margin_bottom = 424.0
 custom_fonts/font = ExtResource( 14 )
 text = "serj"
 align = 1
+
+[node name="polish" type="Label" parent="state_handler/6"]
+margin_left = 976.0
+margin_top = 49.0
+margin_right = 1276.0
+margin_bottom = 120.0
+grow_vertical = 0
+custom_constants/line_spacing = -10
+text = "polish translation"
+align = 1
+autowrap = true
+
+[node name="Label8" type="Label" parent="state_handler/6/polish"]
+margin_left = -39.3334
+margin_top = 44.0
+margin_right = 340.667
+margin_bottom = 97.0
+custom_fonts/font = ExtResource( 14 )
+text = "brumik"
+align = 1
+
+[node name="Label9" type="Label" parent="state_handler/6/polish"]
+margin_left = -39.3334
+margin_top = 91.0
+margin_right = 340.667
+margin_bottom = 125.0
+rect_pivot_offset = Vector2( 676.708, 14.8751 )
+custom_fonts/font = ExtResource( 15 )
+text = "(julia bartnik)"
+align = 1
+
+[node name="Label5" type="Label" parent="state_handler/6/polish"]
+margin_left = -39.3334
+margin_top = 116.0
+margin_right = 340.667
+margin_bottom = 169.0
+custom_fonts/font = ExtResource( 14 )
+text = "kttlvr"
+align = 1
+
+[node name="Label7" type="Label" parent="state_handler/6/polish"]
+margin_left = -39.3334
+margin_top = 161.301
+margin_right = 340.667
+margin_bottom = 195.301
+rect_pivot_offset = Vector2( 676.708, 14.8751 )
+custom_fonts/font = ExtResource( 15 )
+text = "(maja kędys)"
+align = 1
+
+[node name="Label6" type="Label" parent="state_handler/6/polish"]
+margin_left = -39.3334
+margin_top = 185.0
+margin_right = 340.667
+margin_bottom = 238.0
+custom_fonts/font = ExtResource( 14 )
+text = "shrug"
+align = 1
+
+[node name="Label10" type="Label" parent="state_handler/6/polish"]
+margin_left = -39.3334
+margin_top = 330.333
+margin_right = 340.667
+margin_bottom = 383.333
+custom_fonts/font = ExtResource( 14 )
+text = "blejzew"
+align = 1
+
+[node name="support" type="Label" parent="state_handler/6/polish"]
+margin_left = 2.0
+margin_top = 281.0
+margin_right = 299.0
+margin_bottom = 352.0
+grow_vertical = 0
+custom_constants/line_spacing = -10
+text = "polish translation support"
+align = 1
+autowrap = true
 
 [node name="6 and a half" type="Control" parent="state_handler"]
 margin_left = 61.0
@@ -1092,81 +1194,10 @@ margin_right = 1341.0
 margin_bottom = 757.0
 rect_scale = Vector2( 0.9, 0.9 )
 
-[node name="polish" type="Label" parent="state_handler/6 and a half"]
-margin_left = 28.0
-margin_top = 49.0
-margin_right = 408.0
-margin_bottom = 120.0
-grow_vertical = 0
-custom_constants/line_spacing = -10
-text = "polish translation"
-align = 1
-autowrap = true
-
-[node name="Label8" type="Label" parent="state_handler/6 and a half/polish"]
-margin_top = 44.0
-margin_right = 380.0
-margin_bottom = 97.0
-custom_fonts/font = ExtResource( 14 )
-text = "brumik"
-align = 1
-
-[node name="Label9" type="Label" parent="state_handler/6 and a half/polish"]
-margin_top = 91.0
-margin_right = 380.0
-margin_bottom = 125.0
-rect_pivot_offset = Vector2( 676.708, 14.8751 )
-custom_fonts/font = ExtResource( 15 )
-text = "(julia bartnik)"
-align = 1
-
-[node name="Label5" type="Label" parent="state_handler/6 and a half/polish"]
-margin_top = 116.0
-margin_right = 380.0
-margin_bottom = 169.0
-custom_fonts/font = ExtResource( 14 )
-text = "kttlvr"
-align = 1
-
-[node name="Label7" type="Label" parent="state_handler/6 and a half/polish"]
-margin_top = 161.301
-margin_right = 380.0
-margin_bottom = 195.301
-rect_pivot_offset = Vector2( 676.708, 14.8751 )
-custom_fonts/font = ExtResource( 15 )
-text = "(maja kędys)"
-align = 1
-
-[node name="Label6" type="Label" parent="state_handler/6 and a half/polish"]
-margin_top = 185.0
-margin_right = 380.0
-margin_bottom = 238.0
-custom_fonts/font = ExtResource( 14 )
-text = "shrug"
-align = 1
-
-[node name="support" type="Label" parent="state_handler/6 and a half/polish"]
-margin_top = 263.0
-margin_right = 380.0
-margin_bottom = 334.0
-grow_vertical = 0
-custom_constants/line_spacing = -10
-text = "polish translation support"
-align = 1
-autowrap = true
-
-[node name="Label8" type="Label" parent="state_handler/6 and a half/polish/support"]
-margin_top = 44.0
-margin_right = 380.0
-margin_bottom = 97.0
-custom_fonts/font = ExtResource( 14 )
-text = "blejzew"
-align = 1
-
 [node name="latam" type="Label" parent="state_handler/6 and a half"]
-margin_left = 405.0
+margin_left = 38.8889
 margin_top = 49.0
-margin_right = 785.0
+margin_right = 418.889
 margin_bottom = 120.0
 grow_vertical = 0
 custom_constants/line_spacing = -10
@@ -1211,9 +1242,9 @@ text = "(iván)"
 align = 1
 
 [node name="portuguese2" type="Label" parent="state_handler/6 and a half"]
-margin_left = 833.333
+margin_left = 467.222
 margin_top = 48.8889
-margin_right = 1213.33
+margin_right = 847.219
 margin_bottom = 119.889
 grow_vertical = 0
 custom_constants/line_spacing = -10
@@ -1347,6 +1378,67 @@ custom_fonts/font = ExtResource( 14 )
 text = "sahbiah"
 align = 1
 autowrap = true
+
+[node name="french" type="Label" parent="state_handler/6 and a half"]
+margin_left = 866.667
+margin_top = 48.8889
+margin_right = 1246.66
+margin_bottom = 119.889
+grow_vertical = 0
+custom_constants/line_spacing = -10
+text = "french translation"
+align = 1
+autowrap = true
+
+[node name="Label5" type="Label" parent="state_handler/6 and a half/french"]
+margin_top = 42.0
+margin_right = 380.0
+margin_bottom = 93.0
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 14 )
+text = "léo l'hoost"
+align = 1
+autowrap = true
+
+[node name="support" type="Label" parent="state_handler/6 and a half/french"]
+margin_top = 134.444
+margin_right = 380.0
+margin_bottom = 205.444
+grow_vertical = 0
+custom_constants/line_spacing = -10
+text = "french translation support"
+align = 1
+autowrap = true
+
+[node name="Label5" type="Label" parent="state_handler/6 and a half/french/support"]
+margin_top = 42.0
+margin_right = 380.0
+margin_bottom = 93.0
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 14 )
+text = "krisfies"
+align = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="state_handler/6 and a half/french/support"]
+margin_top = 88.8889
+margin_right = 380.0
+margin_bottom = 139.889
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 14 )
+text = "sunnykarrot"
+align = 1
+autowrap = true
+
+[node name="Label11" type="Label" parent="state_handler/6 and a half/french/support"]
+margin_left = 1.11115
+margin_top = 135.556
+margin_right = 381.111
+margin_bottom = 169.556
+rect_pivot_offset = Vector2( 296, 26.699 )
+custom_fonts/font = ExtResource( 15 )
+text = "(david torazzi)"
+align = 1
 
 [node name="7" type="Control" parent="state_handler"]
 visible = false
@@ -1527,7 +1619,7 @@ text = "additional assets"
 align = 1
 
 [node name="Label3" type="Label" parent="state_handler/7"]
-margin_left = 20.0
+margin_left = -66.0
 margin_top = 281.0
 margin_right = 320.0
 margin_bottom = 500.0
@@ -1600,7 +1692,6 @@ volume_db = -8.0
 bus = "Music"
 
 [node name="skip" type="Button" parent="state_handler"]
-visible = false
 margin_left = 1182.0
 margin_top = 680.0
 margin_right = 1259.0

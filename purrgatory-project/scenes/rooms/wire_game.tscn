@@ -1365,10 +1365,10 @@ valign = 1
 
 [node name="sure\?" type="Label" parent="state_handler/shelf"]
 visible = false
-margin_left = -61.46
-margin_top = -52.237
-margin_right = 35.54
-margin_bottom = -22.237
+margin_left = -61.0
+margin_top = -61.0
+margin_right = 36.0
+margin_bottom = -17.0
 rect_scale = Vector2( 0.8, 0.8 )
 rect_pivot_offset = Vector2( 66.313, 64.7428 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -1376,12 +1376,13 @@ custom_fonts/font = SubResource( 2 )
 text = "sure?"
 align = 1
 valign = 1
+autowrap = true
 
 [node name="yes" type="Button" parent="state_handler/shelf/sure\?"]
 margin_left = 10.9218
-margin_top = 34.1911
+margin_top = 50.0643
 margin_right = 85.9218
-margin_bottom = 61.1911
+margin_bottom = 77.0643
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
@@ -1407,9 +1408,9 @@ valign = 1
 
 [node name="no" type="Button" parent="state_handler/shelf/sure\?"]
 margin_left = 10.9218
-margin_top = 75.1152
+margin_top = 90.9884
 margin_right = 85.9218
-margin_bottom = 102.115
+margin_bottom = 117.988
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true

@@ -117,3 +117,21 @@ func wake_up():
 	]
 	set_format_dict('food_es2', food_es2_replacements[choice_log[1]])
 	
+	var food_fr_replacements = [
+		"les myrtilles",
+		"les burritos",
+		"la pizza à l'ananas",
+		"l'adobo",
+		"les céréales aux marshmallows",
+		"le phô",
+		"le chocolat noir",
+		"les huîtres fraîches",
+		"les ailes de poulet épicées",
+		"le poulet tikka masala",
+		"l'entrecôte",
+		"les dumplings",
+		"les frites",
+		"le beurre de cacahuètes"
+	]
+	set_format_dict('food_fr', food_fr_replacements[choice_log[1]])
+	

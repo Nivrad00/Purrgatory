@@ -161,6 +161,29 @@ func wake_up():
 	set_format_dict('pride_es2', pride_es2_replacements[choice_log[1]])
 	set_format_dict('proudest_moment_es2', proudest_moment_es2_replacements[choice_log[2]])
 	
+	# french
+	
+	var pride_fr_replacements = [ 
+		"j'étais sympa avec les inconnus",
+		"j'étais honnête et tenace",
+		"j'étais pas bête et que je savais manier les mots",
+		"j'étais super canon",
+		"toujours là pour mes potes",
+		"je me débrouillais plutôt bien en musique",
+		"j'étais toujours optimiste"
+	]
+	var proudest_moment_fr_replacements = [ 
+		"gagné le concours d'orthographe à 12 ans",
+		"joué de la guitare sur scène pour la première fois",
+		"fini mon premier semi-marathon",
+		"eu mon premier enfant",
+		"battu le record du monde dans un jeu vidéo",
+		"été diplômé de l'université",
+		"coupé mes cheveux"
+	]
+	set_format_dict('pride_fr', pride_fr_replacements[choice_log[1]])
+	set_format_dict('proudest_moment_fr', proudest_moment_fr_replacements[choice_log[2]])
+	
 func update_state(state):
 	.update_state(state)
 	if state.get('flashback_goto_commons'):

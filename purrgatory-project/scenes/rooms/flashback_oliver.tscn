@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://scripts/room_instance.gd" type="Script" id=1]
 [ext_resource path="res://themes/dialog_theme.tres" type="Theme" id=2]
@@ -435,6 +435,62 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=36]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=37]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=38]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=39]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=40]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
@@ -2764,6 +2820,7 @@ scroll_active = false
 anims/Fadein = SubResource( 28 )
 
 [node name="5" type="HBoxContainer" parent="state_handler/text"]
+visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 alignment = 1
@@ -3672,6 +3729,460 @@ scroll_active = false
 [node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text/6/vc/t3"]
 anims/Fadein = SubResource( 36 )
 
+[node name="7" type="HBoxContainer" parent="state_handler/text"]
+margin_right = 1280.0
+margin_bottom = 720.0
+alignment = 1
+
+[node name="vc" type="VBoxContainer" parent="state_handler/text/7"]
+margin_left = 240.0
+margin_right = 1040.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 800, 0 )
+alignment = 1
+
+[node name="t0" type="RichTextLabel" parent="state_handler/text/7/vc"]
+margin_top = 210.0
+margin_right = 800.0
+margin_bottom = 270.0
+rect_min_size = Vector2( 0, 60 )
+rect_clip_content = false
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "vous vous souvenez de ce que vous aimiez chez vous."
+text = "vous vous souvenez de ce que vous aimiez chez vous."
+scroll_active = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text/7/vc/t0"]
+anims/Fadein = SubResource( 37 )
+
+[node name="c1" type="RichTextLabel" parent="state_handler/text/7/vc"]
+margin_top = 290.0
+margin_right = 800.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 0, 60 )
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "vous vous rappelez en particulier de "
+text = "vous vous rappelez en particulier de "
+scroll_active = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text/7/vc/c1"]
+anims/Fadein = SubResource( 38 )
+
+[node name="choice_container" type="Control" parent="state_handler/text/7/vc/c1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 103.0
+margin_right = -665.0
+margin_bottom = -20.0
+
+[node name="0" type="RichTextLabel" parent="state_handler/text/7/vc/c1/choice_container"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 565.2
+margin_bottom = 10.0
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "[u]votre gentillesse avec les inconnus[/u]."
+text = "votre gentillesse avec les inconnus."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text/7/vc/c1/choice_container/0"]
+margin_right = 602.0
+margin_bottom = 84.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 5 )
+
+[node name="1" type="RichTextLabel" parent="state_handler/text/7/vc/c1/choice_container"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 565.2
+margin_bottom = 10.0
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "[u]votre honnêteté et votre résilience[/u]."
+text = "votre honnêteté et votre résilience."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text/7/vc/c1/choice_container/1"]
+margin_top = 4.0
+margin_right = 677.2
+margin_bottom = 65.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 5 )
+
+[node name="2" type="RichTextLabel" parent="state_handler/text/7/vc/c1/choice_container"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 565.2
+margin_bottom = 10.0
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "[u]votre ingéniosité et votre éloquence[/u]."
+text = "votre ingéniosité et votre éloquence."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text/7/vc/c1/choice_container/2"]
+margin_top = 4.0
+margin_right = 766.2
+margin_bottom = 65.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 5 )
+
+[node name="3" type="RichTextLabel" parent="state_handler/text/7/vc/c1/choice_container"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 565.2
+margin_bottom = 10.0
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "[u]votre beauté indescriptible[/u]."
+text = "votre beauté indescriptible."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text/7/vc/c1/choice_container/3"]
+margin_top = 4.0
+margin_right = 778.2
+margin_bottom = 65.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 5 )
+
+[node name="4" type="RichTextLabel" parent="state_handler/text/7/vc/c1/choice_container"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 565.2
+margin_bottom = 10.0
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "[u]votre soutien envers vos ami·es[/u]."
+text = "votre soutien envers vos ami·es."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text/7/vc/c1/choice_container/4"]
+margin_top = 4.0
+margin_right = 927.2
+margin_bottom = 65.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 5 )
+
+[node name="5" type="RichTextLabel" parent="state_handler/text/7/vc/c1/choice_container"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 565.2
+margin_bottom = 10.0
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "[u]votre talent en musique[/u]."
+text = "votre talent en musique."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text/7/vc/c1/choice_container/5"]
+margin_top = 4.0
+margin_right = 672.2
+margin_bottom = 65.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 5 )
+
+[node name="6" type="RichTextLabel" parent="state_handler/text/7/vc/c1/choice_container"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 565.2
+margin_bottom = 10.0
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "[u]votre optimisme sans limite[/u]."
+text = "votre optimisme sans limite."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text/7/vc/c1/choice_container/6"]
+margin_top = 4.0
+margin_right = 670.2
+margin_bottom = 65.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 5 )
+
+[node name="c2" type="RichTextLabel" parent="state_handler/text/7/vc"]
+margin_top = 370.0
+margin_right = 800.0
+margin_bottom = 430.0
+rect_min_size = Vector2( 0, 60 )
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "votre plus grand moment de fierté a été la fois où vous avez "
+text = "votre plus grand moment de fierté a été la fois où vous avez "
+scroll_active = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text/7/vc/c2"]
+anims/Fadein = SubResource( 39 )
+
+[node name="choice_container" type="Control" parent="state_handler/text/7/vc/c2"]
+margin_left = 182.0
+margin_right = 211.0
+margin_bottom = 40.0
+
+[node name="0" type="RichTextLabel" parent="state_handler/text/7/vc/c2/choice_container"]
+visible = false
+margin_right = 800.0
+margin_bottom = 50.0
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "[u]gagné le concours d'orthographe à 12 ans[/u]."
+text = "gagné le concours d'orthographe à 12 ans."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text/7/vc/c2/choice_container/0"]
+margin_top = 4.0
+margin_right = 1262.0
+margin_bottom = 65.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 5 )
+
+[node name="1" type="RichTextLabel" parent="state_handler/text/7/vc/c2/choice_container"]
+visible = false
+margin_right = 800.0
+margin_bottom = 50.0
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "[u]joué de la guitare sur scène pour la première fois[/u]."
+text = "joué de la guitare sur scène pour la première fois."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text/7/vc/c2/choice_container/1"]
+margin_top = 4.0
+margin_right = 1181.0
+margin_bottom = 65.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 5 )
+
+[node name="2" type="RichTextLabel" parent="state_handler/text/7/vc/c2/choice_container"]
+visible = false
+margin_right = 800.0
+margin_bottom = 50.0
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "[u]fini votre premier semi-marathon[/u]."
+text = "fini votre premier semi-marathon."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text/7/vc/c2/choice_container/2"]
+margin_top = 4.0
+margin_right = 1248.0
+margin_bottom = 65.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 5 )
+
+[node name="3" type="RichTextLabel" parent="state_handler/text/7/vc/c2/choice_container"]
+visible = false
+margin_right = 800.0
+margin_bottom = 50.0
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "[u]eu votre premier enfant[/u]."
+text = "eu votre premier enfant."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text/7/vc/c2/choice_container/3"]
+margin_top = 4.0
+margin_right = 852.0
+margin_bottom = 65.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 5 )
+
+[node name="4" type="RichTextLabel" parent="state_handler/text/7/vc/c2/choice_container"]
+visible = false
+margin_right = 800.0
+margin_bottom = 50.0
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "[u]battu le record du monde dans un jeu vidéo[/u]."
+text = "battu le record du monde dans un jeu vidéo."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text/7/vc/c2/choice_container/4"]
+margin_top = 4.0
+margin_right = 1348.0
+margin_bottom = 65.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 5 )
+
+[node name="5" type="RichTextLabel" parent="state_handler/text/7/vc/c2/choice_container"]
+visible = false
+margin_right = 800.0
+margin_bottom = 50.0
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "[u]fini l'université[/u]."
+text = "fini l'université."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text/7/vc/c2/choice_container/5"]
+margin_top = 4.0
+margin_right = 825.0
+margin_bottom = 65.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 5 )
+
+[node name="6" type="RichTextLabel" parent="state_handler/text/7/vc/c2/choice_container"]
+visible = false
+margin_right = 800.0
+margin_bottom = 50.0
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "[u]coupé vos cheveux[/u]."
+text = "coupé vos cheveux."
+scroll_active = false
+
+[node name="Button" type="Button" parent="state_handler/text/7/vc/c2/choice_container/6"]
+margin_top = 4.0
+margin_right = 772.0
+margin_bottom = 65.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 5 )
+
+[node name="t3" type="RichTextLabel" parent="state_handler/text/7/vc"]
+margin_top = 450.0
+margin_right = 800.0
+margin_bottom = 510.0
+rect_min_size = Vector2( 0, 60 )
+mouse_filter = 1
+custom_fonts/bold_italics_font = SubResource( 5 )
+custom_fonts/italics_font = SubResource( 6 )
+custom_fonts/bold_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 8 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="0" type="RichTextLabel" parent="state_handler/text/7/vc/t3"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 52.0
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "le mot gagnant était \"milliardaire.\""
+text = "le mot gagnant était \"milliardaire.\""
+scroll_active = false
+
+[node name="1" type="RichTextLabel" parent="state_handler/text/7/vc/t3"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 52.0
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "c'était une cover de [i]hotel california[/i]."
+text = "c'était une cover de hotel california."
+scroll_active = false
+
+[node name="2" type="RichTextLabel" parent="state_handler/text/7/vc/t3"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 52.0
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "vous avez atteint l'arrivée en un peu moins de 3 heures."
+text = "vous avez atteint l'arrivée en un peu moins de 3 heures."
+scroll_active = false
+
+[node name="e3" type="RichTextLabel" parent="state_handler/text/7/vc/t3"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 52.0
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "vous devez tellement manquer à %s."
+text = "vous devez tellement manquer à %s."
+scroll_active = false
+
+[node name="underline" type="RichTextLabel" parent="state_handler/text/7/vc/t3/e3"]
+margin_top = 5.0
+margin_right = 1280.0
+margin_bottom = 57.0
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "[u]                              [/u]"
+text = "                              "
+scroll_active = false
+
+[node name="LineEdit" type="LineEdit" parent="state_handler/text/7/vc/t3/e3"]
+margin_right = 185.0
+margin_bottom = 31.0
+rect_clip_content = true
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+max_length = 15
+context_menu_enabled = false
+caret_blink = true
+
+[node name="4" type="RichTextLabel" parent="state_handler/text/7/vc/t3"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 52.0
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "votre record était de 12 minutes et 59 secondes."
+text = "votre record était de 12 minutes et 59 secondes."
+scroll_active = false
+
+[node name="5" type="RichTextLabel" parent="state_handler/text/7/vc/t3"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 52.0
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "vous faites encore des cauchemars du dernier semestre."
+text = "vous faites encore des cauchemars du dernier semestre."
+scroll_active = false
+
+[node name="6" type="RichTextLabel" parent="state_handler/text/7/vc/t3"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 52.0
+mouse_filter = 1
+bbcode_enabled = true
+bbcode_text = "bon débarras."
+text = "bon débarras."
+scroll_active = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="state_handler/text/7/vc/t3"]
+anims/Fadein = SubResource( 40 )
+
 [node name="next_button" type="Button" parent="state_handler"]
 margin_left = 573.0
 margin_top = 571.0
@@ -4009,6 +4520,49 @@ flat = true
 [connection signal="mouse_exited" from="state_handler/text/6/vc/c2/choice_container/6/Button" to="state_handler/text/6/vc/c2/choice_container/6/Button" method="highlight_text" binds= [ false ]]
 [connection signal="pressed" from="state_handler/text/6/vc/c2/choice_container/6/Button" to="state_handler" method="cycle_choice"]
 [connection signal="text_changed" from="state_handler/text/6/vc/t3/e3/LineEdit" to="state_handler" method="show_next_button"]
+[connection signal="mouse_entered" from="state_handler/text/7/vc/c1/choice_container/0/Button" to="state_handler/text/7/vc/c1/choice_container/0/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text/7/vc/c1/choice_container/0/Button" to="state_handler/text/7/vc/c1/choice_container/0/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text/7/vc/c1/choice_container/0/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text/7/vc/c1/choice_container/1/Button" to="state_handler/text/7/vc/c1/choice_container/1/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text/7/vc/c1/choice_container/1/Button" to="state_handler/text/7/vc/c1/choice_container/1/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text/7/vc/c1/choice_container/1/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text/7/vc/c1/choice_container/2/Button" to="state_handler/text/7/vc/c1/choice_container/2/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text/7/vc/c1/choice_container/2/Button" to="state_handler/text/7/vc/c1/choice_container/2/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text/7/vc/c1/choice_container/2/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text/7/vc/c1/choice_container/3/Button" to="state_handler/text/7/vc/c1/choice_container/3/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text/7/vc/c1/choice_container/3/Button" to="state_handler/text/7/vc/c1/choice_container/3/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text/7/vc/c1/choice_container/3/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text/7/vc/c1/choice_container/4/Button" to="state_handler/text/7/vc/c1/choice_container/4/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text/7/vc/c1/choice_container/4/Button" to="state_handler/text/7/vc/c1/choice_container/4/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text/7/vc/c1/choice_container/4/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text/7/vc/c1/choice_container/5/Button" to="state_handler/text/7/vc/c1/choice_container/5/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text/7/vc/c1/choice_container/5/Button" to="state_handler/text/7/vc/c1/choice_container/5/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text/7/vc/c1/choice_container/5/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text/7/vc/c1/choice_container/6/Button" to="state_handler/text/7/vc/c1/choice_container/6/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text/7/vc/c1/choice_container/6/Button" to="state_handler/text/7/vc/c1/choice_container/6/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text/7/vc/c1/choice_container/6/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text/7/vc/c2/choice_container/0/Button" to="state_handler/text/7/vc/c2/choice_container/0/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text/7/vc/c2/choice_container/0/Button" to="state_handler/text/7/vc/c2/choice_container/0/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text/7/vc/c2/choice_container/0/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text/7/vc/c2/choice_container/1/Button" to="state_handler/text/7/vc/c2/choice_container/1/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text/7/vc/c2/choice_container/1/Button" to="state_handler/text/7/vc/c2/choice_container/1/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text/7/vc/c2/choice_container/1/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text/7/vc/c2/choice_container/2/Button" to="state_handler/text/7/vc/c2/choice_container/2/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text/7/vc/c2/choice_container/2/Button" to="state_handler/text/7/vc/c2/choice_container/2/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text/7/vc/c2/choice_container/2/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text/7/vc/c2/choice_container/3/Button" to="state_handler/text/7/vc/c2/choice_container/3/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text/7/vc/c2/choice_container/3/Button" to="state_handler/text/7/vc/c2/choice_container/3/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text/7/vc/c2/choice_container/3/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text/7/vc/c2/choice_container/4/Button" to="state_handler/text/7/vc/c2/choice_container/4/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text/7/vc/c2/choice_container/4/Button" to="state_handler/text/7/vc/c2/choice_container/4/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text/7/vc/c2/choice_container/4/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text/7/vc/c2/choice_container/5/Button" to="state_handler/text/7/vc/c2/choice_container/5/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text/7/vc/c2/choice_container/5/Button" to="state_handler/text/7/vc/c2/choice_container/5/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text/7/vc/c2/choice_container/5/Button" to="state_handler" method="cycle_choice"]
+[connection signal="mouse_entered" from="state_handler/text/7/vc/c2/choice_container/6/Button" to="state_handler/text/7/vc/c2/choice_container/6/Button" method="highlight_text" binds= [ true ]]
+[connection signal="mouse_exited" from="state_handler/text/7/vc/c2/choice_container/6/Button" to="state_handler/text/7/vc/c2/choice_container/6/Button" method="highlight_text" binds= [ false ]]
+[connection signal="pressed" from="state_handler/text/7/vc/c2/choice_container/6/Button" to="state_handler" method="cycle_choice"]
+[connection signal="text_changed" from="state_handler/text/7/vc/t3/e3/LineEdit" to="state_handler" method="show_next_button"]
 [connection signal="mouse_entered" from="state_handler/next_button" to="state_handler/next_button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="state_handler/next_button" to="state_handler/next_button" method="_on_mouse_exited"]
 [connection signal="pressed" from="state_handler/next_cover" to="state_handler" method="next"]

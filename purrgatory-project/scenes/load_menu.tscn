@@ -270,6 +270,7 @@ margin_top = 2.0
 margin_right = 148.0
 margin_bottom = 46.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -5
 custom_fonts/font = ExtResource( 13 )
 text = "delete data"
 align = 1

@@ -19,7 +19,8 @@ var languages = [
 	'italiano', # 3
 	'polski', # 4
 	'português (brasil)', # 5
-	'español (latinoamérica)' # 6
+	'español (latinoamérica)', # 6
+	'français' # 7
 ]
 
 # this is for communicating with godot's built-in translation server
@@ -30,7 +31,8 @@ var locales = [
 	'it', # 3
 	'pl', # 4
 	'pt', # 5
-	'es_SV' # 6... there's no code for "latin american spanish" in this version so i'm using el salvador as a stand-in
+	'es_SV', # 6... there's no code for "latin american spanish" in this version so i'm using el salvador as a stand-in
+	'fr' # 7
 ]
 
 func set_language(n):
@@ -54,7 +56,7 @@ func set_language(n):
 			font.font_data = preload("res://assets/fonts/Krub-ExtraLight.ttf")
 			load("res://themes/dialog_font_italics.tres").font_data = preload("res://assets/fonts/Krub-ExtraLightItalic.ttf")
 	
-	# also, squish some of the text if the polish translation won't fit
+	# also, squish some of the text if the polish or french translation won't fit
 	if n == 4:
 		load("res://themes/ui_font_18_scalable.tres").size = 14
 	else:
@@ -77,8 +79,8 @@ func set_language(n):
 #    main menu credits
 
 # ui_font_18_scalable
-#    only used for buttons where the polish text doesn't fit
-#    switches between a smaller size for polish and size 18 for every other language
+#    only used for buttons where polish or french text doesn't fit
+#    switches between a smaller size for polish and french and size 18 for every other language
 #    also switches between latin and chinese fonts as needed
 # ui_font_18 / ui_font_21 / ui_font_24 / ui_font_40
 #    used wherever text needs to be a static size, typically UI elements. switches 

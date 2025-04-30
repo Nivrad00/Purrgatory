@@ -136,6 +136,25 @@ func wake_up():
 	set_format_dict('partner_es2', partner_es2_replacements[choice_log[1]])
 	set_format_dict('partner_about_es2', partner_about_es2_replacements[choice_log[3]])
 	
+	# french
+	
+	var partner_fr_replacements = [
+		"c'est la dernière personne que j'ai fréquentée",
+		"on était potes depuis toujours",
+		"c'est la personne avec qui je sortais"
+	]
+	var partner_about_fr_replacements = [
+		"se promener après un orage",
+		"faire rire les gens",
+		"terminer un bon livre",
+		"se relaxer avec un verre après une journée de travail",
+		"observer les passants à la gare",
+		"faire de longs road trips",
+		"faire la grasse matinée les dimanches ensoleillés"
+	]
+	set_format_dict('partner_fr', partner_fr_replacements[choice_log[1]])
+	set_format_dict('partner_about_fr', partner_about_fr_replacements[choice_log[3]])
+	
 	# done 
 	
 	emit_signal('change_room', 'hallway1')

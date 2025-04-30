@@ -572,6 +572,27 @@ func format_text(text, lang=-1):
 		elif state.get('_pronouns_they') or state.get('_pronouns_custom'):
 			text = regex.sub(text, '$3', true)
 	
+	# but wait! french is unique again, because players can choose custom third person pronouns while also
+	# separately choosing between neutral, masc, and fem conjugations
+	
+	elif lang == 7:
+		var regex = RegEx.new()
+		regex.compile('{([^/]*)/([^/]*)/([^}]*)}')
+		
+		# so, check if a custom pronoun was entered, and if so, handle that first
+		if state.get('_custom_french_pronoun') != null:
+			text = text.replacen('{il/elle/iel}', state.get('_custom_french_pronoun'))
+		if state.get('_custom_french_pronoun2') != null:
+			text = text.replacen('{lui/elle/ellui}', state.get('_custom_french_pronoun2'))
+		
+		# then handle all other forms of conjugations
+		if state.get('_pronouns_he'):
+			text = regex.sub(text, '$1', true)
+		elif state.get('_pronouns_she'):
+			text = regex.sub(text, '$2', true)
+		elif state.get('_pronouns_they') or state.get('_pronouns_custom'):
+			text = regex.sub(text, '$3', true)
+	
 	return text
 	
 func _on_language_changed(lang):
@@ -681,6 +702,53 @@ func set_player_name():
 				format_dict['ta'] = 'ta'
 				# (and the remaining languages know to use the neutral version)
 				
+			# if a custom pronoun is entered in french...
+			elif Language.language == 7:
+				var pronoun_inputs = ui.get_node('name_input/custom_pronouns/inputs/7')
+				# the third person pronouns are custom
+				state['_custom_french_pronoun'] = pronoun_inputs.get_node('pronoun').text
+				state['_custom_french_pronoun2'] = pronoun_inputs.get_node('pronoun2').text
+				# and the conjugation can be neutral, feminine, or masculine
+				if pronoun_inputs.get_node('they').pressed:
+					# english pronouns
+					state['_pronouns_they'] = true
+					format_dict['they'] = 'they'
+					format_dict['them'] = 'them'
+					format_dict['their'] = 'their'
+					format_dict['theirs'] = 'theirs'
+					format_dict['themself'] = 'themself'
+					# spanish pronouns
+					state['_pronombre_elle'] = true
+					# chinese pronouns
+					format_dict['ta'] = 'ta'
+					# remaining languages are based on the english variables
+				
+				elif pronoun_inputs.get_node('she').pressed:
+					state['_pronouns_she'] = true
+					format_dict['they'] = 'she'
+					format_dict['them'] = 'her'
+					format_dict['their'] = 'her'
+					format_dict['theirs'] = 'hers'
+					format_dict['themself'] = 'herself'
+					# spanish pronouns
+					state['_pronombre_ella'] = true
+					# chinese pronouns
+					format_dict['ta'] = '她'
+					# remaining languages are based on the english variables
+
+				elif pronoun_inputs.get_node('he').pressed:
+					state['_pronouns_he'] = true
+					format_dict['they'] = 'he'
+					format_dict['them'] = 'him'
+					format_dict['their'] = 'his'
+					format_dict['theirs'] = 'his'
+					format_dict['themself'] = 'himself'
+					# spanish pronouns
+					state['_pronombre_el'] = true
+					# chinese pronouns
+					format_dict['ta'] = '他'
+					# remaining languages are based on the english variables
+					
 			# the remaining languages don't have a custom button
 			# chinese used to, but i think... i never hooked it up? so it never worked? LOL
 			

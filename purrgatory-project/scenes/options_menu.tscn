@@ -103,10 +103,12 @@ margin_top = 2.0
 margin_right = 249.0
 margin_bottom = 58.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -8
 custom_fonts/font = SubResource( 1 )
 text = "save and return"
 align = 1
 valign = 1
+autowrap = true
 
 [node name="reset" type="Button" parent="."]
 anchor_right = 1.0
@@ -254,8 +256,10 @@ margin_left = -197.737
 margin_top = -7.0
 margin_right = -36.7372
 margin_bottom = 27.0
+custom_constants/line_spacing = -5
 text = "music volume"
 align = 2
+autowrap = true
 
 [node name="music" type="HSlider" parent="audio"]
 anchor_right = 1.0
@@ -280,6 +284,7 @@ margin_left = -216.087
 margin_top = 54.0
 margin_right = -37.087
 margin_bottom = 88.0
+custom_constants/line_spacing = -5
 text = "sfx volume"
 align = 2
 autowrap = true
