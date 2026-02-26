@@ -593,6 +593,25 @@ func format_text(text, lang=-1):
 		elif state.get('_pronouns_they') or state.get('_pronouns_custom'):
 			text = regex.sub(text, '$3', true)
 	
+	# norwegian is simple like italian or portuguese
+	elif lang == 8:
+		var regex = RegEx.new()
+		regex.compile('{([^/]*)/([^/]*)/([^}]*)}')
+		
+		if state.get('_pronouns_he'):
+			text = regex.sub(text, '$1', true)
+		elif state.get('_pronouns_she'):
+			text = regex.sub(text, '$2', true)
+		elif state.get('_pronouns_they') or state.get('_pronouns_custom'):
+			text = regex.sub(text, '$3', true)
+	
+	# the russian translation... is written with no gendered language whatsoever!
+	# players can still choose their pronouns at the start of the game (which will set the 
+	#   english variants, which then affects all the other translations)
+	#   but this will make no change to the russian translation
+	elif lang == 9:
+		pass
+		
 	return text
 	
 func _on_language_changed(lang):

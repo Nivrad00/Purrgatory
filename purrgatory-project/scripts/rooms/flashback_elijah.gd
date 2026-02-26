@@ -193,6 +193,54 @@ func wake_up():
 	]
 	set_format_dict('envy_fr', envy_fr_replacements[choice_log[2]])
 	
+	# norwegian
+	
+	var role_model_nb_replacements = [
+		"et fremmedgjort familiemedlem",
+		"en barndomsvenn som flyttet vekk",
+		"en kunstner jeg møttet på nett",
+		"en jordnær videregående lærer",
+		"en bassist i et obskurt band",
+		"en karakter fra favorittprogrammet mitt",
+		"min nærmeste venn"
+	]
+	set_format_dict('role_model_nb', role_model_nb_replacements[choice_log[1]])
+	
+	var envy_nb_replacements = [
+		"intelligent",
+		"uselvisk",
+		"modig",
+		"medfølende",
+		"vellykket",
+		"talentful",
+		"klok"
+	]
+	set_format_dict('envy_nb', envy_nb_replacements[choice_log[2]])
+	
+	# russian
+	
+	var role_model_ru_replacements = [
+		"дальний родственник",
+		"переехавший друг детства",
+		"художник найденный в интернете",
+		"приземленный учитель в старших классах",
+		"бассист из какой-то невнятной группы",
+		"персонаж моего любимого телешоу",
+		"мой самый близкий друг"
+	]
+	set_format_dict('role_model_ru', role_model_ru_replacements[choice_log[1]])
+	
+	var envy_ru_replacements = [
+		"смышленности",
+		"самоотверженности",
+		"храбрости",
+		"сострадания",
+		"успешности",
+		"таланта",
+		"мудрости",
+	]
+	set_format_dict('envy_ru', envy_ru_replacements[choice_log[2]])
+	
 	# done
 	
 	emit_signal('change_room', 'flashback_sean')

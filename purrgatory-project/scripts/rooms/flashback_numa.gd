@@ -200,6 +200,54 @@ func wake_up():
 	]
 	set_format_dict('favorite_place_fr', favorite_place_fr_replacements[choice_log[2]])
 	
+	# norwegian
+	
+	var hometown_nb_replacements = [
+		"fjellene som var alltid i bakgrunnen",
+		"gatene som var fylt med prat",
+		"hvordan havet krasjet mot landet",
+		"de støvete veiene som strakte seg til horisonten",
+		"luften som var fuktig og varm",
+		"plenene som ble nøye trimmet",
+		"taket som truet alltid med å kollapse"
+	]
+	set_format_dict('hometown_nb', hometown_nb_replacements[choice_log[1]])
+	
+	var favorite_place_nb_replacements = [
+		"hjørnebutikken som luktet av såpe",
+		"den steinete svingen i bekken",
+		"bokbutikken nedover veien",
+		"tanten mins overdådige hus",
+		"den prangende arkaden på kjøpesenteret",
+		"baksiden av familien mins butikk",
+		"den gjengrodde fotballbanen bak skolen"
+	]
+	set_format_dict('favorite_place_nb', favorite_place_nb_replacements[choice_log[2]])
+	
+	# russian
+	
+	var hometown_ru_replacements = [
+		"за спиной всегда были горы",
+		"улицы были наполнены болтающими людьми",
+		"море билось о берег",
+		"пыльные дороги уходили в горизонт",
+		"воздух был душным и горячим",
+		"лужайки были аккуратно подстрижены",
+		"крыша постоянно грозилась обрушиться"
+	]
+	set_format_dict('hometown_ru', hometown_ru_replacements[choice_log[1]])
+	
+	var favorite_place_ru_replacements = [
+		"магазин на углу который пах мылом",
+		"скалистый изгиб ручья",
+		"книжный магазин внизу по дороге",
+		"роскошный дом двоюродной бабушки",
+		"яркая аркада в торговом центре",
+		"задняя часть магазина моей семьи",
+		"заросшее футбольное поле позади школы"
+	]
+	set_format_dict('favorite_place_ru', favorite_place_ru_replacements[choice_log[2]])
+	
 	# done
 	
 	emit_signal('change_room', 'flashback_kyungsoon')

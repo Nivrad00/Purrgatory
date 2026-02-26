@@ -184,6 +184,53 @@ func wake_up():
 	set_format_dict('pride_fr', pride_fr_replacements[choice_log[1]])
 	set_format_dict('proudest_moment_fr', proudest_moment_fr_replacements[choice_log[2]])
 	
+	# norwegian
+	
+	var pride_nb_replacements = [ 
+		"snill mot fremmede", 
+		"ærlig og spenstig",
+		"smart og veltalende",
+		"vakker uten ord",
+		"alltid der for vennene mine",
+		"en talentfull musiker",
+		"uendelig optimistisk"
+	]
+	var proudest_moment_nb_replacements = [ 
+		"vant stavebien i 6. klasse",
+		"spilte gitar på scenen for første gang",
+		"fullførte mitt første halvmaraton",
+		"hadde mitt første barn",
+		"sett verdensrekorden i et videospill",
+		"utdannet høyskole",
+		"klippte av håret"
+	]
+	set_format_dict('pride_nb', pride_nb_replacements[choice_log[1]])
+	set_format_dict('proudest_moment_nb', proudest_moment_nb_replacements[choice_log[2]])
+	
+	# russian
+	
+	var pride_ru_replacements = [ 
+		"доброта к незнакомцам",
+		"честность и жизнерадостность",
+		"сообразительность и красноречивость",
+		"неописуемая красота",
+		"готовность всегда быть рядом для своих друзей",
+		"талант в музыке",
+		"бесконечный оптимизм"
+	]
+	var proudest_moment_ru_replacements = [ 
+		"победить в конкурсе на знание орфографии в 6 классе",
+		"впервые сыграть на гитаре на сцене",
+		"завершить свой первый полумарафон",
+		"завести своего первого ребенка",
+		"установить мировой рекорд в видео игре",
+		"окончить колледж",
+		"состричь свои волосы"
+	]
+	set_format_dict('pride_ru', pride_ru_replacements[choice_log[1]])
+	set_format_dict('proudest_moment_ru', proudest_moment_ru_replacements[choice_log[2]])
+	
+	
 func update_state(state):
 	.update_state(state)
 	if state.get('flashback_goto_commons'):

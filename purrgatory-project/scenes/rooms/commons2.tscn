@@ -52,7 +52,6 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="elijahs_chair" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 visible = false
 position = Vector2( 368.232, -166.775 )
 script = ExtResource( 4 )
@@ -69,7 +68,6 @@ position = Vector2( -12.6796, 19.0438 )
 polygon = PoolVector2Array( 184.863, 462.814, 185.191, 563.254, 184.863, 616.432, 243.872, 647.155, 304.556, 630.187, 304.292, 566.942, 306.4, 553.502, 259.965, 522.31, 261.915, 455.986, 235.093, 438.918, 205.833, 439.893 )
 
 [node name="seans_chair" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 visible = false
 position = Vector2( 472.107, -171.627 )
 script = ExtResource( 4 )
@@ -173,7 +171,6 @@ position = Vector2( 635.76, 344.687 )
 texture = ExtResource( 21 )
 
 [node name="everything_slam_poster" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 visible = false
 position = Vector2( 466.367, 25.1374 )
 script = ExtResource( 4 )
@@ -198,7 +195,6 @@ position = Vector2( 0.72073, 18.0453 )
 polygon = PoolVector2Array( -336.115, 293.819, -336.889, 714.757, -23.0817, 667.179, -20.3742, 319.715 )
 
 [node name="wait_library_door" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 visible = false
 position = Vector2( -1.47528, -16.7366 )
 script = ExtResource( 4 )
@@ -209,7 +205,6 @@ position = Vector2( 453.085, -178.215 )
 polygon = PoolVector2Array( -336.115, 293.819, -336.889, 714.757, -23.0817, 667.179, -20.3742, 319.715 )
 
 [node name="commons_mat" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( -1.47528, -34.7366 )
 script = ExtResource( 4 )
 dialog_label = "commons_mat"
@@ -224,7 +219,6 @@ position = Vector2( 303.391, 592.551 )
 texture = ExtResource( 24 )
 
 [node name="commons_chair1" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 368.232, -148.775 )
 script = ExtResource( 4 )
 dialog_label = "commons_chair1"
@@ -243,7 +237,6 @@ position = Vector2( 0, -0.463257 )
 polygon = PoolVector2Array( 337.054, 461.726, 338.135, 597.122, 378.554, 618.372, 448.259, 605.998, 448.968, 542.594, 413.478, 523.236, 412.621, 460.708, 395.554, 444.727, 354.974, 444.86 )
 
 [node name="commons_chair2" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 466.367, 25.1374 )
 script = ExtResource( 4 )
 dialog_label = "commons_chair2"
@@ -253,7 +246,6 @@ position = Vector2( 0, -0.463257 )
 polygon = PoolVector2Array( 361.695, 461.555, 352.496, 534.308, 283.506, 555.632, 270.127, 568.594, 273.89, 585.737, 315.702, 626.713, 328.245, 629.639, 361.695, 629.221, 510.546, 580.301, 502.184, 566.921, 460.177, 566.781, 442.345, 537.602, 505.529, 492.496, 499.257, 480.37, 415.01, 484.691, 464.253, 443.023, 452.061, 429.855, 375.075, 456.537, 367.549, 455.701 )
 
 [node name="poetry_slam_sign" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 466.367, 25.1374 )
 script = ExtResource( 4 )
 dialog_label = "poetry_slam_sign"
@@ -272,7 +264,6 @@ position = Vector2( -0.377319, -0.463257 )
 polygon = PoolVector2Array( 554.185, 265.532, 586.888, 285.388, 621.926, 280.132, 590.392, 243.049 )
 
 [node name="tack" type="Area2D" parent="state_handler"]
-editor/display_folded = true
 position = Vector2( 441.667, 250.287 )
 script = ExtResource( 4 )
 dialog_label = "tack"
@@ -301,6 +292,7 @@ animation2 = ExtResource( 29 )
 stream = ExtResource( 30 )
 volume_db = -5.0
 bus = "SFX"
+
 [connection signal="pressed" from="state_handler/wait_sean" to="state_handler/wait_sean" method="_on_char_obj_button_pressed"]
 [connection signal="pressed" from="state_handler/wait_elijah" to="state_handler/wait_elijah" method="_on_char_obj_button_pressed"]
 [connection signal="pressed" from="state_handler/wait_natalie" to="state_handler/wait_natalie" method="_on_char_obj_button_pressed"]

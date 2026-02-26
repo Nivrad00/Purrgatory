@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=2]
+[gd_scene load_steps=127 format=2]
 
 [ext_resource path="res://scripts/game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ss.tscn" type="PackedScene" id=2]
@@ -91,6 +91,8 @@
 [ext_resource path="res://scripts/dialog/all_dialog_es_latam.gd" type="Script" id=89]
 [ext_resource path="res://scripts/dialog/all_dialog_fr.gd" type="Script" id=90]
 [ext_resource path="res://french_custom_buttongroup.tres" type="ButtonGroup" id=91]
+[ext_resource path="res://scripts/dialog/all_dialog_nb.gd" type="Script" id=92]
+[ext_resource path="res://scripts/dialog/all_dialog_ru.gd" type="Script" id=93]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("ss")
@@ -462,13 +464,16 @@ script = ExtResource( 89 )
 [node name="all_dialog_fr" type="Node" parent="dialog_handler"]
 script = ExtResource( 90 )
 
+[node name="all_dialog_nb" type="Node" parent="dialog_handler"]
+script = ExtResource( 92 )
+
+[node name="all_dialog_ru" type="Node" parent="dialog_handler"]
+script = ExtResource( 93 )
+
 [node name="content" type="Control" parent="."]
 margin_right = 1280.0
 margin_bottom = 720.0
 mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="room" type="Control" parent="content"]
 script = ExtResource( 7 )
@@ -680,6 +685,7 @@ align = 1
 valign = 1
 
 [node name="custom_pronouns" type="Control" parent="content/ui/name_input"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 theme = ExtResource( 15 )
@@ -1110,6 +1116,13 @@ margin_right = 490.0
 margin_bottom = 54.0
 text = "masculins"
 clip_text = true
+
+[node name="8" type="Control" parent="content/ui/name_input/custom_pronouns/inputs"]
+visible = false
+margin_left = 28.546
+margin_top = -30.535
+margin_right = 68.546
+margin_bottom = 9.465
 
 [node name="back" type="Button" parent="content/ui/name_input/custom_pronouns"]
 margin_left = 211.573
@@ -2112,7 +2125,6 @@ custom_styles/normal = SubResource( 36 )
 autowrap = true
 
 [node name="Button" type="Button" parent="meta_ui"]
-visible = false
 margin_left = 110.488
 margin_top = 17.4169
 margin_right = 261.488

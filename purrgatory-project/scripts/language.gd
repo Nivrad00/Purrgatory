@@ -20,7 +20,9 @@ var languages = [
 	'polski', # 4
 	'português (brasil)', # 5
 	'español (latinoamérica)', # 6
-	'français' # 7
+	'français', # 7
+	'norsk (bokmål)', # 8
+	'русский' # 9
 ]
 
 # this is for communicating with godot's built-in translation server
@@ -32,7 +34,9 @@ var locales = [
 	'pl', # 4
 	'pt', # 5
 	'es_SV', # 6... there's no code for "latin american spanish" in this version so i'm using el salvador as a stand-in
-	'fr' # 7
+	'fr', # 7
+	'nb', # 8
+	'ru' # 9
 ]
 
 func set_language(n):

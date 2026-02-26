@@ -155,6 +155,44 @@ func wake_up():
 	set_format_dict('partner_fr', partner_fr_replacements[choice_log[1]])
 	set_format_dict('partner_about_fr', partner_about_fr_replacements[choice_log[3]])
 	
+	# norwegian
+	
+	var partner_nb_replacements = [
+		"siste kjæreste",
+		"bestevenn",
+		"partner"
+	]
+	var partner_about_nb_replacements = [
+		"å gå en tur etter en regn storm",
+		"å få andre folk til å le",
+		"å fullføre en god bok",
+		"å avslappende med en drink etter en dags arbeid",
+		"å se på folk på jernbanestasjonen",
+		"å dra på lange bilturer",
+		"å sove inn på en varm søndagsmorgen"
+	]
+	set_format_dict('partner_nb', partner_nb_replacements[choice_log[1]])
+	set_format_dict('partner_about_nb', partner_about_nb_replacements[choice_log[3]])
+	
+	# russian
+	
+	var partner_ru_replacements = [
+		"партнер",
+		"друга",
+		"партнер"
+	]
+	var partner_about_ru_replacements = [
+		"гулять после грозы",
+		"веселить других людей",
+		"заканчивать хорошую книгу",
+		"отдыхать с любимым напитком после тяжелого рабочего дня",
+		"рассматривать людей на железножорожной станции",
+		"совершать долгие путешествия на машине",
+		"дремать теплым воскресным утром"
+	]
+	set_format_dict('partner_ru', partner_ru_replacements[choice_log[1]])
+	set_format_dict('partner_about_ru', partner_about_ru_replacements[choice_log[3]])
+	
 	# done 
 	
 	emit_signal('change_room', 'hallway1')

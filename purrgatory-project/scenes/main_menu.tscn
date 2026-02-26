@@ -62,8 +62,7 @@ blend_mode = 3
 
 [node name="main" type="Node"]
 script = ExtResource( 1 )
-web_build = true
-version = "2025-4-29"
+version = "2026-2-25"
 
 [node name="delay_timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -386,7 +385,7 @@ theme = ExtResource( 19 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="credits/ScrollContainer"]
 margin_right = 1176.0
-margin_bottom = 4672.0
+margin_bottom = 4876.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
@@ -957,7 +956,7 @@ autowrap = true
 [node name="GridContainer10" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
 margin_top = 1922.0
 margin_right = 1155.0
-margin_bottom = 3074.0
+margin_bottom = 3278.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1219,19 +1218,99 @@ text = "krisfies
 sunnykarrot (karolina urdenko)"
 autowrap = true
 
-[node name="_5" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3094.0
+[node name="25" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_top = 1172.0
+margin_right = 560.0
+margin_bottom = 1203.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "norwegian translation"
+align = 2
+autowrap = true
+
+[node name="26" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 595.0
+margin_top = 1172.0
 margin_right = 1155.0
-margin_bottom = 3125.0
+margin_bottom = 1203.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "kettu (ivan)"
+autowrap = true
+
+[node name="27" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_top = 1223.0
+margin_right = 560.0
+margin_bottom = 1254.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "norwegian translation support"
+align = 2
+autowrap = true
+
+[node name="28" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 595.0
+margin_top = 1223.0
+margin_right = 1155.0
+margin_bottom = 1254.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "jakt hund"
+autowrap = true
+
+[node name="29" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_top = 1274.0
+margin_right = 560.0
+margin_bottom = 1305.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "russian translation"
+align = 2
+autowrap = true
+
+[node name="30" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 595.0
+margin_top = 1274.0
+margin_right = 1155.0
+margin_bottom = 1305.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "marcel cl"
+autowrap = true
+
+[node name="31" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_top = 1325.0
+margin_right = 560.0
+margin_bottom = 1356.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "russian translation support"
+align = 2
+autowrap = true
+
+[node name="32" type="Label" parent="credits/ScrollContainer/VBoxContainer/GridContainer10"]
+margin_left = 595.0
+margin_top = 1325.0
+margin_right = 1155.0
+margin_bottom = 1356.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "lisa"
+autowrap = true
+
+[node name="_5" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
+margin_top = 3298.0
+margin_right = 1155.0
+margin_bottom = 3329.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="other" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3145.0
+margin_top = 3349.0
 margin_right = 1155.0
-margin_bottom = 3176.0
+margin_bottom = 3380.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "other"
@@ -1239,9 +1318,9 @@ align = 1
 autowrap = true
 
 [node name="GridContainer5" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3196.0
+margin_top = 3400.0
 margin_right = 1155.0
-margin_bottom = 3414.0
+margin_bottom = 3618.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1290,18 +1369,18 @@ uro (daniel taylor)"
 autowrap = true
 
 [node name="_11" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3434.0
+margin_top = 3638.0
 margin_right = 1155.0
-margin_bottom = 3465.0
+margin_bottom = 3669.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="sfx" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3485.0
+margin_top = 3689.0
 margin_right = 1155.0
-margin_bottom = 3516.0
+margin_bottom = 3720.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "sound effects"
@@ -1309,9 +1388,9 @@ align = 1
 autowrap = true
 
 [node name="sfx4" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3536.0
+margin_top = 3740.0
 margin_right = 1155.0
-margin_bottom = 3567.0
+margin_bottom = 3771.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "freesound.org"
@@ -1319,9 +1398,9 @@ align = 1
 autowrap = true
 
 [node name="GridContainer6" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 3587.0
+margin_top = 3791.0
 margin_right = 1155.0
-margin_bottom = 4162.0
+margin_bottom = 4366.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1427,9 +1506,9 @@ sinewave1kHz"
 autowrap = true
 
 [node name="GridContainer9" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 4182.0
+margin_top = 4386.0
 margin_right = 1155.0
-margin_bottom = 4264.0
+margin_bottom = 4468.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1474,18 +1553,18 @@ text = "soundeffectsfactory"
 autowrap = true
 
 [node name="_6" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 4284.0
+margin_top = 4488.0
 margin_right = 1155.0
-margin_bottom = 4315.0
+margin_bottom = 4519.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="additional assets" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 4335.0
+margin_top = 4539.0
 margin_right = 1155.0
-margin_bottom = 4366.0
+margin_bottom = 4570.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "additional assets"
@@ -1493,9 +1572,9 @@ align = 1
 autowrap = true
 
 [node name="GridContainer8" type="GridContainer" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 4386.0
+margin_top = 4590.0
 margin_right = 1155.0
-margin_bottom = 4519.0
+margin_bottom = 4723.0
 size_flags_horizontal = 3
 custom_constants/vseparation = 20
 custom_constants/hseparation = 35
@@ -1523,18 +1602,18 @@ paul d. hunt"
 autowrap = true
 
 [node name="_10" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 4539.0
+margin_top = 4743.0
 margin_right = 1155.0
-margin_bottom = 4570.0
+margin_bottom = 4774.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1
 autowrap = true
 
 [node name="version" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 4590.0
+margin_top = 4794.0
 margin_right = 1155.0
-margin_bottom = 4621.0
+margin_bottom = 4825.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_colors/font_color = Color( 0.501961, 0.501961, 0.501961, 1 )
@@ -1543,9 +1622,9 @@ align = 1
 autowrap = true
 
 [node name="_13" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
-margin_top = 4641.0
+margin_top = 4845.0
 margin_right = 1155.0
-margin_bottom = 4672.0
+margin_bottom = 4876.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 align = 1

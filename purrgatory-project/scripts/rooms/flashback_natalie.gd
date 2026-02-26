@@ -181,6 +181,54 @@ func wake_up():
 	]
 	set_format_dict('regret_fr', regret_fr_replacements[choice_log[3]])
 	
+	# norwegian
+	
+	var dream_nb_replacements = [
+		"starte en familie",
+		"lære å kode",
+		"utgi en ung voksenroman",
+		"bli god i dart",
+		"bo i en hytte i skogen",
+		"gå tilbake til skole",
+		"flytte til et annet land"
+	]
+	set_format_dict('dream_nb', dream_nb_replacements[choice_log[1]])
+	
+	var regret_nb_replacements = [
+		"omplasserte hundene mine",
+		"besøkte hjembyen min",
+		"satt farvel til vennene mine",
+		"slått av ovnen",
+		"slettet noen private ting på datamaskinen min",
+		"donerte kosedyrsamlingen min",
+		"brukte resten av sparepengene mine på pizza"
+	]
+	set_format_dict('regret_nb', regret_nb_replacements[choice_log[3]])
+	
+	# russian
+	
+	var dream_ru_replacements = [
+		"создать семью",
+		"научиться писать код",
+		"выпустить подростковую новеллу",
+		"стать лучше в дартс",
+		"жить в коттедже в лесу",
+		"вернутся в школу",
+		"переехать в другую страну"
+	]
+	set_format_dict('dream_ru', dream_ru_replacements[choice_log[1]])
+	
+	var regret_ru_replacements = [
+		"переселить своих собак",
+		"навестить родной город",
+		"попрощаться с друзьями",
+		"выключить духовку",
+		"удалить некоторые личные вещи с компьютера",
+		"пожертвовать свою коллекцию плюшевых животных",
+		"потратить все оставшиеся деньги на пиццу"
+	]
+	set_format_dict('regret_ru', regret_ru_replacements[choice_log[3]])
+	
 	# done
 	
 	emit_signal('start_dialog', 'natalie_post2', [])

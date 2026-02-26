@@ -795,6 +795,7 @@ custom_fonts/font = ExtResource( 47 )
 text = "(molly)"
 
 [node name="sean1" type="TextureButton" parent="state_handler/4"]
+visible = false
 margin_left = 673.044
 margin_top = 209.079
 margin_right = 1021.04
@@ -811,7 +812,6 @@ animation1 = ExtResource( 21 )
 animation2 = ExtResource( 22 )
 
 [node name="sean2" type="TextureButton" parent="state_handler/4"]
-visible = false
 margin_left = 672.821
 margin_top = 208.549
 margin_right = 1020.82
@@ -835,6 +835,7 @@ margin_right = 41.8746
 margin_bottom = 41.8747
 
 [node name="kyungsoon_numa1" type="TextureButton" parent="state_handler/5"]
+visible = false
 margin_left = 192.125
 margin_top = 209.079
 margin_right = 540.125
@@ -851,7 +852,6 @@ animation1 = ExtResource( 27 )
 animation2 = ExtResource( 28 )
 
 [node name="kyungsoon_numa2" type="TextureButton" parent="state_handler/5"]
-visible = false
 margin_left = 192.125
 margin_top = 208.549
 margin_right = 540.125
@@ -1252,11 +1252,54 @@ margin_right = 1389.0
 margin_bottom = 752.0
 rect_scale = Vector2( 0.9, 0.9 )
 
+[node name="oliver_tori1" type="TextureButton" parent="state_handler/6 and a half"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -195.551
+margin_top = -103.333
+margin_right = 152.443
+margin_bottom = 185.667
+rect_scale = Vector2( 0.85, 0.85 )
+focus_mode = 0
+mouse_filter = 2
+enabled_focus_mode = 0
+texture_normal = ExtResource( 32 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 8 )
+animation0 = ExtResource( 32 )
+animation1 = ExtResource( 33 )
+animation2 = ExtResource( 34 )
+
+[node name="oliver_tori2" type="TextureButton" parent="state_handler/6 and a half"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -195.556
+margin_top = -103.333
+margin_right = 152.448
+margin_bottom = 185.667
+rect_scale = Vector2( 0.85, 0.85 )
+focus_mode = 0
+mouse_filter = 2
+enabled_focus_mode = 0
+texture_normal = ExtResource( 35 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 8 )
+animation0 = ExtResource( 35 )
+animation1 = ExtResource( 36 )
+animation2 = ExtResource( 37 )
+
 [node name="portuguese" type="Label" parent="state_handler/6 and a half"]
-margin_left = -5.55553
-margin_top = 49.0
-margin_right = 374.444
-margin_bottom = 120.0
+margin_left = -38.8889
+margin_top = 60.0
+margin_right = 341.111
+margin_bottom = 131.0
 grow_vertical = 0
 custom_constants/line_spacing = -10
 text = "portuguese translation (brazil)"
@@ -1351,9 +1394,9 @@ text = "(nicholas santos)"
 align = 1
 
 [node name="support" type="Label" parent="state_handler/6 and a half/portuguese"]
-margin_top = 438.0
+margin_top = 426.889
 margin_right = 380.0
-margin_bottom = 509.0
+margin_bottom = 497.889
 grow_vertical = 0
 custom_constants/line_spacing = -10
 text = "portuguese translation support"
@@ -1392,9 +1435,9 @@ autowrap = true
 
 [node name="latam" type="Label" parent="state_handler/6 and a half"]
 margin_left = 397.778
-margin_top = 49.0
+margin_top = 6.66667
 margin_right = 777.782
-margin_bottom = 120.0
+margin_bottom = 77.6667
 grow_vertical = 0
 custom_constants/line_spacing = -10
 text = "spanish translation (latin america)"
@@ -1402,9 +1445,9 @@ align = 1
 autowrap = true
 
 [node name="Label5" type="Label" parent="state_handler/6 and a half/latam"]
-margin_top = 45.0
+margin_top = 33.8889
 margin_right = 380.0
-margin_bottom = 150.0
+margin_bottom = 138.889
 custom_constants/line_spacing = -15
 custom_fonts/font = ExtResource( 48 )
 text = "cortinas, pufs, pantuflas y más"
@@ -1412,36 +1455,77 @@ align = 1
 autowrap = true
 
 [node name="Label7" type="Label" parent="state_handler/6 and a half/latam"]
-margin_top = 126.0
+margin_top = 114.889
 margin_right = 380.0
-margin_bottom = 160.0
+margin_bottom = 148.889
 rect_pivot_offset = Vector2( 676.708, 14.8751 )
 custom_fonts/font = ExtResource( 47 )
 text = "(antonio colombo)"
 align = 1
 
 [node name="Label6" type="Label" parent="state_handler/6 and a half/latam"]
-margin_top = 152.699
+margin_top = 141.588
 margin_right = 380.0
-margin_bottom = 205.699
+margin_bottom = 194.588
 custom_fonts/font = ExtResource( 48 )
 text = "NivaldoLBS"
 align = 1
 
 [node name="Label8" type="Label" parent="state_handler/6 and a half/latam"]
-margin_top = 197.699
+margin_top = 186.588
 margin_right = 380.0
-margin_bottom = 231.699
+margin_bottom = 220.588
 rect_pivot_offset = Vector2( 676.708, 14.8751 )
 custom_fonts/font = ExtResource( 47 )
 text = "(iván)"
 align = 1
 
+[node name="russian" type="Label" parent="state_handler/6 and a half"]
+margin_left = 397.778
+margin_top = 552.222
+margin_right = 777.771
+margin_bottom = 623.222
+grow_vertical = 0
+custom_constants/line_spacing = -10
+text = "russian translation"
+align = 1
+autowrap = true
+
+[node name="Label5" type="Label" parent="state_handler/6 and a half/russian"]
+margin_top = 30.8889
+margin_right = 380.0
+margin_bottom = 81.8889
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 48 )
+text = "marcel cl"
+align = 1
+autowrap = true
+
+[node name="support" type="Label" parent="state_handler/6 and a half/russian"]
+margin_top = 100.0
+margin_right = 380.0
+margin_bottom = 171.0
+grow_vertical = 0
+custom_constants/line_spacing = -10
+text = "russian translation support"
+align = 1
+autowrap = true
+
+[node name="Label5" type="Label" parent="state_handler/6 and a half/russian/support"]
+margin_top = 30.8889
+margin_right = 380.0
+margin_bottom = 81.8889
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 48 )
+text = "lisa"
+align = 1
+autowrap = true
+
 [node name="french" type="Label" parent="state_handler/6 and a half"]
-margin_left = 800.0
-margin_top = 48.8889
-margin_right = 1179.99
-margin_bottom = 119.889
+margin_left = 834.445
+margin_top = 391.111
+margin_right = 1214.43
+margin_bottom = 462.111
 grow_vertical = 0
 custom_constants/line_spacing = -10
 text = "french translation"
@@ -1459,9 +1543,9 @@ align = 1
 autowrap = true
 
 [node name="support" type="Label" parent="state_handler/6 and a half/french"]
-margin_top = 134.444
+margin_top = 123.333
 margin_right = 380.0
-margin_bottom = 205.444
+margin_bottom = 194.333
 grow_vertical = 0
 custom_constants/line_spacing = -10
 text = "french translation support"
@@ -1498,38 +1582,55 @@ custom_fonts/font = ExtResource( 47 )
 text = "(david torazzi)"
 align = 1
 
-[node name="oliver_tori1" type="TextureButton" parent="state_handler/6 and a half"]
-margin_left = 637.778
-margin_top = 393.333
-margin_right = 985.772
-margin_bottom = 682.333
-focus_mode = 0
-mouse_filter = 2
-enabled_focus_mode = 0
-texture_normal = ExtResource( 32 )
-expand = true
-stretch_mode = 3
-script = ExtResource( 8 )
-animation0 = ExtResource( 32 )
-animation1 = ExtResource( 33 )
-animation2 = ExtResource( 34 )
+[node name="norwegian" type="Label" parent="state_handler/6 and a half"]
+margin_left = 833.333
+margin_top = 48.8889
+margin_right = 1213.33
+margin_bottom = 119.889
+grow_vertical = 0
+custom_constants/line_spacing = -10
+text = "norwegian translation"
+align = 1
+autowrap = true
 
-[node name="oliver_tori2" type="TextureButton" parent="state_handler/6 and a half"]
-visible = false
-margin_left = 637.778
-margin_top = 393.333
-margin_right = 985.782
-margin_bottom = 682.333
-focus_mode = 0
-mouse_filter = 2
-enabled_focus_mode = 0
-texture_normal = ExtResource( 35 )
-expand = true
-stretch_mode = 3
-script = ExtResource( 8 )
-animation0 = ExtResource( 35 )
-animation1 = ExtResource( 36 )
-animation2 = ExtResource( 37 )
+[node name="Label5" type="Label" parent="state_handler/6 and a half/norwegian"]
+margin_top = 42.0
+margin_right = 380.0
+margin_bottom = 93.0
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 48 )
+text = "kettu"
+align = 1
+autowrap = true
+
+[node name="Label14" type="Label" parent="state_handler/6 and a half/norwegian"]
+margin_top = 88.0
+margin_right = 380.0
+margin_bottom = 122.0
+rect_pivot_offset = Vector2( 296, 26.699 )
+custom_fonts/font = ExtResource( 47 )
+text = "(david torazzi)"
+align = 1
+
+[node name="support" type="Label" parent="state_handler/6 and a half/norwegian"]
+margin_top = 136.667
+margin_right = 380.0
+margin_bottom = 207.667
+grow_vertical = 0
+custom_constants/line_spacing = -10
+text = "norwegian translation support"
+align = 1
+autowrap = true
+
+[node name="Label5" type="Label" parent="state_handler/6 and a half/norwegian/support"]
+margin_top = 42.0
+margin_right = 380.0
+margin_bottom = 93.0
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 48 )
+text = "jakt hund"
+align = 1
+autowrap = true
 
 [node name="7" type="Control" parent="state_handler"]
 visible = false
@@ -1726,7 +1827,6 @@ shuldyakov on turbosquid.com
 paul d. hunt"
 
 [node name="last" type="Control" parent="state_handler"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -1786,6 +1886,7 @@ volume_db = -3.0
 bus = "Music"
 
 [node name="skip" type="Button" parent="state_handler"]
+visible = false
 margin_left = 1182.0
 margin_top = 680.0
 margin_right = 1259.0

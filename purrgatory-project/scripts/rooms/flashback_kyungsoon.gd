@@ -135,3 +135,39 @@ func wake_up():
 	]
 	set_format_dict('food_fr', food_fr_replacements[choice_log[1]])
 	
+	var food_nb_replacements = [
+		"blåbær",
+		"burritos",
+		"ananaspizza",
+		"adobo",
+		"marshmallow frokostblanding",
+		"pho",
+		"mørk sjokolade",
+		"ferske østers",
+		"krydret vinger",
+		"kylling tikka masala",
+		"ribeye biff",
+		"dumplings",
+		"pommes frites",
+		"peanøttsmør"
+	]
+	set_format_dict('food_nb', food_nb_replacements[choice_log[1]])
+	
+	var food_ru_replacements = [
+		"черника",
+		"буррито",
+		"пицца с ананасами",
+		"тушеная свинина",
+		"хлопья с маршмеллоу",
+		"суп фо",
+		"горький шоколад",
+		"свежие устрицы",
+		"острые крылышки",
+		"курица в пряном соусе",
+		"стейк рибай",
+		"пельмени",
+		"картошка фри",
+		"арахисовая паста"
+	]
+	set_format_dict('food_ru', food_ru_replacements[choice_log[1]])
+	

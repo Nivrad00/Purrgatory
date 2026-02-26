@@ -1353,15 +1353,17 @@ position = Vector2( 35.6935, 31.0452 )
 texture = ExtResource( 14 )
 
 [node name="Label" type="Label" parent="state_handler/shelf/skip"]
-margin_top = 17.0
+margin_top = 3.0
 margin_right = 61.0
-margin_bottom = 47.0
+margin_bottom = 60.0
 rect_pivot_offset = Vector2( 66.313, 64.7428 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -7
 custom_fonts/font = ExtResource( 20 )
 text = "skip"
 align = 1
 valign = 1
+autowrap = true
 
 [node name="sure\?" type="Label" parent="state_handler/shelf"]
 visible = false

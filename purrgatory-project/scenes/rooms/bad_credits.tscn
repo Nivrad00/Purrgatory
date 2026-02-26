@@ -67,7 +67,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("6 and a half/portuguese2:visible")
+tracks/4/path = NodePath("6 and a half/portuguese:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -85,6 +85,42 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("6 and a half/norwegian:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("6 and a half/russian:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("7/sfx:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -187,7 +223,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 76.31, 85.66 ),
+"times": PoolRealArray( 0, 77.64, 85.65 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
@@ -441,7 +477,7 @@ tracks/28/loop_wrap = true
 tracks/28/imported = false
 tracks/28/enabled = true
 tracks/28/keys = {
-"times": PoolRealArray( 0, 65.62, 74.95 ),
+"times": PoolRealArray( 0, 65.62, 76.33 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
@@ -471,13 +507,13 @@ tracks/30/keys = {
 "values": [ false, true ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("6 and a half/portuguese2:visible")
+tracks/31/path = NodePath("6 and a half/portuguese:visible")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/imported = false
 tracks/31/enabled = true
 tracks/31/keys = {
-"times": PoolRealArray( 0, 67 ),
+"times": PoolRealArray( 0, 68.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -489,7 +525,43 @@ tracks/32/loop_wrap = true
 tracks/32/imported = false
 tracks/32/enabled = true
 tracks/32/keys = {
-"times": PoolRealArray( -0.02, 68.3 ),
+"times": PoolRealArray( -0.02, 66.99 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/33/type = "value"
+tracks/33/path = NodePath("6 and a half/norwegian:visible")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/keys = {
+"times": PoolRealArray( 0, 69.65 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/34/type = "value"
+tracks/34/path = NodePath("6 and a half/russian:visible")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/keys = {
+"times": PoolRealArray( 0, 70.97 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/35/type = "value"
+tracks/35/path = NodePath("7/sfx:visible")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/keys = {
+"times": PoolRealArray( 0, 78.95 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -511,15 +583,14 @@ script = ExtResource( 3 )
 default_music = "null"
 
 [node name="bg" type="ColorRect" parent="state_handler"]
-margin_left = -0.926605
-margin_right = 1279.07
+margin_right = 1280.0
 margin_bottom = 720.0
 
 [node name="TextureRect" type="TextureButton" parent="state_handler"]
-margin_left = 44.8254
-margin_top = 445.027
-margin_right = 244.961
-margin_bottom = 745.027
+margin_left = -200.0
+margin_top = 450.0
+margin_right = 0.145874
+margin_bottom = 750.0
 rect_scale = Vector2( 0.75, 0.75 )
 texture_normal = ExtResource( 4 )
 script = ExtResource( 5 )
@@ -929,6 +1000,7 @@ text = "(daniel taylor)"
 align = 1
 
 [node name="6" type="Control" parent="state_handler"]
+visible = false
 margin_left = 63.0
 margin_top = 37.0
 margin_right = 1343.0
@@ -1194,6 +1266,13 @@ margin_right = 1341.0
 margin_bottom = 757.0
 rect_scale = Vector2( 0.9, 0.9 )
 
+[node name="ColorRect" type="ColorRect" parent="state_handler/6 and a half"]
+margin_left = -67.7778
+margin_top = -41.1111
+margin_right = 1354.22
+margin_bottom = 758.889
+color = Color( 1, 1, 1, 0.811765 )
+
 [node name="latam" type="Label" parent="state_handler/6 and a half"]
 margin_left = 38.8889
 margin_top = 49.0
@@ -1236,154 +1315,16 @@ align = 1
 margin_top = 197.699
 margin_right = 380.0
 margin_bottom = 231.699
-rect_pivot_offset = Vector2( 676.708, 14.8751 )
+rect_pivot_offset = Vector2( 244.444, 27.7455 )
 custom_fonts/font = ExtResource( 15 )
 text = "(iván)"
 align = 1
 
-[node name="portuguese2" type="Label" parent="state_handler/6 and a half"]
-margin_left = 467.222
-margin_top = 48.8889
-margin_right = 847.219
-margin_bottom = 119.889
-grow_vertical = 0
-custom_constants/line_spacing = -10
-text = "portuguese translation (brazil)"
-align = 1
-autowrap = true
-
-[node name="Label5" type="Label" parent="state_handler/6 and a half/portuguese2"]
-margin_top = 42.0
-margin_right = 380.0
-margin_bottom = 93.0
-custom_constants/line_spacing = -10
-custom_fonts/font = ExtResource( 14 )
-text = "david the potoo"
-align = 1
-autowrap = true
-
-[node name="Label11" type="Label" parent="state_handler/6 and a half/portuguese2"]
-margin_top = 88.0
-margin_right = 380.0
-margin_bottom = 122.0
-rect_pivot_offset = Vector2( 296, 26.699 )
-custom_fonts/font = ExtResource( 15 )
-text = "(david torazzi)"
-align = 1
-
-[node name="Label6" type="Label" parent="state_handler/6 and a half/portuguese2"]
-margin_top = 110.0
-margin_right = 380.0
-margin_bottom = 161.0
-custom_constants/line_spacing = -10
-custom_fonts/font = ExtResource( 14 )
-text = "doubletime"
-align = 1
-autowrap = true
-
-[node name="Label9" type="Label" parent="state_handler/6 and a half/portuguese2"]
-margin_top = 154.0
-margin_right = 380.0
-margin_bottom = 188.0
-rect_pivot_offset = Vector2( 296, 26.699 )
-custom_fonts/font = ExtResource( 15 )
-text = "(mari)"
-align = 1
-
-[node name="Label8" type="Label" parent="state_handler/6 and a half/portuguese2"]
-margin_top = 169.0
-margin_right = 380.0
-margin_bottom = 220.0
-custom_constants/line_spacing = -10
-custom_fonts/font = ExtResource( 14 )
-text = "gustavo moret"
-align = 1
-autowrap = true
-
-[node name="Label7" type="Label" parent="state_handler/6 and a half/portuguese2"]
-margin_top = 221.111
-margin_right = 380.0
-margin_bottom = 272.111
-custom_constants/line_spacing = -10
-custom_fonts/font = ExtResource( 14 )
-text = "koral"
-align = 1
-autowrap = true
-
-[node name="Label10" type="Label" parent="state_handler/6 and a half/portuguese2"]
-margin_top = 272.222
-margin_right = 380.0
-margin_bottom = 323.222
-custom_constants/line_spacing = -10
-custom_fonts/font = ExtResource( 14 )
-text = "liquid_tax"
-align = 1
-autowrap = true
-
-[node name="Label12" type="Label" parent="state_handler/6 and a half/portuguese2"]
-margin_top = 325.333
-margin_right = 380.0
-margin_bottom = 376.333
-custom_constants/line_spacing = -10
-custom_fonts/font = ExtResource( 14 )
-text = "xd1498"
-align = 1
-autowrap = true
-
-[node name="Label13" type="Label" parent="state_handler/6 and a half/portuguese2"]
-margin_top = 369.333
-margin_right = 380.0
-margin_bottom = 403.333
-rect_pivot_offset = Vector2( 296, 26.699 )
-custom_fonts/font = ExtResource( 15 )
-text = "(nicholas santos)"
-align = 1
-
-[node name="support" type="Label" parent="state_handler/6 and a half/portuguese2"]
-margin_top = 438.0
-margin_right = 380.0
-margin_bottom = 509.0
-grow_vertical = 0
-custom_constants/line_spacing = -10
-text = "portuguese translation support"
-align = 1
-autowrap = true
-
-[node name="Label5" type="Label" parent="state_handler/6 and a half/portuguese2/support"]
-margin_top = 42.0
-margin_right = 380.0
-margin_bottom = 93.0
-custom_constants/line_spacing = -10
-custom_fonts/font = ExtResource( 14 )
-text = "ararajubazul"
-align = 1
-autowrap = true
-
-[node name="Label6" type="Label" parent="state_handler/6 and a half/portuguese2/support"]
-margin_top = 90.0
-margin_right = 380.0
-margin_bottom = 141.0
-custom_constants/line_spacing = -10
-custom_fonts/font = ExtResource( 14 )
-text = "minnow"
-align = 1
-autowrap = true
-
-[node name="Label8" type="Label" parent="state_handler/6 and a half/portuguese2/support"]
-margin_top = 139.0
-margin_right = 380.0
-margin_bottom = 190.0
-custom_constants/line_spacing = -10
-custom_fonts/font = ExtResource( 14 )
-text = "sahbiah"
-align = 1
-autowrap = true
-
 [node name="french" type="Label" parent="state_handler/6 and a half"]
-margin_left = 866.667
-margin_top = 48.8889
-margin_right = 1246.66
-margin_bottom = 119.889
+margin_left = 38.8889
+margin_top = 378.889
+margin_right = 418.882
+margin_bottom = 449.889
 grow_vertical = 0
 custom_constants/line_spacing = -10
 text = "french translation"
@@ -1440,6 +1381,235 @@ custom_fonts/font = ExtResource( 15 )
 text = "(david torazzi)"
 align = 1
 
+[node name="portuguese" type="Label" parent="state_handler/6 and a half"]
+margin_left = 467.222
+margin_top = 48.8889
+margin_right = 847.219
+margin_bottom = 119.889
+grow_vertical = 0
+custom_constants/line_spacing = -10
+text = "portuguese translation (brazil)"
+align = 1
+autowrap = true
+
+[node name="Label5" type="Label" parent="state_handler/6 and a half/portuguese"]
+margin_top = 42.0
+margin_right = 380.0
+margin_bottom = 93.0
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 14 )
+text = "david the potoo"
+align = 1
+autowrap = true
+
+[node name="Label11" type="Label" parent="state_handler/6 and a half/portuguese"]
+margin_top = 88.0
+margin_right = 380.0
+margin_bottom = 122.0
+rect_pivot_offset = Vector2( 296, 26.699 )
+custom_fonts/font = ExtResource( 15 )
+text = "(david torazzi)"
+align = 1
+
+[node name="Label6" type="Label" parent="state_handler/6 and a half/portuguese"]
+margin_top = 110.0
+margin_right = 380.0
+margin_bottom = 161.0
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 14 )
+text = "doubletime"
+align = 1
+autowrap = true
+
+[node name="Label9" type="Label" parent="state_handler/6 and a half/portuguese"]
+margin_top = 154.0
+margin_right = 380.0
+margin_bottom = 188.0
+rect_pivot_offset = Vector2( 296, 26.699 )
+custom_fonts/font = ExtResource( 15 )
+text = "(mari)"
+align = 1
+
+[node name="Label8" type="Label" parent="state_handler/6 and a half/portuguese"]
+margin_top = 169.0
+margin_right = 380.0
+margin_bottom = 220.0
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 14 )
+text = "gustavo moret"
+align = 1
+autowrap = true
+
+[node name="Label7" type="Label" parent="state_handler/6 and a half/portuguese"]
+margin_top = 221.111
+margin_right = 380.0
+margin_bottom = 272.111
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 14 )
+text = "koral"
+align = 1
+autowrap = true
+
+[node name="Label10" type="Label" parent="state_handler/6 and a half/portuguese"]
+margin_top = 272.222
+margin_right = 380.0
+margin_bottom = 323.222
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 14 )
+text = "liquid_tax"
+align = 1
+autowrap = true
+
+[node name="Label12" type="Label" parent="state_handler/6 and a half/portuguese"]
+margin_top = 325.333
+margin_right = 380.0
+margin_bottom = 376.333
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 14 )
+text = "xd1498"
+align = 1
+autowrap = true
+
+[node name="Label13" type="Label" parent="state_handler/6 and a half/portuguese"]
+margin_top = 369.333
+margin_right = 380.0
+margin_bottom = 403.333
+rect_pivot_offset = Vector2( 296, 26.699 )
+custom_fonts/font = ExtResource( 15 )
+text = "(nicholas santos)"
+align = 1
+
+[node name="support" type="Label" parent="state_handler/6 and a half/portuguese"]
+margin_top = 438.0
+margin_right = 380.0
+margin_bottom = 509.0
+grow_vertical = 0
+custom_constants/line_spacing = -10
+text = "portuguese translation support"
+align = 1
+autowrap = true
+
+[node name="Label5" type="Label" parent="state_handler/6 and a half/portuguese/support"]
+margin_top = 42.0
+margin_right = 380.0
+margin_bottom = 93.0
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 14 )
+text = "ararajubazul"
+align = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="state_handler/6 and a half/portuguese/support"]
+margin_top = 90.0
+margin_right = 380.0
+margin_bottom = 141.0
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 14 )
+text = "minnow"
+align = 1
+autowrap = true
+
+[node name="Label8" type="Label" parent="state_handler/6 and a half/portuguese/support"]
+margin_top = 139.0
+margin_right = 380.0
+margin_bottom = 190.0
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 14 )
+text = "sahbiah"
+align = 1
+autowrap = true
+
+[node name="norwegian" type="Label" parent="state_handler/6 and a half"]
+margin_left = 892.222
+margin_top = 48.8889
+margin_right = 1272.22
+margin_bottom = 119.889
+grow_vertical = 0
+custom_constants/line_spacing = -10
+text = "norwegian translation"
+align = 1
+autowrap = true
+
+[node name="Label5" type="Label" parent="state_handler/6 and a half/norwegian"]
+margin_top = 42.0
+margin_right = 380.0
+margin_bottom = 93.0
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 14 )
+text = "kettu"
+align = 1
+autowrap = true
+
+[node name="Label14" type="Label" parent="state_handler/6 and a half/norwegian"]
+margin_top = 88.0
+margin_right = 380.0
+margin_bottom = 122.0
+rect_pivot_offset = Vector2( 296, 26.699 )
+custom_fonts/font = ExtResource( 15 )
+text = "(david torazzi)"
+align = 1
+
+[node name="support" type="Label" parent="state_handler/6 and a half/norwegian"]
+margin_top = 147.778
+margin_right = 380.0
+margin_bottom = 218.778
+grow_vertical = 0
+custom_constants/line_spacing = -10
+text = "norwegian translation support"
+align = 1
+autowrap = true
+
+[node name="Label5" type="Label" parent="state_handler/6 and a half/norwegian/support"]
+margin_top = 42.0
+margin_right = 380.0
+margin_bottom = 93.0
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 14 )
+text = "jakt hund"
+align = 1
+autowrap = true
+
+[node name="russian" type="Label" parent="state_handler/6 and a half"]
+margin_left = 892.222
+margin_top = 455.556
+margin_right = 1272.22
+margin_bottom = 526.556
+grow_vertical = 0
+custom_constants/line_spacing = -10
+text = "russian translation"
+align = 1
+autowrap = true
+
+[node name="Label5" type="Label" parent="state_handler/6 and a half/russian"]
+margin_top = 42.0
+margin_right = 380.0
+margin_bottom = 93.0
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 14 )
+text = "marcel cl"
+align = 1
+autowrap = true
+
+[node name="support" type="Label" parent="state_handler/6 and a half/russian"]
+margin_top = 128.888
+margin_right = 380.0
+margin_bottom = 199.888
+grow_vertical = 0
+custom_constants/line_spacing = -10
+text = "russian translation support"
+align = 1
+autowrap = true
+
+[node name="Label5" type="Label" parent="state_handler/6 and a half/russian/support"]
+margin_top = 42.0
+margin_right = 380.0
+margin_bottom = 93.0
+custom_constants/line_spacing = -10
+custom_fonts/font = ExtResource( 14 )
+text = "lisa"
+align = 1
+autowrap = true
+
 [node name="7" type="Control" parent="state_handler"]
 visible = false
 margin_left = 71.0
@@ -1447,167 +1617,6 @@ margin_top = 36.0
 margin_right = 111.0
 margin_bottom = 76.0
 rect_scale = Vector2( 0.9, 0.9 )
-
-[node name="Label9" type="Label" parent="state_handler/7"]
-margin_left = 244.0
-margin_top = 29.6922
-margin_right = 1523.0
-margin_bottom = 100.692
-rect_pivot_offset = Vector2( -23.3271, 291.157 )
-custom_fonts/font = ExtResource( 14 )
-text = "sound effects"
-align = 1
-
-[node name="Label10" type="Label" parent="state_handler/7"]
-margin_left = 244.0
-margin_top = 102.0
-margin_right = 1523.0
-margin_bottom = 173.0
-rect_pivot_offset = Vector2( -24.3271, 218.849 )
-text = "freesound.org"
-align = 1
-
-[node name="Label11" type="Label" parent="state_handler/7"]
-visible = false
-margin_left = -21.0
-margin_top = 604.032
-margin_right = 1258.0
-margin_bottom = 638.032
-text = "SoundEffectsFactory"
-align = 1
-
-[node name="Label5" type="Label" parent="state_handler/7"]
-margin_left = 543.83
-margin_top = 147.0
-margin_right = 686.83
-margin_bottom = 586.0
-rect_pivot_offset = Vector2( -256.157, 173.849 )
-custom_fonts/font = ExtResource( 9 )
-text = "bell
-river
-glass shatter
-escalator hum
-power down
-coin flip
-digging
-wood crack
-wood creak
-wind
-rope pull
-rope creak
-fluorescent hum
-zap
-button
-fart
-ceramic smash"
-align = 2
-
-[node name="Label4" type="Label" parent="state_handler/7/Label5"]
-margin_left = 167.0
-margin_right = 378.0
-margin_bottom = 417.0
-custom_fonts/font = ExtResource( 9 )
-text = "Daphne_in_Wonderland
-Pfannkuchn
-C_Rogers
-Adam Wayne Gistarb
-themfish
-one666138
-YemiMoses
-dheming
-Mr_KeybOred
-Fission9
-dansotak
-bahaish
-kyles
-michael_grinnell
-sjnewton
-DSISStudios
-geraldfiebig"
-
-[node name="Label5" type="Label" parent="state_handler/7/Label5"]
-margin_left = 345.17
-margin_top = 1.0
-margin_right = 509.17
-margin_bottom = 440.0
-custom_fonts/font = ExtResource( 9 )
-text = "elevator door
-vending machine 1
-vending machine 2
-vending machine 3
-phone hang up
-poof
-door creak
-portal whir
-bird chirps
-scribbling
-page turn
-more page turns
-squeaky footsteps
-library ambience
-echoey footsteps
-church bell
-"
-align = 2
-
-[node name="Label6" type="Label" parent="state_handler/7/Label5"]
-margin_left = 533.17
-margin_top = 2.0
-margin_right = 688.17
-margin_bottom = 441.0
-custom_fonts/font = ExtResource( 9 )
-text = "DisasterServices
-TheSoundcatcher
-pfranzen
-JoelAudio
-coldwellw
-dpren
-rambler52
-ahill86
-hargissssound
-paulmessier
-mmaruska
-Rainkiljoy
-tmkappelt
-Wihan98
-boedie
-sinewave1kHz
-"
-
-[node name="Label11" type="Label" parent="state_handler/7/Label5"]
-visible = false
-margin_left = -229.742
-margin_top = 489.032
-margin_right = 1049.26
-margin_bottom = 522.032
-text = "phone ring"
-align = 1
-
-[node name="Control" type="Control" parent="state_handler/7"]
-margin_left = 247.0
-margin_top = -8.0
-margin_right = 287.0
-margin_bottom = 32.0
-rect_pivot_offset = Vector2( -24.3271, 328.849 )
-
-[node name="Label11" type="Label" parent="state_handler/7/Control"]
-margin_left = 14.0
-margin_top = 652.0
-margin_right = 1293.0
-margin_bottom = 686.0
-text = "phone ring     soundeffectsfactory"
-align = 1
-
-[node name="Label12" type="Label" parent="state_handler/7/Control"]
-margin_left = -9.912
-margin_top = 612.0
-margin_right = 1269.09
-margin_bottom = 646.0
-text = "meow     scott12355"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label8" type="Label" parent="state_handler/7"]
 margin_left = -347.0
@@ -1636,8 +1645,174 @@ reisdev
 shuldyakov
 paul d. hunt"
 
-[node name="last" type="Control" parent="state_handler"]
+[node name="sfx" type="Control" parent="state_handler/7"]
+margin_left = 367.66
+margin_top = 281.49
+margin_right = 407.66
+margin_bottom = 321.49
+
+[node name="Label9" type="Label" parent="state_handler/7/sfx"]
+margin_left = -123.66
+margin_top = -251.798
+margin_right = 1155.34
+margin_bottom = -180.798
+rect_pivot_offset = Vector2( -23.3271, 291.157 )
+custom_fonts/font = ExtResource( 14 )
+text = "sound effects"
+align = 1
+
+[node name="Label10" type="Label" parent="state_handler/7/sfx"]
+margin_left = -123.66
+margin_top = -179.49
+margin_right = 1155.34
+margin_bottom = -108.49
+rect_pivot_offset = Vector2( -24.3271, 218.849 )
+text = "freesound.org"
+align = 1
+
+[node name="Label11" type="Label" parent="state_handler/7/sfx"]
 visible = false
+margin_left = -388.66
+margin_top = 322.542
+margin_right = 890.34
+margin_bottom = 356.542
+text = "SoundEffectsFactory"
+align = 1
+
+[node name="Label5" type="Label" parent="state_handler/7/sfx"]
+margin_left = 176.17
+margin_top = -134.49
+margin_right = 319.17
+margin_bottom = 304.51
+rect_pivot_offset = Vector2( -256.157, 173.849 )
+custom_fonts/font = ExtResource( 9 )
+text = "bell
+river
+glass shatter
+escalator hum
+power down
+coin flip
+digging
+wood crack
+wood creak
+wind
+rope pull
+rope creak
+fluorescent hum
+zap
+button
+fart
+ceramic smash"
+align = 2
+
+[node name="Label4" type="Label" parent="state_handler/7/sfx/Label5"]
+margin_left = 167.0
+margin_right = 378.0
+margin_bottom = 417.0
+custom_fonts/font = ExtResource( 9 )
+text = "Daphne_in_Wonderland
+Pfannkuchn
+C_Rogers
+Adam Wayne Gistarb
+themfish
+one666138
+YemiMoses
+dheming
+Mr_KeybOred
+Fission9
+dansotak
+bahaish
+kyles
+michael_grinnell
+sjnewton
+DSISStudios
+geraldfiebig"
+
+[node name="Label5" type="Label" parent="state_handler/7/sfx/Label5"]
+margin_left = 345.17
+margin_top = 1.0
+margin_right = 509.17
+margin_bottom = 440.0
+custom_fonts/font = ExtResource( 9 )
+text = "elevator door
+vending machine 1
+vending machine 2
+vending machine 3
+phone hang up
+poof
+door creak
+portal whir
+bird chirps
+scribbling
+page turn
+more page turns
+squeaky footsteps
+library ambience
+echoey footsteps
+church bell
+"
+align = 2
+
+[node name="Label6" type="Label" parent="state_handler/7/sfx/Label5"]
+margin_left = 533.17
+margin_top = 2.0
+margin_right = 688.17
+margin_bottom = 441.0
+custom_fonts/font = ExtResource( 9 )
+text = "DisasterServices
+TheSoundcatcher
+pfranzen
+JoelAudio
+coldwellw
+dpren
+rambler52
+ahill86
+hargissssound
+paulmessier
+mmaruska
+Rainkiljoy
+tmkappelt
+Wihan98
+boedie
+sinewave1kHz
+"
+
+[node name="Label11" type="Label" parent="state_handler/7/sfx/Label5"]
+visible = false
+margin_left = -229.742
+margin_top = 489.032
+margin_right = 1049.26
+margin_bottom = 522.032
+text = "phone ring"
+align = 1
+
+[node name="Control" type="Control" parent="state_handler/7/sfx"]
+margin_left = -120.66
+margin_top = -289.49
+margin_right = -80.66
+margin_bottom = -249.49
+rect_pivot_offset = Vector2( -24.3271, 328.849 )
+
+[node name="Label11" type="Label" parent="state_handler/7/sfx/Control"]
+margin_left = 14.0
+margin_top = 652.0
+margin_right = 1293.0
+margin_bottom = 686.0
+text = "phone ring     soundeffectsfactory"
+align = 1
+
+[node name="Label12" type="Label" parent="state_handler/7/sfx/Control"]
+margin_left = -9.912
+margin_top = 612.0
+margin_right = 1269.09
+margin_bottom = 646.0
+text = "meow     scott12355"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="last" type="Control" parent="state_handler"]
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -1650,7 +1825,6 @@ align = 1
 valign = 1
 
 [node name="you_saved" type="Label" parent="state_handler/last"]
-visible = false
 margin_top = 321.033
 margin_right = 1280.0
 margin_bottom = 398.033
@@ -1660,7 +1834,6 @@ valign = 1
 script = ExtResource( 10 )
 
 [node name="back" type="Button" parent="state_handler/last"]
-visible = false
 margin_left = 516.402
 margin_top = 582.877
 margin_right = 764.402
@@ -1692,6 +1865,7 @@ volume_db = -8.0
 bus = "Music"
 
 [node name="skip" type="Button" parent="state_handler"]
+visible = false
 margin_left = 1182.0
 margin_top = 680.0
 margin_right = 1259.0
