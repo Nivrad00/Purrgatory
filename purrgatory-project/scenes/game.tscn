@@ -2125,6 +2125,7 @@ custom_styles/normal = SubResource( 36 )
 autowrap = true
 
 [node name="Button" type="Button" parent="meta_ui"]
+visible = false
 margin_left = 110.488
 margin_top = 17.4169
 margin_right = 261.488

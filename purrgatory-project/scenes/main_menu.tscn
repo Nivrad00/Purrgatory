@@ -62,7 +62,7 @@ blend_mode = 3
 
 [node name="main" type="Node"]
 script = ExtResource( 1 )
-version = "2026-2-25"
+version = "2026-2-28"
 
 [node name="delay_timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -1295,7 +1295,7 @@ margin_right = 1155.0
 margin_bottom = 1356.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "lisa"
+text = "checke12"
 autowrap = true
 
 [node name="_5" type="Label" parent="credits/ScrollContainer/VBoxContainer"]
